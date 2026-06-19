@@ -462,129 +462,131 @@ class User {
   @override
   bool operator ==(Object other) => identical(this, other) || other is User &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.username == username &&
-    other.displayName == displayName &&
-    other.websiteUrl == websiteUrl &&
-    other.email == email &&
-    other.pendingEmail == pendingEmail &&
-    other.backupEmail == backupEmail &&
-    other.pendingBackupEmail == pendingBackupEmail &&
-    other.signUpDate == signUpDate &&
-    other.createdFromUrlId == createdFromUrlId &&
-    other.createdFromTenantId == createdFromTenantId &&
-    other.createdFromIpHashed == createdFromIpHashed &&
-    other.verified == verified &&
-    other.loginId == loginId &&
-    other.loginIdDate == loginIdDate &&
-    other.loginCount == loginCount &&
-    other.optedInNotifications == optedInNotifications &&
-    other.optedInTenantNotifications == optedInTenantNotifications &&
-    other.hideAccountCode == hideAccountCode &&
-    other.avatarSrc == avatarSrc &&
-    other.isFastCommentsHelpRequestAdmin == isFastCommentsHelpRequestAdmin &&
-    other.isHelpRequestAdmin == isHelpRequestAdmin &&
-    other.isAccountOwner == isAccountOwner &&
-    other.isAdminAdmin == isAdminAdmin &&
-    other.isBillingAdmin == isBillingAdmin &&
-    other.isAnalyticsAdmin == isAnalyticsAdmin &&
-    other.isCustomizationAdmin == isCustomizationAdmin &&
-    other.isManageDataAdmin == isManageDataAdmin &&
-    other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
-    other.isAPIAdmin == isAPIAdmin &&
-    other.isSiteAdmin == isSiteAdmin &&
-    _deepEquality.equals(other.moderatorIds, moderatorIds) &&
-    other.isImpersonator == isImpersonator &&
-    other.isCouponManager == isCouponManager &&
-    other.locale == locale &&
-    other.digestEmailFrequency == digestEmailFrequency &&
-    other.notificationFrequency == notificationFrequency &&
-    other.adminNotificationFrequency == adminNotificationFrequency &&
-    other.agentApprovalNotificationFrequency == agentApprovalNotificationFrequency &&
-    other.lastTenantNotificationSentDate == lastTenantNotificationSentDate &&
-    other.lastReplyNotificationSentDate == lastReplyNotificationSentDate &&
-    other.ignoredAddToMySiteMessages == ignoredAddToMySiteMessages &&
-    other.lastLoginDate == lastLoginDate &&
-    other.displayLabel == displayLabel &&
-    other.isProfileActivityPrivate == isProfileActivityPrivate &&
-    other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
-    other.isProfileDMDisabled == isProfileDMDisabled &&
-    other.profileCommentApprovalMode == profileCommentApprovalMode &&
-    other.karma == karma &&
-    other.passwordHash == passwordHash &&
-    other.averageTicketAckTimeMS == averageTicketAckTimeMS &&
-    other.hasBlockedUsers == hasBlockedUsers &&
-    other.bio == bio &&
-    other.headerBackgroundSrc == headerBackgroundSrc &&
-    other.countryCode == countryCode &&
-    other.countryFlag == countryFlag &&
-    _deepEquality.equals(other.socialLinks, socialLinks) &&
-    other.hasTwoFactor == hasTwoFactor &&
-    other.isEmailSuppressed == isEmailSuppressed;
+      other.tenantId == tenantId &&
+      other.username == username &&
+      other.displayName == displayName &&
+      other.websiteUrl == websiteUrl &&
+      other.email == email &&
+      other.pendingEmail == pendingEmail &&
+      other.backupEmail == backupEmail &&
+      other.pendingBackupEmail == pendingBackupEmail &&
+      other.signUpDate == signUpDate &&
+      other.createdFromUrlId == createdFromUrlId &&
+      other.createdFromTenantId == createdFromTenantId &&
+      other.createdFromIpHashed == createdFromIpHashed &&
+      other.verified == verified &&
+      other.loginId == loginId &&
+      other.loginIdDate == loginIdDate &&
+      other.loginCount == loginCount &&
+      other.optedInNotifications == optedInNotifications &&
+      other.optedInTenantNotifications == optedInTenantNotifications &&
+      other.hideAccountCode == hideAccountCode &&
+      other.avatarSrc == avatarSrc &&
+      other.isFastCommentsHelpRequestAdmin == isFastCommentsHelpRequestAdmin &&
+      other.isHelpRequestAdmin == isHelpRequestAdmin &&
+      other.isAccountOwner == isAccountOwner &&
+      other.isAdminAdmin == isAdminAdmin &&
+      other.isBillingAdmin == isBillingAdmin &&
+      other.isAnalyticsAdmin == isAnalyticsAdmin &&
+      other.isCustomizationAdmin == isCustomizationAdmin &&
+      other.isManageDataAdmin == isManageDataAdmin &&
+      other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
+      other.isAPIAdmin == isAPIAdmin &&
+      other.isSiteAdmin == isSiteAdmin &&
+      _deepEquality.equals(other.moderatorIds, moderatorIds) &&
+      other.isImpersonator == isImpersonator &&
+      other.isCouponManager == isCouponManager &&
+      other.locale == locale &&
+      other.digestEmailFrequency == digestEmailFrequency &&
+      other.notificationFrequency == notificationFrequency &&
+      other.adminNotificationFrequency == adminNotificationFrequency &&
+      other.agentApprovalNotificationFrequency == agentApprovalNotificationFrequency &&
+      other.lastTenantNotificationSentDate == lastTenantNotificationSentDate &&
+      other.lastReplyNotificationSentDate == lastReplyNotificationSentDate &&
+      other.ignoredAddToMySiteMessages == ignoredAddToMySiteMessages &&
+      other.lastLoginDate == lastLoginDate &&
+      other.displayLabel == displayLabel &&
+      other.isProfileActivityPrivate == isProfileActivityPrivate &&
+      other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
+      other.isProfileDMDisabled == isProfileDMDisabled &&
+      other.profileCommentApprovalMode == profileCommentApprovalMode &&
+      other.karma == karma &&
+      other.passwordHash == passwordHash &&
+      other.averageTicketAckTimeMS == averageTicketAckTimeMS &&
+      other.hasBlockedUsers == hasBlockedUsers &&
+      other.bio == bio &&
+      other.headerBackgroundSrc == headerBackgroundSrc &&
+      other.countryCode == countryCode &&
+      other.countryFlag == countryFlag &&
+      _deepEquality.equals(other.socialLinks, socialLinks) &&
+      other.hasTwoFactor == hasTwoFactor &&
+      other.isEmailSuppressed == isEmailSuppressed;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId == null ? 0 : tenantId!.hashCode) +
-    (username.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (pendingEmail == null ? 0 : pendingEmail!.hashCode) +
-    (backupEmail == null ? 0 : backupEmail!.hashCode) +
-    (pendingBackupEmail == null ? 0 : pendingBackupEmail!.hashCode) +
-    (signUpDate.hashCode) +
-    (createdFromUrlId == null ? 0 : createdFromUrlId!.hashCode) +
-    (createdFromTenantId == null ? 0 : createdFromTenantId!.hashCode) +
-    (createdFromIpHashed.hashCode) +
-    (verified.hashCode) +
-    (loginId.hashCode) +
-    (loginIdDate.hashCode) +
-    (loginCount == null ? 0 : loginCount!.hashCode) +
-    (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
-    (optedInTenantNotifications == null ? 0 : optedInTenantNotifications!.hashCode) +
-    (hideAccountCode == null ? 0 : hideAccountCode!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (isFastCommentsHelpRequestAdmin == null ? 0 : isFastCommentsHelpRequestAdmin!.hashCode) +
-    (isHelpRequestAdmin == null ? 0 : isHelpRequestAdmin!.hashCode) +
-    (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
-    (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
-    (isBillingAdmin == null ? 0 : isBillingAdmin!.hashCode) +
-    (isAnalyticsAdmin == null ? 0 : isAnalyticsAdmin!.hashCode) +
-    (isCustomizationAdmin == null ? 0 : isCustomizationAdmin!.hashCode) +
-    (isManageDataAdmin == null ? 0 : isManageDataAdmin!.hashCode) +
-    (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
-    (isAPIAdmin == null ? 0 : isAPIAdmin!.hashCode) +
-    (isSiteAdmin == null ? 0 : isSiteAdmin!.hashCode) +
-    (moderatorIds.hashCode) +
-    (isImpersonator == null ? 0 : isImpersonator!.hashCode) +
-    (isCouponManager == null ? 0 : isCouponManager!.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (digestEmailFrequency == null ? 0 : digestEmailFrequency!.hashCode) +
-    (notificationFrequency == null ? 0 : notificationFrequency!.hashCode) +
-    (adminNotificationFrequency == null ? 0 : adminNotificationFrequency!.hashCode) +
-    (agentApprovalNotificationFrequency == null ? 0 : agentApprovalNotificationFrequency!.hashCode) +
-    (lastTenantNotificationSentDate == null ? 0 : lastTenantNotificationSentDate!.hashCode) +
-    (lastReplyNotificationSentDate == null ? 0 : lastReplyNotificationSentDate!.hashCode) +
-    (ignoredAddToMySiteMessages == null ? 0 : ignoredAddToMySiteMessages!.hashCode) +
-    (lastLoginDate == null ? 0 : lastLoginDate!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
-    (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
-    (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
-    (profileCommentApprovalMode == null ? 0 : profileCommentApprovalMode!.hashCode) +
-    (karma == null ? 0 : karma!.hashCode) +
-    (passwordHash == null ? 0 : passwordHash!.hashCode) +
-    (averageTicketAckTimeMS == null ? 0 : averageTicketAckTimeMS!.hashCode) +
-    (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
-    (bio == null ? 0 : bio!.hashCode) +
-    (headerBackgroundSrc == null ? 0 : headerBackgroundSrc!.hashCode) +
-    (countryCode == null ? 0 : countryCode!.hashCode) +
-    (countryFlag == null ? 0 : countryFlag!.hashCode) +
-    (socialLinks.hashCode) +
-    (hasTwoFactor == null ? 0 : hasTwoFactor!.hashCode) +
-    (isEmailSuppressed == null ? 0 : isEmailSuppressed!.hashCode);
+      (tenantId == null ? 0 : tenantId!.hashCode) +
+      (username.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (pendingEmail == null ? 0 : pendingEmail!.hashCode) +
+      (backupEmail == null ? 0 : backupEmail!.hashCode) +
+      (pendingBackupEmail == null ? 0 : pendingBackupEmail!.hashCode) +
+      (signUpDate.hashCode) +
+      (createdFromUrlId == null ? 0 : createdFromUrlId!.hashCode) +
+      (createdFromTenantId == null ? 0 : createdFromTenantId!.hashCode) +
+      (createdFromIpHashed.hashCode) +
+      (verified.hashCode) +
+      (loginId.hashCode) +
+      (loginIdDate.hashCode) +
+      (loginCount == null ? 0 : loginCount!.hashCode) +
+      (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
+      (optedInTenantNotifications == null ? 0 : optedInTenantNotifications!.hashCode) +
+      (hideAccountCode == null ? 0 : hideAccountCode!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (isFastCommentsHelpRequestAdmin == null ? 0 : isFastCommentsHelpRequestAdmin!.hashCode) +
+      (isHelpRequestAdmin == null ? 0 : isHelpRequestAdmin!.hashCode) +
+      (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
+      (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
+      (isBillingAdmin == null ? 0 : isBillingAdmin!.hashCode) +
+      (isAnalyticsAdmin == null ? 0 : isAnalyticsAdmin!.hashCode) +
+      (isCustomizationAdmin == null ? 0 : isCustomizationAdmin!.hashCode) +
+      (isManageDataAdmin == null ? 0 : isManageDataAdmin!.hashCode) +
+      (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
+      (isAPIAdmin == null ? 0 : isAPIAdmin!.hashCode) +
+      (isSiteAdmin == null ? 0 : isSiteAdmin!.hashCode) +
+      (moderatorIds.hashCode) +
+      (isImpersonator == null ? 0 : isImpersonator!.hashCode) +
+      (isCouponManager == null ? 0 : isCouponManager!.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (digestEmailFrequency == null ? 0 : digestEmailFrequency!.hashCode) +
+      (notificationFrequency == null ? 0 : notificationFrequency!.hashCode) +
+      (adminNotificationFrequency == null ? 0 : adminNotificationFrequency!.hashCode) +
+      (agentApprovalNotificationFrequency == null ? 0 : agentApprovalNotificationFrequency!.hashCode) +
+      (lastTenantNotificationSentDate == null ? 0 : lastTenantNotificationSentDate!.hashCode) +
+      (lastReplyNotificationSentDate == null ? 0 : lastReplyNotificationSentDate!.hashCode) +
+      (ignoredAddToMySiteMessages == null ? 0 : ignoredAddToMySiteMessages!.hashCode) +
+      (lastLoginDate == null ? 0 : lastLoginDate!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
+      (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
+      (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
+      (profileCommentApprovalMode == null ? 0 : profileCommentApprovalMode!.hashCode) +
+      (karma == null ? 0 : karma!.hashCode) +
+      (passwordHash == null ? 0 : passwordHash!.hashCode) +
+      (averageTicketAckTimeMS == null ? 0 : averageTicketAckTimeMS!.hashCode) +
+      (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
+      (bio == null ? 0 : bio!.hashCode) +
+      (headerBackgroundSrc == null ? 0 : headerBackgroundSrc!.hashCode) +
+      (countryCode == null ? 0 : countryCode!.hashCode) +
+      (countryFlag == null ? 0 : countryFlag!.hashCode) +
+      (socialLinks.hashCode) +
+      (hasTwoFactor == null ? 0 : hasTwoFactor!.hashCode) +
+      (isEmailSuppressed == null ? 0 : isEmailSuppressed!.hashCode);
+  
 
   @override
   String toString() => 'User[id=$id, tenantId=$tenantId, username=$username, displayName=$displayName, websiteUrl=$websiteUrl, email=$email, pendingEmail=$pendingEmail, backupEmail=$backupEmail, pendingBackupEmail=$pendingBackupEmail, signUpDate=$signUpDate, createdFromUrlId=$createdFromUrlId, createdFromTenantId=$createdFromTenantId, createdFromIpHashed=$createdFromIpHashed, verified=$verified, loginId=$loginId, loginIdDate=$loginIdDate, loginCount=$loginCount, optedInNotifications=$optedInNotifications, optedInTenantNotifications=$optedInTenantNotifications, hideAccountCode=$hideAccountCode, avatarSrc=$avatarSrc, isFastCommentsHelpRequestAdmin=$isFastCommentsHelpRequestAdmin, isHelpRequestAdmin=$isHelpRequestAdmin, isAccountOwner=$isAccountOwner, isAdminAdmin=$isAdminAdmin, isBillingAdmin=$isBillingAdmin, isAnalyticsAdmin=$isAnalyticsAdmin, isCustomizationAdmin=$isCustomizationAdmin, isManageDataAdmin=$isManageDataAdmin, isCommentModeratorAdmin=$isCommentModeratorAdmin, isAPIAdmin=$isAPIAdmin, isSiteAdmin=$isSiteAdmin, moderatorIds=$moderatorIds, isImpersonator=$isImpersonator, isCouponManager=$isCouponManager, locale=$locale, digestEmailFrequency=$digestEmailFrequency, notificationFrequency=$notificationFrequency, adminNotificationFrequency=$adminNotificationFrequency, agentApprovalNotificationFrequency=$agentApprovalNotificationFrequency, lastTenantNotificationSentDate=$lastTenantNotificationSentDate, lastReplyNotificationSentDate=$lastReplyNotificationSentDate, ignoredAddToMySiteMessages=$ignoredAddToMySiteMessages, lastLoginDate=$lastLoginDate, displayLabel=$displayLabel, isProfileActivityPrivate=$isProfileActivityPrivate, isProfileCommentsPrivate=$isProfileCommentsPrivate, isProfileDMDisabled=$isProfileDMDisabled, profileCommentApprovalMode=$profileCommentApprovalMode, karma=$karma, passwordHash=$passwordHash, averageTicketAckTimeMS=$averageTicketAckTimeMS, hasBlockedUsers=$hasBlockedUsers, bio=$bio, headerBackgroundSrc=$headerBackgroundSrc, countryCode=$countryCode, countryFlag=$countryFlag, socialLinks=$socialLinks, hasTwoFactor=$hasTwoFactor, isEmailSuppressed=$isEmailSuppressed]';

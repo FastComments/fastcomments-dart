@@ -27,11 +27,13 @@ class UpdateAPIUserSubscriptionData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateAPIUserSubscriptionData &&
     other.notificationFrequency == notificationFrequency;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (notificationFrequency == null ? 0 : notificationFrequency!.hashCode);
+  
 
   @override
   String toString() => 'UpdateAPIUserSubscriptionData[notificationFrequency=$notificationFrequency]';

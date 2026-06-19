@@ -228,57 +228,59 @@ class UpdateTenantUserBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateTenantUserBody &&
     other.username == username &&
-    other.displayName == displayName &&
-    other.websiteUrl == websiteUrl &&
-    other.email == email &&
-    other.signUpDate == signUpDate &&
-    other.verified == verified &&
-    other.loginCount == loginCount &&
-    other.optedInNotifications == optedInNotifications &&
-    other.optedInTenantNotifications == optedInTenantNotifications &&
-    other.hideAccountCode == hideAccountCode &&
-    other.avatarSrc == avatarSrc &&
-    other.isHelpRequestAdmin == isHelpRequestAdmin &&
-    other.isAccountOwner == isAccountOwner &&
-    other.isAdminAdmin == isAdminAdmin &&
-    other.isBillingAdmin == isBillingAdmin &&
-    other.isAnalyticsAdmin == isAnalyticsAdmin &&
-    other.isCustomizationAdmin == isCustomizationAdmin &&
-    other.isManageDataAdmin == isManageDataAdmin &&
-    other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
-    other.isAPIAdmin == isAPIAdmin &&
-    _deepEquality.equals(other.moderatorIds, moderatorIds) &&
-    other.locale == locale &&
-    other.digestEmailFrequency == digestEmailFrequency &&
-    other.displayLabel == displayLabel;
+      other.displayName == displayName &&
+      other.websiteUrl == websiteUrl &&
+      other.email == email &&
+      other.signUpDate == signUpDate &&
+      other.verified == verified &&
+      other.loginCount == loginCount &&
+      other.optedInNotifications == optedInNotifications &&
+      other.optedInTenantNotifications == optedInTenantNotifications &&
+      other.hideAccountCode == hideAccountCode &&
+      other.avatarSrc == avatarSrc &&
+      other.isHelpRequestAdmin == isHelpRequestAdmin &&
+      other.isAccountOwner == isAccountOwner &&
+      other.isAdminAdmin == isAdminAdmin &&
+      other.isBillingAdmin == isBillingAdmin &&
+      other.isAnalyticsAdmin == isAnalyticsAdmin &&
+      other.isCustomizationAdmin == isCustomizationAdmin &&
+      other.isManageDataAdmin == isManageDataAdmin &&
+      other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
+      other.isAPIAdmin == isAPIAdmin &&
+      _deepEquality.equals(other.moderatorIds, moderatorIds) &&
+      other.locale == locale &&
+      other.digestEmailFrequency == digestEmailFrequency &&
+      other.displayLabel == displayLabel;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (username == null ? 0 : username!.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (signUpDate == null ? 0 : signUpDate!.hashCode) +
-    (verified == null ? 0 : verified!.hashCode) +
-    (loginCount == null ? 0 : loginCount!.hashCode) +
-    (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
-    (optedInTenantNotifications == null ? 0 : optedInTenantNotifications!.hashCode) +
-    (hideAccountCode == null ? 0 : hideAccountCode!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (isHelpRequestAdmin == null ? 0 : isHelpRequestAdmin!.hashCode) +
-    (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
-    (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
-    (isBillingAdmin == null ? 0 : isBillingAdmin!.hashCode) +
-    (isAnalyticsAdmin == null ? 0 : isAnalyticsAdmin!.hashCode) +
-    (isCustomizationAdmin == null ? 0 : isCustomizationAdmin!.hashCode) +
-    (isManageDataAdmin == null ? 0 : isManageDataAdmin!.hashCode) +
-    (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
-    (isAPIAdmin == null ? 0 : isAPIAdmin!.hashCode) +
-    (moderatorIds.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (digestEmailFrequency == null ? 0 : digestEmailFrequency!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode);
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (signUpDate == null ? 0 : signUpDate!.hashCode) +
+      (verified == null ? 0 : verified!.hashCode) +
+      (loginCount == null ? 0 : loginCount!.hashCode) +
+      (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
+      (optedInTenantNotifications == null ? 0 : optedInTenantNotifications!.hashCode) +
+      (hideAccountCode == null ? 0 : hideAccountCode!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (isHelpRequestAdmin == null ? 0 : isHelpRequestAdmin!.hashCode) +
+      (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
+      (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
+      (isBillingAdmin == null ? 0 : isBillingAdmin!.hashCode) +
+      (isAnalyticsAdmin == null ? 0 : isAnalyticsAdmin!.hashCode) +
+      (isCustomizationAdmin == null ? 0 : isCustomizationAdmin!.hashCode) +
+      (isManageDataAdmin == null ? 0 : isManageDataAdmin!.hashCode) +
+      (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
+      (isAPIAdmin == null ? 0 : isAPIAdmin!.hashCode) +
+      (moderatorIds.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (digestEmailFrequency == null ? 0 : digestEmailFrequency!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode);
+  
 
   @override
   String toString() => 'UpdateTenantUserBody[username=$username, displayName=$displayName, websiteUrl=$websiteUrl, email=$email, signUpDate=$signUpDate, verified=$verified, loginCount=$loginCount, optedInNotifications=$optedInNotifications, optedInTenantNotifications=$optedInTenantNotifications, hideAccountCode=$hideAccountCode, avatarSrc=$avatarSrc, isHelpRequestAdmin=$isHelpRequestAdmin, isAccountOwner=$isAccountOwner, isAdminAdmin=$isAdminAdmin, isBillingAdmin=$isBillingAdmin, isAnalyticsAdmin=$isAnalyticsAdmin, isCustomizationAdmin=$isCustomizationAdmin, isManageDataAdmin=$isManageDataAdmin, isCommentModeratorAdmin=$isCommentModeratorAdmin, isAPIAdmin=$isAPIAdmin, moderatorIds=$moderatorIds, locale=$locale, digestEmailFrequency=$digestEmailFrequency, displayLabel=$displayLabel]';

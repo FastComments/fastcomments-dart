@@ -33,15 +33,17 @@ class AggregationResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationResponse &&
     other.status == status &&
-    _deepEquality.equals(other.data, data) &&
-    other.stats == stats;
+      _deepEquality.equals(other.data, data) &&
+      other.stats == stats;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (data.hashCode) +
-    (stats == null ? 0 : stats!.hashCode);
+      (data.hashCode) +
+      (stats == null ? 0 : stats!.hashCode);
+  
 
   @override
   String toString() => 'AggregationResponse[status=$status, data=$data, stats=$stats]';

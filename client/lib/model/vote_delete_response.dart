@@ -30,13 +30,15 @@ class VoteDeleteResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is VoteDeleteResponse &&
     other.status == status &&
-    other.wasPendingVote == wasPendingVote;
+      other.wasPendingVote == wasPendingVote;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (wasPendingVote == null ? 0 : wasPendingVote!.hashCode);
+      (wasPendingVote == null ? 0 : wasPendingVote!.hashCode);
+  
 
   @override
   String toString() => 'VoteDeleteResponse[status=$status, wasPendingVote=$wasPendingVote]';

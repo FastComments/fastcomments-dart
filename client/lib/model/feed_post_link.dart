@@ -54,17 +54,19 @@ class FeedPostLink {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPostLink &&
     other.text == text &&
-    other.title == title &&
-    other.description == description &&
-    other.url == url;
+      other.title == title &&
+      other.description == description &&
+      other.url == url;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (text == null ? 0 : text!.hashCode) +
-    (title == null ? 0 : title!.hashCode) +
-    (description == null ? 0 : description!.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+      (title == null ? 0 : title!.hashCode) +
+      (description == null ? 0 : description!.hashCode) +
+      (url == null ? 0 : url!.hashCode);
+  
 
   @override
   String toString() => 'FeedPostLink[text=$text, title=$title, description=$description, url=$url]';

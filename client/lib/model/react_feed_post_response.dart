@@ -27,15 +27,17 @@ class ReactFeedPostResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ReactFeedPostResponse &&
     other.status == status &&
-    other.reactType == reactType &&
-    other.isUndo == isUndo;
+      other.reactType == reactType &&
+      other.isUndo == isUndo;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (reactType.hashCode) +
-    (isUndo.hashCode);
+      (reactType.hashCode) +
+      (isUndo.hashCode);
+  
 
   @override
   String toString() => 'ReactFeedPostResponse[status=$status, reactType=$reactType, isUndo=$isUndo]';

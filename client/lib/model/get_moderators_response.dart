@@ -24,13 +24,15 @@ class GetModeratorsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetModeratorsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.moderators, moderators);
+      _deepEquality.equals(other.moderators, moderators);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (moderators.hashCode);
+      (moderators.hashCode);
+  
 
   @override
   String toString() => 'GetModeratorsResponse[status=$status, moderators=$moderators]';

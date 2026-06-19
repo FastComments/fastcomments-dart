@@ -24,13 +24,15 @@ class MetaItem {
   @override
   bool operator ==(Object other) => identical(this, other) || other is MetaItem &&
     other.name == name &&
-    _deepEquality.equals(other.values, values);
+      _deepEquality.equals(other.values, values);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (values.hashCode);
+      (values.hashCode);
+  
 
   @override
   String toString() => 'MetaItem[name=$name, values=$values]';

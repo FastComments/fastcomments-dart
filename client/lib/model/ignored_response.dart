@@ -24,13 +24,15 @@ class IgnoredResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is IgnoredResponse &&
     other.status == status &&
-    other.note == note;
+      other.note == note;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (note.hashCode);
+      (note.hashCode);
+  
 
   @override
   String toString() => 'IgnoredResponse[status=$status, note=$note]';

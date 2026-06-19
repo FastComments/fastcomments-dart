@@ -36,13 +36,15 @@ class UpdateNotificationBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateNotificationBody &&
     other.viewed == viewed &&
-    other.optedOut == optedOut;
+      other.optedOut == optedOut;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (viewed == null ? 0 : viewed!.hashCode) +
-    (optedOut == null ? 0 : optedOut!.hashCode);
+      (optedOut == null ? 0 : optedOut!.hashCode);
+  
 
   @override
   String toString() => 'UpdateNotificationBody[viewed=$viewed, optedOut=$optedOut]';

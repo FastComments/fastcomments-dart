@@ -33,15 +33,17 @@ class CommentLogEntry {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentLogEntry &&
     other.d == d &&
-    other.t == t &&
-    other.da == da;
+      other.t == t &&
+      other.da == da;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (d.hashCode) +
-    (t.hashCode) +
-    (da == null ? 0 : da!.hashCode);
+      (t.hashCode) +
+      (da == null ? 0 : da!.hashCode);
+  
 
   @override
   String toString() => 'CommentLogEntry[d=$d, t=$t, da=$da]';

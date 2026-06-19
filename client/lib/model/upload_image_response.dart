@@ -51,19 +51,21 @@ class UploadImageResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UploadImageResponse &&
     other.status == status &&
-    other.url == url &&
-    _deepEquality.equals(other.media, media) &&
-    other.reason == reason &&
-    other.code == code;
+      other.url == url &&
+      _deepEquality.equals(other.media, media) &&
+      other.reason == reason &&
+      other.code == code;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (media.hashCode) +
-    (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode);
+      (url == null ? 0 : url!.hashCode) +
+      (media.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (code == null ? 0 : code!.hashCode);
+  
 
   @override
   String toString() => 'UploadImageResponse[status=$status, url=$url, media=$media, reason=$reason, code=$code]';

@@ -31,17 +31,19 @@ class APISaveCommentResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APISaveCommentResponse &&
     other.status == status &&
-    other.comment == comment &&
-    other.user == user &&
-    _deepEquality.equals(other.moduleData, moduleData);
+      other.comment == comment &&
+      other.user == user &&
+      _deepEquality.equals(other.moduleData, moduleData);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (comment.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (moduleData.hashCode);
+      (comment.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (moduleData.hashCode);
+  
 
   @override
   String toString() => 'APISaveCommentResponse[status=$status, comment=$comment, user=$user, moduleData=$moduleData]';

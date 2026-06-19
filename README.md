@@ -39,6 +39,20 @@ dependencies:
   crypto: ^3.0.0
 ```
 
+The client exposes three API classes:
+
+- `DefaultApi` — API-key-authenticated methods for server-side use.
+- `PublicApi` — public methods that need no API key, safe for browser and
+  mobile clients.
+- `ModerationApi` — methods that back the moderator dashboard: comment
+  moderation (list, count, search, logs, export), moderation actions
+  (remove/restore, flag, set review/spam/approval status, votes, reopen/close
+  thread), bans (ban from comment, undo, pre-ban summaries, ban status and
+  preferences, banned-user counts), and badges & trust (award/remove badge,
+  manual badges, get/set trust factor, user internal profile). Every
+  `ModerationApi` method takes an `sso` parameter for SSO-authenticated
+  moderators.
+
 ```dart
 import 'package:fastcomments_dart/api.dart';
 
@@ -47,6 +61,20 @@ final comments = await api.getCommentsPublic(
   'YOUR_TENANT_ID',
   urlId: 'YOUR_URL_ID',
 );
+```
+
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final publicApi = PublicApi(ApiClient(basePath: 'https://fastcomments.com'));
+final feedPosts = await publicApi.getFeedPostsPublic('YOUR_TENANT_ID');
+```
+
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final moderation = ModerationApi(ApiClient(basePath: 'https://fastcomments.com'));
+final result = await moderation.getApiComments(sso: 'SSO_TOKEN');
 ```
 
 ## SSO

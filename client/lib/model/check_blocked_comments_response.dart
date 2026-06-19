@@ -25,13 +25,15 @@ class CheckBlockedCommentsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CheckBlockedCommentsResponse &&
     _deepEquality.equals(other.commentStatuses, commentStatuses) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentStatuses.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'CheckBlockedCommentsResponse[commentStatuses=$commentStatuses, status=$status]';

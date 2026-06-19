@@ -45,19 +45,21 @@ class CommentUserMentionInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentUserMentionInfo &&
     other.id == id &&
-    other.tag == tag &&
-    other.rawTag == rawTag &&
-    other.type == type &&
-    other.sent == sent;
+      other.tag == tag &&
+      other.rawTag == rawTag &&
+      other.type == type &&
+      other.sent == sent;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tag.hashCode) +
-    (rawTag == null ? 0 : rawTag!.hashCode) +
-    (type == null ? 0 : type!.hashCode) +
-    (sent == null ? 0 : sent!.hashCode);
+      (tag.hashCode) +
+      (rawTag == null ? 0 : rawTag!.hashCode) +
+      (type == null ? 0 : type!.hashCode) +
+      (sent == null ? 0 : sent!.hashCode);
+  
 
   @override
   String toString() => 'CommentUserMentionInfo[id=$id, tag=$tag, rawTag=$rawTag, type=$type, sent=$sent]';

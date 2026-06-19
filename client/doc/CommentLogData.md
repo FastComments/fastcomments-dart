@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **engineResponse** | **String** |  | [optional] 
 **engineTokens** | **double** |  | [optional] 
 **trustFactor** | **double** |  | [optional] 
+**source_** | **String** |  | [optional] 
 **rule** | [**SpamRule**](SpamRule.md) |  | [optional] 
 **userId** | **String** |  | [optional] 
 **subscribers** | **double** |  | [optional] 

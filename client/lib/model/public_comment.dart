@@ -246,87 +246,89 @@ class PublicComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicComment &&
     other.id == id &&
-    other.userId == userId &&
-    other.commenterName == commenterName &&
-    other.commenterLink == commenterLink &&
-    other.commentHTML == commentHTML &&
-    other.parentId == parentId &&
-    other.date == date &&
-    other.votes == votes &&
-    other.votesUp == votesUp &&
-    other.votesDown == votesDown &&
-    other.verified == verified &&
-    other.avatarSrc == avatarSrc &&
-    other.hasImages == hasImages &&
-    other.isByAdmin == isByAdmin &&
-    other.isByModerator == isByModerator &&
-    other.isPinned == isPinned &&
-    other.isLocked == isLocked &&
-    other.displayLabel == displayLabel &&
-    other.rating == rating &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.viewCount == viewCount &&
-    other.isDeleted == isDeleted &&
-    other.isDeletedUser == isDeletedUser &&
-    other.isSpam == isSpam &&
-    other.anonUserId == anonUserId &&
-    _deepEquality.equals(other.feedbackIds, feedbackIds) &&
-    other.requiresVerification == requiresVerification &&
-    other.editKey == editKey &&
-    other.approved == approved &&
-    other.isUnread == isUnread &&
-    other.myVoteId == myVoteId &&
-    other.isVotedDown == isVotedDown &&
-    other.isVotedUp == isVotedUp &&
-    other.hasChildren == hasChildren &&
-    other.nestedChildrenCount == nestedChildrenCount &&
-    other.childCount == childCount &&
-    _deepEquality.equals(other.children, children) &&
-    other.isFlagged == isFlagged &&
-    other.isBlocked == isBlocked;
+      other.userId == userId &&
+      other.commenterName == commenterName &&
+      other.commenterLink == commenterLink &&
+      other.commentHTML == commentHTML &&
+      other.parentId == parentId &&
+      other.date == date &&
+      other.votes == votes &&
+      other.votesUp == votesUp &&
+      other.votesDown == votesDown &&
+      other.verified == verified &&
+      other.avatarSrc == avatarSrc &&
+      other.hasImages == hasImages &&
+      other.isByAdmin == isByAdmin &&
+      other.isByModerator == isByModerator &&
+      other.isPinned == isPinned &&
+      other.isLocked == isLocked &&
+      other.displayLabel == displayLabel &&
+      other.rating == rating &&
+      _deepEquality.equals(other.badges, badges) &&
+      other.viewCount == viewCount &&
+      other.isDeleted == isDeleted &&
+      other.isDeletedUser == isDeletedUser &&
+      other.isSpam == isSpam &&
+      other.anonUserId == anonUserId &&
+      _deepEquality.equals(other.feedbackIds, feedbackIds) &&
+      other.requiresVerification == requiresVerification &&
+      other.editKey == editKey &&
+      other.approved == approved &&
+      other.isUnread == isUnread &&
+      other.myVoteId == myVoteId &&
+      other.isVotedDown == isVotedDown &&
+      other.isVotedUp == isVotedUp &&
+      other.hasChildren == hasChildren &&
+      other.nestedChildrenCount == nestedChildrenCount &&
+      other.childCount == childCount &&
+      _deepEquality.equals(other.children, children) &&
+      other.isFlagged == isFlagged &&
+      other.isBlocked == isBlocked;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (commenterName.hashCode) +
-    (commenterLink == null ? 0 : commenterLink!.hashCode) +
-    (commentHTML.hashCode) +
-    (parentId == null ? 0 : parentId!.hashCode) +
-    (date == null ? 0 : date!.hashCode) +
-    (votes == null ? 0 : votes!.hashCode) +
-    (votesUp == null ? 0 : votesUp!.hashCode) +
-    (votesDown == null ? 0 : votesDown!.hashCode) +
-    (verified.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (hasImages == null ? 0 : hasImages!.hashCode) +
-    (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
-    (isByModerator == null ? 0 : isByModerator!.hashCode) +
-    (isPinned == null ? 0 : isPinned!.hashCode) +
-    (isLocked == null ? 0 : isLocked!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (rating == null ? 0 : rating!.hashCode) +
-    (badges == null ? 0 : badges!.hashCode) +
-    (viewCount == null ? 0 : viewCount!.hashCode) +
-    (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
-    (isSpam == null ? 0 : isSpam!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (feedbackIds.hashCode) +
-    (requiresVerification == null ? 0 : requiresVerification!.hashCode) +
-    (editKey == null ? 0 : editKey!.hashCode) +
-    (approved == null ? 0 : approved!.hashCode) +
-    (isUnread == null ? 0 : isUnread!.hashCode) +
-    (myVoteId == null ? 0 : myVoteId!.hashCode) +
-    (isVotedDown == null ? 0 : isVotedDown!.hashCode) +
-    (isVotedUp == null ? 0 : isVotedUp!.hashCode) +
-    (hasChildren == null ? 0 : hasChildren!.hashCode) +
-    (nestedChildrenCount == null ? 0 : nestedChildrenCount!.hashCode) +
-    (childCount == null ? 0 : childCount!.hashCode) +
-    (children.hashCode) +
-    (isFlagged == null ? 0 : isFlagged!.hashCode) +
-    (isBlocked == null ? 0 : isBlocked!.hashCode);
+      (userId == null ? 0 : userId!.hashCode) +
+      (commenterName.hashCode) +
+      (commenterLink == null ? 0 : commenterLink!.hashCode) +
+      (commentHTML.hashCode) +
+      (parentId == null ? 0 : parentId!.hashCode) +
+      (date == null ? 0 : date!.hashCode) +
+      (votes == null ? 0 : votes!.hashCode) +
+      (votesUp == null ? 0 : votesUp!.hashCode) +
+      (votesDown == null ? 0 : votesDown!.hashCode) +
+      (verified.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (hasImages == null ? 0 : hasImages!.hashCode) +
+      (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
+      (isByModerator == null ? 0 : isByModerator!.hashCode) +
+      (isPinned == null ? 0 : isPinned!.hashCode) +
+      (isLocked == null ? 0 : isLocked!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (rating == null ? 0 : rating!.hashCode) +
+      (badges == null ? 0 : badges!.hashCode) +
+      (viewCount == null ? 0 : viewCount!.hashCode) +
+      (isDeleted == null ? 0 : isDeleted!.hashCode) +
+      (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
+      (isSpam == null ? 0 : isSpam!.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (feedbackIds.hashCode) +
+      (requiresVerification == null ? 0 : requiresVerification!.hashCode) +
+      (editKey == null ? 0 : editKey!.hashCode) +
+      (approved == null ? 0 : approved!.hashCode) +
+      (isUnread == null ? 0 : isUnread!.hashCode) +
+      (myVoteId == null ? 0 : myVoteId!.hashCode) +
+      (isVotedDown == null ? 0 : isVotedDown!.hashCode) +
+      (isVotedUp == null ? 0 : isVotedUp!.hashCode) +
+      (hasChildren == null ? 0 : hasChildren!.hashCode) +
+      (nestedChildrenCount == null ? 0 : nestedChildrenCount!.hashCode) +
+      (childCount == null ? 0 : childCount!.hashCode) +
+      (children.hashCode) +
+      (isFlagged == null ? 0 : isFlagged!.hashCode) +
+      (isBlocked == null ? 0 : isBlocked!.hashCode);
+  
 
   @override
   String toString() => 'PublicComment[id=$id, userId=$userId, commenterName=$commenterName, commenterLink=$commenterLink, commentHTML=$commentHTML, parentId=$parentId, date=$date, votes=$votes, votesUp=$votesUp, votesDown=$votesDown, verified=$verified, avatarSrc=$avatarSrc, hasImages=$hasImages, isByAdmin=$isByAdmin, isByModerator=$isByModerator, isPinned=$isPinned, isLocked=$isLocked, displayLabel=$displayLabel, rating=$rating, badges=$badges, viewCount=$viewCount, isDeleted=$isDeleted, isDeletedUser=$isDeletedUser, isSpam=$isSpam, anonUserId=$anonUserId, feedbackIds=$feedbackIds, requiresVerification=$requiresVerification, editKey=$editKey, approved=$approved, isUnread=$isUnread, myVoteId=$myVoteId, isVotedDown=$isVotedDown, isVotedUp=$isVotedUp, hasChildren=$hasChildren, nestedChildrenCount=$nestedChildrenCount, childCount=$childCount, children=$children, isFlagged=$isFlagged, isBlocked=$isBlocked]';

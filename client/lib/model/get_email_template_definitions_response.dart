@@ -24,13 +24,15 @@ class GetEmailTemplateDefinitionsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetEmailTemplateDefinitionsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.definitions, definitions);
+      _deepEquality.equals(other.definitions, definitions);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (definitions.hashCode);
+      (definitions.hashCode);
+  
 
   @override
   String toString() => 'GetEmailTemplateDefinitionsResponse[status=$status, definitions=$definitions]';

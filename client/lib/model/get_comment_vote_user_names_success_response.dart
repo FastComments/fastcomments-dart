@@ -27,15 +27,17 @@ class GetCommentVoteUserNamesSuccessResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetCommentVoteUserNamesSuccessResponse &&
     other.status == status &&
-    _deepEquality.equals(other.voteUserNames, voteUserNames) &&
-    other.hasMore == hasMore;
+      _deepEquality.equals(other.voteUserNames, voteUserNames) &&
+      other.hasMore == hasMore;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (voteUserNames.hashCode) +
-    (hasMore.hashCode);
+      (voteUserNames.hashCode) +
+      (hasMore.hashCode);
+  
 
   @override
   String toString() => 'GetCommentVoteUserNamesSuccessResponse[status=$status, voteUserNames=$voteUserNames, hasMore=$hasMore]';

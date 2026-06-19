@@ -72,25 +72,27 @@ class APIUserSubscription {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIUserSubscription &&
     other.notificationFrequency == notificationFrequency &&
-    other.createdAt == createdAt &&
-    other.pageTitle == pageTitle &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId &&
-    other.id == id;
+      other.createdAt == createdAt &&
+      other.pageTitle == pageTitle &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.anonUserId == anonUserId &&
+      other.userId == userId &&
+      other.id == id;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (notificationFrequency == null ? 0 : notificationFrequency!.hashCode) +
-    (createdAt.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (urlId.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (id.hashCode);
+      (createdAt.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (urlId.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (id.hashCode);
+  
 
   @override
   String toString() => 'APIUserSubscription[notificationFrequency=$notificationFrequency, createdAt=$createdAt, pageTitle=$pageTitle, url=$url, urlId=$urlId, anonUserId=$anonUserId, userId=$userId, id=$id]';

@@ -57,19 +57,21 @@ class FlagCommentResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FlagCommentResponse &&
     other.statusCode == statusCode &&
-    other.status == status &&
-    other.code == code &&
-    other.reason == reason &&
-    other.wasUnapproved == wasUnapproved;
+      other.status == status &&
+      other.code == code &&
+      other.reason == reason &&
+      other.wasUnapproved == wasUnapproved;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (statusCode == null ? 0 : statusCode!.hashCode) +
-    (status.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (reason == null ? 0 : reason!.hashCode) +
-    (wasUnapproved == null ? 0 : wasUnapproved!.hashCode);
+      (status.hashCode) +
+      (code == null ? 0 : code!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (wasUnapproved == null ? 0 : wasUnapproved!.hashCode);
+  
 
   @override
   String toString() => 'FlagCommentResponse[statusCode=$statusCode, status=$status, code=$code, reason=$reason, wasUnapproved=$wasUnapproved]';

@@ -24,13 +24,15 @@ class APIGetUserBadgeProgressResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIGetUserBadgeProgressResponse &&
     other.status == status &&
-    other.userBadgeProgress == userBadgeProgress;
+      other.userBadgeProgress == userBadgeProgress;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (userBadgeProgress.hashCode);
+      (userBadgeProgress.hashCode);
+  
 
   @override
   String toString() => 'APIGetUserBadgeProgressResponse[status=$status, userBadgeProgress=$userBadgeProgress]';

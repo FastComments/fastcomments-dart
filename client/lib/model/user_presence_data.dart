@@ -45,15 +45,17 @@ class UserPresenceData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserPresenceData &&
     other.urlIdWS == urlIdWS &&
-    other.userIdWS == userIdWS &&
-    other.tenantIdWS == tenantIdWS;
+      other.userIdWS == userIdWS &&
+      other.tenantIdWS == tenantIdWS;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (urlIdWS == null ? 0 : urlIdWS!.hashCode) +
-    (userIdWS == null ? 0 : userIdWS!.hashCode) +
-    (tenantIdWS == null ? 0 : tenantIdWS!.hashCode);
+      (userIdWS == null ? 0 : userIdWS!.hashCode) +
+      (tenantIdWS == null ? 0 : tenantIdWS!.hashCode);
+  
 
   @override
   String toString() => 'UserPresenceData[urlIdWS=$urlIdWS, userIdWS=$userIdWS, tenantIdWS=$tenantIdWS]';

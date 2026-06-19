@@ -30,13 +30,15 @@ class SpamRule {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SpamRule &&
     _deepEquality.equals(other.actions, actions) &&
-    other.commentContains == commentContains;
+      other.commentContains == commentContains;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (actions.hashCode) +
-    (commentContains == null ? 0 : commentContains!.hashCode);
+      (commentContains == null ? 0 : commentContains!.hashCode);
+  
 
   @override
   String toString() => 'SpamRule[actions=$actions, commentContains=$commentContains]';

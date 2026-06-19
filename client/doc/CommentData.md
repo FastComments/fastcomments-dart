@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **fromOfflineRestore** | **bool** |  | [optional] 
 **autoplayDelayMS** | **int** |  | [optional] 
 **feedbackIds** | **List<String>** |  | [optional] [default to const []]
-**questionValues** | [**Map<String, RecordStringStringOrNumberValue>**](RecordStringStringOrNumberValue.md) | Construct a type with a set of properties K of type T | [optional] [default to const {}]
+**questionValues** | [**Map<String, GifSearchResponseImagesInnerInner>**](GifSearchResponseImagesInnerInner.md) | Construct a type with a set of properties K of type T | [optional] [default to const {}]
 **tos** | **bool** |  | [optional] 
 **botId** | **String** |  | [optional] 
 

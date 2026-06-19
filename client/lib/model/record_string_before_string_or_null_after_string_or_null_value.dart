@@ -24,13 +24,15 @@ class RecordStringBeforeStringOrNullAfterStringOrNullValue {
   @override
   bool operator ==(Object other) => identical(this, other) || other is RecordStringBeforeStringOrNullAfterStringOrNullValue &&
     other.after == after &&
-    other.before == before;
+      other.before == before;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (after == null ? 0 : after!.hashCode) +
-    (before == null ? 0 : before!.hashCode);
+      (before == null ? 0 : before!.hashCode);
+  
 
   @override
   String toString() => 'RecordStringBeforeStringOrNullAfterStringOrNullValue[after=$after, before=$before]';

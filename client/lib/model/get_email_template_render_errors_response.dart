@@ -24,13 +24,15 @@ class GetEmailTemplateRenderErrorsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetEmailTemplateRenderErrorsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.renderErrors, renderErrors);
+      _deepEquality.equals(other.renderErrors, renderErrors);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (renderErrors.hashCode);
+      (renderErrors.hashCode);
+  
 
   @override
   String toString() => 'GetEmailTemplateRenderErrorsResponse[status=$status, renderErrors=$renderErrors]';

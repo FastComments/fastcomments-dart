@@ -22,6 +22,7 @@ class HeaderAccountNotification {
     required this.linkUrl,
     required this.linkText,
     required this.createdAt,
+    this.type,
   });
 
   String id;
@@ -44,33 +45,40 @@ class HeaderAccountNotification {
 
   DateTime createdAt;
 
+  /// Discriminator for notifications with a special layout/click handler (e.g. \"feedback-offer\").
+  String? type;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is HeaderAccountNotification &&
     other.id == id &&
-    other.title == title &&
-    other.message == message &&
-    _deepEquality.equals(other.messagesByLocale, messagesByLocale) &&
-    _deepEquality.equals(other.dates, dates) &&
-    other.severity == severity &&
-    other.linkUrl == linkUrl &&
-    other.linkText == linkText &&
-    other.createdAt == createdAt;
+      other.title == title &&
+      other.message == message &&
+      _deepEquality.equals(other.messagesByLocale, messagesByLocale) &&
+      _deepEquality.equals(other.dates, dates) &&
+      other.severity == severity &&
+      other.linkUrl == linkUrl &&
+      other.linkText == linkText &&
+      other.createdAt == createdAt &&
+      other.type == type;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (title.hashCode) +
-    (message.hashCode) +
-    (messagesByLocale == null ? 0 : messagesByLocale!.hashCode) +
-    (dates == null ? 0 : dates!.hashCode) +
-    (severity.hashCode) +
-    (linkUrl == null ? 0 : linkUrl!.hashCode) +
-    (linkText == null ? 0 : linkText!.hashCode) +
-    (createdAt.hashCode);
+      (title.hashCode) +
+      (message.hashCode) +
+      (messagesByLocale == null ? 0 : messagesByLocale!.hashCode) +
+      (dates == null ? 0 : dates!.hashCode) +
+      (severity.hashCode) +
+      (linkUrl == null ? 0 : linkUrl!.hashCode) +
+      (linkText == null ? 0 : linkText!.hashCode) +
+      (createdAt.hashCode) +
+      (type == null ? 0 : type!.hashCode);
+  
 
   @override
-  String toString() => 'HeaderAccountNotification[id=$id, title=$title, message=$message, messagesByLocale=$messagesByLocale, dates=$dates, severity=$severity, linkUrl=$linkUrl, linkText=$linkText, createdAt=$createdAt]';
+  String toString() => 'HeaderAccountNotification[id=$id, title=$title, message=$message, messagesByLocale=$messagesByLocale, dates=$dates, severity=$severity, linkUrl=$linkUrl, linkText=$linkText, createdAt=$createdAt, type=$type]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -99,6 +107,11 @@ class HeaderAccountNotification {
       json[r'linkText'] = null;
     }
       json[r'createdAt'] = this.createdAt.toUtc().toIso8601String();
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
+    }
     return json;
   }
 
@@ -140,6 +153,7 @@ class HeaderAccountNotification {
         linkUrl: mapValueOfType<String>(json, r'linkUrl'),
         linkText: mapValueOfType<String>(json, r'linkText'),
         createdAt: mapDateTime(json, r'createdAt', r'')!,
+        type: mapValueOfType<String>(json, r'type'),
       );
     }
     return null;

@@ -45,27 +45,29 @@ class CommentUserBadgeInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentUserBadgeInfo &&
     other.id == id &&
-    other.type == type &&
-    other.description == description &&
-    other.displayLabel == displayLabel &&
-    other.displaySrc == displaySrc &&
-    other.backgroundColor == backgroundColor &&
-    other.borderColor == borderColor &&
-    other.textColor == textColor &&
-    other.cssClass == cssClass;
+      other.type == type &&
+      other.description == description &&
+      other.displayLabel == displayLabel &&
+      other.displaySrc == displaySrc &&
+      other.backgroundColor == backgroundColor &&
+      other.borderColor == borderColor &&
+      other.textColor == textColor &&
+      other.cssClass == cssClass;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (type.hashCode) +
-    (description.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (displaySrc == null ? 0 : displaySrc!.hashCode) +
-    (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
-    (borderColor == null ? 0 : borderColor!.hashCode) +
-    (textColor == null ? 0 : textColor!.hashCode) +
-    (cssClass == null ? 0 : cssClass!.hashCode);
+      (type.hashCode) +
+      (description.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (displaySrc == null ? 0 : displaySrc!.hashCode) +
+      (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
+      (borderColor == null ? 0 : borderColor!.hashCode) +
+      (textColor == null ? 0 : textColor!.hashCode) +
+      (cssClass == null ? 0 : cssClass!.hashCode);
+  
 
   @override
   String toString() => 'CommentUserBadgeInfo[id=$id, type=$type, description=$description, displayLabel=$displayLabel, displaySrc=$displaySrc, backgroundColor=$backgroundColor, borderColor=$borderColor, textColor=$textColor, cssClass=$cssClass]';

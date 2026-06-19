@@ -21,11 +21,13 @@ class ChangeTicketStateBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ChangeTicketStateBody &&
     other.state == state;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (state.hashCode);
+  
 
   @override
   String toString() => 'ChangeTicketStateBody[state=$state]';

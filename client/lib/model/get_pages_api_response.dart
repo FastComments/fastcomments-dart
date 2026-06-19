@@ -42,17 +42,19 @@ class GetPagesAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPagesAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    _deepEquality.equals(other.pages, pages) &&
-    other.status == status;
+      other.code == code &&
+      _deepEquality.equals(other.pages, pages) &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (pages.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (pages.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetPagesAPIResponse[reason=$reason, code=$code, pages=$pages, status=$status]';

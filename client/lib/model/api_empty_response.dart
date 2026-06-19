@@ -21,11 +21,13 @@ class APIEmptyResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIEmptyResponse &&
     other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode);
+  
 
   @override
   String toString() => 'APIEmptyResponse[status=$status]';

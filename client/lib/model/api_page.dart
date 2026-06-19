@@ -57,27 +57,29 @@ class APIPage {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIPage &&
     other.isClosed == isClosed &&
-    _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
-    other.rootCommentCount == rootCommentCount &&
-    other.commentCount == commentCount &&
-    other.createdAt == createdAt &&
-    other.title == title &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.id == id;
+      _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
+      other.rootCommentCount == rootCommentCount &&
+      other.commentCount == commentCount &&
+      other.createdAt == createdAt &&
+      other.title == title &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.id == id;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (isClosed == null ? 0 : isClosed!.hashCode) +
-    (accessibleByGroupIds.hashCode) +
-    (rootCommentCount.hashCode) +
-    (commentCount.hashCode) +
-    (createdAt.hashCode) +
-    (title.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (urlId.hashCode) +
-    (id.hashCode);
+      (accessibleByGroupIds.hashCode) +
+      (rootCommentCount.hashCode) +
+      (commentCount.hashCode) +
+      (createdAt.hashCode) +
+      (title.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (urlId.hashCode) +
+      (id.hashCode);
+  
 
   @override
   String toString() => 'APIPage[isClosed=$isClosed, accessibleByGroupIds=$accessibleByGroupIds, rootCommentCount=$rootCommentCount, commentCount=$commentCount, createdAt=$createdAt, title=$title, url=$url, urlId=$urlId, id=$id]';

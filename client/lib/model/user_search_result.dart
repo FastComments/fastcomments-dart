@@ -39,19 +39,21 @@ class UserSearchResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserSearchResult &&
     other.id == id &&
-    other.name == name &&
-    other.displayName == displayName &&
-    other.avatarSrc == avatarSrc &&
-    other.type == type;
+      other.name == name &&
+      other.displayName == displayName &&
+      other.avatarSrc == avatarSrc &&
+      other.type == type;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (name.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (type.hashCode);
+      (name.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (type.hashCode);
+  
 
   @override
   String toString() => 'UserSearchResult[id=$id, name=$name, displayName=$displayName, avatarSrc=$avatarSrc, type=$type]';

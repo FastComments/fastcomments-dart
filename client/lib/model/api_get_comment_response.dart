@@ -24,13 +24,15 @@ class APIGetCommentResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIGetCommentResponse &&
     other.status == status &&
-    other.comment == comment;
+      other.comment == comment;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (comment.hashCode);
+      (comment.hashCode);
+  
 
   @override
   String toString() => 'APIGetCommentResponse[status=$status, comment=$comment]';

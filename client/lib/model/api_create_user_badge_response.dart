@@ -27,15 +27,17 @@ class APICreateUserBadgeResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APICreateUserBadgeResponse &&
     other.status == status &&
-    other.userBadge == userBadge &&
-    _deepEquality.equals(other.notes, notes);
+      other.userBadge == userBadge &&
+      _deepEquality.equals(other.notes, notes);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (userBadge.hashCode) +
-    (notes.hashCode);
+      (userBadge.hashCode) +
+      (notes.hashCode);
+  
 
   @override
   String toString() => 'APICreateUserBadgeResponse[status=$status, userBadge=$userBadge, notes=$notes]';

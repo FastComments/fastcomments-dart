@@ -72,25 +72,27 @@ class APIError {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIError &&
     other.status == status &&
-    other.reason == reason &&
-    other.code == code &&
-    other.secondaryCode == secondaryCode &&
-    other.bannedUntil == bannedUntil &&
-    other.maxCharacterLength == maxCharacterLength &&
-    other.translatedError == translatedError &&
-    other.customConfig == customConfig;
+      other.reason == reason &&
+      other.code == code &&
+      other.secondaryCode == secondaryCode &&
+      other.bannedUntil == bannedUntil &&
+      other.maxCharacterLength == maxCharacterLength &&
+      other.translatedError == translatedError &&
+      other.customConfig == customConfig;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (reason.hashCode) +
-    (code.hashCode) +
-    (secondaryCode == null ? 0 : secondaryCode!.hashCode) +
-    (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
-    (maxCharacterLength == null ? 0 : maxCharacterLength!.hashCode) +
-    (translatedError == null ? 0 : translatedError!.hashCode) +
-    (customConfig == null ? 0 : customConfig!.hashCode);
+      (reason.hashCode) +
+      (code.hashCode) +
+      (secondaryCode == null ? 0 : secondaryCode!.hashCode) +
+      (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
+      (maxCharacterLength == null ? 0 : maxCharacterLength!.hashCode) +
+      (translatedError == null ? 0 : translatedError!.hashCode) +
+      (customConfig == null ? 0 : customConfig!.hashCode);
+  
 
   @override
   String toString() => 'APIError[status=$status, reason=$reason, code=$code, secondaryCode=$secondaryCode, bannedUntil=$bannedUntil, maxCharacterLength=$maxCharacterLength, translatedError=$translatedError, customConfig=$customConfig]';

@@ -21,11 +21,13 @@ class VoteResponseUser {
   @override
   bool operator ==(Object other) => identical(this, other) || other is VoteResponseUser &&
     other.sessionId == sessionId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (sessionId == null ? 0 : sessionId!.hashCode);
+  
 
   @override
   String toString() => 'VoteResponseUser[sessionId=$sessionId]';

@@ -48,21 +48,23 @@ class CreateAPIPageData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateAPIPageData &&
     _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
-    other.rootCommentCount == rootCommentCount &&
-    other.commentCount == commentCount &&
-    other.title == title &&
-    other.url == url &&
-    other.urlId == urlId;
+      other.rootCommentCount == rootCommentCount &&
+      other.commentCount == commentCount &&
+      other.title == title &&
+      other.url == url &&
+      other.urlId == urlId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (accessibleByGroupIds.hashCode) +
-    (rootCommentCount == null ? 0 : rootCommentCount!.hashCode) +
-    (commentCount == null ? 0 : commentCount!.hashCode) +
-    (title.hashCode) +
-    (url.hashCode) +
-    (urlId.hashCode);
+      (rootCommentCount == null ? 0 : rootCommentCount!.hashCode) +
+      (commentCount == null ? 0 : commentCount!.hashCode) +
+      (title.hashCode) +
+      (url.hashCode) +
+      (urlId.hashCode);
+  
 
   @override
   String toString() => 'CreateAPIPageData[accessibleByGroupIds=$accessibleByGroupIds, rootCommentCount=$rootCommentCount, commentCount=$commentCount, title=$title, url=$url, urlId=$urlId]';

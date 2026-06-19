@@ -40,15 +40,17 @@ class TOSConfig {
   @override
   bool operator ==(Object other) => identical(this, other) || other is TOSConfig &&
     other.enabled == enabled &&
-    _deepEquality.equals(other.textByLocale, textByLocale) &&
-    other.lastUpdated == lastUpdated;
+      _deepEquality.equals(other.textByLocale, textByLocale) &&
+      other.lastUpdated == lastUpdated;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (enabled == null ? 0 : enabled!.hashCode) +
-    (textByLocale.hashCode) +
-    (lastUpdated == null ? 0 : lastUpdated!.hashCode);
+      (textByLocale.hashCode) +
+      (lastUpdated == null ? 0 : lastUpdated!.hashCode);
+  
 
   @override
   String toString() => 'TOSConfig[enabled=$enabled, textByLocale=$textByLocale, lastUpdated=$lastUpdated]';

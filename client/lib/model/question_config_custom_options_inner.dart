@@ -24,13 +24,15 @@ class QuestionConfigCustomOptionsInner {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionConfigCustomOptionsInner &&
     other.imageSrc == imageSrc &&
-    other.name == name;
+      other.name == name;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (imageSrc.hashCode) +
-    (name.hashCode);
+      (name.hashCode);
+  
 
   @override
   String toString() => 'QuestionConfigCustomOptionsInner[imageSrc=$imageSrc, name=$name]';

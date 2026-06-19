@@ -24,13 +24,15 @@ class ResetUserNotificationsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ResetUserNotificationsResponse &&
     other.status == status &&
-    other.code == code;
+      other.code == code;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (code == null ? 0 : code!.hashCode);
+      (code == null ? 0 : code!.hashCode);
+  
 
   @override
   String toString() => 'ResetUserNotificationsResponse[status=$status, code=$code]';

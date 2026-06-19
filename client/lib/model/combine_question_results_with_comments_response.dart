@@ -24,13 +24,15 @@ class CombineQuestionResultsWithCommentsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CombineQuestionResultsWithCommentsResponse &&
     other.status == status &&
-    other.data == data;
+      other.data == data;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (data.hashCode);
+      (data.hashCode);
+  
 
   @override
   String toString() => 'CombineQuestionResultsWithCommentsResponse[status=$status, data=$data]';

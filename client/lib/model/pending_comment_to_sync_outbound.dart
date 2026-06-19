@@ -69,35 +69,37 @@ class PendingCommentToSyncOutbound {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PendingCommentToSyncOutbound &&
     other.id == id &&
-    other.commentId == commentId &&
-    other.comment == comment &&
-    other.externalId == externalId &&
-    other.createdAt == createdAt &&
-    other.tenantId == tenantId &&
-    other.attemptCount == attemptCount &&
-    other.nextAttemptAt == nextAttemptAt &&
-    other.eventType == eventType &&
-    other.type == type &&
-    other.domain == domain &&
-    other.lastError == lastError &&
-    other.webhookId == webhookId;
+      other.commentId == commentId &&
+      other.comment == comment &&
+      other.externalId == externalId &&
+      other.createdAt == createdAt &&
+      other.tenantId == tenantId &&
+      other.attemptCount == attemptCount &&
+      other.nextAttemptAt == nextAttemptAt &&
+      other.eventType == eventType &&
+      other.type == type &&
+      other.domain == domain &&
+      other.lastError == lastError &&
+      other.webhookId == webhookId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (commentId.hashCode) +
-    (comment == null ? 0 : comment!.hashCode) +
-    (externalId == null ? 0 : externalId!.hashCode) +
-    (createdAt.hashCode) +
-    (tenantId.hashCode) +
-    (attemptCount.hashCode) +
-    (nextAttemptAt.hashCode) +
-    (eventType.hashCode) +
-    (type.hashCode) +
-    (domain.hashCode) +
-    (lastError.hashCode) +
-    (webhookId == null ? 0 : webhookId!.hashCode);
+      (commentId.hashCode) +
+      (comment == null ? 0 : comment!.hashCode) +
+      (externalId == null ? 0 : externalId!.hashCode) +
+      (createdAt.hashCode) +
+      (tenantId.hashCode) +
+      (attemptCount.hashCode) +
+      (nextAttemptAt.hashCode) +
+      (eventType.hashCode) +
+      (type.hashCode) +
+      (domain.hashCode) +
+      (lastError.hashCode) +
+      (webhookId == null ? 0 : webhookId!.hashCode);
+  
 
   @override
   String toString() => 'PendingCommentToSyncOutbound[id=$id, commentId=$commentId, comment=$comment, externalId=$externalId, createdAt=$createdAt, tenantId=$tenantId, attemptCount=$attemptCount, nextAttemptAt=$nextAttemptAt, eventType=$eventType, type=$type, domain=$domain, lastError=$lastError, webhookId=$webhookId]';

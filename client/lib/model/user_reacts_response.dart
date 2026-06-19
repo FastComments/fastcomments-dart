@@ -24,13 +24,15 @@ class UserReactsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserReactsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.reacts, reacts);
+      _deepEquality.equals(other.reacts, reacts);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (reacts.hashCode);
+      (reacts.hashCode);
+  
 
   @override
   String toString() => 'UserReactsResponse[status=$status, reacts=$reacts]';
@@ -62,7 +64,7 @@ class UserReactsResponse {
 
       return UserReactsResponse(
         status: APIStatus.fromJson(json[r'status'])!,
-        reacts: mapCastOfType<String, dynamic>(json, r'reacts')!,
+        reacts: ((json[r'reacts'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, bool>())))!,
       );
     }
     return null;

@@ -39,23 +39,25 @@ class EmailTemplateRenderErrorResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is EmailTemplateRenderErrorResponse &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.customTemplateId == customTemplateId &&
-    other.error == error &&
-    other.count == count &&
-    other.createdAt == createdAt &&
-    other.lastOccurredAt == lastOccurredAt;
+      other.tenantId == tenantId &&
+      other.customTemplateId == customTemplateId &&
+      other.error == error &&
+      other.count == count &&
+      other.createdAt == createdAt &&
+      other.lastOccurredAt == lastOccurredAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (customTemplateId.hashCode) +
-    (error.hashCode) +
-    (count.hashCode) +
-    (createdAt.hashCode) +
-    (lastOccurredAt.hashCode);
+      (tenantId.hashCode) +
+      (customTemplateId.hashCode) +
+      (error.hashCode) +
+      (count.hashCode) +
+      (createdAt.hashCode) +
+      (lastOccurredAt.hashCode);
+  
 
   @override
   String toString() => 'EmailTemplateRenderErrorResponse[id=$id, tenantId=$tenantId, customTemplateId=$customTemplateId, error=$error, count=$count, createdAt=$createdAt, lastOccurredAt=$lastOccurredAt]';

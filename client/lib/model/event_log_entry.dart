@@ -36,21 +36,23 @@ class EventLogEntry {
   @override
   bool operator ==(Object other) => identical(this, other) || other is EventLogEntry &&
     other.id == id &&
-    other.createdAt == createdAt &&
-    other.tenantId == tenantId &&
-    other.urlId == urlId &&
-    other.broadcastId == broadcastId &&
-    other.data == data;
+      other.createdAt == createdAt &&
+      other.tenantId == tenantId &&
+      other.urlId == urlId &&
+      other.broadcastId == broadcastId &&
+      other.data == data;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (createdAt.hashCode) +
-    (tenantId.hashCode) +
-    (urlId.hashCode) +
-    (broadcastId.hashCode) +
-    (data.hashCode);
+      (createdAt.hashCode) +
+      (tenantId.hashCode) +
+      (urlId.hashCode) +
+      (broadcastId.hashCode) +
+      (data.hashCode);
+  
 
   @override
   String toString() => 'EventLogEntry[id=$id, createdAt=$createdAt, tenantId=$tenantId, urlId=$urlId, broadcastId=$broadcastId, data=$data]';

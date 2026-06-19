@@ -24,13 +24,15 @@ class GetPendingWebhookEventsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPendingWebhookEventsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.pendingWebhookEvents, pendingWebhookEvents);
+      _deepEquality.equals(other.pendingWebhookEvents, pendingWebhookEvents);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (pendingWebhookEvents.hashCode);
+      (pendingWebhookEvents.hashCode);
+  
 
   @override
   String toString() => 'GetPendingWebhookEventsResponse[status=$status, pendingWebhookEvents=$pendingWebhookEvents]';

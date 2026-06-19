@@ -50,25 +50,27 @@ class BillingInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BillingInfo &&
     other.name == name &&
-    other.address == address &&
-    other.city == city &&
-    other.state == state &&
-    other.zip == zip &&
-    other.country == country &&
-    other.currency == currency &&
-    other.email == email;
+      other.address == address &&
+      other.city == city &&
+      other.state == state &&
+      other.zip == zip &&
+      other.country == country &&
+      other.currency == currency &&
+      other.email == email;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (address.hashCode) +
-    (city.hashCode) +
-    (state.hashCode) +
-    (zip.hashCode) +
-    (country.hashCode) +
-    (currency == null ? 0 : currency!.hashCode) +
-    (email == null ? 0 : email!.hashCode);
+      (address.hashCode) +
+      (city.hashCode) +
+      (state.hashCode) +
+      (zip.hashCode) +
+      (country.hashCode) +
+      (currency == null ? 0 : currency!.hashCode) +
+      (email == null ? 0 : email!.hashCode);
+  
 
   @override
   String toString() => 'BillingInfo[name=$name, address=$address, city=$city, state=$state, zip=$zip, country=$country, currency=$currency, email=$email]';

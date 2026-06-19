@@ -45,27 +45,29 @@ class PubSubVote {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PubSubVote &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.urlId == urlId &&
-    other.urlIdRaw == urlIdRaw &&
-    other.commentId == commentId &&
-    other.userId == userId &&
-    other.direction == direction &&
-    other.createdAt == createdAt &&
-    other.verificationId == verificationId;
+      other.tenantId == tenantId &&
+      other.urlId == urlId &&
+      other.urlIdRaw == urlIdRaw &&
+      other.commentId == commentId &&
+      other.userId == userId &&
+      other.direction == direction &&
+      other.createdAt == createdAt &&
+      other.verificationId == verificationId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (urlId.hashCode) +
-    (urlIdRaw.hashCode) +
-    (commentId.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (direction.hashCode) +
-    (createdAt.hashCode) +
-    (verificationId == null ? 0 : verificationId!.hashCode);
+      (tenantId.hashCode) +
+      (urlId.hashCode) +
+      (urlIdRaw.hashCode) +
+      (commentId.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (direction.hashCode) +
+      (createdAt.hashCode) +
+      (verificationId == null ? 0 : verificationId!.hashCode);
+  
 
   @override
   String toString() => 'PubSubVote[id=$id, tenantId=$tenantId, urlId=$urlId, urlIdRaw=$urlIdRaw, commentId=$commentId, userId=$userId, direction=$direction, createdAt=$createdAt, verificationId=$verificationId]';

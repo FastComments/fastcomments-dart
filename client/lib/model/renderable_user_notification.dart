@@ -99,51 +99,53 @@ class RenderableUserNotification {
   @override
   bool operator ==(Object other) => identical(this, other) || other is RenderableUserNotification &&
     other.conversationId == conversationId &&
-    other.contextHTML == contextHTML &&
-    _deepEquality.equals(other.fromUserNames, fromUserNames) &&
-    _deepEquality.equals(other.fromUserIds, fromUserIds) &&
-    _deepEquality.equals(other.relatedIds, relatedIds) &&
-    other.count == count &&
-    other.optedOut == optedOut &&
-    other.fromUserAvatarSrc == fromUserAvatarSrc &&
-    other.fromUserId == fromUserId &&
-    other.fromUserName == fromUserName &&
-    other.fromCommentId == fromCommentId &&
-    other.type == type &&
-    other.createdAt == createdAt &&
-    other.sent == sent &&
-    other.viewed == viewed &&
-    other.relatedObjectId == relatedObjectId &&
-    other.relatedObjectType == relatedObjectType &&
-    other.pageTitle == pageTitle &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.id == id;
+      other.contextHTML == contextHTML &&
+      _deepEquality.equals(other.fromUserNames, fromUserNames) &&
+      _deepEquality.equals(other.fromUserIds, fromUserIds) &&
+      _deepEquality.equals(other.relatedIds, relatedIds) &&
+      other.count == count &&
+      other.optedOut == optedOut &&
+      other.fromUserAvatarSrc == fromUserAvatarSrc &&
+      other.fromUserId == fromUserId &&
+      other.fromUserName == fromUserName &&
+      other.fromCommentId == fromCommentId &&
+      other.type == type &&
+      other.createdAt == createdAt &&
+      other.sent == sent &&
+      other.viewed == viewed &&
+      other.relatedObjectId == relatedObjectId &&
+      other.relatedObjectType == relatedObjectType &&
+      other.pageTitle == pageTitle &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.id == id;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (conversationId == null ? 0 : conversationId!.hashCode) +
-    (contextHTML == null ? 0 : contextHTML!.hashCode) +
-    (fromUserNames.hashCode) +
-    (fromUserIds.hashCode) +
-    (relatedIds.hashCode) +
-    (count == null ? 0 : count!.hashCode) +
-    (optedOut.hashCode) +
-    (fromUserAvatarSrc == null ? 0 : fromUserAvatarSrc!.hashCode) +
-    (fromUserId == null ? 0 : fromUserId!.hashCode) +
-    (fromUserName == null ? 0 : fromUserName!.hashCode) +
-    (fromCommentId == null ? 0 : fromCommentId!.hashCode) +
-    (type.hashCode) +
-    (createdAt.hashCode) +
-    (sent.hashCode) +
-    (viewed.hashCode) +
-    (relatedObjectId.hashCode) +
-    (relatedObjectType.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (url.hashCode) +
-    (urlId.hashCode) +
-    (id.hashCode);
+      (contextHTML == null ? 0 : contextHTML!.hashCode) +
+      (fromUserNames.hashCode) +
+      (fromUserIds.hashCode) +
+      (relatedIds.hashCode) +
+      (count == null ? 0 : count!.hashCode) +
+      (optedOut.hashCode) +
+      (fromUserAvatarSrc == null ? 0 : fromUserAvatarSrc!.hashCode) +
+      (fromUserId == null ? 0 : fromUserId!.hashCode) +
+      (fromUserName == null ? 0 : fromUserName!.hashCode) +
+      (fromCommentId == null ? 0 : fromCommentId!.hashCode) +
+      (type.hashCode) +
+      (createdAt.hashCode) +
+      (sent.hashCode) +
+      (viewed.hashCode) +
+      (relatedObjectId.hashCode) +
+      (relatedObjectType.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (url.hashCode) +
+      (urlId.hashCode) +
+      (id.hashCode);
+  
 
   @override
   String toString() => 'RenderableUserNotification[conversationId=$conversationId, contextHTML=$contextHTML, fromUserNames=$fromUserNames, fromUserIds=$fromUserIds, relatedIds=$relatedIds, count=$count, optedOut=$optedOut, fromUserAvatarSrc=$fromUserAvatarSrc, fromUserId=$fromUserId, fromUserName=$fromUserName, fromCommentId=$fromCommentId, type=$type, createdAt=$createdAt, sent=$sent, viewed=$viewed, relatedObjectId=$relatedObjectId, relatedObjectType=$relatedObjectType, pageTitle=$pageTitle, url=$url, urlId=$urlId, id=$id]';

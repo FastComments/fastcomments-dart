@@ -25,13 +25,15 @@ class BulkAggregateQuestionResultsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkAggregateQuestionResultsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.data, data);
+      _deepEquality.equals(other.data, data);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (data.hashCode);
+      (data.hashCode);
+  
 
   @override
   String toString() => 'BulkAggregateQuestionResultsResponse[status=$status, data=$data]';

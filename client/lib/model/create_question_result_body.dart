@@ -57,23 +57,25 @@ class CreateQuestionResultBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateQuestionResultBody &&
     other.urlId == urlId &&
-    other.value == value &&
-    other.questionId == questionId &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId &&
-    other.commentId == commentId &&
-    _deepEquality.equals(other.meta, meta);
+      other.value == value &&
+      other.questionId == questionId &&
+      other.anonUserId == anonUserId &&
+      other.userId == userId &&
+      other.commentId == commentId &&
+      _deepEquality.equals(other.meta, meta);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (urlId.hashCode) +
-    (value.hashCode) +
-    (questionId.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (commentId == null ? 0 : commentId!.hashCode) +
-    (meta == null ? 0 : meta!.hashCode);
+      (value.hashCode) +
+      (questionId.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (commentId == null ? 0 : commentId!.hashCode) +
+      (meta == null ? 0 : meta!.hashCode);
+  
 
   @override
   String toString() => 'CreateQuestionResultBody[urlId=$urlId, value=$value, questionId=$questionId, anonUserId=$anonUserId, userId=$userId, commentId=$commentId, meta=$meta]';

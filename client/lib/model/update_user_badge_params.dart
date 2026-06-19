@@ -27,11 +27,13 @@ class UpdateUserBadgeParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateUserBadgeParams &&
     other.displayedOnComments == displayedOnComments;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (displayedOnComments == null ? 0 : displayedOnComments!.hashCode);
+  
 
   @override
   String toString() => 'UpdateUserBadgeParams[displayedOnComments=$displayedOnComments]';

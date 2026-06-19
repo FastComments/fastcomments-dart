@@ -193,65 +193,67 @@ class APITenant {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITenant &&
     other.id == id &&
-    other.name == name &&
-    other.email == email &&
-    other.signUpDate == signUpDate &&
-    other.packageId == packageId &&
-    other.paymentFrequency == paymentFrequency &&
-    other.billingInfoValid == billingInfoValid &&
-    other.billingHandledExternally == billingHandledExternally &&
-    other.createdBy == createdBy &&
-    other.isSetup == isSetup &&
-    _deepEquality.equals(other.domainConfiguration, domainConfiguration) &&
-    other.billingInfo == billingInfo &&
-    other.stripeCustomerId == stripeCustomerId &&
-    other.stripeSubscriptionId == stripeSubscriptionId &&
-    other.stripePlanId == stripePlanId &&
-    other.enableProfanityFilter == enableProfanityFilter &&
-    other.enableSpamFilter == enableSpamFilter &&
-    other.lastBillingIssueReminderDate == lastBillingIssueReminderDate &&
-    other.removeUnverifiedComments == removeUnverifiedComments &&
-    other.unverifiedCommentsTTLms == unverifiedCommentsTTLms &&
-    other.commentsRequireApproval == commentsRequireApproval &&
-    other.autoApproveCommentOnVerification == autoApproveCommentOnVerification &&
-    other.sendProfaneToSpam == sendProfaneToSpam &&
-    other.hasFlexPricing == hasFlexPricing &&
-    other.hasAuditing == hasAuditing &&
-    other.flexLastBilledAmount == flexLastBilledAmount &&
-    other.deAnonIpAddr == deAnonIpAddr &&
-    _deepEquality.equals(other.meta, meta);
+      other.name == name &&
+      other.email == email &&
+      other.signUpDate == signUpDate &&
+      other.packageId == packageId &&
+      other.paymentFrequency == paymentFrequency &&
+      other.billingInfoValid == billingInfoValid &&
+      other.billingHandledExternally == billingHandledExternally &&
+      other.createdBy == createdBy &&
+      other.isSetup == isSetup &&
+      _deepEquality.equals(other.domainConfiguration, domainConfiguration) &&
+      other.billingInfo == billingInfo &&
+      other.stripeCustomerId == stripeCustomerId &&
+      other.stripeSubscriptionId == stripeSubscriptionId &&
+      other.stripePlanId == stripePlanId &&
+      other.enableProfanityFilter == enableProfanityFilter &&
+      other.enableSpamFilter == enableSpamFilter &&
+      other.lastBillingIssueReminderDate == lastBillingIssueReminderDate &&
+      other.removeUnverifiedComments == removeUnverifiedComments &&
+      other.unverifiedCommentsTTLms == unverifiedCommentsTTLms &&
+      other.commentsRequireApproval == commentsRequireApproval &&
+      other.autoApproveCommentOnVerification == autoApproveCommentOnVerification &&
+      other.sendProfaneToSpam == sendProfaneToSpam &&
+      other.hasFlexPricing == hasFlexPricing &&
+      other.hasAuditing == hasAuditing &&
+      other.flexLastBilledAmount == flexLastBilledAmount &&
+      other.deAnonIpAddr == deAnonIpAddr &&
+      _deepEquality.equals(other.meta, meta);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (name.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (signUpDate.hashCode) +
-    (packageId.hashCode) +
-    (paymentFrequency.hashCode) +
-    (billingInfoValid.hashCode) +
-    (billingHandledExternally == null ? 0 : billingHandledExternally!.hashCode) +
-    (createdBy.hashCode) +
-    (isSetup.hashCode) +
-    (domainConfiguration.hashCode) +
-    (billingInfo == null ? 0 : billingInfo!.hashCode) +
-    (stripeCustomerId == null ? 0 : stripeCustomerId!.hashCode) +
-    (stripeSubscriptionId == null ? 0 : stripeSubscriptionId!.hashCode) +
-    (stripePlanId == null ? 0 : stripePlanId!.hashCode) +
-    (enableProfanityFilter.hashCode) +
-    (enableSpamFilter.hashCode) +
-    (lastBillingIssueReminderDate == null ? 0 : lastBillingIssueReminderDate!.hashCode) +
-    (removeUnverifiedComments == null ? 0 : removeUnverifiedComments!.hashCode) +
-    (unverifiedCommentsTTLms == null ? 0 : unverifiedCommentsTTLms!.hashCode) +
-    (commentsRequireApproval == null ? 0 : commentsRequireApproval!.hashCode) +
-    (autoApproveCommentOnVerification == null ? 0 : autoApproveCommentOnVerification!.hashCode) +
-    (sendProfaneToSpam == null ? 0 : sendProfaneToSpam!.hashCode) +
-    (hasFlexPricing == null ? 0 : hasFlexPricing!.hashCode) +
-    (hasAuditing == null ? 0 : hasAuditing!.hashCode) +
-    (flexLastBilledAmount == null ? 0 : flexLastBilledAmount!.hashCode) +
-    (deAnonIpAddr == null ? 0 : deAnonIpAddr!.hashCode) +
-    (meta.hashCode);
+      (name.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (signUpDate.hashCode) +
+      (packageId.hashCode) +
+      (paymentFrequency.hashCode) +
+      (billingInfoValid.hashCode) +
+      (billingHandledExternally == null ? 0 : billingHandledExternally!.hashCode) +
+      (createdBy.hashCode) +
+      (isSetup.hashCode) +
+      (domainConfiguration.hashCode) +
+      (billingInfo == null ? 0 : billingInfo!.hashCode) +
+      (stripeCustomerId == null ? 0 : stripeCustomerId!.hashCode) +
+      (stripeSubscriptionId == null ? 0 : stripeSubscriptionId!.hashCode) +
+      (stripePlanId == null ? 0 : stripePlanId!.hashCode) +
+      (enableProfanityFilter.hashCode) +
+      (enableSpamFilter.hashCode) +
+      (lastBillingIssueReminderDate == null ? 0 : lastBillingIssueReminderDate!.hashCode) +
+      (removeUnverifiedComments == null ? 0 : removeUnverifiedComments!.hashCode) +
+      (unverifiedCommentsTTLms == null ? 0 : unverifiedCommentsTTLms!.hashCode) +
+      (commentsRequireApproval == null ? 0 : commentsRequireApproval!.hashCode) +
+      (autoApproveCommentOnVerification == null ? 0 : autoApproveCommentOnVerification!.hashCode) +
+      (sendProfaneToSpam == null ? 0 : sendProfaneToSpam!.hashCode) +
+      (hasFlexPricing == null ? 0 : hasFlexPricing!.hashCode) +
+      (hasAuditing == null ? 0 : hasAuditing!.hashCode) +
+      (flexLastBilledAmount == null ? 0 : flexLastBilledAmount!.hashCode) +
+      (deAnonIpAddr == null ? 0 : deAnonIpAddr!.hashCode) +
+      (meta.hashCode);
+  
 
   @override
   String toString() => 'APITenant[id=$id, name=$name, email=$email, signUpDate=$signUpDate, packageId=$packageId, paymentFrequency=$paymentFrequency, billingInfoValid=$billingInfoValid, billingHandledExternally=$billingHandledExternally, createdBy=$createdBy, isSetup=$isSetup, domainConfiguration=$domainConfiguration, billingInfo=$billingInfo, stripeCustomerId=$stripeCustomerId, stripeSubscriptionId=$stripeSubscriptionId, stripePlanId=$stripePlanId, enableProfanityFilter=$enableProfanityFilter, enableSpamFilter=$enableSpamFilter, lastBillingIssueReminderDate=$lastBillingIssueReminderDate, removeUnverifiedComments=$removeUnverifiedComments, unverifiedCommentsTTLms=$unverifiedCommentsTTLms, commentsRequireApproval=$commentsRequireApproval, autoApproveCommentOnVerification=$autoApproveCommentOnVerification, sendProfaneToSpam=$sendProfaneToSpam, hasFlexPricing=$hasFlexPricing, hasAuditing=$hasAuditing, flexLastBilledAmount=$flexLastBilledAmount, deAnonIpAddr=$deAnonIpAddr, meta=$meta]';

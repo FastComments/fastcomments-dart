@@ -63,6 +63,12 @@ void main() {
       // TODO
     });
 
+    // Discriminator for notifications with a special layout/click handler (e.g. \"feedback-offer\").
+    // String type
+    test('to test the property `type`', () async {
+      // TODO
+    });
+
 
   });
 

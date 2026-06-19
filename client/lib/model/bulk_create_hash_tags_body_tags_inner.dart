@@ -30,13 +30,15 @@ class BulkCreateHashTagsBodyTagsInner {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkCreateHashTagsBodyTagsInner &&
     other.url == url &&
-    other.tag == tag;
+      other.tag == tag;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (url == null ? 0 : url!.hashCode) +
-    (tag.hashCode);
+      (tag.hashCode);
+  
 
   @override
   String toString() => 'BulkCreateHashTagsBodyTagsInner[url=$url, tag=$tag]';

@@ -44,6 +44,8 @@ class LiveEventType {
   static const updatedTicketState = LiveEventType._(r'updated-ticket-state');
   static const updatedTicketAssignment = LiveEventType._(r'updated-ticket-assignment');
   static const deletedTicket = LiveEventType._(r'deleted-ticket');
+  static const pageReact = LiveEventType._(r'page-react');
+  static const questionResult = LiveEventType._(r'question-result');
 
   /// List of all possible values in this [enum][LiveEventType].
   static const values = <LiveEventType>[
@@ -68,6 +70,8 @@ class LiveEventType {
     updatedTicketState,
     updatedTicketAssignment,
     deletedTicket,
+    pageReact,
+    questionResult,
   ];
 
   static LiveEventType? fromJson(dynamic value) => LiveEventTypeTypeTransformer().decode(value);
@@ -127,6 +131,8 @@ class LiveEventTypeTypeTransformer {
         case r'updated-ticket-state': return LiveEventType.updatedTicketState;
         case r'updated-ticket-assignment': return LiveEventType.updatedTicketAssignment;
         case r'deleted-ticket': return LiveEventType.deletedTicket;
+        case r'page-react': return LiveEventType.pageReact;
+        case r'question-result': return LiveEventType.questionResult;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');

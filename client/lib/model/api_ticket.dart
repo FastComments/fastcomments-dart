@@ -45,27 +45,29 @@ class APITicket {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITicket &&
     other.id == id &&
-    other.urlId == urlId &&
-    other.userId == userId &&
-    other.managedByTenantId == managedByTenantId &&
-    _deepEquality.equals(other.assignedUserIds, assignedUserIds) &&
-    other.subject == subject &&
-    other.createdAt == createdAt &&
-    other.state == state &&
-    other.fileCount == fileCount;
+      other.urlId == urlId &&
+      other.userId == userId &&
+      other.managedByTenantId == managedByTenantId &&
+      _deepEquality.equals(other.assignedUserIds, assignedUserIds) &&
+      other.subject == subject &&
+      other.createdAt == createdAt &&
+      other.state == state &&
+      other.fileCount == fileCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (urlId.hashCode) +
-    (userId.hashCode) +
-    (managedByTenantId.hashCode) +
-    (assignedUserIds.hashCode) +
-    (subject.hashCode) +
-    (createdAt.hashCode) +
-    (state.hashCode) +
-    (fileCount.hashCode);
+      (urlId.hashCode) +
+      (userId.hashCode) +
+      (managedByTenantId.hashCode) +
+      (assignedUserIds.hashCode) +
+      (subject.hashCode) +
+      (createdAt.hashCode) +
+      (state.hashCode) +
+      (fileCount.hashCode);
+  
 
   @override
   String toString() => 'APITicket[id=$id, urlId=$urlId, userId=$userId, managedByTenantId=$managedByTenantId, assignedUserIds=$assignedUserIds, subject=$subject, createdAt=$createdAt, state=$state, fileCount=$fileCount]';

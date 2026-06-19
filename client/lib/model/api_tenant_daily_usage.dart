@@ -75,47 +75,49 @@ class APITenantDailyUsage {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITenantDailyUsage &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.yearNumber == yearNumber &&
-    other.monthNumber == monthNumber &&
-    other.dayNumber == dayNumber &&
-    other.commentFetchCount == commentFetchCount &&
-    other.commentCreateCount == commentCreateCount &&
-    other.conversationCreateCount == conversationCreateCount &&
-    other.voteCount == voteCount &&
-    other.accountCreatedCount == accountCreatedCount &&
-    other.userMentionSearch == userMentionSearch &&
-    other.hashTagSearch == hashTagSearch &&
-    other.gifSearchTrending == gifSearchTrending &&
-    other.gifSearch == gifSearch &&
-    other.apiCreditsUsed == apiCreditsUsed &&
-    other.createdAt == createdAt &&
-    other.billed == billed &&
-    other.ignored == ignored &&
-    other.apiErrorCount == apiErrorCount;
+      other.tenantId == tenantId &&
+      other.yearNumber == yearNumber &&
+      other.monthNumber == monthNumber &&
+      other.dayNumber == dayNumber &&
+      other.commentFetchCount == commentFetchCount &&
+      other.commentCreateCount == commentCreateCount &&
+      other.conversationCreateCount == conversationCreateCount &&
+      other.voteCount == voteCount &&
+      other.accountCreatedCount == accountCreatedCount &&
+      other.userMentionSearch == userMentionSearch &&
+      other.hashTagSearch == hashTagSearch &&
+      other.gifSearchTrending == gifSearchTrending &&
+      other.gifSearch == gifSearch &&
+      other.apiCreditsUsed == apiCreditsUsed &&
+      other.createdAt == createdAt &&
+      other.billed == billed &&
+      other.ignored == ignored &&
+      other.apiErrorCount == apiErrorCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (yearNumber.hashCode) +
-    (monthNumber.hashCode) +
-    (dayNumber.hashCode) +
-    (commentFetchCount.hashCode) +
-    (commentCreateCount.hashCode) +
-    (conversationCreateCount.hashCode) +
-    (voteCount.hashCode) +
-    (accountCreatedCount.hashCode) +
-    (userMentionSearch.hashCode) +
-    (hashTagSearch.hashCode) +
-    (gifSearchTrending.hashCode) +
-    (gifSearch.hashCode) +
-    (apiCreditsUsed.hashCode) +
-    (createdAt.hashCode) +
-    (billed.hashCode) +
-    (ignored.hashCode) +
-    (apiErrorCount.hashCode);
+      (tenantId.hashCode) +
+      (yearNumber.hashCode) +
+      (monthNumber.hashCode) +
+      (dayNumber.hashCode) +
+      (commentFetchCount.hashCode) +
+      (commentCreateCount.hashCode) +
+      (conversationCreateCount.hashCode) +
+      (voteCount.hashCode) +
+      (accountCreatedCount.hashCode) +
+      (userMentionSearch.hashCode) +
+      (hashTagSearch.hashCode) +
+      (gifSearchTrending.hashCode) +
+      (gifSearch.hashCode) +
+      (apiCreditsUsed.hashCode) +
+      (createdAt.hashCode) +
+      (billed.hashCode) +
+      (ignored.hashCode) +
+      (apiErrorCount.hashCode);
+  
 
   @override
   String toString() => 'APITenantDailyUsage[id=$id, tenantId=$tenantId, yearNumber=$yearNumber, monthNumber=$monthNumber, dayNumber=$dayNumber, commentFetchCount=$commentFetchCount, commentCreateCount=$commentCreateCount, conversationCreateCount=$conversationCreateCount, voteCount=$voteCount, accountCreatedCount=$accountCreatedCount, userMentionSearch=$userMentionSearch, hashTagSearch=$hashTagSearch, gifSearchTrending=$gifSearchTrending, gifSearch=$gifSearch, apiCreditsUsed=$apiCreditsUsed, createdAt=$createdAt, billed=$billed, ignored=$ignored, apiErrorCount=$apiErrorCount]';

@@ -81,47 +81,49 @@ class Moderator {
   @override
   bool operator ==(Object other) => identical(this, other) || other is Moderator &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.name == name &&
-    other.userId == userId &&
-    other.acceptedInvite == acceptedInvite &&
-    other.email == email &&
-    other.markReviewedCount == markReviewedCount &&
-    other.deletedCount == deletedCount &&
-    other.markedSpamCount == markedSpamCount &&
-    other.markedNotSpamCount == markedNotSpamCount &&
-    other.approvedCount == approvedCount &&
-    other.unApprovedCount == unApprovedCount &&
-    other.editedCount == editedCount &&
-    other.bannedCount == bannedCount &&
-    other.unFlaggedCount == unFlaggedCount &&
-    other.verificationId == verificationId &&
-    other.createdAt == createdAt &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
-    other.isEmailSuppressed == isEmailSuppressed;
+      other.tenantId == tenantId &&
+      other.name == name &&
+      other.userId == userId &&
+      other.acceptedInvite == acceptedInvite &&
+      other.email == email &&
+      other.markReviewedCount == markReviewedCount &&
+      other.deletedCount == deletedCount &&
+      other.markedSpamCount == markedSpamCount &&
+      other.markedNotSpamCount == markedNotSpamCount &&
+      other.approvedCount == approvedCount &&
+      other.unApprovedCount == unApprovedCount &&
+      other.editedCount == editedCount &&
+      other.bannedCount == bannedCount &&
+      other.unFlaggedCount == unFlaggedCount &&
+      other.verificationId == verificationId &&
+      other.createdAt == createdAt &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
+      other.isEmailSuppressed == isEmailSuppressed;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (name == null ? 0 : name!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (acceptedInvite.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (markReviewedCount.hashCode) +
-    (deletedCount.hashCode) +
-    (markedSpamCount.hashCode) +
-    (markedNotSpamCount.hashCode) +
-    (approvedCount.hashCode) +
-    (unApprovedCount.hashCode) +
-    (editedCount.hashCode) +
-    (bannedCount.hashCode) +
-    (unFlaggedCount.hashCode) +
-    (verificationId == null ? 0 : verificationId!.hashCode) +
-    (createdAt.hashCode) +
-    (moderationGroupIds == null ? 0 : moderationGroupIds!.hashCode) +
-    (isEmailSuppressed == null ? 0 : isEmailSuppressed!.hashCode);
+      (tenantId.hashCode) +
+      (name == null ? 0 : name!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (acceptedInvite.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (markReviewedCount.hashCode) +
+      (deletedCount.hashCode) +
+      (markedSpamCount.hashCode) +
+      (markedNotSpamCount.hashCode) +
+      (approvedCount.hashCode) +
+      (unApprovedCount.hashCode) +
+      (editedCount.hashCode) +
+      (bannedCount.hashCode) +
+      (unFlaggedCount.hashCode) +
+      (verificationId == null ? 0 : verificationId!.hashCode) +
+      (createdAt.hashCode) +
+      (moderationGroupIds == null ? 0 : moderationGroupIds!.hashCode) +
+      (isEmailSuppressed == null ? 0 : isEmailSuppressed!.hashCode);
+  
 
   @override
   String toString() => 'Moderator[id=$id, tenantId=$tenantId, name=$name, userId=$userId, acceptedInvite=$acceptedInvite, email=$email, markReviewedCount=$markReviewedCount, deletedCount=$deletedCount, markedSpamCount=$markedSpamCount, markedNotSpamCount=$markedNotSpamCount, approvedCount=$approvedCount, unApprovedCount=$unApprovedCount, editedCount=$editedCount, bannedCount=$bannedCount, unFlaggedCount=$unFlaggedCount, verificationId=$verificationId, createdAt=$createdAt, moderationGroupIds=$moderationGroupIds, isEmailSuppressed=$isEmailSuppressed]';

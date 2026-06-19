@@ -49,21 +49,23 @@ class UpdateFeedPostParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateFeedPostParams &&
     other.title == title &&
-    other.contentHTML == contentHTML &&
-    _deepEquality.equals(other.media, media) &&
-    _deepEquality.equals(other.links, links) &&
-    _deepEquality.equals(other.tags, tags) &&
-    _deepEquality.equals(other.meta, meta);
+      other.contentHTML == contentHTML &&
+      _deepEquality.equals(other.media, media) &&
+      _deepEquality.equals(other.links, links) &&
+      _deepEquality.equals(other.tags, tags) &&
+      _deepEquality.equals(other.meta, meta);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (title == null ? 0 : title!.hashCode) +
-    (contentHTML == null ? 0 : contentHTML!.hashCode) +
-    (media.hashCode) +
-    (links.hashCode) +
-    (tags.hashCode) +
-    (meta.hashCode);
+      (contentHTML == null ? 0 : contentHTML!.hashCode) +
+      (media.hashCode) +
+      (links.hashCode) +
+      (tags.hashCode) +
+      (meta.hashCode);
+  
 
   @override
   String toString() => 'UpdateFeedPostParams[title=$title, contentHTML=$contentHTML, media=$media, links=$links, tags=$tags, meta=$meta]';

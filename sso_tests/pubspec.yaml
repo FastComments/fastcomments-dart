@@ -1,0 +1,17 @@
+name: fastcomments_dart_sso_tests
+description: Hand-written SSO unit + integration tests for the FastComments Dart SDK.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+
+dependencies:
+  # The generated client package (provides PublicApi, models, etc.).
+  fastcomments_dart:
+    path: ../client
+  # Required by the hand-written sso/ helpers (Hmac/sha256).
+  crypto: '>=3.0.0 <4.0.0'
+
+dev_dependencies:
+  test: '>=1.24.0 <2.0.0'

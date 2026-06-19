@@ -19,18 +19,20 @@ class BulkCreateHashTagsResponse {
 
   APIStatus status;
 
-  List<AddHashTag200Response> results;
+  List<BulkCreateHashTagsResponseResultsInner> results;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkCreateHashTagsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.results, results);
+      _deepEquality.equals(other.results, results);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (results.hashCode);
+      (results.hashCode);
+  
 
   @override
   String toString() => 'BulkCreateHashTagsResponse[status=$status, results=$results]';
@@ -62,7 +64,7 @@ class BulkCreateHashTagsResponse {
 
       return BulkCreateHashTagsResponse(
         status: APIStatus.fromJson(json[r'status'])!,
-        results: AddHashTag200Response.listFromJson(json[r'results']),
+        results: BulkCreateHashTagsResponseResultsInner.listFromJson(json[r'results']),
       );
     }
     return null;

@@ -57,23 +57,25 @@ class PublicFeedPostsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicFeedPostsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.feedPosts, feedPosts) &&
-    other.user == user &&
-    other.urlIdWS == urlIdWS &&
-    other.userIdWS == userIdWS &&
-    other.tenantIdWS == tenantIdWS &&
-    _deepEquality.equals(other.myReacts, myReacts);
+      _deepEquality.equals(other.feedPosts, feedPosts) &&
+      other.user == user &&
+      other.urlIdWS == urlIdWS &&
+      other.userIdWS == userIdWS &&
+      other.tenantIdWS == tenantIdWS &&
+      _deepEquality.equals(other.myReacts, myReacts);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (feedPosts.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (urlIdWS == null ? 0 : urlIdWS!.hashCode) +
-    (userIdWS == null ? 0 : userIdWS!.hashCode) +
-    (tenantIdWS == null ? 0 : tenantIdWS!.hashCode) +
-    (myReacts.hashCode);
+      (feedPosts.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (urlIdWS == null ? 0 : urlIdWS!.hashCode) +
+      (userIdWS == null ? 0 : userIdWS!.hashCode) +
+      (tenantIdWS == null ? 0 : tenantIdWS!.hashCode) +
+      (myReacts.hashCode);
+  
 
   @override
   String toString() => 'PublicFeedPostsResponse[status=$status, feedPosts=$feedPosts, user=$user, urlIdWS=$urlIdWS, userIdWS=$userIdWS, tenantIdWS=$tenantIdWS, myReacts=$myReacts]';
@@ -131,7 +133,7 @@ class PublicFeedPostsResponse {
         urlIdWS: mapValueOfType<String>(json, r'urlIdWS'),
         userIdWS: mapValueOfType<String>(json, r'userIdWS'),
         tenantIdWS: mapValueOfType<String>(json, r'tenantIdWS'),
-        myReacts: mapCastOfType<String, dynamic>(json, r'myReacts') ?? const {},
+        myReacts: (json[r'myReacts'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, bool>())) ?? const {},
       );
     }
     return null;

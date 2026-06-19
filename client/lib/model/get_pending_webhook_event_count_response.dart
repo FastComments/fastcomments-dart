@@ -24,13 +24,15 @@ class GetPendingWebhookEventCountResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPendingWebhookEventCountResponse &&
     other.status == status &&
-    other.count == count;
+      other.count == count;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (count.hashCode);
+      (count.hashCode);
+  
 
   @override
   String toString() => 'GetPendingWebhookEventCountResponse[status=$status, count=$count]';

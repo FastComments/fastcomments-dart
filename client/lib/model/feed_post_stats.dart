@@ -30,13 +30,15 @@ class FeedPostStats {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPostStats &&
     _deepEquality.equals(other.reacts, reacts) &&
-    other.commentCount == commentCount;
+      other.commentCount == commentCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reacts.hashCode) +
-    (commentCount == null ? 0 : commentCount!.hashCode);
+      (commentCount == null ? 0 : commentCount!.hashCode);
+  
 
   @override
   String toString() => 'FeedPostStats[reacts=$reacts, commentCount=$commentCount]';

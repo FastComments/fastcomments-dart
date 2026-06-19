@@ -24,13 +24,15 @@ class SetCommentTextResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SetCommentTextResult &&
     other.approved == approved &&
-    other.commentHTML == commentHTML;
+      other.commentHTML == commentHTML;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (approved.hashCode) +
-    (commentHTML.hashCode);
+      (commentHTML.hashCode);
+  
 
   @override
   String toString() => 'SetCommentTextResult[approved=$approved, commentHTML=$commentHTML]';

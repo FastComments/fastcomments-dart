@@ -24,13 +24,15 @@ class RenderEmailTemplateResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is RenderEmailTemplateResponse &&
     other.status == status &&
-    other.html == html;
+      other.html == html;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (html.hashCode);
+      (html.hashCode);
+  
 
   @override
   String toString() => 'RenderEmailTemplateResponse[status=$status, html=$html]';

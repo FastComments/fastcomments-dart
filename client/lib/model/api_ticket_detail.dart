@@ -57,35 +57,37 @@ class APITicketDetail {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITicketDetail &&
     other.id == id &&
-    other.urlId == urlId &&
-    other.userId == userId &&
-    other.managedByTenantId == managedByTenantId &&
-    _deepEquality.equals(other.assignedUserIds, assignedUserIds) &&
-    other.subject == subject &&
-    other.createdAt == createdAt &&
-    other.state == state &&
-    other.fileCount == fileCount &&
-    _deepEquality.equals(other.files, files) &&
-    other.reopenedAt == reopenedAt &&
-    other.resolvedAt == resolvedAt &&
-    other.ackAt == ackAt;
+      other.urlId == urlId &&
+      other.userId == userId &&
+      other.managedByTenantId == managedByTenantId &&
+      _deepEquality.equals(other.assignedUserIds, assignedUserIds) &&
+      other.subject == subject &&
+      other.createdAt == createdAt &&
+      other.state == state &&
+      other.fileCount == fileCount &&
+      _deepEquality.equals(other.files, files) &&
+      other.reopenedAt == reopenedAt &&
+      other.resolvedAt == resolvedAt &&
+      other.ackAt == ackAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (urlId.hashCode) +
-    (userId.hashCode) +
-    (managedByTenantId.hashCode) +
-    (assignedUserIds.hashCode) +
-    (subject.hashCode) +
-    (createdAt.hashCode) +
-    (state.hashCode) +
-    (fileCount.hashCode) +
-    (files.hashCode) +
-    (reopenedAt == null ? 0 : reopenedAt!.hashCode) +
-    (resolvedAt == null ? 0 : resolvedAt!.hashCode) +
-    (ackAt == null ? 0 : ackAt!.hashCode);
+      (urlId.hashCode) +
+      (userId.hashCode) +
+      (managedByTenantId.hashCode) +
+      (assignedUserIds.hashCode) +
+      (subject.hashCode) +
+      (createdAt.hashCode) +
+      (state.hashCode) +
+      (fileCount.hashCode) +
+      (files.hashCode) +
+      (reopenedAt == null ? 0 : reopenedAt!.hashCode) +
+      (resolvedAt == null ? 0 : resolvedAt!.hashCode) +
+      (ackAt == null ? 0 : ackAt!.hashCode);
+  
 
   @override
   String toString() => 'APITicketDetail[id=$id, urlId=$urlId, userId=$userId, managedByTenantId=$managedByTenantId, assignedUserIds=$assignedUserIds, subject=$subject, createdAt=$createdAt, state=$state, fileCount=$fileCount, files=$files, reopenedAt=$reopenedAt, resolvedAt=$resolvedAt, ackAt=$ackAt]';

@@ -33,15 +33,17 @@ class CreateUserBadgeParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUserBadgeParams &&
     other.userId == userId &&
-    other.badgeId == badgeId &&
-    other.displayedOnComments == displayedOnComments;
+      other.badgeId == badgeId &&
+      other.displayedOnComments == displayedOnComments;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (userId.hashCode) +
-    (badgeId.hashCode) +
-    (displayedOnComments == null ? 0 : displayedOnComments!.hashCode);
+      (badgeId.hashCode) +
+      (displayedOnComments == null ? 0 : displayedOnComments!.hashCode);
+  
 
   @override
   String toString() => 'CreateUserBadgeParams[userId=$userId, badgeId=$badgeId, displayedOnComments=$displayedOnComments]';

@@ -19,6 +19,11 @@ CLIENT_DIR = ROOT / "client"
 SPEC_FILE = ROOT / "openapi.json"
 SPEC_URL = "http://localhost:3001/js/swagger.json"
 
+# FastComments openapi-generator build (fixes dart anyOf/nested-map codegen the
+# released generator gets wrong). Just a jar; downloaded on demand.
+JAR_URL = "https://github.com/winrid/openapi-generator/releases/download/fastcomments-build-20260619/openapi-generator-cli.jar"
+JAR_FILE = ROOT / "openapi-generator-cli.jar"
+
 
 def try_refresh_spec() -> None:
     try:
@@ -30,14 +35,20 @@ def try_refresh_spec() -> None:
         print(f"Local server unavailable, using committed {SPEC_FILE.name}")
 
 
+def ensure_jar() -> None:
+    if JAR_FILE.exists():
+        return
+    print(f"Downloading generator from {JAR_URL}")
+    urllib.request.urlretrieve(JAR_URL, JAR_FILE)
+
+
 def regen_client() -> None:
     if CLIENT_DIR.exists():
         shutil.rmtree(CLIENT_DIR)
 
     cmd = [
-        "npx",
-        "--yes",
-        "@openapitools/openapi-generator-cli@2.31.1",
+        "java",
+        "-jar", str(JAR_FILE),
         "generate",
         "-i", str(SPEC_FILE),
         "-g", "dart",
@@ -51,6 +62,7 @@ def regen_client() -> None:
 
 def main() -> int:
     try_refresh_spec()
+    ensure_jar()
     regen_client()
     return 0
 

@@ -27,15 +27,17 @@ class MediaAsset {
   @override
   bool operator ==(Object other) => identical(this, other) || other is MediaAsset &&
     other.w == w &&
-    other.h == h &&
-    other.src == src;
+      other.h == h &&
+      other.src == src;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (w.hashCode) +
-    (h.hashCode) +
-    (src.hashCode);
+      (h.hashCode) +
+      (src.hashCode);
+  
 
   @override
   String toString() => 'MediaAsset[w=$w, h=$h, src=$src]';

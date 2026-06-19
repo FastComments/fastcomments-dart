@@ -40,19 +40,21 @@ class SaveCommentsResponseWithPresence {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SaveCommentsResponseWithPresence &&
     other.status == status &&
-    other.comment == comment &&
-    other.user == user &&
-    _deepEquality.equals(other.moduleData, moduleData) &&
-    other.userIdWS == userIdWS;
+      other.comment == comment &&
+      other.user == user &&
+      _deepEquality.equals(other.moduleData, moduleData) &&
+      other.userIdWS == userIdWS;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (comment.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (moduleData.hashCode) +
-    (userIdWS == null ? 0 : userIdWS!.hashCode);
+      (comment.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (moduleData.hashCode) +
+      (userIdWS == null ? 0 : userIdWS!.hashCode);
+  
 
   @override
   String toString() => 'SaveCommentsResponseWithPresence[status=$status, comment=$comment, user=$user, moduleData=$moduleData, userIdWS=$userIdWS]';

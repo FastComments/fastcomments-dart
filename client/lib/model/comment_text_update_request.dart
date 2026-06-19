@@ -27,15 +27,17 @@ class CommentTextUpdateRequest {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentTextUpdateRequest &&
     other.comment == comment &&
-    _deepEquality.equals(other.mentions, mentions) &&
-    _deepEquality.equals(other.hashTags, hashTags);
+      _deepEquality.equals(other.mentions, mentions) &&
+      _deepEquality.equals(other.hashTags, hashTags);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment.hashCode) +
-    (mentions.hashCode) +
-    (hashTags.hashCode);
+      (mentions.hashCode) +
+      (hashTags.hashCode);
+  
 
   @override
   String toString() => 'CommentTextUpdateRequest[comment=$comment, mentions=$mentions, hashTags=$hashTags]';

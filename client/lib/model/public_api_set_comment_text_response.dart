@@ -24,13 +24,15 @@ class PublicAPISetCommentTextResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicAPISetCommentTextResponse &&
     other.comment == comment &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'PublicAPISetCommentTextResponse[comment=$comment, status=$status]';

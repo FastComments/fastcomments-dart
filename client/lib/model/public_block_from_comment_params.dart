@@ -22,11 +22,13 @@ class PublicBlockFromCommentParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicBlockFromCommentParams &&
     _deepEquality.equals(other.commentIds, commentIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentIds == null ? 0 : commentIds!.hashCode);
+  
 
   @override
   String toString() => 'PublicBlockFromCommentParams[commentIds=$commentIds]';

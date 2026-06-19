@@ -24,13 +24,15 @@ class GetEventLogResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetEventLogResponse &&
     _deepEquality.equals(other.events, events) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (events.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetEventLogResponse[events=$events, status=$status]';

@@ -31,17 +31,19 @@ class SaveCommentResponseOptimized {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SaveCommentResponseOptimized &&
     other.status == status &&
-    other.comment == comment &&
-    other.user == user &&
-    _deepEquality.equals(other.moduleData, moduleData);
+      other.comment == comment &&
+      other.user == user &&
+      _deepEquality.equals(other.moduleData, moduleData);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (comment.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (moduleData.hashCode);
+      (comment.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (moduleData.hashCode);
+  
 
   @override
   String toString() => 'SaveCommentResponseOptimized[status=$status, comment=$comment, user=$user, moduleData=$moduleData]';

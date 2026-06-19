@@ -24,13 +24,15 @@ class DeleteCommentResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is DeleteCommentResult &&
     other.action == action &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (action.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'DeleteCommentResult[action=$action, status=$status]';

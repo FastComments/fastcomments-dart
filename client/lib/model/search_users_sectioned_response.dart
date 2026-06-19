@@ -24,13 +24,15 @@ class SearchUsersSectionedResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchUsersSectionedResponse &&
     other.status == status &&
-    _deepEquality.equals(other.sections, sections);
+      _deepEquality.equals(other.sections, sections);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (sections.hashCode);
+      (sections.hashCode);
+  
 
   @override
   String toString() => 'SearchUsersSectionedResponse[status=$status, sections=$sections]';

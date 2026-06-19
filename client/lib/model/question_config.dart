@@ -87,51 +87,53 @@ class QuestionConfig {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionConfig &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.name == name &&
-    other.question == question &&
-    other.summaryLabel == summaryLabel &&
-    other.helpText == helpText &&
-    other.createdAt == createdAt &&
-    other.createdBy == createdBy &&
-    other.usedCount == usedCount &&
-    other.lastUsed == lastUsed &&
-    other.type == type &&
-    other.numStars == numStars &&
-    other.min == min &&
-    other.max == max &&
-    other.defaultValue == defaultValue &&
-    other.labelNegative == labelNegative &&
-    other.labelPositive == labelPositive &&
-    _deepEquality.equals(other.customOptions, customOptions) &&
-    _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
-    other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
-    other.reportingOrder == reportingOrder;
+      other.tenantId == tenantId &&
+      other.name == name &&
+      other.question == question &&
+      other.summaryLabel == summaryLabel &&
+      other.helpText == helpText &&
+      other.createdAt == createdAt &&
+      other.createdBy == createdBy &&
+      other.usedCount == usedCount &&
+      other.lastUsed == lastUsed &&
+      other.type == type &&
+      other.numStars == numStars &&
+      other.min == min &&
+      other.max == max &&
+      other.defaultValue == defaultValue &&
+      other.labelNegative == labelNegative &&
+      other.labelPositive == labelPositive &&
+      _deepEquality.equals(other.customOptions, customOptions) &&
+      _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
+      other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
+      other.reportingOrder == reportingOrder;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (name.hashCode) +
-    (question.hashCode) +
-    (summaryLabel == null ? 0 : summaryLabel!.hashCode) +
-    (helpText.hashCode) +
-    (createdAt.hashCode) +
-    (createdBy.hashCode) +
-    (usedCount.hashCode) +
-    (lastUsed.hashCode) +
-    (type.hashCode) +
-    (numStars.hashCode) +
-    (min.hashCode) +
-    (max.hashCode) +
-    (defaultValue.hashCode) +
-    (labelNegative.hashCode) +
-    (labelPositive.hashCode) +
-    (customOptions.hashCode) +
-    (subQuestionIds.hashCode) +
-    (alwaysShowSubQuestions.hashCode) +
-    (reportingOrder.hashCode);
+      (tenantId.hashCode) +
+      (name.hashCode) +
+      (question.hashCode) +
+      (summaryLabel == null ? 0 : summaryLabel!.hashCode) +
+      (helpText.hashCode) +
+      (createdAt.hashCode) +
+      (createdBy.hashCode) +
+      (usedCount.hashCode) +
+      (lastUsed.hashCode) +
+      (type.hashCode) +
+      (numStars.hashCode) +
+      (min.hashCode) +
+      (max.hashCode) +
+      (defaultValue.hashCode) +
+      (labelNegative.hashCode) +
+      (labelPositive.hashCode) +
+      (customOptions.hashCode) +
+      (subQuestionIds.hashCode) +
+      (alwaysShowSubQuestions.hashCode) +
+      (reportingOrder.hashCode);
+  
 
   @override
   String toString() => 'QuestionConfig[id=$id, tenantId=$tenantId, name=$name, question=$question, summaryLabel=$summaryLabel, helpText=$helpText, createdAt=$createdAt, createdBy=$createdBy, usedCount=$usedCount, lastUsed=$lastUsed, type=$type, numStars=$numStars, min=$min, max=$max, defaultValue=$defaultValue, labelNegative=$labelNegative, labelPositive=$labelPositive, customOptions=$customOptions, subQuestionIds=$subQuestionIds, alwaysShowSubQuestions=$alwaysShowSubQuestions, reportingOrder=$reportingOrder]';

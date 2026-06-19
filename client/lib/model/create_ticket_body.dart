@@ -21,11 +21,13 @@ class CreateTicketBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateTicketBody &&
     other.subject == subject;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (subject.hashCode);
+  
 
   @override
   String toString() => 'CreateTicketBody[subject=$subject]';

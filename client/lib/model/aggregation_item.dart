@@ -22,11 +22,13 @@ class AggregationItem {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationItem &&
     _deepEquality.equals(other.groups, groups);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (groups.hashCode);
+  
 
   @override
   String toString() => 'AggregationItem[groups=$groups]';

@@ -96,57 +96,59 @@ class UserNotification {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserNotification &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.userId == userId &&
-    other.anonUserId == anonUserId &&
-    other.urlId == urlId &&
-    other.url == url &&
-    other.pageTitle == pageTitle &&
-    other.relatedObjectType == relatedObjectType &&
-    other.relatedObjectId == relatedObjectId &&
-    other.viewed == viewed &&
-    other.isUnreadMessage == isUnreadMessage &&
-    other.sent == sent &&
-    other.createdAt == createdAt &&
-    other.type == type &&
-    other.fromCommentId == fromCommentId &&
-    other.fromVoteId == fromVoteId &&
-    other.fromUserName == fromUserName &&
-    other.fromUserId == fromUserId &&
-    other.fromUserAvatarSrc == fromUserAvatarSrc &&
-    other.optedOut == optedOut &&
-    other.count == count &&
-    _deepEquality.equals(other.relatedIds, relatedIds) &&
-    _deepEquality.equals(other.fromUserIds, fromUserIds) &&
-    _deepEquality.equals(other.fromUserNames, fromUserNames);
+      other.tenantId == tenantId &&
+      other.userId == userId &&
+      other.anonUserId == anonUserId &&
+      other.urlId == urlId &&
+      other.url == url &&
+      other.pageTitle == pageTitle &&
+      other.relatedObjectType == relatedObjectType &&
+      other.relatedObjectId == relatedObjectId &&
+      other.viewed == viewed &&
+      other.isUnreadMessage == isUnreadMessage &&
+      other.sent == sent &&
+      other.createdAt == createdAt &&
+      other.type == type &&
+      other.fromCommentId == fromCommentId &&
+      other.fromVoteId == fromVoteId &&
+      other.fromUserName == fromUserName &&
+      other.fromUserId == fromUserId &&
+      other.fromUserAvatarSrc == fromUserAvatarSrc &&
+      other.optedOut == optedOut &&
+      other.count == count &&
+      _deepEquality.equals(other.relatedIds, relatedIds) &&
+      _deepEquality.equals(other.fromUserIds, fromUserIds) &&
+      _deepEquality.equals(other.fromUserNames, fromUserNames);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (urlId.hashCode) +
-    (url.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (relatedObjectType.hashCode) +
-    (relatedObjectId.hashCode) +
-    (viewed.hashCode) +
-    (isUnreadMessage.hashCode) +
-    (sent.hashCode) +
-    (createdAt.hashCode) +
-    (type.hashCode) +
-    (fromCommentId == null ? 0 : fromCommentId!.hashCode) +
-    (fromVoteId == null ? 0 : fromVoteId!.hashCode) +
-    (fromUserName == null ? 0 : fromUserName!.hashCode) +
-    (fromUserId == null ? 0 : fromUserId!.hashCode) +
-    (fromUserAvatarSrc == null ? 0 : fromUserAvatarSrc!.hashCode) +
-    (optedOut.hashCode) +
-    (count == null ? 0 : count!.hashCode) +
-    (relatedIds.hashCode) +
-    (fromUserIds.hashCode) +
-    (fromUserNames.hashCode);
+      (tenantId.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (urlId.hashCode) +
+      (url.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (relatedObjectType.hashCode) +
+      (relatedObjectId.hashCode) +
+      (viewed.hashCode) +
+      (isUnreadMessage.hashCode) +
+      (sent.hashCode) +
+      (createdAt.hashCode) +
+      (type.hashCode) +
+      (fromCommentId == null ? 0 : fromCommentId!.hashCode) +
+      (fromVoteId == null ? 0 : fromVoteId!.hashCode) +
+      (fromUserName == null ? 0 : fromUserName!.hashCode) +
+      (fromUserId == null ? 0 : fromUserId!.hashCode) +
+      (fromUserAvatarSrc == null ? 0 : fromUserAvatarSrc!.hashCode) +
+      (optedOut.hashCode) +
+      (count == null ? 0 : count!.hashCode) +
+      (relatedIds.hashCode) +
+      (fromUserIds.hashCode) +
+      (fromUserNames.hashCode);
+  
 
   @override
   String toString() => 'UserNotification[id=$id, tenantId=$tenantId, userId=$userId, anonUserId=$anonUserId, urlId=$urlId, url=$url, pageTitle=$pageTitle, relatedObjectType=$relatedObjectType, relatedObjectId=$relatedObjectId, viewed=$viewed, isUnreadMessage=$isUnreadMessage, sent=$sent, createdAt=$createdAt, type=$type, fromCommentId=$fromCommentId, fromVoteId=$fromVoteId, fromUserName=$fromUserName, fromUserId=$fromUserId, fromUserAvatarSrc=$fromUserAvatarSrc, optedOut=$optedOut, count=$count, relatedIds=$relatedIds, fromUserIds=$fromUserIds, fromUserNames=$fromUserNames]';

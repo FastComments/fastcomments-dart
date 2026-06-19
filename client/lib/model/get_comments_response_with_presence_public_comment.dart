@@ -226,63 +226,65 @@ class GetCommentsResponseWithPresencePublicComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetCommentsResponseWithPresencePublicComment &&
     other.statusCode == statusCode &&
-    other.status == status &&
-    other.code == code &&
-    other.reason == reason &&
-    other.translatedWarning == translatedWarning &&
-    _deepEquality.equals(other.comments, comments) &&
-    other.user == user &&
-    other.urlIdClean == urlIdClean &&
-    other.lastGenDate == lastGenDate &&
-    other.includesPastPages == includesPastPages &&
-    other.isDemo == isDemo &&
-    other.commentCount == commentCount &&
-    other.isSiteAdmin == isSiteAdmin &&
-    other.hasBillingIssue == hasBillingIssue &&
-    _deepEquality.equals(other.moduleData, moduleData) &&
-    other.pageNumber == pageNumber &&
-    other.isWhiteLabeled == isWhiteLabeled &&
-    other.isProd == isProd &&
-    other.isCrawler == isCrawler &&
-    other.notificationCount == notificationCount &&
-    other.hasMore == hasMore &&
-    other.isClosed == isClosed &&
-    other.presencePollState == presencePollState &&
-    other.customConfig == customConfig &&
-    other.urlIdWS == urlIdWS &&
-    other.userIdWS == userIdWS &&
-    other.tenantIdWS == tenantIdWS;
+      other.status == status &&
+      other.code == code &&
+      other.reason == reason &&
+      other.translatedWarning == translatedWarning &&
+      _deepEquality.equals(other.comments, comments) &&
+      other.user == user &&
+      other.urlIdClean == urlIdClean &&
+      other.lastGenDate == lastGenDate &&
+      other.includesPastPages == includesPastPages &&
+      other.isDemo == isDemo &&
+      other.commentCount == commentCount &&
+      other.isSiteAdmin == isSiteAdmin &&
+      other.hasBillingIssue == hasBillingIssue &&
+      _deepEquality.equals(other.moduleData, moduleData) &&
+      other.pageNumber == pageNumber &&
+      other.isWhiteLabeled == isWhiteLabeled &&
+      other.isProd == isProd &&
+      other.isCrawler == isCrawler &&
+      other.notificationCount == notificationCount &&
+      other.hasMore == hasMore &&
+      other.isClosed == isClosed &&
+      other.presencePollState == presencePollState &&
+      other.customConfig == customConfig &&
+      other.urlIdWS == urlIdWS &&
+      other.userIdWS == userIdWS &&
+      other.tenantIdWS == tenantIdWS;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (statusCode == null ? 0 : statusCode!.hashCode) +
-    (status.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (reason == null ? 0 : reason!.hashCode) +
-    (translatedWarning == null ? 0 : translatedWarning!.hashCode) +
-    (comments.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (urlIdClean == null ? 0 : urlIdClean!.hashCode) +
-    (lastGenDate == null ? 0 : lastGenDate!.hashCode) +
-    (includesPastPages == null ? 0 : includesPastPages!.hashCode) +
-    (isDemo == null ? 0 : isDemo!.hashCode) +
-    (commentCount == null ? 0 : commentCount!.hashCode) +
-    (isSiteAdmin == null ? 0 : isSiteAdmin!.hashCode) +
-    (hasBillingIssue == null ? 0 : hasBillingIssue!.hashCode) +
-    (moduleData.hashCode) +
-    (pageNumber.hashCode) +
-    (isWhiteLabeled == null ? 0 : isWhiteLabeled!.hashCode) +
-    (isProd == null ? 0 : isProd!.hashCode) +
-    (isCrawler == null ? 0 : isCrawler!.hashCode) +
-    (notificationCount == null ? 0 : notificationCount!.hashCode) +
-    (hasMore == null ? 0 : hasMore!.hashCode) +
-    (isClosed == null ? 0 : isClosed!.hashCode) +
-    (presencePollState == null ? 0 : presencePollState!.hashCode) +
-    (customConfig == null ? 0 : customConfig!.hashCode) +
-    (urlIdWS == null ? 0 : urlIdWS!.hashCode) +
-    (userIdWS == null ? 0 : userIdWS!.hashCode) +
-    (tenantIdWS == null ? 0 : tenantIdWS!.hashCode);
+      (status.hashCode) +
+      (code == null ? 0 : code!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (translatedWarning == null ? 0 : translatedWarning!.hashCode) +
+      (comments.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (urlIdClean == null ? 0 : urlIdClean!.hashCode) +
+      (lastGenDate == null ? 0 : lastGenDate!.hashCode) +
+      (includesPastPages == null ? 0 : includesPastPages!.hashCode) +
+      (isDemo == null ? 0 : isDemo!.hashCode) +
+      (commentCount == null ? 0 : commentCount!.hashCode) +
+      (isSiteAdmin == null ? 0 : isSiteAdmin!.hashCode) +
+      (hasBillingIssue == null ? 0 : hasBillingIssue!.hashCode) +
+      (moduleData.hashCode) +
+      (pageNumber.hashCode) +
+      (isWhiteLabeled == null ? 0 : isWhiteLabeled!.hashCode) +
+      (isProd == null ? 0 : isProd!.hashCode) +
+      (isCrawler == null ? 0 : isCrawler!.hashCode) +
+      (notificationCount == null ? 0 : notificationCount!.hashCode) +
+      (hasMore == null ? 0 : hasMore!.hashCode) +
+      (isClosed == null ? 0 : isClosed!.hashCode) +
+      (presencePollState == null ? 0 : presencePollState!.hashCode) +
+      (customConfig == null ? 0 : customConfig!.hashCode) +
+      (urlIdWS == null ? 0 : urlIdWS!.hashCode) +
+      (userIdWS == null ? 0 : userIdWS!.hashCode) +
+      (tenantIdWS == null ? 0 : tenantIdWS!.hashCode);
+  
 
   @override
   String toString() => 'GetCommentsResponseWithPresencePublicComment[statusCode=$statusCode, status=$status, code=$code, reason=$reason, translatedWarning=$translatedWarning, comments=$comments, user=$user, urlIdClean=$urlIdClean, lastGenDate=$lastGenDate, includesPastPages=$includesPastPages, isDemo=$isDemo, commentCount=$commentCount, isSiteAdmin=$isSiteAdmin, hasBillingIssue=$hasBillingIssue, moduleData=$moduleData, pageNumber=$pageNumber, isWhiteLabeled=$isWhiteLabeled, isProd=$isProd, isCrawler=$isCrawler, notificationCount=$notificationCount, hasMore=$hasMore, isClosed=$isClosed, presencePollState=$presencePollState, customConfig=$customConfig, urlIdWS=$urlIdWS, userIdWS=$userIdWS, tenantIdWS=$tenantIdWS]';

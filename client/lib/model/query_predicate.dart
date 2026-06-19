@@ -27,15 +27,17 @@ class QueryPredicate {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QueryPredicate &&
     other.key == key &&
-    other.value == value &&
-    other.operator_ == operator_;
+      other.value == value &&
+      other.operator_ == operator_;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (key.hashCode) +
-    (value.hashCode) +
-    (operator_.hashCode);
+      (value.hashCode) +
+      (operator_.hashCode);
+  
 
   @override
   String toString() => 'QueryPredicate[key=$key, value=$value, operator_=$operator_]';

@@ -24,13 +24,15 @@ class FindCommentsByRangeItem {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FindCommentsByRangeItem &&
     other.comment == comment &&
-    other.result == result;
+      other.result == result;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment == null ? 0 : comment!.hashCode) +
-    (result.hashCode);
+      (result.hashCode);
+  
 
   @override
   String toString() => 'FindCommentsByRangeItem[comment=$comment, result=$result]';

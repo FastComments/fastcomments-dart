@@ -24,13 +24,15 @@ class AggregationResponseStats {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationResponseStats &&
     other.timeMS == timeMS &&
-    other.scanned == scanned;
+      other.scanned == scanned;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (timeMS.hashCode) +
-    (scanned.hashCode);
+      (scanned.hashCode);
+  
 
   @override
   String toString() => 'AggregationResponseStats[timeMS=$timeMS, scanned=$scanned]';

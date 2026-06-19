@@ -39,15 +39,17 @@ class DeletePageAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is DeletePageAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.status == status;
+      other.code == code &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'DeletePageAPIResponse[reason=$reason, code=$code, status=$status]';

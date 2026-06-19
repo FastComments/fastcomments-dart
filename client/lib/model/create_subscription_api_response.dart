@@ -48,17 +48,19 @@ class CreateSubscriptionAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateSubscriptionAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.subscription == subscription &&
-    other.status == status;
+      other.code == code &&
+      other.subscription == subscription &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (subscription == null ? 0 : subscription!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (subscription == null ? 0 : subscription!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'CreateSubscriptionAPIResponse[reason=$reason, code=$code, subscription=$subscription, status=$status]';

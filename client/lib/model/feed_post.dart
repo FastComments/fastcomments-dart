@@ -97,41 +97,43 @@ class FeedPost {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPost &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.title == title &&
-    other.fromUserId == fromUserId &&
-    other.fromUserDisplayName == fromUserDisplayName &&
-    other.fromUserAvatar == fromUserAvatar &&
-    other.fromIpHash == fromIpHash &&
-    _deepEquality.equals(other.tags, tags) &&
-    other.weight == weight &&
-    _deepEquality.equals(other.meta, meta) &&
-    other.contentHTML == contentHTML &&
-    _deepEquality.equals(other.media, media) &&
-    _deepEquality.equals(other.links, links) &&
-    other.createdAt == createdAt &&
-    _deepEquality.equals(other.reacts, reacts) &&
-    other.commentCount == commentCount;
+      other.tenantId == tenantId &&
+      other.title == title &&
+      other.fromUserId == fromUserId &&
+      other.fromUserDisplayName == fromUserDisplayName &&
+      other.fromUserAvatar == fromUserAvatar &&
+      other.fromIpHash == fromIpHash &&
+      _deepEquality.equals(other.tags, tags) &&
+      other.weight == weight &&
+      _deepEquality.equals(other.meta, meta) &&
+      other.contentHTML == contentHTML &&
+      _deepEquality.equals(other.media, media) &&
+      _deepEquality.equals(other.links, links) &&
+      other.createdAt == createdAt &&
+      _deepEquality.equals(other.reacts, reacts) &&
+      other.commentCount == commentCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (title == null ? 0 : title!.hashCode) +
-    (fromUserId == null ? 0 : fromUserId!.hashCode) +
-    (fromUserDisplayName == null ? 0 : fromUserDisplayName!.hashCode) +
-    (fromUserAvatar == null ? 0 : fromUserAvatar!.hashCode) +
-    (fromIpHash == null ? 0 : fromIpHash!.hashCode) +
-    (tags.hashCode) +
-    (weight == null ? 0 : weight!.hashCode) +
-    (meta.hashCode) +
-    (contentHTML == null ? 0 : contentHTML!.hashCode) +
-    (media.hashCode) +
-    (links.hashCode) +
-    (createdAt.hashCode) +
-    (reacts.hashCode) +
-    (commentCount == null ? 0 : commentCount!.hashCode);
+      (tenantId.hashCode) +
+      (title == null ? 0 : title!.hashCode) +
+      (fromUserId == null ? 0 : fromUserId!.hashCode) +
+      (fromUserDisplayName == null ? 0 : fromUserDisplayName!.hashCode) +
+      (fromUserAvatar == null ? 0 : fromUserAvatar!.hashCode) +
+      (fromIpHash == null ? 0 : fromIpHash!.hashCode) +
+      (tags.hashCode) +
+      (weight == null ? 0 : weight!.hashCode) +
+      (meta.hashCode) +
+      (contentHTML == null ? 0 : contentHTML!.hashCode) +
+      (media.hashCode) +
+      (links.hashCode) +
+      (createdAt.hashCode) +
+      (reacts.hashCode) +
+      (commentCount == null ? 0 : commentCount!.hashCode);
+  
 
   @override
   String toString() => 'FeedPost[id=$id, tenantId=$tenantId, title=$title, fromUserId=$fromUserId, fromUserDisplayName=$fromUserDisplayName, fromUserAvatar=$fromUserAvatar, fromIpHash=$fromIpHash, tags=$tags, weight=$weight, meta=$meta, contentHTML=$contentHTML, media=$media, links=$links, createdAt=$createdAt, reacts=$reacts, commentCount=$commentCount]';

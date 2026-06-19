@@ -141,43 +141,45 @@ class LiveEvent {
   @override
   bool operator ==(Object other) => identical(this, other) || other is LiveEvent &&
     other.type == type &&
-    other.timestamp == timestamp &&
-    other.ts == ts &&
-    other.broadcastId == broadcastId &&
-    other.userId == userId &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.notification == notification &&
-    other.vote == vote &&
-    other.comment == comment &&
-    other.feedPost == feedPost &&
-    other.extraInfo == extraInfo &&
-    other.config == config &&
-    other.isClosed == isClosed &&
-    _deepEquality.equals(other.uj, uj) &&
-    _deepEquality.equals(other.ul, ul) &&
-    other.sc == sc &&
-    _deepEquality.equals(other.changes, changes);
+      other.timestamp == timestamp &&
+      other.ts == ts &&
+      other.broadcastId == broadcastId &&
+      other.userId == userId &&
+      _deepEquality.equals(other.badges, badges) &&
+      other.notification == notification &&
+      other.vote == vote &&
+      other.comment == comment &&
+      other.feedPost == feedPost &&
+      other.extraInfo == extraInfo &&
+      other.config == config &&
+      other.isClosed == isClosed &&
+      _deepEquality.equals(other.uj, uj) &&
+      _deepEquality.equals(other.ul, ul) &&
+      other.sc == sc &&
+      _deepEquality.equals(other.changes, changes);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (type.hashCode) +
-    (timestamp == null ? 0 : timestamp!.hashCode) +
-    (ts == null ? 0 : ts!.hashCode) +
-    (broadcastId == null ? 0 : broadcastId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (badges.hashCode) +
-    (notification == null ? 0 : notification!.hashCode) +
-    (vote == null ? 0 : vote!.hashCode) +
-    (comment == null ? 0 : comment!.hashCode) +
-    (feedPost == null ? 0 : feedPost!.hashCode) +
-    (extraInfo == null ? 0 : extraInfo!.hashCode) +
-    (config == null ? 0 : config!.hashCode) +
-    (isClosed == null ? 0 : isClosed!.hashCode) +
-    (uj.hashCode) +
-    (ul.hashCode) +
-    (sc == null ? 0 : sc!.hashCode) +
-    (changes.hashCode);
+      (timestamp == null ? 0 : timestamp!.hashCode) +
+      (ts == null ? 0 : ts!.hashCode) +
+      (broadcastId == null ? 0 : broadcastId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (badges.hashCode) +
+      (notification == null ? 0 : notification!.hashCode) +
+      (vote == null ? 0 : vote!.hashCode) +
+      (comment == null ? 0 : comment!.hashCode) +
+      (feedPost == null ? 0 : feedPost!.hashCode) +
+      (extraInfo == null ? 0 : extraInfo!.hashCode) +
+      (config == null ? 0 : config!.hashCode) +
+      (isClosed == null ? 0 : isClosed!.hashCode) +
+      (uj.hashCode) +
+      (ul.hashCode) +
+      (sc == null ? 0 : sc!.hashCode) +
+      (changes.hashCode);
+  
 
   @override
   String toString() => 'LiveEvent[type=$type, timestamp=$timestamp, ts=$ts, broadcastId=$broadcastId, userId=$userId, badges=$badges, notification=$notification, vote=$vote, comment=$comment, feedPost=$feedPost, extraInfo=$extraInfo, config=$config, isClosed=$isClosed, uj=$uj, ul=$ul, sc=$sc, changes=$changes]';

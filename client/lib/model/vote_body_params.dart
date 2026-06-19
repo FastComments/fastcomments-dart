@@ -30,17 +30,19 @@ class VoteBodyParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is VoteBodyParams &&
     other.commenterEmail == commenterEmail &&
-    other.commenterName == commenterName &&
-    other.voteDir == voteDir &&
-    other.url == url;
+      other.commenterName == commenterName &&
+      other.voteDir == voteDir &&
+      other.url == url;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
-    (commenterName == null ? 0 : commenterName!.hashCode) +
-    (voteDir.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+      (commenterName == null ? 0 : commenterName!.hashCode) +
+      (voteDir.hashCode) +
+      (url == null ? 0 : url!.hashCode);
+  
 
   @override
   String toString() => 'VoteBodyParams[commenterEmail=$commenterEmail, commenterName=$commenterName, voteDir=$voteDir, url=$url]';

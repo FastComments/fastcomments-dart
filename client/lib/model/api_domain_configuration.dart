@@ -94,39 +94,41 @@ class APIDomainConfiguration {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIDomainConfiguration &&
     other.id == id &&
-    other.domain == domain &&
-    other.emailFromName == emailFromName &&
-    other.emailFromEmail == emailFromEmail &&
-    _deepEquality.equals(other.emailHeaders, emailHeaders) &&
-    other.wpSyncToken == wpSyncToken &&
-    other.wpSynced == wpSynced &&
-    other.wpURL == wpURL &&
-    other.createdAt == createdAt &&
-    other.autoAddedDate == autoAddedDate &&
-    other.siteType == siteType &&
-    other.logoSrc == logoSrc &&
-    other.logoSrc100px == logoSrc100px &&
-    other.footerUnsubscribeURL == footerUnsubscribeURL &&
-    other.disableUnsubscribeLinks == disableUnsubscribeLinks;
+      other.domain == domain &&
+      other.emailFromName == emailFromName &&
+      other.emailFromEmail == emailFromEmail &&
+      _deepEquality.equals(other.emailHeaders, emailHeaders) &&
+      other.wpSyncToken == wpSyncToken &&
+      other.wpSynced == wpSynced &&
+      other.wpURL == wpURL &&
+      other.createdAt == createdAt &&
+      other.autoAddedDate == autoAddedDate &&
+      other.siteType == siteType &&
+      other.logoSrc == logoSrc &&
+      other.logoSrc100px == logoSrc100px &&
+      other.footerUnsubscribeURL == footerUnsubscribeURL &&
+      other.disableUnsubscribeLinks == disableUnsubscribeLinks;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (domain.hashCode) +
-    (emailFromName == null ? 0 : emailFromName!.hashCode) +
-    (emailFromEmail == null ? 0 : emailFromEmail!.hashCode) +
-    (emailHeaders.hashCode) +
-    (wpSyncToken == null ? 0 : wpSyncToken!.hashCode) +
-    (wpSynced == null ? 0 : wpSynced!.hashCode) +
-    (wpURL == null ? 0 : wpURL!.hashCode) +
-    (createdAt.hashCode) +
-    (autoAddedDate == null ? 0 : autoAddedDate!.hashCode) +
-    (siteType == null ? 0 : siteType!.hashCode) +
-    (logoSrc == null ? 0 : logoSrc!.hashCode) +
-    (logoSrc100px == null ? 0 : logoSrc100px!.hashCode) +
-    (footerUnsubscribeURL == null ? 0 : footerUnsubscribeURL!.hashCode) +
-    (disableUnsubscribeLinks == null ? 0 : disableUnsubscribeLinks!.hashCode);
+      (domain.hashCode) +
+      (emailFromName == null ? 0 : emailFromName!.hashCode) +
+      (emailFromEmail == null ? 0 : emailFromEmail!.hashCode) +
+      (emailHeaders.hashCode) +
+      (wpSyncToken == null ? 0 : wpSyncToken!.hashCode) +
+      (wpSynced == null ? 0 : wpSynced!.hashCode) +
+      (wpURL == null ? 0 : wpURL!.hashCode) +
+      (createdAt.hashCode) +
+      (autoAddedDate == null ? 0 : autoAddedDate!.hashCode) +
+      (siteType == null ? 0 : siteType!.hashCode) +
+      (logoSrc == null ? 0 : logoSrc!.hashCode) +
+      (logoSrc100px == null ? 0 : logoSrc100px!.hashCode) +
+      (footerUnsubscribeURL == null ? 0 : footerUnsubscribeURL!.hashCode) +
+      (disableUnsubscribeLinks == null ? 0 : disableUnsubscribeLinks!.hashCode);
+  
 
   @override
   String toString() => 'APIDomainConfiguration[id=$id, domain=$domain, emailFromName=$emailFromName, emailFromEmail=$emailFromEmail, emailHeaders=$emailHeaders, wpSyncToken=$wpSyncToken, wpSynced=$wpSynced, wpURL=$wpURL, createdAt=$createdAt, autoAddedDate=$autoAddedDate, siteType=$siteType, logoSrc=$logoSrc, logoSrc100px=$logoSrc100px, footerUnsubscribeURL=$footerUnsubscribeURL, disableUnsubscribeLinks=$disableUnsubscribeLinks]';

@@ -120,49 +120,51 @@ class APISSOUser {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APISSOUser &&
     other.id == id &&
-    other.username == username &&
-    other.websiteUrl == websiteUrl &&
-    other.email == email &&
-    other.signUpDate == signUpDate &&
-    other.createdFromUrlId == createdFromUrlId &&
-    other.loginCount == loginCount &&
-    other.avatarSrc == avatarSrc &&
-    other.optedInNotifications == optedInNotifications &&
-    other.optedInSubscriptionNotifications == optedInSubscriptionNotifications &&
-    other.displayLabel == displayLabel &&
-    other.displayName == displayName &&
-    other.isAccountOwner == isAccountOwner &&
-    other.isAdminAdmin == isAdminAdmin &&
-    other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
-    other.isProfileActivityPrivate == isProfileActivityPrivate &&
-    other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
-    other.isProfileDMDisabled == isProfileDMDisabled &&
-    other.hasBlockedUsers == hasBlockedUsers &&
-    _deepEquality.equals(other.groupIds, groupIds);
+      other.username == username &&
+      other.websiteUrl == websiteUrl &&
+      other.email == email &&
+      other.signUpDate == signUpDate &&
+      other.createdFromUrlId == createdFromUrlId &&
+      other.loginCount == loginCount &&
+      other.avatarSrc == avatarSrc &&
+      other.optedInNotifications == optedInNotifications &&
+      other.optedInSubscriptionNotifications == optedInSubscriptionNotifications &&
+      other.displayLabel == displayLabel &&
+      other.displayName == displayName &&
+      other.isAccountOwner == isAccountOwner &&
+      other.isAdminAdmin == isAdminAdmin &&
+      other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
+      other.isProfileActivityPrivate == isProfileActivityPrivate &&
+      other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
+      other.isProfileDMDisabled == isProfileDMDisabled &&
+      other.hasBlockedUsers == hasBlockedUsers &&
+      _deepEquality.equals(other.groupIds, groupIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (username.hashCode) +
-    (websiteUrl.hashCode) +
-    (email.hashCode) +
-    (signUpDate.hashCode) +
-    (createdFromUrlId.hashCode) +
-    (loginCount.hashCode) +
-    (avatarSrc.hashCode) +
-    (optedInNotifications.hashCode) +
-    (optedInSubscriptionNotifications.hashCode) +
-    (displayLabel.hashCode) +
-    (displayName.hashCode) +
-    (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
-    (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
-    (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
-    (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
-    (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
-    (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
-    (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
-    (groupIds.hashCode);
+      (username.hashCode) +
+      (websiteUrl.hashCode) +
+      (email.hashCode) +
+      (signUpDate.hashCode) +
+      (createdFromUrlId.hashCode) +
+      (loginCount.hashCode) +
+      (avatarSrc.hashCode) +
+      (optedInNotifications.hashCode) +
+      (optedInSubscriptionNotifications.hashCode) +
+      (displayLabel.hashCode) +
+      (displayName.hashCode) +
+      (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
+      (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
+      (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
+      (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
+      (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
+      (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
+      (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
+      (groupIds.hashCode);
+  
 
   @override
   String toString() => 'APISSOUser[id=$id, username=$username, websiteUrl=$websiteUrl, email=$email, signUpDate=$signUpDate, createdFromUrlId=$createdFromUrlId, loginCount=$loginCount, avatarSrc=$avatarSrc, optedInNotifications=$optedInNotifications, optedInSubscriptionNotifications=$optedInSubscriptionNotifications, displayLabel=$displayLabel, displayName=$displayName, isAccountOwner=$isAccountOwner, isAdminAdmin=$isAdminAdmin, isCommentModeratorAdmin=$isCommentModeratorAdmin, isProfileActivityPrivate=$isProfileActivityPrivate, isProfileCommentsPrivate=$isProfileCommentsPrivate, isProfileDMDisabled=$isProfileDMDisabled, hasBlockedUsers=$hasBlockedUsers, groupIds=$groupIds]';

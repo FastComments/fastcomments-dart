@@ -30,13 +30,15 @@ class BulkCreateHashTagsBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkCreateHashTagsBody &&
     other.tenantId == tenantId &&
-    _deepEquality.equals(other.tags, tags);
+      _deepEquality.equals(other.tags, tags);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (tenantId == null ? 0 : tenantId!.hashCode) +
-    (tags.hashCode);
+      (tags.hashCode);
+  
 
   @override
   String toString() => 'BulkCreateHashTagsBody[tenantId=$tenantId, tags=$tags]';

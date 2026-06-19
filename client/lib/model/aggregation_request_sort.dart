@@ -24,13 +24,15 @@ class AggregationRequestSort {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationRequestSort &&
     other.dir == dir &&
-    other.field == field;
+      other.field == field;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (dir.hashCode) +
-    (field.hashCode);
+      (field.hashCode);
+  
 
   @override
   String toString() => 'AggregationRequestSort[dir=$dir, field=$field]';

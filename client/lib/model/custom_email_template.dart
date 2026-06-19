@@ -52,31 +52,33 @@ class CustomEmailTemplate {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CustomEmailTemplate &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.emailTemplateId == emailTemplateId &&
-    other.displayName == displayName &&
-    other.createdAt == createdAt &&
-    other.updatedAt == updatedAt &&
-    other.updatedByUserId == updatedByUserId &&
-    other.domain == domain &&
-    other.ejs == ejs &&
-    _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale) &&
-    other.testData == testData;
+      other.tenantId == tenantId &&
+      other.emailTemplateId == emailTemplateId &&
+      other.displayName == displayName &&
+      other.createdAt == createdAt &&
+      other.updatedAt == updatedAt &&
+      other.updatedByUserId == updatedByUserId &&
+      other.domain == domain &&
+      other.ejs == ejs &&
+      _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale) &&
+      other.testData == testData;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (emailTemplateId.hashCode) +
-    (displayName.hashCode) +
-    (createdAt.hashCode) +
-    (updatedAt == null ? 0 : updatedAt!.hashCode) +
-    (updatedByUserId == null ? 0 : updatedByUserId!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (ejs.hashCode) +
-    (translationOverridesByLocale.hashCode) +
-    (testData == null ? 0 : testData!.hashCode);
+      (tenantId.hashCode) +
+      (emailTemplateId.hashCode) +
+      (displayName.hashCode) +
+      (createdAt.hashCode) +
+      (updatedAt == null ? 0 : updatedAt!.hashCode) +
+      (updatedByUserId == null ? 0 : updatedByUserId!.hashCode) +
+      (domain == null ? 0 : domain!.hashCode) +
+      (ejs.hashCode) +
+      (translationOverridesByLocale.hashCode) +
+      (testData == null ? 0 : testData!.hashCode);
+  
 
   @override
   String toString() => 'CustomEmailTemplate[id=$id, tenantId=$tenantId, emailTemplateId=$emailTemplateId, displayName=$displayName, createdAt=$createdAt, updatedAt=$updatedAt, updatedByUserId=$updatedByUserId, domain=$domain, ejs=$ejs, translationOverridesByLocale=$translationOverridesByLocale, testData=$testData]';
@@ -154,7 +156,7 @@ class CustomEmailTemplate {
         updatedByUserId: mapValueOfType<String>(json, r'updatedByUserId'),
         domain: mapValueOfType<String>(json, r'domain'),
         ejs: mapValueOfType<String>(json, r'ejs')!,
-        translationOverridesByLocale: mapCastOfType<String, dynamic>(json, r'translationOverridesByLocale')!,
+        translationOverridesByLocale: ((json[r'translationOverridesByLocale'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, String>())))!,
         testData: mapValueOfType<Object>(json, r'testData'),
       );
     }

@@ -24,13 +24,15 @@ class CreateHashTagResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateHashTagResponse &&
     other.status == status &&
-    other.hashTag == hashTag;
+      other.hashTag == hashTag;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (hashTag.hashCode);
+      (hashTag.hashCode);
+  
 
   @override
   String toString() => 'CreateHashTagResponse[status=$status, hashTag=$hashTag]';

@@ -36,13 +36,15 @@ class APICommentBaseMeta {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APICommentBaseMeta &&
     other.wpUserId == wpUserId &&
-    other.wpPostId == wpPostId;
+      other.wpPostId == wpPostId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (wpUserId == null ? 0 : wpUserId!.hashCode) +
-    (wpPostId == null ? 0 : wpPostId!.hashCode);
+      (wpPostId == null ? 0 : wpPostId!.hashCode);
+  
 
   @override
   String toString() => 'APICommentBaseMeta[wpUserId=$wpUserId, wpPostId=$wpPostId]';

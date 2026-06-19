@@ -32,17 +32,19 @@ class EmailTemplateDefinition {
   @override
   bool operator ==(Object other) => identical(this, other) || other is EmailTemplateDefinition &&
     other.emailTemplateId == emailTemplateId &&
-    _deepEquality.equals(other.defaultTestData, defaultTestData) &&
-    _deepEquality.equals(other.defaultTranslationsByLocale, defaultTranslationsByLocale) &&
-    other.defaultEJS == defaultEJS;
+      _deepEquality.equals(other.defaultTestData, defaultTestData) &&
+      _deepEquality.equals(other.defaultTranslationsByLocale, defaultTranslationsByLocale) &&
+      other.defaultEJS == defaultEJS;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (emailTemplateId.hashCode) +
-    (defaultTestData.hashCode) +
-    (defaultTranslationsByLocale.hashCode) +
-    (defaultEJS.hashCode);
+      (defaultTestData.hashCode) +
+      (defaultTranslationsByLocale.hashCode) +
+      (defaultEJS.hashCode);
+  
 
   @override
   String toString() => 'EmailTemplateDefinition[emailTemplateId=$emailTemplateId, defaultTestData=$defaultTestData, defaultTranslationsByLocale=$defaultTranslationsByLocale, defaultEJS=$defaultEJS]';
@@ -81,7 +83,7 @@ class EmailTemplateDefinition {
       return EmailTemplateDefinition(
         emailTemplateId: mapValueOfType<String>(json, r'emailTemplateId')!,
         defaultTestData: mapCastOfType<String, Object>(json, r'defaultTestData')!,
-        defaultTranslationsByLocale: mapCastOfType<String, dynamic>(json, r'defaultTranslationsByLocale')!,
+        defaultTranslationsByLocale: ((json[r'defaultTranslationsByLocale'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, String>())))!,
         defaultEJS: mapValueOfType<String>(json, r'defaultEJS')!,
       );
     }

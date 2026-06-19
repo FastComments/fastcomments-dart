@@ -39,15 +39,17 @@ class FeedPostMediaItem {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPostMediaItem &&
     other.title == title &&
-    other.linkUrl == linkUrl &&
-    _deepEquality.equals(other.sizes, sizes);
+      other.linkUrl == linkUrl &&
+      _deepEquality.equals(other.sizes, sizes);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (title == null ? 0 : title!.hashCode) +
-    (linkUrl == null ? 0 : linkUrl!.hashCode) +
-    (sizes.hashCode);
+      (linkUrl == null ? 0 : linkUrl!.hashCode) +
+      (sizes.hashCode);
+  
 
   @override
   String toString() => 'FeedPostMediaItem[title=$title, linkUrl=$linkUrl, sizes=$sizes]';

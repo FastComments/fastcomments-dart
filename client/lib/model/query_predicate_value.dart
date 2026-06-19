@@ -12,15 +12,15 @@ part of openapi.api;
 
 class QueryPredicateValue {
   /// Returns a new [QueryPredicateValue] instance.
-  QueryPredicateValue({
-  });
+  QueryPredicateValue();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is QueryPredicateValue &&
+  bool operator ==(Object other) => identical(this, other) || other is QueryPredicateValue;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    0;
 
   @override
   String toString() => 'QueryPredicateValue[]';

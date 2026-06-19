@@ -39,19 +39,21 @@ class TenantHashTag {
   @override
   bool operator ==(Object other) => identical(this, other) || other is TenantHashTag &&
     other.id == id &&
-    other.createdAt == createdAt &&
-    other.tenantId == tenantId &&
-    other.tag == tag &&
-    other.url == url;
+      other.createdAt == createdAt &&
+      other.tenantId == tenantId &&
+      other.tag == tag &&
+      other.url == url;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (createdAt.hashCode) +
-    (tenantId.hashCode) +
-    (tag.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+      (createdAt.hashCode) +
+      (tenantId.hashCode) +
+      (tag.hashCode) +
+      (url == null ? 0 : url!.hashCode);
+  
 
   @override
   String toString() => 'TenantHashTag[id=$id, createdAt=$createdAt, tenantId=$tenantId, tag=$tag, url=$url]';

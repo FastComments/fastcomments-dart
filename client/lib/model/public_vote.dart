@@ -36,21 +36,23 @@ class PublicVote {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicVote &&
     other.id == id &&
-    other.urlId == urlId &&
-    other.commentId == commentId &&
-    other.userId == userId &&
-    other.direction == direction &&
-    other.createdAt == createdAt;
+      other.urlId == urlId &&
+      other.commentId == commentId &&
+      other.userId == userId &&
+      other.direction == direction &&
+      other.createdAt == createdAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (urlId.hashCode) +
-    (commentId.hashCode) +
-    (userId.hashCode) +
-    (direction.hashCode) +
-    (createdAt.hashCode);
+      (urlId.hashCode) +
+      (commentId.hashCode) +
+      (userId.hashCode) +
+      (direction.hashCode) +
+      (createdAt.hashCode);
+  
 
   @override
   String toString() => 'PublicVote[id=$id, urlId=$urlId, commentId=$commentId, userId=$userId, direction=$direction, createdAt=$createdAt]';

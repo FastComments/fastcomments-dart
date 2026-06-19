@@ -62,21 +62,23 @@ class UpdateEmailTemplateBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateEmailTemplateBody &&
     other.emailTemplateId == emailTemplateId &&
-    other.displayName == displayName &&
-    other.ejs == ejs &&
-    other.domain == domain &&
-    _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale) &&
-    _deepEquality.equals(other.testData, testData);
+      other.displayName == displayName &&
+      other.ejs == ejs &&
+      other.domain == domain &&
+      _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale) &&
+      _deepEquality.equals(other.testData, testData);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (emailTemplateId == null ? 0 : emailTemplateId!.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (ejs == null ? 0 : ejs!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (translationOverridesByLocale.hashCode) +
-    (testData.hashCode);
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (ejs == null ? 0 : ejs!.hashCode) +
+      (domain == null ? 0 : domain!.hashCode) +
+      (translationOverridesByLocale.hashCode) +
+      (testData.hashCode);
+  
 
   @override
   String toString() => 'UpdateEmailTemplateBody[emailTemplateId=$emailTemplateId, displayName=$displayName, ejs=$ejs, domain=$domain, translationOverridesByLocale=$translationOverridesByLocale, testData=$testData]';
@@ -127,7 +129,7 @@ class UpdateEmailTemplateBody {
         displayName: mapValueOfType<String>(json, r'displayName'),
         ejs: mapValueOfType<String>(json, r'ejs'),
         domain: mapValueOfType<String>(json, r'domain'),
-        translationOverridesByLocale: mapCastOfType<String, dynamic>(json, r'translationOverridesByLocale') ?? const {},
+        translationOverridesByLocale: (json[r'translationOverridesByLocale'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, String>())) ?? const {},
         testData: mapCastOfType<String, Object>(json, r'testData') ?? const {},
       );
     }

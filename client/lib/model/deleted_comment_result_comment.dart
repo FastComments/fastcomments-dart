@@ -36,17 +36,19 @@ class DeletedCommentResultComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is DeletedCommentResultComment &&
     other.isDeleted == isDeleted &&
-    other.commentHTML == commentHTML &&
-    other.commenterName == commenterName &&
-    other.userId == userId;
+      other.commentHTML == commentHTML &&
+      other.commenterName == commenterName &&
+      other.userId == userId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (commentHTML.hashCode) +
-    (commenterName.hashCode) +
-    (userId == null ? 0 : userId!.hashCode);
+      (commentHTML.hashCode) +
+      (commenterName.hashCode) +
+      (userId == null ? 0 : userId!.hashCode);
+  
 
   @override
   String toString() => 'DeletedCommentResultComment[isDeleted=$isDeleted, commentHTML=$commentHTML, commenterName=$commenterName, userId=$userId]';

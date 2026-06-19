@@ -45,15 +45,17 @@ class UpdateHashTagBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateHashTagBody &&
     other.tenantId == tenantId &&
-    other.url == url &&
-    other.tag == tag;
+      other.url == url &&
+      other.tag == tag;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (tenantId == null ? 0 : tenantId!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (tag == null ? 0 : tag!.hashCode);
+      (url == null ? 0 : url!.hashCode) +
+      (tag == null ? 0 : tag!.hashCode);
+  
 
   @override
   String toString() => 'UpdateHashTagBody[tenantId=$tenantId, url=$url, tag=$tag]';

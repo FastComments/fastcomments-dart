@@ -57,19 +57,21 @@ class PatchPageAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PatchPageAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.commentsUpdated == commentsUpdated &&
-    other.page == page &&
-    other.status == status;
+      other.code == code &&
+      other.commentsUpdated == commentsUpdated &&
+      other.page == page &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (commentsUpdated == null ? 0 : commentsUpdated!.hashCode) +
-    (page == null ? 0 : page!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (commentsUpdated == null ? 0 : commentsUpdated!.hashCode) +
+      (page == null ? 0 : page!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'PatchPageAPIResponse[reason=$reason, code=$code, commentsUpdated=$commentsUpdated, page=$page, status=$status]';

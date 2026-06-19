@@ -54,29 +54,31 @@ class APITicketFile {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITicketFile &&
     other.id == id &&
-    other.s3Key == s3Key &&
-    other.originalFileName == originalFileName &&
-    other.sizeBytes == sizeBytes &&
-    other.contentType == contentType &&
-    other.uploadedByUserId == uploadedByUserId &&
-    other.uploadedAt == uploadedAt &&
-    other.url == url &&
-    other.expiresAt == expiresAt &&
-    other.expired == expired;
+      other.s3Key == s3Key &&
+      other.originalFileName == originalFileName &&
+      other.sizeBytes == sizeBytes &&
+      other.contentType == contentType &&
+      other.uploadedByUserId == uploadedByUserId &&
+      other.uploadedAt == uploadedAt &&
+      other.url == url &&
+      other.expiresAt == expiresAt &&
+      other.expired == expired;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (s3Key.hashCode) +
-    (originalFileName.hashCode) +
-    (sizeBytes.hashCode) +
-    (contentType.hashCode) +
-    (uploadedByUserId.hashCode) +
-    (uploadedAt.hashCode) +
-    (url.hashCode) +
-    (expiresAt.hashCode) +
-    (expired == null ? 0 : expired!.hashCode);
+      (s3Key.hashCode) +
+      (originalFileName.hashCode) +
+      (sizeBytes.hashCode) +
+      (contentType.hashCode) +
+      (uploadedByUserId.hashCode) +
+      (uploadedAt.hashCode) +
+      (url.hashCode) +
+      (expiresAt.hashCode) +
+      (expired == null ? 0 : expired!.hashCode);
+  
 
   @override
   String toString() => 'APITicketFile[id=$id, s3Key=$s3Key, originalFileName=$originalFileName, sizeBytes=$sizeBytes, contentType=$contentType, uploadedByUserId=$uploadedByUserId, uploadedAt=$uploadedAt, url=$url, expiresAt=$expiresAt, expired=$expired]';

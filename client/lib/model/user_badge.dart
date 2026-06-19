@@ -81,47 +81,49 @@ class UserBadge {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserBadge &&
     other.id == id &&
-    other.userId == userId &&
-    other.badgeId == badgeId &&
-    other.fromTenantId == fromTenantId &&
-    other.createdAt == createdAt &&
-    other.type == type &&
-    other.threshold == threshold &&
-    other.description == description &&
-    other.displayLabel == displayLabel &&
-    other.displaySrc == displaySrc &&
-    other.backgroundColor == backgroundColor &&
-    other.borderColor == borderColor &&
-    other.textColor == textColor &&
-    other.cssClass == cssClass &&
-    other.veteranUserThresholdMillis == veteranUserThresholdMillis &&
-    other.displayedOnComments == displayedOnComments &&
-    other.receivedAt == receivedAt &&
-    other.order == order &&
-    other.urlId == urlId;
+      other.userId == userId &&
+      other.badgeId == badgeId &&
+      other.fromTenantId == fromTenantId &&
+      other.createdAt == createdAt &&
+      other.type == type &&
+      other.threshold == threshold &&
+      other.description == description &&
+      other.displayLabel == displayLabel &&
+      other.displaySrc == displaySrc &&
+      other.backgroundColor == backgroundColor &&
+      other.borderColor == borderColor &&
+      other.textColor == textColor &&
+      other.cssClass == cssClass &&
+      other.veteranUserThresholdMillis == veteranUserThresholdMillis &&
+      other.displayedOnComments == displayedOnComments &&
+      other.receivedAt == receivedAt &&
+      other.order == order &&
+      other.urlId == urlId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (userId.hashCode) +
-    (badgeId.hashCode) +
-    (fromTenantId.hashCode) +
-    (createdAt.hashCode) +
-    (type.hashCode) +
-    (threshold.hashCode) +
-    (description.hashCode) +
-    (displayLabel.hashCode) +
-    (displaySrc == null ? 0 : displaySrc!.hashCode) +
-    (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
-    (borderColor == null ? 0 : borderColor!.hashCode) +
-    (textColor == null ? 0 : textColor!.hashCode) +
-    (cssClass == null ? 0 : cssClass!.hashCode) +
-    (veteranUserThresholdMillis.hashCode) +
-    (displayedOnComments.hashCode) +
-    (receivedAt.hashCode) +
-    (order == null ? 0 : order!.hashCode) +
-    (urlId == null ? 0 : urlId!.hashCode);
+      (userId.hashCode) +
+      (badgeId.hashCode) +
+      (fromTenantId.hashCode) +
+      (createdAt.hashCode) +
+      (type.hashCode) +
+      (threshold.hashCode) +
+      (description.hashCode) +
+      (displayLabel.hashCode) +
+      (displaySrc == null ? 0 : displaySrc!.hashCode) +
+      (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
+      (borderColor == null ? 0 : borderColor!.hashCode) +
+      (textColor == null ? 0 : textColor!.hashCode) +
+      (cssClass == null ? 0 : cssClass!.hashCode) +
+      (veteranUserThresholdMillis.hashCode) +
+      (displayedOnComments.hashCode) +
+      (receivedAt.hashCode) +
+      (order == null ? 0 : order!.hashCode) +
+      (urlId == null ? 0 : urlId!.hashCode);
+  
 
   @override
   String toString() => 'UserBadge[id=$id, userId=$userId, badgeId=$badgeId, fromTenantId=$fromTenantId, createdAt=$createdAt, type=$type, threshold=$threshold, description=$description, displayLabel=$displayLabel, displaySrc=$displaySrc, backgroundColor=$backgroundColor, borderColor=$borderColor, textColor=$textColor, cssClass=$cssClass, veteranUserThresholdMillis=$veteranUserThresholdMillis, displayedOnComments=$displayedOnComments, receivedAt=$receivedAt, order=$order, urlId=$urlId]';

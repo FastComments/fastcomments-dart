@@ -64,27 +64,29 @@ class UserBadgeProgress {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserBadgeProgress &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.userId == userId &&
-    other.firstCommentId == firstCommentId &&
-    other.firstCommentDate == firstCommentDate &&
-    other.autoTrustFactor == autoTrustFactor &&
-    other.manualTrustFactor == manualTrustFactor &&
-    _deepEquality.equals(other.progress, progress) &&
-    other.tosAcceptedAt == tosAcceptedAt;
+      other.tenantId == tenantId &&
+      other.userId == userId &&
+      other.firstCommentId == firstCommentId &&
+      other.firstCommentDate == firstCommentDate &&
+      other.autoTrustFactor == autoTrustFactor &&
+      other.manualTrustFactor == manualTrustFactor &&
+      _deepEquality.equals(other.progress, progress) &&
+      other.tosAcceptedAt == tosAcceptedAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (userId.hashCode) +
-    (firstCommentId.hashCode) +
-    (firstCommentDate.hashCode) +
-    (autoTrustFactor == null ? 0 : autoTrustFactor!.hashCode) +
-    (manualTrustFactor == null ? 0 : manualTrustFactor!.hashCode) +
-    (progress.hashCode) +
-    (tosAcceptedAt == null ? 0 : tosAcceptedAt!.hashCode);
+      (tenantId.hashCode) +
+      (userId.hashCode) +
+      (firstCommentId.hashCode) +
+      (firstCommentDate.hashCode) +
+      (autoTrustFactor == null ? 0 : autoTrustFactor!.hashCode) +
+      (manualTrustFactor == null ? 0 : manualTrustFactor!.hashCode) +
+      (progress.hashCode) +
+      (tosAcceptedAt == null ? 0 : tosAcceptedAt!.hashCode);
+  
 
   @override
   String toString() => 'UserBadgeProgress[id=$id, tenantId=$tenantId, userId=$userId, firstCommentId=$firstCommentId, firstCommentDate=$firstCommentDate, autoTrustFactor=$autoTrustFactor, manualTrustFactor=$manualTrustFactor, progress=$progress, tosAcceptedAt=$tosAcceptedAt]';

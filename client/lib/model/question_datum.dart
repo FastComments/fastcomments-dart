@@ -25,13 +25,15 @@ class QuestionDatum {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionDatum &&
     _deepEquality.equals(other.v, v) &&
-    other.total == total;
+      other.total == total;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (v.hashCode) +
-    (total.hashCode);
+      (total.hashCode);
+  
 
   @override
   String toString() => 'QuestionDatum[v=$v, total=$total]';

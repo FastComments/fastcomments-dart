@@ -21,7 +21,7 @@ void main() {
       // TODO
     });
 
-    // List<AddHashTag200Response> results (default value: const [])
+    // List<BulkCreateHashTagsResponseResultsInner> results (default value: const [])
     test('to test the property `results`', () async {
       // TODO
     });

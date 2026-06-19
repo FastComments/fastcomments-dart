@@ -24,13 +24,15 @@ class FindCommentsByRangeResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FindCommentsByRangeResponse &&
     _deepEquality.equals(other.results, results) &&
-    other.createdAt == createdAt;
+      other.createdAt == createdAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (results.hashCode) +
-    (createdAt.hashCode);
+      (createdAt.hashCode);
+  
 
   @override
   String toString() => 'FindCommentsByRangeResponse[results=$results, createdAt=$createdAt]';

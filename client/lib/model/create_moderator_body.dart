@@ -36,17 +36,19 @@ class CreateModeratorBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateModeratorBody &&
     other.name == name &&
-    other.email == email &&
-    other.userId == userId &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds);
+      other.email == email &&
+      other.userId == userId &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (email.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (moderationGroupIds.hashCode);
+      (email.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (moderationGroupIds.hashCode);
+  
 
   @override
   String toString() => 'CreateModeratorBody[name=$name, email=$email, userId=$userId, moderationGroupIds=$moderationGroupIds]';

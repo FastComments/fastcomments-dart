@@ -36,6 +36,11 @@ void main() {
       // TODO
     });
 
+    // String templateId
+    test('to test the property `templateId`', () async {
+      // TODO
+    });
+
     // double monthlyCostUSD
     test('to test the property `monthlyCostUSD`', () async {
       // TODO

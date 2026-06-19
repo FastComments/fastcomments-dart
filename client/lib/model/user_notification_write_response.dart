@@ -27,15 +27,17 @@ class UserNotificationWriteResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserNotificationWriteResponse &&
     other.status == status &&
-    other.matchedCount == matchedCount &&
-    other.modifiedCount == modifiedCount;
+      other.matchedCount == matchedCount &&
+      other.modifiedCount == modifiedCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (matchedCount.hashCode) +
-    (modifiedCount.hashCode);
+      (matchedCount.hashCode) +
+      (modifiedCount.hashCode);
+  
 
   @override
   String toString() => 'UserNotificationWriteResponse[status=$status, matchedCount=$matchedCount, modifiedCount=$modifiedCount]';

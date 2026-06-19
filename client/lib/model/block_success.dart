@@ -25,13 +25,15 @@ class BlockSuccess {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BlockSuccess &&
     other.status == status &&
-    _deepEquality.equals(other.commentStatuses, commentStatuses);
+      _deepEquality.equals(other.commentStatuses, commentStatuses);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (commentStatuses.hashCode);
+      (commentStatuses.hashCode);
+  
 
   @override
   String toString() => 'BlockSuccess[status=$status, commentStatuses=$commentStatuses]';

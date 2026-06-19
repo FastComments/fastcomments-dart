@@ -51,31 +51,33 @@ class QuestionResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionResult &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.urlId == urlId &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId &&
-    other.createdAt == createdAt &&
-    other.value == value &&
-    other.commentId == commentId &&
-    other.questionId == questionId &&
-    _deepEquality.equals(other.meta, meta) &&
-    other.ipHash == ipHash;
+      other.tenantId == tenantId &&
+      other.urlId == urlId &&
+      other.anonUserId == anonUserId &&
+      other.userId == userId &&
+      other.createdAt == createdAt &&
+      other.value == value &&
+      other.commentId == commentId &&
+      other.questionId == questionId &&
+      _deepEquality.equals(other.meta, meta) &&
+      other.ipHash == ipHash;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (urlId.hashCode) +
-    (anonUserId.hashCode) +
-    (userId.hashCode) +
-    (createdAt.hashCode) +
-    (value.hashCode) +
-    (commentId == null ? 0 : commentId!.hashCode) +
-    (questionId.hashCode) +
-    (meta == null ? 0 : meta!.hashCode) +
-    (ipHash.hashCode);
+      (tenantId.hashCode) +
+      (urlId.hashCode) +
+      (anonUserId.hashCode) +
+      (userId.hashCode) +
+      (createdAt.hashCode) +
+      (value.hashCode) +
+      (commentId == null ? 0 : commentId!.hashCode) +
+      (questionId.hashCode) +
+      (meta == null ? 0 : meta!.hashCode) +
+      (ipHash.hashCode);
+  
 
   @override
   String toString() => 'QuestionResult[id=$id, tenantId=$tenantId, urlId=$urlId, anonUserId=$anonUserId, userId=$userId, createdAt=$createdAt, value=$value, commentId=$commentId, questionId=$questionId, meta=$meta, ipHash=$ipHash]';

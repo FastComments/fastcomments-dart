@@ -33,15 +33,17 @@ class PublicAPIDeleteCommentResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicAPIDeleteCommentResponse &&
     other.comment == comment &&
-    other.hardRemoved == hardRemoved &&
-    other.status == status;
+      other.hardRemoved == hardRemoved &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment == null ? 0 : comment!.hashCode) +
-    (hardRemoved.hashCode) +
-    (status.hashCode);
+      (hardRemoved.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'PublicAPIDeleteCommentResponse[comment=$comment, hardRemoved=$hardRemoved, status=$status]';

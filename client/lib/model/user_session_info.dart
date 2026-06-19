@@ -114,37 +114,39 @@ class UserSessionInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserSessionInfo &&
     other.id == id &&
-    other.authorized == authorized &&
-    other.avatarSrc == avatarSrc &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.displayLabel == displayLabel &&
-    other.displayName == displayName &&
-    other.email == email &&
-    _deepEquality.equals(other.groupIds, groupIds) &&
-    other.hasBlockedUsers == hasBlockedUsers &&
-    other.isAnonSession == isAnonSession &&
-    other.needsTOS == needsTOS &&
-    other.sessionId == sessionId &&
-    other.username == username &&
-    other.websiteUrl == websiteUrl;
+      other.authorized == authorized &&
+      other.avatarSrc == avatarSrc &&
+      _deepEquality.equals(other.badges, badges) &&
+      other.displayLabel == displayLabel &&
+      other.displayName == displayName &&
+      other.email == email &&
+      _deepEquality.equals(other.groupIds, groupIds) &&
+      other.hasBlockedUsers == hasBlockedUsers &&
+      other.isAnonSession == isAnonSession &&
+      other.needsTOS == needsTOS &&
+      other.sessionId == sessionId &&
+      other.username == username &&
+      other.websiteUrl == websiteUrl;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id == null ? 0 : id!.hashCode) +
-    (authorized == null ? 0 : authorized!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (badges.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (groupIds.hashCode) +
-    (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
-    (isAnonSession == null ? 0 : isAnonSession!.hashCode) +
-    (needsTOS == null ? 0 : needsTOS!.hashCode) +
-    (sessionId == null ? 0 : sessionId!.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (websiteUrl == null ? 0 : websiteUrl!.hashCode);
+      (authorized == null ? 0 : authorized!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (badges.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (groupIds.hashCode) +
+      (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
+      (isAnonSession == null ? 0 : isAnonSession!.hashCode) +
+      (needsTOS == null ? 0 : needsTOS!.hashCode) +
+      (sessionId == null ? 0 : sessionId!.hashCode) +
+      (username == null ? 0 : username!.hashCode) +
+      (websiteUrl == null ? 0 : websiteUrl!.hashCode);
+  
 
   @override
   String toString() => 'UserSessionInfo[id=$id, authorized=$authorized, avatarSrc=$avatarSrc, badges=$badges, displayLabel=$displayLabel, displayName=$displayName, email=$email, groupIds=$groupIds, hasBlockedUsers=$hasBlockedUsers, isAnonSession=$isAnonSession, needsTOS=$needsTOS, sessionId=$sessionId, username=$username, websiteUrl=$websiteUrl]';

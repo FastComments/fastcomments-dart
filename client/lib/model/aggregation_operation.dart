@@ -44,17 +44,19 @@ class AggregationOperation {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationOperation &&
     other.field == field &&
-    other.op == op &&
-    other.alias == alias &&
-    other.expandArray == expandArray;
+      other.op == op &&
+      other.alias == alias &&
+      other.expandArray == expandArray;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (field.hashCode) +
-    (op.hashCode) +
-    (alias == null ? 0 : alias!.hashCode) +
-    (expandArray == null ? 0 : expandArray!.hashCode);
+      (op.hashCode) +
+      (alias == null ? 0 : alias!.hashCode) +
+      (expandArray == null ? 0 : expandArray!.hashCode);
+  
 
   @override
   String toString() => 'AggregationOperation[field=$field, op=$op, alias=$alias, expandArray=$expandArray]';

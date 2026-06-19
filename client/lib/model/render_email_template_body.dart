@@ -32,17 +32,19 @@ class RenderEmailTemplateBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is RenderEmailTemplateBody &&
     other.emailTemplateId == emailTemplateId &&
-    other.ejs == ejs &&
-    _deepEquality.equals(other.testData, testData) &&
-    _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale);
+      other.ejs == ejs &&
+      _deepEquality.equals(other.testData, testData) &&
+      _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (emailTemplateId.hashCode) +
-    (ejs.hashCode) +
-    (testData.hashCode) +
-    (translationOverridesByLocale.hashCode);
+      (ejs.hashCode) +
+      (testData.hashCode) +
+      (translationOverridesByLocale.hashCode);
+  
 
   @override
   String toString() => 'RenderEmailTemplateBody[emailTemplateId=$emailTemplateId, ejs=$ejs, testData=$testData, translationOverridesByLocale=$translationOverridesByLocale]';
@@ -78,7 +80,7 @@ class RenderEmailTemplateBody {
         emailTemplateId: mapValueOfType<String>(json, r'emailTemplateId')!,
         ejs: mapValueOfType<String>(json, r'ejs')!,
         testData: mapCastOfType<String, Object>(json, r'testData') ?? const {},
-        translationOverridesByLocale: mapCastOfType<String, dynamic>(json, r'translationOverridesByLocale') ?? const {},
+        translationOverridesByLocale: (json[r'translationOverridesByLocale'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, String>())) ?? const {},
       );
     }
     return null;

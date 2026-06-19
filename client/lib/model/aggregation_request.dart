@@ -39,19 +39,21 @@ class AggregationRequest {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationRequest &&
     _deepEquality.equals(other.query, query) &&
-    other.resourceName == resourceName &&
-    _deepEquality.equals(other.groupBy, groupBy) &&
-    _deepEquality.equals(other.operations, operations) &&
-    other.sort == sort;
+      other.resourceName == resourceName &&
+      _deepEquality.equals(other.groupBy, groupBy) &&
+      _deepEquality.equals(other.operations, operations) &&
+      other.sort == sort;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (query.hashCode) +
-    (resourceName.hashCode) +
-    (groupBy.hashCode) +
-    (operations.hashCode) +
-    (sort == null ? 0 : sort!.hashCode);
+      (resourceName.hashCode) +
+      (groupBy.hashCode) +
+      (operations.hashCode) +
+      (sort == null ? 0 : sort!.hashCode);
+  
 
   @override
   String toString() => 'AggregationRequest[query=$query, resourceName=$resourceName, groupBy=$groupBy, operations=$operations, sort=$sort]';

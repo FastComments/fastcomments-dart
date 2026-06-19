@@ -25,13 +25,15 @@ class ChangeCommentPinStatusResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ChangeCommentPinStatusResponse &&
     _deepEquality.equals(other.commentPositions, commentPositions) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentPositions.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'ChangeCommentPinStatusResponse[commentPositions=$commentPositions, status=$status]';

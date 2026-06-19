@@ -27,15 +27,17 @@ class FeedPostMediaItemAsset {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPostMediaItemAsset &&
     other.w == w &&
-    other.h == h &&
-    other.src == src;
+      other.h == h &&
+      other.src == src;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (w.hashCode) +
-    (h.hashCode) +
-    (src.hashCode);
+      (h.hashCode) +
+      (src.hashCode);
+  
 
   @override
   String toString() => 'FeedPostMediaItemAsset[w=$w, h=$h, src=$src]';

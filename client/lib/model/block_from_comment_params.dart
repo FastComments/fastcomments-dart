@@ -21,11 +21,13 @@ class BlockFromCommentParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BlockFromCommentParams &&
     _deepEquality.equals(other.commentIdsToCheck, commentIdsToCheck);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentIdsToCheck.hashCode);
+  
 
   @override
   String toString() => 'BlockFromCommentParams[commentIdsToCheck=$commentIdsToCheck]';

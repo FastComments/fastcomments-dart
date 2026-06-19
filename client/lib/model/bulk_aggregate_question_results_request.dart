@@ -21,11 +21,13 @@ class BulkAggregateQuestionResultsRequest {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkAggregateQuestionResultsRequest &&
     _deepEquality.equals(other.aggregations, aggregations);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (aggregations.hashCode);
+  
 
   @override
   String toString() => 'BulkAggregateQuestionResultsRequest[aggregations=$aggregations]';

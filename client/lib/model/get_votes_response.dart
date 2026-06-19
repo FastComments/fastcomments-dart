@@ -30,17 +30,19 @@ class GetVotesResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetVotesResponse &&
     other.status == status &&
-    _deepEquality.equals(other.appliedAuthorizedVotes, appliedAuthorizedVotes) &&
-    _deepEquality.equals(other.appliedAnonymousVotes, appliedAnonymousVotes) &&
-    _deepEquality.equals(other.pendingVotes, pendingVotes);
+      _deepEquality.equals(other.appliedAuthorizedVotes, appliedAuthorizedVotes) &&
+      _deepEquality.equals(other.appliedAnonymousVotes, appliedAnonymousVotes) &&
+      _deepEquality.equals(other.pendingVotes, pendingVotes);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (appliedAuthorizedVotes.hashCode) +
-    (appliedAnonymousVotes.hashCode) +
-    (pendingVotes.hashCode);
+      (appliedAuthorizedVotes.hashCode) +
+      (appliedAnonymousVotes.hashCode) +
+      (pendingVotes.hashCode);
+  
 
   @override
   String toString() => 'GetVotesResponse[status=$status, appliedAuthorizedVotes=$appliedAuthorizedVotes, appliedAnonymousVotes=$appliedAnonymousVotes, pendingVotes=$pendingVotes]';

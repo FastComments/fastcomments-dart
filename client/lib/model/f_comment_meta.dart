@@ -45,15 +45,17 @@ class FCommentMeta {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FCommentMeta &&
     other.wpId == wpId &&
-    other.wpUserId == wpUserId &&
-    other.wpPostId == wpPostId;
+      other.wpUserId == wpUserId &&
+      other.wpPostId == wpPostId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (wpId == null ? 0 : wpId!.hashCode) +
-    (wpUserId == null ? 0 : wpUserId!.hashCode) +
-    (wpPostId == null ? 0 : wpPostId!.hashCode);
+      (wpUserId == null ? 0 : wpUserId!.hashCode) +
+      (wpPostId == null ? 0 : wpPostId!.hashCode);
+  
 
   @override
   String toString() => 'FCommentMeta[wpId=$wpId, wpUserId=$wpUserId, wpPostId=$wpPostId]';

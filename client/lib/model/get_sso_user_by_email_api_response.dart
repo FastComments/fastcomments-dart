@@ -48,17 +48,19 @@ class GetSSOUserByEmailAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetSSOUserByEmailAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.user == user &&
-    other.status == status;
+      other.code == code &&
+      other.user == user &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetSSOUserByEmailAPIResponse[reason=$reason, code=$code, user=$user, status=$status]';

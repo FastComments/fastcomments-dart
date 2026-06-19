@@ -22,11 +22,13 @@ class LiveEventExtraInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is LiveEventExtraInfo &&
     _deepEquality.equals(other.commentPositions, commentPositions);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentPositions.hashCode);
+  
 
   @override
   String toString() => 'LiveEventExtraInfo[commentPositions=$commentPositions]';

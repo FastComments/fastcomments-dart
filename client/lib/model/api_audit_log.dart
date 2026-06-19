@@ -85,33 +85,35 @@ class APIAuditLog {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIAuditLog &&
     other.id == id &&
-    other.userId == userId &&
-    other.username == username &&
-    other.resourceName == resourceName &&
-    other.crudType == crudType &&
-    other.from == from &&
-    other.url == url &&
-    other.ip == ip &&
-    other.when_ == when_ &&
-    other.description == description &&
-    other.serverStartDate == serverStartDate &&
-    _deepEquality.equals(other.objectDetails, objectDetails);
+      other.userId == userId &&
+      other.username == username &&
+      other.resourceName == resourceName &&
+      other.crudType == crudType &&
+      other.from == from &&
+      other.url == url &&
+      other.ip == ip &&
+      other.when_ == when_ &&
+      other.description == description &&
+      other.serverStartDate == serverStartDate &&
+      _deepEquality.equals(other.objectDetails, objectDetails);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (resourceName.hashCode) +
-    (crudType.hashCode) +
-    (from == null ? 0 : from!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (ip == null ? 0 : ip!.hashCode) +
-    (when_ == null ? 0 : when_!.hashCode) +
-    (description == null ? 0 : description!.hashCode) +
-    (serverStartDate == null ? 0 : serverStartDate!.hashCode) +
-    (objectDetails == null ? 0 : objectDetails!.hashCode);
+      (userId == null ? 0 : userId!.hashCode) +
+      (username == null ? 0 : username!.hashCode) +
+      (resourceName.hashCode) +
+      (crudType.hashCode) +
+      (from == null ? 0 : from!.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (ip == null ? 0 : ip!.hashCode) +
+      (when_ == null ? 0 : when_!.hashCode) +
+      (description == null ? 0 : description!.hashCode) +
+      (serverStartDate == null ? 0 : serverStartDate!.hashCode) +
+      (objectDetails == null ? 0 : objectDetails!.hashCode);
+  
 
   @override
   String toString() => 'APIAuditLog[id=$id, userId=$userId, username=$username, resourceName=$resourceName, crudType=$crudType, from=$from, url=$url, ip=$ip, when_=$when_, description=$description, serverStartDate=$serverStartDate, objectDetails=$objectDetails]';

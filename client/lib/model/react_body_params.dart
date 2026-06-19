@@ -27,11 +27,13 @@ class ReactBodyParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ReactBodyParams &&
     other.reactType == reactType;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reactType == null ? 0 : reactType!.hashCode);
+  
 
   @override
   String toString() => 'ReactBodyParams[reactType=$reactType]';

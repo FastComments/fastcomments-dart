@@ -48,17 +48,19 @@ class GetPageByURLIdAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPageByURLIdAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.page == page &&
-    other.status == status;
+      other.code == code &&
+      other.page == page &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (page == null ? 0 : page!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (page == null ? 0 : page!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetPageByURLIdAPIResponse[reason=$reason, code=$code, page=$page, status=$status]';

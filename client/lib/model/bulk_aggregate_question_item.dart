@@ -60,21 +60,23 @@ class BulkAggregateQuestionItem {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkAggregateQuestionItem &&
     other.aggId == aggId &&
-    other.questionId == questionId &&
-    _deepEquality.equals(other.questionIds, questionIds) &&
-    other.urlId == urlId &&
-    other.timeBucket == timeBucket &&
-    other.startDate == startDate;
+      other.questionId == questionId &&
+      _deepEquality.equals(other.questionIds, questionIds) &&
+      other.urlId == urlId &&
+      other.timeBucket == timeBucket &&
+      other.startDate == startDate;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (aggId.hashCode) +
-    (questionId == null ? 0 : questionId!.hashCode) +
-    (questionIds.hashCode) +
-    (urlId == null ? 0 : urlId!.hashCode) +
-    (timeBucket == null ? 0 : timeBucket!.hashCode) +
-    (startDate == null ? 0 : startDate!.hashCode);
+      (questionId == null ? 0 : questionId!.hashCode) +
+      (questionIds.hashCode) +
+      (urlId == null ? 0 : urlId!.hashCode) +
+      (timeBucket == null ? 0 : timeBucket!.hashCode) +
+      (startDate == null ? 0 : startDate!.hashCode);
+  
 
   @override
   String toString() => 'BulkAggregateQuestionItem[aggId=$aggId, questionId=$questionId, questionIds=$questionIds, urlId=$urlId, timeBucket=$timeBucket, startDate=$startDate]';

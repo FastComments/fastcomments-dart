@@ -36,21 +36,23 @@ class HeaderState {
   @override
   bool operator ==(Object other) => identical(this, other) || other is HeaderState &&
     other.status == status &&
-    other.notificationType == notificationType &&
-    other.userId == userId &&
-    other.userIdWS == userIdWS &&
-    _deepEquality.equals(other.notificationCounts, notificationCounts) &&
-    _deepEquality.equals(other.accountNotifications, accountNotifications);
+      other.notificationType == notificationType &&
+      other.userId == userId &&
+      other.userIdWS == userIdWS &&
+      _deepEquality.equals(other.notificationCounts, notificationCounts) &&
+      _deepEquality.equals(other.accountNotifications, accountNotifications);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (notificationType.hashCode) +
-    (userId.hashCode) +
-    (userIdWS.hashCode) +
-    (notificationCounts.hashCode) +
-    (accountNotifications.hashCode);
+      (notificationType.hashCode) +
+      (userId.hashCode) +
+      (userIdWS.hashCode) +
+      (notificationCounts.hashCode) +
+      (accountNotifications.hashCode);
+  
 
   @override
   String toString() => 'HeaderState[status=$status, notificationType=$notificationType, userId=$userId, userIdWS=$userIdWS, notificationCounts=$notificationCounts, accountNotifications=$accountNotifications]';

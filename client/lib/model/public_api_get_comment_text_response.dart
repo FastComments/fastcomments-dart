@@ -27,15 +27,17 @@ class PublicAPIGetCommentTextResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicAPIGetCommentTextResponse &&
     other.status == status &&
-    other.commentText == commentText &&
-    other.sanitizedCommentText == sanitizedCommentText;
+      other.commentText == commentText &&
+      other.sanitizedCommentText == sanitizedCommentText;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (commentText.hashCode) +
-    (sanitizedCommentText.hashCode);
+      (commentText.hashCode) +
+      (sanitizedCommentText.hashCode);
+  
 
   @override
   String toString() => 'PublicAPIGetCommentTextResponse[status=$status, commentText=$commentText, sanitizedCommentText=$sanitizedCommentText]';

@@ -30,17 +30,19 @@ class UserNotificationCount {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserNotificationCount &&
     other.id == id &&
-    other.count == count &&
-    other.createdAt == createdAt &&
-    other.expireAt == expireAt;
+      other.count == count &&
+      other.createdAt == createdAt &&
+      other.expireAt == expireAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (count.hashCode) +
-    (createdAt.hashCode) +
-    (expireAt.hashCode);
+      (count.hashCode) +
+      (createdAt.hashCode) +
+      (expireAt.hashCode);
+  
 
   @override
   String toString() => 'UserNotificationCount[id=$id, count=$count, createdAt=$createdAt, expireAt=$expireAt]';

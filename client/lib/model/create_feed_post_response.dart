@@ -24,13 +24,15 @@ class CreateFeedPostResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateFeedPostResponse &&
     other.status == status &&
-    other.feedPost == feedPost;
+      other.feedPost == feedPost;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (feedPost.hashCode);
+      (feedPost.hashCode);
+  
 
   @override
   String toString() => 'CreateFeedPostResponse[status=$status, feedPost=$feedPost]';

@@ -36,17 +36,19 @@ class CommentUserHashTagInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentUserHashTagInfo &&
     other.id == id &&
-    other.tag == tag &&
-    other.url == url &&
-    other.retain == retain;
+      other.tag == tag &&
+      other.url == url &&
+      other.retain == retain;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tag.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (retain == null ? 0 : retain!.hashCode);
+      (tag.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (retain == null ? 0 : retain!.hashCode);
+  
 
   @override
   String toString() => 'CommentUserHashTagInfo[id=$id, tag=$tag, url=$url, retain=$retain]';

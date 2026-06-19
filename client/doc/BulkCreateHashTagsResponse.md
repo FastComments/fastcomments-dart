@@ -9,7 +9,7 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**results** | [**List<AddHashTag200Response>**](AddHashTag200Response.md) |  | [default to const []]
+**results** | [**List<BulkCreateHashTagsResponseResultsInner>**](BulkCreateHashTagsResponseResultsInner.md) |  | [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

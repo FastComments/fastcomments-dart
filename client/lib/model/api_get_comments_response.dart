@@ -24,13 +24,15 @@ class APIGetCommentsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIGetCommentsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.comments, comments);
+      _deepEquality.equals(other.comments, comments);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (comments.hashCode);
+      (comments.hashCode);
+  
 
   @override
   String toString() => 'APIGetCommentsResponse[status=$status, comments=$comments]';

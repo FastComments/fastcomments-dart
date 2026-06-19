@@ -219,95 +219,97 @@ class PubSubComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PubSubComment &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.userId == userId &&
-    other.urlId == urlId &&
-    other.commenterName == commenterName &&
-    other.commenterLink == commenterLink &&
-    other.commentHTML == commentHTML &&
-    other.comment == comment &&
-    other.parentId == parentId &&
-    other.votes == votes &&
-    other.votesUp == votesUp &&
-    other.votesDown == votesDown &&
-    other.verified == verified &&
-    other.avatarSrc == avatarSrc &&
-    other.hasImages == hasImages &&
-    other.hasLinks == hasLinks &&
-    other.isByAdmin == isByAdmin &&
-    other.isByModerator == isByModerator &&
-    other.isPinned == isPinned &&
-    other.isLocked == isLocked &&
-    other.displayLabel == displayLabel &&
-    other.rating == rating &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.viewCount == viewCount &&
-    other.isDeleted == isDeleted &&
-    other.isDeletedUser == isDeletedUser &&
-    other.isSpam == isSpam &&
-    other.anonUserId == anonUserId &&
-    _deepEquality.equals(other.feedbackIds, feedbackIds) &&
-    other.flagCount == flagCount &&
-    other.domain == domain &&
-    other.url == url &&
-    other.pageTitle == pageTitle &&
-    other.expireAt == expireAt &&
-    other.reviewed == reviewed &&
-    other.hasCode == hasCode &&
-    other.approved == approved &&
-    other.locale == locale &&
-    other.isBannedUser == isBannedUser &&
-    _deepEquality.equals(other.groupIds, groupIds) &&
-    other.isLive == isLive &&
-    other.hidden == hidden &&
-    other.date == date;
+      other.tenantId == tenantId &&
+      other.userId == userId &&
+      other.urlId == urlId &&
+      other.commenterName == commenterName &&
+      other.commenterLink == commenterLink &&
+      other.commentHTML == commentHTML &&
+      other.comment == comment &&
+      other.parentId == parentId &&
+      other.votes == votes &&
+      other.votesUp == votesUp &&
+      other.votesDown == votesDown &&
+      other.verified == verified &&
+      other.avatarSrc == avatarSrc &&
+      other.hasImages == hasImages &&
+      other.hasLinks == hasLinks &&
+      other.isByAdmin == isByAdmin &&
+      other.isByModerator == isByModerator &&
+      other.isPinned == isPinned &&
+      other.isLocked == isLocked &&
+      other.displayLabel == displayLabel &&
+      other.rating == rating &&
+      _deepEquality.equals(other.badges, badges) &&
+      other.viewCount == viewCount &&
+      other.isDeleted == isDeleted &&
+      other.isDeletedUser == isDeletedUser &&
+      other.isSpam == isSpam &&
+      other.anonUserId == anonUserId &&
+      _deepEquality.equals(other.feedbackIds, feedbackIds) &&
+      other.flagCount == flagCount &&
+      other.domain == domain &&
+      other.url == url &&
+      other.pageTitle == pageTitle &&
+      other.expireAt == expireAt &&
+      other.reviewed == reviewed &&
+      other.hasCode == hasCode &&
+      other.approved == approved &&
+      other.locale == locale &&
+      other.isBannedUser == isBannedUser &&
+      _deepEquality.equals(other.groupIds, groupIds) &&
+      other.isLive == isLive &&
+      other.hidden == hidden &&
+      other.date == date;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (urlId.hashCode) +
-    (commenterName.hashCode) +
-    (commenterLink == null ? 0 : commenterLink!.hashCode) +
-    (commentHTML.hashCode) +
-    (comment.hashCode) +
-    (parentId == null ? 0 : parentId!.hashCode) +
-    (votes == null ? 0 : votes!.hashCode) +
-    (votesUp == null ? 0 : votesUp!.hashCode) +
-    (votesDown == null ? 0 : votesDown!.hashCode) +
-    (verified.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (hasImages == null ? 0 : hasImages!.hashCode) +
-    (hasLinks == null ? 0 : hasLinks!.hashCode) +
-    (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
-    (isByModerator == null ? 0 : isByModerator!.hashCode) +
-    (isPinned == null ? 0 : isPinned!.hashCode) +
-    (isLocked == null ? 0 : isLocked!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (rating == null ? 0 : rating!.hashCode) +
-    (badges == null ? 0 : badges!.hashCode) +
-    (viewCount == null ? 0 : viewCount!.hashCode) +
-    (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
-    (isSpam == null ? 0 : isSpam!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (feedbackIds.hashCode) +
-    (flagCount == null ? 0 : flagCount!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (url.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (expireAt == null ? 0 : expireAt!.hashCode) +
-    (reviewed == null ? 0 : reviewed!.hashCode) +
-    (hasCode == null ? 0 : hasCode!.hashCode) +
-    (approved.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
-    (groupIds == null ? 0 : groupIds!.hashCode) +
-    (isLive == null ? 0 : isLive!.hashCode) +
-    (hidden == null ? 0 : hidden!.hashCode) +
-    (date.hashCode);
+      (tenantId.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (urlId.hashCode) +
+      (commenterName.hashCode) +
+      (commenterLink == null ? 0 : commenterLink!.hashCode) +
+      (commentHTML.hashCode) +
+      (comment.hashCode) +
+      (parentId == null ? 0 : parentId!.hashCode) +
+      (votes == null ? 0 : votes!.hashCode) +
+      (votesUp == null ? 0 : votesUp!.hashCode) +
+      (votesDown == null ? 0 : votesDown!.hashCode) +
+      (verified.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (hasImages == null ? 0 : hasImages!.hashCode) +
+      (hasLinks == null ? 0 : hasLinks!.hashCode) +
+      (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
+      (isByModerator == null ? 0 : isByModerator!.hashCode) +
+      (isPinned == null ? 0 : isPinned!.hashCode) +
+      (isLocked == null ? 0 : isLocked!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (rating == null ? 0 : rating!.hashCode) +
+      (badges == null ? 0 : badges!.hashCode) +
+      (viewCount == null ? 0 : viewCount!.hashCode) +
+      (isDeleted == null ? 0 : isDeleted!.hashCode) +
+      (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
+      (isSpam == null ? 0 : isSpam!.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (feedbackIds.hashCode) +
+      (flagCount == null ? 0 : flagCount!.hashCode) +
+      (domain == null ? 0 : domain!.hashCode) +
+      (url.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (expireAt == null ? 0 : expireAt!.hashCode) +
+      (reviewed == null ? 0 : reviewed!.hashCode) +
+      (hasCode == null ? 0 : hasCode!.hashCode) +
+      (approved.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
+      (groupIds == null ? 0 : groupIds!.hashCode) +
+      (isLive == null ? 0 : isLive!.hashCode) +
+      (hidden == null ? 0 : hidden!.hashCode) +
+      (date.hashCode);
+  
 
   @override
   String toString() => 'PubSubComment[id=$id, tenantId=$tenantId, userId=$userId, urlId=$urlId, commenterName=$commenterName, commenterLink=$commenterLink, commentHTML=$commentHTML, comment=$comment, parentId=$parentId, votes=$votes, votesUp=$votesUp, votesDown=$votesDown, verified=$verified, avatarSrc=$avatarSrc, hasImages=$hasImages, hasLinks=$hasLinks, isByAdmin=$isByAdmin, isByModerator=$isByModerator, isPinned=$isPinned, isLocked=$isLocked, displayLabel=$displayLabel, rating=$rating, badges=$badges, viewCount=$viewCount, isDeleted=$isDeleted, isDeletedUser=$isDeletedUser, isSpam=$isSpam, anonUserId=$anonUserId, feedbackIds=$feedbackIds, flagCount=$flagCount, domain=$domain, url=$url, pageTitle=$pageTitle, expireAt=$expireAt, reviewed=$reviewed, hasCode=$hasCode, approved=$approved, locale=$locale, isBannedUser=$isBannedUser, groupIds=$groupIds, isLive=$isLive, hidden=$hidden, date=$date]';
