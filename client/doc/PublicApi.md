@@ -13,22 +13,39 @@ Method | HTTP request | Description
 [**checkedCommentsForBlocked**](PublicApi.md#checkedcommentsforblocked) | **GET** /check-blocked-comments | 
 [**createCommentPublic**](PublicApi.md#createcommentpublic) | **POST** /comments/{tenantId} | 
 [**createFeedPostPublic**](PublicApi.md#createfeedpostpublic) | **POST** /feed-posts/{tenantId} | 
+[**createV1PageReact**](PublicApi.md#createv1pagereact) | **POST** /page-reacts/v1/likes/{tenantId} | 
+[**createV2PageReact**](PublicApi.md#createv2pagereact) | **POST** /page-reacts/v2/{tenantId} | 
 [**deleteCommentPublic**](PublicApi.md#deletecommentpublic) | **DELETE** /comments/{tenantId}/{commentId} | 
 [**deleteCommentVote**](PublicApi.md#deletecommentvote) | **DELETE** /comments/{tenantId}/{commentId}/vote/{voteId} | 
 [**deleteFeedPostPublic**](PublicApi.md#deletefeedpostpublic) | **DELETE** /feed-posts/{tenantId}/{postId} | 
+[**deleteV1PageReact**](PublicApi.md#deletev1pagereact) | **DELETE** /page-reacts/v1/likes/{tenantId} | 
+[**deleteV2PageReact**](PublicApi.md#deletev2pagereact) | **DELETE** /page-reacts/v2/{tenantId} | 
 [**flagCommentPublic**](PublicApi.md#flagcommentpublic) | **POST** /flag-comment/{commentId} | 
 [**getCommentText**](PublicApi.md#getcommenttext) | **GET** /comments/{tenantId}/{commentId}/text | 
 [**getCommentVoteUserNames**](PublicApi.md#getcommentvoteusernames) | **GET** /comments/{tenantId}/{commentId}/votes | 
+[**getCommentsForUser**](PublicApi.md#getcommentsforuser) | **GET** /comments-for-user | 
 [**getCommentsPublic**](PublicApi.md#getcommentspublic) | **GET** /comments/{tenantId} | 
 [**getEventLog**](PublicApi.md#geteventlog) | **GET** /event-log/{tenantId} | 
 [**getFeedPostsPublic**](PublicApi.md#getfeedpostspublic) | **GET** /feed-posts/{tenantId} | 
 [**getFeedPostsStats**](PublicApi.md#getfeedpostsstats) | **GET** /feed-posts/{tenantId}/stats | 
+[**getGifLarge**](PublicApi.md#getgiflarge) | **GET** /gifs/get-large/{tenantId} | 
+[**getGifsSearch**](PublicApi.md#getgifssearch) | **GET** /gifs/search/{tenantId} | 
+[**getGifsTrending**](PublicApi.md#getgifstrending) | **GET** /gifs/trending/{tenantId} | 
 [**getGlobalEventLog**](PublicApi.md#getglobaleventlog) | **GET** /event-log/global/{tenantId} | 
+[**getOfflineUsers**](PublicApi.md#getofflineusers) | **GET** /pages/{tenantId}/users/offline | 
+[**getOnlineUsers**](PublicApi.md#getonlineusers) | **GET** /pages/{tenantId}/users/online | 
+[**getPagesPublic**](PublicApi.md#getpagespublic) | **GET** /pages/{tenantId} | 
+[**getTranslations**](PublicApi.md#gettranslations) | **GET** /translations/{namespace}/{component} | 
 [**getUserNotificationCount**](PublicApi.md#getusernotificationcount) | **GET** /user-notifications/get-count | 
 [**getUserNotifications**](PublicApi.md#getusernotifications) | **GET** /user-notifications | 
 [**getUserPresenceStatuses**](PublicApi.md#getuserpresencestatuses) | **GET** /user-presence-status | 
 [**getUserReactsPublic**](PublicApi.md#getuserreactspublic) | **GET** /feed-posts/{tenantId}/user-reacts | 
+[**getUsersInfo**](PublicApi.md#getusersinfo) | **GET** /pages/{tenantId}/users/info | 
+[**getV1PageLikes**](PublicApi.md#getv1pagelikes) | **GET** /page-reacts/v1/likes/{tenantId} | 
+[**getV2PageReactUsers**](PublicApi.md#getv2pagereactusers) | **GET** /page-reacts/v2/{tenantId}/list | 
+[**getV2PageReacts**](PublicApi.md#getv2pagereacts) | **GET** /page-reacts/v2/{tenantId} | 
 [**lockComment**](PublicApi.md#lockcomment) | **POST** /comments/{tenantId}/{commentId}/lock | 
+[**logoutPublic**](PublicApi.md#logoutpublic) | **PUT** /auth/logout | 
 [**pinComment**](PublicApi.md#pincomment) | **POST** /comments/{tenantId}/{commentId}/pin | 
 [**reactFeedPostPublic**](PublicApi.md#reactfeedpostpublic) | **POST** /feed-posts/{tenantId}/react/{postId} | 
 [**resetUserNotificationCount**](PublicApi.md#resetusernotificationcount) | **POST** /user-notifications/reset-count | 
@@ -47,7 +64,7 @@ Method | HTTP request | Description
 
 
 # **blockFromCommentPublic**
-> BlockFromCommentPublic200Response blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
+> BlockSuccess blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
 
 
 
@@ -80,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlockFromCommentPublic200Response**](BlockFromCommentPublic200Response.md)
+[**BlockSuccess**](BlockSuccess.md)
 
 ### Authorization
 
@@ -94,7 +111,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkedCommentsForBlocked**
-> CheckedCommentsForBlocked200Response checkedCommentsForBlocked(tenantId, commentIds, sso)
+> CheckBlockedCommentsResponse checkedCommentsForBlocked(tenantId, commentIds, sso)
 
 
 
@@ -125,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckedCommentsForBlocked200Response**](CheckedCommentsForBlocked200Response.md)
+[**CheckBlockedCommentsResponse**](CheckBlockedCommentsResponse.md)
 
 ### Authorization
 
@@ -139,7 +156,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createCommentPublic**
-> CreateCommentPublic200Response createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso)
+> SaveCommentsResponseWithPresence createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso)
 
 
 
@@ -176,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateCommentPublic200Response**](CreateCommentPublic200Response.md)
+[**SaveCommentsResponseWithPresence**](SaveCommentsResponseWithPresence.md)
 
 ### Authorization
 
@@ -190,7 +207,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createFeedPostPublic**
-> CreateFeedPostPublic200Response createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso)
+> CreateFeedPostResponse createFeedPostPublic(tenantId, createFeedPostParams, broadcastId, sso)
 
 
 
@@ -223,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateFeedPostPublic200Response**](CreateFeedPostPublic200Response.md)
+[**CreateFeedPostResponse**](CreateFeedPostResponse.md)
 
 ### Authorization
 
@@ -236,8 +253,100 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **createV1PageReact**
+> CreateV1PageReact createV1PageReact(tenantId, urlId, title)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
+final title = title_example; // String | 
+
+try {
+    final result = api_instance.createV1PageReact(tenantId, urlId, title);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->createV1PageReact: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**|  | 
+ **title** | **String**|  | [optional] 
+
+### Return type
+
+[**CreateV1PageReact**](CreateV1PageReact.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **createV2PageReact**
+> CreateV1PageReact createV2PageReact(tenantId, urlId, id, title)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
+final id = id_example; // String | 
+final title = title_example; // String | 
+
+try {
+    final result = api_instance.createV2PageReact(tenantId, urlId, id, title);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->createV2PageReact: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**|  | 
+ **id** | **String**|  | 
+ **title** | **String**|  | [optional] 
+
+### Return type
+
+[**CreateV1PageReact**](CreateV1PageReact.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deleteCommentPublic**
-> DeleteCommentPublic200Response deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso)
+> PublicAPIDeleteCommentResponse deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso)
 
 
 
@@ -272,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteCommentPublic200Response**](DeleteCommentPublic200Response.md)
+[**PublicAPIDeleteCommentResponse**](PublicAPIDeleteCommentResponse.md)
 
 ### Authorization
 
@@ -286,7 +395,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteCommentVote**
-> DeleteCommentVote200Response deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)
+> VoteDeleteResponse deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, editKey, sso)
 
 
 
@@ -325,7 +434,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteCommentVote200Response**](DeleteCommentVote200Response.md)
+[**VoteDeleteResponse**](VoteDeleteResponse.md)
 
 ### Authorization
 
@@ -339,7 +448,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteFeedPostPublic**
-> DeleteFeedPostPublic200Response deleteFeedPostPublic(tenantId, postId, broadcastId, sso)
+> DeleteFeedPostPublicResponse deleteFeedPostPublic(tenantId, postId, broadcastId, sso)
 
 
 
@@ -372,7 +481,95 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteFeedPostPublic200Response**](DeleteFeedPostPublic200Response.md)
+[**DeleteFeedPostPublicResponse**](DeleteFeedPostPublicResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteV1PageReact**
+> CreateV1PageReact deleteV1PageReact(tenantId, urlId)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
+
+try {
+    final result = api_instance.deleteV1PageReact(tenantId, urlId);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->deleteV1PageReact: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**|  | 
+
+### Return type
+
+[**CreateV1PageReact**](CreateV1PageReact.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteV2PageReact**
+> CreateV1PageReact deleteV2PageReact(tenantId, urlId, id)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
+final id = id_example; // String | 
+
+try {
+    final result = api_instance.deleteV2PageReact(tenantId, urlId, id);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->deleteV2PageReact: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**|  | 
+ **id** | **String**|  | 
+
+### Return type
+
+[**CreateV1PageReact**](CreateV1PageReact.md)
 
 ### Authorization
 
@@ -386,7 +583,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **flagCommentPublic**
-> FlagCommentPublic200Response flagCommentPublic(tenantId, commentId, isFlagged, sso)
+> APIEmptyResponse flagCommentPublic(tenantId, commentId, isFlagged, sso)
 
 
 
@@ -419,7 +616,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -433,7 +630,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentText**
-> GetCommentText200Response getCommentText(tenantId, commentId, editKey, sso)
+> PublicAPIGetCommentTextResponse getCommentText(tenantId, commentId, editKey, sso)
 
 
 
@@ -466,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetCommentText200Response**](GetCommentText200Response.md)
+[**PublicAPIGetCommentTextResponse**](PublicAPIGetCommentTextResponse.md)
 
 ### Authorization
 
@@ -480,7 +677,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentVoteUserNames**
-> GetCommentVoteUserNames200Response getCommentVoteUserNames(tenantId, commentId, dir, sso)
+> GetCommentVoteUserNamesSuccessResponse getCommentVoteUserNames(tenantId, commentId, dir, sso)
 
 
 
@@ -513,7 +710,60 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetCommentVoteUserNames200Response**](GetCommentVoteUserNames200Response.md)
+[**GetCommentVoteUserNamesSuccessResponse**](GetCommentVoteUserNamesSuccessResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCommentsForUser**
+> GetCommentsForUserResponse getCommentsForUser(userId, direction, repliesToUserId, page, includei10n, locale, isCrawler)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final userId = userId_example; // String | 
+final direction = ; // SortDirections | 
+final repliesToUserId = repliesToUserId_example; // String | 
+final page = 1.2; // double | 
+final includei10n = true; // bool | 
+final locale = locale_example; // String | 
+final isCrawler = true; // bool | 
+
+try {
+    final result = api_instance.getCommentsForUser(userId, direction, repliesToUserId, page, includei10n, locale, isCrawler);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getCommentsForUser: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  | [optional] 
+ **direction** | [**SortDirections**](.md)|  | [optional] 
+ **repliesToUserId** | **String**|  | [optional] 
+ **page** | **double**|  | [optional] 
+ **includei10n** | **bool**|  | [optional] 
+ **locale** | **String**|  | [optional] 
+ **isCrawler** | **bool**|  | [optional] 
+
+### Return type
+
+[**GetCommentsForUserResponse**](GetCommentsForUserResponse.md)
 
 ### Authorization
 
@@ -527,7 +777,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentsPublic**
-> GetCommentsPublic200Response getCommentsPublic(tenantId, urlId, page, direction, sso, skip, skipChildren, limit, limitChildren, countChildren, fetchPageForCommentId, includeConfig, countAll, includei10n, locale, modules, isCrawler, includeNotificationCount, asTree, maxTreeDepth, useFullTranslationIds, parentId, searchText, hashTags, userId, customConfigStr, afterCommentId, beforeCommentId)
+> GetCommentsResponseWithPresencePublicComment getCommentsPublic(tenantId, urlId, page, direction, sso, skip, skipChildren, limit, limitChildren, countChildren, fetchPageForCommentId, includeConfig, countAll, includei10n, locale, modules, isCrawler, includeNotificationCount, asTree, maxTreeDepth, useFullTranslationIds, parentId, searchText, hashTags, userId, customConfigStr, afterCommentId, beforeCommentId)
 
 
 
@@ -610,7 +860,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetCommentsPublic200Response**](GetCommentsPublic200Response.md)
+[**GetCommentsResponseWithPresencePublicComment**](GetCommentsResponseWithPresencePublicComment.md)
 
 ### Authorization
 
@@ -624,7 +874,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventLog**
-> GetEventLog200Response getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+> GetEventLogResponse getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
 
 
 
@@ -657,11 +907,11 @@ Name | Type | Description  | Notes
  **urlId** | **String**|  | 
  **userIdWS** | **String**|  | 
  **startTime** | **int**|  | 
- **endTime** | **int**|  | 
+ **endTime** | **int**|  | [optional] 
 
 ### Return type
 
-[**GetEventLog200Response**](GetEventLog200Response.md)
+[**GetEventLogResponse**](GetEventLogResponse.md)
 
 ### Authorization
 
@@ -675,7 +925,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeedPostsPublic**
-> GetFeedPostsPublic200Response getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo)
+> PublicFeedPostsResponse getFeedPostsPublic(tenantId, afterId, limit, tags, sso, isCrawler, includeUserInfo)
 
 
 
@@ -716,7 +966,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFeedPostsPublic200Response**](GetFeedPostsPublic200Response.md)
+[**PublicFeedPostsResponse**](PublicFeedPostsResponse.md)
 
 ### Authorization
 
@@ -730,7 +980,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeedPostsStats**
-> GetFeedPostsStats200Response getFeedPostsStats(tenantId, postIds, sso)
+> FeedPostsStatsResponse getFeedPostsStats(tenantId, postIds, sso)
 
 
 
@@ -761,7 +1011,146 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFeedPostsStats200Response**](GetFeedPostsStats200Response.md)
+[**FeedPostsStatsResponse**](FeedPostsStatsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGifLarge**
+> GifGetLargeResponse getGifLarge(tenantId, largeInternalURLSanitized)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final largeInternalURLSanitized = largeInternalURLSanitized_example; // String | 
+
+try {
+    final result = api_instance.getGifLarge(tenantId, largeInternalURLSanitized);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getGifLarge: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **largeInternalURLSanitized** | **String**|  | 
+
+### Return type
+
+[**GifGetLargeResponse**](GifGetLargeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGifsSearch**
+> GetGifsSearchResponse getGifsSearch(tenantId, search, locale, rating, page)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final search = search_example; // String | 
+final locale = locale_example; // String | 
+final rating = rating_example; // String | 
+final page = 1.2; // double | 
+
+try {
+    final result = api_instance.getGifsSearch(tenantId, search, locale, rating, page);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getGifsSearch: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **search** | **String**|  | 
+ **locale** | **String**|  | [optional] 
+ **rating** | **String**|  | [optional] 
+ **page** | **double**|  | [optional] 
+
+### Return type
+
+[**GetGifsSearchResponse**](GetGifsSearchResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getGifsTrending**
+> GetGifsTrendingResponse getGifsTrending(tenantId, locale, rating, page)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final locale = locale_example; // String | 
+final rating = rating_example; // String | 
+final page = 1.2; // double | 
+
+try {
+    final result = api_instance.getGifsTrending(tenantId, locale, rating, page);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getGifsTrending: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **locale** | **String**|  | [optional] 
+ **rating** | **String**|  | [optional] 
+ **page** | **double**|  | [optional] 
+
+### Return type
+
+[**GetGifsTrendingResponse**](GetGifsTrendingResponse.md)
 
 ### Authorization
 
@@ -775,7 +1164,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGlobalEventLog**
-> GetEventLog200Response getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
+> GetEventLogResponse getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
 
 
 
@@ -808,11 +1197,209 @@ Name | Type | Description  | Notes
  **urlId** | **String**|  | 
  **userIdWS** | **String**|  | 
  **startTime** | **int**|  | 
- **endTime** | **int**|  | 
+ **endTime** | **int**|  | [optional] 
 
 ### Return type
 
-[**GetEventLog200Response**](GetEventLog200Response.md)
+[**GetEventLogResponse**](GetEventLogResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOfflineUsers**
+> PageUsersOfflineResponse getOfflineUsers(tenantId, urlId, afterName, afterUserId)
+
+
+
+Past commenters on the page who are NOT currently online. Sorted by displayName. Use this after exhausting /users/online to render a \"Members\" section. Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | Page URL identifier (cleaned server-side).
+final afterName = afterName_example; // String | Cursor: pass nextAfterName from the previous response.
+final afterUserId = afterUserId_example; // String | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
+
+try {
+    final result = api_instance.getOfflineUsers(tenantId, urlId, afterName, afterUserId);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getOfflineUsers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**| Page URL identifier (cleaned server-side). | 
+ **afterName** | **String**| Cursor: pass nextAfterName from the previous response. | [optional] 
+ **afterUserId** | **String**| Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries. | [optional] 
+
+### Return type
+
+[**PageUsersOfflineResponse**](PageUsersOfflineResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getOnlineUsers**
+> PageUsersOnlineResponse getOnlineUsers(tenantId, urlId, afterName, afterUserId)
+
+
+
+Currently-online viewers of a page: people whose websocket session is subscribed to the page right now. Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | Page URL identifier (cleaned server-side).
+final afterName = afterName_example; // String | Cursor: pass nextAfterName from the previous response.
+final afterUserId = afterUserId_example; // String | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
+
+try {
+    final result = api_instance.getOnlineUsers(tenantId, urlId, afterName, afterUserId);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getOnlineUsers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**| Page URL identifier (cleaned server-side). | 
+ **afterName** | **String**| Cursor: pass nextAfterName from the previous response. | [optional] 
+ **afterUserId** | **String**| Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries. | [optional] 
+
+### Return type
+
+[**PageUsersOnlineResponse**](PageUsersOnlineResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getPagesPublic**
+> GetPublicPagesResponse getPagesPublic(tenantId, cursor, limit, q, sortBy, hasComments)
+
+
+
+List pages for a tenant. Used by the FChat desktop client to populate its room list. Requires `enableFChat` to be true on the resolved custom config for each page. Pages that require SSO are filtered against the requesting user's group access.
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final cursor = cursor_example; // String | Opaque pagination cursor returned as `nextCursor` from a prior request. Tied to the same `sortBy`.
+final limit = 56; // int | 1..200, default 50
+final q = q_example; // String | Optional case-insensitive title prefix filter.
+final sortBy = ; // PagesSortBy | Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical).
+final hasComments = true; // bool | If true, only return pages with at least one comment.
+
+try {
+    final result = api_instance.getPagesPublic(tenantId, cursor, limit, q, sortBy, hasComments);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getPagesPublic: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **cursor** | **String**| Opaque pagination cursor returned as `nextCursor` from a prior request. Tied to the same `sortBy`. | [optional] 
+ **limit** | **int**| 1..200, default 50 | [optional] 
+ **q** | **String**| Optional case-insensitive title prefix filter. | [optional] 
+ **sortBy** | [**PagesSortBy**](.md)| Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical). | [optional] 
+ **hasComments** | **bool**| If true, only return pages with at least one comment. | [optional] 
+
+### Return type
+
+[**GetPublicPagesResponse**](GetPublicPagesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getTranslations**
+> GetTranslationsResponse getTranslations(namespace, component, locale, useFullTranslationIds)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final namespace = namespace_example; // String | 
+final component = component_example; // String | 
+final locale = locale_example; // String | 
+final useFullTranslationIds = true; // bool | 
+
+try {
+    final result = api_instance.getTranslations(namespace, component, locale, useFullTranslationIds);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getTranslations: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **String**|  | 
+ **component** | **String**|  | 
+ **locale** | **String**|  | [optional] 
+ **useFullTranslationIds** | **bool**|  | [optional] 
+
+### Return type
+
+[**GetTranslationsResponse**](GetTranslationsResponse.md)
 
 ### Authorization
 
@@ -826,7 +1413,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserNotificationCount**
-> GetUserNotificationCount200Response getUserNotificationCount(tenantId, sso)
+> GetUserNotificationCountResponse getUserNotificationCount(tenantId, sso)
 
 
 
@@ -855,7 +1442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserNotificationCount200Response**](GetUserNotificationCount200Response.md)
+[**GetUserNotificationCountResponse**](GetUserNotificationCountResponse.md)
 
 ### Authorization
 
@@ -869,7 +1456,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserNotifications**
-> GetUserNotifications200Response getUserNotifications(tenantId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, sso)
+> GetMyNotificationsResponse getUserNotifications(tenantId, urlId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, includeTenantNotifications, sso)
 
 
 
@@ -879,6 +1466,7 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | Used to determine whether the current page is subscribed.
 final pageSize = 56; // int | 
 final afterId = afterId_example; // String | 
 final includeContext = true; // bool | 
@@ -887,10 +1475,11 @@ final unreadOnly = true; // bool |
 final dmOnly = true; // bool | 
 final noDm = true; // bool | 
 final includeTranslations = true; // bool | 
+final includeTenantNotifications = true; // bool | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserNotifications(tenantId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, sso);
+    final result = api_instance.getUserNotifications(tenantId, urlId, pageSize, afterId, includeContext, afterCreatedAt, unreadOnly, dmOnly, noDm, includeTranslations, includeTenantNotifications, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getUserNotifications: $e\n');
@@ -902,6 +1491,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tenantId** | **String**|  | 
+ **urlId** | **String**| Used to determine whether the current page is subscribed. | [optional] 
  **pageSize** | **int**|  | [optional] 
  **afterId** | **String**|  | [optional] 
  **includeContext** | **bool**|  | [optional] 
@@ -910,11 +1500,12 @@ Name | Type | Description  | Notes
  **dmOnly** | **bool**|  | [optional] 
  **noDm** | **bool**|  | [optional] 
  **includeTranslations** | **bool**|  | [optional] 
+ **includeTenantNotifications** | **bool**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
 
-[**GetUserNotifications200Response**](GetUserNotifications200Response.md)
+[**GetMyNotificationsResponse**](GetMyNotificationsResponse.md)
 
 ### Authorization
 
@@ -928,7 +1519,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserPresenceStatuses**
-> GetUserPresenceStatuses200Response getUserPresenceStatuses(tenantId, urlIdWS, userIds)
+> GetUserPresenceStatusesResponse getUserPresenceStatuses(tenantId, urlIdWS, userIds)
 
 
 
@@ -959,7 +1550,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserPresenceStatuses200Response**](GetUserPresenceStatuses200Response.md)
+[**GetUserPresenceStatusesResponse**](GetUserPresenceStatusesResponse.md)
 
 ### Authorization
 
@@ -973,7 +1564,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserReactsPublic**
-> GetUserReactsPublic200Response getUserReactsPublic(tenantId, postIds, sso)
+> UserReactsResponse getUserReactsPublic(tenantId, postIds, sso)
 
 
 
@@ -1004,7 +1595,183 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserReactsPublic200Response**](GetUserReactsPublic200Response.md)
+[**UserReactsResponse**](UserReactsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getUsersInfo**
+> PageUsersInfoResponse getUsersInfo(tenantId, ids)
+
+
+
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final ids = ids_example; // String | Comma-delimited userIds.
+
+try {
+    final result = api_instance.getUsersInfo(tenantId, ids);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getUsersInfo: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **ids** | **String**| Comma-delimited userIds. | 
+
+### Return type
+
+[**PageUsersInfoResponse**](PageUsersInfoResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getV1PageLikes**
+> GetV1PageLikes getV1PageLikes(tenantId, urlId)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
+
+try {
+    final result = api_instance.getV1PageLikes(tenantId, urlId);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getV1PageLikes: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**|  | 
+
+### Return type
+
+[**GetV1PageLikes**](GetV1PageLikes.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getV2PageReactUsers**
+> GetV2PageReactUsersResponse getV2PageReactUsers(tenantId, urlId, id)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
+final id = id_example; // String | 
+
+try {
+    final result = api_instance.getV2PageReactUsers(tenantId, urlId, id);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getV2PageReactUsers: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**|  | 
+ **id** | **String**|  | 
+
+### Return type
+
+[**GetV2PageReactUsersResponse**](GetV2PageReactUsersResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getV2PageReacts**
+> GetV2PageReacts getV2PageReacts(tenantId, urlId)
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
+
+try {
+    final result = api_instance.getV2PageReacts(tenantId, urlId);
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->getV2PageReacts: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
+ **urlId** | **String**|  | 
+
+### Return type
+
+[**GetV2PageReacts**](GetV2PageReacts.md)
 
 ### Authorization
 
@@ -1018,7 +1785,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lockComment**
-> LockComment200Response lockComment(tenantId, commentId, broadcastId, sso)
+> APIEmptyResponse lockComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -1051,7 +1818,44 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LockComment200Response**](LockComment200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logoutPublic**
+> APIEmptyResponse logoutPublic()
+
+
+
+### Example
+```dart
+import 'package:fastcomments_dart/api.dart';
+
+final api_instance = PublicApi();
+
+try {
+    final result = api_instance.logoutPublic();
+    print(result);
+} catch (e) {
+    print('Exception when calling PublicApi->logoutPublic: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1065,7 +1869,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pinComment**
-> PinComment200Response pinComment(tenantId, commentId, broadcastId, sso)
+> ChangeCommentPinStatusResponse pinComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -1098,7 +1902,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PinComment200Response**](PinComment200Response.md)
+[**ChangeCommentPinStatusResponse**](ChangeCommentPinStatusResponse.md)
 
 ### Authorization
 
@@ -1112,7 +1916,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reactFeedPostPublic**
-> ReactFeedPostPublic200Response reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)
+> ReactFeedPostResponse reactFeedPostPublic(tenantId, postId, reactBodyParams, isUndo, broadcastId, sso)
 
 
 
@@ -1149,7 +1953,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReactFeedPostPublic200Response**](ReactFeedPostPublic200Response.md)
+[**ReactFeedPostResponse**](ReactFeedPostResponse.md)
 
 ### Authorization
 
@@ -1163,7 +1967,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resetUserNotificationCount**
-> ResetUserNotifications200Response resetUserNotificationCount(tenantId, sso)
+> ResetUserNotificationsResponse resetUserNotificationCount(tenantId, sso)
 
 
 
@@ -1192,7 +1996,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResetUserNotifications200Response**](ResetUserNotifications200Response.md)
+[**ResetUserNotificationsResponse**](ResetUserNotificationsResponse.md)
 
 ### Authorization
 
@@ -1206,7 +2010,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resetUserNotifications**
-> ResetUserNotifications200Response resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)
+> ResetUserNotificationsResponse resetUserNotifications(tenantId, afterId, afterCreatedAt, unreadOnly, dmOnly, noDm, sso)
 
 
 
@@ -1245,7 +2049,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResetUserNotifications200Response**](ResetUserNotifications200Response.md)
+[**ResetUserNotificationsResponse**](ResetUserNotificationsResponse.md)
 
 ### Authorization
 
@@ -1259,7 +2063,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchUsers**
-> SearchUsers200Response searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection)
+> SearchUsersResult searchUsers(tenantId, urlId, usernameStartsWith, mentionGroupIds, sso, searchSection)
 
 
 
@@ -1296,7 +2100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SearchUsers200Response**](SearchUsers200Response.md)
+[**SearchUsersResult**](SearchUsersResult.md)
 
 ### Authorization
 
@@ -1310,7 +2114,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **setCommentText**
-> SetCommentText200Response setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso)
+> PublicAPISetCommentTextResponse setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, editKey, sso)
 
 
 
@@ -1347,7 +2151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SetCommentText200Response**](SetCommentText200Response.md)
+[**PublicAPISetCommentTextResponse**](PublicAPISetCommentTextResponse.md)
 
 ### Authorization
 
@@ -1361,7 +2165,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unBlockCommentPublic**
-> UnBlockCommentPublic200Response unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
+> UnblockSuccess unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
 
 
 
@@ -1394,7 +2198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UnBlockCommentPublic200Response**](UnBlockCommentPublic200Response.md)
+[**UnblockSuccess**](UnblockSuccess.md)
 
 ### Authorization
 
@@ -1408,7 +2212,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unLockComment**
-> LockComment200Response unLockComment(tenantId, commentId, broadcastId, sso)
+> APIEmptyResponse unLockComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -1441,7 +2245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LockComment200Response**](LockComment200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1455,7 +2259,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unPinComment**
-> PinComment200Response unPinComment(tenantId, commentId, broadcastId, sso)
+> ChangeCommentPinStatusResponse unPinComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -1488,7 +2292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PinComment200Response**](PinComment200Response.md)
+[**ChangeCommentPinStatusResponse**](ChangeCommentPinStatusResponse.md)
 
 ### Authorization
 
@@ -1502,7 +2306,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateFeedPostPublic**
-> CreateFeedPostPublic200Response updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso)
+> CreateFeedPostResponse updateFeedPostPublic(tenantId, postId, updateFeedPostParams, broadcastId, sso)
 
 
 
@@ -1537,7 +2341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateFeedPostPublic200Response**](CreateFeedPostPublic200Response.md)
+[**CreateFeedPostResponse**](CreateFeedPostResponse.md)
 
 ### Authorization
 
@@ -1551,7 +2355,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserNotificationCommentSubscriptionStatus**
-> UpdateUserNotificationStatus200Response updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
+> UpdateUserNotificationCommentSubscriptionStatusResponse updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
 
 
 
@@ -1588,7 +2392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateUserNotificationStatus200Response**](UpdateUserNotificationStatus200Response.md)
+[**UpdateUserNotificationCommentSubscriptionStatusResponse**](UpdateUserNotificationCommentSubscriptionStatusResponse.md)
 
 ### Authorization
 
@@ -1602,7 +2406,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserNotificationPageSubscriptionStatus**
-> UpdateUserNotificationStatus200Response updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso)
+> UpdateUserNotificationPageSubscriptionStatusResponse updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso)
 
 
 
@@ -1641,7 +2445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateUserNotificationStatus200Response**](UpdateUserNotificationStatus200Response.md)
+[**UpdateUserNotificationPageSubscriptionStatusResponse**](UpdateUserNotificationPageSubscriptionStatusResponse.md)
 
 ### Authorization
 
@@ -1655,7 +2459,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserNotificationStatus**
-> UpdateUserNotificationStatus200Response updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)
+> UpdateUserNotificationStatusResponse updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)
 
 
 
@@ -1688,7 +2492,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateUserNotificationStatus200Response**](UpdateUserNotificationStatus200Response.md)
+[**UpdateUserNotificationStatusResponse**](UpdateUserNotificationStatusResponse.md)
 
 ### Authorization
 
@@ -1751,7 +2555,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **voteComment**
-> VoteComment200Response voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso)
+> VoteResponse voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, sessionId, sso)
 
 
 
@@ -1790,7 +2594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VoteComment200Response**](VoteComment200Response.md)
+[**VoteResponse**](VoteResponse.md)
 
 ### Authorization
 

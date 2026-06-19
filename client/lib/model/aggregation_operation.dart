@@ -87,10 +87,10 @@ class AggregationOperation {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'field'), 'Required key "AggregationOperation[field]" is missing from JSON.');
-        assert(json[r'field'] != null, 'Required key "AggregationOperation[field]" has a null value in JSON.');
-        assert(json.containsKey(r'op'), 'Required key "AggregationOperation[op]" is missing from JSON.');
-        assert(json[r'op'] != null, 'Required key "AggregationOperation[op]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "AggregationOperation[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "AggregationOperation[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -117,12 +117,10 @@ class CreateQuestionResultBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'urlId'), 'Required key "CreateQuestionResultBody[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "CreateQuestionResultBody[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'value'), 'Required key "CreateQuestionResultBody[value]" is missing from JSON.');
-        assert(json[r'value'] != null, 'Required key "CreateQuestionResultBody[value]" has a null value in JSON.');
-        assert(json.containsKey(r'questionId'), 'Required key "CreateQuestionResultBody[questionId]" is missing from JSON.');
-        assert(json[r'questionId'] != null, 'Required key "CreateQuestionResultBody[questionId]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateQuestionResultBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateQuestionResultBody[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

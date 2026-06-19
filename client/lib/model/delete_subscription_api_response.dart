@@ -79,8 +79,10 @@ class DeleteSubscriptionAPIResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "DeleteSubscriptionAPIResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "DeleteSubscriptionAPIResponse[status]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "DeleteSubscriptionAPIResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "DeleteSubscriptionAPIResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

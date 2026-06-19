@@ -518,15 +518,10 @@ class PublicComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "PublicComment[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "PublicComment[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'commenterName'), 'Required key "PublicComment[commenterName]" is missing from JSON.');
-        assert(json[r'commenterName'] != null, 'Required key "PublicComment[commenterName]" has a null value in JSON.');
-        assert(json.containsKey(r'commentHTML'), 'Required key "PublicComment[commentHTML]" is missing from JSON.');
-        assert(json[r'commentHTML'] != null, 'Required key "PublicComment[commentHTML]" has a null value in JSON.');
-        assert(json.containsKey(r'date'), 'Required key "PublicComment[date]" is missing from JSON.');
-        assert(json.containsKey(r'verified'), 'Required key "PublicComment[verified]" is missing from JSON.');
-        assert(json[r'verified'] != null, 'Required key "PublicComment[verified]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "PublicComment[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "PublicComment[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

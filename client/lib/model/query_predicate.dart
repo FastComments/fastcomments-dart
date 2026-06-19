@@ -59,12 +59,10 @@ class QueryPredicate {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'key'), 'Required key "QueryPredicate[key]" is missing from JSON.');
-        assert(json[r'key'] != null, 'Required key "QueryPredicate[key]" has a null value in JSON.');
-        assert(json.containsKey(r'value'), 'Required key "QueryPredicate[value]" is missing from JSON.');
-        assert(json[r'value'] != null, 'Required key "QueryPredicate[value]" has a null value in JSON.');
-        assert(json.containsKey(r'operator'), 'Required key "QueryPredicate[operator]" is missing from JSON.');
-        assert(json[r'operator'] != null, 'Required key "QueryPredicate[operator]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "QueryPredicate[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "QueryPredicate[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

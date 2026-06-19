@@ -461,25 +461,10 @@ class PubSubCommentBase {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "PubSubCommentBase[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "PubSubCommentBase[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "PubSubCommentBase[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "PubSubCommentBase[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "PubSubCommentBase[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "PubSubCommentBase[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'commenterName'), 'Required key "PubSubCommentBase[commenterName]" is missing from JSON.');
-        assert(json[r'commenterName'] != null, 'Required key "PubSubCommentBase[commenterName]" has a null value in JSON.');
-        assert(json.containsKey(r'commentHTML'), 'Required key "PubSubCommentBase[commentHTML]" is missing from JSON.');
-        assert(json[r'commentHTML'] != null, 'Required key "PubSubCommentBase[commentHTML]" has a null value in JSON.');
-        assert(json.containsKey(r'comment'), 'Required key "PubSubCommentBase[comment]" is missing from JSON.');
-        assert(json[r'comment'] != null, 'Required key "PubSubCommentBase[comment]" has a null value in JSON.');
-        assert(json.containsKey(r'verified'), 'Required key "PubSubCommentBase[verified]" is missing from JSON.');
-        assert(json[r'verified'] != null, 'Required key "PubSubCommentBase[verified]" has a null value in JSON.');
-        assert(json.containsKey(r'url'), 'Required key "PubSubCommentBase[url]" is missing from JSON.');
-        assert(json[r'url'] != null, 'Required key "PubSubCommentBase[url]" has a null value in JSON.');
-        assert(json.containsKey(r'approved'), 'Required key "PubSubCommentBase[approved]" is missing from JSON.');
-        assert(json[r'approved'] != null, 'Required key "PubSubCommentBase[approved]" has a null value in JSON.');
-        assert(json.containsKey(r'locale'), 'Required key "PubSubCommentBase[locale]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "PubSubCommentBase[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "PubSubCommentBase[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

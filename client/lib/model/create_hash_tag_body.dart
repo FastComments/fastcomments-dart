@@ -79,8 +79,10 @@ class CreateHashTagBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'tag'), 'Required key "CreateHashTagBody[tag]" is missing from JSON.');
-        assert(json[r'tag'] != null, 'Required key "CreateHashTagBody[tag]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateHashTagBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateHashTagBody[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

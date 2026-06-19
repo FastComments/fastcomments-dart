@@ -59,12 +59,10 @@ class MediaAsset {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'w'), 'Required key "MediaAsset[w]" is missing from JSON.');
-        assert(json[r'w'] != null, 'Required key "MediaAsset[w]" has a null value in JSON.');
-        assert(json.containsKey(r'h'), 'Required key "MediaAsset[h]" is missing from JSON.');
-        assert(json[r'h'] != null, 'Required key "MediaAsset[h]" has a null value in JSON.');
-        assert(json.containsKey(r'src'), 'Required key "MediaAsset[src]" is missing from JSON.');
-        assert(json[r'src'] != null, 'Required key "MediaAsset[src]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "MediaAsset[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "MediaAsset[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

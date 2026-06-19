@@ -64,6 +64,9 @@ String parameterToString(dynamic value) {
   if (value is AggregationOpType) {
     return AggregationOpTypeTypeTransformer().encode(value).toString();
   }
+  if (value is BannedUserMatchType) {
+    return BannedUserMatchTypeTypeTransformer().encode(value).toString();
+  }
   if (value is CommentHTMLRenderingMode) {
     return CommentHTMLRenderingModeTypeTransformer().encode(value).toString();
   }
@@ -112,6 +115,9 @@ String parameterToString(dynamic value) {
   if (value is NotificationType) {
     return NotificationTypeTypeTransformer().encode(value).toString();
   }
+  if (value is PagesSortBy) {
+    return PagesSortByTypeTransformer().encode(value).toString();
+  }
   if (value is QuestionRenderingType) {
     return QuestionRenderingTypeTypeTransformer().encode(value).toString();
   }
@@ -141,6 +147,9 @@ String parameterToString(dynamic value) {
   }
   if (value is UserSearchSection) {
     return UserSearchSectionTypeTransformer().encode(value).toString();
+  }
+  if (value is UsersListLocation) {
+    return UsersListLocationTypeTransformer().encode(value).toString();
   }
   if (value is VoteStyle) {
     return VoteStyleTypeTransformer().encode(value).toString();

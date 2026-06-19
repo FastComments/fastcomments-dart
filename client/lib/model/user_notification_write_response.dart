@@ -59,12 +59,10 @@ class UserNotificationWriteResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "UserNotificationWriteResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "UserNotificationWriteResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'matchedCount'), 'Required key "UserNotificationWriteResponse[matchedCount]" is missing from JSON.');
-        assert(json[r'matchedCount'] != null, 'Required key "UserNotificationWriteResponse[matchedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'modifiedCount'), 'Required key "UserNotificationWriteResponse[modifiedCount]" is missing from JSON.');
-        assert(json[r'modifiedCount'] != null, 'Required key "UserNotificationWriteResponse[modifiedCount]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserNotificationWriteResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserNotificationWriteResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

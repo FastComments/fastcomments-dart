@@ -77,11 +77,10 @@ class VoteBodyParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'commenterEmail'), 'Required key "VoteBodyParams[commenterEmail]" is missing from JSON.');
-        assert(json.containsKey(r'commenterName'), 'Required key "VoteBodyParams[commenterName]" is missing from JSON.');
-        assert(json.containsKey(r'voteDir'), 'Required key "VoteBodyParams[voteDir]" is missing from JSON.');
-        assert(json[r'voteDir'] != null, 'Required key "VoteBodyParams[voteDir]" has a null value in JSON.');
-        assert(json.containsKey(r'url'), 'Required key "VoteBodyParams[url]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "VoteBodyParams[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "VoteBodyParams[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

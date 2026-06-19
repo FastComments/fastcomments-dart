@@ -422,13 +422,10 @@ class GetCommentsResponseWithPresencePublicComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetCommentsResponseWithPresencePublicComment[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetCommentsResponseWithPresencePublicComment[status]" has a null value in JSON.');
-        assert(json.containsKey(r'comments'), 'Required key "GetCommentsResponseWithPresencePublicComment[comments]" is missing from JSON.');
-        assert(json[r'comments'] != null, 'Required key "GetCommentsResponseWithPresencePublicComment[comments]" has a null value in JSON.');
-        assert(json.containsKey(r'user'), 'Required key "GetCommentsResponseWithPresencePublicComment[user]" is missing from JSON.');
-        assert(json.containsKey(r'pageNumber'), 'Required key "GetCommentsResponseWithPresencePublicComment[pageNumber]" is missing from JSON.');
-        assert(json[r'pageNumber'] != null, 'Required key "GetCommentsResponseWithPresencePublicComment[pageNumber]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetCommentsResponseWithPresencePublicComment[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetCommentsResponseWithPresencePublicComment[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

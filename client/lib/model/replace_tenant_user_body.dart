@@ -459,10 +459,10 @@ class ReplaceTenantUserBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'username'), 'Required key "ReplaceTenantUserBody[username]" is missing from JSON.');
-        assert(json[r'username'] != null, 'Required key "ReplaceTenantUserBody[username]" has a null value in JSON.');
-        assert(json.containsKey(r'email'), 'Required key "ReplaceTenantUserBody[email]" is missing from JSON.');
-        assert(json[r'email'] != null, 'Required key "ReplaceTenantUserBody[email]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ReplaceTenantUserBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ReplaceTenantUserBody[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

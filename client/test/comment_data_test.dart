@@ -132,7 +132,7 @@ void main() {
     });
 
     // Construct a type with a set of properties K of type T
-    // Map<String, RecordStringStringOrNumberValue> questionValues (default value: const {})
+    // Map<String, GifSearchResponseImagesInnerInner> questionValues (default value: const {})
     test('to test the property `questionValues`', () async {
       // TODO
     });

@@ -185,37 +185,10 @@ class Moderator {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "Moderator[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "Moderator[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "Moderator[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "Moderator[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'name'), 'Required key "Moderator[name]" is missing from JSON.');
-        assert(json.containsKey(r'userId'), 'Required key "Moderator[userId]" is missing from JSON.');
-        assert(json.containsKey(r'acceptedInvite'), 'Required key "Moderator[acceptedInvite]" is missing from JSON.');
-        assert(json[r'acceptedInvite'] != null, 'Required key "Moderator[acceptedInvite]" has a null value in JSON.');
-        assert(json.containsKey(r'email'), 'Required key "Moderator[email]" is missing from JSON.');
-        assert(json.containsKey(r'markReviewedCount'), 'Required key "Moderator[markReviewedCount]" is missing from JSON.');
-        assert(json[r'markReviewedCount'] != null, 'Required key "Moderator[markReviewedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'deletedCount'), 'Required key "Moderator[deletedCount]" is missing from JSON.');
-        assert(json[r'deletedCount'] != null, 'Required key "Moderator[deletedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'markedSpamCount'), 'Required key "Moderator[markedSpamCount]" is missing from JSON.');
-        assert(json[r'markedSpamCount'] != null, 'Required key "Moderator[markedSpamCount]" has a null value in JSON.');
-        assert(json.containsKey(r'markedNotSpamCount'), 'Required key "Moderator[markedNotSpamCount]" is missing from JSON.');
-        assert(json[r'markedNotSpamCount'] != null, 'Required key "Moderator[markedNotSpamCount]" has a null value in JSON.');
-        assert(json.containsKey(r'approvedCount'), 'Required key "Moderator[approvedCount]" is missing from JSON.');
-        assert(json[r'approvedCount'] != null, 'Required key "Moderator[approvedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'unApprovedCount'), 'Required key "Moderator[unApprovedCount]" is missing from JSON.');
-        assert(json[r'unApprovedCount'] != null, 'Required key "Moderator[unApprovedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'editedCount'), 'Required key "Moderator[editedCount]" is missing from JSON.');
-        assert(json[r'editedCount'] != null, 'Required key "Moderator[editedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'bannedCount'), 'Required key "Moderator[bannedCount]" is missing from JSON.');
-        assert(json[r'bannedCount'] != null, 'Required key "Moderator[bannedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'unFlaggedCount'), 'Required key "Moderator[unFlaggedCount]" is missing from JSON.');
-        assert(json[r'unFlaggedCount'] != null, 'Required key "Moderator[unFlaggedCount]" has a null value in JSON.');
-        assert(json.containsKey(r'verificationId'), 'Required key "Moderator[verificationId]" is missing from JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "Moderator[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "Moderator[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'moderationGroupIds'), 'Required key "Moderator[moderationGroupIds]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "Moderator[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "Moderator[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

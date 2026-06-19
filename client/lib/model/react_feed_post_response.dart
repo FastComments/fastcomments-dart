@@ -59,12 +59,10 @@ class ReactFeedPostResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "ReactFeedPostResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "ReactFeedPostResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'reactType'), 'Required key "ReactFeedPostResponse[reactType]" is missing from JSON.');
-        assert(json[r'reactType'] != null, 'Required key "ReactFeedPostResponse[reactType]" has a null value in JSON.');
-        assert(json.containsKey(r'isUndo'), 'Required key "ReactFeedPostResponse[isUndo]" is missing from JSON.');
-        assert(json[r'isUndo'] != null, 'Required key "ReactFeedPostResponse[isUndo]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ReactFeedPostResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ReactFeedPostResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

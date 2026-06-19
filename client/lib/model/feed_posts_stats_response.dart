@@ -53,10 +53,10 @@ class FeedPostsStatsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "FeedPostsStatsResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "FeedPostsStatsResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'stats'), 'Required key "FeedPostsStatsResponse[stats]" is missing from JSON.');
-        assert(json[r'stats'] != null, 'Required key "FeedPostsStatsResponse[stats]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FeedPostsStatsResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FeedPostsStatsResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

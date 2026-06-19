@@ -53,10 +53,10 @@ class IgnoredResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "IgnoredResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "IgnoredResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'note'), 'Required key "IgnoredResponse[note]" is missing from JSON.');
-        assert(json[r'note'] != null, 'Required key "IgnoredResponse[note]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "IgnoredResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "IgnoredResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

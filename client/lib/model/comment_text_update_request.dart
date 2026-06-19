@@ -59,8 +59,10 @@ class CommentTextUpdateRequest {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'comment'), 'Required key "CommentTextUpdateRequest[comment]" is missing from JSON.');
-        assert(json[r'comment'] != null, 'Required key "CommentTextUpdateRequest[comment]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CommentTextUpdateRequest[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CommentTextUpdateRequest[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

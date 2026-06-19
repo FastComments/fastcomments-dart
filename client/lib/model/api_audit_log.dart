@@ -180,12 +180,10 @@ class APIAuditLog {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "APIAuditLog[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "APIAuditLog[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'resourceName'), 'Required key "APIAuditLog[resourceName]" is missing from JSON.');
-        assert(json[r'resourceName'] != null, 'Required key "APIAuditLog[resourceName]" has a null value in JSON.');
-        assert(json.containsKey(r'crudType'), 'Required key "APIAuditLog[crudType]" is missing from JSON.');
-        assert(json[r'crudType'] != null, 'Required key "APIAuditLog[crudType]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APIAuditLog[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APIAuditLog[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

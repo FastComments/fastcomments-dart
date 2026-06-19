@@ -53,10 +53,10 @@ class APIGetUserBadgeProgressResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "APIGetUserBadgeProgressResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "APIGetUserBadgeProgressResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'userBadgeProgress'), 'Required key "APIGetUserBadgeProgressResponse[userBadgeProgress]" is missing from JSON.');
-        assert(json[r'userBadgeProgress'] != null, 'Required key "APIGetUserBadgeProgressResponse[userBadgeProgress]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APIGetUserBadgeProgressResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APIGetUserBadgeProgressResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -85,8 +85,10 @@ class GetPagesAPIResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetPagesAPIResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetPagesAPIResponse[status]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetPagesAPIResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetPagesAPIResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

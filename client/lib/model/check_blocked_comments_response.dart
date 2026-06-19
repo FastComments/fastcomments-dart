@@ -54,10 +54,10 @@ class CheckBlockedCommentsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'commentStatuses'), 'Required key "CheckBlockedCommentsResponse[commentStatuses]" is missing from JSON.');
-        assert(json[r'commentStatuses'] != null, 'Required key "CheckBlockedCommentsResponse[commentStatuses]" has a null value in JSON.');
-        assert(json.containsKey(r'status'), 'Required key "CheckBlockedCommentsResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "CheckBlockedCommentsResponse[status]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CheckBlockedCommentsResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CheckBlockedCommentsResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

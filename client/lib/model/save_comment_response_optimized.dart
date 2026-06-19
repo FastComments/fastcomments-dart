@@ -70,11 +70,10 @@ class SaveCommentResponseOptimized {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "SaveCommentResponseOptimized[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "SaveCommentResponseOptimized[status]" has a null value in JSON.');
-        assert(json.containsKey(r'comment'), 'Required key "SaveCommentResponseOptimized[comment]" is missing from JSON.');
-        assert(json[r'comment'] != null, 'Required key "SaveCommentResponseOptimized[comment]" has a null value in JSON.');
-        assert(json.containsKey(r'user'), 'Required key "SaveCommentResponseOptimized[user]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "SaveCommentResponseOptimized[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "SaveCommentResponseOptimized[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

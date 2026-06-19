@@ -53,10 +53,10 @@ class FindCommentsByRangeResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'results'), 'Required key "FindCommentsByRangeResponse[results]" is missing from JSON.');
-        assert(json[r'results'] != null, 'Required key "FindCommentsByRangeResponse[results]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "FindCommentsByRangeResponse[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "FindCommentsByRangeResponse[createdAt]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FindCommentsByRangeResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FindCommentsByRangeResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

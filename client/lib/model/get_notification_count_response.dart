@@ -53,10 +53,10 @@ class GetNotificationCountResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetNotificationCountResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetNotificationCountResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'count'), 'Required key "GetNotificationCountResponse[count]" is missing from JSON.');
-        assert(json[r'count'] != null, 'Required key "GetNotificationCountResponse[count]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetNotificationCountResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetNotificationCountResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

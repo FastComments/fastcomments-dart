@@ -891,26 +891,10 @@ class FComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "FComment[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "FComment[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "FComment[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "FComment[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "FComment[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "FComment[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'url'), 'Required key "FComment[url]" is missing from JSON.');
-        assert(json[r'url'] != null, 'Required key "FComment[url]" has a null value in JSON.');
-        assert(json.containsKey(r'commenterName'), 'Required key "FComment[commenterName]" is missing from JSON.');
-        assert(json[r'commenterName'] != null, 'Required key "FComment[commenterName]" has a null value in JSON.');
-        assert(json.containsKey(r'comment'), 'Required key "FComment[comment]" is missing from JSON.');
-        assert(json[r'comment'] != null, 'Required key "FComment[comment]" has a null value in JSON.');
-        assert(json.containsKey(r'commentHTML'), 'Required key "FComment[commentHTML]" is missing from JSON.');
-        assert(json[r'commentHTML'] != null, 'Required key "FComment[commentHTML]" has a null value in JSON.');
-        assert(json.containsKey(r'date'), 'Required key "FComment[date]" is missing from JSON.');
-        assert(json.containsKey(r'verified'), 'Required key "FComment[verified]" is missing from JSON.');
-        assert(json[r'verified'] != null, 'Required key "FComment[verified]" has a null value in JSON.');
-        assert(json.containsKey(r'approved'), 'Required key "FComment[approved]" is missing from JSON.');
-        assert(json[r'approved'] != null, 'Required key "FComment[approved]" has a null value in JSON.');
-        assert(json.containsKey(r'locale'), 'Required key "FComment[locale]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FComment[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FComment[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

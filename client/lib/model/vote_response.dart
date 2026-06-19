@@ -20,7 +20,7 @@ class VoteResponse {
     this.editKey,
   });
 
-  StatusEnum status;
+  VoteResponseStatus status;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -111,13 +111,15 @@ class VoteResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "VoteResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "VoteResponse[status]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "VoteResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "VoteResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 
       return VoteResponse(
-        status: StatusEnum.fromJson(json[r'status'])!,
+        status: VoteResponseStatus.fromJson(json[r'status'])!,
         voteId: mapValueOfType<String>(json, r'voteId'),
         isVerified: mapValueOfType<bool>(json, r'isVerified'),
         user: VoteResponseUser.fromJson(json[r'user']),

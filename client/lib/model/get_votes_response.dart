@@ -65,14 +65,10 @@ class GetVotesResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetVotesResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetVotesResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'appliedAuthorizedVotes'), 'Required key "GetVotesResponse[appliedAuthorizedVotes]" is missing from JSON.');
-        assert(json[r'appliedAuthorizedVotes'] != null, 'Required key "GetVotesResponse[appliedAuthorizedVotes]" has a null value in JSON.');
-        assert(json.containsKey(r'appliedAnonymousVotes'), 'Required key "GetVotesResponse[appliedAnonymousVotes]" is missing from JSON.');
-        assert(json[r'appliedAnonymousVotes'] != null, 'Required key "GetVotesResponse[appliedAnonymousVotes]" has a null value in JSON.');
-        assert(json.containsKey(r'pendingVotes'), 'Required key "GetVotesResponse[pendingVotes]" is missing from JSON.');
-        assert(json[r'pendingVotes'] != null, 'Required key "GetVotesResponse[pendingVotes]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetVotesResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetVotesResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

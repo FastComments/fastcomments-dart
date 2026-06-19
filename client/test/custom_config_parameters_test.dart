@@ -276,6 +276,16 @@ void main() {
       // TODO
     });
 
+    // bool allowEmbeds
+    test('to test the property `allowEmbeds`', () async {
+      // TODO
+    });
+
+    // List<String> allowedEmbedDomains (default value: const [])
+    test('to test the property `allowedEmbedDomains`', () async {
+      // TODO
+    });
+
     // bool noStyles
     test('to test the property `noStyles`', () async {
       // TODO
@@ -298,6 +308,11 @@ void main() {
 
     // bool requireSSO
     test('to test the property `requireSSO`', () async {
+      // TODO
+    });
+
+    // bool enableFChat
+    test('to test the property `enableFChat`', () async {
       // TODO
     });
 
@@ -399,6 +414,16 @@ void main() {
 
     // bool wrap
     test('to test the property `wrap`', () async {
+      // TODO
+    });
+
+    // UsersListLocation usersListLocation
+    test('to test the property `usersListLocation`', () async {
+      // TODO
+    });
+
+    // bool usersListIncludeOffline
+    test('to test the property `usersListIncludeOffline`', () async {
       // TODO
     });
 

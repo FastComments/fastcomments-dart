@@ -613,26 +613,10 @@ class APICommentBase {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'id'), 'Required key "APICommentBase[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "APICommentBase[id]" has a null value in JSON.');
-        assert(json.containsKey(r'approved'), 'Required key "APICommentBase[approved]" is missing from JSON.');
-        assert(json[r'approved'] != null, 'Required key "APICommentBase[approved]" has a null value in JSON.');
-        assert(json.containsKey(r'comment'), 'Required key "APICommentBase[comment]" is missing from JSON.');
-        assert(json[r'comment'] != null, 'Required key "APICommentBase[comment]" has a null value in JSON.');
-        assert(json.containsKey(r'commentHTML'), 'Required key "APICommentBase[commentHTML]" is missing from JSON.');
-        assert(json[r'commentHTML'] != null, 'Required key "APICommentBase[commentHTML]" has a null value in JSON.');
-        assert(json.containsKey(r'commenterName'), 'Required key "APICommentBase[commenterName]" is missing from JSON.');
-        assert(json[r'commenterName'] != null, 'Required key "APICommentBase[commenterName]" has a null value in JSON.');
-        assert(json.containsKey(r'date'), 'Required key "APICommentBase[date]" is missing from JSON.');
-        assert(json.containsKey(r'locale'), 'Required key "APICommentBase[locale]" is missing from JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "APICommentBase[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "APICommentBase[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'url'), 'Required key "APICommentBase[url]" is missing from JSON.');
-        assert(json[r'url'] != null, 'Required key "APICommentBase[url]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "APICommentBase[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "APICommentBase[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'verified'), 'Required key "APICommentBase[verified]" is missing from JSON.');
-        assert(json[r'verified'] != null, 'Required key "APICommentBase[verified]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APICommentBase[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APICommentBase[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -19,7 +19,7 @@ class BulkCreateHashTagsResponse {
 
   APIStatus status;
 
-  List<AddHashTag200Response> results;
+  List<BulkCreateHashTagsResponseResultsInner> results;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkCreateHashTagsResponse &&
@@ -53,16 +53,16 @@ class BulkCreateHashTagsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "BulkCreateHashTagsResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "BulkCreateHashTagsResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'results'), 'Required key "BulkCreateHashTagsResponse[results]" is missing from JSON.');
-        assert(json[r'results'] != null, 'Required key "BulkCreateHashTagsResponse[results]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "BulkCreateHashTagsResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "BulkCreateHashTagsResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 
       return BulkCreateHashTagsResponse(
         status: APIStatus.fromJson(json[r'status'])!,
-        results: AddHashTag200Response.listFromJson(json[r'results']),
+        results: BulkCreateHashTagsResponseResultsInner.listFromJson(json[r'results']),
       );
     }
     return null;

@@ -217,26 +217,10 @@ class RenderableUserNotification {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'optedOut'), 'Required key "RenderableUserNotification[optedOut]" is missing from JSON.');
-        assert(json[r'optedOut'] != null, 'Required key "RenderableUserNotification[optedOut]" has a null value in JSON.');
-        assert(json.containsKey(r'type'), 'Required key "RenderableUserNotification[type]" is missing from JSON.');
-        assert(json[r'type'] != null, 'Required key "RenderableUserNotification[type]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "RenderableUserNotification[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "RenderableUserNotification[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'sent'), 'Required key "RenderableUserNotification[sent]" is missing from JSON.');
-        assert(json[r'sent'] != null, 'Required key "RenderableUserNotification[sent]" has a null value in JSON.');
-        assert(json.containsKey(r'viewed'), 'Required key "RenderableUserNotification[viewed]" is missing from JSON.');
-        assert(json[r'viewed'] != null, 'Required key "RenderableUserNotification[viewed]" has a null value in JSON.');
-        assert(json.containsKey(r'relatedObjectId'), 'Required key "RenderableUserNotification[relatedObjectId]" is missing from JSON.');
-        assert(json[r'relatedObjectId'] != null, 'Required key "RenderableUserNotification[relatedObjectId]" has a null value in JSON.');
-        assert(json.containsKey(r'relatedObjectType'), 'Required key "RenderableUserNotification[relatedObjectType]" is missing from JSON.');
-        assert(json[r'relatedObjectType'] != null, 'Required key "RenderableUserNotification[relatedObjectType]" has a null value in JSON.');
-        assert(json.containsKey(r'url'), 'Required key "RenderableUserNotification[url]" is missing from JSON.');
-        assert(json[r'url'] != null, 'Required key "RenderableUserNotification[url]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "RenderableUserNotification[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "RenderableUserNotification[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'_id'), 'Required key "RenderableUserNotification[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "RenderableUserNotification[_id]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "RenderableUserNotification[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "RenderableUserNotification[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

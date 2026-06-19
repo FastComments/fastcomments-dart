@@ -83,20 +83,10 @@ class EmailTemplateRenderErrorResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'id'), 'Required key "EmailTemplateRenderErrorResponse[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "EmailTemplateRenderErrorResponse[id]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "EmailTemplateRenderErrorResponse[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "EmailTemplateRenderErrorResponse[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'customTemplateId'), 'Required key "EmailTemplateRenderErrorResponse[customTemplateId]" is missing from JSON.');
-        assert(json[r'customTemplateId'] != null, 'Required key "EmailTemplateRenderErrorResponse[customTemplateId]" has a null value in JSON.');
-        assert(json.containsKey(r'error'), 'Required key "EmailTemplateRenderErrorResponse[error]" is missing from JSON.');
-        assert(json[r'error'] != null, 'Required key "EmailTemplateRenderErrorResponse[error]" has a null value in JSON.');
-        assert(json.containsKey(r'count'), 'Required key "EmailTemplateRenderErrorResponse[count]" is missing from JSON.');
-        assert(json[r'count'] != null, 'Required key "EmailTemplateRenderErrorResponse[count]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "EmailTemplateRenderErrorResponse[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "EmailTemplateRenderErrorResponse[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'lastOccurredAt'), 'Required key "EmailTemplateRenderErrorResponse[lastOccurredAt]" is missing from JSON.');
-        assert(json[r'lastOccurredAt'] != null, 'Required key "EmailTemplateRenderErrorResponse[lastOccurredAt]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "EmailTemplateRenderErrorResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "EmailTemplateRenderErrorResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

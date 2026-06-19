@@ -53,10 +53,10 @@ class GetQuestionResultResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetQuestionResultResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetQuestionResultResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'questionResult'), 'Required key "GetQuestionResultResponse[questionResult]" is missing from JSON.');
-        assert(json[r'questionResult'] != null, 'Required key "GetQuestionResultResponse[questionResult]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetQuestionResultResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetQuestionResultResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

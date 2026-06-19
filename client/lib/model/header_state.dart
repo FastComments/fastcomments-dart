@@ -77,18 +77,10 @@ class HeaderState {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "HeaderState[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "HeaderState[status]" has a null value in JSON.');
-        assert(json.containsKey(r'NotificationType'), 'Required key "HeaderState[NotificationType]" is missing from JSON.');
-        assert(json[r'NotificationType'] != null, 'Required key "HeaderState[NotificationType]" has a null value in JSON.');
-        assert(json.containsKey(r'userId'), 'Required key "HeaderState[userId]" is missing from JSON.');
-        assert(json[r'userId'] != null, 'Required key "HeaderState[userId]" has a null value in JSON.');
-        assert(json.containsKey(r'userIdWS'), 'Required key "HeaderState[userIdWS]" is missing from JSON.');
-        assert(json[r'userIdWS'] != null, 'Required key "HeaderState[userIdWS]" has a null value in JSON.');
-        assert(json.containsKey(r'notificationCounts'), 'Required key "HeaderState[notificationCounts]" is missing from JSON.');
-        assert(json[r'notificationCounts'] != null, 'Required key "HeaderState[notificationCounts]" has a null value in JSON.');
-        assert(json.containsKey(r'accountNotifications'), 'Required key "HeaderState[accountNotifications]" is missing from JSON.');
-        assert(json[r'accountNotifications'] != null, 'Required key "HeaderState[accountNotifications]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "HeaderState[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "HeaderState[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

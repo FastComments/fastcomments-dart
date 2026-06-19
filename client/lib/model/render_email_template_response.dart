@@ -53,10 +53,10 @@ class RenderEmailTemplateResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "RenderEmailTemplateResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "RenderEmailTemplateResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'html'), 'Required key "RenderEmailTemplateResponse[html]" is missing from JSON.');
-        assert(json[r'html'] != null, 'Required key "RenderEmailTemplateResponse[html]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "RenderEmailTemplateResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "RenderEmailTemplateResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -126,7 +126,7 @@ Method | HTTP request | Description
 
 
 # **addDomainConfig**
-> AddDomainConfig200Response addDomainConfig(tenantId, addDomainConfigParams)
+> AddDomainConfigResponse addDomainConfig(tenantId, addDomainConfigParams)
 
 
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddDomainConfig200Response**](AddDomainConfig200Response.md)
+[**AddDomainConfigResponse**](AddDomainConfigResponse.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **addHashTag**
-> AddHashTag200Response addHashTag(tenantId, createHashTagBody)
+> CreateHashTagResponse addHashTag(tenantId, createHashTagBody)
 
 
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddHashTag200Response**](AddHashTag200Response.md)
+[**CreateHashTagResponse**](CreateHashTagResponse.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **addHashTagsBulk**
-> AddHashTagsBulk200Response addHashTagsBulk(tenantId, bulkCreateHashTagsBody)
+> BulkCreateHashTagsResponse addHashTagsBulk(tenantId, bulkCreateHashTagsBody)
 
 
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddHashTagsBulk200Response**](AddHashTagsBulk200Response.md)
+[**BulkCreateHashTagsResponse**](BulkCreateHashTagsResponse.md)
 
 ### Authorization
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aggregate**
-> AggregationResponse aggregate(tenantId, aggregationRequest, parentTenantId, includeStats)
+> AggregateResponse aggregate(tenantId, aggregationRequest, parentTenantId, includeStats)
 
 
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationResponse**](AggregationResponse.md)
+[**AggregateResponse**](AggregateResponse.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aggregateQuestionResults**
-> AggregateQuestionResults200Response aggregateQuestionResults(tenantId, questionId, questionIds, urlId, timeBucket, startDate, forceRecalculate)
+> AggregateQuestionResultsResponse aggregateQuestionResults(tenantId, questionId, questionIds, urlId, timeBucket, startDate, forceRecalculate)
 
 
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregateQuestionResults200Response**](AggregateQuestionResults200Response.md)
+[**AggregateQuestionResultsResponse**](AggregateQuestionResultsResponse.md)
 
 ### Authorization
 
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **blockUserFromComment**
-> BlockFromCommentPublic200Response blockUserFromComment(tenantId, id, blockFromCommentParams, userId, anonUserId)
+> BlockSuccess blockUserFromComment(tenantId, id, blockFromCommentParams, userId, anonUserId)
 
 
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlockFromCommentPublic200Response**](BlockFromCommentPublic200Response.md)
+[**BlockSuccess**](BlockSuccess.md)
 
 ### Authorization
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulkAggregateQuestionResults**
-> BulkAggregateQuestionResults200Response bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate)
+> BulkAggregateQuestionResultsResponse bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate)
 
 
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BulkAggregateQuestionResults200Response**](BulkAggregateQuestionResults200Response.md)
+[**BulkAggregateQuestionResultsResponse**](BulkAggregateQuestionResultsResponse.md)
 
 ### Authorization
 
@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **changeTicketState**
-> ChangeTicketState200Response changeTicketState(tenantId, userId, id, changeTicketStateBody)
+> ChangeTicketStateResponse changeTicketState(tenantId, userId, id, changeTicketStateBody)
 
 
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ChangeTicketState200Response**](ChangeTicketState200Response.md)
+[**ChangeTicketStateResponse**](ChangeTicketStateResponse.md)
 
 ### Authorization
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **combineCommentsWithQuestionResults**
-> CombineCommentsWithQuestionResults200Response combineCommentsWithQuestionResults(tenantId, questionId, questionIds, urlId, startDate, forceRecalculate, minValue, maxValue, limit)
+> CombineQuestionResultsWithCommentsResponse combineCommentsWithQuestionResults(tenantId, questionId, questionIds, urlId, startDate, forceRecalculate, minValue, maxValue, limit)
 
 
 
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CombineCommentsWithQuestionResults200Response**](CombineCommentsWithQuestionResults200Response.md)
+[**CombineQuestionResultsWithCommentsResponse**](CombineQuestionResultsWithCommentsResponse.md)
 
 ### Authorization
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createEmailTemplate**
-> CreateEmailTemplate200Response createEmailTemplate(tenantId, createEmailTemplateBody)
+> CreateEmailTemplateResponse createEmailTemplate(tenantId, createEmailTemplateBody)
 
 
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateEmailTemplate200Response**](CreateEmailTemplate200Response.md)
+[**CreateEmailTemplateResponse**](CreateEmailTemplateResponse.md)
 
 ### Authorization
 
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createFeedPost**
-> CreateFeedPost200Response createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck)
+> CreateFeedPostsResponse createFeedPost(tenantId, createFeedPostParams, broadcastId, isLive, doSpamCheck, skipDupCheck)
 
 
 
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateFeedPost200Response**](CreateFeedPost200Response.md)
+[**CreateFeedPostsResponse**](CreateFeedPostsResponse.md)
 
 ### Authorization
 
@@ -787,7 +787,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createModerator**
-> CreateModerator200Response createModerator(tenantId, createModeratorBody)
+> CreateModeratorResponse createModerator(tenantId, createModeratorBody)
 
 
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateModerator200Response**](CreateModerator200Response.md)
+[**CreateModeratorResponse**](CreateModeratorResponse.md)
 
 ### Authorization
 
@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createQuestionConfig**
-> CreateQuestionConfig200Response createQuestionConfig(tenantId, createQuestionConfigBody)
+> CreateQuestionConfigResponse createQuestionConfig(tenantId, createQuestionConfigBody)
 
 
 
@@ -867,7 +867,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateQuestionConfig200Response**](CreateQuestionConfig200Response.md)
+[**CreateQuestionConfigResponse**](CreateQuestionConfigResponse.md)
 
 ### Authorization
 
@@ -881,7 +881,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createQuestionResult**
-> CreateQuestionResult200Response createQuestionResult(tenantId, createQuestionResultBody)
+> CreateQuestionResultResponse createQuestionResult(tenantId, createQuestionResultBody)
 
 
 
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateQuestionResult200Response**](CreateQuestionResult200Response.md)
+[**CreateQuestionResultResponse**](CreateQuestionResultResponse.md)
 
 ### Authorization
 
@@ -975,7 +975,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createTenant**
-> CreateTenant200Response createTenant(tenantId, createTenantBody)
+> CreateTenantResponse createTenant(tenantId, createTenantBody)
 
 
 
@@ -1008,7 +1008,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTenant200Response**](CreateTenant200Response.md)
+[**CreateTenantResponse**](CreateTenantResponse.md)
 
 ### Authorization
 
@@ -1022,7 +1022,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createTenantPackage**
-> CreateTenantPackage200Response createTenantPackage(tenantId, createTenantPackageBody)
+> CreateTenantPackageResponse createTenantPackage(tenantId, createTenantPackageBody)
 
 
 
@@ -1055,7 +1055,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTenantPackage200Response**](CreateTenantPackage200Response.md)
+[**CreateTenantPackageResponse**](CreateTenantPackageResponse.md)
 
 ### Authorization
 
@@ -1069,7 +1069,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createTenantUser**
-> CreateTenantUser200Response createTenantUser(tenantId, createTenantUserBody)
+> CreateTenantUserResponse createTenantUser(tenantId, createTenantUserBody)
 
 
 
@@ -1102,7 +1102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTenantUser200Response**](CreateTenantUser200Response.md)
+[**CreateTenantUserResponse**](CreateTenantUserResponse.md)
 
 ### Authorization
 
@@ -1116,7 +1116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createTicket**
-> CreateTicket200Response createTicket(tenantId, userId, createTicketBody)
+> CreateTicketResponse createTicket(tenantId, userId, createTicketBody)
 
 
 
@@ -1151,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTicket200Response**](CreateTicket200Response.md)
+[**CreateTicketResponse**](CreateTicketResponse.md)
 
 ### Authorization
 
@@ -1165,7 +1165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createUserBadge**
-> CreateUserBadge200Response createUserBadge(tenantId, createUserBadgeParams)
+> APICreateUserBadgeResponse createUserBadge(tenantId, createUserBadgeParams)
 
 
 
@@ -1198,7 +1198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateUserBadge200Response**](CreateUserBadge200Response.md)
+[**APICreateUserBadgeResponse**](APICreateUserBadgeResponse.md)
 
 ### Authorization
 
@@ -1212,7 +1212,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createVote**
-> VoteComment200Response createVote(tenantId, commentId, direction, userId, anonUserId)
+> VoteResponse createVote(tenantId, commentId, direction, userId, anonUserId)
 
 
 
@@ -1251,7 +1251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VoteComment200Response**](VoteComment200Response.md)
+[**VoteResponse**](VoteResponse.md)
 
 ### Authorization
 
@@ -1265,7 +1265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteComment**
-> DeleteComment200Response deleteComment(tenantId, id, contextUserId, isLive)
+> DeleteCommentResult deleteComment(tenantId, id, contextUserId, isLive)
 
 
 
@@ -1302,7 +1302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteComment200Response**](DeleteComment200Response.md)
+[**DeleteCommentResult**](DeleteCommentResult.md)
 
 ### Authorization
 
@@ -1316,7 +1316,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteDomainConfig**
-> DeleteDomainConfig200Response deleteDomainConfig(tenantId, domain)
+> DeleteDomainConfigResponse deleteDomainConfig(tenantId, domain)
 
 
 
@@ -1349,7 +1349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteDomainConfig200Response**](DeleteDomainConfig200Response.md)
+[**DeleteDomainConfigResponse**](DeleteDomainConfigResponse.md)
 
 ### Authorization
 
@@ -1363,7 +1363,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteEmailTemplate**
-> FlagCommentPublic200Response deleteEmailTemplate(tenantId, id)
+> APIEmptyResponse deleteEmailTemplate(tenantId, id)
 
 
 
@@ -1396,7 +1396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1410,7 +1410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteEmailTemplateRenderError**
-> FlagCommentPublic200Response deleteEmailTemplateRenderError(tenantId, id, errorId)
+> APIEmptyResponse deleteEmailTemplateRenderError(tenantId, id, errorId)
 
 
 
@@ -1445,7 +1445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1459,7 +1459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteHashTag**
-> FlagCommentPublic200Response deleteHashTag(tag, tenantId, deleteHashTagRequest)
+> APIEmptyResponse deleteHashTag(tag, tenantId, deleteHashTagRequestBody)
 
 
 
@@ -1474,10 +1474,10 @@ import 'package:fastcomments_dart/api.dart';
 final api_instance = DefaultApi();
 final tag = tag_example; // String | 
 final tenantId = tenantId_example; // String | 
-final deleteHashTagRequest = DeleteHashTagRequest(); // DeleteHashTagRequest | 
+final deleteHashTagRequestBody = DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
 
 try {
-    final result = api_instance.deleteHashTag(tag, tenantId, deleteHashTagRequest);
+    final result = api_instance.deleteHashTag(tag, tenantId, deleteHashTagRequestBody);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteHashTag: $e\n');
@@ -1490,11 +1490,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tag** | **String**|  | 
  **tenantId** | **String**|  | [optional] 
- **deleteHashTagRequest** | [**DeleteHashTagRequest**](DeleteHashTagRequest.md)|  | [optional] 
+ **deleteHashTagRequestBody** | [**DeleteHashTagRequestBody**](DeleteHashTagRequestBody.md)|  | [optional] 
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1508,7 +1508,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteModerator**
-> FlagCommentPublic200Response deleteModerator(tenantId, id, sendEmail)
+> APIEmptyResponse deleteModerator(tenantId, id, sendEmail)
 
 
 
@@ -1543,7 +1543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1557,7 +1557,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteNotificationCount**
-> FlagCommentPublic200Response deleteNotificationCount(tenantId, id)
+> APIEmptyResponse deleteNotificationCount(tenantId, id)
 
 
 
@@ -1590,7 +1590,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1651,7 +1651,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deletePendingWebhookEvent**
-> FlagCommentPublic200Response deletePendingWebhookEvent(tenantId, id)
+> APIEmptyResponse deletePendingWebhookEvent(tenantId, id)
 
 
 
@@ -1684,7 +1684,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1698,7 +1698,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteQuestionConfig**
-> FlagCommentPublic200Response deleteQuestionConfig(tenantId, id)
+> APIEmptyResponse deleteQuestionConfig(tenantId, id)
 
 
 
@@ -1731,7 +1731,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1745,7 +1745,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteQuestionResult**
-> FlagCommentPublic200Response deleteQuestionResult(tenantId, id)
+> APIEmptyResponse deleteQuestionResult(tenantId, id)
 
 
 
@@ -1778,7 +1778,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1892,7 +1892,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteTenant**
-> FlagCommentPublic200Response deleteTenant(tenantId, id, sure)
+> APIEmptyResponse deleteTenant(tenantId, id, sure)
 
 
 
@@ -1927,7 +1927,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1941,7 +1941,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteTenantPackage**
-> FlagCommentPublic200Response deleteTenantPackage(tenantId, id)
+> APIEmptyResponse deleteTenantPackage(tenantId, id)
 
 
 
@@ -1974,7 +1974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -1988,7 +1988,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteTenantUser**
-> FlagCommentPublic200Response deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode)
+> APIEmptyResponse deleteTenantUser(tenantId, id, deleteComments, commentDeleteMode)
 
 
 
@@ -2025,7 +2025,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -2039,7 +2039,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteUserBadge**
-> UpdateUserBadge200Response deleteUserBadge(tenantId, id)
+> APIEmptySuccessResponse deleteUserBadge(tenantId, id)
 
 
 
@@ -2072,7 +2072,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateUserBadge200Response**](UpdateUserBadge200Response.md)
+[**APIEmptySuccessResponse**](APIEmptySuccessResponse.md)
 
 ### Authorization
 
@@ -2086,7 +2086,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteVote**
-> DeleteCommentVote200Response deleteVote(tenantId, id, editKey)
+> VoteDeleteResponse deleteVote(tenantId, id, editKey)
 
 
 
@@ -2121,7 +2121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteCommentVote200Response**](DeleteCommentVote200Response.md)
+[**VoteDeleteResponse**](VoteDeleteResponse.md)
 
 ### Authorization
 
@@ -2135,7 +2135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **flagComment**
-> FlagComment200Response flagComment(tenantId, id, userId, anonUserId)
+> FlagCommentResponse flagComment(tenantId, id, userId, anonUserId)
 
 
 
@@ -2172,7 +2172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagComment200Response**](FlagComment200Response.md)
+[**FlagCommentResponse**](FlagCommentResponse.md)
 
 ### Authorization
 
@@ -2186,7 +2186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAuditLogs**
-> GetAuditLogs200Response getAuditLogs(tenantId, limit, skip, order, after, before)
+> GetAuditLogsResponse getAuditLogs(tenantId, limit, skip, order, after, before)
 
 
 
@@ -2227,7 +2227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAuditLogs200Response**](GetAuditLogs200Response.md)
+[**GetAuditLogsResponse**](GetAuditLogsResponse.md)
 
 ### Authorization
 
@@ -2241,7 +2241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCachedNotificationCount**
-> GetCachedNotificationCount200Response getCachedNotificationCount(tenantId, id)
+> GetCachedNotificationCountResponse getCachedNotificationCount(tenantId, id)
 
 
 
@@ -2274,7 +2274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetCachedNotificationCount200Response**](GetCachedNotificationCount200Response.md)
+[**GetCachedNotificationCountResponse**](GetCachedNotificationCountResponse.md)
 
 ### Authorization
 
@@ -2288,7 +2288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getComment**
-> GetComment200Response getComment(tenantId, id)
+> APIGetCommentResponse getComment(tenantId, id)
 
 
 
@@ -2321,7 +2321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetComment200Response**](GetComment200Response.md)
+[**APIGetCommentResponse**](APIGetCommentResponse.md)
 
 ### Authorization
 
@@ -2335,7 +2335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getComments**
-> GetComments200Response getComments(tenantId, page, limit, skip, asTree, skipChildren, limitChildren, maxTreeDepth, urlId, userId, anonUserId, contextUserId, hashTag, parentId, direction)
+> APIGetCommentsResponse getComments(tenantId, page, limit, skip, asTree, skipChildren, limitChildren, maxTreeDepth, urlId, userId, anonUserId, contextUserId, hashTag, parentId, direction, fromDate, toDate)
 
 
 
@@ -2363,9 +2363,11 @@ final contextUserId = contextUserId_example; // String |
 final hashTag = hashTag_example; // String | 
 final parentId = parentId_example; // String | 
 final direction = ; // SortDirections | 
+final fromDate = 789; // int | 
+final toDate = 789; // int | 
 
 try {
-    final result = api_instance.getComments(tenantId, page, limit, skip, asTree, skipChildren, limitChildren, maxTreeDepth, urlId, userId, anonUserId, contextUserId, hashTag, parentId, direction);
+    final result = api_instance.getComments(tenantId, page, limit, skip, asTree, skipChildren, limitChildren, maxTreeDepth, urlId, userId, anonUserId, contextUserId, hashTag, parentId, direction, fromDate, toDate);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getComments: $e\n');
@@ -2391,10 +2393,12 @@ Name | Type | Description  | Notes
  **hashTag** | **String**|  | [optional] 
  **parentId** | **String**|  | [optional] 
  **direction** | [**SortDirections**](.md)|  | [optional] 
+ **fromDate** | **int**|  | [optional] 
+ **toDate** | **int**|  | [optional] 
 
 ### Return type
 
-[**GetComments200Response**](GetComments200Response.md)
+[**APIGetCommentsResponse**](APIGetCommentsResponse.md)
 
 ### Authorization
 
@@ -2408,7 +2412,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDomainConfig**
-> GetDomainConfig200Response getDomainConfig(tenantId, domain)
+> GetDomainConfigResponse getDomainConfig(tenantId, domain)
 
 
 
@@ -2441,7 +2445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDomainConfig200Response**](GetDomainConfig200Response.md)
+[**GetDomainConfigResponse**](GetDomainConfigResponse.md)
 
 ### Authorization
 
@@ -2455,7 +2459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getDomainConfigs**
-> GetDomainConfigs200Response getDomainConfigs(tenantId)
+> GetDomainConfigsResponse getDomainConfigs(tenantId)
 
 
 
@@ -2486,7 +2490,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDomainConfigs200Response**](GetDomainConfigs200Response.md)
+[**GetDomainConfigsResponse**](GetDomainConfigsResponse.md)
 
 ### Authorization
 
@@ -2500,7 +2504,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEmailTemplate**
-> GetEmailTemplate200Response getEmailTemplate(tenantId, id)
+> GetEmailTemplateResponse getEmailTemplate(tenantId, id)
 
 
 
@@ -2533,7 +2537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetEmailTemplate200Response**](GetEmailTemplate200Response.md)
+[**GetEmailTemplateResponse**](GetEmailTemplateResponse.md)
 
 ### Authorization
 
@@ -2547,7 +2551,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEmailTemplateDefinitions**
-> GetEmailTemplateDefinitions200Response getEmailTemplateDefinitions(tenantId)
+> GetEmailTemplateDefinitionsResponse getEmailTemplateDefinitions(tenantId)
 
 
 
@@ -2578,7 +2582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetEmailTemplateDefinitions200Response**](GetEmailTemplateDefinitions200Response.md)
+[**GetEmailTemplateDefinitionsResponse**](GetEmailTemplateDefinitionsResponse.md)
 
 ### Authorization
 
@@ -2592,7 +2596,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEmailTemplateRenderErrors**
-> GetEmailTemplateRenderErrors200Response getEmailTemplateRenderErrors(tenantId, id, skip)
+> GetEmailTemplateRenderErrorsResponse getEmailTemplateRenderErrors(tenantId, id, skip)
 
 
 
@@ -2627,7 +2631,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetEmailTemplateRenderErrors200Response**](GetEmailTemplateRenderErrors200Response.md)
+[**GetEmailTemplateRenderErrorsResponse**](GetEmailTemplateRenderErrorsResponse.md)
 
 ### Authorization
 
@@ -2641,7 +2645,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEmailTemplates**
-> GetEmailTemplates200Response getEmailTemplates(tenantId, skip)
+> GetEmailTemplatesResponse getEmailTemplates(tenantId, skip)
 
 
 
@@ -2674,7 +2678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetEmailTemplates200Response**](GetEmailTemplates200Response.md)
+[**GetEmailTemplatesResponse**](GetEmailTemplatesResponse.md)
 
 ### Authorization
 
@@ -2688,7 +2692,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeedPosts**
-> GetFeedPosts200Response getFeedPosts(tenantId, afterId, limit, tags)
+> GetFeedPostsResponse getFeedPosts(tenantId, afterId, limit, tags)
 
 
 
@@ -2727,7 +2731,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFeedPosts200Response**](GetFeedPosts200Response.md)
+[**GetFeedPostsResponse**](GetFeedPostsResponse.md)
 
 ### Authorization
 
@@ -2741,7 +2745,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getHashTags**
-> GetHashTags200Response getHashTags(tenantId, page)
+> GetHashTagsResponse getHashTags(tenantId, page)
 
 
 
@@ -2774,7 +2778,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetHashTags200Response**](GetHashTags200Response.md)
+[**GetHashTagsResponse**](GetHashTagsResponse.md)
 
 ### Authorization
 
@@ -2788,7 +2792,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getModerator**
-> GetModerator200Response getModerator(tenantId, id)
+> GetModeratorResponse getModerator(tenantId, id)
 
 
 
@@ -2821,7 +2825,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetModerator200Response**](GetModerator200Response.md)
+[**GetModeratorResponse**](GetModeratorResponse.md)
 
 ### Authorization
 
@@ -2835,7 +2839,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getModerators**
-> GetModerators200Response getModerators(tenantId, skip)
+> GetModeratorsResponse getModerators(tenantId, skip)
 
 
 
@@ -2868,7 +2872,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetModerators200Response**](GetModerators200Response.md)
+[**GetModeratorsResponse**](GetModeratorsResponse.md)
 
 ### Authorization
 
@@ -2882,7 +2886,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationCount**
-> GetNotificationCount200Response getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type)
+> GetNotificationCountResponse getNotificationCount(tenantId, userId, urlId, fromCommentId, viewed, type)
 
 
 
@@ -2923,7 +2927,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNotificationCount200Response**](GetNotificationCount200Response.md)
+[**GetNotificationCountResponse**](GetNotificationCountResponse.md)
 
 ### Authorization
 
@@ -2937,7 +2941,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotifications**
-> GetNotifications200Response getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip)
+> GetNotificationsResponse getNotifications(tenantId, userId, urlId, fromCommentId, viewed, type, skip)
 
 
 
@@ -2980,7 +2984,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNotifications200Response**](GetNotifications200Response.md)
+[**GetNotificationsResponse**](GetNotificationsResponse.md)
 
 ### Authorization
 
@@ -3086,7 +3090,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPendingWebhookEventCount**
-> GetPendingWebhookEventCount200Response getPendingWebhookEventCount(tenantId, commentId, externalId, eventType, type, domain, attemptCountGT)
+> GetPendingWebhookEventCountResponse getPendingWebhookEventCount(tenantId, commentId, externalId, eventType, type, domain, attemptCountGT)
 
 
 
@@ -3129,7 +3133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetPendingWebhookEventCount200Response**](GetPendingWebhookEventCount200Response.md)
+[**GetPendingWebhookEventCountResponse**](GetPendingWebhookEventCountResponse.md)
 
 ### Authorization
 
@@ -3143,7 +3147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPendingWebhookEvents**
-> GetPendingWebhookEvents200Response getPendingWebhookEvents(tenantId, commentId, externalId, eventType, type, domain, attemptCountGT, skip)
+> GetPendingWebhookEventsResponse getPendingWebhookEvents(tenantId, commentId, externalId, eventType, type, domain, attemptCountGT, skip)
 
 
 
@@ -3188,7 +3192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetPendingWebhookEvents200Response**](GetPendingWebhookEvents200Response.md)
+[**GetPendingWebhookEventsResponse**](GetPendingWebhookEventsResponse.md)
 
 ### Authorization
 
@@ -3202,7 +3206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getQuestionConfig**
-> GetQuestionConfig200Response getQuestionConfig(tenantId, id)
+> GetQuestionConfigResponse getQuestionConfig(tenantId, id)
 
 
 
@@ -3235,7 +3239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetQuestionConfig200Response**](GetQuestionConfig200Response.md)
+[**GetQuestionConfigResponse**](GetQuestionConfigResponse.md)
 
 ### Authorization
 
@@ -3249,7 +3253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getQuestionConfigs**
-> GetQuestionConfigs200Response getQuestionConfigs(tenantId, skip)
+> GetQuestionConfigsResponse getQuestionConfigs(tenantId, skip)
 
 
 
@@ -3282,7 +3286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetQuestionConfigs200Response**](GetQuestionConfigs200Response.md)
+[**GetQuestionConfigsResponse**](GetQuestionConfigsResponse.md)
 
 ### Authorization
 
@@ -3296,7 +3300,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getQuestionResult**
-> GetQuestionResult200Response getQuestionResult(tenantId, id)
+> GetQuestionResultResponse getQuestionResult(tenantId, id)
 
 
 
@@ -3329,7 +3333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetQuestionResult200Response**](GetQuestionResult200Response.md)
+[**GetQuestionResultResponse**](GetQuestionResultResponse.md)
 
 ### Authorization
 
@@ -3343,7 +3347,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getQuestionResults**
-> GetQuestionResults200Response getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip)
+> GetQuestionResultsResponse getQuestionResults(tenantId, urlId, userId, startDate, questionId, questionIds, skip)
 
 
 
@@ -3386,7 +3390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetQuestionResults200Response**](GetQuestionResults200Response.md)
+[**GetQuestionResultsResponse**](GetQuestionResultsResponse.md)
 
 ### Authorization
 
@@ -3494,7 +3498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSSOUsers**
-> GetSSOUsers200Response getSSOUsers(tenantId, skip)
+> GetSSOUsersResponse getSSOUsers(tenantId, skip)
 
 
 
@@ -3527,7 +3531,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetSSOUsers200Response**](GetSSOUsers200Response.md)
+[**GetSSOUsersResponse**](GetSSOUsersResponse.md)
 
 ### Authorization
 
@@ -3588,7 +3592,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenant**
-> GetTenant200Response getTenant(tenantId, id)
+> GetTenantResponse getTenant(tenantId, id)
 
 
 
@@ -3621,7 +3625,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTenant200Response**](GetTenant200Response.md)
+[**GetTenantResponse**](GetTenantResponse.md)
 
 ### Authorization
 
@@ -3635,7 +3639,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantDailyUsages**
-> GetTenantDailyUsages200Response getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip)
+> GetTenantDailyUsagesResponse getTenantDailyUsages(tenantId, yearNumber, monthNumber, dayNumber, skip)
 
 
 
@@ -3674,7 +3678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTenantDailyUsages200Response**](GetTenantDailyUsages200Response.md)
+[**GetTenantDailyUsagesResponse**](GetTenantDailyUsagesResponse.md)
 
 ### Authorization
 
@@ -3688,7 +3692,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantPackage**
-> GetTenantPackage200Response getTenantPackage(tenantId, id)
+> GetTenantPackageResponse getTenantPackage(tenantId, id)
 
 
 
@@ -3721,7 +3725,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTenantPackage200Response**](GetTenantPackage200Response.md)
+[**GetTenantPackageResponse**](GetTenantPackageResponse.md)
 
 ### Authorization
 
@@ -3735,7 +3739,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantPackages**
-> GetTenantPackages200Response getTenantPackages(tenantId, skip)
+> GetTenantPackagesResponse getTenantPackages(tenantId, skip)
 
 
 
@@ -3768,7 +3772,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTenantPackages200Response**](GetTenantPackages200Response.md)
+[**GetTenantPackagesResponse**](GetTenantPackagesResponse.md)
 
 ### Authorization
 
@@ -3782,7 +3786,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantUser**
-> GetTenantUser200Response getTenantUser(tenantId, id)
+> GetTenantUserResponse getTenantUser(tenantId, id)
 
 
 
@@ -3815,7 +3819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTenantUser200Response**](GetTenantUser200Response.md)
+[**GetTenantUserResponse**](GetTenantUserResponse.md)
 
 ### Authorization
 
@@ -3829,7 +3833,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantUsers**
-> GetTenantUsers200Response getTenantUsers(tenantId, skip)
+> GetTenantUsersResponse getTenantUsers(tenantId, skip)
 
 
 
@@ -3862,7 +3866,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTenantUsers200Response**](GetTenantUsers200Response.md)
+[**GetTenantUsersResponse**](GetTenantUsersResponse.md)
 
 ### Authorization
 
@@ -3876,7 +3880,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenants**
-> GetTenants200Response getTenants(tenantId, meta, skip)
+> GetTenantsResponse getTenants(tenantId, meta, skip)
 
 
 
@@ -3911,7 +3915,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTenants200Response**](GetTenants200Response.md)
+[**GetTenantsResponse**](GetTenantsResponse.md)
 
 ### Authorization
 
@@ -3925,7 +3929,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTicket**
-> GetTicket200Response getTicket(tenantId, id, userId)
+> GetTicketResponse getTicket(tenantId, id, userId)
 
 
 
@@ -3960,7 +3964,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTicket200Response**](GetTicket200Response.md)
+[**GetTicketResponse**](GetTicketResponse.md)
 
 ### Authorization
 
@@ -3974,7 +3978,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTickets**
-> GetTickets200Response getTickets(tenantId, userId, state, skip, limit)
+> GetTicketsResponse getTickets(tenantId, userId, state, skip, limit)
 
 
 
@@ -4013,7 +4017,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTickets200Response**](GetTickets200Response.md)
+[**GetTicketsResponse**](GetTicketsResponse.md)
 
 ### Authorization
 
@@ -4027,7 +4031,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUser**
-> GetUser200Response getUser(tenantId, id)
+> GetUserResponse getUser(tenantId, id)
 
 
 
@@ -4060,7 +4064,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUser200Response**](GetUser200Response.md)
+[**GetUserResponse**](GetUserResponse.md)
 
 ### Authorization
 
@@ -4074,7 +4078,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBadge**
-> GetUserBadge200Response getUserBadge(tenantId, id)
+> APIGetUserBadgeResponse getUserBadge(tenantId, id)
 
 
 
@@ -4107,7 +4111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserBadge200Response**](GetUserBadge200Response.md)
+[**APIGetUserBadgeResponse**](APIGetUserBadgeResponse.md)
 
 ### Authorization
 
@@ -4121,7 +4125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBadgeProgressById**
-> GetUserBadgeProgressById200Response getUserBadgeProgressById(tenantId, id)
+> APIGetUserBadgeProgressResponse getUserBadgeProgressById(tenantId, id)
 
 
 
@@ -4154,7 +4158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserBadgeProgressById200Response**](GetUserBadgeProgressById200Response.md)
+[**APIGetUserBadgeProgressResponse**](APIGetUserBadgeProgressResponse.md)
 
 ### Authorization
 
@@ -4168,7 +4172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBadgeProgressByUserId**
-> GetUserBadgeProgressById200Response getUserBadgeProgressByUserId(tenantId, userId)
+> APIGetUserBadgeProgressResponse getUserBadgeProgressByUserId(tenantId, userId)
 
 
 
@@ -4201,7 +4205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserBadgeProgressById200Response**](GetUserBadgeProgressById200Response.md)
+[**APIGetUserBadgeProgressResponse**](APIGetUserBadgeProgressResponse.md)
 
 ### Authorization
 
@@ -4215,7 +4219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBadgeProgressList**
-> GetUserBadgeProgressList200Response getUserBadgeProgressList(tenantId, userId, limit, skip)
+> APIGetUserBadgeProgressListResponse getUserBadgeProgressList(tenantId, userId, limit, skip)
 
 
 
@@ -4252,7 +4256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserBadgeProgressList200Response**](GetUserBadgeProgressList200Response.md)
+[**APIGetUserBadgeProgressListResponse**](APIGetUserBadgeProgressListResponse.md)
 
 ### Authorization
 
@@ -4266,7 +4270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBadges**
-> GetUserBadges200Response getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip)
+> APIGetUserBadgesResponse getUserBadges(tenantId, userId, badgeId, type, displayedOnComments, limit, skip)
 
 
 
@@ -4309,7 +4313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUserBadges200Response**](GetUserBadges200Response.md)
+[**APIGetUserBadgesResponse**](APIGetUserBadgesResponse.md)
 
 ### Authorization
 
@@ -4323,7 +4327,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getVotes**
-> GetVotes200Response getVotes(tenantId, urlId)
+> GetVotesResponse getVotes(tenantId, urlId)
 
 
 
@@ -4356,7 +4360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetVotes200Response**](GetVotes200Response.md)
+[**GetVotesResponse**](GetVotesResponse.md)
 
 ### Authorization
 
@@ -4370,7 +4374,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getVotesForUser**
-> GetVotesForUser200Response getVotesForUser(tenantId, urlId, userId, anonUserId)
+> GetVotesForUserResponse getVotesForUser(tenantId, urlId, userId, anonUserId)
 
 
 
@@ -4407,7 +4411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetVotesForUser200Response**](GetVotesForUser200Response.md)
+[**GetVotesForUserResponse**](GetVotesForUserResponse.md)
 
 ### Authorization
 
@@ -4421,7 +4425,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchDomainConfig**
-> GetDomainConfig200Response patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
+> PatchDomainConfigResponse patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
 
 
 
@@ -4456,7 +4460,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDomainConfig200Response**](GetDomainConfig200Response.md)
+[**PatchDomainConfigResponse**](PatchDomainConfigResponse.md)
 
 ### Authorization
 
@@ -4470,7 +4474,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchHashTag**
-> PatchHashTag200Response patchHashTag(tag, tenantId, updateHashTagBody)
+> UpdateHashTagResponse patchHashTag(tag, tenantId, updateHashTagBody)
 
 
 
@@ -4505,7 +4509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PatchHashTag200Response**](PatchHashTag200Response.md)
+[**UpdateHashTagResponse**](UpdateHashTagResponse.md)
 
 ### Authorization
 
@@ -4619,7 +4623,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putDomainConfig**
-> GetDomainConfig200Response putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams)
+> PutDomainConfigResponse putDomainConfig(tenantId, domainToUpdate, updateDomainConfigParams)
 
 
 
@@ -4654,7 +4658,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDomainConfig200Response**](GetDomainConfig200Response.md)
+[**PutDomainConfigResponse**](PutDomainConfigResponse.md)
 
 ### Authorization
 
@@ -4719,7 +4723,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **renderEmailTemplate**
-> RenderEmailTemplate200Response renderEmailTemplate(tenantId, renderEmailTemplateBody, locale)
+> RenderEmailTemplateResponse renderEmailTemplate(tenantId, renderEmailTemplateBody, locale)
 
 
 
@@ -4754,7 +4758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RenderEmailTemplate200Response**](RenderEmailTemplate200Response.md)
+[**RenderEmailTemplateResponse**](RenderEmailTemplateResponse.md)
 
 ### Authorization
 
@@ -4768,7 +4772,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replaceTenantPackage**
-> FlagCommentPublic200Response replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
+> APIEmptyResponse replaceTenantPackage(tenantId, id, replaceTenantPackageBody)
 
 
 
@@ -4803,7 +4807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -4817,7 +4821,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replaceTenantUser**
-> FlagCommentPublic200Response replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments)
+> APIEmptyResponse replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments)
 
 
 
@@ -4854,7 +4858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -4868,7 +4872,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **saveComment**
-> SaveComment200Response saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications)
+> APISaveCommentResponse saveComment(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications)
 
 
 
@@ -4909,7 +4913,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SaveComment200Response**](SaveComment200Response.md)
+[**APISaveCommentResponse**](APISaveCommentResponse.md)
 
 ### Authorization
 
@@ -4923,7 +4927,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **saveCommentsBulk**
-> List<SaveComment200Response> saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications)
+> List<SaveCommentsBulkResponse> saveCommentsBulk(tenantId, createCommentParams, isLive, doSpamCheck, sendEmails, populateNotifications)
 
 
 
@@ -4964,7 +4968,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<SaveComment200Response>**](SaveComment200Response.md)
+[**List<SaveCommentsBulkResponse>**](SaveCommentsBulkResponse.md)
 
 ### Authorization
 
@@ -4978,7 +4982,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sendInvite**
-> FlagCommentPublic200Response sendInvite(tenantId, id, fromName)
+> APIEmptyResponse sendInvite(tenantId, id, fromName)
 
 
 
@@ -5013,7 +5017,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5027,7 +5031,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sendLoginLink**
-> FlagCommentPublic200Response sendLoginLink(tenantId, id, redirectURL)
+> APIEmptyResponse sendLoginLink(tenantId, id, redirectURL)
 
 
 
@@ -5062,7 +5066,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5076,7 +5080,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unBlockUserFromComment**
-> UnBlockCommentPublic200Response unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId, anonUserId)
+> UnblockSuccess unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, userId, anonUserId)
 
 
 
@@ -5115,7 +5119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UnBlockCommentPublic200Response**](UnBlockCommentPublic200Response.md)
+[**UnblockSuccess**](UnblockSuccess.md)
 
 ### Authorization
 
@@ -5129,7 +5133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unFlagComment**
-> FlagComment200Response unFlagComment(tenantId, id, userId, anonUserId)
+> FlagCommentResponse unFlagComment(tenantId, id, userId, anonUserId)
 
 
 
@@ -5166,7 +5170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagComment200Response**](FlagComment200Response.md)
+[**FlagCommentResponse**](FlagCommentResponse.md)
 
 ### Authorization
 
@@ -5180,7 +5184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateComment**
-> FlagCommentPublic200Response updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive)
+> APIEmptyResponse updateComment(tenantId, id, updatableCommentParams, contextUserId, doSpamCheck, isLive)
 
 
 
@@ -5221,7 +5225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5235,7 +5239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateEmailTemplate**
-> FlagCommentPublic200Response updateEmailTemplate(tenantId, id, updateEmailTemplateBody)
+> APIEmptyResponse updateEmailTemplate(tenantId, id, updateEmailTemplateBody)
 
 
 
@@ -5270,7 +5274,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5284,7 +5288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateFeedPost**
-> FlagCommentPublic200Response updateFeedPost(tenantId, id, feedPost)
+> APIEmptyResponse updateFeedPost(tenantId, id, feedPost)
 
 
 
@@ -5319,7 +5323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5333,7 +5337,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateModerator**
-> FlagCommentPublic200Response updateModerator(tenantId, id, updateModeratorBody)
+> APIEmptyResponse updateModerator(tenantId, id, updateModeratorBody)
 
 
 
@@ -5368,7 +5372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5382,7 +5386,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateNotification**
-> FlagCommentPublic200Response updateNotification(tenantId, id, updateNotificationBody, userId)
+> APIEmptyResponse updateNotification(tenantId, id, updateNotificationBody, userId)
 
 
 
@@ -5419,7 +5423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5433,7 +5437,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateQuestionConfig**
-> FlagCommentPublic200Response updateQuestionConfig(tenantId, id, updateQuestionConfigBody)
+> APIEmptyResponse updateQuestionConfig(tenantId, id, updateQuestionConfigBody)
 
 
 
@@ -5468,7 +5472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5482,7 +5486,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateQuestionResult**
-> FlagCommentPublic200Response updateQuestionResult(tenantId, id, updateQuestionResultBody)
+> APIEmptyResponse updateQuestionResult(tenantId, id, updateQuestionResultBody)
 
 
 
@@ -5517,7 +5521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5582,7 +5586,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateTenant**
-> FlagCommentPublic200Response updateTenant(tenantId, id, updateTenantBody)
+> APIEmptyResponse updateTenant(tenantId, id, updateTenantBody)
 
 
 
@@ -5617,7 +5621,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5631,7 +5635,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateTenantPackage**
-> FlagCommentPublic200Response updateTenantPackage(tenantId, id, updateTenantPackageBody)
+> APIEmptyResponse updateTenantPackage(tenantId, id, updateTenantPackageBody)
 
 
 
@@ -5666,7 +5670,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5680,7 +5684,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateTenantUser**
-> FlagCommentPublic200Response updateTenantUser(tenantId, id, updateTenantUserBody, updateComments)
+> APIEmptyResponse updateTenantUser(tenantId, id, updateTenantUserBody, updateComments)
 
 
 
@@ -5717,7 +5721,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlagCommentPublic200Response**](FlagCommentPublic200Response.md)
+[**APIEmptyResponse**](APIEmptyResponse.md)
 
 ### Authorization
 
@@ -5731,7 +5735,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserBadge**
-> UpdateUserBadge200Response updateUserBadge(tenantId, id, updateUserBadgeParams)
+> APIEmptySuccessResponse updateUserBadge(tenantId, id, updateUserBadgeParams)
 
 
 
@@ -5766,7 +5770,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateUserBadge200Response**](UpdateUserBadge200Response.md)
+[**APIEmptySuccessResponse**](APIEmptySuccessResponse.md)
 
 ### Authorization
 

@@ -67,14 +67,10 @@ class EmailTemplateDefinition {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'emailTemplateId'), 'Required key "EmailTemplateDefinition[emailTemplateId]" is missing from JSON.');
-        assert(json[r'emailTemplateId'] != null, 'Required key "EmailTemplateDefinition[emailTemplateId]" has a null value in JSON.');
-        assert(json.containsKey(r'defaultTestData'), 'Required key "EmailTemplateDefinition[defaultTestData]" is missing from JSON.');
-        assert(json[r'defaultTestData'] != null, 'Required key "EmailTemplateDefinition[defaultTestData]" has a null value in JSON.');
-        assert(json.containsKey(r'defaultTranslationsByLocale'), 'Required key "EmailTemplateDefinition[defaultTranslationsByLocale]" is missing from JSON.');
-        assert(json[r'defaultTranslationsByLocale'] != null, 'Required key "EmailTemplateDefinition[defaultTranslationsByLocale]" has a null value in JSON.');
-        assert(json.containsKey(r'defaultEJS'), 'Required key "EmailTemplateDefinition[defaultEJS]" is missing from JSON.');
-        assert(json[r'defaultEJS'] != null, 'Required key "EmailTemplateDefinition[defaultEJS]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "EmailTemplateDefinition[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "EmailTemplateDefinition[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

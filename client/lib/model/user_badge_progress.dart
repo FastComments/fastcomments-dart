@@ -126,18 +126,10 @@ class UserBadgeProgress {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "UserBadgeProgress[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "UserBadgeProgress[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "UserBadgeProgress[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "UserBadgeProgress[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'userId'), 'Required key "UserBadgeProgress[userId]" is missing from JSON.');
-        assert(json[r'userId'] != null, 'Required key "UserBadgeProgress[userId]" has a null value in JSON.');
-        assert(json.containsKey(r'firstCommentId'), 'Required key "UserBadgeProgress[firstCommentId]" is missing from JSON.');
-        assert(json[r'firstCommentId'] != null, 'Required key "UserBadgeProgress[firstCommentId]" has a null value in JSON.');
-        assert(json.containsKey(r'firstCommentDate'), 'Required key "UserBadgeProgress[firstCommentDate]" is missing from JSON.');
-        assert(json[r'firstCommentDate'] != null, 'Required key "UserBadgeProgress[firstCommentDate]" has a null value in JSON.');
-        assert(json.containsKey(r'progress'), 'Required key "UserBadgeProgress[progress]" is missing from JSON.');
-        assert(json[r'progress'] != null, 'Required key "UserBadgeProgress[progress]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserBadgeProgress[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserBadgeProgress[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -364,28 +364,10 @@ class APITenant {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'id'), 'Required key "APITenant[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "APITenant[id]" has a null value in JSON.');
-        assert(json.containsKey(r'name'), 'Required key "APITenant[name]" is missing from JSON.');
-        assert(json[r'name'] != null, 'Required key "APITenant[name]" has a null value in JSON.');
-        assert(json.containsKey(r'signUpDate'), 'Required key "APITenant[signUpDate]" is missing from JSON.');
-        assert(json[r'signUpDate'] != null, 'Required key "APITenant[signUpDate]" has a null value in JSON.');
-        assert(json.containsKey(r'packageId'), 'Required key "APITenant[packageId]" is missing from JSON.');
-        assert(json[r'packageId'] != null, 'Required key "APITenant[packageId]" has a null value in JSON.');
-        assert(json.containsKey(r'paymentFrequency'), 'Required key "APITenant[paymentFrequency]" is missing from JSON.');
-        assert(json[r'paymentFrequency'] != null, 'Required key "APITenant[paymentFrequency]" has a null value in JSON.');
-        assert(json.containsKey(r'billingInfoValid'), 'Required key "APITenant[billingInfoValid]" is missing from JSON.');
-        assert(json[r'billingInfoValid'] != null, 'Required key "APITenant[billingInfoValid]" has a null value in JSON.');
-        assert(json.containsKey(r'createdBy'), 'Required key "APITenant[createdBy]" is missing from JSON.');
-        assert(json[r'createdBy'] != null, 'Required key "APITenant[createdBy]" has a null value in JSON.');
-        assert(json.containsKey(r'isSetup'), 'Required key "APITenant[isSetup]" is missing from JSON.');
-        assert(json[r'isSetup'] != null, 'Required key "APITenant[isSetup]" has a null value in JSON.');
-        assert(json.containsKey(r'domainConfiguration'), 'Required key "APITenant[domainConfiguration]" is missing from JSON.');
-        assert(json[r'domainConfiguration'] != null, 'Required key "APITenant[domainConfiguration]" has a null value in JSON.');
-        assert(json.containsKey(r'enableProfanityFilter'), 'Required key "APITenant[enableProfanityFilter]" is missing from JSON.');
-        assert(json[r'enableProfanityFilter'] != null, 'Required key "APITenant[enableProfanityFilter]" has a null value in JSON.');
-        assert(json.containsKey(r'enableSpamFilter'), 'Required key "APITenant[enableSpamFilter]" is missing from JSON.');
-        assert(json[r'enableSpamFilter'] != null, 'Required key "APITenant[enableSpamFilter]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APITenant[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APITenant[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -79,10 +79,10 @@ class DeletedCommentResultComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'commentHTML'), 'Required key "DeletedCommentResultComment[commentHTML]" is missing from JSON.');
-        assert(json[r'commentHTML'] != null, 'Required key "DeletedCommentResultComment[commentHTML]" has a null value in JSON.');
-        assert(json.containsKey(r'commenterName'), 'Required key "DeletedCommentResultComment[commenterName]" is missing from JSON.');
-        assert(json[r'commenterName'] != null, 'Required key "DeletedCommentResultComment[commenterName]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "DeletedCommentResultComment[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "DeletedCommentResultComment[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

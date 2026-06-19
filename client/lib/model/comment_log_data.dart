@@ -28,6 +28,7 @@ class CommentLogData {
     this.engineResponse,
     this.engineTokens,
     this.trustFactor,
+    this.source_,
     this.rule,
     this.userId,
     this.subscribers,
@@ -180,6 +181,14 @@ class CommentLogData {
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
   double? trustFactor;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? source_;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -380,6 +389,7 @@ class CommentLogData {
     other.engineResponse == engineResponse &&
     other.engineTokens == engineTokens &&
     other.trustFactor == trustFactor &&
+    other.source_ == source_ &&
     other.rule == rule &&
     other.userId == userId &&
     other.subscribers == subscribers &&
@@ -430,6 +440,7 @@ class CommentLogData {
     (engineResponse == null ? 0 : engineResponse!.hashCode) +
     (engineTokens == null ? 0 : engineTokens!.hashCode) +
     (trustFactor == null ? 0 : trustFactor!.hashCode) +
+    (source_ == null ? 0 : source_!.hashCode) +
     (rule == null ? 0 : rule!.hashCode) +
     (userId == null ? 0 : userId!.hashCode) +
     (subscribers == null ? 0 : subscribers!.hashCode) +
@@ -463,7 +474,7 @@ class CommentLogData {
     (detectedLanguage == null ? 0 : detectedLanguage!.hashCode);
 
   @override
-  String toString() => 'CommentLogData[clearContent=$clearContent, isDeletedUser=$isDeletedUser, phrase=$phrase, badWord=$badWord, word=$word, locale=$locale, tenantBadgeId=$tenantBadgeId, badgeId=$badgeId, wasLoggedIn=$wasLoggedIn, foundUser=$foundUser, verified=$verified, engine=$engine, engineResponse=$engineResponse, engineTokens=$engineTokens, trustFactor=$trustFactor, rule=$rule, userId=$userId, subscribers=$subscribers, notificationCount=$notificationCount, votesBefore=$votesBefore, votesUpBefore=$votesUpBefore, votesDownBefore=$votesDownBefore, votesAfter=$votesAfter, votesUpAfter=$votesUpAfter, votesDownAfter=$votesDownAfter, repeatAction=$repeatAction, reason=$reason, otherData=$otherData, spamBefore=$spamBefore, spamAfter=$spamAfter, permanentFlag=$permanentFlag, approvedBefore=$approvedBefore, approvedAfter=$approvedAfter, reviewedBefore=$reviewedBefore, reviewedAfter=$reviewedAfter, textBefore=$textBefore, textAfter=$textAfter, expireBefore=$expireBefore, expireAfter=$expireAfter, flagCountBefore=$flagCountBefore, trustFactorBefore=$trustFactorBefore, trustFactorAfter=$trustFactorAfter, referencedCommentId=$referencedCommentId, invalidLocale=$invalidLocale, detectedLocale=$detectedLocale, detectedLanguage=$detectedLanguage]';
+  String toString() => 'CommentLogData[clearContent=$clearContent, isDeletedUser=$isDeletedUser, phrase=$phrase, badWord=$badWord, word=$word, locale=$locale, tenantBadgeId=$tenantBadgeId, badgeId=$badgeId, wasLoggedIn=$wasLoggedIn, foundUser=$foundUser, verified=$verified, engine=$engine, engineResponse=$engineResponse, engineTokens=$engineTokens, trustFactor=$trustFactor, source_=$source_, rule=$rule, userId=$userId, subscribers=$subscribers, notificationCount=$notificationCount, votesBefore=$votesBefore, votesUpBefore=$votesUpBefore, votesDownBefore=$votesDownBefore, votesAfter=$votesAfter, votesUpAfter=$votesUpAfter, votesDownAfter=$votesDownAfter, repeatAction=$repeatAction, reason=$reason, otherData=$otherData, spamBefore=$spamBefore, spamAfter=$spamAfter, permanentFlag=$permanentFlag, approvedBefore=$approvedBefore, approvedAfter=$approvedAfter, reviewedBefore=$reviewedBefore, reviewedAfter=$reviewedAfter, textBefore=$textBefore, textAfter=$textAfter, expireBefore=$expireBefore, expireAfter=$expireAfter, flagCountBefore=$flagCountBefore, trustFactorBefore=$trustFactorBefore, trustFactorAfter=$trustFactorAfter, referencedCommentId=$referencedCommentId, invalidLocale=$invalidLocale, detectedLocale=$detectedLocale, detectedLanguage=$detectedLanguage]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -541,6 +552,11 @@ class CommentLogData {
       json[r'trustFactor'] = this.trustFactor;
     } else {
       json[r'trustFactor'] = null;
+    }
+    if (this.source_ != null) {
+      json[r'source'] = this.source_;
+    } else {
+      json[r'source'] = null;
     }
     if (this.rule != null) {
       json[r'rule'] = this.rule;
@@ -711,6 +727,10 @@ class CommentLogData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CommentLogData[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CommentLogData[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 
@@ -730,6 +750,7 @@ class CommentLogData {
         engineResponse: mapValueOfType<String>(json, r'engineResponse'),
         engineTokens: mapValueOfType<double>(json, r'engineTokens'),
         trustFactor: mapValueOfType<double>(json, r'trustFactor'),
+        source_: mapValueOfType<String>(json, r'source'),
         rule: SpamRule.fromJson(json[r'rule']),
         userId: mapValueOfType<String>(json, r'userId'),
         subscribers: mapValueOfType<double>(json, r'subscribers'),

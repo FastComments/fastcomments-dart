@@ -53,10 +53,10 @@ class GetPendingWebhookEventCountResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetPendingWebhookEventCountResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetPendingWebhookEventCountResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'count'), 'Required key "GetPendingWebhookEventCountResponse[count]" is missing from JSON.');
-        assert(json[r'count'] != null, 'Required key "GetPendingWebhookEventCountResponse[count]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetPendingWebhookEventCountResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetPendingWebhookEventCountResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -134,8 +134,10 @@ class AddDomainConfigParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'domain'), 'Required key "AddDomainConfigParams[domain]" is missing from JSON.');
-        assert(json[r'domain'] != null, 'Required key "AddDomainConfigParams[domain]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "AddDomainConfigParams[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "AddDomainConfigParams[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

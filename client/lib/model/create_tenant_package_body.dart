@@ -671,32 +671,10 @@ class CreateTenantPackageBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'name'), 'Required key "CreateTenantPackageBody[name]" is missing from JSON.');
-        assert(json[r'name'] != null, 'Required key "CreateTenantPackageBody[name]" has a null value in JSON.');
-        assert(json.containsKey(r'maxMonthlyPageLoads'), 'Required key "CreateTenantPackageBody[maxMonthlyPageLoads]" is missing from JSON.');
-        assert(json[r'maxMonthlyPageLoads'] != null, 'Required key "CreateTenantPackageBody[maxMonthlyPageLoads]" has a null value in JSON.');
-        assert(json.containsKey(r'maxMonthlyAPICredits'), 'Required key "CreateTenantPackageBody[maxMonthlyAPICredits]" is missing from JSON.');
-        assert(json[r'maxMonthlyAPICredits'] != null, 'Required key "CreateTenantPackageBody[maxMonthlyAPICredits]" has a null value in JSON.');
-        assert(json.containsKey(r'maxMonthlyComments'), 'Required key "CreateTenantPackageBody[maxMonthlyComments]" is missing from JSON.');
-        assert(json[r'maxMonthlyComments'] != null, 'Required key "CreateTenantPackageBody[maxMonthlyComments]" has a null value in JSON.');
-        assert(json.containsKey(r'maxConcurrentUsers'), 'Required key "CreateTenantPackageBody[maxConcurrentUsers]" is missing from JSON.');
-        assert(json[r'maxConcurrentUsers'] != null, 'Required key "CreateTenantPackageBody[maxConcurrentUsers]" has a null value in JSON.');
-        assert(json.containsKey(r'maxTenantUsers'), 'Required key "CreateTenantPackageBody[maxTenantUsers]" is missing from JSON.');
-        assert(json[r'maxTenantUsers'] != null, 'Required key "CreateTenantPackageBody[maxTenantUsers]" has a null value in JSON.');
-        assert(json.containsKey(r'maxSSOUsers'), 'Required key "CreateTenantPackageBody[maxSSOUsers]" is missing from JSON.');
-        assert(json[r'maxSSOUsers'] != null, 'Required key "CreateTenantPackageBody[maxSSOUsers]" has a null value in JSON.');
-        assert(json.containsKey(r'maxModerators'), 'Required key "CreateTenantPackageBody[maxModerators]" is missing from JSON.');
-        assert(json[r'maxModerators'] != null, 'Required key "CreateTenantPackageBody[maxModerators]" has a null value in JSON.');
-        assert(json.containsKey(r'maxDomains'), 'Required key "CreateTenantPackageBody[maxDomains]" is missing from JSON.');
-        assert(json[r'maxDomains'] != null, 'Required key "CreateTenantPackageBody[maxDomains]" has a null value in JSON.');
-        assert(json.containsKey(r'hasDebranding'), 'Required key "CreateTenantPackageBody[hasDebranding]" is missing from JSON.');
-        assert(json[r'hasDebranding'] != null, 'Required key "CreateTenantPackageBody[hasDebranding]" has a null value in JSON.');
-        assert(json.containsKey(r'forWhoText'), 'Required key "CreateTenantPackageBody[forWhoText]" is missing from JSON.');
-        assert(json[r'forWhoText'] != null, 'Required key "CreateTenantPackageBody[forWhoText]" has a null value in JSON.');
-        assert(json.containsKey(r'featureTaglines'), 'Required key "CreateTenantPackageBody[featureTaglines]" is missing from JSON.');
-        assert(json[r'featureTaglines'] != null, 'Required key "CreateTenantPackageBody[featureTaglines]" has a null value in JSON.');
-        assert(json.containsKey(r'hasFlexPricing'), 'Required key "CreateTenantPackageBody[hasFlexPricing]" is missing from JSON.');
-        assert(json[r'hasFlexPricing'] != null, 'Required key "CreateTenantPackageBody[hasFlexPricing]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateTenantPackageBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateTenantPackageBody[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

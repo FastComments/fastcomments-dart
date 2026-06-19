@@ -63,8 +63,10 @@ class BulkCreateHashTagsBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'tags'), 'Required key "BulkCreateHashTagsBody[tags]" is missing from JSON.');
-        assert(json[r'tags'] != null, 'Required key "BulkCreateHashTagsBody[tags]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "BulkCreateHashTagsBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "BulkCreateHashTagsBody[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

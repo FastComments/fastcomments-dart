@@ -59,12 +59,10 @@ class GetCommentVoteUserNamesSuccessResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetCommentVoteUserNamesSuccessResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'voteUserNames'), 'Required key "GetCommentVoteUserNamesSuccessResponse[voteUserNames]" is missing from JSON.');
-        assert(json[r'voteUserNames'] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[voteUserNames]" has a null value in JSON.');
-        assert(json.containsKey(r'hasMore'), 'Required key "GetCommentVoteUserNamesSuccessResponse[hasMore]" is missing from JSON.');
-        assert(json[r'hasMore'] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[hasMore]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetCommentVoteUserNamesSuccessResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

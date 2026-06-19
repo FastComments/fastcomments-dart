@@ -124,23 +124,10 @@ class CustomEmailTemplate {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "CustomEmailTemplate[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "CustomEmailTemplate[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "CustomEmailTemplate[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "CustomEmailTemplate[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'emailTemplateId'), 'Required key "CustomEmailTemplate[emailTemplateId]" is missing from JSON.');
-        assert(json[r'emailTemplateId'] != null, 'Required key "CustomEmailTemplate[emailTemplateId]" has a null value in JSON.');
-        assert(json.containsKey(r'displayName'), 'Required key "CustomEmailTemplate[displayName]" is missing from JSON.');
-        assert(json[r'displayName'] != null, 'Required key "CustomEmailTemplate[displayName]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "CustomEmailTemplate[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "CustomEmailTemplate[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'updatedAt'), 'Required key "CustomEmailTemplate[updatedAt]" is missing from JSON.');
-        assert(json.containsKey(r'updatedByUserId'), 'Required key "CustomEmailTemplate[updatedByUserId]" is missing from JSON.');
-        assert(json.containsKey(r'ejs'), 'Required key "CustomEmailTemplate[ejs]" is missing from JSON.');
-        assert(json[r'ejs'] != null, 'Required key "CustomEmailTemplate[ejs]" has a null value in JSON.');
-        assert(json.containsKey(r'translationOverridesByLocale'), 'Required key "CustomEmailTemplate[translationOverridesByLocale]" is missing from JSON.');
-        assert(json[r'translationOverridesByLocale'] != null, 'Required key "CustomEmailTemplate[translationOverridesByLocale]" has a null value in JSON.');
-        assert(json.containsKey(r'testData'), 'Required key "CustomEmailTemplate[testData]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CustomEmailTemplate[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CustomEmailTemplate[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

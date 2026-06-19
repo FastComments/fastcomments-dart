@@ -54,10 +54,10 @@ class GetUserPresenceStatusesResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetUserPresenceStatusesResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetUserPresenceStatusesResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'userIdsOnline'), 'Required key "GetUserPresenceStatusesResponse[userIdsOnline]" is missing from JSON.');
-        assert(json[r'userIdsOnline'] != null, 'Required key "GetUserPresenceStatusesResponse[userIdsOnline]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetUserPresenceStatusesResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetUserPresenceStatusesResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

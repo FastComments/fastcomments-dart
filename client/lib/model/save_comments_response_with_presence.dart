@@ -86,11 +86,10 @@ class SaveCommentsResponseWithPresence {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "SaveCommentsResponseWithPresence[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "SaveCommentsResponseWithPresence[status]" has a null value in JSON.');
-        assert(json.containsKey(r'comment'), 'Required key "SaveCommentsResponseWithPresence[comment]" is missing from JSON.');
-        assert(json[r'comment'] != null, 'Required key "SaveCommentsResponseWithPresence[comment]" has a null value in JSON.');
-        assert(json.containsKey(r'user'), 'Required key "SaveCommentsResponseWithPresence[user]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "SaveCommentsResponseWithPresence[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "SaveCommentsResponseWithPresence[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

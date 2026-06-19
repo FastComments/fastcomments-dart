@@ -117,8 +117,10 @@ class BulkAggregateQuestionItem {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'aggId'), 'Required key "BulkAggregateQuestionItem[aggId]" is missing from JSON.');
-        assert(json[r'aggId'] != null, 'Required key "BulkAggregateQuestionItem[aggId]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "BulkAggregateQuestionItem[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "BulkAggregateQuestionItem[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

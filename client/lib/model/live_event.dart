@@ -263,8 +263,10 @@ class LiveEvent {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'type'), 'Required key "LiveEvent[type]" is missing from JSON.');
-        assert(json[r'type'] != null, 'Required key "LiveEvent[type]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "LiveEvent[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "LiveEvent[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

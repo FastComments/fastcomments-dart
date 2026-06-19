@@ -17,6 +17,7 @@ class TenantPackage {
     required this.name,
     required this.tenantId,
     required this.createdAt,
+    this.templateId,
     required this.monthlyCostUSD,
     required this.yearlyCostUSD,
     required this.monthlyStripePlanId,
@@ -82,6 +83,14 @@ class TenantPackage {
   String tenantId;
 
   DateTime createdAt;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? templateId;
 
   double? monthlyCostUSD;
 
@@ -399,6 +408,7 @@ class TenantPackage {
     other.name == name &&
     other.tenantId == tenantId &&
     other.createdAt == createdAt &&
+    other.templateId == templateId &&
     other.monthlyCostUSD == monthlyCostUSD &&
     other.yearlyCostUSD == yearlyCostUSD &&
     other.monthlyStripePlanId == monthlyStripePlanId &&
@@ -463,6 +473,7 @@ class TenantPackage {
     (name.hashCode) +
     (tenantId.hashCode) +
     (createdAt.hashCode) +
+    (templateId == null ? 0 : templateId!.hashCode) +
     (monthlyCostUSD == null ? 0 : monthlyCostUSD!.hashCode) +
     (yearlyCostUSD == null ? 0 : yearlyCostUSD!.hashCode) +
     (monthlyStripePlanId == null ? 0 : monthlyStripePlanId!.hashCode) +
@@ -521,7 +532,7 @@ class TenantPackage {
     (aiAgentMonthlyBudgetCents == null ? 0 : aiAgentMonthlyBudgetCents!.hashCode);
 
   @override
-  String toString() => 'TenantPackage[id=$id, name=$name, tenantId=$tenantId, createdAt=$createdAt, monthlyCostUSD=$monthlyCostUSD, yearlyCostUSD=$yearlyCostUSD, monthlyStripePlanId=$monthlyStripePlanId, yearlyStripePlanId=$yearlyStripePlanId, maxMonthlyPageLoads=$maxMonthlyPageLoads, maxMonthlyAPICredits=$maxMonthlyAPICredits, maxMonthlySmallWidgetsCredits=$maxMonthlySmallWidgetsCredits, maxMonthlyComments=$maxMonthlyComments, maxConcurrentUsers=$maxConcurrentUsers, maxTenantUsers=$maxTenantUsers, maxSSOUsers=$maxSSOUsers, maxModerators=$maxModerators, maxDomains=$maxDomains, maxWhiteLabeledTenants=$maxWhiteLabeledTenants, maxMonthlyEventLogRequests=$maxMonthlyEventLogRequests, maxCustomCollectionSize=$maxCustomCollectionSize, hasWhiteLabeling=$hasWhiteLabeling, hasDebranding=$hasDebranding, hasLLMSpamDetection=$hasLLMSpamDetection, forWhoText=$forWhoText, featureTaglines=$featureTaglines, hasAuditing=$hasAuditing, hasFlexPricing=$hasFlexPricing, enableSAML=$enableSAML, enableCanvasLTI=$enableCanvasLTI, flexPageLoadCostCents=$flexPageLoadCostCents, flexPageLoadUnit=$flexPageLoadUnit, flexCommentCostCents=$flexCommentCostCents, flexCommentUnit=$flexCommentUnit, flexSSOUserCostCents=$flexSSOUserCostCents, flexSSOUserUnit=$flexSSOUserUnit, flexAPICreditCostCents=$flexAPICreditCostCents, flexAPICreditUnit=$flexAPICreditUnit, flexSmallWidgetsCreditCostCents=$flexSmallWidgetsCreditCostCents, flexSmallWidgetsCreditUnit=$flexSmallWidgetsCreditUnit, flexModeratorCostCents=$flexModeratorCostCents, flexModeratorUnit=$flexModeratorUnit, flexAdminCostCents=$flexAdminCostCents, flexAdminUnit=$flexAdminUnit, flexDomainCostCents=$flexDomainCostCents, flexDomainUnit=$flexDomainUnit, flexChatGPTCostCents=$flexChatGPTCostCents, flexChatGPTUnit=$flexChatGPTUnit, flexLLMCostCents=$flexLLMCostCents, flexLLMUnit=$flexLLMUnit, flexMinimumCostCents=$flexMinimumCostCents, flexManagedTenantCostCents=$flexManagedTenantCostCents, flexSSOAdminCostCents=$flexSSOAdminCostCents, flexSSOAdminUnit=$flexSSOAdminUnit, flexSSOModeratorCostCents=$flexSSOModeratorCostCents, flexSSOModeratorUnit=$flexSSOModeratorUnit, isSSOBillingMonthlyActiveUsers=$isSSOBillingMonthlyActiveUsers, hasAIAgents=$hasAIAgents, maxAIAgents=$maxAIAgents, aiAgentDailyBudgetCents=$aiAgentDailyBudgetCents, aiAgentMonthlyBudgetCents=$aiAgentMonthlyBudgetCents]';
+  String toString() => 'TenantPackage[id=$id, name=$name, tenantId=$tenantId, createdAt=$createdAt, templateId=$templateId, monthlyCostUSD=$monthlyCostUSD, yearlyCostUSD=$yearlyCostUSD, monthlyStripePlanId=$monthlyStripePlanId, yearlyStripePlanId=$yearlyStripePlanId, maxMonthlyPageLoads=$maxMonthlyPageLoads, maxMonthlyAPICredits=$maxMonthlyAPICredits, maxMonthlySmallWidgetsCredits=$maxMonthlySmallWidgetsCredits, maxMonthlyComments=$maxMonthlyComments, maxConcurrentUsers=$maxConcurrentUsers, maxTenantUsers=$maxTenantUsers, maxSSOUsers=$maxSSOUsers, maxModerators=$maxModerators, maxDomains=$maxDomains, maxWhiteLabeledTenants=$maxWhiteLabeledTenants, maxMonthlyEventLogRequests=$maxMonthlyEventLogRequests, maxCustomCollectionSize=$maxCustomCollectionSize, hasWhiteLabeling=$hasWhiteLabeling, hasDebranding=$hasDebranding, hasLLMSpamDetection=$hasLLMSpamDetection, forWhoText=$forWhoText, featureTaglines=$featureTaglines, hasAuditing=$hasAuditing, hasFlexPricing=$hasFlexPricing, enableSAML=$enableSAML, enableCanvasLTI=$enableCanvasLTI, flexPageLoadCostCents=$flexPageLoadCostCents, flexPageLoadUnit=$flexPageLoadUnit, flexCommentCostCents=$flexCommentCostCents, flexCommentUnit=$flexCommentUnit, flexSSOUserCostCents=$flexSSOUserCostCents, flexSSOUserUnit=$flexSSOUserUnit, flexAPICreditCostCents=$flexAPICreditCostCents, flexAPICreditUnit=$flexAPICreditUnit, flexSmallWidgetsCreditCostCents=$flexSmallWidgetsCreditCostCents, flexSmallWidgetsCreditUnit=$flexSmallWidgetsCreditUnit, flexModeratorCostCents=$flexModeratorCostCents, flexModeratorUnit=$flexModeratorUnit, flexAdminCostCents=$flexAdminCostCents, flexAdminUnit=$flexAdminUnit, flexDomainCostCents=$flexDomainCostCents, flexDomainUnit=$flexDomainUnit, flexChatGPTCostCents=$flexChatGPTCostCents, flexChatGPTUnit=$flexChatGPTUnit, flexLLMCostCents=$flexLLMCostCents, flexLLMUnit=$flexLLMUnit, flexMinimumCostCents=$flexMinimumCostCents, flexManagedTenantCostCents=$flexManagedTenantCostCents, flexSSOAdminCostCents=$flexSSOAdminCostCents, flexSSOAdminUnit=$flexSSOAdminUnit, flexSSOModeratorCostCents=$flexSSOModeratorCostCents, flexSSOModeratorUnit=$flexSSOModeratorUnit, isSSOBillingMonthlyActiveUsers=$isSSOBillingMonthlyActiveUsers, hasAIAgents=$hasAIAgents, maxAIAgents=$maxAIAgents, aiAgentDailyBudgetCents=$aiAgentDailyBudgetCents, aiAgentMonthlyBudgetCents=$aiAgentMonthlyBudgetCents]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -529,6 +540,11 @@ class TenantPackage {
       json[r'name'] = this.name;
       json[r'tenantId'] = this.tenantId;
       json[r'createdAt'] = this.createdAt.toUtc().toIso8601String();
+    if (this.templateId != null) {
+      json[r'templateId'] = this.templateId;
+    } else {
+      json[r'templateId'] = null;
+    }
     if (this.monthlyCostUSD != null) {
       json[r'monthlyCostUSD'] = this.monthlyCostUSD;
     } else {
@@ -747,56 +763,10 @@ class TenantPackage {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "TenantPackage[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "TenantPackage[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'name'), 'Required key "TenantPackage[name]" is missing from JSON.');
-        assert(json[r'name'] != null, 'Required key "TenantPackage[name]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "TenantPackage[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "TenantPackage[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "TenantPackage[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "TenantPackage[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'monthlyCostUSD'), 'Required key "TenantPackage[monthlyCostUSD]" is missing from JSON.');
-        assert(json.containsKey(r'yearlyCostUSD'), 'Required key "TenantPackage[yearlyCostUSD]" is missing from JSON.');
-        assert(json.containsKey(r'monthlyStripePlanId'), 'Required key "TenantPackage[monthlyStripePlanId]" is missing from JSON.');
-        assert(json.containsKey(r'yearlyStripePlanId'), 'Required key "TenantPackage[yearlyStripePlanId]" is missing from JSON.');
-        assert(json.containsKey(r'maxMonthlyPageLoads'), 'Required key "TenantPackage[maxMonthlyPageLoads]" is missing from JSON.');
-        assert(json[r'maxMonthlyPageLoads'] != null, 'Required key "TenantPackage[maxMonthlyPageLoads]" has a null value in JSON.');
-        assert(json.containsKey(r'maxMonthlyAPICredits'), 'Required key "TenantPackage[maxMonthlyAPICredits]" is missing from JSON.');
-        assert(json[r'maxMonthlyAPICredits'] != null, 'Required key "TenantPackage[maxMonthlyAPICredits]" has a null value in JSON.');
-        assert(json.containsKey(r'maxMonthlySmallWidgetsCredits'), 'Required key "TenantPackage[maxMonthlySmallWidgetsCredits]" is missing from JSON.');
-        assert(json[r'maxMonthlySmallWidgetsCredits'] != null, 'Required key "TenantPackage[maxMonthlySmallWidgetsCredits]" has a null value in JSON.');
-        assert(json.containsKey(r'maxMonthlyComments'), 'Required key "TenantPackage[maxMonthlyComments]" is missing from JSON.');
-        assert(json[r'maxMonthlyComments'] != null, 'Required key "TenantPackage[maxMonthlyComments]" has a null value in JSON.');
-        assert(json.containsKey(r'maxConcurrentUsers'), 'Required key "TenantPackage[maxConcurrentUsers]" is missing from JSON.');
-        assert(json[r'maxConcurrentUsers'] != null, 'Required key "TenantPackage[maxConcurrentUsers]" has a null value in JSON.');
-        assert(json.containsKey(r'maxTenantUsers'), 'Required key "TenantPackage[maxTenantUsers]" is missing from JSON.');
-        assert(json[r'maxTenantUsers'] != null, 'Required key "TenantPackage[maxTenantUsers]" has a null value in JSON.');
-        assert(json.containsKey(r'maxSSOUsers'), 'Required key "TenantPackage[maxSSOUsers]" is missing from JSON.');
-        assert(json[r'maxSSOUsers'] != null, 'Required key "TenantPackage[maxSSOUsers]" has a null value in JSON.');
-        assert(json.containsKey(r'maxModerators'), 'Required key "TenantPackage[maxModerators]" is missing from JSON.');
-        assert(json[r'maxModerators'] != null, 'Required key "TenantPackage[maxModerators]" has a null value in JSON.');
-        assert(json.containsKey(r'maxDomains'), 'Required key "TenantPackage[maxDomains]" is missing from JSON.');
-        assert(json[r'maxDomains'] != null, 'Required key "TenantPackage[maxDomains]" has a null value in JSON.');
-        assert(json.containsKey(r'maxWhiteLabeledTenants'), 'Required key "TenantPackage[maxWhiteLabeledTenants]" is missing from JSON.');
-        assert(json[r'maxWhiteLabeledTenants'] != null, 'Required key "TenantPackage[maxWhiteLabeledTenants]" has a null value in JSON.');
-        assert(json.containsKey(r'maxMonthlyEventLogRequests'), 'Required key "TenantPackage[maxMonthlyEventLogRequests]" is missing from JSON.');
-        assert(json[r'maxMonthlyEventLogRequests'] != null, 'Required key "TenantPackage[maxMonthlyEventLogRequests]" has a null value in JSON.');
-        assert(json.containsKey(r'maxCustomCollectionSize'), 'Required key "TenantPackage[maxCustomCollectionSize]" is missing from JSON.');
-        assert(json[r'maxCustomCollectionSize'] != null, 'Required key "TenantPackage[maxCustomCollectionSize]" has a null value in JSON.');
-        assert(json.containsKey(r'hasWhiteLabeling'), 'Required key "TenantPackage[hasWhiteLabeling]" is missing from JSON.');
-        assert(json[r'hasWhiteLabeling'] != null, 'Required key "TenantPackage[hasWhiteLabeling]" has a null value in JSON.');
-        assert(json.containsKey(r'hasDebranding'), 'Required key "TenantPackage[hasDebranding]" is missing from JSON.');
-        assert(json[r'hasDebranding'] != null, 'Required key "TenantPackage[hasDebranding]" has a null value in JSON.');
-        assert(json.containsKey(r'hasLLMSpamDetection'), 'Required key "TenantPackage[hasLLMSpamDetection]" is missing from JSON.');
-        assert(json[r'hasLLMSpamDetection'] != null, 'Required key "TenantPackage[hasLLMSpamDetection]" has a null value in JSON.');
-        assert(json.containsKey(r'forWhoText'), 'Required key "TenantPackage[forWhoText]" is missing from JSON.');
-        assert(json[r'forWhoText'] != null, 'Required key "TenantPackage[forWhoText]" has a null value in JSON.');
-        assert(json.containsKey(r'featureTaglines'), 'Required key "TenantPackage[featureTaglines]" is missing from JSON.');
-        assert(json[r'featureTaglines'] != null, 'Required key "TenantPackage[featureTaglines]" has a null value in JSON.');
-        assert(json.containsKey(r'hasAuditing'), 'Required key "TenantPackage[hasAuditing]" is missing from JSON.');
-        assert(json[r'hasAuditing'] != null, 'Required key "TenantPackage[hasAuditing]" has a null value in JSON.');
-        assert(json.containsKey(r'hasFlexPricing'), 'Required key "TenantPackage[hasFlexPricing]" is missing from JSON.');
-        assert(json[r'hasFlexPricing'] != null, 'Required key "TenantPackage[hasFlexPricing]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "TenantPackage[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "TenantPackage[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 
@@ -805,6 +775,7 @@ class TenantPackage {
         name: mapValueOfType<String>(json, r'name')!,
         tenantId: mapValueOfType<String>(json, r'tenantId')!,
         createdAt: mapDateTime(json, r'createdAt', r'')!,
+        templateId: mapValueOfType<String>(json, r'templateId'),
         monthlyCostUSD: mapValueOfType<double>(json, r'monthlyCostUSD'),
         yearlyCostUSD: mapValueOfType<double>(json, r'yearlyCostUSD'),
         monthlyStripePlanId: mapValueOfType<String>(json, r'monthlyStripePlanId'),

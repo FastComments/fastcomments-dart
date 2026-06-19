@@ -139,12 +139,10 @@ class APIError {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "APIError[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "APIError[status]" has a null value in JSON.');
-        assert(json.containsKey(r'reason'), 'Required key "APIError[reason]" is missing from JSON.');
-        assert(json[r'reason'] != null, 'Required key "APIError[reason]" has a null value in JSON.');
-        assert(json.containsKey(r'code'), 'Required key "APIError[code]" is missing from JSON.');
-        assert(json[r'code'] != null, 'Required key "APIError[code]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APIError[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APIError[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

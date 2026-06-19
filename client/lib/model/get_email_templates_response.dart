@@ -53,10 +53,10 @@ class GetEmailTemplatesResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetEmailTemplatesResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetEmailTemplatesResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'emailTemplates'), 'Required key "GetEmailTemplatesResponse[emailTemplates]" is missing from JSON.');
-        assert(json[r'emailTemplates'] != null, 'Required key "GetEmailTemplatesResponse[emailTemplates]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetEmailTemplatesResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetEmailTemplatesResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -53,10 +53,10 @@ class GetTenantResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "GetTenantResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "GetTenantResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'tenant'), 'Required key "GetTenantResponse[tenant]" is missing from JSON.');
-        assert(json[r'tenant'] != null, 'Required key "GetTenantResponse[tenant]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "GetTenantResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "GetTenantResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

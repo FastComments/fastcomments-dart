@@ -16,7 +16,7 @@ void main() {
   // final instance = VoteResponse();
 
   group('test VoteResponse', () {
-    // String status
+    // VoteResponseStatus status
     test('to test the property `status`', () async {
       // TODO
     });

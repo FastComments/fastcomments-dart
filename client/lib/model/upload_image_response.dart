@@ -101,8 +101,10 @@ class UploadImageResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "UploadImageResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "UploadImageResponse[status]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UploadImageResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UploadImageResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

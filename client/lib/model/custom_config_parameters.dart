@@ -65,11 +65,14 @@ class CustomConfigParameters {
     this.noCustomConfig,
     this.mentionAutoCompleteMode,
     this.noImageUploads,
+    this.allowEmbeds,
+    this.allowedEmbedDomains = const [],
     this.noStyles,
     this.pageSize,
     this.readonly,
     this.noNewRootComments,
     this.requireSSO,
+    this.enableFChat,
     this.enableResizeHandle,
     this.restrictedLinkDomains = const [],
     this.showBadgesInTopBar,
@@ -90,6 +93,8 @@ class CustomConfigParameters {
     this.widgetQuestionsRequired,
     this.widgetSubQuestionVisibility,
     this.wrap,
+    this.usersListLocation,
+    this.usersListIncludeOffline,
     this.ticketBaseUrl,
     this.ticketKBSearchEndpoint,
     this.ticketFileUploadsEnabled,
@@ -436,6 +441,16 @@ class CustomConfigParameters {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  bool? allowEmbeds;
+
+  List<String>? allowedEmbedDomains;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? noStyles;
 
   int? pageSize;
@@ -463,6 +478,14 @@ class CustomConfigParameters {
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
   bool? requireSSO;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? enableFChat;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -613,6 +636,22 @@ class CustomConfigParameters {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  UsersListLocation? usersListLocation;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? usersListIncludeOffline;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? ticketBaseUrl;
 
   ///
@@ -703,11 +742,14 @@ class CustomConfigParameters {
     other.noCustomConfig == noCustomConfig &&
     other.mentionAutoCompleteMode == mentionAutoCompleteMode &&
     other.noImageUploads == noImageUploads &&
+    other.allowEmbeds == allowEmbeds &&
+    _deepEquality.equals(other.allowedEmbedDomains, allowedEmbedDomains) &&
     other.noStyles == noStyles &&
     other.pageSize == pageSize &&
     other.readonly == readonly &&
     other.noNewRootComments == noNewRootComments &&
     other.requireSSO == requireSSO &&
+    other.enableFChat == enableFChat &&
     other.enableResizeHandle == enableResizeHandle &&
     _deepEquality.equals(other.restrictedLinkDomains, restrictedLinkDomains) &&
     other.showBadgesInTopBar == showBadgesInTopBar &&
@@ -728,6 +770,8 @@ class CustomConfigParameters {
     other.widgetQuestionsRequired == widgetQuestionsRequired &&
     other.widgetSubQuestionVisibility == widgetSubQuestionVisibility &&
     other.wrap == wrap &&
+    other.usersListLocation == usersListLocation &&
+    other.usersListIncludeOffline == usersListIncludeOffline &&
     other.ticketBaseUrl == ticketBaseUrl &&
     other.ticketKBSearchEndpoint == ticketKBSearchEndpoint &&
     other.ticketFileUploadsEnabled == ticketFileUploadsEnabled &&
@@ -790,11 +834,14 @@ class CustomConfigParameters {
     (noCustomConfig == null ? 0 : noCustomConfig!.hashCode) +
     (mentionAutoCompleteMode == null ? 0 : mentionAutoCompleteMode!.hashCode) +
     (noImageUploads == null ? 0 : noImageUploads!.hashCode) +
+    (allowEmbeds == null ? 0 : allowEmbeds!.hashCode) +
+    (allowedEmbedDomains == null ? 0 : allowedEmbedDomains!.hashCode) +
     (noStyles == null ? 0 : noStyles!.hashCode) +
     (pageSize == null ? 0 : pageSize!.hashCode) +
     (readonly == null ? 0 : readonly!.hashCode) +
     (noNewRootComments == null ? 0 : noNewRootComments!.hashCode) +
     (requireSSO == null ? 0 : requireSSO!.hashCode) +
+    (enableFChat == null ? 0 : enableFChat!.hashCode) +
     (enableResizeHandle == null ? 0 : enableResizeHandle!.hashCode) +
     (restrictedLinkDomains == null ? 0 : restrictedLinkDomains!.hashCode) +
     (showBadgesInTopBar == null ? 0 : showBadgesInTopBar!.hashCode) +
@@ -815,6 +862,8 @@ class CustomConfigParameters {
     (widgetQuestionsRequired == null ? 0 : widgetQuestionsRequired!.hashCode) +
     (widgetSubQuestionVisibility == null ? 0 : widgetSubQuestionVisibility!.hashCode) +
     (wrap == null ? 0 : wrap!.hashCode) +
+    (usersListLocation == null ? 0 : usersListLocation!.hashCode) +
+    (usersListIncludeOffline == null ? 0 : usersListIncludeOffline!.hashCode) +
     (ticketBaseUrl == null ? 0 : ticketBaseUrl!.hashCode) +
     (ticketKBSearchEndpoint == null ? 0 : ticketKBSearchEndpoint!.hashCode) +
     (ticketFileUploadsEnabled == null ? 0 : ticketFileUploadsEnabled!.hashCode) +
@@ -823,7 +872,7 @@ class CustomConfigParameters {
     (tos == null ? 0 : tos!.hashCode);
 
   @override
-  String toString() => 'CustomConfigParameters[absoluteAndRelativeDates=$absoluteAndRelativeDates, absoluteDates=$absoluteDates, allowAnon=$allowAnon, allowAnonFlag=$allowAnonFlag, allowAnonVotes=$allowAnonVotes, allowedLanguages=$allowedLanguages, collapseReplies=$collapseReplies, commentCountFormat=$commentCountFormat, commentHTMLRenderingMode=$commentHTMLRenderingMode, commentThreadDeleteMode=$commentThreadDeleteMode, commenterNameFormat=$commenterNameFormat, countAboveToggle=$countAboveToggle, customCSS=$customCSS, defaultAvatarSrc=$defaultAvatarSrc, defaultSortDirection=$defaultSortDirection, defaultUsername=$defaultUsername, disableAutoAdminMigration=$disableAutoAdminMigration, disableAutoHashTagCreation=$disableAutoHashTagCreation, disableBlocking=$disableBlocking, disableCommenterCommentDelete=$disableCommenterCommentDelete, disableCommenterCommentEdit=$disableCommenterCommentEdit, disableEmailInputs=$disableEmailInputs, disableLiveCommenting=$disableLiveCommenting, disableNotificationBell=$disableNotificationBell, disableProfileComments=$disableProfileComments, disableProfileDirectMessages=$disableProfileDirectMessages, disableProfiles=$disableProfiles, disableSuccessMessage=$disableSuccessMessage, disableToolbar=$disableToolbar, disableUnverifiedLabel=$disableUnverifiedLabel, disableVoting=$disableVoting, enableCommenterLinks=$enableCommenterLinks, enableSearch=$enableSearch, enableSpoilers=$enableSpoilers, enableThirdPartyCookieBypass=$enableThirdPartyCookieBypass, enableViewCounts=$enableViewCounts, enableVoteList=$enableVoteList, enableWYSIWYG=$enableWYSIWYG, gifRating=$gifRating, hasDarkBackground=$hasDarkBackground, headerHTML=$headerHTML, hideAvatars=$hideAvatars, hideCommentsUnderCountTextFormat=$hideCommentsUnderCountTextFormat, imageContentProfanityLevel=$imageContentProfanityLevel, inputAfterComments=$inputAfterComments, limitCommentsByGroups=$limitCommentsByGroups, locale=$locale, maxCommentCharacterLength=$maxCommentCharacterLength, maxCommentCreatedCountPUPM=$maxCommentCreatedCountPUPM, noCustomConfig=$noCustomConfig, mentionAutoCompleteMode=$mentionAutoCompleteMode, noImageUploads=$noImageUploads, noStyles=$noStyles, pageSize=$pageSize, readonly=$readonly, noNewRootComments=$noNewRootComments, requireSSO=$requireSSO, enableResizeHandle=$enableResizeHandle, restrictedLinkDomains=$restrictedLinkDomains, showBadgesInTopBar=$showBadgesInTopBar, showCommentSaveSuccess=$showCommentSaveSuccess, showLiveRightAway=$showLiveRightAway, showQuestion=$showQuestion, spamRules=$spamRules, ssoSecLvl=$ssoSecLvl, translations=$translations, useShowCommentsToggle=$useShowCommentsToggle, useSingleLineCommentInput=$useSingleLineCommentInput, voteStyle=$voteStyle, widgetQuestionId=$widgetQuestionId, widgetQuestionResultsStyle=$widgetQuestionResultsStyle, widgetQuestionShowBreakdown=$widgetQuestionShowBreakdown, widgetQuestionStyle=$widgetQuestionStyle, widgetQuestionWhenToSave=$widgetQuestionWhenToSave, widgetQuestionsRequired=$widgetQuestionsRequired, widgetSubQuestionVisibility=$widgetSubQuestionVisibility, wrap=$wrap, ticketBaseUrl=$ticketBaseUrl, ticketKBSearchEndpoint=$ticketKBSearchEndpoint, ticketFileUploadsEnabled=$ticketFileUploadsEnabled, ticketMaxFileSize=$ticketMaxFileSize, ticketAutoAssignUserIds=$ticketAutoAssignUserIds, tos=$tos]';
+  String toString() => 'CustomConfigParameters[absoluteAndRelativeDates=$absoluteAndRelativeDates, absoluteDates=$absoluteDates, allowAnon=$allowAnon, allowAnonFlag=$allowAnonFlag, allowAnonVotes=$allowAnonVotes, allowedLanguages=$allowedLanguages, collapseReplies=$collapseReplies, commentCountFormat=$commentCountFormat, commentHTMLRenderingMode=$commentHTMLRenderingMode, commentThreadDeleteMode=$commentThreadDeleteMode, commenterNameFormat=$commenterNameFormat, countAboveToggle=$countAboveToggle, customCSS=$customCSS, defaultAvatarSrc=$defaultAvatarSrc, defaultSortDirection=$defaultSortDirection, defaultUsername=$defaultUsername, disableAutoAdminMigration=$disableAutoAdminMigration, disableAutoHashTagCreation=$disableAutoHashTagCreation, disableBlocking=$disableBlocking, disableCommenterCommentDelete=$disableCommenterCommentDelete, disableCommenterCommentEdit=$disableCommenterCommentEdit, disableEmailInputs=$disableEmailInputs, disableLiveCommenting=$disableLiveCommenting, disableNotificationBell=$disableNotificationBell, disableProfileComments=$disableProfileComments, disableProfileDirectMessages=$disableProfileDirectMessages, disableProfiles=$disableProfiles, disableSuccessMessage=$disableSuccessMessage, disableToolbar=$disableToolbar, disableUnverifiedLabel=$disableUnverifiedLabel, disableVoting=$disableVoting, enableCommenterLinks=$enableCommenterLinks, enableSearch=$enableSearch, enableSpoilers=$enableSpoilers, enableThirdPartyCookieBypass=$enableThirdPartyCookieBypass, enableViewCounts=$enableViewCounts, enableVoteList=$enableVoteList, enableWYSIWYG=$enableWYSIWYG, gifRating=$gifRating, hasDarkBackground=$hasDarkBackground, headerHTML=$headerHTML, hideAvatars=$hideAvatars, hideCommentsUnderCountTextFormat=$hideCommentsUnderCountTextFormat, imageContentProfanityLevel=$imageContentProfanityLevel, inputAfterComments=$inputAfterComments, limitCommentsByGroups=$limitCommentsByGroups, locale=$locale, maxCommentCharacterLength=$maxCommentCharacterLength, maxCommentCreatedCountPUPM=$maxCommentCreatedCountPUPM, noCustomConfig=$noCustomConfig, mentionAutoCompleteMode=$mentionAutoCompleteMode, noImageUploads=$noImageUploads, allowEmbeds=$allowEmbeds, allowedEmbedDomains=$allowedEmbedDomains, noStyles=$noStyles, pageSize=$pageSize, readonly=$readonly, noNewRootComments=$noNewRootComments, requireSSO=$requireSSO, enableFChat=$enableFChat, enableResizeHandle=$enableResizeHandle, restrictedLinkDomains=$restrictedLinkDomains, showBadgesInTopBar=$showBadgesInTopBar, showCommentSaveSuccess=$showCommentSaveSuccess, showLiveRightAway=$showLiveRightAway, showQuestion=$showQuestion, spamRules=$spamRules, ssoSecLvl=$ssoSecLvl, translations=$translations, useShowCommentsToggle=$useShowCommentsToggle, useSingleLineCommentInput=$useSingleLineCommentInput, voteStyle=$voteStyle, widgetQuestionId=$widgetQuestionId, widgetQuestionResultsStyle=$widgetQuestionResultsStyle, widgetQuestionShowBreakdown=$widgetQuestionShowBreakdown, widgetQuestionStyle=$widgetQuestionStyle, widgetQuestionWhenToSave=$widgetQuestionWhenToSave, widgetQuestionsRequired=$widgetQuestionsRequired, widgetSubQuestionVisibility=$widgetSubQuestionVisibility, wrap=$wrap, usersListLocation=$usersListLocation, usersListIncludeOffline=$usersListIncludeOffline, ticketBaseUrl=$ticketBaseUrl, ticketKBSearchEndpoint=$ticketKBSearchEndpoint, ticketFileUploadsEnabled=$ticketFileUploadsEnabled, ticketMaxFileSize=$ticketMaxFileSize, ticketAutoAssignUserIds=$ticketAutoAssignUserIds, tos=$tos]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -1087,6 +1136,16 @@ class CustomConfigParameters {
     } else {
       json[r'noImageUploads'] = null;
     }
+    if (this.allowEmbeds != null) {
+      json[r'allowEmbeds'] = this.allowEmbeds;
+    } else {
+      json[r'allowEmbeds'] = null;
+    }
+    if (this.allowedEmbedDomains != null) {
+      json[r'allowedEmbedDomains'] = this.allowedEmbedDomains;
+    } else {
+      json[r'allowedEmbedDomains'] = null;
+    }
     if (this.noStyles != null) {
       json[r'noStyles'] = this.noStyles;
     } else {
@@ -1111,6 +1170,11 @@ class CustomConfigParameters {
       json[r'requireSSO'] = this.requireSSO;
     } else {
       json[r'requireSSO'] = null;
+    }
+    if (this.enableFChat != null) {
+      json[r'enableFChat'] = this.enableFChat;
+    } else {
+      json[r'enableFChat'] = null;
     }
     if (this.enableResizeHandle != null) {
       json[r'enableResizeHandle'] = this.enableResizeHandle;
@@ -1208,6 +1272,16 @@ class CustomConfigParameters {
     } else {
       json[r'wrap'] = null;
     }
+    if (this.usersListLocation != null) {
+      json[r'usersListLocation'] = this.usersListLocation;
+    } else {
+      json[r'usersListLocation'] = null;
+    }
+    if (this.usersListIncludeOffline != null) {
+      json[r'usersListIncludeOffline'] = this.usersListIncludeOffline;
+    } else {
+      json[r'usersListIncludeOffline'] = null;
+    }
     if (this.ticketBaseUrl != null) {
       json[r'ticketBaseUrl'] = this.ticketBaseUrl;
     } else {
@@ -1248,6 +1322,10 @@ class CustomConfigParameters {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CustomConfigParameters[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CustomConfigParameters[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 
@@ -1306,11 +1384,16 @@ class CustomConfigParameters {
         noCustomConfig: mapValueOfType<bool>(json, r'noCustomConfig'),
         mentionAutoCompleteMode: MentionAutoCompleteMode.fromJson(json[r'mentionAutoCompleteMode']),
         noImageUploads: mapValueOfType<bool>(json, r'noImageUploads'),
+        allowEmbeds: mapValueOfType<bool>(json, r'allowEmbeds'),
+        allowedEmbedDomains: json[r'allowedEmbedDomains'] is Iterable
+            ? (json[r'allowedEmbedDomains'] as Iterable).cast<String>().toList(growable: false)
+            : const [],
         noStyles: mapValueOfType<bool>(json, r'noStyles'),
         pageSize: mapValueOfType<int>(json, r'pageSize'),
         readonly: mapValueOfType<bool>(json, r'readonly'),
         noNewRootComments: mapValueOfType<bool>(json, r'noNewRootComments'),
         requireSSO: mapValueOfType<bool>(json, r'requireSSO'),
+        enableFChat: mapValueOfType<bool>(json, r'enableFChat'),
         enableResizeHandle: mapValueOfType<bool>(json, r'enableResizeHandle'),
         restrictedLinkDomains: json[r'restrictedLinkDomains'] is Iterable
             ? (json[r'restrictedLinkDomains'] as Iterable).cast<String>().toList(growable: false)
@@ -1333,6 +1416,8 @@ class CustomConfigParameters {
         widgetQuestionsRequired: CommentQuestionsRequired.fromJson(json[r'widgetQuestionsRequired']),
         widgetSubQuestionVisibility: QuestionSubQuestionVisibility.fromJson(json[r'widgetSubQuestionVisibility']),
         wrap: mapValueOfType<bool>(json, r'wrap'),
+        usersListLocation: UsersListLocation.fromJson(json[r'usersListLocation']),
+        usersListIncludeOffline: mapValueOfType<bool>(json, r'usersListIncludeOffline'),
         ticketBaseUrl: mapValueOfType<String>(json, r'ticketBaseUrl'),
         ticketKBSearchEndpoint: mapValueOfType<String>(json, r'ticketKBSearchEndpoint'),
         ticketFileUploadsEnabled: mapValueOfType<bool>(json, r'ticketFileUploadsEnabled'),

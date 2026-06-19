@@ -115,18 +115,10 @@ class APIPage {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'rootCommentCount'), 'Required key "APIPage[rootCommentCount]" is missing from JSON.');
-        assert(json[r'rootCommentCount'] != null, 'Required key "APIPage[rootCommentCount]" has a null value in JSON.');
-        assert(json.containsKey(r'commentCount'), 'Required key "APIPage[commentCount]" is missing from JSON.');
-        assert(json[r'commentCount'] != null, 'Required key "APIPage[commentCount]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "APIPage[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "APIPage[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'title'), 'Required key "APIPage[title]" is missing from JSON.');
-        assert(json[r'title'] != null, 'Required key "APIPage[title]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "APIPage[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "APIPage[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'id'), 'Required key "APIPage[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "APIPage[id]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APIPage[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APIPage[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

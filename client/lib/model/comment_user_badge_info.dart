@@ -119,12 +119,10 @@ class CommentUserBadgeInfo {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'id'), 'Required key "CommentUserBadgeInfo[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "CommentUserBadgeInfo[id]" has a null value in JSON.');
-        assert(json.containsKey(r'type'), 'Required key "CommentUserBadgeInfo[type]" is missing from JSON.');
-        assert(json[r'type'] != null, 'Required key "CommentUserBadgeInfo[type]" has a null value in JSON.');
-        assert(json.containsKey(r'description'), 'Required key "CommentUserBadgeInfo[description]" is missing from JSON.');
-        assert(json[r'description'] != null, 'Required key "CommentUserBadgeInfo[description]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CommentUserBadgeInfo[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CommentUserBadgeInfo[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

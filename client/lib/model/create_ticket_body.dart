@@ -47,8 +47,10 @@ class CreateTicketBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'subject'), 'Required key "CreateTicketBody[subject]" is missing from JSON.');
-        assert(json[r'subject'] != null, 'Required key "CreateTicketBody[subject]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateTicketBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateTicketBody[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -22,6 +22,7 @@ class HeaderAccountNotification {
     required this.linkUrl,
     required this.linkText,
     required this.createdAt,
+    this.type,
   });
 
   String id;
@@ -44,6 +45,9 @@ class HeaderAccountNotification {
 
   DateTime createdAt;
 
+  /// Discriminator for notifications with a special layout/click handler (e.g. \"feedback-offer\").
+  String? type;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is HeaderAccountNotification &&
     other.id == id &&
@@ -54,7 +58,8 @@ class HeaderAccountNotification {
     other.severity == severity &&
     other.linkUrl == linkUrl &&
     other.linkText == linkText &&
-    other.createdAt == createdAt;
+    other.createdAt == createdAt &&
+    other.type == type;
 
   @override
   int get hashCode =>
@@ -67,10 +72,11 @@ class HeaderAccountNotification {
     (severity.hashCode) +
     (linkUrl == null ? 0 : linkUrl!.hashCode) +
     (linkText == null ? 0 : linkText!.hashCode) +
-    (createdAt.hashCode);
+    (createdAt.hashCode) +
+    (type == null ? 0 : type!.hashCode);
 
   @override
-  String toString() => 'HeaderAccountNotification[id=$id, title=$title, message=$message, messagesByLocale=$messagesByLocale, dates=$dates, severity=$severity, linkUrl=$linkUrl, linkText=$linkText, createdAt=$createdAt]';
+  String toString() => 'HeaderAccountNotification[id=$id, title=$title, message=$message, messagesByLocale=$messagesByLocale, dates=$dates, severity=$severity, linkUrl=$linkUrl, linkText=$linkText, createdAt=$createdAt, type=$type]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -99,6 +105,11 @@ class HeaderAccountNotification {
       json[r'linkText'] = null;
     }
       json[r'createdAt'] = this.createdAt.toUtc().toIso8601String();
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
+    }
     return json;
   }
 
@@ -113,20 +124,10 @@ class HeaderAccountNotification {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "HeaderAccountNotification[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "HeaderAccountNotification[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'title'), 'Required key "HeaderAccountNotification[title]" is missing from JSON.');
-        assert(json[r'title'] != null, 'Required key "HeaderAccountNotification[title]" has a null value in JSON.');
-        assert(json.containsKey(r'message'), 'Required key "HeaderAccountNotification[message]" is missing from JSON.');
-        assert(json[r'message'] != null, 'Required key "HeaderAccountNotification[message]" has a null value in JSON.');
-        assert(json.containsKey(r'messagesByLocale'), 'Required key "HeaderAccountNotification[messagesByLocale]" is missing from JSON.');
-        assert(json.containsKey(r'dates'), 'Required key "HeaderAccountNotification[dates]" is missing from JSON.');
-        assert(json.containsKey(r'severity'), 'Required key "HeaderAccountNotification[severity]" is missing from JSON.');
-        assert(json[r'severity'] != null, 'Required key "HeaderAccountNotification[severity]" has a null value in JSON.');
-        assert(json.containsKey(r'linkUrl'), 'Required key "HeaderAccountNotification[linkUrl]" is missing from JSON.');
-        assert(json.containsKey(r'linkText'), 'Required key "HeaderAccountNotification[linkText]" is missing from JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "HeaderAccountNotification[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "HeaderAccountNotification[createdAt]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "HeaderAccountNotification[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "HeaderAccountNotification[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 
@@ -140,6 +141,7 @@ class HeaderAccountNotification {
         linkUrl: mapValueOfType<String>(json, r'linkUrl'),
         linkText: mapValueOfType<String>(json, r'linkText'),
         createdAt: mapDateTime(json, r'createdAt', r'')!,
+        type: mapValueOfType<String>(json, r'type'),
       );
     }
     return null;

@@ -139,12 +139,10 @@ class APIUserSubscription {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'createdAt'), 'Required key "APIUserSubscription[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "APIUserSubscription[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "APIUserSubscription[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "APIUserSubscription[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'id'), 'Required key "APIUserSubscription[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "APIUserSubscription[id]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APIUserSubscription[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APIUserSubscription[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -206,12 +206,10 @@ class APIDomainConfiguration {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'id'), 'Required key "APIDomainConfiguration[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "APIDomainConfiguration[id]" has a null value in JSON.');
-        assert(json.containsKey(r'domain'), 'Required key "APIDomainConfiguration[domain]" is missing from JSON.');
-        assert(json[r'domain'] != null, 'Required key "APIDomainConfiguration[domain]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "APIDomainConfiguration[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "APIDomainConfiguration[createdAt]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APIDomainConfiguration[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APIDomainConfiguration[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

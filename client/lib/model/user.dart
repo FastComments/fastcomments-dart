@@ -869,22 +869,10 @@ class User {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "User[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "User[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'username'), 'Required key "User[username]" is missing from JSON.');
-        assert(json[r'username'] != null, 'Required key "User[username]" has a null value in JSON.');
-        assert(json.containsKey(r'email'), 'Required key "User[email]" is missing from JSON.');
-        assert(json.containsKey(r'signUpDate'), 'Required key "User[signUpDate]" is missing from JSON.');
-        assert(json[r'signUpDate'] != null, 'Required key "User[signUpDate]" has a null value in JSON.');
-        assert(json.containsKey(r'createdFromTenantId'), 'Required key "User[createdFromTenantId]" is missing from JSON.');
-        assert(json.containsKey(r'createdFromIpHashed'), 'Required key "User[createdFromIpHashed]" is missing from JSON.');
-        assert(json[r'createdFromIpHashed'] != null, 'Required key "User[createdFromIpHashed]" has a null value in JSON.');
-        assert(json.containsKey(r'verified'), 'Required key "User[verified]" is missing from JSON.');
-        assert(json[r'verified'] != null, 'Required key "User[verified]" has a null value in JSON.');
-        assert(json.containsKey(r'loginId'), 'Required key "User[loginId]" is missing from JSON.');
-        assert(json[r'loginId'] != null, 'Required key "User[loginId]" has a null value in JSON.');
-        assert(json.containsKey(r'loginIdDate'), 'Required key "User[loginIdDate]" is missing from JSON.');
-        assert(json[r'loginIdDate'] != null, 'Required key "User[loginIdDate]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "User[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "User[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

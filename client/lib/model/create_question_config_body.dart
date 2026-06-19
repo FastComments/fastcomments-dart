@@ -205,14 +205,10 @@ class CreateQuestionConfigBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'name'), 'Required key "CreateQuestionConfigBody[name]" is missing from JSON.');
-        assert(json[r'name'] != null, 'Required key "CreateQuestionConfigBody[name]" has a null value in JSON.');
-        assert(json.containsKey(r'question'), 'Required key "CreateQuestionConfigBody[question]" is missing from JSON.');
-        assert(json[r'question'] != null, 'Required key "CreateQuestionConfigBody[question]" has a null value in JSON.');
-        assert(json.containsKey(r'type'), 'Required key "CreateQuestionConfigBody[type]" is missing from JSON.');
-        assert(json[r'type'] != null, 'Required key "CreateQuestionConfigBody[type]" has a null value in JSON.');
-        assert(json.containsKey(r'reportingOrder'), 'Required key "CreateQuestionConfigBody[reportingOrder]" is missing from JSON.');
-        assert(json[r'reportingOrder'] != null, 'Required key "CreateQuestionConfigBody[reportingOrder]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateQuestionConfigBody[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateQuestionConfigBody[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

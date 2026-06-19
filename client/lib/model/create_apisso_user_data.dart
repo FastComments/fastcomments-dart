@@ -321,12 +321,10 @@ class CreateAPISSOUserData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'email'), 'Required key "CreateAPISSOUserData[email]" is missing from JSON.');
-        assert(json[r'email'] != null, 'Required key "CreateAPISSOUserData[email]" has a null value in JSON.');
-        assert(json.containsKey(r'username'), 'Required key "CreateAPISSOUserData[username]" is missing from JSON.');
-        assert(json[r'username'] != null, 'Required key "CreateAPISSOUserData[username]" has a null value in JSON.');
-        assert(json.containsKey(r'id'), 'Required key "CreateAPISSOUserData[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "CreateAPISSOUserData[id]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateAPISSOUserData[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateAPISSOUserData[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

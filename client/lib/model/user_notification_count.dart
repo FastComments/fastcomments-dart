@@ -65,14 +65,10 @@ class UserNotificationCount {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "UserNotificationCount[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "UserNotificationCount[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'count'), 'Required key "UserNotificationCount[count]" is missing from JSON.');
-        assert(json[r'count'] != null, 'Required key "UserNotificationCount[count]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "UserNotificationCount[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "UserNotificationCount[createdAt]" has a null value in JSON.');
-        assert(json.containsKey(r'expireAt'), 'Required key "UserNotificationCount[expireAt]" is missing from JSON.');
-        assert(json[r'expireAt'] != null, 'Required key "UserNotificationCount[expireAt]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserNotificationCount[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserNotificationCount[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

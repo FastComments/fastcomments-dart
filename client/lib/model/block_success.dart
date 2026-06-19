@@ -54,10 +54,10 @@ class BlockSuccess {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "BlockSuccess[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "BlockSuccess[status]" has a null value in JSON.');
-        assert(json.containsKey(r'commentStatuses'), 'Required key "BlockSuccess[commentStatuses]" is missing from JSON.');
-        assert(json[r'commentStatuses'] != null, 'Required key "BlockSuccess[commentStatuses]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "BlockSuccess[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "BlockSuccess[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

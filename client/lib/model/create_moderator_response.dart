@@ -53,10 +53,10 @@ class CreateModeratorResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'status'), 'Required key "CreateModeratorResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "CreateModeratorResponse[status]" has a null value in JSON.');
-        assert(json.containsKey(r'moderator'), 'Required key "CreateModeratorResponse[moderator]" is missing from JSON.');
-        assert(json[r'moderator'] != null, 'Required key "CreateModeratorResponse[moderator]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateModeratorResponse[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateModeratorResponse[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

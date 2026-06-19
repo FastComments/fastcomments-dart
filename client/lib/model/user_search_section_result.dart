@@ -53,10 +53,10 @@ class UserSearchSectionResult {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'section'), 'Required key "UserSearchSectionResult[section]" is missing from JSON.');
-        assert(json[r'section'] != null, 'Required key "UserSearchSectionResult[section]" has a null value in JSON.');
-        assert(json.containsKey(r'users'), 'Required key "UserSearchSectionResult[users]" is missing from JSON.');
-        assert(json[r'users'] != null, 'Required key "UserSearchSectionResult[users]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserSearchSectionResult[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserSearchSectionResult[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

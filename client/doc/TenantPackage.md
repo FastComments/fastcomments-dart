@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **tenantId** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
+**templateId** | **String** |  | [optional] 
 **monthlyCostUSD** | **double** |  | 
 **yearlyCostUSD** | **double** |  | 
 **monthlyStripePlanId** | **String** |  | 

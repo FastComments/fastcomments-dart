@@ -53,10 +53,10 @@ class AggregationRequestSort {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'dir'), 'Required key "AggregationRequestSort[dir]" is missing from JSON.');
-        assert(json[r'dir'] != null, 'Required key "AggregationRequestSort[dir]" has a null value in JSON.');
-        assert(json.containsKey(r'field'), 'Required key "AggregationRequestSort[field]" is missing from JSON.');
-        assert(json[r'field'] != null, 'Required key "AggregationRequestSort[field]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "AggregationRequestSort[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "AggregationRequestSort[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

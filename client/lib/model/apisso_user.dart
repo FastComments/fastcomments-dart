@@ -231,30 +231,10 @@ class APISSOUser {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'id'), 'Required key "APISSOUser[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "APISSOUser[id]" has a null value in JSON.');
-        assert(json.containsKey(r'username'), 'Required key "APISSOUser[username]" is missing from JSON.');
-        assert(json[r'username'] != null, 'Required key "APISSOUser[username]" has a null value in JSON.');
-        assert(json.containsKey(r'websiteUrl'), 'Required key "APISSOUser[websiteUrl]" is missing from JSON.');
-        assert(json[r'websiteUrl'] != null, 'Required key "APISSOUser[websiteUrl]" has a null value in JSON.');
-        assert(json.containsKey(r'email'), 'Required key "APISSOUser[email]" is missing from JSON.');
-        assert(json[r'email'] != null, 'Required key "APISSOUser[email]" has a null value in JSON.');
-        assert(json.containsKey(r'signUpDate'), 'Required key "APISSOUser[signUpDate]" is missing from JSON.');
-        assert(json[r'signUpDate'] != null, 'Required key "APISSOUser[signUpDate]" has a null value in JSON.');
-        assert(json.containsKey(r'createdFromUrlId'), 'Required key "APISSOUser[createdFromUrlId]" is missing from JSON.');
-        assert(json[r'createdFromUrlId'] != null, 'Required key "APISSOUser[createdFromUrlId]" has a null value in JSON.');
-        assert(json.containsKey(r'loginCount'), 'Required key "APISSOUser[loginCount]" is missing from JSON.');
-        assert(json[r'loginCount'] != null, 'Required key "APISSOUser[loginCount]" has a null value in JSON.');
-        assert(json.containsKey(r'avatarSrc'), 'Required key "APISSOUser[avatarSrc]" is missing from JSON.');
-        assert(json[r'avatarSrc'] != null, 'Required key "APISSOUser[avatarSrc]" has a null value in JSON.');
-        assert(json.containsKey(r'optedInNotifications'), 'Required key "APISSOUser[optedInNotifications]" is missing from JSON.');
-        assert(json[r'optedInNotifications'] != null, 'Required key "APISSOUser[optedInNotifications]" has a null value in JSON.');
-        assert(json.containsKey(r'optedInSubscriptionNotifications'), 'Required key "APISSOUser[optedInSubscriptionNotifications]" is missing from JSON.');
-        assert(json[r'optedInSubscriptionNotifications'] != null, 'Required key "APISSOUser[optedInSubscriptionNotifications]" has a null value in JSON.');
-        assert(json.containsKey(r'displayLabel'), 'Required key "APISSOUser[displayLabel]" is missing from JSON.');
-        assert(json[r'displayLabel'] != null, 'Required key "APISSOUser[displayLabel]" has a null value in JSON.');
-        assert(json.containsKey(r'displayName'), 'Required key "APISSOUser[displayName]" is missing from JSON.');
-        assert(json[r'displayName'] != null, 'Required key "APISSOUser[displayName]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "APISSOUser[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "APISSOUser[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

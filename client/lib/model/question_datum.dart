@@ -54,10 +54,10 @@ class QuestionDatum {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'v'), 'Required key "QuestionDatum[v]" is missing from JSON.');
-        assert(json[r'v'] != null, 'Required key "QuestionDatum[v]" has a null value in JSON.');
-        assert(json.containsKey(r'total'), 'Required key "QuestionDatum[total]" is missing from JSON.');
-        assert(json[r'total'] != null, 'Required key "QuestionDatum[total]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "QuestionDatum[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "QuestionDatum[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

@@ -77,18 +77,10 @@ class PublicVote {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'id'), 'Required key "PublicVote[id]" is missing from JSON.');
-        assert(json[r'id'] != null, 'Required key "PublicVote[id]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "PublicVote[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "PublicVote[urlId]" has a null value in JSON.');
-        assert(json.containsKey(r'commentId'), 'Required key "PublicVote[commentId]" is missing from JSON.');
-        assert(json[r'commentId'] != null, 'Required key "PublicVote[commentId]" has a null value in JSON.');
-        assert(json.containsKey(r'userId'), 'Required key "PublicVote[userId]" is missing from JSON.');
-        assert(json[r'userId'] != null, 'Required key "PublicVote[userId]" has a null value in JSON.');
-        assert(json.containsKey(r'direction'), 'Required key "PublicVote[direction]" is missing from JSON.');
-        assert(json[r'direction'] != null, 'Required key "PublicVote[direction]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "PublicVote[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "PublicVote[createdAt]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "PublicVote[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "PublicVote[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

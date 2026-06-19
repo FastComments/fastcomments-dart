@@ -52,7 +52,10 @@ class PublicBlockFromCommentParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'commentIds'), 'Required key "PublicBlockFromCommentParams[commentIds]" is missing from JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "PublicBlockFromCommentParams[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "PublicBlockFromCommentParams[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

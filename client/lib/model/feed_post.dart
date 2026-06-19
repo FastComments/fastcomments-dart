@@ -200,12 +200,10 @@ class FeedPost {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'_id'), 'Required key "FeedPost[_id]" is missing from JSON.');
-        assert(json[r'_id'] != null, 'Required key "FeedPost[_id]" has a null value in JSON.');
-        assert(json.containsKey(r'tenantId'), 'Required key "FeedPost[tenantId]" is missing from JSON.');
-        assert(json[r'tenantId'] != null, 'Required key "FeedPost[tenantId]" has a null value in JSON.');
-        assert(json.containsKey(r'createdAt'), 'Required key "FeedPost[createdAt]" is missing from JSON.');
-        assert(json[r'createdAt'] != null, 'Required key "FeedPost[createdAt]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FeedPost[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FeedPost[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 

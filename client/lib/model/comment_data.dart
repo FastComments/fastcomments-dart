@@ -148,7 +148,7 @@ class CommentData {
   List<String> feedbackIds;
 
   /// Construct a type with a set of properties K of type T
-  Map<String, RecordStringStringOrNumberValue> questionValues;
+  Map<String, GifSearchResponseImagesInnerInner> questionValues;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -338,14 +338,10 @@ class CommentData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'commenterName'), 'Required key "CommentData[commenterName]" is missing from JSON.');
-        assert(json[r'commenterName'] != null, 'Required key "CommentData[commenterName]" has a null value in JSON.');
-        assert(json.containsKey(r'comment'), 'Required key "CommentData[comment]" is missing from JSON.');
-        assert(json[r'comment'] != null, 'Required key "CommentData[comment]" has a null value in JSON.');
-        assert(json.containsKey(r'url'), 'Required key "CommentData[url]" is missing from JSON.');
-        assert(json[r'url'] != null, 'Required key "CommentData[url]" has a null value in JSON.');
-        assert(json.containsKey(r'urlId'), 'Required key "CommentData[urlId]" is missing from JSON.');
-        assert(json[r'urlId'] != null, 'Required key "CommentData[urlId]" has a null value in JSON.');
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CommentData[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CommentData[$key]" has a null value in JSON.');
+        });
         return true;
       }());
 
@@ -377,7 +373,7 @@ class CommentData {
         feedbackIds: json[r'feedbackIds'] is Iterable
             ? (json[r'feedbackIds'] as Iterable).cast<String>().toList(growable: false)
             : const [],
-        questionValues: RecordStringStringOrNumberValue.mapFromJson(json[r'questionValues']),
+        questionValues: GifSearchResponseImagesInnerInner.mapFromJson(json[r'questionValues']),
         tos: mapValueOfType<bool>(json, r'tos'),
         botId: mapValueOfType<String>(json, r'botId'),
       );
