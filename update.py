@@ -57,6 +57,11 @@ def regen_client() -> None:
     ]
     print("Running:", " ".join(cmd))
     subprocess.run(cmd, check=True, cwd=ROOT)
+
+    # pub.dev requires a LICENSE inside the package; regeneration wipes CLIENT_DIR,
+    # so copy the repo's MIT license back in.
+    shutil.copy(ROOT / "LICENSE", CLIENT_DIR / "LICENSE")
+
     print(f"Generated Dart client in {CLIENT_DIR}")
 
 
