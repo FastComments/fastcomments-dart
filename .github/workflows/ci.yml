@@ -1,0 +1,30 @@
+name: CI
+
+# Runs on PRs and pushes to the default branch. We use `pull_request` (never
+# `pull_request_target`), so secrets are NOT exposed to pull requests from forks.
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: '3.0'
+      - name: Install dependencies
+        working-directory: client
+        run: dart pub get
+      - name: Run tests
+        working-directory: client
+        run: dart test
