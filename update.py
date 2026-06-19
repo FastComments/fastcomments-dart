@@ -62,6 +62,12 @@ def regen_client() -> None:
     # so copy the repo's MIT license back in.
     shutil.copy(ROOT / "LICENSE", CLIENT_DIR / "LICENSE")
 
+    # Bundle the hand-written SSO helpers into the published package so it is one
+    # cohesive package (importable as package:fastcomments_dart/sso/...). The repo
+    # root sso/ stays the source of truth; this copies it into the package on regen.
+    sso_dest = CLIENT_DIR / "lib" / "sso"
+    shutil.copytree(ROOT / "sso", sso_dest, dirs_exist_ok=True)
+
     print(f"Generated Dart client in {CLIENT_DIR}")
 
 
