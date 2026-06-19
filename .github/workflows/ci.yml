@@ -25,6 +25,15 @@ jobs:
       - name: Install dependencies
         working-directory: client
         run: dart pub get
-      - name: Run tests
+      - name: Run model tests
         working-directory: client
         run: dart test
+      - name: Install SSO test dependencies
+        working-directory: sso_tests
+        run: dart pub get
+      - name: Run SSO unit + integration tests
+        working-directory: sso_tests
+        run: dart test
+        env:
+          FASTCOMMENTS_API_KEY: ${{ secrets.FASTCOMMENTS_API_KEY }}
+          FASTCOMMENTS_TENANT_ID: ${{ secrets.FASTCOMMENTS_TENANT_ID }}
