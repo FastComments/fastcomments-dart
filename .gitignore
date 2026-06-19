@@ -1,0 +1,10 @@
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+pubspec.lock
+client/.dart_tool/
+client/.packages
+client/pubspec.lock
+node_modules/

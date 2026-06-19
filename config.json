@@ -1,0 +1,11 @@
+{
+  "pubName": "fastcomments_dart",
+  "pubAuthor": "FastComments",
+  "pubAuthorEmail": "support@fastcomments.com",
+  "pubVersion": "1.3.1",
+  "pubDescription": "Official Dart client for the FastComments REST API.",
+  "pubHomepage": "https://fastcomments.com",
+  "pubRepository": "https://github.com/fastcomments/fastcomments-dart",
+  "hideGenerationTimestamp": true,
+  "useEnumExtension": true
+}

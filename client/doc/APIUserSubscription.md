@@ -1,0 +1,22 @@
+# fastcomments_dart.model.APIUserSubscription
+
+## Load the model package
+```dart
+import 'package:fastcomments_dart/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**notificationFrequency** | **double** |  | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**pageTitle** | **String** |  | [optional] 
+**url** | **String** |  | [optional] 
+**urlId** | **String** |  | 
+**anonUserId** | **String** |  | [optional] 
+**userId** | **String** |  | [optional] 
+**id** | **String** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
