@@ -27,15 +27,17 @@ class PublicAPIGetCommentTextResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicAPIGetCommentTextResponse &&
     other.status == status &&
-    other.commentText == commentText &&
-    other.sanitizedCommentText == sanitizedCommentText;
+      other.commentText == commentText &&
+      other.sanitizedCommentText == sanitizedCommentText;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (commentText.hashCode) +
-    (sanitizedCommentText.hashCode);
+      (commentText.hashCode) +
+      (sanitizedCommentText.hashCode);
+  
 
   @override
   String toString() => 'PublicAPIGetCommentTextResponse[status=$status, commentText=$commentText, sanitizedCommentText=$sanitizedCommentText]';
@@ -59,10 +61,12 @@ class PublicAPIGetCommentTextResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PublicAPIGetCommentTextResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PublicAPIGetCommentTextResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "PublicAPIGetCommentTextResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "PublicAPIGetCommentTextResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'commentText'), 'Required key "PublicAPIGetCommentTextResponse[commentText]" is missing from JSON.');
+        assert(json[r'commentText'] != null, 'Required key "PublicAPIGetCommentTextResponse[commentText]" has a null value in JSON.');
+        assert(json.containsKey(r'sanitizedCommentText'), 'Required key "PublicAPIGetCommentTextResponse[sanitizedCommentText]" is missing from JSON.');
+        assert(json[r'sanitizedCommentText'] != null, 'Required key "PublicAPIGetCommentTextResponse[sanitizedCommentText]" has a null value in JSON.');
         return true;
       }());
 

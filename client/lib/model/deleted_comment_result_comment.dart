@@ -36,17 +36,19 @@ class DeletedCommentResultComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is DeletedCommentResultComment &&
     other.isDeleted == isDeleted &&
-    other.commentHTML == commentHTML &&
-    other.commenterName == commenterName &&
-    other.userId == userId;
+      other.commentHTML == commentHTML &&
+      other.commenterName == commenterName &&
+      other.userId == userId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (commentHTML.hashCode) +
-    (commenterName.hashCode) +
-    (userId == null ? 0 : userId!.hashCode);
+      (commentHTML.hashCode) +
+      (commenterName.hashCode) +
+      (userId == null ? 0 : userId!.hashCode);
+  
 
   @override
   String toString() => 'DeletedCommentResultComment[isDeleted=$isDeleted, commentHTML=$commentHTML, commenterName=$commenterName, userId=$userId]';
@@ -79,10 +81,10 @@ class DeletedCommentResultComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "DeletedCommentResultComment[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "DeletedCommentResultComment[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commentHTML'), 'Required key "DeletedCommentResultComment[commentHTML]" is missing from JSON.');
+        assert(json[r'commentHTML'] != null, 'Required key "DeletedCommentResultComment[commentHTML]" has a null value in JSON.');
+        assert(json.containsKey(r'commenterName'), 'Required key "DeletedCommentResultComment[commenterName]" is missing from JSON.');
+        assert(json[r'commenterName'] != null, 'Required key "DeletedCommentResultComment[commenterName]" has a null value in JSON.');
         return true;
       }());
 

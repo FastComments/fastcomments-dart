@@ -75,23 +75,25 @@ class UpdateQuestionResultBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateQuestionResultBody &&
     other.urlId == urlId &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId &&
-    other.value == value &&
-    other.commentId == commentId &&
-    other.questionId == questionId &&
-    _deepEquality.equals(other.meta, meta);
+      other.anonUserId == anonUserId &&
+      other.userId == userId &&
+      other.value == value &&
+      other.commentId == commentId &&
+      other.questionId == questionId &&
+      _deepEquality.equals(other.meta, meta);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (urlId == null ? 0 : urlId!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (value == null ? 0 : value!.hashCode) +
-    (commentId == null ? 0 : commentId!.hashCode) +
-    (questionId == null ? 0 : questionId!.hashCode) +
-    (meta == null ? 0 : meta!.hashCode);
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (value == null ? 0 : value!.hashCode) +
+      (commentId == null ? 0 : commentId!.hashCode) +
+      (questionId == null ? 0 : questionId!.hashCode) +
+      (meta == null ? 0 : meta!.hashCode);
+  
 
   @override
   String toString() => 'UpdateQuestionResultBody[urlId=$urlId, anonUserId=$anonUserId, userId=$userId, value=$value, commentId=$commentId, questionId=$questionId, meta=$meta]';
@@ -147,10 +149,6 @@ class UpdateQuestionResultBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateQuestionResultBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateQuestionResultBody[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

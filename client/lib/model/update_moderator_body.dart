@@ -48,17 +48,19 @@ class UpdateModeratorBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateModeratorBody &&
     other.name == name &&
-    other.email == email &&
-    other.userId == userId &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds);
+      other.email == email &&
+      other.userId == userId &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (moderationGroupIds.hashCode);
+      (email == null ? 0 : email!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (moderationGroupIds.hashCode);
+  
 
   @override
   String toString() => 'UpdateModeratorBody[name=$name, email=$email, userId=$userId, moderationGroupIds=$moderationGroupIds]';
@@ -95,10 +97,6 @@ class UpdateModeratorBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateModeratorBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateModeratorBody[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

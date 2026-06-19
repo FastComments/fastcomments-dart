@@ -30,17 +30,19 @@ class AggregationAPIError {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationAPIError &&
     other.status == status &&
-    other.reason == reason &&
-    other.code == code &&
-    _deepEquality.equals(other.validResourceNames, validResourceNames);
+      other.reason == reason &&
+      other.code == code &&
+      _deepEquality.equals(other.validResourceNames, validResourceNames);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (reason.hashCode) +
-    (code.hashCode) +
-    (validResourceNames.hashCode);
+      (reason.hashCode) +
+      (code.hashCode) +
+      (validResourceNames.hashCode);
+  
 
   @override
   String toString() => 'AggregationAPIError[status=$status, reason=$reason, code=$code, validResourceNames=$validResourceNames]';
@@ -65,10 +67,12 @@ class AggregationAPIError {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationAPIError[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationAPIError[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "AggregationAPIError[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "AggregationAPIError[status]" has a null value in JSON.');
+        assert(json.containsKey(r'reason'), 'Required key "AggregationAPIError[reason]" is missing from JSON.');
+        assert(json[r'reason'] != null, 'Required key "AggregationAPIError[reason]" has a null value in JSON.');
+        assert(json.containsKey(r'code'), 'Required key "AggregationAPIError[code]" is missing from JSON.');
+        assert(json[r'code'] != null, 'Required key "AggregationAPIError[code]" has a null value in JSON.');
         return true;
       }());
 

@@ -81,47 +81,49 @@ class UserBadge {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserBadge &&
     other.id == id &&
-    other.userId == userId &&
-    other.badgeId == badgeId &&
-    other.fromTenantId == fromTenantId &&
-    other.createdAt == createdAt &&
-    other.type == type &&
-    other.threshold == threshold &&
-    other.description == description &&
-    other.displayLabel == displayLabel &&
-    other.displaySrc == displaySrc &&
-    other.backgroundColor == backgroundColor &&
-    other.borderColor == borderColor &&
-    other.textColor == textColor &&
-    other.cssClass == cssClass &&
-    other.veteranUserThresholdMillis == veteranUserThresholdMillis &&
-    other.displayedOnComments == displayedOnComments &&
-    other.receivedAt == receivedAt &&
-    other.order == order &&
-    other.urlId == urlId;
+      other.userId == userId &&
+      other.badgeId == badgeId &&
+      other.fromTenantId == fromTenantId &&
+      other.createdAt == createdAt &&
+      other.type == type &&
+      other.threshold == threshold &&
+      other.description == description &&
+      other.displayLabel == displayLabel &&
+      other.displaySrc == displaySrc &&
+      other.backgroundColor == backgroundColor &&
+      other.borderColor == borderColor &&
+      other.textColor == textColor &&
+      other.cssClass == cssClass &&
+      other.veteranUserThresholdMillis == veteranUserThresholdMillis &&
+      other.displayedOnComments == displayedOnComments &&
+      other.receivedAt == receivedAt &&
+      other.order == order &&
+      other.urlId == urlId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (userId.hashCode) +
-    (badgeId.hashCode) +
-    (fromTenantId.hashCode) +
-    (createdAt.hashCode) +
-    (type.hashCode) +
-    (threshold.hashCode) +
-    (description.hashCode) +
-    (displayLabel.hashCode) +
-    (displaySrc == null ? 0 : displaySrc!.hashCode) +
-    (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
-    (borderColor == null ? 0 : borderColor!.hashCode) +
-    (textColor == null ? 0 : textColor!.hashCode) +
-    (cssClass == null ? 0 : cssClass!.hashCode) +
-    (veteranUserThresholdMillis.hashCode) +
-    (displayedOnComments.hashCode) +
-    (receivedAt.hashCode) +
-    (order == null ? 0 : order!.hashCode) +
-    (urlId == null ? 0 : urlId!.hashCode);
+      (userId.hashCode) +
+      (badgeId.hashCode) +
+      (fromTenantId.hashCode) +
+      (createdAt.hashCode) +
+      (type.hashCode) +
+      (threshold.hashCode) +
+      (description.hashCode) +
+      (displayLabel.hashCode) +
+      (displaySrc == null ? 0 : displaySrc!.hashCode) +
+      (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
+      (borderColor == null ? 0 : borderColor!.hashCode) +
+      (textColor == null ? 0 : textColor!.hashCode) +
+      (cssClass == null ? 0 : cssClass!.hashCode) +
+      (veteranUserThresholdMillis.hashCode) +
+      (displayedOnComments.hashCode) +
+      (receivedAt.hashCode) +
+      (order == null ? 0 : order!.hashCode) +
+      (urlId == null ? 0 : urlId!.hashCode);
+  
 
   @override
   String toString() => 'UserBadge[id=$id, userId=$userId, badgeId=$badgeId, fromTenantId=$fromTenantId, createdAt=$createdAt, type=$type, threshold=$threshold, description=$description, displayLabel=$displayLabel, displaySrc=$displaySrc, backgroundColor=$backgroundColor, borderColor=$borderColor, textColor=$textColor, cssClass=$cssClass, veteranUserThresholdMillis=$veteranUserThresholdMillis, displayedOnComments=$displayedOnComments, receivedAt=$receivedAt, order=$order, urlId=$urlId]';
@@ -189,10 +191,30 @@ class UserBadge {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserBadge[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserBadge[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "UserBadge[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "UserBadge[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'userId'), 'Required key "UserBadge[userId]" is missing from JSON.');
+        assert(json[r'userId'] != null, 'Required key "UserBadge[userId]" has a null value in JSON.');
+        assert(json.containsKey(r'badgeId'), 'Required key "UserBadge[badgeId]" is missing from JSON.');
+        assert(json[r'badgeId'] != null, 'Required key "UserBadge[badgeId]" has a null value in JSON.');
+        assert(json.containsKey(r'fromTenantId'), 'Required key "UserBadge[fromTenantId]" is missing from JSON.');
+        assert(json[r'fromTenantId'] != null, 'Required key "UserBadge[fromTenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "UserBadge[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "UserBadge[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'type'), 'Required key "UserBadge[type]" is missing from JSON.');
+        assert(json[r'type'] != null, 'Required key "UserBadge[type]" has a null value in JSON.');
+        assert(json.containsKey(r'threshold'), 'Required key "UserBadge[threshold]" is missing from JSON.');
+        assert(json[r'threshold'] != null, 'Required key "UserBadge[threshold]" has a null value in JSON.');
+        assert(json.containsKey(r'description'), 'Required key "UserBadge[description]" is missing from JSON.');
+        assert(json[r'description'] != null, 'Required key "UserBadge[description]" has a null value in JSON.');
+        assert(json.containsKey(r'displayLabel'), 'Required key "UserBadge[displayLabel]" is missing from JSON.');
+        assert(json[r'displayLabel'] != null, 'Required key "UserBadge[displayLabel]" has a null value in JSON.');
+        assert(json.containsKey(r'veteranUserThresholdMillis'), 'Required key "UserBadge[veteranUserThresholdMillis]" is missing from JSON.');
+        assert(json[r'veteranUserThresholdMillis'] != null, 'Required key "UserBadge[veteranUserThresholdMillis]" has a null value in JSON.');
+        assert(json.containsKey(r'displayedOnComments'), 'Required key "UserBadge[displayedOnComments]" is missing from JSON.');
+        assert(json[r'displayedOnComments'] != null, 'Required key "UserBadge[displayedOnComments]" has a null value in JSON.');
+        assert(json.containsKey(r'receivedAt'), 'Required key "UserBadge[receivedAt]" is missing from JSON.');
+        assert(json[r'receivedAt'] != null, 'Required key "UserBadge[receivedAt]" has a null value in JSON.');
         return true;
       }());
 

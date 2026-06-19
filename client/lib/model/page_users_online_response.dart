@@ -36,21 +36,23 @@ class PageUsersOnlineResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PageUsersOnlineResponse &&
     other.nextAfterUserId == nextAfterUserId &&
-    other.nextAfterName == nextAfterName &&
-    other.totalCount == totalCount &&
-    other.anonCount == anonCount &&
-    _deepEquality.equals(other.users, users) &&
-    other.status == status;
+      other.nextAfterName == nextAfterName &&
+      other.totalCount == totalCount &&
+      other.anonCount == anonCount &&
+      _deepEquality.equals(other.users, users) &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (nextAfterUserId == null ? 0 : nextAfterUserId!.hashCode) +
-    (nextAfterName == null ? 0 : nextAfterName!.hashCode) +
-    (totalCount.hashCode) +
-    (anonCount.hashCode) +
-    (users.hashCode) +
-    (status.hashCode);
+      (nextAfterName == null ? 0 : nextAfterName!.hashCode) +
+      (totalCount.hashCode) +
+      (anonCount.hashCode) +
+      (users.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'PageUsersOnlineResponse[nextAfterUserId=$nextAfterUserId, nextAfterName=$nextAfterName, totalCount=$totalCount, anonCount=$anonCount, users=$users, status=$status]';
@@ -85,10 +87,16 @@ class PageUsersOnlineResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PageUsersOnlineResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PageUsersOnlineResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'nextAfterUserId'), 'Required key "PageUsersOnlineResponse[nextAfterUserId]" is missing from JSON.');
+        assert(json.containsKey(r'nextAfterName'), 'Required key "PageUsersOnlineResponse[nextAfterName]" is missing from JSON.');
+        assert(json.containsKey(r'totalCount'), 'Required key "PageUsersOnlineResponse[totalCount]" is missing from JSON.');
+        assert(json[r'totalCount'] != null, 'Required key "PageUsersOnlineResponse[totalCount]" has a null value in JSON.');
+        assert(json.containsKey(r'anonCount'), 'Required key "PageUsersOnlineResponse[anonCount]" is missing from JSON.');
+        assert(json[r'anonCount'] != null, 'Required key "PageUsersOnlineResponse[anonCount]" has a null value in JSON.');
+        assert(json.containsKey(r'users'), 'Required key "PageUsersOnlineResponse[users]" is missing from JSON.');
+        assert(json[r'users'] != null, 'Required key "PageUsersOnlineResponse[users]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "PageUsersOnlineResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "PageUsersOnlineResponse[status]" has a null value in JSON.');
         return true;
       }());
 

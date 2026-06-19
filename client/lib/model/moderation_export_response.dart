@@ -24,13 +24,15 @@ class ModerationExportResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationExportResponse &&
     other.status == status &&
-    other.batchJobId == batchJobId;
+      other.batchJobId == batchJobId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (batchJobId.hashCode);
+      (batchJobId.hashCode);
+  
 
   @override
   String toString() => 'ModerationExportResponse[status=$status, batchJobId=$batchJobId]';
@@ -53,10 +55,10 @@ class ModerationExportResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationExportResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationExportResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "ModerationExportResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ModerationExportResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'batchJobId'), 'Required key "ModerationExportResponse[batchJobId]" is missing from JSON.');
+        assert(json[r'batchJobId'] != null, 'Required key "ModerationExportResponse[batchJobId]" has a null value in JSON.');
         return true;
       }());
 

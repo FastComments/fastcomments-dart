@@ -21,11 +21,13 @@ class SetCommentTextParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SetCommentTextParams &&
     other.comment == comment;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment.hashCode);
+  
 
   @override
   String toString() => 'SetCommentTextParams[comment=$comment]';
@@ -47,10 +49,8 @@ class SetCommentTextParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "SetCommentTextParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "SetCommentTextParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'comment'), 'Required key "SetCommentTextParams[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "SetCommentTextParams[comment]" has a null value in JSON.');
         return true;
       }());
 

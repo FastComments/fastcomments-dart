@@ -39,19 +39,21 @@ class TenantHashTag {
   @override
   bool operator ==(Object other) => identical(this, other) || other is TenantHashTag &&
     other.id == id &&
-    other.createdAt == createdAt &&
-    other.tenantId == tenantId &&
-    other.tag == tag &&
-    other.url == url;
+      other.createdAt == createdAt &&
+      other.tenantId == tenantId &&
+      other.tag == tag &&
+      other.url == url;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (createdAt.hashCode) +
-    (tenantId.hashCode) +
-    (tag.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+      (createdAt.hashCode) +
+      (tenantId.hashCode) +
+      (tag.hashCode) +
+      (url == null ? 0 : url!.hashCode);
+  
 
   @override
   String toString() => 'TenantHashTag[id=$id, createdAt=$createdAt, tenantId=$tenantId, tag=$tag, url=$url]';
@@ -81,10 +83,14 @@ class TenantHashTag {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "TenantHashTag[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "TenantHashTag[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "TenantHashTag[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "TenantHashTag[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "TenantHashTag[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "TenantHashTag[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "TenantHashTag[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "TenantHashTag[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'tag'), 'Required key "TenantHashTag[tag]" is missing from JSON.');
+        assert(json[r'tag'] != null, 'Required key "TenantHashTag[tag]" has a null value in JSON.');
         return true;
       }());
 

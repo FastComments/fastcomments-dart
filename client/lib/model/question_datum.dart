@@ -25,13 +25,15 @@ class QuestionDatum {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionDatum &&
     _deepEquality.equals(other.v, v) &&
-    other.total == total;
+      other.total == total;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (v.hashCode) +
-    (total.hashCode);
+      (total.hashCode);
+  
 
   @override
   String toString() => 'QuestionDatum[v=$v, total=$total]';
@@ -54,10 +56,10 @@ class QuestionDatum {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "QuestionDatum[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "QuestionDatum[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'v'), 'Required key "QuestionDatum[v]" is missing from JSON.');
+        assert(json[r'v'] != null, 'Required key "QuestionDatum[v]" has a null value in JSON.');
+        assert(json.containsKey(r'total'), 'Required key "QuestionDatum[total]" is missing from JSON.');
+        assert(json[r'total'] != null, 'Required key "QuestionDatum[total]" has a null value in JSON.');
         return true;
       }());
 

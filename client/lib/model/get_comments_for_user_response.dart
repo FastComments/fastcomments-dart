@@ -21,11 +21,13 @@ class GetCommentsForUserResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetCommentsForUserResponse &&
     _deepEquality.equals(other.moderatingTenantIds, moderatingTenantIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (moderatingTenantIds.hashCode);
+  
 
   @override
   String toString() => 'GetCommentsForUserResponse[moderatingTenantIds=$moderatingTenantIds]';
@@ -47,10 +49,6 @@ class GetCommentsForUserResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetCommentsForUserResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetCommentsForUserResponse[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

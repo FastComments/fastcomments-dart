@@ -36,17 +36,19 @@ class ModerationAPIGetCommentsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationAPIGetCommentsResponse &&
     other.status == status &&
-    other.translations == translations &&
-    _deepEquality.equals(other.comments, comments) &&
-    other.moderationFilter == moderationFilter;
+      other.translations == translations &&
+      _deepEquality.equals(other.comments, comments) &&
+      other.moderationFilter == moderationFilter;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (translations.hashCode) +
-    (comments.hashCode) +
-    (moderationFilter == null ? 0 : moderationFilter!.hashCode);
+      (translations.hashCode) +
+      (comments.hashCode) +
+      (moderationFilter == null ? 0 : moderationFilter!.hashCode);
+  
 
   @override
   String toString() => 'ModerationAPIGetCommentsResponse[status=$status, translations=$translations, comments=$comments, moderationFilter=$moderationFilter]';
@@ -75,10 +77,12 @@ class ModerationAPIGetCommentsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationAPIGetCommentsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationAPIGetCommentsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "ModerationAPIGetCommentsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ModerationAPIGetCommentsResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'translations'), 'Required key "ModerationAPIGetCommentsResponse[translations]" is missing from JSON.');
+        assert(json[r'translations'] != null, 'Required key "ModerationAPIGetCommentsResponse[translations]" has a null value in JSON.');
+        assert(json.containsKey(r'comments'), 'Required key "ModerationAPIGetCommentsResponse[comments]" is missing from JSON.');
+        assert(json[r'comments'] != null, 'Required key "ModerationAPIGetCommentsResponse[comments]" has a null value in JSON.');
         return true;
       }());
 

@@ -24,13 +24,15 @@ class GifGetLargeResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GifGetLargeResponse &&
     other.src == src &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (src.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GifGetLargeResponse[src=$src, status=$status]';
@@ -53,10 +55,10 @@ class GifGetLargeResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GifGetLargeResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GifGetLargeResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'src'), 'Required key "GifGetLargeResponse[src]" is missing from JSON.');
+        assert(json[r'src'] != null, 'Required key "GifGetLargeResponse[src]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GifGetLargeResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GifGetLargeResponse[status]" has a null value in JSON.');
         return true;
       }());
 

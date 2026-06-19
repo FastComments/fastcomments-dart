@@ -30,13 +30,15 @@ class SpamRule {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SpamRule &&
     _deepEquality.equals(other.actions, actions) &&
-    other.commentContains == commentContains;
+      other.commentContains == commentContains;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (actions.hashCode) +
-    (commentContains == null ? 0 : commentContains!.hashCode);
+      (commentContains == null ? 0 : commentContains!.hashCode);
+  
 
   @override
   String toString() => 'SpamRule[actions=$actions, commentContains=$commentContains]';
@@ -63,10 +65,8 @@ class SpamRule {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "SpamRule[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "SpamRule[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'actions'), 'Required key "SpamRule[actions]" is missing from JSON.');
+        assert(json[r'actions'] != null, 'Required key "SpamRule[actions]" has a null value in JSON.');
         return true;
       }());
 

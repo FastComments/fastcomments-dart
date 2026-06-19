@@ -21,11 +21,13 @@ class VoteResponseUser {
   @override
   bool operator ==(Object other) => identical(this, other) || other is VoteResponseUser &&
     other.sessionId == sessionId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (sessionId == null ? 0 : sessionId!.hashCode);
+  
 
   @override
   String toString() => 'VoteResponseUser[sessionId=$sessionId]';
@@ -51,10 +53,6 @@ class VoteResponseUser {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "VoteResponseUser[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "VoteResponseUser[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

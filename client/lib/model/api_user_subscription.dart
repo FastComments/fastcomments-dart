@@ -72,25 +72,27 @@ class APIUserSubscription {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIUserSubscription &&
     other.notificationFrequency == notificationFrequency &&
-    other.createdAt == createdAt &&
-    other.pageTitle == pageTitle &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId &&
-    other.id == id;
+      other.createdAt == createdAt &&
+      other.pageTitle == pageTitle &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.anonUserId == anonUserId &&
+      other.userId == userId &&
+      other.id == id;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (notificationFrequency == null ? 0 : notificationFrequency!.hashCode) +
-    (createdAt.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (urlId.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (id.hashCode);
+      (createdAt.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (urlId.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (id.hashCode);
+  
 
   @override
   String toString() => 'APIUserSubscription[notificationFrequency=$notificationFrequency, createdAt=$createdAt, pageTitle=$pageTitle, url=$url, urlId=$urlId, anonUserId=$anonUserId, userId=$userId, id=$id]';
@@ -139,10 +141,12 @@ class APIUserSubscription {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIUserSubscription[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIUserSubscription[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'createdAt'), 'Required key "APIUserSubscription[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "APIUserSubscription[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "APIUserSubscription[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "APIUserSubscription[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'id'), 'Required key "APIUserSubscription[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "APIUserSubscription[id]" has a null value in JSON.');
         return true;
       }());
 

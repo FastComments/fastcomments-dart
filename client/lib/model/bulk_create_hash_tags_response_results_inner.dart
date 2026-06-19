@@ -14,9 +14,9 @@ class BulkCreateHashTagsResponseResultsInner {
   /// Returns a new [BulkCreateHashTagsResponseResultsInner] instance.
   BulkCreateHashTagsResponseResultsInner({
     required this.status,
-    required this.hashTag,
-    required this.reason,
-    required this.code,
+    this.hashTag,
+    this.reason,
+    this.code,
     this.secondaryCode,
     this.bannedUntil,
     this.maxCharacterLength,
@@ -26,11 +26,29 @@ class BulkCreateHashTagsResponseResultsInner {
 
   APIStatus status;
 
-  TenantHashTag hashTag;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  TenantHashTag? hashTag;
 
-  String reason;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? reason;
 
-  String code;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? code;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -75,27 +93,29 @@ class BulkCreateHashTagsResponseResultsInner {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkCreateHashTagsResponseResultsInner &&
     other.status == status &&
-    other.hashTag == hashTag &&
-    other.reason == reason &&
-    other.code == code &&
-    other.secondaryCode == secondaryCode &&
-    other.bannedUntil == bannedUntil &&
-    other.maxCharacterLength == maxCharacterLength &&
-    other.translatedError == translatedError &&
-    other.customConfig == customConfig;
+      other.hashTag == hashTag &&
+      other.reason == reason &&
+      other.code == code &&
+      other.secondaryCode == secondaryCode &&
+      other.bannedUntil == bannedUntil &&
+      other.maxCharacterLength == maxCharacterLength &&
+      other.translatedError == translatedError &&
+      other.customConfig == customConfig;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (hashTag.hashCode) +
-    (reason.hashCode) +
-    (code.hashCode) +
-    (secondaryCode == null ? 0 : secondaryCode!.hashCode) +
-    (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
-    (maxCharacterLength == null ? 0 : maxCharacterLength!.hashCode) +
-    (translatedError == null ? 0 : translatedError!.hashCode) +
-    (customConfig == null ? 0 : customConfig!.hashCode);
+      (hashTag == null ? 0 : hashTag!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (code == null ? 0 : code!.hashCode) +
+      (secondaryCode == null ? 0 : secondaryCode!.hashCode) +
+      (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
+      (maxCharacterLength == null ? 0 : maxCharacterLength!.hashCode) +
+      (translatedError == null ? 0 : translatedError!.hashCode) +
+      (customConfig == null ? 0 : customConfig!.hashCode);
+  
 
   @override
   String toString() => 'BulkCreateHashTagsResponseResultsInner[status=$status, hashTag=$hashTag, reason=$reason, code=$code, secondaryCode=$secondaryCode, bannedUntil=$bannedUntil, maxCharacterLength=$maxCharacterLength, translatedError=$translatedError, customConfig=$customConfig]';
@@ -103,9 +123,21 @@ class BulkCreateHashTagsResponseResultsInner {
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'status'] = this.status;
+    if (this.hashTag != null) {
       json[r'hashTag'] = this.hashTag;
+    } else {
+      json[r'hashTag'] = null;
+    }
+    if (this.reason != null) {
       json[r'reason'] = this.reason;
+    } else {
+      json[r'reason'] = null;
+    }
+    if (this.code != null) {
       json[r'code'] = this.code;
+    } else {
+      json[r'code'] = null;
+    }
     if (this.secondaryCode != null) {
       json[r'secondaryCode'] = this.secondaryCode;
     } else {
@@ -145,18 +177,16 @@ class BulkCreateHashTagsResponseResultsInner {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BulkCreateHashTagsResponseResultsInner[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BulkCreateHashTagsResponseResultsInner[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "BulkCreateHashTagsResponseResultsInner[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "BulkCreateHashTagsResponseResultsInner[status]" has a null value in JSON.');
         return true;
       }());
 
       return BulkCreateHashTagsResponseResultsInner(
         status: APIStatus.fromJson(json[r'status'])!,
-        hashTag: TenantHashTag.fromJson(json[r'hashTag'])!,
-        reason: mapValueOfType<String>(json, r'reason')!,
-        code: mapValueOfType<String>(json, r'code')!,
+        hashTag: TenantHashTag.fromJson(json[r'hashTag']),
+        reason: mapValueOfType<String>(json, r'reason'),
+        code: mapValueOfType<String>(json, r'code'),
         secondaryCode: mapValueOfType<String>(json, r'secondaryCode'),
         bannedUntil: mapValueOfType<int>(json, r'bannedUntil'),
         maxCharacterLength: mapValueOfType<int>(json, r'maxCharacterLength'),
@@ -210,9 +240,6 @@ class BulkCreateHashTagsResponseResultsInner {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'status',
-    'hashTag',
-    'reason',
-    'code',
   };
 }
 

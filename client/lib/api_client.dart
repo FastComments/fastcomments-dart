@@ -898,8 +898,6 @@ class ApiClient {
           return VoteDeleteResponse.fromJson(value);
         case 'VoteResponse':
           return VoteResponse.fromJson(value);
-        case 'VoteResponseStatus':
-          return VoteResponseStatus.fromJson(value);
         case 'VoteResponseUser':
           return VoteResponseUser.fromJson(value);
         case 'VoteStyle':

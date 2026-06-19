@@ -24,13 +24,15 @@ class BuildModerationFilterResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BuildModerationFilterResponse &&
     other.status == status &&
-    other.moderationFilter == moderationFilter;
+      other.moderationFilter == moderationFilter;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (moderationFilter.hashCode);
+      (moderationFilter.hashCode);
+  
 
   @override
   String toString() => 'BuildModerationFilterResponse[status=$status, moderationFilter=$moderationFilter]';
@@ -53,10 +55,10 @@ class BuildModerationFilterResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BuildModerationFilterResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BuildModerationFilterResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "BuildModerationFilterResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "BuildModerationFilterResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'moderationFilter'), 'Required key "BuildModerationFilterResponse[moderationFilter]" is missing from JSON.');
+        assert(json[r'moderationFilter'] != null, 'Required key "BuildModerationFilterResponse[moderationFilter]" has a null value in JSON.');
         return true;
       }());
 

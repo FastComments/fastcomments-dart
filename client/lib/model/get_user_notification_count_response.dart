@@ -24,13 +24,15 @@ class GetUserNotificationCountResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetUserNotificationCountResponse &&
     other.status == status &&
-    other.count == count;
+      other.count == count;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (count.hashCode);
+      (count.hashCode);
+  
 
   @override
   String toString() => 'GetUserNotificationCountResponse[status=$status, count=$count]';
@@ -53,10 +55,10 @@ class GetUserNotificationCountResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetUserNotificationCountResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetUserNotificationCountResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetUserNotificationCountResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetUserNotificationCountResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'count'), 'Required key "GetUserNotificationCountResponse[count]" is missing from JSON.');
+        assert(json[r'count'] != null, 'Required key "GetUserNotificationCountResponse[count]" has a null value in JSON.');
         return true;
       }());
 

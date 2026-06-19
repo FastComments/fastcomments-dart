@@ -39,19 +39,21 @@ class UserSearchResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserSearchResult &&
     other.id == id &&
-    other.name == name &&
-    other.displayName == displayName &&
-    other.avatarSrc == avatarSrc &&
-    other.type == type;
+      other.name == name &&
+      other.displayName == displayName &&
+      other.avatarSrc == avatarSrc &&
+      other.type == type;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (name.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (type.hashCode);
+      (name.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (type.hashCode);
+  
 
   @override
   String toString() => 'UserSearchResult[id=$id, name=$name, displayName=$displayName, avatarSrc=$avatarSrc, type=$type]';
@@ -85,10 +87,12 @@ class UserSearchResult {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserSearchResult[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserSearchResult[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "UserSearchResult[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "UserSearchResult[id]" has a null value in JSON.');
+        assert(json.containsKey(r'name'), 'Required key "UserSearchResult[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "UserSearchResult[name]" has a null value in JSON.');
+        assert(json.containsKey(r'type'), 'Required key "UserSearchResult[type]" is missing from JSON.');
+        assert(json[r'type'] != null, 'Required key "UserSearchResult[type]" has a null value in JSON.');
         return true;
       }());
 

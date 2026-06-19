@@ -21,11 +21,13 @@ class APIEmptyResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIEmptyResponse &&
     other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode);
+  
 
   @override
   String toString() => 'APIEmptyResponse[status=$status]';
@@ -47,10 +49,8 @@ class APIEmptyResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIEmptyResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIEmptyResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "APIEmptyResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "APIEmptyResponse[status]" has a null value in JSON.');
         return true;
       }());
 

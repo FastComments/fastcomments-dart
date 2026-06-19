@@ -87,51 +87,53 @@ class QuestionConfig {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionConfig &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.name == name &&
-    other.question == question &&
-    other.summaryLabel == summaryLabel &&
-    other.helpText == helpText &&
-    other.createdAt == createdAt &&
-    other.createdBy == createdBy &&
-    other.usedCount == usedCount &&
-    other.lastUsed == lastUsed &&
-    other.type == type &&
-    other.numStars == numStars &&
-    other.min == min &&
-    other.max == max &&
-    other.defaultValue == defaultValue &&
-    other.labelNegative == labelNegative &&
-    other.labelPositive == labelPositive &&
-    _deepEquality.equals(other.customOptions, customOptions) &&
-    _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
-    other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
-    other.reportingOrder == reportingOrder;
+      other.tenantId == tenantId &&
+      other.name == name &&
+      other.question == question &&
+      other.summaryLabel == summaryLabel &&
+      other.helpText == helpText &&
+      other.createdAt == createdAt &&
+      other.createdBy == createdBy &&
+      other.usedCount == usedCount &&
+      other.lastUsed == lastUsed &&
+      other.type == type &&
+      other.numStars == numStars &&
+      other.min == min &&
+      other.max == max &&
+      other.defaultValue == defaultValue &&
+      other.labelNegative == labelNegative &&
+      other.labelPositive == labelPositive &&
+      _deepEquality.equals(other.customOptions, customOptions) &&
+      _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
+      other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
+      other.reportingOrder == reportingOrder;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (name.hashCode) +
-    (question.hashCode) +
-    (summaryLabel == null ? 0 : summaryLabel!.hashCode) +
-    (helpText.hashCode) +
-    (createdAt.hashCode) +
-    (createdBy.hashCode) +
-    (usedCount.hashCode) +
-    (lastUsed.hashCode) +
-    (type.hashCode) +
-    (numStars.hashCode) +
-    (min.hashCode) +
-    (max.hashCode) +
-    (defaultValue.hashCode) +
-    (labelNegative.hashCode) +
-    (labelPositive.hashCode) +
-    (customOptions.hashCode) +
-    (subQuestionIds.hashCode) +
-    (alwaysShowSubQuestions.hashCode) +
-    (reportingOrder.hashCode);
+      (tenantId.hashCode) +
+      (name.hashCode) +
+      (question.hashCode) +
+      (summaryLabel == null ? 0 : summaryLabel!.hashCode) +
+      (helpText.hashCode) +
+      (createdAt.hashCode) +
+      (createdBy.hashCode) +
+      (usedCount.hashCode) +
+      (lastUsed.hashCode) +
+      (type.hashCode) +
+      (numStars.hashCode) +
+      (min.hashCode) +
+      (max.hashCode) +
+      (defaultValue.hashCode) +
+      (labelNegative.hashCode) +
+      (labelPositive.hashCode) +
+      (customOptions.hashCode) +
+      (subQuestionIds.hashCode) +
+      (alwaysShowSubQuestions.hashCode) +
+      (reportingOrder.hashCode);
+  
 
   @override
   String toString() => 'QuestionConfig[id=$id, tenantId=$tenantId, name=$name, question=$question, summaryLabel=$summaryLabel, helpText=$helpText, createdAt=$createdAt, createdBy=$createdBy, usedCount=$usedCount, lastUsed=$lastUsed, type=$type, numStars=$numStars, min=$min, max=$max, defaultValue=$defaultValue, labelNegative=$labelNegative, labelPositive=$labelPositive, customOptions=$customOptions, subQuestionIds=$subQuestionIds, alwaysShowSubQuestions=$alwaysShowSubQuestions, reportingOrder=$reportingOrder]';
@@ -177,10 +179,46 @@ class QuestionConfig {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "QuestionConfig[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "QuestionConfig[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "QuestionConfig[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "QuestionConfig[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "QuestionConfig[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "QuestionConfig[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'name'), 'Required key "QuestionConfig[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "QuestionConfig[name]" has a null value in JSON.');
+        assert(json.containsKey(r'question'), 'Required key "QuestionConfig[question]" is missing from JSON.');
+        assert(json[r'question'] != null, 'Required key "QuestionConfig[question]" has a null value in JSON.');
+        assert(json.containsKey(r'helpText'), 'Required key "QuestionConfig[helpText]" is missing from JSON.');
+        assert(json[r'helpText'] != null, 'Required key "QuestionConfig[helpText]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "QuestionConfig[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "QuestionConfig[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'createdBy'), 'Required key "QuestionConfig[createdBy]" is missing from JSON.');
+        assert(json[r'createdBy'] != null, 'Required key "QuestionConfig[createdBy]" has a null value in JSON.');
+        assert(json.containsKey(r'usedCount'), 'Required key "QuestionConfig[usedCount]" is missing from JSON.');
+        assert(json[r'usedCount'] != null, 'Required key "QuestionConfig[usedCount]" has a null value in JSON.');
+        assert(json.containsKey(r'lastUsed'), 'Required key "QuestionConfig[lastUsed]" is missing from JSON.');
+        assert(json[r'lastUsed'] != null, 'Required key "QuestionConfig[lastUsed]" has a null value in JSON.');
+        assert(json.containsKey(r'type'), 'Required key "QuestionConfig[type]" is missing from JSON.');
+        assert(json[r'type'] != null, 'Required key "QuestionConfig[type]" has a null value in JSON.');
+        assert(json.containsKey(r'numStars'), 'Required key "QuestionConfig[numStars]" is missing from JSON.');
+        assert(json[r'numStars'] != null, 'Required key "QuestionConfig[numStars]" has a null value in JSON.');
+        assert(json.containsKey(r'min'), 'Required key "QuestionConfig[min]" is missing from JSON.');
+        assert(json[r'min'] != null, 'Required key "QuestionConfig[min]" has a null value in JSON.');
+        assert(json.containsKey(r'max'), 'Required key "QuestionConfig[max]" is missing from JSON.');
+        assert(json[r'max'] != null, 'Required key "QuestionConfig[max]" has a null value in JSON.');
+        assert(json.containsKey(r'defaultValue'), 'Required key "QuestionConfig[defaultValue]" is missing from JSON.');
+        assert(json[r'defaultValue'] != null, 'Required key "QuestionConfig[defaultValue]" has a null value in JSON.');
+        assert(json.containsKey(r'labelNegative'), 'Required key "QuestionConfig[labelNegative]" is missing from JSON.');
+        assert(json[r'labelNegative'] != null, 'Required key "QuestionConfig[labelNegative]" has a null value in JSON.');
+        assert(json.containsKey(r'labelPositive'), 'Required key "QuestionConfig[labelPositive]" is missing from JSON.');
+        assert(json[r'labelPositive'] != null, 'Required key "QuestionConfig[labelPositive]" has a null value in JSON.');
+        assert(json.containsKey(r'customOptions'), 'Required key "QuestionConfig[customOptions]" is missing from JSON.');
+        assert(json[r'customOptions'] != null, 'Required key "QuestionConfig[customOptions]" has a null value in JSON.');
+        assert(json.containsKey(r'subQuestionIds'), 'Required key "QuestionConfig[subQuestionIds]" is missing from JSON.');
+        assert(json[r'subQuestionIds'] != null, 'Required key "QuestionConfig[subQuestionIds]" has a null value in JSON.');
+        assert(json.containsKey(r'alwaysShowSubQuestions'), 'Required key "QuestionConfig[alwaysShowSubQuestions]" is missing from JSON.');
+        assert(json[r'alwaysShowSubQuestions'] != null, 'Required key "QuestionConfig[alwaysShowSubQuestions]" has a null value in JSON.');
+        assert(json.containsKey(r'reportingOrder'), 'Required key "QuestionConfig[reportingOrder]" is missing from JSON.');
+        assert(json[r'reportingOrder'] != null, 'Required key "QuestionConfig[reportingOrder]" has a null value in JSON.');
         return true;
       }());
 

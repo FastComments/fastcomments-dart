@@ -24,13 +24,15 @@ class AggregationRequestSort {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationRequestSort &&
     other.dir == dir &&
-    other.field == field;
+      other.field == field;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (dir.hashCode) +
-    (field.hashCode);
+      (field.hashCode);
+  
 
   @override
   String toString() => 'AggregationRequestSort[dir=$dir, field=$field]';
@@ -53,10 +55,10 @@ class AggregationRequestSort {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationRequestSort[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationRequestSort[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'dir'), 'Required key "AggregationRequestSort[dir]" is missing from JSON.');
+        assert(json[r'dir'] != null, 'Required key "AggregationRequestSort[dir]" has a null value in JSON.');
+        assert(json.containsKey(r'field'), 'Required key "AggregationRequestSort[field]" is missing from JSON.');
+        assert(json[r'field'] != null, 'Required key "AggregationRequestSort[field]" has a null value in JSON.');
         return true;
       }());
 

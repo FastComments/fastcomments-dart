@@ -36,17 +36,19 @@ class ModerationExportStatusResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationExportStatusResponse &&
     other.status == status &&
-    other.jobStatus == jobStatus &&
-    other.recordCount == recordCount &&
-    other.downloadUrl == downloadUrl;
+      other.jobStatus == jobStatus &&
+      other.recordCount == recordCount &&
+      other.downloadUrl == downloadUrl;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (jobStatus.hashCode) +
-    (recordCount.hashCode) +
-    (downloadUrl == null ? 0 : downloadUrl!.hashCode);
+      (jobStatus.hashCode) +
+      (recordCount.hashCode) +
+      (downloadUrl == null ? 0 : downloadUrl!.hashCode);
+  
 
   @override
   String toString() => 'ModerationExportStatusResponse[status=$status, jobStatus=$jobStatus, recordCount=$recordCount, downloadUrl=$downloadUrl]';
@@ -75,10 +77,12 @@ class ModerationExportStatusResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationExportStatusResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationExportStatusResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "ModerationExportStatusResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ModerationExportStatusResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'jobStatus'), 'Required key "ModerationExportStatusResponse[jobStatus]" is missing from JSON.');
+        assert(json[r'jobStatus'] != null, 'Required key "ModerationExportStatusResponse[jobStatus]" has a null value in JSON.');
+        assert(json.containsKey(r'recordCount'), 'Required key "ModerationExportStatusResponse[recordCount]" is missing from JSON.');
+        assert(json[r'recordCount'] != null, 'Required key "ModerationExportStatusResponse[recordCount]" has a null value in JSON.');
         return true;
       }());
 

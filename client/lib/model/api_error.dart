@@ -72,25 +72,27 @@ class APIError {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIError &&
     other.status == status &&
-    other.reason == reason &&
-    other.code == code &&
-    other.secondaryCode == secondaryCode &&
-    other.bannedUntil == bannedUntil &&
-    other.maxCharacterLength == maxCharacterLength &&
-    other.translatedError == translatedError &&
-    other.customConfig == customConfig;
+      other.reason == reason &&
+      other.code == code &&
+      other.secondaryCode == secondaryCode &&
+      other.bannedUntil == bannedUntil &&
+      other.maxCharacterLength == maxCharacterLength &&
+      other.translatedError == translatedError &&
+      other.customConfig == customConfig;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (reason.hashCode) +
-    (code.hashCode) +
-    (secondaryCode == null ? 0 : secondaryCode!.hashCode) +
-    (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
-    (maxCharacterLength == null ? 0 : maxCharacterLength!.hashCode) +
-    (translatedError == null ? 0 : translatedError!.hashCode) +
-    (customConfig == null ? 0 : customConfig!.hashCode);
+      (reason.hashCode) +
+      (code.hashCode) +
+      (secondaryCode == null ? 0 : secondaryCode!.hashCode) +
+      (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
+      (maxCharacterLength == null ? 0 : maxCharacterLength!.hashCode) +
+      (translatedError == null ? 0 : translatedError!.hashCode) +
+      (customConfig == null ? 0 : customConfig!.hashCode);
+  
 
   @override
   String toString() => 'APIError[status=$status, reason=$reason, code=$code, secondaryCode=$secondaryCode, bannedUntil=$bannedUntil, maxCharacterLength=$maxCharacterLength, translatedError=$translatedError, customConfig=$customConfig]';
@@ -139,10 +141,12 @@ class APIError {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIError[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIError[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "APIError[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "APIError[status]" has a null value in JSON.');
+        assert(json.containsKey(r'reason'), 'Required key "APIError[reason]" is missing from JSON.');
+        assert(json[r'reason'] != null, 'Required key "APIError[reason]" has a null value in JSON.');
+        assert(json.containsKey(r'code'), 'Required key "APIError[code]" is missing from JSON.');
+        assert(json[r'code'] != null, 'Required key "APIError[code]" has a null value in JSON.');
         return true;
       }());
 

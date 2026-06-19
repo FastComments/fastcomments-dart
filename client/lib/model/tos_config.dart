@@ -40,15 +40,17 @@ class TOSConfig {
   @override
   bool operator ==(Object other) => identical(this, other) || other is TOSConfig &&
     other.enabled == enabled &&
-    _deepEquality.equals(other.textByLocale, textByLocale) &&
-    other.lastUpdated == lastUpdated;
+      _deepEquality.equals(other.textByLocale, textByLocale) &&
+      other.lastUpdated == lastUpdated;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (enabled == null ? 0 : enabled!.hashCode) +
-    (textByLocale.hashCode) +
-    (lastUpdated == null ? 0 : lastUpdated!.hashCode);
+      (textByLocale.hashCode) +
+      (lastUpdated == null ? 0 : lastUpdated!.hashCode);
+  
 
   @override
   String toString() => 'TOSConfig[enabled=$enabled, textByLocale=$textByLocale, lastUpdated=$lastUpdated]';
@@ -80,10 +82,6 @@ class TOSConfig {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "TOSConfig[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "TOSConfig[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

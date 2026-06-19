@@ -228,93 +228,95 @@ class ModerationAPIComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationAPIComment &&
     other.isLocalDeleted == isLocalDeleted &&
-    other.replyCount == replyCount &&
-    _deepEquality.equals(other.feedbackResults, feedbackResults) &&
-    other.isVotedUp == isVotedUp &&
-    other.isVotedDown == isVotedDown &&
-    other.myVoteId == myVoteId &&
-    other.id == id &&
-    other.tenantId == tenantId &&
-    other.urlId == urlId &&
-    other.url == url &&
-    other.pageTitle == pageTitle &&
-    other.userId == userId &&
-    other.anonUserId == anonUserId &&
-    other.commenterName == commenterName &&
-    other.commenterLink == commenterLink &&
-    other.commentHTML == commentHTML &&
-    other.parentId == parentId &&
-    other.date == date &&
-    other.localDateString == localDateString &&
-    other.votes == votes &&
-    other.votesUp == votesUp &&
-    other.votesDown == votesDown &&
-    other.expireAt == expireAt &&
-    other.reviewed == reviewed &&
-    other.avatarSrc == avatarSrc &&
-    other.isSpam == isSpam &&
-    other.permNotSpam == permNotSpam &&
-    other.hasLinks == hasLinks &&
-    other.hasCode == hasCode &&
-    other.approved == approved &&
-    other.locale == locale &&
-    other.isBannedUser == isBannedUser &&
-    other.isByAdmin == isByAdmin &&
-    other.isByModerator == isByModerator &&
-    other.isPinned == isPinned &&
-    other.isLocked == isLocked &&
-    other.flagCount == flagCount &&
-    other.displayLabel == displayLabel &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.verified == verified &&
-    _deepEquality.equals(other.feedbackIds, feedbackIds) &&
-    other.isDeleted == isDeleted;
+      other.replyCount == replyCount &&
+      _deepEquality.equals(other.feedbackResults, feedbackResults) &&
+      other.isVotedUp == isVotedUp &&
+      other.isVotedDown == isVotedDown &&
+      other.myVoteId == myVoteId &&
+      other.id == id &&
+      other.tenantId == tenantId &&
+      other.urlId == urlId &&
+      other.url == url &&
+      other.pageTitle == pageTitle &&
+      other.userId == userId &&
+      other.anonUserId == anonUserId &&
+      other.commenterName == commenterName &&
+      other.commenterLink == commenterLink &&
+      other.commentHTML == commentHTML &&
+      other.parentId == parentId &&
+      other.date == date &&
+      other.localDateString == localDateString &&
+      other.votes == votes &&
+      other.votesUp == votesUp &&
+      other.votesDown == votesDown &&
+      other.expireAt == expireAt &&
+      other.reviewed == reviewed &&
+      other.avatarSrc == avatarSrc &&
+      other.isSpam == isSpam &&
+      other.permNotSpam == permNotSpam &&
+      other.hasLinks == hasLinks &&
+      other.hasCode == hasCode &&
+      other.approved == approved &&
+      other.locale == locale &&
+      other.isBannedUser == isBannedUser &&
+      other.isByAdmin == isByAdmin &&
+      other.isByModerator == isByModerator &&
+      other.isPinned == isPinned &&
+      other.isLocked == isLocked &&
+      other.flagCount == flagCount &&
+      other.displayLabel == displayLabel &&
+      _deepEquality.equals(other.badges, badges) &&
+      other.verified == verified &&
+      _deepEquality.equals(other.feedbackIds, feedbackIds) &&
+      other.isDeleted == isDeleted;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (isLocalDeleted == null ? 0 : isLocalDeleted!.hashCode) +
-    (replyCount == null ? 0 : replyCount!.hashCode) +
-    (feedbackResults.hashCode) +
-    (isVotedUp == null ? 0 : isVotedUp!.hashCode) +
-    (isVotedDown == null ? 0 : isVotedDown!.hashCode) +
-    (myVoteId == null ? 0 : myVoteId!.hashCode) +
-    (id.hashCode) +
-    (tenantId.hashCode) +
-    (urlId.hashCode) +
-    (url.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (commenterName.hashCode) +
-    (commenterLink == null ? 0 : commenterLink!.hashCode) +
-    (commentHTML.hashCode) +
-    (parentId == null ? 0 : parentId!.hashCode) +
-    (date == null ? 0 : date!.hashCode) +
-    (localDateString == null ? 0 : localDateString!.hashCode) +
-    (votes == null ? 0 : votes!.hashCode) +
-    (votesUp == null ? 0 : votesUp!.hashCode) +
-    (votesDown == null ? 0 : votesDown!.hashCode) +
-    (expireAt == null ? 0 : expireAt!.hashCode) +
-    (reviewed == null ? 0 : reviewed!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (isSpam == null ? 0 : isSpam!.hashCode) +
-    (permNotSpam == null ? 0 : permNotSpam!.hashCode) +
-    (hasLinks == null ? 0 : hasLinks!.hashCode) +
-    (hasCode == null ? 0 : hasCode!.hashCode) +
-    (approved.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
-    (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
-    (isByModerator == null ? 0 : isByModerator!.hashCode) +
-    (isPinned == null ? 0 : isPinned!.hashCode) +
-    (isLocked == null ? 0 : isLocked!.hashCode) +
-    (flagCount == null ? 0 : flagCount!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (badges == null ? 0 : badges!.hashCode) +
-    (verified.hashCode) +
-    (feedbackIds.hashCode) +
-    (isDeleted == null ? 0 : isDeleted!.hashCode);
+      (replyCount == null ? 0 : replyCount!.hashCode) +
+      (feedbackResults.hashCode) +
+      (isVotedUp == null ? 0 : isVotedUp!.hashCode) +
+      (isVotedDown == null ? 0 : isVotedDown!.hashCode) +
+      (myVoteId == null ? 0 : myVoteId!.hashCode) +
+      (id.hashCode) +
+      (tenantId.hashCode) +
+      (urlId.hashCode) +
+      (url.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (commenterName.hashCode) +
+      (commenterLink == null ? 0 : commenterLink!.hashCode) +
+      (commentHTML.hashCode) +
+      (parentId == null ? 0 : parentId!.hashCode) +
+      (date == null ? 0 : date!.hashCode) +
+      (localDateString == null ? 0 : localDateString!.hashCode) +
+      (votes == null ? 0 : votes!.hashCode) +
+      (votesUp == null ? 0 : votesUp!.hashCode) +
+      (votesDown == null ? 0 : votesDown!.hashCode) +
+      (expireAt == null ? 0 : expireAt!.hashCode) +
+      (reviewed == null ? 0 : reviewed!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (isSpam == null ? 0 : isSpam!.hashCode) +
+      (permNotSpam == null ? 0 : permNotSpam!.hashCode) +
+      (hasLinks == null ? 0 : hasLinks!.hashCode) +
+      (hasCode == null ? 0 : hasCode!.hashCode) +
+      (approved.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
+      (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
+      (isByModerator == null ? 0 : isByModerator!.hashCode) +
+      (isPinned == null ? 0 : isPinned!.hashCode) +
+      (isLocked == null ? 0 : isLocked!.hashCode) +
+      (flagCount == null ? 0 : flagCount!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (badges == null ? 0 : badges!.hashCode) +
+      (verified.hashCode) +
+      (feedbackIds.hashCode) +
+      (isDeleted == null ? 0 : isDeleted!.hashCode);
+  
 
   @override
   String toString() => 'ModerationAPIComment[isLocalDeleted=$isLocalDeleted, replyCount=$replyCount, feedbackResults=$feedbackResults, isVotedUp=$isVotedUp, isVotedDown=$isVotedDown, myVoteId=$myVoteId, id=$id, tenantId=$tenantId, urlId=$urlId, url=$url, pageTitle=$pageTitle, userId=$userId, anonUserId=$anonUserId, commenterName=$commenterName, commenterLink=$commenterLink, commentHTML=$commentHTML, parentId=$parentId, date=$date, localDateString=$localDateString, votes=$votes, votesUp=$votesUp, votesDown=$votesDown, expireAt=$expireAt, reviewed=$reviewed, avatarSrc=$avatarSrc, isSpam=$isSpam, permNotSpam=$permNotSpam, hasLinks=$hasLinks, hasCode=$hasCode, approved=$approved, locale=$locale, isBannedUser=$isBannedUser, isByAdmin=$isByAdmin, isByModerator=$isByModerator, isPinned=$isPinned, isLocked=$isLocked, flagCount=$flagCount, displayLabel=$displayLabel, badges=$badges, verified=$verified, feedbackIds=$feedbackIds, isDeleted=$isDeleted]';
@@ -505,10 +507,24 @@ class ModerationAPIComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationAPIComment[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationAPIComment[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "ModerationAPIComment[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "ModerationAPIComment[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "ModerationAPIComment[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "ModerationAPIComment[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "ModerationAPIComment[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "ModerationAPIComment[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "ModerationAPIComment[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "ModerationAPIComment[url]" has a null value in JSON.');
+        assert(json.containsKey(r'commenterName'), 'Required key "ModerationAPIComment[commenterName]" is missing from JSON.');
+        assert(json[r'commenterName'] != null, 'Required key "ModerationAPIComment[commenterName]" has a null value in JSON.');
+        assert(json.containsKey(r'commentHTML'), 'Required key "ModerationAPIComment[commentHTML]" is missing from JSON.');
+        assert(json[r'commentHTML'] != null, 'Required key "ModerationAPIComment[commentHTML]" has a null value in JSON.');
+        assert(json.containsKey(r'date'), 'Required key "ModerationAPIComment[date]" is missing from JSON.');
+        assert(json.containsKey(r'approved'), 'Required key "ModerationAPIComment[approved]" is missing from JSON.');
+        assert(json[r'approved'] != null, 'Required key "ModerationAPIComment[approved]" has a null value in JSON.');
+        assert(json.containsKey(r'locale'), 'Required key "ModerationAPIComment[locale]" is missing from JSON.');
+        assert(json.containsKey(r'verified'), 'Required key "ModerationAPIComment[verified]" is missing from JSON.');
+        assert(json[r'verified'] != null, 'Required key "ModerationAPIComment[verified]" has a null value in JSON.');
         return true;
       }());
 

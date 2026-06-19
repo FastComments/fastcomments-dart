@@ -54,29 +54,31 @@ class APITicketFile {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITicketFile &&
     other.id == id &&
-    other.s3Key == s3Key &&
-    other.originalFileName == originalFileName &&
-    other.sizeBytes == sizeBytes &&
-    other.contentType == contentType &&
-    other.uploadedByUserId == uploadedByUserId &&
-    other.uploadedAt == uploadedAt &&
-    other.url == url &&
-    other.expiresAt == expiresAt &&
-    other.expired == expired;
+      other.s3Key == s3Key &&
+      other.originalFileName == originalFileName &&
+      other.sizeBytes == sizeBytes &&
+      other.contentType == contentType &&
+      other.uploadedByUserId == uploadedByUserId &&
+      other.uploadedAt == uploadedAt &&
+      other.url == url &&
+      other.expiresAt == expiresAt &&
+      other.expired == expired;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (s3Key.hashCode) +
-    (originalFileName.hashCode) +
-    (sizeBytes.hashCode) +
-    (contentType.hashCode) +
-    (uploadedByUserId.hashCode) +
-    (uploadedAt.hashCode) +
-    (url.hashCode) +
-    (expiresAt.hashCode) +
-    (expired == null ? 0 : expired!.hashCode);
+      (s3Key.hashCode) +
+      (originalFileName.hashCode) +
+      (sizeBytes.hashCode) +
+      (contentType.hashCode) +
+      (uploadedByUserId.hashCode) +
+      (uploadedAt.hashCode) +
+      (url.hashCode) +
+      (expiresAt.hashCode) +
+      (expired == null ? 0 : expired!.hashCode);
+  
 
   @override
   String toString() => 'APITicketFile[id=$id, s3Key=$s3Key, originalFileName=$originalFileName, sizeBytes=$sizeBytes, contentType=$contentType, uploadedByUserId=$uploadedByUserId, uploadedAt=$uploadedAt, url=$url, expiresAt=$expiresAt, expired=$expired]';
@@ -111,10 +113,24 @@ class APITicketFile {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APITicketFile[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APITicketFile[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "APITicketFile[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "APITicketFile[id]" has a null value in JSON.');
+        assert(json.containsKey(r's3Key'), 'Required key "APITicketFile[s3Key]" is missing from JSON.');
+        assert(json[r's3Key'] != null, 'Required key "APITicketFile[s3Key]" has a null value in JSON.');
+        assert(json.containsKey(r'originalFileName'), 'Required key "APITicketFile[originalFileName]" is missing from JSON.');
+        assert(json[r'originalFileName'] != null, 'Required key "APITicketFile[originalFileName]" has a null value in JSON.');
+        assert(json.containsKey(r'sizeBytes'), 'Required key "APITicketFile[sizeBytes]" is missing from JSON.');
+        assert(json[r'sizeBytes'] != null, 'Required key "APITicketFile[sizeBytes]" has a null value in JSON.');
+        assert(json.containsKey(r'contentType'), 'Required key "APITicketFile[contentType]" is missing from JSON.');
+        assert(json[r'contentType'] != null, 'Required key "APITicketFile[contentType]" has a null value in JSON.');
+        assert(json.containsKey(r'uploadedByUserId'), 'Required key "APITicketFile[uploadedByUserId]" is missing from JSON.');
+        assert(json[r'uploadedByUserId'] != null, 'Required key "APITicketFile[uploadedByUserId]" has a null value in JSON.');
+        assert(json.containsKey(r'uploadedAt'), 'Required key "APITicketFile[uploadedAt]" is missing from JSON.');
+        assert(json[r'uploadedAt'] != null, 'Required key "APITicketFile[uploadedAt]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "APITicketFile[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "APITicketFile[url]" has a null value in JSON.');
+        assert(json.containsKey(r'expiresAt'), 'Required key "APITicketFile[expiresAt]" is missing from JSON.');
+        assert(json[r'expiresAt'] != null, 'Required key "APITicketFile[expiresAt]" has a null value in JSON.');
         return true;
       }());
 

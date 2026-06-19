@@ -13,15 +13,27 @@ part of openapi.api;
 class AddDomainConfigResponse {
   /// Returns a new [AddDomainConfigResponse] instance.
   AddDomainConfigResponse({
-    required this.reason,
-    required this.code,
+    this.reason,
+    this.code,
     required this.status,
-    required this.configuration,
+    this.configuration,
   });
 
-  String reason;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? reason;
 
-  String code;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? code;
 
   Object? status;
 
@@ -30,25 +42,35 @@ class AddDomainConfigResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AddDomainConfigResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.status == status &&
-    other.configuration == configuration;
+      other.code == code &&
+      other.status == status &&
+      other.configuration == configuration;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (reason.hashCode) +
-    (code.hashCode) +
-    (status == null ? 0 : status!.hashCode) +
-    (configuration == null ? 0 : configuration!.hashCode);
+    (reason == null ? 0 : reason!.hashCode) +
+      (code == null ? 0 : code!.hashCode) +
+      (status == null ? 0 : status!.hashCode) +
+      (configuration == null ? 0 : configuration!.hashCode);
+  
 
   @override
   String toString() => 'AddDomainConfigResponse[reason=$reason, code=$code, status=$status, configuration=$configuration]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.reason != null) {
       json[r'reason'] = this.reason;
+    } else {
+      json[r'reason'] = null;
+    }
+    if (this.code != null) {
       json[r'code'] = this.code;
+    } else {
+      json[r'code'] = null;
+    }
     if (this.status != null) {
       json[r'status'] = this.status;
     } else {
@@ -73,16 +95,13 @@ class AddDomainConfigResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AddDomainConfigResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AddDomainConfigResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "AddDomainConfigResponse[status]" is missing from JSON.');
         return true;
       }());
 
       return AddDomainConfigResponse(
-        reason: mapValueOfType<String>(json, r'reason')!,
-        code: mapValueOfType<String>(json, r'code')!,
+        reason: mapValueOfType<String>(json, r'reason'),
+        code: mapValueOfType<String>(json, r'code'),
         status: mapValueOfType<Object>(json, r'status'),
         configuration: mapValueOfType<Object>(json, r'configuration'),
       );
@@ -132,10 +151,7 @@ class AddDomainConfigResponse {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'reason',
-    'code',
     'status',
-    'configuration',
   };
 }
 

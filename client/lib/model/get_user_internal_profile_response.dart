@@ -24,13 +24,15 @@ class GetUserInternalProfileResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetUserInternalProfileResponse &&
     other.profile == profile &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (profile.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetUserInternalProfileResponse[profile=$profile, status=$status]';
@@ -53,10 +55,10 @@ class GetUserInternalProfileResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetUserInternalProfileResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetUserInternalProfileResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'profile'), 'Required key "GetUserInternalProfileResponse[profile]" is missing from JSON.');
+        assert(json[r'profile'] != null, 'Required key "GetUserInternalProfileResponse[profile]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GetUserInternalProfileResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetUserInternalProfileResponse[status]" has a null value in JSON.');
         return true;
       }());
 

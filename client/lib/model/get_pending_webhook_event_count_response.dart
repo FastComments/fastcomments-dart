@@ -24,13 +24,15 @@ class GetPendingWebhookEventCountResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPendingWebhookEventCountResponse &&
     other.status == status &&
-    other.count == count;
+      other.count == count;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (count.hashCode);
+      (count.hashCode);
+  
 
   @override
   String toString() => 'GetPendingWebhookEventCountResponse[status=$status, count=$count]';
@@ -53,10 +55,10 @@ class GetPendingWebhookEventCountResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetPendingWebhookEventCountResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetPendingWebhookEventCountResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetPendingWebhookEventCountResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetPendingWebhookEventCountResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'count'), 'Required key "GetPendingWebhookEventCountResponse[count]" is missing from JSON.');
+        assert(json[r'count'] != null, 'Required key "GetPendingWebhookEventCountResponse[count]" has a null value in JSON.');
         return true;
       }());
 

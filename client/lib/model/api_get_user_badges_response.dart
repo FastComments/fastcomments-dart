@@ -24,13 +24,15 @@ class APIGetUserBadgesResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIGetUserBadgesResponse &&
     other.status == status &&
-    _deepEquality.equals(other.userBadges, userBadges);
+      _deepEquality.equals(other.userBadges, userBadges);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (userBadges.hashCode);
+      (userBadges.hashCode);
+  
 
   @override
   String toString() => 'APIGetUserBadgesResponse[status=$status, userBadges=$userBadges]';
@@ -53,10 +55,10 @@ class APIGetUserBadgesResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIGetUserBadgesResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIGetUserBadgesResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "APIGetUserBadgesResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "APIGetUserBadgesResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'userBadges'), 'Required key "APIGetUserBadgesResponse[userBadges]" is missing from JSON.');
+        assert(json[r'userBadges'] != null, 'Required key "APIGetUserBadgesResponse[userBadges]" has a null value in JSON.');
         return true;
       }());
 

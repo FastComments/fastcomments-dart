@@ -27,15 +27,17 @@ class GetCommentVoteUserNamesSuccessResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetCommentVoteUserNamesSuccessResponse &&
     other.status == status &&
-    _deepEquality.equals(other.voteUserNames, voteUserNames) &&
-    other.hasMore == hasMore;
+      _deepEquality.equals(other.voteUserNames, voteUserNames) &&
+      other.hasMore == hasMore;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (voteUserNames.hashCode) +
-    (hasMore.hashCode);
+      (voteUserNames.hashCode) +
+      (hasMore.hashCode);
+  
 
   @override
   String toString() => 'GetCommentVoteUserNamesSuccessResponse[status=$status, voteUserNames=$voteUserNames, hasMore=$hasMore]';
@@ -59,10 +61,12 @@ class GetCommentVoteUserNamesSuccessResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetCommentVoteUserNamesSuccessResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetCommentVoteUserNamesSuccessResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'voteUserNames'), 'Required key "GetCommentVoteUserNamesSuccessResponse[voteUserNames]" is missing from JSON.');
+        assert(json[r'voteUserNames'] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[voteUserNames]" has a null value in JSON.');
+        assert(json.containsKey(r'hasMore'), 'Required key "GetCommentVoteUserNamesSuccessResponse[hasMore]" is missing from JSON.');
+        assert(json[r'hasMore'] != null, 'Required key "GetCommentVoteUserNamesSuccessResponse[hasMore]" has a null value in JSON.');
         return true;
       }());
 

@@ -27,15 +27,17 @@ class APICreateUserBadgeResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APICreateUserBadgeResponse &&
     other.status == status &&
-    other.userBadge == userBadge &&
-    _deepEquality.equals(other.notes, notes);
+      other.userBadge == userBadge &&
+      _deepEquality.equals(other.notes, notes);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (userBadge.hashCode) +
-    (notes.hashCode);
+      (userBadge.hashCode) +
+      (notes.hashCode);
+  
 
   @override
   String toString() => 'APICreateUserBadgeResponse[status=$status, userBadge=$userBadge, notes=$notes]';
@@ -59,10 +61,10 @@ class APICreateUserBadgeResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APICreateUserBadgeResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APICreateUserBadgeResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "APICreateUserBadgeResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "APICreateUserBadgeResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'userBadge'), 'Required key "APICreateUserBadgeResponse[userBadge]" is missing from JSON.');
+        assert(json[r'userBadge'] != null, 'Required key "APICreateUserBadgeResponse[userBadge]" has a null value in JSON.');
         return true;
       }());
 

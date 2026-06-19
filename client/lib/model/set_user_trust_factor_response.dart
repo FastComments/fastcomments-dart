@@ -30,13 +30,15 @@ class SetUserTrustFactorResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SetUserTrustFactorResponse &&
     other.previousManualTrustFactor == previousManualTrustFactor &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (previousManualTrustFactor == null ? 0 : previousManualTrustFactor!.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'SetUserTrustFactorResponse[previousManualTrustFactor=$previousManualTrustFactor, status=$status]';
@@ -63,10 +65,8 @@ class SetUserTrustFactorResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "SetUserTrustFactorResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "SetUserTrustFactorResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "SetUserTrustFactorResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "SetUserTrustFactorResponse[status]" has a null value in JSON.');
         return true;
       }());
 

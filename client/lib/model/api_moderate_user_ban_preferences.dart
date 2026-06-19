@@ -30,17 +30,19 @@ class APIModerateUserBanPreferences {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIModerateUserBanPreferences &&
     other.shouldBanEmail == shouldBanEmail &&
-    other.shouldBanByIP == shouldBanByIP &&
-    other.lastBanType == lastBanType &&
-    other.lastBanDuration == lastBanDuration;
+      other.shouldBanByIP == shouldBanByIP &&
+      other.lastBanType == lastBanType &&
+      other.lastBanDuration == lastBanDuration;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (shouldBanEmail.hashCode) +
-    (shouldBanByIP.hashCode) +
-    (lastBanType.hashCode) +
-    (lastBanDuration.hashCode);
+      (shouldBanByIP.hashCode) +
+      (lastBanType.hashCode) +
+      (lastBanDuration.hashCode);
+  
 
   @override
   String toString() => 'APIModerateUserBanPreferences[shouldBanEmail=$shouldBanEmail, shouldBanByIP=$shouldBanByIP, lastBanType=$lastBanType, lastBanDuration=$lastBanDuration]';
@@ -65,10 +67,14 @@ class APIModerateUserBanPreferences {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIModerateUserBanPreferences[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIModerateUserBanPreferences[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'shouldBanEmail'), 'Required key "APIModerateUserBanPreferences[shouldBanEmail]" is missing from JSON.');
+        assert(json[r'shouldBanEmail'] != null, 'Required key "APIModerateUserBanPreferences[shouldBanEmail]" has a null value in JSON.');
+        assert(json.containsKey(r'shouldBanByIP'), 'Required key "APIModerateUserBanPreferences[shouldBanByIP]" is missing from JSON.');
+        assert(json[r'shouldBanByIP'] != null, 'Required key "APIModerateUserBanPreferences[shouldBanByIP]" has a null value in JSON.');
+        assert(json.containsKey(r'lastBanType'), 'Required key "APIModerateUserBanPreferences[lastBanType]" is missing from JSON.');
+        assert(json[r'lastBanType'] != null, 'Required key "APIModerateUserBanPreferences[lastBanType]" has a null value in JSON.');
+        assert(json.containsKey(r'lastBanDuration'), 'Required key "APIModerateUserBanPreferences[lastBanDuration]" is missing from JSON.');
+        assert(json[r'lastBanDuration'] != null, 'Required key "APIModerateUserBanPreferences[lastBanDuration]" has a null value in JSON.');
         return true;
       }());
 

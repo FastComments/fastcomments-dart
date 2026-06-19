@@ -45,15 +45,17 @@ class UserPresenceData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserPresenceData &&
     other.urlIdWS == urlIdWS &&
-    other.userIdWS == userIdWS &&
-    other.tenantIdWS == tenantIdWS;
+      other.userIdWS == userIdWS &&
+      other.tenantIdWS == tenantIdWS;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (urlIdWS == null ? 0 : urlIdWS!.hashCode) +
-    (userIdWS == null ? 0 : userIdWS!.hashCode) +
-    (tenantIdWS == null ? 0 : tenantIdWS!.hashCode);
+      (userIdWS == null ? 0 : userIdWS!.hashCode) +
+      (tenantIdWS == null ? 0 : tenantIdWS!.hashCode);
+  
 
   @override
   String toString() => 'UserPresenceData[urlIdWS=$urlIdWS, userIdWS=$userIdWS, tenantIdWS=$tenantIdWS]';
@@ -89,10 +91,6 @@ class UserPresenceData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserPresenceData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserPresenceData[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

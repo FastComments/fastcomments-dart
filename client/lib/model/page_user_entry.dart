@@ -42,17 +42,19 @@ class PageUserEntry {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PageUserEntry &&
     other.isPrivate == isPrivate &&
-    other.avatarSrc == avatarSrc &&
-    other.displayName == displayName &&
-    other.id == id;
+      other.avatarSrc == avatarSrc &&
+      other.displayName == displayName &&
+      other.id == id;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (isPrivate == null ? 0 : isPrivate!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (displayName.hashCode) +
-    (id.hashCode);
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (displayName.hashCode) +
+      (id.hashCode);
+  
 
   @override
   String toString() => 'PageUserEntry[isPrivate=$isPrivate, avatarSrc=$avatarSrc, displayName=$displayName, id=$id]';
@@ -85,10 +87,10 @@ class PageUserEntry {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PageUserEntry[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PageUserEntry[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'displayName'), 'Required key "PageUserEntry[displayName]" is missing from JSON.');
+        assert(json[r'displayName'] != null, 'Required key "PageUserEntry[displayName]" has a null value in JSON.');
+        assert(json.containsKey(r'id'), 'Required key "PageUserEntry[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "PageUserEntry[id]" has a null value in JSON.');
         return true;
       }());
 

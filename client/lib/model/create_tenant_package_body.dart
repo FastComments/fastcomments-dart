@@ -357,107 +357,109 @@ class CreateTenantPackageBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateTenantPackageBody &&
     other.name == name &&
-    other.monthlyCostUSD == monthlyCostUSD &&
-    other.yearlyCostUSD == yearlyCostUSD &&
-    other.monthlyStripePlanId == monthlyStripePlanId &&
-    other.yearlyStripePlanId == yearlyStripePlanId &&
-    other.maxMonthlyPageLoads == maxMonthlyPageLoads &&
-    other.maxMonthlyAPICredits == maxMonthlyAPICredits &&
-    other.maxMonthlySmallWidgetsCredits == maxMonthlySmallWidgetsCredits &&
-    other.maxMonthlyComments == maxMonthlyComments &&
-    other.maxConcurrentUsers == maxConcurrentUsers &&
-    other.maxTenantUsers == maxTenantUsers &&
-    other.maxSSOUsers == maxSSOUsers &&
-    other.maxModerators == maxModerators &&
-    other.maxDomains == maxDomains &&
-    other.maxWhiteLabeledTenants == maxWhiteLabeledTenants &&
-    other.maxMonthlyEventLogRequests == maxMonthlyEventLogRequests &&
-    other.maxCustomCollectionSize == maxCustomCollectionSize &&
-    other.hasWhiteLabeling == hasWhiteLabeling &&
-    other.hasDebranding == hasDebranding &&
-    other.hasLLMSpamDetection == hasLLMSpamDetection &&
-    other.forWhoText == forWhoText &&
-    _deepEquality.equals(other.featureTaglines, featureTaglines) &&
-    other.hasAuditing == hasAuditing &&
-    other.hasFlexPricing == hasFlexPricing &&
-    other.enableSAML == enableSAML &&
-    other.flexPageLoadCostCents == flexPageLoadCostCents &&
-    other.flexPageLoadUnit == flexPageLoadUnit &&
-    other.flexCommentCostCents == flexCommentCostCents &&
-    other.flexCommentUnit == flexCommentUnit &&
-    other.flexSSOUserCostCents == flexSSOUserCostCents &&
-    other.flexSSOUserUnit == flexSSOUserUnit &&
-    other.flexAPICreditCostCents == flexAPICreditCostCents &&
-    other.flexAPICreditUnit == flexAPICreditUnit &&
-    other.flexSmallWidgetsCreditCostCents == flexSmallWidgetsCreditCostCents &&
-    other.flexSmallWidgetsCreditUnit == flexSmallWidgetsCreditUnit &&
-    other.flexModeratorCostCents == flexModeratorCostCents &&
-    other.flexModeratorUnit == flexModeratorUnit &&
-    other.flexAdminCostCents == flexAdminCostCents &&
-    other.flexAdminUnit == flexAdminUnit &&
-    other.flexDomainCostCents == flexDomainCostCents &&
-    other.flexDomainUnit == flexDomainUnit &&
-    other.flexLLMCostCents == flexLLMCostCents &&
-    other.flexLLMUnit == flexLLMUnit &&
-    other.flexMinimumCostCents == flexMinimumCostCents &&
-    other.flexManagedTenantCostCents == flexManagedTenantCostCents &&
-    other.flexSSOAdminCostCents == flexSSOAdminCostCents &&
-    other.flexSSOAdminUnit == flexSSOAdminUnit &&
-    other.flexSSOModeratorCostCents == flexSSOModeratorCostCents &&
-    other.flexSSOModeratorUnit == flexSSOModeratorUnit;
+      other.monthlyCostUSD == monthlyCostUSD &&
+      other.yearlyCostUSD == yearlyCostUSD &&
+      other.monthlyStripePlanId == monthlyStripePlanId &&
+      other.yearlyStripePlanId == yearlyStripePlanId &&
+      other.maxMonthlyPageLoads == maxMonthlyPageLoads &&
+      other.maxMonthlyAPICredits == maxMonthlyAPICredits &&
+      other.maxMonthlySmallWidgetsCredits == maxMonthlySmallWidgetsCredits &&
+      other.maxMonthlyComments == maxMonthlyComments &&
+      other.maxConcurrentUsers == maxConcurrentUsers &&
+      other.maxTenantUsers == maxTenantUsers &&
+      other.maxSSOUsers == maxSSOUsers &&
+      other.maxModerators == maxModerators &&
+      other.maxDomains == maxDomains &&
+      other.maxWhiteLabeledTenants == maxWhiteLabeledTenants &&
+      other.maxMonthlyEventLogRequests == maxMonthlyEventLogRequests &&
+      other.maxCustomCollectionSize == maxCustomCollectionSize &&
+      other.hasWhiteLabeling == hasWhiteLabeling &&
+      other.hasDebranding == hasDebranding &&
+      other.hasLLMSpamDetection == hasLLMSpamDetection &&
+      other.forWhoText == forWhoText &&
+      _deepEquality.equals(other.featureTaglines, featureTaglines) &&
+      other.hasAuditing == hasAuditing &&
+      other.hasFlexPricing == hasFlexPricing &&
+      other.enableSAML == enableSAML &&
+      other.flexPageLoadCostCents == flexPageLoadCostCents &&
+      other.flexPageLoadUnit == flexPageLoadUnit &&
+      other.flexCommentCostCents == flexCommentCostCents &&
+      other.flexCommentUnit == flexCommentUnit &&
+      other.flexSSOUserCostCents == flexSSOUserCostCents &&
+      other.flexSSOUserUnit == flexSSOUserUnit &&
+      other.flexAPICreditCostCents == flexAPICreditCostCents &&
+      other.flexAPICreditUnit == flexAPICreditUnit &&
+      other.flexSmallWidgetsCreditCostCents == flexSmallWidgetsCreditCostCents &&
+      other.flexSmallWidgetsCreditUnit == flexSmallWidgetsCreditUnit &&
+      other.flexModeratorCostCents == flexModeratorCostCents &&
+      other.flexModeratorUnit == flexModeratorUnit &&
+      other.flexAdminCostCents == flexAdminCostCents &&
+      other.flexAdminUnit == flexAdminUnit &&
+      other.flexDomainCostCents == flexDomainCostCents &&
+      other.flexDomainUnit == flexDomainUnit &&
+      other.flexLLMCostCents == flexLLMCostCents &&
+      other.flexLLMUnit == flexLLMUnit &&
+      other.flexMinimumCostCents == flexMinimumCostCents &&
+      other.flexManagedTenantCostCents == flexManagedTenantCostCents &&
+      other.flexSSOAdminCostCents == flexSSOAdminCostCents &&
+      other.flexSSOAdminUnit == flexSSOAdminUnit &&
+      other.flexSSOModeratorCostCents == flexSSOModeratorCostCents &&
+      other.flexSSOModeratorUnit == flexSSOModeratorUnit;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (monthlyCostUSD == null ? 0 : monthlyCostUSD!.hashCode) +
-    (yearlyCostUSD == null ? 0 : yearlyCostUSD!.hashCode) +
-    (monthlyStripePlanId == null ? 0 : monthlyStripePlanId!.hashCode) +
-    (yearlyStripePlanId == null ? 0 : yearlyStripePlanId!.hashCode) +
-    (maxMonthlyPageLoads.hashCode) +
-    (maxMonthlyAPICredits.hashCode) +
-    (maxMonthlySmallWidgetsCredits == null ? 0 : maxMonthlySmallWidgetsCredits!.hashCode) +
-    (maxMonthlyComments.hashCode) +
-    (maxConcurrentUsers.hashCode) +
-    (maxTenantUsers.hashCode) +
-    (maxSSOUsers.hashCode) +
-    (maxModerators.hashCode) +
-    (maxDomains.hashCode) +
-    (maxWhiteLabeledTenants == null ? 0 : maxWhiteLabeledTenants!.hashCode) +
-    (maxMonthlyEventLogRequests == null ? 0 : maxMonthlyEventLogRequests!.hashCode) +
-    (maxCustomCollectionSize == null ? 0 : maxCustomCollectionSize!.hashCode) +
-    (hasWhiteLabeling == null ? 0 : hasWhiteLabeling!.hashCode) +
-    (hasDebranding.hashCode) +
-    (hasLLMSpamDetection == null ? 0 : hasLLMSpamDetection!.hashCode) +
-    (forWhoText.hashCode) +
-    (featureTaglines.hashCode) +
-    (hasAuditing == null ? 0 : hasAuditing!.hashCode) +
-    (hasFlexPricing.hashCode) +
-    (enableSAML == null ? 0 : enableSAML!.hashCode) +
-    (flexPageLoadCostCents == null ? 0 : flexPageLoadCostCents!.hashCode) +
-    (flexPageLoadUnit == null ? 0 : flexPageLoadUnit!.hashCode) +
-    (flexCommentCostCents == null ? 0 : flexCommentCostCents!.hashCode) +
-    (flexCommentUnit == null ? 0 : flexCommentUnit!.hashCode) +
-    (flexSSOUserCostCents == null ? 0 : flexSSOUserCostCents!.hashCode) +
-    (flexSSOUserUnit == null ? 0 : flexSSOUserUnit!.hashCode) +
-    (flexAPICreditCostCents == null ? 0 : flexAPICreditCostCents!.hashCode) +
-    (flexAPICreditUnit == null ? 0 : flexAPICreditUnit!.hashCode) +
-    (flexSmallWidgetsCreditCostCents == null ? 0 : flexSmallWidgetsCreditCostCents!.hashCode) +
-    (flexSmallWidgetsCreditUnit == null ? 0 : flexSmallWidgetsCreditUnit!.hashCode) +
-    (flexModeratorCostCents == null ? 0 : flexModeratorCostCents!.hashCode) +
-    (flexModeratorUnit == null ? 0 : flexModeratorUnit!.hashCode) +
-    (flexAdminCostCents == null ? 0 : flexAdminCostCents!.hashCode) +
-    (flexAdminUnit == null ? 0 : flexAdminUnit!.hashCode) +
-    (flexDomainCostCents == null ? 0 : flexDomainCostCents!.hashCode) +
-    (flexDomainUnit == null ? 0 : flexDomainUnit!.hashCode) +
-    (flexLLMCostCents == null ? 0 : flexLLMCostCents!.hashCode) +
-    (flexLLMUnit == null ? 0 : flexLLMUnit!.hashCode) +
-    (flexMinimumCostCents == null ? 0 : flexMinimumCostCents!.hashCode) +
-    (flexManagedTenantCostCents == null ? 0 : flexManagedTenantCostCents!.hashCode) +
-    (flexSSOAdminCostCents == null ? 0 : flexSSOAdminCostCents!.hashCode) +
-    (flexSSOAdminUnit == null ? 0 : flexSSOAdminUnit!.hashCode) +
-    (flexSSOModeratorCostCents == null ? 0 : flexSSOModeratorCostCents!.hashCode) +
-    (flexSSOModeratorUnit == null ? 0 : flexSSOModeratorUnit!.hashCode);
+      (monthlyCostUSD == null ? 0 : monthlyCostUSD!.hashCode) +
+      (yearlyCostUSD == null ? 0 : yearlyCostUSD!.hashCode) +
+      (monthlyStripePlanId == null ? 0 : monthlyStripePlanId!.hashCode) +
+      (yearlyStripePlanId == null ? 0 : yearlyStripePlanId!.hashCode) +
+      (maxMonthlyPageLoads.hashCode) +
+      (maxMonthlyAPICredits.hashCode) +
+      (maxMonthlySmallWidgetsCredits == null ? 0 : maxMonthlySmallWidgetsCredits!.hashCode) +
+      (maxMonthlyComments.hashCode) +
+      (maxConcurrentUsers.hashCode) +
+      (maxTenantUsers.hashCode) +
+      (maxSSOUsers.hashCode) +
+      (maxModerators.hashCode) +
+      (maxDomains.hashCode) +
+      (maxWhiteLabeledTenants == null ? 0 : maxWhiteLabeledTenants!.hashCode) +
+      (maxMonthlyEventLogRequests == null ? 0 : maxMonthlyEventLogRequests!.hashCode) +
+      (maxCustomCollectionSize == null ? 0 : maxCustomCollectionSize!.hashCode) +
+      (hasWhiteLabeling == null ? 0 : hasWhiteLabeling!.hashCode) +
+      (hasDebranding.hashCode) +
+      (hasLLMSpamDetection == null ? 0 : hasLLMSpamDetection!.hashCode) +
+      (forWhoText.hashCode) +
+      (featureTaglines.hashCode) +
+      (hasAuditing == null ? 0 : hasAuditing!.hashCode) +
+      (hasFlexPricing.hashCode) +
+      (enableSAML == null ? 0 : enableSAML!.hashCode) +
+      (flexPageLoadCostCents == null ? 0 : flexPageLoadCostCents!.hashCode) +
+      (flexPageLoadUnit == null ? 0 : flexPageLoadUnit!.hashCode) +
+      (flexCommentCostCents == null ? 0 : flexCommentCostCents!.hashCode) +
+      (flexCommentUnit == null ? 0 : flexCommentUnit!.hashCode) +
+      (flexSSOUserCostCents == null ? 0 : flexSSOUserCostCents!.hashCode) +
+      (flexSSOUserUnit == null ? 0 : flexSSOUserUnit!.hashCode) +
+      (flexAPICreditCostCents == null ? 0 : flexAPICreditCostCents!.hashCode) +
+      (flexAPICreditUnit == null ? 0 : flexAPICreditUnit!.hashCode) +
+      (flexSmallWidgetsCreditCostCents == null ? 0 : flexSmallWidgetsCreditCostCents!.hashCode) +
+      (flexSmallWidgetsCreditUnit == null ? 0 : flexSmallWidgetsCreditUnit!.hashCode) +
+      (flexModeratorCostCents == null ? 0 : flexModeratorCostCents!.hashCode) +
+      (flexModeratorUnit == null ? 0 : flexModeratorUnit!.hashCode) +
+      (flexAdminCostCents == null ? 0 : flexAdminCostCents!.hashCode) +
+      (flexAdminUnit == null ? 0 : flexAdminUnit!.hashCode) +
+      (flexDomainCostCents == null ? 0 : flexDomainCostCents!.hashCode) +
+      (flexDomainUnit == null ? 0 : flexDomainUnit!.hashCode) +
+      (flexLLMCostCents == null ? 0 : flexLLMCostCents!.hashCode) +
+      (flexLLMUnit == null ? 0 : flexLLMUnit!.hashCode) +
+      (flexMinimumCostCents == null ? 0 : flexMinimumCostCents!.hashCode) +
+      (flexManagedTenantCostCents == null ? 0 : flexManagedTenantCostCents!.hashCode) +
+      (flexSSOAdminCostCents == null ? 0 : flexSSOAdminCostCents!.hashCode) +
+      (flexSSOAdminUnit == null ? 0 : flexSSOAdminUnit!.hashCode) +
+      (flexSSOModeratorCostCents == null ? 0 : flexSSOModeratorCostCents!.hashCode) +
+      (flexSSOModeratorUnit == null ? 0 : flexSSOModeratorUnit!.hashCode);
+  
 
   @override
   String toString() => 'CreateTenantPackageBody[name=$name, monthlyCostUSD=$monthlyCostUSD, yearlyCostUSD=$yearlyCostUSD, monthlyStripePlanId=$monthlyStripePlanId, yearlyStripePlanId=$yearlyStripePlanId, maxMonthlyPageLoads=$maxMonthlyPageLoads, maxMonthlyAPICredits=$maxMonthlyAPICredits, maxMonthlySmallWidgetsCredits=$maxMonthlySmallWidgetsCredits, maxMonthlyComments=$maxMonthlyComments, maxConcurrentUsers=$maxConcurrentUsers, maxTenantUsers=$maxTenantUsers, maxSSOUsers=$maxSSOUsers, maxModerators=$maxModerators, maxDomains=$maxDomains, maxWhiteLabeledTenants=$maxWhiteLabeledTenants, maxMonthlyEventLogRequests=$maxMonthlyEventLogRequests, maxCustomCollectionSize=$maxCustomCollectionSize, hasWhiteLabeling=$hasWhiteLabeling, hasDebranding=$hasDebranding, hasLLMSpamDetection=$hasLLMSpamDetection, forWhoText=$forWhoText, featureTaglines=$featureTaglines, hasAuditing=$hasAuditing, hasFlexPricing=$hasFlexPricing, enableSAML=$enableSAML, flexPageLoadCostCents=$flexPageLoadCostCents, flexPageLoadUnit=$flexPageLoadUnit, flexCommentCostCents=$flexCommentCostCents, flexCommentUnit=$flexCommentUnit, flexSSOUserCostCents=$flexSSOUserCostCents, flexSSOUserUnit=$flexSSOUserUnit, flexAPICreditCostCents=$flexAPICreditCostCents, flexAPICreditUnit=$flexAPICreditUnit, flexSmallWidgetsCreditCostCents=$flexSmallWidgetsCreditCostCents, flexSmallWidgetsCreditUnit=$flexSmallWidgetsCreditUnit, flexModeratorCostCents=$flexModeratorCostCents, flexModeratorUnit=$flexModeratorUnit, flexAdminCostCents=$flexAdminCostCents, flexAdminUnit=$flexAdminUnit, flexDomainCostCents=$flexDomainCostCents, flexDomainUnit=$flexDomainUnit, flexLLMCostCents=$flexLLMCostCents, flexLLMUnit=$flexLLMUnit, flexMinimumCostCents=$flexMinimumCostCents, flexManagedTenantCostCents=$flexManagedTenantCostCents, flexSSOAdminCostCents=$flexSSOAdminCostCents, flexSSOAdminUnit=$flexSSOAdminUnit, flexSSOModeratorCostCents=$flexSSOModeratorCostCents, flexSSOModeratorUnit=$flexSSOModeratorUnit]';
@@ -671,10 +673,32 @@ class CreateTenantPackageBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateTenantPackageBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateTenantPackageBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'name'), 'Required key "CreateTenantPackageBody[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "CreateTenantPackageBody[name]" has a null value in JSON.');
+        assert(json.containsKey(r'maxMonthlyPageLoads'), 'Required key "CreateTenantPackageBody[maxMonthlyPageLoads]" is missing from JSON.');
+        assert(json[r'maxMonthlyPageLoads'] != null, 'Required key "CreateTenantPackageBody[maxMonthlyPageLoads]" has a null value in JSON.');
+        assert(json.containsKey(r'maxMonthlyAPICredits'), 'Required key "CreateTenantPackageBody[maxMonthlyAPICredits]" is missing from JSON.');
+        assert(json[r'maxMonthlyAPICredits'] != null, 'Required key "CreateTenantPackageBody[maxMonthlyAPICredits]" has a null value in JSON.');
+        assert(json.containsKey(r'maxMonthlyComments'), 'Required key "CreateTenantPackageBody[maxMonthlyComments]" is missing from JSON.');
+        assert(json[r'maxMonthlyComments'] != null, 'Required key "CreateTenantPackageBody[maxMonthlyComments]" has a null value in JSON.');
+        assert(json.containsKey(r'maxConcurrentUsers'), 'Required key "CreateTenantPackageBody[maxConcurrentUsers]" is missing from JSON.');
+        assert(json[r'maxConcurrentUsers'] != null, 'Required key "CreateTenantPackageBody[maxConcurrentUsers]" has a null value in JSON.');
+        assert(json.containsKey(r'maxTenantUsers'), 'Required key "CreateTenantPackageBody[maxTenantUsers]" is missing from JSON.');
+        assert(json[r'maxTenantUsers'] != null, 'Required key "CreateTenantPackageBody[maxTenantUsers]" has a null value in JSON.');
+        assert(json.containsKey(r'maxSSOUsers'), 'Required key "CreateTenantPackageBody[maxSSOUsers]" is missing from JSON.');
+        assert(json[r'maxSSOUsers'] != null, 'Required key "CreateTenantPackageBody[maxSSOUsers]" has a null value in JSON.');
+        assert(json.containsKey(r'maxModerators'), 'Required key "CreateTenantPackageBody[maxModerators]" is missing from JSON.');
+        assert(json[r'maxModerators'] != null, 'Required key "CreateTenantPackageBody[maxModerators]" has a null value in JSON.');
+        assert(json.containsKey(r'maxDomains'), 'Required key "CreateTenantPackageBody[maxDomains]" is missing from JSON.');
+        assert(json[r'maxDomains'] != null, 'Required key "CreateTenantPackageBody[maxDomains]" has a null value in JSON.');
+        assert(json.containsKey(r'hasDebranding'), 'Required key "CreateTenantPackageBody[hasDebranding]" is missing from JSON.');
+        assert(json[r'hasDebranding'] != null, 'Required key "CreateTenantPackageBody[hasDebranding]" has a null value in JSON.');
+        assert(json.containsKey(r'forWhoText'), 'Required key "CreateTenantPackageBody[forWhoText]" is missing from JSON.');
+        assert(json[r'forWhoText'] != null, 'Required key "CreateTenantPackageBody[forWhoText]" has a null value in JSON.');
+        assert(json.containsKey(r'featureTaglines'), 'Required key "CreateTenantPackageBody[featureTaglines]" is missing from JSON.');
+        assert(json[r'featureTaglines'] != null, 'Required key "CreateTenantPackageBody[featureTaglines]" has a null value in JSON.');
+        assert(json.containsKey(r'hasFlexPricing'), 'Required key "CreateTenantPackageBody[hasFlexPricing]" is missing from JSON.');
+        assert(json[r'hasFlexPricing'] != null, 'Required key "CreateTenantPackageBody[hasFlexPricing]" has a null value in JSON.');
         return true;
       }());
 

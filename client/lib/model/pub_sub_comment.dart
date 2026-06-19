@@ -219,95 +219,97 @@ class PubSubComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PubSubComment &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.userId == userId &&
-    other.urlId == urlId &&
-    other.commenterName == commenterName &&
-    other.commenterLink == commenterLink &&
-    other.commentHTML == commentHTML &&
-    other.comment == comment &&
-    other.parentId == parentId &&
-    other.votes == votes &&
-    other.votesUp == votesUp &&
-    other.votesDown == votesDown &&
-    other.verified == verified &&
-    other.avatarSrc == avatarSrc &&
-    other.hasImages == hasImages &&
-    other.hasLinks == hasLinks &&
-    other.isByAdmin == isByAdmin &&
-    other.isByModerator == isByModerator &&
-    other.isPinned == isPinned &&
-    other.isLocked == isLocked &&
-    other.displayLabel == displayLabel &&
-    other.rating == rating &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.viewCount == viewCount &&
-    other.isDeleted == isDeleted &&
-    other.isDeletedUser == isDeletedUser &&
-    other.isSpam == isSpam &&
-    other.anonUserId == anonUserId &&
-    _deepEquality.equals(other.feedbackIds, feedbackIds) &&
-    other.flagCount == flagCount &&
-    other.domain == domain &&
-    other.url == url &&
-    other.pageTitle == pageTitle &&
-    other.expireAt == expireAt &&
-    other.reviewed == reviewed &&
-    other.hasCode == hasCode &&
-    other.approved == approved &&
-    other.locale == locale &&
-    other.isBannedUser == isBannedUser &&
-    _deepEquality.equals(other.groupIds, groupIds) &&
-    other.isLive == isLive &&
-    other.hidden == hidden &&
-    other.date == date;
+      other.tenantId == tenantId &&
+      other.userId == userId &&
+      other.urlId == urlId &&
+      other.commenterName == commenterName &&
+      other.commenterLink == commenterLink &&
+      other.commentHTML == commentHTML &&
+      other.comment == comment &&
+      other.parentId == parentId &&
+      other.votes == votes &&
+      other.votesUp == votesUp &&
+      other.votesDown == votesDown &&
+      other.verified == verified &&
+      other.avatarSrc == avatarSrc &&
+      other.hasImages == hasImages &&
+      other.hasLinks == hasLinks &&
+      other.isByAdmin == isByAdmin &&
+      other.isByModerator == isByModerator &&
+      other.isPinned == isPinned &&
+      other.isLocked == isLocked &&
+      other.displayLabel == displayLabel &&
+      other.rating == rating &&
+      _deepEquality.equals(other.badges, badges) &&
+      other.viewCount == viewCount &&
+      other.isDeleted == isDeleted &&
+      other.isDeletedUser == isDeletedUser &&
+      other.isSpam == isSpam &&
+      other.anonUserId == anonUserId &&
+      _deepEquality.equals(other.feedbackIds, feedbackIds) &&
+      other.flagCount == flagCount &&
+      other.domain == domain &&
+      other.url == url &&
+      other.pageTitle == pageTitle &&
+      other.expireAt == expireAt &&
+      other.reviewed == reviewed &&
+      other.hasCode == hasCode &&
+      other.approved == approved &&
+      other.locale == locale &&
+      other.isBannedUser == isBannedUser &&
+      _deepEquality.equals(other.groupIds, groupIds) &&
+      other.isLive == isLive &&
+      other.hidden == hidden &&
+      other.date == date;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (urlId.hashCode) +
-    (commenterName.hashCode) +
-    (commenterLink == null ? 0 : commenterLink!.hashCode) +
-    (commentHTML.hashCode) +
-    (comment.hashCode) +
-    (parentId == null ? 0 : parentId!.hashCode) +
-    (votes == null ? 0 : votes!.hashCode) +
-    (votesUp == null ? 0 : votesUp!.hashCode) +
-    (votesDown == null ? 0 : votesDown!.hashCode) +
-    (verified.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (hasImages == null ? 0 : hasImages!.hashCode) +
-    (hasLinks == null ? 0 : hasLinks!.hashCode) +
-    (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
-    (isByModerator == null ? 0 : isByModerator!.hashCode) +
-    (isPinned == null ? 0 : isPinned!.hashCode) +
-    (isLocked == null ? 0 : isLocked!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (rating == null ? 0 : rating!.hashCode) +
-    (badges == null ? 0 : badges!.hashCode) +
-    (viewCount == null ? 0 : viewCount!.hashCode) +
-    (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
-    (isSpam == null ? 0 : isSpam!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (feedbackIds.hashCode) +
-    (flagCount == null ? 0 : flagCount!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (url.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (expireAt == null ? 0 : expireAt!.hashCode) +
-    (reviewed == null ? 0 : reviewed!.hashCode) +
-    (hasCode == null ? 0 : hasCode!.hashCode) +
-    (approved.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
-    (groupIds == null ? 0 : groupIds!.hashCode) +
-    (isLive == null ? 0 : isLive!.hashCode) +
-    (hidden == null ? 0 : hidden!.hashCode) +
-    (date.hashCode);
+      (tenantId.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (urlId.hashCode) +
+      (commenterName.hashCode) +
+      (commenterLink == null ? 0 : commenterLink!.hashCode) +
+      (commentHTML.hashCode) +
+      (comment.hashCode) +
+      (parentId == null ? 0 : parentId!.hashCode) +
+      (votes == null ? 0 : votes!.hashCode) +
+      (votesUp == null ? 0 : votesUp!.hashCode) +
+      (votesDown == null ? 0 : votesDown!.hashCode) +
+      (verified.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (hasImages == null ? 0 : hasImages!.hashCode) +
+      (hasLinks == null ? 0 : hasLinks!.hashCode) +
+      (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
+      (isByModerator == null ? 0 : isByModerator!.hashCode) +
+      (isPinned == null ? 0 : isPinned!.hashCode) +
+      (isLocked == null ? 0 : isLocked!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (rating == null ? 0 : rating!.hashCode) +
+      (badges == null ? 0 : badges!.hashCode) +
+      (viewCount == null ? 0 : viewCount!.hashCode) +
+      (isDeleted == null ? 0 : isDeleted!.hashCode) +
+      (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
+      (isSpam == null ? 0 : isSpam!.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (feedbackIds.hashCode) +
+      (flagCount == null ? 0 : flagCount!.hashCode) +
+      (domain == null ? 0 : domain!.hashCode) +
+      (url.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (expireAt == null ? 0 : expireAt!.hashCode) +
+      (reviewed == null ? 0 : reviewed!.hashCode) +
+      (hasCode == null ? 0 : hasCode!.hashCode) +
+      (approved.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
+      (groupIds == null ? 0 : groupIds!.hashCode) +
+      (isLive == null ? 0 : isLive!.hashCode) +
+      (hidden == null ? 0 : hidden!.hashCode) +
+      (date.hashCode);
+  
 
   @override
   String toString() => 'PubSubComment[id=$id, tenantId=$tenantId, userId=$userId, urlId=$urlId, commenterName=$commenterName, commenterLink=$commenterLink, commentHTML=$commentHTML, comment=$comment, parentId=$parentId, votes=$votes, votesUp=$votesUp, votesDown=$votesDown, verified=$verified, avatarSrc=$avatarSrc, hasImages=$hasImages, hasLinks=$hasLinks, isByAdmin=$isByAdmin, isByModerator=$isByModerator, isPinned=$isPinned, isLocked=$isLocked, displayLabel=$displayLabel, rating=$rating, badges=$badges, viewCount=$viewCount, isDeleted=$isDeleted, isDeletedUser=$isDeletedUser, isSpam=$isSpam, anonUserId=$anonUserId, feedbackIds=$feedbackIds, flagCount=$flagCount, domain=$domain, url=$url, pageTitle=$pageTitle, expireAt=$expireAt, reviewed=$reviewed, hasCode=$hasCode, approved=$approved, locale=$locale, isBannedUser=$isBannedUser, groupIds=$groupIds, isLive=$isLive, hidden=$hidden, date=$date]';
@@ -499,10 +501,27 @@ class PubSubComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PubSubComment[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PubSubComment[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "PubSubComment[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "PubSubComment[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "PubSubComment[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "PubSubComment[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "PubSubComment[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "PubSubComment[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'commenterName'), 'Required key "PubSubComment[commenterName]" is missing from JSON.');
+        assert(json[r'commenterName'] != null, 'Required key "PubSubComment[commenterName]" has a null value in JSON.');
+        assert(json.containsKey(r'commentHTML'), 'Required key "PubSubComment[commentHTML]" is missing from JSON.');
+        assert(json[r'commentHTML'] != null, 'Required key "PubSubComment[commentHTML]" has a null value in JSON.');
+        assert(json.containsKey(r'comment'), 'Required key "PubSubComment[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "PubSubComment[comment]" has a null value in JSON.');
+        assert(json.containsKey(r'verified'), 'Required key "PubSubComment[verified]" is missing from JSON.');
+        assert(json[r'verified'] != null, 'Required key "PubSubComment[verified]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "PubSubComment[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "PubSubComment[url]" has a null value in JSON.');
+        assert(json.containsKey(r'approved'), 'Required key "PubSubComment[approved]" is missing from JSON.');
+        assert(json[r'approved'] != null, 'Required key "PubSubComment[approved]" has a null value in JSON.');
+        assert(json.containsKey(r'locale'), 'Required key "PubSubComment[locale]" is missing from JSON.');
+        assert(json.containsKey(r'date'), 'Required key "PubSubComment[date]" is missing from JSON.');
+        assert(json[r'date'] != null, 'Required key "PubSubComment[date]" has a null value in JSON.');
         return true;
       }());
 

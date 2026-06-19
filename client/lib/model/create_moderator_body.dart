@@ -36,17 +36,19 @@ class CreateModeratorBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateModeratorBody &&
     other.name == name &&
-    other.email == email &&
-    other.userId == userId &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds);
+      other.email == email &&
+      other.userId == userId &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (email.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (moderationGroupIds.hashCode);
+      (email.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (moderationGroupIds.hashCode);
+  
 
   @override
   String toString() => 'CreateModeratorBody[name=$name, email=$email, userId=$userId, moderationGroupIds=$moderationGroupIds]';
@@ -75,10 +77,10 @@ class CreateModeratorBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateModeratorBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateModeratorBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'name'), 'Required key "CreateModeratorBody[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "CreateModeratorBody[name]" has a null value in JSON.');
+        assert(json.containsKey(r'email'), 'Required key "CreateModeratorBody[email]" is missing from JSON.');
+        assert(json[r'email'] != null, 'Required key "CreateModeratorBody[email]" has a null value in JSON.');
         return true;
       }());
 

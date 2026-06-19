@@ -24,13 +24,15 @@ class GetEmailTemplateResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetEmailTemplateResponse &&
     other.status == status &&
-    other.emailTemplate == emailTemplate;
+      other.emailTemplate == emailTemplate;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (emailTemplate.hashCode);
+      (emailTemplate.hashCode);
+  
 
   @override
   String toString() => 'GetEmailTemplateResponse[status=$status, emailTemplate=$emailTemplate]';
@@ -53,10 +55,10 @@ class GetEmailTemplateResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetEmailTemplateResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetEmailTemplateResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetEmailTemplateResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetEmailTemplateResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'emailTemplate'), 'Required key "GetEmailTemplateResponse[emailTemplate]" is missing from JSON.');
+        assert(json[r'emailTemplate'] != null, 'Required key "GetEmailTemplateResponse[emailTemplate]" has a null value in JSON.');
         return true;
       }());
 

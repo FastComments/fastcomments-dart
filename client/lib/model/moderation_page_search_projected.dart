@@ -30,17 +30,19 @@ class ModerationPageSearchProjected {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationPageSearchProjected &&
     other.urlId == urlId &&
-    other.url == url &&
-    other.title == title &&
-    other.commentCount == commentCount;
+      other.url == url &&
+      other.title == title &&
+      other.commentCount == commentCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (urlId.hashCode) +
-    (url.hashCode) +
-    (title.hashCode) +
-    (commentCount.hashCode);
+      (url.hashCode) +
+      (title.hashCode) +
+      (commentCount.hashCode);
+  
 
   @override
   String toString() => 'ModerationPageSearchProjected[urlId=$urlId, url=$url, title=$title, commentCount=$commentCount]';
@@ -65,10 +67,14 @@ class ModerationPageSearchProjected {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationPageSearchProjected[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationPageSearchProjected[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'urlId'), 'Required key "ModerationPageSearchProjected[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "ModerationPageSearchProjected[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "ModerationPageSearchProjected[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "ModerationPageSearchProjected[url]" has a null value in JSON.');
+        assert(json.containsKey(r'title'), 'Required key "ModerationPageSearchProjected[title]" is missing from JSON.');
+        assert(json[r'title'] != null, 'Required key "ModerationPageSearchProjected[title]" has a null value in JSON.');
+        assert(json.containsKey(r'commentCount'), 'Required key "ModerationPageSearchProjected[commentCount]" is missing from JSON.');
+        assert(json[r'commentCount'] != null, 'Required key "ModerationPageSearchProjected[commentCount]" has a null value in JSON.');
         return true;
       }());
 

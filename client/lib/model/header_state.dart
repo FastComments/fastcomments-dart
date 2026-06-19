@@ -36,21 +36,23 @@ class HeaderState {
   @override
   bool operator ==(Object other) => identical(this, other) || other is HeaderState &&
     other.status == status &&
-    other.notificationType == notificationType &&
-    other.userId == userId &&
-    other.userIdWS == userIdWS &&
-    _deepEquality.equals(other.notificationCounts, notificationCounts) &&
-    _deepEquality.equals(other.accountNotifications, accountNotifications);
+      other.notificationType == notificationType &&
+      other.userId == userId &&
+      other.userIdWS == userIdWS &&
+      _deepEquality.equals(other.notificationCounts, notificationCounts) &&
+      _deepEquality.equals(other.accountNotifications, accountNotifications);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (notificationType.hashCode) +
-    (userId.hashCode) +
-    (userIdWS.hashCode) +
-    (notificationCounts.hashCode) +
-    (accountNotifications.hashCode);
+      (notificationType.hashCode) +
+      (userId.hashCode) +
+      (userIdWS.hashCode) +
+      (notificationCounts.hashCode) +
+      (accountNotifications.hashCode);
+  
 
   @override
   String toString() => 'HeaderState[status=$status, notificationType=$notificationType, userId=$userId, userIdWS=$userIdWS, notificationCounts=$notificationCounts, accountNotifications=$accountNotifications]';
@@ -77,10 +79,18 @@ class HeaderState {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "HeaderState[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "HeaderState[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "HeaderState[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "HeaderState[status]" has a null value in JSON.');
+        assert(json.containsKey(r'NotificationType'), 'Required key "HeaderState[NotificationType]" is missing from JSON.');
+        assert(json[r'NotificationType'] != null, 'Required key "HeaderState[NotificationType]" has a null value in JSON.');
+        assert(json.containsKey(r'userId'), 'Required key "HeaderState[userId]" is missing from JSON.');
+        assert(json[r'userId'] != null, 'Required key "HeaderState[userId]" has a null value in JSON.');
+        assert(json.containsKey(r'userIdWS'), 'Required key "HeaderState[userIdWS]" is missing from JSON.');
+        assert(json[r'userIdWS'] != null, 'Required key "HeaderState[userIdWS]" has a null value in JSON.');
+        assert(json.containsKey(r'notificationCounts'), 'Required key "HeaderState[notificationCounts]" is missing from JSON.');
+        assert(json[r'notificationCounts'] != null, 'Required key "HeaderState[notificationCounts]" has a null value in JSON.');
+        assert(json.containsKey(r'accountNotifications'), 'Required key "HeaderState[accountNotifications]" is missing from JSON.');
+        assert(json[r'accountNotifications'] != null, 'Required key "HeaderState[accountNotifications]" has a null value in JSON.');
         return true;
       }());
 

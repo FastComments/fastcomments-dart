@@ -54,17 +54,19 @@ class FeedPostLink {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPostLink &&
     other.text == text &&
-    other.title == title &&
-    other.description == description &&
-    other.url == url;
+      other.title == title &&
+      other.description == description &&
+      other.url == url;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (text == null ? 0 : text!.hashCode) +
-    (title == null ? 0 : title!.hashCode) +
-    (description == null ? 0 : description!.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+      (title == null ? 0 : title!.hashCode) +
+      (description == null ? 0 : description!.hashCode) +
+      (url == null ? 0 : url!.hashCode);
+  
 
   @override
   String toString() => 'FeedPostLink[text=$text, title=$title, description=$description, url=$url]';
@@ -105,10 +107,6 @@ class FeedPostLink {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "FeedPostLink[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "FeedPostLink[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

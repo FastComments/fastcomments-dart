@@ -24,13 +24,15 @@ class SetCommentTextResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SetCommentTextResponse &&
     other.newCommentTextHTML == newCommentTextHTML &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (newCommentTextHTML.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'SetCommentTextResponse[newCommentTextHTML=$newCommentTextHTML, status=$status]';
@@ -53,10 +55,10 @@ class SetCommentTextResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "SetCommentTextResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "SetCommentTextResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'newCommentTextHTML'), 'Required key "SetCommentTextResponse[newCommentTextHTML]" is missing from JSON.');
+        assert(json[r'newCommentTextHTML'] != null, 'Required key "SetCommentTextResponse[newCommentTextHTML]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "SetCommentTextResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "SetCommentTextResponse[status]" has a null value in JSON.');
         return true;
       }());
 

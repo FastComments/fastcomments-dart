@@ -45,15 +45,17 @@ class FCommentMeta {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FCommentMeta &&
     other.wpId == wpId &&
-    other.wpUserId == wpUserId &&
-    other.wpPostId == wpPostId;
+      other.wpUserId == wpUserId &&
+      other.wpPostId == wpPostId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (wpId == null ? 0 : wpId!.hashCode) +
-    (wpUserId == null ? 0 : wpUserId!.hashCode) +
-    (wpPostId == null ? 0 : wpPostId!.hashCode);
+      (wpUserId == null ? 0 : wpUserId!.hashCode) +
+      (wpPostId == null ? 0 : wpPostId!.hashCode);
+  
 
   @override
   String toString() => 'FCommentMeta[wpId=$wpId, wpUserId=$wpUserId, wpPostId=$wpPostId]';
@@ -89,10 +91,6 @@ class FCommentMeta {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "FCommentMeta[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "FCommentMeta[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

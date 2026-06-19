@@ -9,7 +9,7 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **emailTemplateId** | **String** |  | 
-**defaultTestData** | [**Map<String, Object>**](Object.md) | Construct a type with a set of properties K of type T | [default to const {}]
+**defaultTestData** | **Map<String, Object>** | Construct a type with a set of properties K of type T | [default to const {}]
 **defaultTranslationsByLocale** | [**Map<String, Map<String, String>>**](Map.md) | Construct a type with a set of properties K of type T | [default to const {}]
 **defaultEJS** | **String** |  | 
 

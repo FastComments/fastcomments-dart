@@ -25,13 +25,15 @@ class ChangeCommentPinStatusResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ChangeCommentPinStatusResponse &&
     _deepEquality.equals(other.commentPositions, commentPositions) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentPositions.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'ChangeCommentPinStatusResponse[commentPositions=$commentPositions, status=$status]';
@@ -54,10 +56,10 @@ class ChangeCommentPinStatusResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ChangeCommentPinStatusResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ChangeCommentPinStatusResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commentPositions'), 'Required key "ChangeCommentPinStatusResponse[commentPositions]" is missing from JSON.');
+        assert(json[r'commentPositions'] != null, 'Required key "ChangeCommentPinStatusResponse[commentPositions]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "ChangeCommentPinStatusResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ChangeCommentPinStatusResponse[status]" has a null value in JSON.');
         return true;
       }());
 

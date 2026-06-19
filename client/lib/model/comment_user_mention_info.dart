@@ -45,19 +45,21 @@ class CommentUserMentionInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentUserMentionInfo &&
     other.id == id &&
-    other.tag == tag &&
-    other.rawTag == rawTag &&
-    other.type == type &&
-    other.sent == sent;
+      other.tag == tag &&
+      other.rawTag == rawTag &&
+      other.type == type &&
+      other.sent == sent;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tag.hashCode) +
-    (rawTag == null ? 0 : rawTag!.hashCode) +
-    (type == null ? 0 : type!.hashCode) +
-    (sent == null ? 0 : sent!.hashCode);
+      (tag.hashCode) +
+      (rawTag == null ? 0 : rawTag!.hashCode) +
+      (type == null ? 0 : type!.hashCode) +
+      (sent == null ? 0 : sent!.hashCode);
+  
 
   @override
   String toString() => 'CommentUserMentionInfo[id=$id, tag=$tag, rawTag=$rawTag, type=$type, sent=$sent]';
@@ -95,10 +97,10 @@ class CommentUserMentionInfo {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CommentUserMentionInfo[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CommentUserMentionInfo[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "CommentUserMentionInfo[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "CommentUserMentionInfo[id]" has a null value in JSON.');
+        assert(json.containsKey(r'tag'), 'Required key "CommentUserMentionInfo[tag]" is missing from JSON.');
+        assert(json[r'tag'] != null, 'Required key "CommentUserMentionInfo[tag]" has a null value in JSON.');
         return true;
       }());
 

@@ -27,15 +27,17 @@ class PreBanSummary {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PreBanSummary &&
     other.status == status &&
-    _deepEquality.equals(other.usernames, usernames) &&
-    other.count == count;
+      _deepEquality.equals(other.usernames, usernames) &&
+      other.count == count;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (usernames.hashCode) +
-    (count.hashCode);
+      (usernames.hashCode) +
+      (count.hashCode);
+  
 
   @override
   String toString() => 'PreBanSummary[status=$status, usernames=$usernames, count=$count]';
@@ -59,10 +61,12 @@ class PreBanSummary {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PreBanSummary[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PreBanSummary[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "PreBanSummary[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "PreBanSummary[status]" has a null value in JSON.');
+        assert(json.containsKey(r'usernames'), 'Required key "PreBanSummary[usernames]" is missing from JSON.');
+        assert(json[r'usernames'] != null, 'Required key "PreBanSummary[usernames]" has a null value in JSON.');
+        assert(json.containsKey(r'count'), 'Required key "PreBanSummary[count]" is missing from JSON.');
+        assert(json[r'count'] != null, 'Required key "PreBanSummary[count]" has a null value in JSON.');
         return true;
       }());
 

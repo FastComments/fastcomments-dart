@@ -24,13 +24,15 @@ class GifSearchResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GifSearchResponse &&
     _deepEquality.equals(other.images, images) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (images.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GifSearchResponse[images=$images, status=$status]';
@@ -53,10 +55,10 @@ class GifSearchResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GifSearchResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GifSearchResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'images'), 'Required key "GifSearchResponse[images]" is missing from JSON.');
+        assert(json[r'images'] != null, 'Required key "GifSearchResponse[images]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GifSearchResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GifSearchResponse[status]" has a null value in JSON.');
         return true;
       }());
 

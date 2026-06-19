@@ -24,13 +24,15 @@ class GetTenantDailyUsagesResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetTenantDailyUsagesResponse &&
     other.status == status &&
-    _deepEquality.equals(other.tenantDailyUsages, tenantDailyUsages);
+      _deepEquality.equals(other.tenantDailyUsages, tenantDailyUsages);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (tenantDailyUsages.hashCode);
+      (tenantDailyUsages.hashCode);
+  
 
   @override
   String toString() => 'GetTenantDailyUsagesResponse[status=$status, tenantDailyUsages=$tenantDailyUsages]';
@@ -53,10 +55,10 @@ class GetTenantDailyUsagesResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetTenantDailyUsagesResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetTenantDailyUsagesResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetTenantDailyUsagesResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetTenantDailyUsagesResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantDailyUsages'), 'Required key "GetTenantDailyUsagesResponse[tenantDailyUsages]" is missing from JSON.');
+        assert(json[r'tenantDailyUsages'] != null, 'Required key "GetTenantDailyUsagesResponse[tenantDailyUsages]" has a null value in JSON.');
         return true;
       }());
 

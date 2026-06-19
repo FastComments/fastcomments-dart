@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **comment** | [**PubSubComment**](PubSubComment.md) |  | [optional] 
 **feedPost** | [**FeedPost**](FeedPost.md) |  | [optional] 
 **extraInfo** | [**LiveEventExtraInfo**](LiveEventExtraInfo.md) |  | [optional] 
-**config** | [**Object**](.md) |  | [optional] 
+**config** | **Object** |  | [optional] 
 **isClosed** | **bool** |  | [optional] 
 **uj** | **List<String>** |  | [optional] [default to const []]
 **ul** | **List<String>** |  | [optional] [default to const []]

@@ -24,13 +24,15 @@ class PublicAPISetCommentTextResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicAPISetCommentTextResponse &&
     other.comment == comment &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'PublicAPISetCommentTextResponse[comment=$comment, status=$status]';
@@ -53,10 +55,10 @@ class PublicAPISetCommentTextResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PublicAPISetCommentTextResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PublicAPISetCommentTextResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'comment'), 'Required key "PublicAPISetCommentTextResponse[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "PublicAPISetCommentTextResponse[comment]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "PublicAPISetCommentTextResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "PublicAPISetCommentTextResponse[status]" has a null value in JSON.');
         return true;
       }());
 

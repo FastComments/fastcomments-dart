@@ -85,33 +85,35 @@ class APIAuditLog {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIAuditLog &&
     other.id == id &&
-    other.userId == userId &&
-    other.username == username &&
-    other.resourceName == resourceName &&
-    other.crudType == crudType &&
-    other.from == from &&
-    other.url == url &&
-    other.ip == ip &&
-    other.when_ == when_ &&
-    other.description == description &&
-    other.serverStartDate == serverStartDate &&
-    _deepEquality.equals(other.objectDetails, objectDetails);
+      other.userId == userId &&
+      other.username == username &&
+      other.resourceName == resourceName &&
+      other.crudType == crudType &&
+      other.from == from &&
+      other.url == url &&
+      other.ip == ip &&
+      other.when_ == when_ &&
+      other.description == description &&
+      other.serverStartDate == serverStartDate &&
+      _deepEquality.equals(other.objectDetails, objectDetails);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (resourceName.hashCode) +
-    (crudType.hashCode) +
-    (from == null ? 0 : from!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (ip == null ? 0 : ip!.hashCode) +
-    (when_ == null ? 0 : when_!.hashCode) +
-    (description == null ? 0 : description!.hashCode) +
-    (serverStartDate == null ? 0 : serverStartDate!.hashCode) +
-    (objectDetails == null ? 0 : objectDetails!.hashCode);
+      (userId == null ? 0 : userId!.hashCode) +
+      (username == null ? 0 : username!.hashCode) +
+      (resourceName.hashCode) +
+      (crudType.hashCode) +
+      (from == null ? 0 : from!.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (ip == null ? 0 : ip!.hashCode) +
+      (when_ == null ? 0 : when_!.hashCode) +
+      (description == null ? 0 : description!.hashCode) +
+      (serverStartDate == null ? 0 : serverStartDate!.hashCode) +
+      (objectDetails == null ? 0 : objectDetails!.hashCode);
+  
 
   @override
   String toString() => 'APIAuditLog[id=$id, userId=$userId, username=$username, resourceName=$resourceName, crudType=$crudType, from=$from, url=$url, ip=$ip, when_=$when_, description=$description, serverStartDate=$serverStartDate, objectDetails=$objectDetails]';
@@ -180,10 +182,12 @@ class APIAuditLog {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIAuditLog[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIAuditLog[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "APIAuditLog[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "APIAuditLog[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'resourceName'), 'Required key "APIAuditLog[resourceName]" is missing from JSON.');
+        assert(json[r'resourceName'] != null, 'Required key "APIAuditLog[resourceName]" has a null value in JSON.');
+        assert(json.containsKey(r'crudType'), 'Required key "APIAuditLog[crudType]" is missing from JSON.');
+        assert(json[r'crudType'] != null, 'Required key "APIAuditLog[crudType]" has a null value in JSON.');
         return true;
       }());
 

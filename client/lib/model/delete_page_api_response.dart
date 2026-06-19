@@ -39,15 +39,17 @@ class DeletePageAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is DeletePageAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.status == status;
+      other.code == code &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'DeletePageAPIResponse[reason=$reason, code=$code, status=$status]';
@@ -79,10 +81,8 @@ class DeletePageAPIResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "DeletePageAPIResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "DeletePageAPIResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "DeletePageAPIResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "DeletePageAPIResponse[status]" has a null value in JSON.');
         return true;
       }());
 

@@ -9,9 +9,9 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**matchedCount** | **int** |  | 
-**modifiedCount** | **int** |  | 
-**note** | **String** |  | 
+**matchedCount** | **int** |  | [optional] 
+**modifiedCount** | **int** |  | [optional] 
+**note** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

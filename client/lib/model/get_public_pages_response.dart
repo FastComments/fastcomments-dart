@@ -27,15 +27,17 @@ class GetPublicPagesResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPublicPagesResponse &&
     other.nextCursor == nextCursor &&
-    _deepEquality.equals(other.pages, pages) &&
-    other.status == status;
+      _deepEquality.equals(other.pages, pages) &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (nextCursor == null ? 0 : nextCursor!.hashCode) +
-    (pages.hashCode) +
-    (status.hashCode);
+      (pages.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetPublicPagesResponse[nextCursor=$nextCursor, pages=$pages, status=$status]';
@@ -63,10 +65,11 @@ class GetPublicPagesResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetPublicPagesResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetPublicPagesResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'nextCursor'), 'Required key "GetPublicPagesResponse[nextCursor]" is missing from JSON.');
+        assert(json.containsKey(r'pages'), 'Required key "GetPublicPagesResponse[pages]" is missing from JSON.');
+        assert(json[r'pages'] != null, 'Required key "GetPublicPagesResponse[pages]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GetPublicPagesResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetPublicPagesResponse[status]" has a null value in JSON.');
         return true;
       }());
 

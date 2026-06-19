@@ -44,21 +44,23 @@ class QuestionResultAggregationOverall {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionResultAggregationOverall &&
     _deepEquality.equals(other.dataByDateBucket, dataByDateBucket) &&
-    _deepEquality.equals(other.dataByUrlId, dataByUrlId) &&
-    _deepEquality.equals(other.countsByValue, countsByValue) &&
-    other.total == total &&
-    other.average == average &&
-    other.createdAt == createdAt;
+      _deepEquality.equals(other.dataByUrlId, dataByUrlId) &&
+      _deepEquality.equals(other.countsByValue, countsByValue) &&
+      other.total == total &&
+      other.average == average &&
+      other.createdAt == createdAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (dataByDateBucket.hashCode) +
-    (dataByUrlId.hashCode) +
-    (countsByValue.hashCode) +
-    (total.hashCode) +
-    (average == null ? 0 : average!.hashCode) +
-    (createdAt.hashCode);
+      (dataByUrlId.hashCode) +
+      (countsByValue.hashCode) +
+      (total.hashCode) +
+      (average == null ? 0 : average!.hashCode) +
+      (createdAt.hashCode);
+  
 
   @override
   String toString() => 'QuestionResultAggregationOverall[dataByDateBucket=$dataByDateBucket, dataByUrlId=$dataByUrlId, countsByValue=$countsByValue, total=$total, average=$average, createdAt=$createdAt]';
@@ -89,10 +91,10 @@ class QuestionResultAggregationOverall {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "QuestionResultAggregationOverall[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "QuestionResultAggregationOverall[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'total'), 'Required key "QuestionResultAggregationOverall[total]" is missing from JSON.');
+        assert(json[r'total'] != null, 'Required key "QuestionResultAggregationOverall[total]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "QuestionResultAggregationOverall[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "QuestionResultAggregationOverall[createdAt]" has a null value in JSON.');
         return true;
       }());
 

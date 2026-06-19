@@ -27,15 +27,17 @@ class SearchUsersResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SearchUsersResult &&
     other.status == status &&
-    _deepEquality.equals(other.sections, sections) &&
-    _deepEquality.equals(other.users, users);
+      _deepEquality.equals(other.sections, sections) &&
+      _deepEquality.equals(other.users, users);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (sections.hashCode) +
-    (users.hashCode);
+      (sections.hashCode) +
+      (users.hashCode);
+  
 
   @override
   String toString() => 'SearchUsersResult[status=$status, sections=$sections, users=$users]';
@@ -59,10 +61,8 @@ class SearchUsersResult {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "SearchUsersResult[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "SearchUsersResult[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "SearchUsersResult[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "SearchUsersResult[status]" has a null value in JSON.');
         return true;
       }());
 
@@ -118,8 +118,6 @@ class SearchUsersResult {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'status',
-    'sections',
-    'users',
   };
 }
 

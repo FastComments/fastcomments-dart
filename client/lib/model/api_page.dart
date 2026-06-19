@@ -57,27 +57,29 @@ class APIPage {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIPage &&
     other.isClosed == isClosed &&
-    _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
-    other.rootCommentCount == rootCommentCount &&
-    other.commentCount == commentCount &&
-    other.createdAt == createdAt &&
-    other.title == title &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.id == id;
+      _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
+      other.rootCommentCount == rootCommentCount &&
+      other.commentCount == commentCount &&
+      other.createdAt == createdAt &&
+      other.title == title &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.id == id;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (isClosed == null ? 0 : isClosed!.hashCode) +
-    (accessibleByGroupIds.hashCode) +
-    (rootCommentCount.hashCode) +
-    (commentCount.hashCode) +
-    (createdAt.hashCode) +
-    (title.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (urlId.hashCode) +
-    (id.hashCode);
+      (accessibleByGroupIds.hashCode) +
+      (rootCommentCount.hashCode) +
+      (commentCount.hashCode) +
+      (createdAt.hashCode) +
+      (title.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (urlId.hashCode) +
+      (id.hashCode);
+  
 
   @override
   String toString() => 'APIPage[isClosed=$isClosed, accessibleByGroupIds=$accessibleByGroupIds, rootCommentCount=$rootCommentCount, commentCount=$commentCount, createdAt=$createdAt, title=$title, url=$url, urlId=$urlId, id=$id]';
@@ -115,10 +117,18 @@ class APIPage {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIPage[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIPage[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'rootCommentCount'), 'Required key "APIPage[rootCommentCount]" is missing from JSON.');
+        assert(json[r'rootCommentCount'] != null, 'Required key "APIPage[rootCommentCount]" has a null value in JSON.');
+        assert(json.containsKey(r'commentCount'), 'Required key "APIPage[commentCount]" is missing from JSON.');
+        assert(json[r'commentCount'] != null, 'Required key "APIPage[commentCount]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "APIPage[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "APIPage[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'title'), 'Required key "APIPage[title]" is missing from JSON.');
+        assert(json[r'title'] != null, 'Required key "APIPage[title]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "APIPage[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "APIPage[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'id'), 'Required key "APIPage[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "APIPage[id]" has a null value in JSON.');
         return true;
       }());
 

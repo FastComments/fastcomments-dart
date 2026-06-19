@@ -237,87 +237,89 @@ class UpdatableCommentParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdatableCommentParams &&
     other.urlId == urlId &&
-    other.urlIdRaw == urlIdRaw &&
-    other.url == url &&
-    other.pageTitle == pageTitle &&
-    other.userId == userId &&
-    other.commenterEmail == commenterEmail &&
-    other.commenterName == commenterName &&
-    other.commenterLink == commenterLink &&
-    other.comment == comment &&
-    other.commentHTML == commentHTML &&
-    other.parentId == parentId &&
-    other.date == date &&
-    other.localDateString == localDateString &&
-    other.localDateHours == localDateHours &&
-    other.votes == votes &&
-    other.votesUp == votesUp &&
-    other.votesDown == votesDown &&
-    other.expireAt == expireAt &&
-    other.verified == verified &&
-    other.verifiedDate == verifiedDate &&
-    other.notificationSentForParent == notificationSentForParent &&
-    other.notificationSentForParentTenant == notificationSentForParentTenant &&
-    other.reviewed == reviewed &&
-    other.externalId == externalId &&
-    other.externalParentId == externalParentId &&
-    other.avatarSrc == avatarSrc &&
-    other.isSpam == isSpam &&
-    other.approved == approved &&
-    other.isDeleted == isDeleted &&
-    other.isDeletedUser == isDeletedUser &&
-    other.isByAdmin == isByAdmin &&
-    other.isByModerator == isByModerator &&
-    other.isPinned == isPinned &&
-    other.isLocked == isLocked &&
-    other.flagCount == flagCount &&
-    other.displayLabel == displayLabel &&
-    other.meta == meta &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
-    _deepEquality.equals(other.feedbackIds, feedbackIds);
+      other.urlIdRaw == urlIdRaw &&
+      other.url == url &&
+      other.pageTitle == pageTitle &&
+      other.userId == userId &&
+      other.commenterEmail == commenterEmail &&
+      other.commenterName == commenterName &&
+      other.commenterLink == commenterLink &&
+      other.comment == comment &&
+      other.commentHTML == commentHTML &&
+      other.parentId == parentId &&
+      other.date == date &&
+      other.localDateString == localDateString &&
+      other.localDateHours == localDateHours &&
+      other.votes == votes &&
+      other.votesUp == votesUp &&
+      other.votesDown == votesDown &&
+      other.expireAt == expireAt &&
+      other.verified == verified &&
+      other.verifiedDate == verifiedDate &&
+      other.notificationSentForParent == notificationSentForParent &&
+      other.notificationSentForParentTenant == notificationSentForParentTenant &&
+      other.reviewed == reviewed &&
+      other.externalId == externalId &&
+      other.externalParentId == externalParentId &&
+      other.avatarSrc == avatarSrc &&
+      other.isSpam == isSpam &&
+      other.approved == approved &&
+      other.isDeleted == isDeleted &&
+      other.isDeletedUser == isDeletedUser &&
+      other.isByAdmin == isByAdmin &&
+      other.isByModerator == isByModerator &&
+      other.isPinned == isPinned &&
+      other.isLocked == isLocked &&
+      other.flagCount == flagCount &&
+      other.displayLabel == displayLabel &&
+      other.meta == meta &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
+      _deepEquality.equals(other.feedbackIds, feedbackIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (urlId == null ? 0 : urlId!.hashCode) +
-    (urlIdRaw == null ? 0 : urlIdRaw!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
-    (commenterName == null ? 0 : commenterName!.hashCode) +
-    (commenterLink == null ? 0 : commenterLink!.hashCode) +
-    (comment == null ? 0 : comment!.hashCode) +
-    (commentHTML == null ? 0 : commentHTML!.hashCode) +
-    (parentId == null ? 0 : parentId!.hashCode) +
-    (date == null ? 0 : date!.hashCode) +
-    (localDateString == null ? 0 : localDateString!.hashCode) +
-    (localDateHours == null ? 0 : localDateHours!.hashCode) +
-    (votes == null ? 0 : votes!.hashCode) +
-    (votesUp == null ? 0 : votesUp!.hashCode) +
-    (votesDown == null ? 0 : votesDown!.hashCode) +
-    (expireAt == null ? 0 : expireAt!.hashCode) +
-    (verified == null ? 0 : verified!.hashCode) +
-    (verifiedDate == null ? 0 : verifiedDate!.hashCode) +
-    (notificationSentForParent == null ? 0 : notificationSentForParent!.hashCode) +
-    (notificationSentForParentTenant == null ? 0 : notificationSentForParentTenant!.hashCode) +
-    (reviewed == null ? 0 : reviewed!.hashCode) +
-    (externalId == null ? 0 : externalId!.hashCode) +
-    (externalParentId == null ? 0 : externalParentId!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (isSpam == null ? 0 : isSpam!.hashCode) +
-    (approved == null ? 0 : approved!.hashCode) +
-    (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
-    (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
-    (isByModerator == null ? 0 : isByModerator!.hashCode) +
-    (isPinned == null ? 0 : isPinned!.hashCode) +
-    (isLocked == null ? 0 : isLocked!.hashCode) +
-    (flagCount == null ? 0 : flagCount!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (meta == null ? 0 : meta!.hashCode) +
-    (moderationGroupIds == null ? 0 : moderationGroupIds!.hashCode) +
-    (feedbackIds.hashCode);
+      (urlIdRaw == null ? 0 : urlIdRaw!.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
+      (commenterName == null ? 0 : commenterName!.hashCode) +
+      (commenterLink == null ? 0 : commenterLink!.hashCode) +
+      (comment == null ? 0 : comment!.hashCode) +
+      (commentHTML == null ? 0 : commentHTML!.hashCode) +
+      (parentId == null ? 0 : parentId!.hashCode) +
+      (date == null ? 0 : date!.hashCode) +
+      (localDateString == null ? 0 : localDateString!.hashCode) +
+      (localDateHours == null ? 0 : localDateHours!.hashCode) +
+      (votes == null ? 0 : votes!.hashCode) +
+      (votesUp == null ? 0 : votesUp!.hashCode) +
+      (votesDown == null ? 0 : votesDown!.hashCode) +
+      (expireAt == null ? 0 : expireAt!.hashCode) +
+      (verified == null ? 0 : verified!.hashCode) +
+      (verifiedDate == null ? 0 : verifiedDate!.hashCode) +
+      (notificationSentForParent == null ? 0 : notificationSentForParent!.hashCode) +
+      (notificationSentForParentTenant == null ? 0 : notificationSentForParentTenant!.hashCode) +
+      (reviewed == null ? 0 : reviewed!.hashCode) +
+      (externalId == null ? 0 : externalId!.hashCode) +
+      (externalParentId == null ? 0 : externalParentId!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (isSpam == null ? 0 : isSpam!.hashCode) +
+      (approved == null ? 0 : approved!.hashCode) +
+      (isDeleted == null ? 0 : isDeleted!.hashCode) +
+      (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
+      (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
+      (isByModerator == null ? 0 : isByModerator!.hashCode) +
+      (isPinned == null ? 0 : isPinned!.hashCode) +
+      (isLocked == null ? 0 : isLocked!.hashCode) +
+      (flagCount == null ? 0 : flagCount!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (meta == null ? 0 : meta!.hashCode) +
+      (moderationGroupIds == null ? 0 : moderationGroupIds!.hashCode) +
+      (feedbackIds.hashCode);
+  
 
   @override
   String toString() => 'UpdatableCommentParams[urlId=$urlId, urlIdRaw=$urlIdRaw, url=$url, pageTitle=$pageTitle, userId=$userId, commenterEmail=$commenterEmail, commenterName=$commenterName, commenterLink=$commenterLink, comment=$comment, commentHTML=$commentHTML, parentId=$parentId, date=$date, localDateString=$localDateString, localDateHours=$localDateHours, votes=$votes, votesUp=$votesUp, votesDown=$votesDown, expireAt=$expireAt, verified=$verified, verifiedDate=$verifiedDate, notificationSentForParent=$notificationSentForParent, notificationSentForParentTenant=$notificationSentForParentTenant, reviewed=$reviewed, externalId=$externalId, externalParentId=$externalParentId, avatarSrc=$avatarSrc, isSpam=$isSpam, approved=$approved, isDeleted=$isDeleted, isDeletedUser=$isDeletedUser, isByAdmin=$isByAdmin, isByModerator=$isByModerator, isPinned=$isPinned, isLocked=$isLocked, flagCount=$flagCount, displayLabel=$displayLabel, meta=$meta, moderationGroupIds=$moderationGroupIds, feedbackIds=$feedbackIds]';
@@ -529,10 +531,6 @@ class UpdatableCommentParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdatableCommentParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdatableCommentParams[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

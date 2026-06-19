@@ -120,49 +120,51 @@ class APISSOUser {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APISSOUser &&
     other.id == id &&
-    other.username == username &&
-    other.websiteUrl == websiteUrl &&
-    other.email == email &&
-    other.signUpDate == signUpDate &&
-    other.createdFromUrlId == createdFromUrlId &&
-    other.loginCount == loginCount &&
-    other.avatarSrc == avatarSrc &&
-    other.optedInNotifications == optedInNotifications &&
-    other.optedInSubscriptionNotifications == optedInSubscriptionNotifications &&
-    other.displayLabel == displayLabel &&
-    other.displayName == displayName &&
-    other.isAccountOwner == isAccountOwner &&
-    other.isAdminAdmin == isAdminAdmin &&
-    other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
-    other.isProfileActivityPrivate == isProfileActivityPrivate &&
-    other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
-    other.isProfileDMDisabled == isProfileDMDisabled &&
-    other.hasBlockedUsers == hasBlockedUsers &&
-    _deepEquality.equals(other.groupIds, groupIds);
+      other.username == username &&
+      other.websiteUrl == websiteUrl &&
+      other.email == email &&
+      other.signUpDate == signUpDate &&
+      other.createdFromUrlId == createdFromUrlId &&
+      other.loginCount == loginCount &&
+      other.avatarSrc == avatarSrc &&
+      other.optedInNotifications == optedInNotifications &&
+      other.optedInSubscriptionNotifications == optedInSubscriptionNotifications &&
+      other.displayLabel == displayLabel &&
+      other.displayName == displayName &&
+      other.isAccountOwner == isAccountOwner &&
+      other.isAdminAdmin == isAdminAdmin &&
+      other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
+      other.isProfileActivityPrivate == isProfileActivityPrivate &&
+      other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
+      other.isProfileDMDisabled == isProfileDMDisabled &&
+      other.hasBlockedUsers == hasBlockedUsers &&
+      _deepEquality.equals(other.groupIds, groupIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (username.hashCode) +
-    (websiteUrl.hashCode) +
-    (email.hashCode) +
-    (signUpDate.hashCode) +
-    (createdFromUrlId.hashCode) +
-    (loginCount.hashCode) +
-    (avatarSrc.hashCode) +
-    (optedInNotifications.hashCode) +
-    (optedInSubscriptionNotifications.hashCode) +
-    (displayLabel.hashCode) +
-    (displayName.hashCode) +
-    (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
-    (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
-    (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
-    (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
-    (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
-    (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
-    (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
-    (groupIds.hashCode);
+      (username.hashCode) +
+      (websiteUrl.hashCode) +
+      (email.hashCode) +
+      (signUpDate.hashCode) +
+      (createdFromUrlId.hashCode) +
+      (loginCount.hashCode) +
+      (avatarSrc.hashCode) +
+      (optedInNotifications.hashCode) +
+      (optedInSubscriptionNotifications.hashCode) +
+      (displayLabel.hashCode) +
+      (displayName.hashCode) +
+      (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
+      (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
+      (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
+      (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
+      (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
+      (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
+      (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
+      (groupIds.hashCode);
+  
 
   @override
   String toString() => 'APISSOUser[id=$id, username=$username, websiteUrl=$websiteUrl, email=$email, signUpDate=$signUpDate, createdFromUrlId=$createdFromUrlId, loginCount=$loginCount, avatarSrc=$avatarSrc, optedInNotifications=$optedInNotifications, optedInSubscriptionNotifications=$optedInSubscriptionNotifications, displayLabel=$displayLabel, displayName=$displayName, isAccountOwner=$isAccountOwner, isAdminAdmin=$isAdminAdmin, isCommentModeratorAdmin=$isCommentModeratorAdmin, isProfileActivityPrivate=$isProfileActivityPrivate, isProfileCommentsPrivate=$isProfileCommentsPrivate, isProfileDMDisabled=$isProfileDMDisabled, hasBlockedUsers=$hasBlockedUsers, groupIds=$groupIds]';
@@ -231,10 +233,30 @@ class APISSOUser {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APISSOUser[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APISSOUser[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "APISSOUser[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "APISSOUser[id]" has a null value in JSON.');
+        assert(json.containsKey(r'username'), 'Required key "APISSOUser[username]" is missing from JSON.');
+        assert(json[r'username'] != null, 'Required key "APISSOUser[username]" has a null value in JSON.');
+        assert(json.containsKey(r'websiteUrl'), 'Required key "APISSOUser[websiteUrl]" is missing from JSON.');
+        assert(json[r'websiteUrl'] != null, 'Required key "APISSOUser[websiteUrl]" has a null value in JSON.');
+        assert(json.containsKey(r'email'), 'Required key "APISSOUser[email]" is missing from JSON.');
+        assert(json[r'email'] != null, 'Required key "APISSOUser[email]" has a null value in JSON.');
+        assert(json.containsKey(r'signUpDate'), 'Required key "APISSOUser[signUpDate]" is missing from JSON.');
+        assert(json[r'signUpDate'] != null, 'Required key "APISSOUser[signUpDate]" has a null value in JSON.');
+        assert(json.containsKey(r'createdFromUrlId'), 'Required key "APISSOUser[createdFromUrlId]" is missing from JSON.');
+        assert(json[r'createdFromUrlId'] != null, 'Required key "APISSOUser[createdFromUrlId]" has a null value in JSON.');
+        assert(json.containsKey(r'loginCount'), 'Required key "APISSOUser[loginCount]" is missing from JSON.');
+        assert(json[r'loginCount'] != null, 'Required key "APISSOUser[loginCount]" has a null value in JSON.');
+        assert(json.containsKey(r'avatarSrc'), 'Required key "APISSOUser[avatarSrc]" is missing from JSON.');
+        assert(json[r'avatarSrc'] != null, 'Required key "APISSOUser[avatarSrc]" has a null value in JSON.');
+        assert(json.containsKey(r'optedInNotifications'), 'Required key "APISSOUser[optedInNotifications]" is missing from JSON.');
+        assert(json[r'optedInNotifications'] != null, 'Required key "APISSOUser[optedInNotifications]" has a null value in JSON.');
+        assert(json.containsKey(r'optedInSubscriptionNotifications'), 'Required key "APISSOUser[optedInSubscriptionNotifications]" is missing from JSON.');
+        assert(json[r'optedInSubscriptionNotifications'] != null, 'Required key "APISSOUser[optedInSubscriptionNotifications]" has a null value in JSON.');
+        assert(json.containsKey(r'displayLabel'), 'Required key "APISSOUser[displayLabel]" is missing from JSON.');
+        assert(json[r'displayLabel'] != null, 'Required key "APISSOUser[displayLabel]" has a null value in JSON.');
+        assert(json.containsKey(r'displayName'), 'Required key "APISSOUser[displayName]" is missing from JSON.');
+        assert(json[r'displayName'] != null, 'Required key "APISSOUser[displayName]" has a null value in JSON.');
         return true;
       }());
 

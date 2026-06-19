@@ -24,13 +24,15 @@ class CreateFeedPostResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateFeedPostResponse &&
     other.status == status &&
-    other.feedPost == feedPost;
+      other.feedPost == feedPost;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (feedPost.hashCode);
+      (feedPost.hashCode);
+  
 
   @override
   String toString() => 'CreateFeedPostResponse[status=$status, feedPost=$feedPost]';
@@ -53,10 +55,10 @@ class CreateFeedPostResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateFeedPostResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateFeedPostResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "CreateFeedPostResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "CreateFeedPostResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'feedPost'), 'Required key "CreateFeedPostResponse[feedPost]" is missing from JSON.');
+        assert(json[r'feedPost'] != null, 'Required key "CreateFeedPostResponse[feedPost]" has a null value in JSON.');
         return true;
       }());
 

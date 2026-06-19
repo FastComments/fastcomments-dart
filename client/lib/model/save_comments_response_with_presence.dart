@@ -40,19 +40,21 @@ class SaveCommentsResponseWithPresence {
   @override
   bool operator ==(Object other) => identical(this, other) || other is SaveCommentsResponseWithPresence &&
     other.status == status &&
-    other.comment == comment &&
-    other.user == user &&
-    _deepEquality.equals(other.moduleData, moduleData) &&
-    other.userIdWS == userIdWS;
+      other.comment == comment &&
+      other.user == user &&
+      _deepEquality.equals(other.moduleData, moduleData) &&
+      other.userIdWS == userIdWS;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (comment.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (moduleData.hashCode) +
-    (userIdWS == null ? 0 : userIdWS!.hashCode);
+      (comment.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (moduleData.hashCode) +
+      (userIdWS == null ? 0 : userIdWS!.hashCode);
+  
 
   @override
   String toString() => 'SaveCommentsResponseWithPresence[status=$status, comment=$comment, user=$user, moduleData=$moduleData, userIdWS=$userIdWS]';
@@ -86,10 +88,11 @@ class SaveCommentsResponseWithPresence {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "SaveCommentsResponseWithPresence[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "SaveCommentsResponseWithPresence[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "SaveCommentsResponseWithPresence[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "SaveCommentsResponseWithPresence[status]" has a null value in JSON.');
+        assert(json.containsKey(r'comment'), 'Required key "SaveCommentsResponseWithPresence[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "SaveCommentsResponseWithPresence[comment]" has a null value in JSON.');
+        assert(json.containsKey(r'user'), 'Required key "SaveCommentsResponseWithPresence[user]" is missing from JSON.');
         return true;
       }());
 

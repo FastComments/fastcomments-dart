@@ -22,11 +22,13 @@ class AggregationItem {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationItem &&
     _deepEquality.equals(other.groups, groups);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (groups.hashCode);
+  
 
   @override
   String toString() => 'AggregationItem[groups=$groups]';
@@ -48,10 +50,6 @@ class AggregationItem {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationItem[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationItem[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

@@ -27,15 +27,17 @@ class AwardUserBadgeResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AwardUserBadgeResponse &&
     _deepEquality.equals(other.notes, notes) &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.status == status;
+      _deepEquality.equals(other.badges, badges) &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (notes.hashCode) +
-    (badges.hashCode) +
-    (status.hashCode);
+      (badges.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'AwardUserBadgeResponse[notes=$notes, badges=$badges, status=$status]';
@@ -59,10 +61,8 @@ class AwardUserBadgeResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AwardUserBadgeResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AwardUserBadgeResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "AwardUserBadgeResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "AwardUserBadgeResponse[status]" has a null value in JSON.');
         return true;
       }());
 

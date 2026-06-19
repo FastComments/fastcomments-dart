@@ -63,35 +63,37 @@ class APIBannedUser {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIBannedUser &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.userId == userId &&
-    other.email == email &&
-    other.username == username &&
-    other.ipHash == ipHash &&
-    other.createdAt == createdAt &&
-    other.bannedByUserId == bannedByUserId &&
-    other.bannedCommentText == bannedCommentText &&
-    other.banType == banType &&
-    other.bannedUntil == bannedUntil &&
-    other.hasEmailWildcard == hasEmailWildcard &&
-    other.banReason == banReason;
+      other.tenantId == tenantId &&
+      other.userId == userId &&
+      other.email == email &&
+      other.username == username &&
+      other.ipHash == ipHash &&
+      other.createdAt == createdAt &&
+      other.bannedByUserId == bannedByUserId &&
+      other.bannedCommentText == bannedCommentText &&
+      other.banType == banType &&
+      other.bannedUntil == bannedUntil &&
+      other.hasEmailWildcard == hasEmailWildcard &&
+      other.banReason == banReason;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (ipHash == null ? 0 : ipHash!.hashCode) +
-    (createdAt.hashCode) +
-    (bannedByUserId.hashCode) +
-    (bannedCommentText.hashCode) +
-    (banType.hashCode) +
-    (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
-    (hasEmailWildcard.hashCode) +
-    (banReason == null ? 0 : banReason!.hashCode);
+      (tenantId.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (username == null ? 0 : username!.hashCode) +
+      (ipHash == null ? 0 : ipHash!.hashCode) +
+      (createdAt.hashCode) +
+      (bannedByUserId.hashCode) +
+      (bannedCommentText.hashCode) +
+      (banType.hashCode) +
+      (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
+      (hasEmailWildcard.hashCode) +
+      (banReason == null ? 0 : banReason!.hashCode);
+  
 
   @override
   String toString() => 'APIBannedUser[id=$id, tenantId=$tenantId, userId=$userId, email=$email, username=$username, ipHash=$ipHash, createdAt=$createdAt, bannedByUserId=$bannedByUserId, bannedCommentText=$bannedCommentText, banType=$banType, bannedUntil=$bannedUntil, hasEmailWildcard=$hasEmailWildcard, banReason=$banReason]';
@@ -149,10 +151,21 @@ class APIBannedUser {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIBannedUser[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIBannedUser[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "APIBannedUser[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "APIBannedUser[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "APIBannedUser[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "APIBannedUser[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "APIBannedUser[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "APIBannedUser[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'bannedByUserId'), 'Required key "APIBannedUser[bannedByUserId]" is missing from JSON.');
+        assert(json[r'bannedByUserId'] != null, 'Required key "APIBannedUser[bannedByUserId]" has a null value in JSON.');
+        assert(json.containsKey(r'bannedCommentText'), 'Required key "APIBannedUser[bannedCommentText]" is missing from JSON.');
+        assert(json[r'bannedCommentText'] != null, 'Required key "APIBannedUser[bannedCommentText]" has a null value in JSON.');
+        assert(json.containsKey(r'banType'), 'Required key "APIBannedUser[banType]" is missing from JSON.');
+        assert(json[r'banType'] != null, 'Required key "APIBannedUser[banType]" has a null value in JSON.');
+        assert(json.containsKey(r'bannedUntil'), 'Required key "APIBannedUser[bannedUntil]" is missing from JSON.');
+        assert(json.containsKey(r'hasEmailWildcard'), 'Required key "APIBannedUser[hasEmailWildcard]" is missing from JSON.');
+        assert(json[r'hasEmailWildcard'] != null, 'Required key "APIBannedUser[hasEmailWildcard]" has a null value in JSON.');
         return true;
       }());
 

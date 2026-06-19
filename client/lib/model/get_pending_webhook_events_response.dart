@@ -24,13 +24,15 @@ class GetPendingWebhookEventsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPendingWebhookEventsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.pendingWebhookEvents, pendingWebhookEvents);
+      _deepEquality.equals(other.pendingWebhookEvents, pendingWebhookEvents);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (pendingWebhookEvents.hashCode);
+      (pendingWebhookEvents.hashCode);
+  
 
   @override
   String toString() => 'GetPendingWebhookEventsResponse[status=$status, pendingWebhookEvents=$pendingWebhookEvents]';
@@ -53,10 +55,10 @@ class GetPendingWebhookEventsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetPendingWebhookEventsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetPendingWebhookEventsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetPendingWebhookEventsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetPendingWebhookEventsResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'pendingWebhookEvents'), 'Required key "GetPendingWebhookEventsResponse[pendingWebhookEvents]" is missing from JSON.');
+        assert(json[r'pendingWebhookEvents'] != null, 'Required key "GetPendingWebhookEventsResponse[pendingWebhookEvents]" has a null value in JSON.');
         return true;
       }());
 

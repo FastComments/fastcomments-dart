@@ -24,13 +24,15 @@ class APIModerateGetUserBanPreferencesResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIModerateGetUserBanPreferencesResponse &&
     other.preferences == preferences &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (preferences == null ? 0 : preferences!.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'APIModerateGetUserBanPreferencesResponse[preferences=$preferences, status=$status]';
@@ -57,10 +59,9 @@ class APIModerateGetUserBanPreferencesResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIModerateGetUserBanPreferencesResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIModerateGetUserBanPreferencesResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'preferences'), 'Required key "APIModerateGetUserBanPreferencesResponse[preferences]" is missing from JSON.');
+        assert(json.containsKey(r'status'), 'Required key "APIModerateGetUserBanPreferencesResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "APIModerateGetUserBanPreferencesResponse[status]" has a null value in JSON.');
         return true;
       }());
 

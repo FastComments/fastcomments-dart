@@ -57,19 +57,21 @@ class FlagCommentResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FlagCommentResponse &&
     other.statusCode == statusCode &&
-    other.status == status &&
-    other.code == code &&
-    other.reason == reason &&
-    other.wasUnapproved == wasUnapproved;
+      other.status == status &&
+      other.code == code &&
+      other.reason == reason &&
+      other.wasUnapproved == wasUnapproved;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (statusCode == null ? 0 : statusCode!.hashCode) +
-    (status.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (reason == null ? 0 : reason!.hashCode) +
-    (wasUnapproved == null ? 0 : wasUnapproved!.hashCode);
+      (status.hashCode) +
+      (code == null ? 0 : code!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (wasUnapproved == null ? 0 : wasUnapproved!.hashCode);
+  
 
   @override
   String toString() => 'FlagCommentResponse[statusCode=$statusCode, status=$status, code=$code, reason=$reason, wasUnapproved=$wasUnapproved]';
@@ -111,10 +113,8 @@ class FlagCommentResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "FlagCommentResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "FlagCommentResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "FlagCommentResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "FlagCommentResponse[status]" has a null value in JSON.');
         return true;
       }());
 

@@ -14,33 +14,47 @@ class UpdateUserNotificationStatusResponse {
   /// Returns a new [UpdateUserNotificationStatusResponse] instance.
   UpdateUserNotificationStatusResponse({
     required this.status,
-    required this.matchedCount,
-    required this.modifiedCount,
-    required this.note,
+    this.matchedCount,
+    this.modifiedCount,
+    this.note,
   });
 
   APIStatus status;
 
-  int matchedCount;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? matchedCount;
 
-  int modifiedCount;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  int? modifiedCount;
 
-  UpdateUserNotificationStatusResponseNoteEnum note;
+  UpdateUserNotificationStatusResponseNoteEnum? note;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateUserNotificationStatusResponse &&
     other.status == status &&
-    other.matchedCount == matchedCount &&
-    other.modifiedCount == modifiedCount &&
-    other.note == note;
+      other.matchedCount == matchedCount &&
+      other.modifiedCount == modifiedCount &&
+      other.note == note;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (matchedCount.hashCode) +
-    (modifiedCount.hashCode) +
-    (note.hashCode);
+      (matchedCount == null ? 0 : matchedCount!.hashCode) +
+      (modifiedCount == null ? 0 : modifiedCount!.hashCode) +
+      (note == null ? 0 : note!.hashCode);
+  
 
   @override
   String toString() => 'UpdateUserNotificationStatusResponse[status=$status, matchedCount=$matchedCount, modifiedCount=$modifiedCount, note=$note]';
@@ -48,9 +62,21 @@ class UpdateUserNotificationStatusResponse {
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'status'] = this.status;
+    if (this.matchedCount != null) {
       json[r'matchedCount'] = this.matchedCount;
+    } else {
+      json[r'matchedCount'] = null;
+    }
+    if (this.modifiedCount != null) {
       json[r'modifiedCount'] = this.modifiedCount;
+    } else {
+      json[r'modifiedCount'] = null;
+    }
+    if (this.note != null) {
       json[r'note'] = this.note;
+    } else {
+      json[r'note'] = null;
+    }
     return json;
   }
 
@@ -65,18 +91,16 @@ class UpdateUserNotificationStatusResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateUserNotificationStatusResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateUserNotificationStatusResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "UpdateUserNotificationStatusResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "UpdateUserNotificationStatusResponse[status]" has a null value in JSON.');
         return true;
       }());
 
       return UpdateUserNotificationStatusResponse(
         status: APIStatus.fromJson(json[r'status'])!,
-        matchedCount: mapValueOfType<int>(json, r'matchedCount')!,
-        modifiedCount: mapValueOfType<int>(json, r'modifiedCount')!,
-        note: UpdateUserNotificationStatusResponseNoteEnum.fromJson(json[r'note'])!,
+        matchedCount: mapValueOfType<int>(json, r'matchedCount'),
+        modifiedCount: mapValueOfType<int>(json, r'modifiedCount'),
+        note: UpdateUserNotificationStatusResponseNoteEnum.fromJson(json[r'note']),
       );
     }
     return null;
@@ -125,9 +149,6 @@ class UpdateUserNotificationStatusResponse {
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
     'status',
-    'matchedCount',
-    'modifiedCount',
-    'note',
   };
 }
 

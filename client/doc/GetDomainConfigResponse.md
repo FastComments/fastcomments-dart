@@ -8,10 +8,10 @@ import 'package:fastcomments_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**configuration** | [**Object**](.md) |  | 
-**status** | [**Object**](.md) |  | 
-**reason** | **String** |  | 
-**code** | **String** |  | 
+**configuration** | **Object** |  | [optional] 
+**status** | **Object** |  | 
+**reason** | **String** |  | [optional] 
+**code** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -44,17 +44,19 @@ class AggregationOperation {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationOperation &&
     other.field == field &&
-    other.op == op &&
-    other.alias == alias &&
-    other.expandArray == expandArray;
+      other.op == op &&
+      other.alias == alias &&
+      other.expandArray == expandArray;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (field.hashCode) +
-    (op.hashCode) +
-    (alias == null ? 0 : alias!.hashCode) +
-    (expandArray == null ? 0 : expandArray!.hashCode);
+      (op.hashCode) +
+      (alias == null ? 0 : alias!.hashCode) +
+      (expandArray == null ? 0 : expandArray!.hashCode);
+  
 
   @override
   String toString() => 'AggregationOperation[field=$field, op=$op, alias=$alias, expandArray=$expandArray]';
@@ -87,10 +89,10 @@ class AggregationOperation {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationOperation[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationOperation[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'field'), 'Required key "AggregationOperation[field]" is missing from JSON.');
+        assert(json[r'field'] != null, 'Required key "AggregationOperation[field]" has a null value in JSON.');
+        assert(json.containsKey(r'op'), 'Required key "AggregationOperation[op]" is missing from JSON.');
+        assert(json[r'op'] != null, 'Required key "AggregationOperation[op]" has a null value in JSON.');
         return true;
       }());
 

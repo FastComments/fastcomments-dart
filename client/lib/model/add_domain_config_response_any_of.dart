@@ -24,13 +24,15 @@ class AddDomainConfigResponseAnyOf {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AddDomainConfigResponseAnyOf &&
     other.configuration == configuration &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (configuration == null ? 0 : configuration!.hashCode) +
-    (status == null ? 0 : status!.hashCode);
+      (status == null ? 0 : status!.hashCode);
+  
 
   @override
   String toString() => 'AddDomainConfigResponseAnyOf[configuration=$configuration, status=$status]';
@@ -61,10 +63,8 @@ class AddDomainConfigResponseAnyOf {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AddDomainConfigResponseAnyOf[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AddDomainConfigResponseAnyOf[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'configuration'), 'Required key "AddDomainConfigResponseAnyOf[configuration]" is missing from JSON.');
+        assert(json.containsKey(r'status'), 'Required key "AddDomainConfigResponseAnyOf[status]" is missing from JSON.');
         return true;
       }());
 

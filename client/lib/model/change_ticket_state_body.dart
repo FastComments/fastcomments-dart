@@ -21,11 +21,13 @@ class ChangeTicketStateBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ChangeTicketStateBody &&
     other.state == state;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (state.hashCode);
+  
 
   @override
   String toString() => 'ChangeTicketStateBody[state=$state]';
@@ -47,10 +49,8 @@ class ChangeTicketStateBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ChangeTicketStateBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ChangeTicketStateBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'state'), 'Required key "ChangeTicketStateBody[state]" is missing from JSON.');
+        assert(json[r'state'] != null, 'Required key "ChangeTicketStateBody[state]" has a null value in JSON.');
         return true;
       }());
 

@@ -48,17 +48,19 @@ class APIBanUserChangeLog {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIBanUserChangeLog &&
     other.createdBannedUserId == createdBannedUserId &&
-    other.updatedBannedUserId == updatedBannedUserId &&
-    _deepEquality.equals(other.deletedBannedUsers, deletedBannedUsers) &&
-    other.changedValuesBefore == changedValuesBefore;
+      other.updatedBannedUserId == updatedBannedUserId &&
+      _deepEquality.equals(other.deletedBannedUsers, deletedBannedUsers) &&
+      other.changedValuesBefore == changedValuesBefore;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (createdBannedUserId == null ? 0 : createdBannedUserId!.hashCode) +
-    (updatedBannedUserId == null ? 0 : updatedBannedUserId!.hashCode) +
-    (deletedBannedUsers.hashCode) +
-    (changedValuesBefore == null ? 0 : changedValuesBefore!.hashCode);
+      (updatedBannedUserId == null ? 0 : updatedBannedUserId!.hashCode) +
+      (deletedBannedUsers.hashCode) +
+      (changedValuesBefore == null ? 0 : changedValuesBefore!.hashCode);
+  
 
   @override
   String toString() => 'APIBanUserChangeLog[createdBannedUserId=$createdBannedUserId, updatedBannedUserId=$updatedBannedUserId, deletedBannedUsers=$deletedBannedUsers, changedValuesBefore=$changedValuesBefore]';
@@ -95,10 +97,6 @@ class APIBanUserChangeLog {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIBanUserChangeLog[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIBanUserChangeLog[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

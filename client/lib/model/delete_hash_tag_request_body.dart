@@ -27,11 +27,13 @@ class DeleteHashTagRequestBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is DeleteHashTagRequestBody &&
     other.tenantId == tenantId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (tenantId == null ? 0 : tenantId!.hashCode);
+  
 
   @override
   String toString() => 'DeleteHashTagRequestBody[tenantId=$tenantId]';
@@ -57,10 +59,6 @@ class DeleteHashTagRequestBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "DeleteHashTagRequestBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "DeleteHashTagRequestBody[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

@@ -9,7 +9,7 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**translations** | [**Object**](.md) |  | 
+**translations** | **Object** |  | 
 **comments** | [**List<ModerationAPIComment>**](ModerationAPIComment.md) |  | [default to const []]
 **moderationFilter** | [**ModerationFilter**](ModerationFilter.md) |  | [optional] 
 

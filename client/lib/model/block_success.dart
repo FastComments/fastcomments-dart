@@ -25,13 +25,15 @@ class BlockSuccess {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BlockSuccess &&
     other.status == status &&
-    _deepEquality.equals(other.commentStatuses, commentStatuses);
+      _deepEquality.equals(other.commentStatuses, commentStatuses);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (commentStatuses.hashCode);
+      (commentStatuses.hashCode);
+  
 
   @override
   String toString() => 'BlockSuccess[status=$status, commentStatuses=$commentStatuses]';
@@ -54,10 +56,10 @@ class BlockSuccess {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BlockSuccess[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BlockSuccess[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "BlockSuccess[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "BlockSuccess[status]" has a null value in JSON.');
+        assert(json.containsKey(r'commentStatuses'), 'Required key "BlockSuccess[commentStatuses]" is missing from JSON.');
+        assert(json[r'commentStatuses'] != null, 'Required key "BlockSuccess[commentStatuses]" has a null value in JSON.');
         return true;
       }());
 

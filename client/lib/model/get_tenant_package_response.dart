@@ -24,13 +24,15 @@ class GetTenantPackageResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetTenantPackageResponse &&
     other.status == status &&
-    other.tenantPackage == tenantPackage;
+      other.tenantPackage == tenantPackage;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (tenantPackage.hashCode);
+      (tenantPackage.hashCode);
+  
 
   @override
   String toString() => 'GetTenantPackageResponse[status=$status, tenantPackage=$tenantPackage]';
@@ -53,10 +55,10 @@ class GetTenantPackageResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetTenantPackageResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetTenantPackageResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetTenantPackageResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetTenantPackageResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantPackage'), 'Required key "GetTenantPackageResponse[tenantPackage]" is missing from JSON.');
+        assert(json[r'tenantPackage'] != null, 'Required key "GetTenantPackageResponse[tenantPackage]" has a null value in JSON.');
         return true;
       }());
 

@@ -50,25 +50,27 @@ class BillingInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BillingInfo &&
     other.name == name &&
-    other.address == address &&
-    other.city == city &&
-    other.state == state &&
-    other.zip == zip &&
-    other.country == country &&
-    other.currency == currency &&
-    other.email == email;
+      other.address == address &&
+      other.city == city &&
+      other.state == state &&
+      other.zip == zip &&
+      other.country == country &&
+      other.currency == currency &&
+      other.email == email;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (address.hashCode) +
-    (city.hashCode) +
-    (state.hashCode) +
-    (zip.hashCode) +
-    (country.hashCode) +
-    (currency == null ? 0 : currency!.hashCode) +
-    (email == null ? 0 : email!.hashCode);
+      (address.hashCode) +
+      (city.hashCode) +
+      (state.hashCode) +
+      (zip.hashCode) +
+      (country.hashCode) +
+      (currency == null ? 0 : currency!.hashCode) +
+      (email == null ? 0 : email!.hashCode);
+  
 
   @override
   String toString() => 'BillingInfo[name=$name, address=$address, city=$city, state=$state, zip=$zip, country=$country, currency=$currency, email=$email]';
@@ -105,10 +107,18 @@ class BillingInfo {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BillingInfo[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BillingInfo[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'name'), 'Required key "BillingInfo[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "BillingInfo[name]" has a null value in JSON.');
+        assert(json.containsKey(r'address'), 'Required key "BillingInfo[address]" is missing from JSON.');
+        assert(json[r'address'] != null, 'Required key "BillingInfo[address]" has a null value in JSON.');
+        assert(json.containsKey(r'city'), 'Required key "BillingInfo[city]" is missing from JSON.');
+        assert(json[r'city'] != null, 'Required key "BillingInfo[city]" has a null value in JSON.');
+        assert(json.containsKey(r'state'), 'Required key "BillingInfo[state]" is missing from JSON.');
+        assert(json[r'state'] != null, 'Required key "BillingInfo[state]" has a null value in JSON.');
+        assert(json.containsKey(r'zip'), 'Required key "BillingInfo[zip]" is missing from JSON.');
+        assert(json[r'zip'] != null, 'Required key "BillingInfo[zip]" has a null value in JSON.');
+        assert(json.containsKey(r'country'), 'Required key "BillingInfo[country]" is missing from JSON.');
+        assert(json[r'country'] != null, 'Required key "BillingInfo[country]" has a null value in JSON.');
         return true;
       }());
 

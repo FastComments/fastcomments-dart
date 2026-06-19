@@ -22,11 +22,13 @@ class LiveEventExtraInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is LiveEventExtraInfo &&
     _deepEquality.equals(other.commentPositions, commentPositions);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentPositions.hashCode);
+  
 
   @override
   String toString() => 'LiveEventExtraInfo[commentPositions=$commentPositions]';
@@ -48,10 +50,6 @@ class LiveEventExtraInfo {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "LiveEventExtraInfo[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "LiveEventExtraInfo[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

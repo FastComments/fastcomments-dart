@@ -24,13 +24,15 @@ class ModerationAPIChildCommentsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationAPIChildCommentsResponse &&
     _deepEquality.equals(other.comments, comments) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comments.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'ModerationAPIChildCommentsResponse[comments=$comments, status=$status]';
@@ -53,10 +55,10 @@ class ModerationAPIChildCommentsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationAPIChildCommentsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationAPIChildCommentsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'comments'), 'Required key "ModerationAPIChildCommentsResponse[comments]" is missing from JSON.');
+        assert(json[r'comments'] != null, 'Required key "ModerationAPIChildCommentsResponse[comments]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "ModerationAPIChildCommentsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ModerationAPIChildCommentsResponse[status]" has a null value in JSON.');
         return true;
       }());
 

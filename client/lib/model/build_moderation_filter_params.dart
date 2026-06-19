@@ -51,19 +51,21 @@ class BuildModerationFilterParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BuildModerationFilterParams &&
     other.userId == userId &&
-    other.tenantId == tenantId &&
-    other.filters == filters &&
-    other.searchFilters == searchFilters &&
-    other.textSearch == textSearch;
+      other.tenantId == tenantId &&
+      other.filters == filters &&
+      other.searchFilters == searchFilters &&
+      other.textSearch == textSearch;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (userId.hashCode) +
-    (tenantId.hashCode) +
-    (filters == null ? 0 : filters!.hashCode) +
-    (searchFilters == null ? 0 : searchFilters!.hashCode) +
-    (textSearch == null ? 0 : textSearch!.hashCode);
+      (tenantId.hashCode) +
+      (filters == null ? 0 : filters!.hashCode) +
+      (searchFilters == null ? 0 : searchFilters!.hashCode) +
+      (textSearch == null ? 0 : textSearch!.hashCode);
+  
 
   @override
   String toString() => 'BuildModerationFilterParams[userId=$userId, tenantId=$tenantId, filters=$filters, searchFilters=$searchFilters, textSearch=$textSearch]';
@@ -101,10 +103,10 @@ class BuildModerationFilterParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BuildModerationFilterParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BuildModerationFilterParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'userId'), 'Required key "BuildModerationFilterParams[userId]" is missing from JSON.');
+        assert(json[r'userId'] != null, 'Required key "BuildModerationFilterParams[userId]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "BuildModerationFilterParams[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "BuildModerationFilterParams[tenantId]" has a null value in JSON.');
         return true;
       }());
 

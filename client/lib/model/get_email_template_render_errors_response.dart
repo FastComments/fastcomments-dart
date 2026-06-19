@@ -24,13 +24,15 @@ class GetEmailTemplateRenderErrorsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetEmailTemplateRenderErrorsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.renderErrors, renderErrors);
+      _deepEquality.equals(other.renderErrors, renderErrors);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (renderErrors.hashCode);
+      (renderErrors.hashCode);
+  
 
   @override
   String toString() => 'GetEmailTemplateRenderErrorsResponse[status=$status, renderErrors=$renderErrors]';
@@ -53,10 +55,10 @@ class GetEmailTemplateRenderErrorsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetEmailTemplateRenderErrorsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetEmailTemplateRenderErrorsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetEmailTemplateRenderErrorsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetEmailTemplateRenderErrorsResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'renderErrors'), 'Required key "GetEmailTemplateRenderErrorsResponse[renderErrors]" is missing from JSON.');
+        assert(json[r'renderErrors'] != null, 'Required key "GetEmailTemplateRenderErrorsResponse[renderErrors]" has a null value in JSON.');
         return true;
       }());
 

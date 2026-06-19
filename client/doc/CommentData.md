@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **isFromMyAccountPage** | **bool** |  | [optional] 
 **url** | **String** |  | 
 **urlId** | **String** |  | 
-**meta** | [**Object**](.md) |  | [optional] 
+**meta** | **Object** |  | [optional] 
 **moderationGroupIds** | **List<String>** |  | [optional] [default to const []]
 **rating** | **double** |  | [optional] 
 **fromOfflineRestore** | **bool** |  | [optional] 

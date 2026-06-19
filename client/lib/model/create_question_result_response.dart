@@ -24,13 +24,15 @@ class CreateQuestionResultResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateQuestionResultResponse &&
     other.status == status &&
-    other.questionResult == questionResult;
+      other.questionResult == questionResult;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (questionResult.hashCode);
+      (questionResult.hashCode);
+  
 
   @override
   String toString() => 'CreateQuestionResultResponse[status=$status, questionResult=$questionResult]';
@@ -53,10 +55,10 @@ class CreateQuestionResultResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateQuestionResultResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateQuestionResultResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "CreateQuestionResultResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "CreateQuestionResultResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'questionResult'), 'Required key "CreateQuestionResultResponse[questionResult]" is missing from JSON.');
+        assert(json[r'questionResult'] != null, 'Required key "CreateQuestionResultResponse[questionResult]" has a null value in JSON.');
         return true;
       }());
 

@@ -53,19 +53,21 @@ class AggregationValue {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationValue &&
     _deepEquality.equals(other.groups, groups) &&
-    other.stringValue == stringValue &&
-    other.numericValue == numericValue &&
-    other.distinctCount == distinctCount &&
-    _deepEquality.equals(other.distinctCounts, distinctCounts);
+      other.stringValue == stringValue &&
+      other.numericValue == numericValue &&
+      other.distinctCount == distinctCount &&
+      _deepEquality.equals(other.distinctCounts, distinctCounts);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (groups.hashCode) +
-    (stringValue == null ? 0 : stringValue!.hashCode) +
-    (numericValue == null ? 0 : numericValue!.hashCode) +
-    (distinctCount == null ? 0 : distinctCount!.hashCode) +
-    (distinctCounts.hashCode);
+      (stringValue == null ? 0 : stringValue!.hashCode) +
+      (numericValue == null ? 0 : numericValue!.hashCode) +
+      (distinctCount == null ? 0 : distinctCount!.hashCode) +
+      (distinctCounts.hashCode);
+  
 
   @override
   String toString() => 'AggregationValue[groups=$groups, stringValue=$stringValue, numericValue=$numericValue, distinctCount=$distinctCount, distinctCounts=$distinctCounts]';
@@ -103,10 +105,6 @@ class AggregationValue {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationValue[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationValue[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

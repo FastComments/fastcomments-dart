@@ -24,13 +24,15 @@ class GifSearchInternalError {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GifSearchInternalError &&
     other.code == code &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (code.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GifSearchInternalError[code=$code, status=$status]';
@@ -53,10 +55,10 @@ class GifSearchInternalError {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GifSearchInternalError[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GifSearchInternalError[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'code'), 'Required key "GifSearchInternalError[code]" is missing from JSON.');
+        assert(json[r'code'] != null, 'Required key "GifSearchInternalError[code]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GifSearchInternalError[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GifSearchInternalError[status]" has a null value in JSON.');
         return true;
       }());
 

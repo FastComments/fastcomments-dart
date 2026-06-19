@@ -27,15 +27,17 @@ class GetPublicFeedPostsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPublicFeedPostsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.feedPosts, feedPosts) &&
-    other.user == user;
+      _deepEquality.equals(other.feedPosts, feedPosts) &&
+      other.user == user;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (feedPosts.hashCode) +
-    (user == null ? 0 : user!.hashCode);
+      (feedPosts.hashCode) +
+      (user == null ? 0 : user!.hashCode);
+  
 
   @override
   String toString() => 'GetPublicFeedPostsResponse[status=$status, feedPosts=$feedPosts, user=$user]';
@@ -63,10 +65,10 @@ class GetPublicFeedPostsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetPublicFeedPostsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetPublicFeedPostsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetPublicFeedPostsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetPublicFeedPostsResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'feedPosts'), 'Required key "GetPublicFeedPostsResponse[feedPosts]" is missing from JSON.');
+        assert(json[r'feedPosts'] != null, 'Required key "GetPublicFeedPostsResponse[feedPosts]" has a null value in JSON.');
         return true;
       }());
 

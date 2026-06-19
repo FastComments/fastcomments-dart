@@ -21,11 +21,13 @@ class CommentsByIdsParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentsByIdsParams &&
     _deepEquality.equals(other.ids, ids);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (ids.hashCode);
+  
 
   @override
   String toString() => 'CommentsByIdsParams[ids=$ids]';
@@ -47,10 +49,8 @@ class CommentsByIdsParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CommentsByIdsParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CommentsByIdsParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'ids'), 'Required key "CommentsByIdsParams[ids]" is missing from JSON.');
+        assert(json[r'ids'] != null, 'Required key "CommentsByIdsParams[ids]" has a null value in JSON.');
         return true;
       }());
 

@@ -36,21 +36,23 @@ class EventLogEntry {
   @override
   bool operator ==(Object other) => identical(this, other) || other is EventLogEntry &&
     other.id == id &&
-    other.createdAt == createdAt &&
-    other.tenantId == tenantId &&
-    other.urlId == urlId &&
-    other.broadcastId == broadcastId &&
-    other.data == data;
+      other.createdAt == createdAt &&
+      other.tenantId == tenantId &&
+      other.urlId == urlId &&
+      other.broadcastId == broadcastId &&
+      other.data == data;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (createdAt.hashCode) +
-    (tenantId.hashCode) +
-    (urlId.hashCode) +
-    (broadcastId.hashCode) +
-    (data.hashCode);
+      (createdAt.hashCode) +
+      (tenantId.hashCode) +
+      (urlId.hashCode) +
+      (broadcastId.hashCode) +
+      (data.hashCode);
+  
 
   @override
   String toString() => 'EventLogEntry[id=$id, createdAt=$createdAt, tenantId=$tenantId, urlId=$urlId, broadcastId=$broadcastId, data=$data]';
@@ -77,10 +79,18 @@ class EventLogEntry {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "EventLogEntry[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "EventLogEntry[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "EventLogEntry[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "EventLogEntry[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "EventLogEntry[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "EventLogEntry[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "EventLogEntry[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "EventLogEntry[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "EventLogEntry[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "EventLogEntry[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'broadcastId'), 'Required key "EventLogEntry[broadcastId]" is missing from JSON.');
+        assert(json[r'broadcastId'] != null, 'Required key "EventLogEntry[broadcastId]" has a null value in JSON.');
+        assert(json.containsKey(r'data'), 'Required key "EventLogEntry[data]" is missing from JSON.');
+        assert(json[r'data'] != null, 'Required key "EventLogEntry[data]" has a null value in JSON.');
         return true;
       }());
 

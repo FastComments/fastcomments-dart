@@ -267,115 +267,117 @@ class APIComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIComment &&
     other.id == id &&
-    other.aiDeterminedSpam == aiDeterminedSpam &&
-    other.anonUserId == anonUserId &&
-    other.approved == approved &&
-    other.avatarSrc == avatarSrc &&
-    _deepEquality.equals(other.badges, badges) &&
-    other.comment == comment &&
-    other.commentHTML == commentHTML &&
-    other.commenterEmail == commenterEmail &&
-    other.commenterLink == commenterLink &&
-    other.commenterName == commenterName &&
-    other.date == date &&
-    other.displayLabel == displayLabel &&
-    other.domain == domain &&
-    other.externalId == externalId &&
-    other.externalParentId == externalParentId &&
-    other.expireAt == expireAt &&
-    _deepEquality.equals(other.feedbackIds, feedbackIds) &&
-    other.flagCount == flagCount &&
-    other.fromProductId == fromProductId &&
-    other.hasCode == hasCode &&
-    other.hasImages == hasImages &&
-    other.hasLinks == hasLinks &&
-    _deepEquality.equals(other.hashTags, hashTags) &&
-    other.isByAdmin == isByAdmin &&
-    other.isByModerator == isByModerator &&
-    other.isDeleted == isDeleted &&
-    other.isDeletedUser == isDeletedUser &&
-    other.isPinned == isPinned &&
-    other.isLocked == isLocked &&
-    other.isSpam == isSpam &&
-    other.localDateHours == localDateHours &&
-    other.localDateString == localDateString &&
-    other.locale == locale &&
-    _deepEquality.equals(other.mentions, mentions) &&
-    other.meta == meta &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
-    other.notificationSentForParent == notificationSentForParent &&
-    other.notificationSentForParentTenant == notificationSentForParentTenant &&
-    other.pageTitle == pageTitle &&
-    other.parentId == parentId &&
-    other.rating == rating &&
-    other.reviewed == reviewed &&
-    other.tenantId == tenantId &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.urlIdRaw == urlIdRaw &&
-    other.userId == userId &&
-    other.verified == verified &&
-    other.verifiedDate == verifiedDate &&
-    other.votes == votes &&
-    other.votesDown == votesDown &&
-    other.votesUp == votesUp;
+      other.aiDeterminedSpam == aiDeterminedSpam &&
+      other.anonUserId == anonUserId &&
+      other.approved == approved &&
+      other.avatarSrc == avatarSrc &&
+      _deepEquality.equals(other.badges, badges) &&
+      other.comment == comment &&
+      other.commentHTML == commentHTML &&
+      other.commenterEmail == commenterEmail &&
+      other.commenterLink == commenterLink &&
+      other.commenterName == commenterName &&
+      other.date == date &&
+      other.displayLabel == displayLabel &&
+      other.domain == domain &&
+      other.externalId == externalId &&
+      other.externalParentId == externalParentId &&
+      other.expireAt == expireAt &&
+      _deepEquality.equals(other.feedbackIds, feedbackIds) &&
+      other.flagCount == flagCount &&
+      other.fromProductId == fromProductId &&
+      other.hasCode == hasCode &&
+      other.hasImages == hasImages &&
+      other.hasLinks == hasLinks &&
+      _deepEquality.equals(other.hashTags, hashTags) &&
+      other.isByAdmin == isByAdmin &&
+      other.isByModerator == isByModerator &&
+      other.isDeleted == isDeleted &&
+      other.isDeletedUser == isDeletedUser &&
+      other.isPinned == isPinned &&
+      other.isLocked == isLocked &&
+      other.isSpam == isSpam &&
+      other.localDateHours == localDateHours &&
+      other.localDateString == localDateString &&
+      other.locale == locale &&
+      _deepEquality.equals(other.mentions, mentions) &&
+      other.meta == meta &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
+      other.notificationSentForParent == notificationSentForParent &&
+      other.notificationSentForParentTenant == notificationSentForParentTenant &&
+      other.pageTitle == pageTitle &&
+      other.parentId == parentId &&
+      other.rating == rating &&
+      other.reviewed == reviewed &&
+      other.tenantId == tenantId &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.urlIdRaw == urlIdRaw &&
+      other.userId == userId &&
+      other.verified == verified &&
+      other.verifiedDate == verifiedDate &&
+      other.votes == votes &&
+      other.votesDown == votesDown &&
+      other.votesUp == votesUp;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (aiDeterminedSpam == null ? 0 : aiDeterminedSpam!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (approved.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (badges == null ? 0 : badges!.hashCode) +
-    (comment.hashCode) +
-    (commentHTML.hashCode) +
-    (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
-    (commenterLink == null ? 0 : commenterLink!.hashCode) +
-    (commenterName.hashCode) +
-    (date == null ? 0 : date!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (externalId == null ? 0 : externalId!.hashCode) +
-    (externalParentId == null ? 0 : externalParentId!.hashCode) +
-    (expireAt == null ? 0 : expireAt!.hashCode) +
-    (feedbackIds.hashCode) +
-    (flagCount == null ? 0 : flagCount!.hashCode) +
-    (fromProductId == null ? 0 : fromProductId!.hashCode) +
-    (hasCode == null ? 0 : hasCode!.hashCode) +
-    (hasImages == null ? 0 : hasImages!.hashCode) +
-    (hasLinks == null ? 0 : hasLinks!.hashCode) +
-    (hashTags.hashCode) +
-    (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
-    (isByModerator == null ? 0 : isByModerator!.hashCode) +
-    (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
-    (isPinned == null ? 0 : isPinned!.hashCode) +
-    (isLocked == null ? 0 : isLocked!.hashCode) +
-    (isSpam == null ? 0 : isSpam!.hashCode) +
-    (localDateHours == null ? 0 : localDateHours!.hashCode) +
-    (localDateString == null ? 0 : localDateString!.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (mentions.hashCode) +
-    (meta == null ? 0 : meta!.hashCode) +
-    (moderationGroupIds == null ? 0 : moderationGroupIds!.hashCode) +
-    (notificationSentForParent == null ? 0 : notificationSentForParent!.hashCode) +
-    (notificationSentForParentTenant == null ? 0 : notificationSentForParentTenant!.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (parentId == null ? 0 : parentId!.hashCode) +
-    (rating == null ? 0 : rating!.hashCode) +
-    (reviewed == null ? 0 : reviewed!.hashCode) +
-    (tenantId.hashCode) +
-    (url.hashCode) +
-    (urlId.hashCode) +
-    (urlIdRaw == null ? 0 : urlIdRaw!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (verified.hashCode) +
-    (verifiedDate == null ? 0 : verifiedDate!.hashCode) +
-    (votes == null ? 0 : votes!.hashCode) +
-    (votesDown == null ? 0 : votesDown!.hashCode) +
-    (votesUp == null ? 0 : votesUp!.hashCode);
+      (aiDeterminedSpam == null ? 0 : aiDeterminedSpam!.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (approved.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (badges == null ? 0 : badges!.hashCode) +
+      (comment.hashCode) +
+      (commentHTML.hashCode) +
+      (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
+      (commenterLink == null ? 0 : commenterLink!.hashCode) +
+      (commenterName.hashCode) +
+      (date == null ? 0 : date!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (domain == null ? 0 : domain!.hashCode) +
+      (externalId == null ? 0 : externalId!.hashCode) +
+      (externalParentId == null ? 0 : externalParentId!.hashCode) +
+      (expireAt == null ? 0 : expireAt!.hashCode) +
+      (feedbackIds.hashCode) +
+      (flagCount == null ? 0 : flagCount!.hashCode) +
+      (fromProductId == null ? 0 : fromProductId!.hashCode) +
+      (hasCode == null ? 0 : hasCode!.hashCode) +
+      (hasImages == null ? 0 : hasImages!.hashCode) +
+      (hasLinks == null ? 0 : hasLinks!.hashCode) +
+      (hashTags.hashCode) +
+      (isByAdmin == null ? 0 : isByAdmin!.hashCode) +
+      (isByModerator == null ? 0 : isByModerator!.hashCode) +
+      (isDeleted == null ? 0 : isDeleted!.hashCode) +
+      (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
+      (isPinned == null ? 0 : isPinned!.hashCode) +
+      (isLocked == null ? 0 : isLocked!.hashCode) +
+      (isSpam == null ? 0 : isSpam!.hashCode) +
+      (localDateHours == null ? 0 : localDateHours!.hashCode) +
+      (localDateString == null ? 0 : localDateString!.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (mentions.hashCode) +
+      (meta == null ? 0 : meta!.hashCode) +
+      (moderationGroupIds == null ? 0 : moderationGroupIds!.hashCode) +
+      (notificationSentForParent == null ? 0 : notificationSentForParent!.hashCode) +
+      (notificationSentForParentTenant == null ? 0 : notificationSentForParentTenant!.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (parentId == null ? 0 : parentId!.hashCode) +
+      (rating == null ? 0 : rating!.hashCode) +
+      (reviewed == null ? 0 : reviewed!.hashCode) +
+      (tenantId.hashCode) +
+      (url.hashCode) +
+      (urlId.hashCode) +
+      (urlIdRaw == null ? 0 : urlIdRaw!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (verified.hashCode) +
+      (verifiedDate == null ? 0 : verifiedDate!.hashCode) +
+      (votes == null ? 0 : votes!.hashCode) +
+      (votesDown == null ? 0 : votesDown!.hashCode) +
+      (votesUp == null ? 0 : votesUp!.hashCode);
+  
 
   @override
   String toString() => 'APIComment[id=$id, aiDeterminedSpam=$aiDeterminedSpam, anonUserId=$anonUserId, approved=$approved, avatarSrc=$avatarSrc, badges=$badges, comment=$comment, commentHTML=$commentHTML, commenterEmail=$commenterEmail, commenterLink=$commenterLink, commenterName=$commenterName, date=$date, displayLabel=$displayLabel, domain=$domain, externalId=$externalId, externalParentId=$externalParentId, expireAt=$expireAt, feedbackIds=$feedbackIds, flagCount=$flagCount, fromProductId=$fromProductId, hasCode=$hasCode, hasImages=$hasImages, hasLinks=$hasLinks, hashTags=$hashTags, isByAdmin=$isByAdmin, isByModerator=$isByModerator, isDeleted=$isDeleted, isDeletedUser=$isDeletedUser, isPinned=$isPinned, isLocked=$isLocked, isSpam=$isSpam, localDateHours=$localDateHours, localDateString=$localDateString, locale=$locale, mentions=$mentions, meta=$meta, moderationGroupIds=$moderationGroupIds, notificationSentForParent=$notificationSentForParent, notificationSentForParentTenant=$notificationSentForParentTenant, pageTitle=$pageTitle, parentId=$parentId, rating=$rating, reviewed=$reviewed, tenantId=$tenantId, url=$url, urlId=$urlId, urlIdRaw=$urlIdRaw, userId=$userId, verified=$verified, verifiedDate=$verifiedDate, votes=$votes, votesDown=$votesDown, votesUp=$votesUp]';
@@ -613,10 +615,26 @@ class APIComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIComment[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIComment[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "APIComment[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "APIComment[id]" has a null value in JSON.');
+        assert(json.containsKey(r'approved'), 'Required key "APIComment[approved]" is missing from JSON.');
+        assert(json[r'approved'] != null, 'Required key "APIComment[approved]" has a null value in JSON.');
+        assert(json.containsKey(r'comment'), 'Required key "APIComment[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "APIComment[comment]" has a null value in JSON.');
+        assert(json.containsKey(r'commentHTML'), 'Required key "APIComment[commentHTML]" is missing from JSON.');
+        assert(json[r'commentHTML'] != null, 'Required key "APIComment[commentHTML]" has a null value in JSON.');
+        assert(json.containsKey(r'commenterName'), 'Required key "APIComment[commenterName]" is missing from JSON.');
+        assert(json[r'commenterName'] != null, 'Required key "APIComment[commenterName]" has a null value in JSON.');
+        assert(json.containsKey(r'date'), 'Required key "APIComment[date]" is missing from JSON.');
+        assert(json.containsKey(r'locale'), 'Required key "APIComment[locale]" is missing from JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "APIComment[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "APIComment[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "APIComment[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "APIComment[url]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "APIComment[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "APIComment[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'verified'), 'Required key "APIComment[verified]" is missing from JSON.');
+        assert(json[r'verified'] != null, 'Required key "APIComment[verified]" has a null value in JSON.');
         return true;
       }());
 

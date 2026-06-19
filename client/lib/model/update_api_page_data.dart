@@ -57,19 +57,21 @@ class UpdateAPIPageData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateAPIPageData &&
     other.isClosed == isClosed &&
-    _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
-    other.title == title &&
-    other.url == url &&
-    other.urlId == urlId;
+      _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
+      other.title == title &&
+      other.url == url &&
+      other.urlId == urlId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (isClosed == null ? 0 : isClosed!.hashCode) +
-    (accessibleByGroupIds.hashCode) +
-    (title == null ? 0 : title!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (urlId == null ? 0 : urlId!.hashCode);
+      (accessibleByGroupIds.hashCode) +
+      (title == null ? 0 : title!.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (urlId == null ? 0 : urlId!.hashCode);
+  
 
   @override
   String toString() => 'UpdateAPIPageData[isClosed=$isClosed, accessibleByGroupIds=$accessibleByGroupIds, title=$title, url=$url, urlId=$urlId]';
@@ -111,10 +113,6 @@ class UpdateAPIPageData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateAPIPageData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateAPIPageData[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

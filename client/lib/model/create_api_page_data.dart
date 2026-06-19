@@ -48,21 +48,23 @@ class CreateAPIPageData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateAPIPageData &&
     _deepEquality.equals(other.accessibleByGroupIds, accessibleByGroupIds) &&
-    other.rootCommentCount == rootCommentCount &&
-    other.commentCount == commentCount &&
-    other.title == title &&
-    other.url == url &&
-    other.urlId == urlId;
+      other.rootCommentCount == rootCommentCount &&
+      other.commentCount == commentCount &&
+      other.title == title &&
+      other.url == url &&
+      other.urlId == urlId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (accessibleByGroupIds.hashCode) +
-    (rootCommentCount == null ? 0 : rootCommentCount!.hashCode) +
-    (commentCount == null ? 0 : commentCount!.hashCode) +
-    (title.hashCode) +
-    (url.hashCode) +
-    (urlId.hashCode);
+      (rootCommentCount == null ? 0 : rootCommentCount!.hashCode) +
+      (commentCount == null ? 0 : commentCount!.hashCode) +
+      (title.hashCode) +
+      (url.hashCode) +
+      (urlId.hashCode);
+  
 
   @override
   String toString() => 'CreateAPIPageData[accessibleByGroupIds=$accessibleByGroupIds, rootCommentCount=$rootCommentCount, commentCount=$commentCount, title=$title, url=$url, urlId=$urlId]';
@@ -97,10 +99,12 @@ class CreateAPIPageData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateAPIPageData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateAPIPageData[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'title'), 'Required key "CreateAPIPageData[title]" is missing from JSON.');
+        assert(json[r'title'] != null, 'Required key "CreateAPIPageData[title]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "CreateAPIPageData[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "CreateAPIPageData[url]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "CreateAPIPageData[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "CreateAPIPageData[urlId]" has a null value in JSON.');
         return true;
       }());
 

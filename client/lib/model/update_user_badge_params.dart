@@ -27,11 +27,13 @@ class UpdateUserBadgeParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateUserBadgeParams &&
     other.displayedOnComments == displayedOnComments;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (displayedOnComments == null ? 0 : displayedOnComments!.hashCode);
+  
 
   @override
   String toString() => 'UpdateUserBadgeParams[displayedOnComments=$displayedOnComments]';
@@ -57,10 +59,6 @@ class UpdateUserBadgeParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateUserBadgeParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateUserBadgeParams[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

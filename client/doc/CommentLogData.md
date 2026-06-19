@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 **votesDownAfter** | **double** |  | [optional] 
 **repeatAction** | [**RepeatCommentHandlingAction**](RepeatCommentHandlingAction.md) |  | [optional] 
 **reason** | [**RepeatCommentCheckIgnoredReason**](RepeatCommentCheckIgnoredReason.md) |  | [optional] 
-**otherData** | [**Object**](.md) |  | [optional] 
+**otherData** | **Object** |  | [optional] 
 **spamBefore** | **bool** |  | [optional] 
 **spamAfter** | **bool** |  | [optional] 
 **permanentFlag** | **String** |  | [optional] 

@@ -24,13 +24,15 @@ class RemoveCommentActionResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is RemoveCommentActionResponse &&
     other.status == status &&
-    other.action == action;
+      other.action == action;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (action.hashCode);
+      (action.hashCode);
+  
 
   @override
   String toString() => 'RemoveCommentActionResponse[status=$status, action=$action]';
@@ -53,10 +55,10 @@ class RemoveCommentActionResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "RemoveCommentActionResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "RemoveCommentActionResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "RemoveCommentActionResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "RemoveCommentActionResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'action'), 'Required key "RemoveCommentActionResponse[action]" is missing from JSON.');
+        assert(json[r'action'] != null, 'Required key "RemoveCommentActionResponse[action]" has a null value in JSON.');
         return true;
       }());
 

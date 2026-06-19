@@ -27,11 +27,13 @@ class UpdateAPIUserSubscriptionData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateAPIUserSubscriptionData &&
     other.notificationFrequency == notificationFrequency;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (notificationFrequency == null ? 0 : notificationFrequency!.hashCode);
+  
 
   @override
   String toString() => 'UpdateAPIUserSubscriptionData[notificationFrequency=$notificationFrequency]';
@@ -57,10 +59,6 @@ class UpdateAPIUserSubscriptionData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateAPIUserSubscriptionData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateAPIUserSubscriptionData[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

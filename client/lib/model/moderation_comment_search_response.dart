@@ -24,13 +24,15 @@ class ModerationCommentSearchResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationCommentSearchResponse &&
     other.commentCount == commentCount &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentCount.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'ModerationCommentSearchResponse[commentCount=$commentCount, status=$status]';
@@ -53,10 +55,10 @@ class ModerationCommentSearchResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationCommentSearchResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationCommentSearchResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commentCount'), 'Required key "ModerationCommentSearchResponse[commentCount]" is missing from JSON.');
+        assert(json[r'commentCount'] != null, 'Required key "ModerationCommentSearchResponse[commentCount]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "ModerationCommentSearchResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ModerationCommentSearchResponse[status]" has a null value in JSON.');
         return true;
       }());
 

@@ -27,11 +27,13 @@ class ReactBodyParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ReactBodyParams &&
     other.reactType == reactType;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reactType == null ? 0 : reactType!.hashCode);
+  
 
   @override
   String toString() => 'ReactBodyParams[reactType=$reactType]';
@@ -57,10 +59,6 @@ class ReactBodyParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReactBodyParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReactBodyParams[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

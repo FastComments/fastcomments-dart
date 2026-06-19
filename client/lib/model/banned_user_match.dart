@@ -24,13 +24,15 @@ class BannedUserMatch {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BannedUserMatch &&
     other.matchedOn == matchedOn &&
-    other.matchedOnValue == matchedOnValue;
+      other.matchedOnValue == matchedOnValue;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (matchedOn.hashCode) +
-    (matchedOnValue == null ? 0 : matchedOnValue!.hashCode);
+      (matchedOnValue == null ? 0 : matchedOnValue!.hashCode);
+  
 
   @override
   String toString() => 'BannedUserMatch[matchedOn=$matchedOn, matchedOnValue=$matchedOnValue]';
@@ -57,10 +59,9 @@ class BannedUserMatch {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BannedUserMatch[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BannedUserMatch[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'matchedOn'), 'Required key "BannedUserMatch[matchedOn]" is missing from JSON.');
+        assert(json[r'matchedOn'] != null, 'Required key "BannedUserMatch[matchedOn]" has a null value in JSON.');
+        assert(json.containsKey(r'matchedOnValue'), 'Required key "BannedUserMatch[matchedOnValue]" is missing from JSON.');
         return true;
       }());
 

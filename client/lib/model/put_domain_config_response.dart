@@ -13,34 +13,48 @@ part of openapi.api;
 class PutDomainConfigResponse {
   /// Returns a new [PutDomainConfigResponse] instance.
   PutDomainConfigResponse({
-    required this.configuration,
+    this.configuration,
     required this.status,
-    required this.reason,
-    required this.code,
+    this.reason,
+    this.code,
   });
 
   Object? configuration;
 
   Object? status;
 
-  String reason;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? reason;
 
-  String code;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? code;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is PutDomainConfigResponse &&
     other.configuration == configuration &&
-    other.status == status &&
-    other.reason == reason &&
-    other.code == code;
+      other.status == status &&
+      other.reason == reason &&
+      other.code == code;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (configuration == null ? 0 : configuration!.hashCode) +
-    (status == null ? 0 : status!.hashCode) +
-    (reason.hashCode) +
-    (code.hashCode);
+      (status == null ? 0 : status!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (code == null ? 0 : code!.hashCode);
+  
 
   @override
   String toString() => 'PutDomainConfigResponse[configuration=$configuration, status=$status, reason=$reason, code=$code]';
@@ -57,8 +71,16 @@ class PutDomainConfigResponse {
     } else {
       json[r'status'] = null;
     }
+    if (this.reason != null) {
       json[r'reason'] = this.reason;
+    } else {
+      json[r'reason'] = null;
+    }
+    if (this.code != null) {
       json[r'code'] = this.code;
+    } else {
+      json[r'code'] = null;
+    }
     return json;
   }
 
@@ -73,18 +95,15 @@ class PutDomainConfigResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PutDomainConfigResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PutDomainConfigResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "PutDomainConfigResponse[status]" is missing from JSON.');
         return true;
       }());
 
       return PutDomainConfigResponse(
         configuration: mapValueOfType<Object>(json, r'configuration'),
         status: mapValueOfType<Object>(json, r'status'),
-        reason: mapValueOfType<String>(json, r'reason')!,
-        code: mapValueOfType<String>(json, r'code')!,
+        reason: mapValueOfType<String>(json, r'reason'),
+        code: mapValueOfType<String>(json, r'code'),
       );
     }
     return null;
@@ -132,10 +151,7 @@ class PutDomainConfigResponse {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'configuration',
     'status',
-    'reason',
-    'code',
   };
 }
 

@@ -60,21 +60,23 @@ class BulkAggregateQuestionItem {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkAggregateQuestionItem &&
     other.aggId == aggId &&
-    other.questionId == questionId &&
-    _deepEquality.equals(other.questionIds, questionIds) &&
-    other.urlId == urlId &&
-    other.timeBucket == timeBucket &&
-    other.startDate == startDate;
+      other.questionId == questionId &&
+      _deepEquality.equals(other.questionIds, questionIds) &&
+      other.urlId == urlId &&
+      other.timeBucket == timeBucket &&
+      other.startDate == startDate;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (aggId.hashCode) +
-    (questionId == null ? 0 : questionId!.hashCode) +
-    (questionIds.hashCode) +
-    (urlId == null ? 0 : urlId!.hashCode) +
-    (timeBucket == null ? 0 : timeBucket!.hashCode) +
-    (startDate == null ? 0 : startDate!.hashCode);
+      (questionId == null ? 0 : questionId!.hashCode) +
+      (questionIds.hashCode) +
+      (urlId == null ? 0 : urlId!.hashCode) +
+      (timeBucket == null ? 0 : timeBucket!.hashCode) +
+      (startDate == null ? 0 : startDate!.hashCode);
+  
 
   @override
   String toString() => 'BulkAggregateQuestionItem[aggId=$aggId, questionId=$questionId, questionIds=$questionIds, urlId=$urlId, timeBucket=$timeBucket, startDate=$startDate]';
@@ -117,10 +119,8 @@ class BulkAggregateQuestionItem {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BulkAggregateQuestionItem[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BulkAggregateQuestionItem[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'aggId'), 'Required key "BulkAggregateQuestionItem[aggId]" is missing from JSON.');
+        assert(json[r'aggId'] != null, 'Required key "BulkAggregateQuestionItem[aggId]" has a null value in JSON.');
         return true;
       }());
 

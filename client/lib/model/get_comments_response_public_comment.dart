@@ -199,57 +199,59 @@ class GetCommentsResponsePublicComment {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetCommentsResponsePublicComment &&
     other.statusCode == statusCode &&
-    other.status == status &&
-    other.code == code &&
-    other.reason == reason &&
-    other.translatedWarning == translatedWarning &&
-    _deepEquality.equals(other.comments, comments) &&
-    other.user == user &&
-    other.urlIdClean == urlIdClean &&
-    other.lastGenDate == lastGenDate &&
-    other.includesPastPages == includesPastPages &&
-    other.isDemo == isDemo &&
-    other.commentCount == commentCount &&
-    other.isSiteAdmin == isSiteAdmin &&
-    other.hasBillingIssue == hasBillingIssue &&
-    _deepEquality.equals(other.moduleData, moduleData) &&
-    other.pageNumber == pageNumber &&
-    other.isWhiteLabeled == isWhiteLabeled &&
-    other.isProd == isProd &&
-    other.isCrawler == isCrawler &&
-    other.notificationCount == notificationCount &&
-    other.hasMore == hasMore &&
-    other.isClosed == isClosed &&
-    other.presencePollState == presencePollState &&
-    other.customConfig == customConfig;
+      other.status == status &&
+      other.code == code &&
+      other.reason == reason &&
+      other.translatedWarning == translatedWarning &&
+      _deepEquality.equals(other.comments, comments) &&
+      other.user == user &&
+      other.urlIdClean == urlIdClean &&
+      other.lastGenDate == lastGenDate &&
+      other.includesPastPages == includesPastPages &&
+      other.isDemo == isDemo &&
+      other.commentCount == commentCount &&
+      other.isSiteAdmin == isSiteAdmin &&
+      other.hasBillingIssue == hasBillingIssue &&
+      _deepEquality.equals(other.moduleData, moduleData) &&
+      other.pageNumber == pageNumber &&
+      other.isWhiteLabeled == isWhiteLabeled &&
+      other.isProd == isProd &&
+      other.isCrawler == isCrawler &&
+      other.notificationCount == notificationCount &&
+      other.hasMore == hasMore &&
+      other.isClosed == isClosed &&
+      other.presencePollState == presencePollState &&
+      other.customConfig == customConfig;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (statusCode == null ? 0 : statusCode!.hashCode) +
-    (status.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (reason == null ? 0 : reason!.hashCode) +
-    (translatedWarning == null ? 0 : translatedWarning!.hashCode) +
-    (comments.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (urlIdClean == null ? 0 : urlIdClean!.hashCode) +
-    (lastGenDate == null ? 0 : lastGenDate!.hashCode) +
-    (includesPastPages == null ? 0 : includesPastPages!.hashCode) +
-    (isDemo == null ? 0 : isDemo!.hashCode) +
-    (commentCount == null ? 0 : commentCount!.hashCode) +
-    (isSiteAdmin == null ? 0 : isSiteAdmin!.hashCode) +
-    (hasBillingIssue == null ? 0 : hasBillingIssue!.hashCode) +
-    (moduleData.hashCode) +
-    (pageNumber.hashCode) +
-    (isWhiteLabeled == null ? 0 : isWhiteLabeled!.hashCode) +
-    (isProd == null ? 0 : isProd!.hashCode) +
-    (isCrawler == null ? 0 : isCrawler!.hashCode) +
-    (notificationCount == null ? 0 : notificationCount!.hashCode) +
-    (hasMore == null ? 0 : hasMore!.hashCode) +
-    (isClosed == null ? 0 : isClosed!.hashCode) +
-    (presencePollState == null ? 0 : presencePollState!.hashCode) +
-    (customConfig == null ? 0 : customConfig!.hashCode);
+      (status.hashCode) +
+      (code == null ? 0 : code!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (translatedWarning == null ? 0 : translatedWarning!.hashCode) +
+      (comments.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (urlIdClean == null ? 0 : urlIdClean!.hashCode) +
+      (lastGenDate == null ? 0 : lastGenDate!.hashCode) +
+      (includesPastPages == null ? 0 : includesPastPages!.hashCode) +
+      (isDemo == null ? 0 : isDemo!.hashCode) +
+      (commentCount == null ? 0 : commentCount!.hashCode) +
+      (isSiteAdmin == null ? 0 : isSiteAdmin!.hashCode) +
+      (hasBillingIssue == null ? 0 : hasBillingIssue!.hashCode) +
+      (moduleData.hashCode) +
+      (pageNumber.hashCode) +
+      (isWhiteLabeled == null ? 0 : isWhiteLabeled!.hashCode) +
+      (isProd == null ? 0 : isProd!.hashCode) +
+      (isCrawler == null ? 0 : isCrawler!.hashCode) +
+      (notificationCount == null ? 0 : notificationCount!.hashCode) +
+      (hasMore == null ? 0 : hasMore!.hashCode) +
+      (isClosed == null ? 0 : isClosed!.hashCode) +
+      (presencePollState == null ? 0 : presencePollState!.hashCode) +
+      (customConfig == null ? 0 : customConfig!.hashCode);
+  
 
   @override
   String toString() => 'GetCommentsResponsePublicComment[statusCode=$statusCode, status=$status, code=$code, reason=$reason, translatedWarning=$translatedWarning, comments=$comments, user=$user, urlIdClean=$urlIdClean, lastGenDate=$lastGenDate, includesPastPages=$includesPastPages, isDemo=$isDemo, commentCount=$commentCount, isSiteAdmin=$isSiteAdmin, hasBillingIssue=$hasBillingIssue, moduleData=$moduleData, pageNumber=$pageNumber, isWhiteLabeled=$isWhiteLabeled, isProd=$isProd, isCrawler=$isCrawler, notificationCount=$notificationCount, hasMore=$hasMore, isClosed=$isClosed, presencePollState=$presencePollState, customConfig=$customConfig]';
@@ -374,10 +376,13 @@ class GetCommentsResponsePublicComment {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetCommentsResponsePublicComment[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetCommentsResponsePublicComment[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetCommentsResponsePublicComment[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetCommentsResponsePublicComment[status]" has a null value in JSON.');
+        assert(json.containsKey(r'comments'), 'Required key "GetCommentsResponsePublicComment[comments]" is missing from JSON.');
+        assert(json[r'comments'] != null, 'Required key "GetCommentsResponsePublicComment[comments]" has a null value in JSON.');
+        assert(json.containsKey(r'user'), 'Required key "GetCommentsResponsePublicComment[user]" is missing from JSON.');
+        assert(json.containsKey(r'pageNumber'), 'Required key "GetCommentsResponsePublicComment[pageNumber]" is missing from JSON.');
+        assert(json[r'pageNumber'] != null, 'Required key "GetCommentsResponsePublicComment[pageNumber]" has a null value in JSON.');
         return true;
       }());
 

@@ -27,15 +27,17 @@ class FeedPostMediaItemAsset {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPostMediaItemAsset &&
     other.w == w &&
-    other.h == h &&
-    other.src == src;
+      other.h == h &&
+      other.src == src;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (w.hashCode) +
-    (h.hashCode) +
-    (src.hashCode);
+      (h.hashCode) +
+      (src.hashCode);
+  
 
   @override
   String toString() => 'FeedPostMediaItemAsset[w=$w, h=$h, src=$src]';
@@ -59,10 +61,12 @@ class FeedPostMediaItemAsset {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "FeedPostMediaItemAsset[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "FeedPostMediaItemAsset[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'w'), 'Required key "FeedPostMediaItemAsset[w]" is missing from JSON.');
+        assert(json[r'w'] != null, 'Required key "FeedPostMediaItemAsset[w]" has a null value in JSON.');
+        assert(json.containsKey(r'h'), 'Required key "FeedPostMediaItemAsset[h]" is missing from JSON.');
+        assert(json[r'h'] != null, 'Required key "FeedPostMediaItemAsset[h]" has a null value in JSON.');
+        assert(json.containsKey(r'src'), 'Required key "FeedPostMediaItemAsset[src]" is missing from JSON.');
+        assert(json[r'src'] != null, 'Required key "FeedPostMediaItemAsset[src]" has a null value in JSON.');
         return true;
       }());
 

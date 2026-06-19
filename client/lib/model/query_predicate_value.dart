@@ -12,15 +12,15 @@ part of openapi.api;
 
 class QueryPredicateValue {
   /// Returns a new [QueryPredicateValue] instance.
-  QueryPredicateValue({
-  });
+  QueryPredicateValue();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is QueryPredicateValue &&
+  bool operator ==(Object other) => identical(this, other) || other is QueryPredicateValue;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    0;
 
   @override
   String toString() => 'QueryPredicateValue[]';
@@ -41,10 +41,6 @@ class QueryPredicateValue {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "QueryPredicateValue[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "QueryPredicateValue[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

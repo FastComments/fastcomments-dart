@@ -169,61 +169,63 @@ class CommentData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentData &&
     other.date == date &&
-    other.localDateString == localDateString &&
-    other.localDateHours == localDateHours &&
-    other.commenterName == commenterName &&
-    other.commenterEmail == commenterEmail &&
-    other.commenterLink == commenterLink &&
-    other.comment == comment &&
-    other.productId == productId &&
-    other.userId == userId &&
-    other.avatarSrc == avatarSrc &&
-    other.parentId == parentId &&
-    _deepEquality.equals(other.mentions, mentions) &&
-    _deepEquality.equals(other.hashTags, hashTags) &&
-    other.pageTitle == pageTitle &&
-    other.isFromMyAccountPage == isFromMyAccountPage &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.meta == meta &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
-    other.rating == rating &&
-    other.fromOfflineRestore == fromOfflineRestore &&
-    other.autoplayDelayMS == autoplayDelayMS &&
-    _deepEquality.equals(other.feedbackIds, feedbackIds) &&
-    _deepEquality.equals(other.questionValues, questionValues) &&
-    other.tos == tos &&
-    other.botId == botId;
+      other.localDateString == localDateString &&
+      other.localDateHours == localDateHours &&
+      other.commenterName == commenterName &&
+      other.commenterEmail == commenterEmail &&
+      other.commenterLink == commenterLink &&
+      other.comment == comment &&
+      other.productId == productId &&
+      other.userId == userId &&
+      other.avatarSrc == avatarSrc &&
+      other.parentId == parentId &&
+      _deepEquality.equals(other.mentions, mentions) &&
+      _deepEquality.equals(other.hashTags, hashTags) &&
+      other.pageTitle == pageTitle &&
+      other.isFromMyAccountPage == isFromMyAccountPage &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.meta == meta &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
+      other.rating == rating &&
+      other.fromOfflineRestore == fromOfflineRestore &&
+      other.autoplayDelayMS == autoplayDelayMS &&
+      _deepEquality.equals(other.feedbackIds, feedbackIds) &&
+      _deepEquality.equals(other.questionValues, questionValues) &&
+      other.tos == tos &&
+      other.botId == botId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (date == null ? 0 : date!.hashCode) +
-    (localDateString == null ? 0 : localDateString!.hashCode) +
-    (localDateHours == null ? 0 : localDateHours!.hashCode) +
-    (commenterName.hashCode) +
-    (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
-    (commenterLink == null ? 0 : commenterLink!.hashCode) +
-    (comment.hashCode) +
-    (productId == null ? 0 : productId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (parentId == null ? 0 : parentId!.hashCode) +
-    (mentions.hashCode) +
-    (hashTags.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (isFromMyAccountPage == null ? 0 : isFromMyAccountPage!.hashCode) +
-    (url.hashCode) +
-    (urlId.hashCode) +
-    (meta == null ? 0 : meta!.hashCode) +
-    (moderationGroupIds.hashCode) +
-    (rating == null ? 0 : rating!.hashCode) +
-    (fromOfflineRestore == null ? 0 : fromOfflineRestore!.hashCode) +
-    (autoplayDelayMS == null ? 0 : autoplayDelayMS!.hashCode) +
-    (feedbackIds.hashCode) +
-    (questionValues.hashCode) +
-    (tos == null ? 0 : tos!.hashCode) +
-    (botId == null ? 0 : botId!.hashCode);
+      (localDateString == null ? 0 : localDateString!.hashCode) +
+      (localDateHours == null ? 0 : localDateHours!.hashCode) +
+      (commenterName.hashCode) +
+      (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
+      (commenterLink == null ? 0 : commenterLink!.hashCode) +
+      (comment.hashCode) +
+      (productId == null ? 0 : productId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (parentId == null ? 0 : parentId!.hashCode) +
+      (mentions.hashCode) +
+      (hashTags.hashCode) +
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (isFromMyAccountPage == null ? 0 : isFromMyAccountPage!.hashCode) +
+      (url.hashCode) +
+      (urlId.hashCode) +
+      (meta == null ? 0 : meta!.hashCode) +
+      (moderationGroupIds.hashCode) +
+      (rating == null ? 0 : rating!.hashCode) +
+      (fromOfflineRestore == null ? 0 : fromOfflineRestore!.hashCode) +
+      (autoplayDelayMS == null ? 0 : autoplayDelayMS!.hashCode) +
+      (feedbackIds.hashCode) +
+      (questionValues.hashCode) +
+      (tos == null ? 0 : tos!.hashCode) +
+      (botId == null ? 0 : botId!.hashCode);
+  
 
   @override
   String toString() => 'CommentData[date=$date, localDateString=$localDateString, localDateHours=$localDateHours, commenterName=$commenterName, commenterEmail=$commenterEmail, commenterLink=$commenterLink, comment=$comment, productId=$productId, userId=$userId, avatarSrc=$avatarSrc, parentId=$parentId, mentions=$mentions, hashTags=$hashTags, pageTitle=$pageTitle, isFromMyAccountPage=$isFromMyAccountPage, url=$url, urlId=$urlId, meta=$meta, moderationGroupIds=$moderationGroupIds, rating=$rating, fromOfflineRestore=$fromOfflineRestore, autoplayDelayMS=$autoplayDelayMS, feedbackIds=$feedbackIds, questionValues=$questionValues, tos=$tos, botId=$botId]';
@@ -338,10 +340,14 @@ class CommentData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CommentData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CommentData[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commenterName'), 'Required key "CommentData[commenterName]" is missing from JSON.');
+        assert(json[r'commenterName'] != null, 'Required key "CommentData[commenterName]" has a null value in JSON.');
+        assert(json.containsKey(r'comment'), 'Required key "CommentData[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "CommentData[comment]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "CommentData[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "CommentData[url]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "CommentData[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "CommentData[urlId]" has a null value in JSON.');
         return true;
       }());
 

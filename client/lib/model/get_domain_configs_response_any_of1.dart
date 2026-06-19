@@ -27,15 +27,17 @@ class GetDomainConfigsResponseAnyOf1 {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetDomainConfigsResponseAnyOf1 &&
     other.reason == reason &&
-    other.code == code &&
-    other.status == status;
+      other.code == code &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason.hashCode) +
-    (code.hashCode) +
-    (status == null ? 0 : status!.hashCode);
+      (code.hashCode) +
+      (status == null ? 0 : status!.hashCode);
+  
 
   @override
   String toString() => 'GetDomainConfigsResponseAnyOf1[reason=$reason, code=$code, status=$status]';
@@ -63,10 +65,11 @@ class GetDomainConfigsResponseAnyOf1 {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetDomainConfigsResponseAnyOf1[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetDomainConfigsResponseAnyOf1[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'reason'), 'Required key "GetDomainConfigsResponseAnyOf1[reason]" is missing from JSON.');
+        assert(json[r'reason'] != null, 'Required key "GetDomainConfigsResponseAnyOf1[reason]" has a null value in JSON.');
+        assert(json.containsKey(r'code'), 'Required key "GetDomainConfigsResponseAnyOf1[code]" is missing from JSON.');
+        assert(json[r'code'] != null, 'Required key "GetDomainConfigsResponseAnyOf1[code]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GetDomainConfigsResponseAnyOf1[status]" is missing from JSON.');
         return true;
       }());
 

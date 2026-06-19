@@ -30,13 +30,15 @@ class CreateV1PageReact {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateV1PageReact &&
     other.code == code &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (code == null ? 0 : code!.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'CreateV1PageReact[code=$code, status=$status]';
@@ -63,10 +65,8 @@ class CreateV1PageReact {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateV1PageReact[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateV1PageReact[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "CreateV1PageReact[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "CreateV1PageReact[status]" has a null value in JSON.');
         return true;
       }());
 

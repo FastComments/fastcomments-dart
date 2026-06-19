@@ -42,17 +42,19 @@ class GetPagesAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPagesAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    _deepEquality.equals(other.pages, pages) &&
-    other.status == status;
+      other.code == code &&
+      _deepEquality.equals(other.pages, pages) &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (pages.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (pages.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetPagesAPIResponse[reason=$reason, code=$code, pages=$pages, status=$status]';
@@ -85,10 +87,8 @@ class GetPagesAPIResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetPagesAPIResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetPagesAPIResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetPagesAPIResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetPagesAPIResponse[status]" has a null value in JSON.');
         return true;
       }());
 

@@ -21,11 +21,13 @@ class AdjustCommentVotesParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AdjustCommentVotesParams &&
     other.adjustVoteAmount == adjustVoteAmount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (adjustVoteAmount.hashCode);
+  
 
   @override
   String toString() => 'AdjustCommentVotesParams[adjustVoteAmount=$adjustVoteAmount]';
@@ -47,10 +49,8 @@ class AdjustCommentVotesParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AdjustCommentVotesParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AdjustCommentVotesParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'adjustVoteAmount'), 'Required key "AdjustCommentVotesParams[adjustVoteAmount]" is missing from JSON.');
+        assert(json[r'adjustVoteAmount'] != null, 'Required key "AdjustCommentVotesParams[adjustVoteAmount]" has a null value in JSON.');
         return true;
       }());
 

@@ -97,41 +97,43 @@ class FeedPost {
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeedPost &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.title == title &&
-    other.fromUserId == fromUserId &&
-    other.fromUserDisplayName == fromUserDisplayName &&
-    other.fromUserAvatar == fromUserAvatar &&
-    other.fromIpHash == fromIpHash &&
-    _deepEquality.equals(other.tags, tags) &&
-    other.weight == weight &&
-    _deepEquality.equals(other.meta, meta) &&
-    other.contentHTML == contentHTML &&
-    _deepEquality.equals(other.media, media) &&
-    _deepEquality.equals(other.links, links) &&
-    other.createdAt == createdAt &&
-    _deepEquality.equals(other.reacts, reacts) &&
-    other.commentCount == commentCount;
+      other.tenantId == tenantId &&
+      other.title == title &&
+      other.fromUserId == fromUserId &&
+      other.fromUserDisplayName == fromUserDisplayName &&
+      other.fromUserAvatar == fromUserAvatar &&
+      other.fromIpHash == fromIpHash &&
+      _deepEquality.equals(other.tags, tags) &&
+      other.weight == weight &&
+      _deepEquality.equals(other.meta, meta) &&
+      other.contentHTML == contentHTML &&
+      _deepEquality.equals(other.media, media) &&
+      _deepEquality.equals(other.links, links) &&
+      other.createdAt == createdAt &&
+      _deepEquality.equals(other.reacts, reacts) &&
+      other.commentCount == commentCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (title == null ? 0 : title!.hashCode) +
-    (fromUserId == null ? 0 : fromUserId!.hashCode) +
-    (fromUserDisplayName == null ? 0 : fromUserDisplayName!.hashCode) +
-    (fromUserAvatar == null ? 0 : fromUserAvatar!.hashCode) +
-    (fromIpHash == null ? 0 : fromIpHash!.hashCode) +
-    (tags.hashCode) +
-    (weight == null ? 0 : weight!.hashCode) +
-    (meta.hashCode) +
-    (contentHTML == null ? 0 : contentHTML!.hashCode) +
-    (media.hashCode) +
-    (links.hashCode) +
-    (createdAt.hashCode) +
-    (reacts.hashCode) +
-    (commentCount == null ? 0 : commentCount!.hashCode);
+      (tenantId.hashCode) +
+      (title == null ? 0 : title!.hashCode) +
+      (fromUserId == null ? 0 : fromUserId!.hashCode) +
+      (fromUserDisplayName == null ? 0 : fromUserDisplayName!.hashCode) +
+      (fromUserAvatar == null ? 0 : fromUserAvatar!.hashCode) +
+      (fromIpHash == null ? 0 : fromIpHash!.hashCode) +
+      (tags.hashCode) +
+      (weight == null ? 0 : weight!.hashCode) +
+      (meta.hashCode) +
+      (contentHTML == null ? 0 : contentHTML!.hashCode) +
+      (media.hashCode) +
+      (links.hashCode) +
+      (createdAt.hashCode) +
+      (reacts.hashCode) +
+      (commentCount == null ? 0 : commentCount!.hashCode);
+  
 
   @override
   String toString() => 'FeedPost[id=$id, tenantId=$tenantId, title=$title, fromUserId=$fromUserId, fromUserDisplayName=$fromUserDisplayName, fromUserAvatar=$fromUserAvatar, fromIpHash=$fromIpHash, tags=$tags, weight=$weight, meta=$meta, contentHTML=$contentHTML, media=$media, links=$links, createdAt=$createdAt, reacts=$reacts, commentCount=$commentCount]';
@@ -200,10 +202,12 @@ class FeedPost {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "FeedPost[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "FeedPost[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "FeedPost[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "FeedPost[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "FeedPost[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "FeedPost[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "FeedPost[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "FeedPost[createdAt]" has a null value in JSON.');
         return true;
       }());
 

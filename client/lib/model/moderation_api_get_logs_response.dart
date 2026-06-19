@@ -24,13 +24,15 @@ class ModerationAPIGetLogsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationAPIGetLogsResponse &&
     _deepEquality.equals(other.logs, logs) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (logs.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'ModerationAPIGetLogsResponse[logs=$logs, status=$status]';
@@ -53,10 +55,10 @@ class ModerationAPIGetLogsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationAPIGetLogsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationAPIGetLogsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'logs'), 'Required key "ModerationAPIGetLogsResponse[logs]" is missing from JSON.');
+        assert(json[r'logs'] != null, 'Required key "ModerationAPIGetLogsResponse[logs]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "ModerationAPIGetLogsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ModerationAPIGetLogsResponse[status]" has a null value in JSON.');
         return true;
       }());
 

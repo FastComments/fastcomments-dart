@@ -28,15 +28,17 @@ class GetV2PageReacts {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetV2PageReacts &&
     _deepEquality.equals(other.reactedIds, reactedIds) &&
-    _deepEquality.equals(other.counts, counts) &&
-    other.status == status;
+      _deepEquality.equals(other.counts, counts) &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reactedIds.hashCode) +
-    (counts.hashCode) +
-    (status.hashCode);
+      (counts.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetV2PageReacts[reactedIds=$reactedIds, counts=$counts, status=$status]';
@@ -60,10 +62,8 @@ class GetV2PageReacts {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetV2PageReacts[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetV2PageReacts[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetV2PageReacts[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetV2PageReacts[status]" has a null value in JSON.');
         return true;
       }());
 

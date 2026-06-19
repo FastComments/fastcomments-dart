@@ -252,65 +252,67 @@ class ReplaceTenantUserBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ReplaceTenantUserBody &&
     other.username == username &&
-    other.email == email &&
-    other.displayName == displayName &&
-    other.websiteUrl == websiteUrl &&
-    other.signUpDate == signUpDate &&
-    other.locale == locale &&
-    other.verified == verified &&
-    other.loginCount == loginCount &&
-    other.optedInNotifications == optedInNotifications &&
-    other.optedInTenantNotifications == optedInTenantNotifications &&
-    other.hideAccountCode == hideAccountCode &&
-    other.avatarSrc == avatarSrc &&
-    other.isHelpRequestAdmin == isHelpRequestAdmin &&
-    other.isAccountOwner == isAccountOwner &&
-    other.isAdminAdmin == isAdminAdmin &&
-    other.isBillingAdmin == isBillingAdmin &&
-    other.isAnalyticsAdmin == isAnalyticsAdmin &&
-    other.isCustomizationAdmin == isCustomizationAdmin &&
-    other.isManageDataAdmin == isManageDataAdmin &&
-    other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
-    other.isAPIAdmin == isAPIAdmin &&
-    _deepEquality.equals(other.moderatorIds, moderatorIds) &&
-    other.digestEmailFrequency == digestEmailFrequency &&
-    other.displayLabel == displayLabel &&
-    other.createdFromUrlId == createdFromUrlId &&
-    other.createdFromTenantId == createdFromTenantId &&
-    other.lastLoginDate == lastLoginDate &&
-    other.karma == karma;
+      other.email == email &&
+      other.displayName == displayName &&
+      other.websiteUrl == websiteUrl &&
+      other.signUpDate == signUpDate &&
+      other.locale == locale &&
+      other.verified == verified &&
+      other.loginCount == loginCount &&
+      other.optedInNotifications == optedInNotifications &&
+      other.optedInTenantNotifications == optedInTenantNotifications &&
+      other.hideAccountCode == hideAccountCode &&
+      other.avatarSrc == avatarSrc &&
+      other.isHelpRequestAdmin == isHelpRequestAdmin &&
+      other.isAccountOwner == isAccountOwner &&
+      other.isAdminAdmin == isAdminAdmin &&
+      other.isBillingAdmin == isBillingAdmin &&
+      other.isAnalyticsAdmin == isAnalyticsAdmin &&
+      other.isCustomizationAdmin == isCustomizationAdmin &&
+      other.isManageDataAdmin == isManageDataAdmin &&
+      other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
+      other.isAPIAdmin == isAPIAdmin &&
+      _deepEquality.equals(other.moderatorIds, moderatorIds) &&
+      other.digestEmailFrequency == digestEmailFrequency &&
+      other.displayLabel == displayLabel &&
+      other.createdFromUrlId == createdFromUrlId &&
+      other.createdFromTenantId == createdFromTenantId &&
+      other.lastLoginDate == lastLoginDate &&
+      other.karma == karma;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (username.hashCode) +
-    (email.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
-    (signUpDate == null ? 0 : signUpDate!.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (verified == null ? 0 : verified!.hashCode) +
-    (loginCount == null ? 0 : loginCount!.hashCode) +
-    (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
-    (optedInTenantNotifications == null ? 0 : optedInTenantNotifications!.hashCode) +
-    (hideAccountCode == null ? 0 : hideAccountCode!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (isHelpRequestAdmin == null ? 0 : isHelpRequestAdmin!.hashCode) +
-    (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
-    (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
-    (isBillingAdmin == null ? 0 : isBillingAdmin!.hashCode) +
-    (isAnalyticsAdmin == null ? 0 : isAnalyticsAdmin!.hashCode) +
-    (isCustomizationAdmin == null ? 0 : isCustomizationAdmin!.hashCode) +
-    (isManageDataAdmin == null ? 0 : isManageDataAdmin!.hashCode) +
-    (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
-    (isAPIAdmin == null ? 0 : isAPIAdmin!.hashCode) +
-    (moderatorIds.hashCode) +
-    (digestEmailFrequency == null ? 0 : digestEmailFrequency!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (createdFromUrlId == null ? 0 : createdFromUrlId!.hashCode) +
-    (createdFromTenantId == null ? 0 : createdFromTenantId!.hashCode) +
-    (lastLoginDate == null ? 0 : lastLoginDate!.hashCode) +
-    (karma == null ? 0 : karma!.hashCode);
+      (email.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
+      (signUpDate == null ? 0 : signUpDate!.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (verified == null ? 0 : verified!.hashCode) +
+      (loginCount == null ? 0 : loginCount!.hashCode) +
+      (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
+      (optedInTenantNotifications == null ? 0 : optedInTenantNotifications!.hashCode) +
+      (hideAccountCode == null ? 0 : hideAccountCode!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (isHelpRequestAdmin == null ? 0 : isHelpRequestAdmin!.hashCode) +
+      (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
+      (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
+      (isBillingAdmin == null ? 0 : isBillingAdmin!.hashCode) +
+      (isAnalyticsAdmin == null ? 0 : isAnalyticsAdmin!.hashCode) +
+      (isCustomizationAdmin == null ? 0 : isCustomizationAdmin!.hashCode) +
+      (isManageDataAdmin == null ? 0 : isManageDataAdmin!.hashCode) +
+      (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
+      (isAPIAdmin == null ? 0 : isAPIAdmin!.hashCode) +
+      (moderatorIds.hashCode) +
+      (digestEmailFrequency == null ? 0 : digestEmailFrequency!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (createdFromUrlId == null ? 0 : createdFromUrlId!.hashCode) +
+      (createdFromTenantId == null ? 0 : createdFromTenantId!.hashCode) +
+      (lastLoginDate == null ? 0 : lastLoginDate!.hashCode) +
+      (karma == null ? 0 : karma!.hashCode);
+  
 
   @override
   String toString() => 'ReplaceTenantUserBody[username=$username, email=$email, displayName=$displayName, websiteUrl=$websiteUrl, signUpDate=$signUpDate, locale=$locale, verified=$verified, loginCount=$loginCount, optedInNotifications=$optedInNotifications, optedInTenantNotifications=$optedInTenantNotifications, hideAccountCode=$hideAccountCode, avatarSrc=$avatarSrc, isHelpRequestAdmin=$isHelpRequestAdmin, isAccountOwner=$isAccountOwner, isAdminAdmin=$isAdminAdmin, isBillingAdmin=$isBillingAdmin, isAnalyticsAdmin=$isAnalyticsAdmin, isCustomizationAdmin=$isCustomizationAdmin, isManageDataAdmin=$isManageDataAdmin, isCommentModeratorAdmin=$isCommentModeratorAdmin, isAPIAdmin=$isAPIAdmin, moderatorIds=$moderatorIds, digestEmailFrequency=$digestEmailFrequency, displayLabel=$displayLabel, createdFromUrlId=$createdFromUrlId, createdFromTenantId=$createdFromTenantId, lastLoginDate=$lastLoginDate, karma=$karma]';
@@ -459,10 +461,10 @@ class ReplaceTenantUserBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReplaceTenantUserBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReplaceTenantUserBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'username'), 'Required key "ReplaceTenantUserBody[username]" is missing from JSON.');
+        assert(json[r'username'] != null, 'Required key "ReplaceTenantUserBody[username]" has a null value in JSON.');
+        assert(json.containsKey(r'email'), 'Required key "ReplaceTenantUserBody[email]" is missing from JSON.');
+        assert(json[r'email'] != null, 'Required key "ReplaceTenantUserBody[email]" has a null value in JSON.');
         return true;
       }());
 

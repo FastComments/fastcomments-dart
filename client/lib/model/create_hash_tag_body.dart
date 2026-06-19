@@ -39,15 +39,17 @@ class CreateHashTagBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateHashTagBody &&
     other.tenantId == tenantId &&
-    other.tag == tag &&
-    other.url == url;
+      other.tag == tag &&
+      other.url == url;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (tenantId == null ? 0 : tenantId!.hashCode) +
-    (tag.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+      (tag.hashCode) +
+      (url == null ? 0 : url!.hashCode);
+  
 
   @override
   String toString() => 'CreateHashTagBody[tenantId=$tenantId, tag=$tag, url=$url]';
@@ -79,10 +81,8 @@ class CreateHashTagBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateHashTagBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateHashTagBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'tag'), 'Required key "CreateHashTagBody[tag]" is missing from JSON.');
+        assert(json[r'tag'] != null, 'Required key "CreateHashTagBody[tag]" has a null value in JSON.');
         return true;
       }());
 

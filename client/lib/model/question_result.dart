@@ -51,31 +51,33 @@ class QuestionResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionResult &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.urlId == urlId &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId &&
-    other.createdAt == createdAt &&
-    other.value == value &&
-    other.commentId == commentId &&
-    other.questionId == questionId &&
-    _deepEquality.equals(other.meta, meta) &&
-    other.ipHash == ipHash;
+      other.tenantId == tenantId &&
+      other.urlId == urlId &&
+      other.anonUserId == anonUserId &&
+      other.userId == userId &&
+      other.createdAt == createdAt &&
+      other.value == value &&
+      other.commentId == commentId &&
+      other.questionId == questionId &&
+      _deepEquality.equals(other.meta, meta) &&
+      other.ipHash == ipHash;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (urlId.hashCode) +
-    (anonUserId.hashCode) +
-    (userId.hashCode) +
-    (createdAt.hashCode) +
-    (value.hashCode) +
-    (commentId == null ? 0 : commentId!.hashCode) +
-    (questionId.hashCode) +
-    (meta == null ? 0 : meta!.hashCode) +
-    (ipHash.hashCode);
+      (tenantId.hashCode) +
+      (urlId.hashCode) +
+      (anonUserId.hashCode) +
+      (userId.hashCode) +
+      (createdAt.hashCode) +
+      (value.hashCode) +
+      (commentId == null ? 0 : commentId!.hashCode) +
+      (questionId.hashCode) +
+      (meta == null ? 0 : meta!.hashCode) +
+      (ipHash.hashCode);
+  
 
   @override
   String toString() => 'QuestionResult[id=$id, tenantId=$tenantId, urlId=$urlId, anonUserId=$anonUserId, userId=$userId, createdAt=$createdAt, value=$value, commentId=$commentId, questionId=$questionId, meta=$meta, ipHash=$ipHash]';
@@ -115,10 +117,24 @@ class QuestionResult {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "QuestionResult[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "QuestionResult[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "QuestionResult[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "QuestionResult[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "QuestionResult[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "QuestionResult[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "QuestionResult[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "QuestionResult[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'anonUserId'), 'Required key "QuestionResult[anonUserId]" is missing from JSON.');
+        assert(json[r'anonUserId'] != null, 'Required key "QuestionResult[anonUserId]" has a null value in JSON.');
+        assert(json.containsKey(r'userId'), 'Required key "QuestionResult[userId]" is missing from JSON.');
+        assert(json[r'userId'] != null, 'Required key "QuestionResult[userId]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "QuestionResult[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "QuestionResult[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'value'), 'Required key "QuestionResult[value]" is missing from JSON.');
+        assert(json[r'value'] != null, 'Required key "QuestionResult[value]" has a null value in JSON.');
+        assert(json.containsKey(r'questionId'), 'Required key "QuestionResult[questionId]" is missing from JSON.');
+        assert(json[r'questionId'] != null, 'Required key "QuestionResult[questionId]" has a null value in JSON.');
+        assert(json.containsKey(r'ipHash'), 'Required key "QuestionResult[ipHash]" is missing from JSON.');
+        assert(json[r'ipHash'] != null, 'Required key "QuestionResult[ipHash]" has a null value in JSON.');
         return true;
       }());
 

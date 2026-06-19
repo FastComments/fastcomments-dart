@@ -48,17 +48,19 @@ class GetPageByURLIdAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPageByURLIdAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.page == page &&
-    other.status == status;
+      other.code == code &&
+      other.page == page &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (page == null ? 0 : page!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (page == null ? 0 : page!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetPageByURLIdAPIResponse[reason=$reason, code=$code, page=$page, status=$status]';
@@ -95,10 +97,8 @@ class GetPageByURLIdAPIResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetPageByURLIdAPIResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetPageByURLIdAPIResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetPageByURLIdAPIResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetPageByURLIdAPIResponse[status]" has a null value in JSON.');
         return true;
       }());
 

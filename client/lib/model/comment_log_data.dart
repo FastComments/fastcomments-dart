@@ -375,103 +375,105 @@ class CommentLogData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentLogData &&
     other.clearContent == clearContent &&
-    other.isDeletedUser == isDeletedUser &&
-    other.phrase == phrase &&
-    other.badWord == badWord &&
-    other.word == word &&
-    other.locale == locale &&
-    other.tenantBadgeId == tenantBadgeId &&
-    other.badgeId == badgeId &&
-    other.wasLoggedIn == wasLoggedIn &&
-    other.foundUser == foundUser &&
-    other.verified == verified &&
-    other.engine == engine &&
-    other.engineResponse == engineResponse &&
-    other.engineTokens == engineTokens &&
-    other.trustFactor == trustFactor &&
-    other.source_ == source_ &&
-    other.rule == rule &&
-    other.userId == userId &&
-    other.subscribers == subscribers &&
-    other.notificationCount == notificationCount &&
-    other.votesBefore == votesBefore &&
-    other.votesUpBefore == votesUpBefore &&
-    other.votesDownBefore == votesDownBefore &&
-    other.votesAfter == votesAfter &&
-    other.votesUpAfter == votesUpAfter &&
-    other.votesDownAfter == votesDownAfter &&
-    other.repeatAction == repeatAction &&
-    other.reason == reason &&
-    other.otherData == otherData &&
-    other.spamBefore == spamBefore &&
-    other.spamAfter == spamAfter &&
-    other.permanentFlag == permanentFlag &&
-    other.approvedBefore == approvedBefore &&
-    other.approvedAfter == approvedAfter &&
-    other.reviewedBefore == reviewedBefore &&
-    other.reviewedAfter == reviewedAfter &&
-    other.textBefore == textBefore &&
-    other.textAfter == textAfter &&
-    other.expireBefore == expireBefore &&
-    other.expireAfter == expireAfter &&
-    other.flagCountBefore == flagCountBefore &&
-    other.trustFactorBefore == trustFactorBefore &&
-    other.trustFactorAfter == trustFactorAfter &&
-    other.referencedCommentId == referencedCommentId &&
-    other.invalidLocale == invalidLocale &&
-    other.detectedLocale == detectedLocale &&
-    other.detectedLanguage == detectedLanguage;
+      other.isDeletedUser == isDeletedUser &&
+      other.phrase == phrase &&
+      other.badWord == badWord &&
+      other.word == word &&
+      other.locale == locale &&
+      other.tenantBadgeId == tenantBadgeId &&
+      other.badgeId == badgeId &&
+      other.wasLoggedIn == wasLoggedIn &&
+      other.foundUser == foundUser &&
+      other.verified == verified &&
+      other.engine == engine &&
+      other.engineResponse == engineResponse &&
+      other.engineTokens == engineTokens &&
+      other.trustFactor == trustFactor &&
+      other.source_ == source_ &&
+      other.rule == rule &&
+      other.userId == userId &&
+      other.subscribers == subscribers &&
+      other.notificationCount == notificationCount &&
+      other.votesBefore == votesBefore &&
+      other.votesUpBefore == votesUpBefore &&
+      other.votesDownBefore == votesDownBefore &&
+      other.votesAfter == votesAfter &&
+      other.votesUpAfter == votesUpAfter &&
+      other.votesDownAfter == votesDownAfter &&
+      other.repeatAction == repeatAction &&
+      other.reason == reason &&
+      other.otherData == otherData &&
+      other.spamBefore == spamBefore &&
+      other.spamAfter == spamAfter &&
+      other.permanentFlag == permanentFlag &&
+      other.approvedBefore == approvedBefore &&
+      other.approvedAfter == approvedAfter &&
+      other.reviewedBefore == reviewedBefore &&
+      other.reviewedAfter == reviewedAfter &&
+      other.textBefore == textBefore &&
+      other.textAfter == textAfter &&
+      other.expireBefore == expireBefore &&
+      other.expireAfter == expireAfter &&
+      other.flagCountBefore == flagCountBefore &&
+      other.trustFactorBefore == trustFactorBefore &&
+      other.trustFactorAfter == trustFactorAfter &&
+      other.referencedCommentId == referencedCommentId &&
+      other.invalidLocale == invalidLocale &&
+      other.detectedLocale == detectedLocale &&
+      other.detectedLanguage == detectedLanguage;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (clearContent == null ? 0 : clearContent!.hashCode) +
-    (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
-    (phrase == null ? 0 : phrase!.hashCode) +
-    (badWord == null ? 0 : badWord!.hashCode) +
-    (word == null ? 0 : word!.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (tenantBadgeId == null ? 0 : tenantBadgeId!.hashCode) +
-    (badgeId == null ? 0 : badgeId!.hashCode) +
-    (wasLoggedIn == null ? 0 : wasLoggedIn!.hashCode) +
-    (foundUser == null ? 0 : foundUser!.hashCode) +
-    (verified == null ? 0 : verified!.hashCode) +
-    (engine == null ? 0 : engine!.hashCode) +
-    (engineResponse == null ? 0 : engineResponse!.hashCode) +
-    (engineTokens == null ? 0 : engineTokens!.hashCode) +
-    (trustFactor == null ? 0 : trustFactor!.hashCode) +
-    (source_ == null ? 0 : source_!.hashCode) +
-    (rule == null ? 0 : rule!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (subscribers == null ? 0 : subscribers!.hashCode) +
-    (notificationCount == null ? 0 : notificationCount!.hashCode) +
-    (votesBefore == null ? 0 : votesBefore!.hashCode) +
-    (votesUpBefore == null ? 0 : votesUpBefore!.hashCode) +
-    (votesDownBefore == null ? 0 : votesDownBefore!.hashCode) +
-    (votesAfter == null ? 0 : votesAfter!.hashCode) +
-    (votesUpAfter == null ? 0 : votesUpAfter!.hashCode) +
-    (votesDownAfter == null ? 0 : votesDownAfter!.hashCode) +
-    (repeatAction == null ? 0 : repeatAction!.hashCode) +
-    (reason == null ? 0 : reason!.hashCode) +
-    (otherData == null ? 0 : otherData!.hashCode) +
-    (spamBefore == null ? 0 : spamBefore!.hashCode) +
-    (spamAfter == null ? 0 : spamAfter!.hashCode) +
-    (permanentFlag == null ? 0 : permanentFlag!.hashCode) +
-    (approvedBefore == null ? 0 : approvedBefore!.hashCode) +
-    (approvedAfter == null ? 0 : approvedAfter!.hashCode) +
-    (reviewedBefore == null ? 0 : reviewedBefore!.hashCode) +
-    (reviewedAfter == null ? 0 : reviewedAfter!.hashCode) +
-    (textBefore == null ? 0 : textBefore!.hashCode) +
-    (textAfter == null ? 0 : textAfter!.hashCode) +
-    (expireBefore == null ? 0 : expireBefore!.hashCode) +
-    (expireAfter == null ? 0 : expireAfter!.hashCode) +
-    (flagCountBefore == null ? 0 : flagCountBefore!.hashCode) +
-    (trustFactorBefore == null ? 0 : trustFactorBefore!.hashCode) +
-    (trustFactorAfter == null ? 0 : trustFactorAfter!.hashCode) +
-    (referencedCommentId == null ? 0 : referencedCommentId!.hashCode) +
-    (invalidLocale == null ? 0 : invalidLocale!.hashCode) +
-    (detectedLocale == null ? 0 : detectedLocale!.hashCode) +
-    (detectedLanguage == null ? 0 : detectedLanguage!.hashCode);
+      (isDeletedUser == null ? 0 : isDeletedUser!.hashCode) +
+      (phrase == null ? 0 : phrase!.hashCode) +
+      (badWord == null ? 0 : badWord!.hashCode) +
+      (word == null ? 0 : word!.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (tenantBadgeId == null ? 0 : tenantBadgeId!.hashCode) +
+      (badgeId == null ? 0 : badgeId!.hashCode) +
+      (wasLoggedIn == null ? 0 : wasLoggedIn!.hashCode) +
+      (foundUser == null ? 0 : foundUser!.hashCode) +
+      (verified == null ? 0 : verified!.hashCode) +
+      (engine == null ? 0 : engine!.hashCode) +
+      (engineResponse == null ? 0 : engineResponse!.hashCode) +
+      (engineTokens == null ? 0 : engineTokens!.hashCode) +
+      (trustFactor == null ? 0 : trustFactor!.hashCode) +
+      (source_ == null ? 0 : source_!.hashCode) +
+      (rule == null ? 0 : rule!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (subscribers == null ? 0 : subscribers!.hashCode) +
+      (notificationCount == null ? 0 : notificationCount!.hashCode) +
+      (votesBefore == null ? 0 : votesBefore!.hashCode) +
+      (votesUpBefore == null ? 0 : votesUpBefore!.hashCode) +
+      (votesDownBefore == null ? 0 : votesDownBefore!.hashCode) +
+      (votesAfter == null ? 0 : votesAfter!.hashCode) +
+      (votesUpAfter == null ? 0 : votesUpAfter!.hashCode) +
+      (votesDownAfter == null ? 0 : votesDownAfter!.hashCode) +
+      (repeatAction == null ? 0 : repeatAction!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (otherData == null ? 0 : otherData!.hashCode) +
+      (spamBefore == null ? 0 : spamBefore!.hashCode) +
+      (spamAfter == null ? 0 : spamAfter!.hashCode) +
+      (permanentFlag == null ? 0 : permanentFlag!.hashCode) +
+      (approvedBefore == null ? 0 : approvedBefore!.hashCode) +
+      (approvedAfter == null ? 0 : approvedAfter!.hashCode) +
+      (reviewedBefore == null ? 0 : reviewedBefore!.hashCode) +
+      (reviewedAfter == null ? 0 : reviewedAfter!.hashCode) +
+      (textBefore == null ? 0 : textBefore!.hashCode) +
+      (textAfter == null ? 0 : textAfter!.hashCode) +
+      (expireBefore == null ? 0 : expireBefore!.hashCode) +
+      (expireAfter == null ? 0 : expireAfter!.hashCode) +
+      (flagCountBefore == null ? 0 : flagCountBefore!.hashCode) +
+      (trustFactorBefore == null ? 0 : trustFactorBefore!.hashCode) +
+      (trustFactorAfter == null ? 0 : trustFactorAfter!.hashCode) +
+      (referencedCommentId == null ? 0 : referencedCommentId!.hashCode) +
+      (invalidLocale == null ? 0 : invalidLocale!.hashCode) +
+      (detectedLocale == null ? 0 : detectedLocale!.hashCode) +
+      (detectedLanguage == null ? 0 : detectedLanguage!.hashCode);
+  
 
   @override
   String toString() => 'CommentLogData[clearContent=$clearContent, isDeletedUser=$isDeletedUser, phrase=$phrase, badWord=$badWord, word=$word, locale=$locale, tenantBadgeId=$tenantBadgeId, badgeId=$badgeId, wasLoggedIn=$wasLoggedIn, foundUser=$foundUser, verified=$verified, engine=$engine, engineResponse=$engineResponse, engineTokens=$engineTokens, trustFactor=$trustFactor, source_=$source_, rule=$rule, userId=$userId, subscribers=$subscribers, notificationCount=$notificationCount, votesBefore=$votesBefore, votesUpBefore=$votesUpBefore, votesDownBefore=$votesDownBefore, votesAfter=$votesAfter, votesUpAfter=$votesUpAfter, votesDownAfter=$votesDownAfter, repeatAction=$repeatAction, reason=$reason, otherData=$otherData, spamBefore=$spamBefore, spamAfter=$spamAfter, permanentFlag=$permanentFlag, approvedBefore=$approvedBefore, approvedAfter=$approvedAfter, reviewedBefore=$reviewedBefore, reviewedAfter=$reviewedAfter, textBefore=$textBefore, textAfter=$textAfter, expireBefore=$expireBefore, expireAfter=$expireAfter, flagCountBefore=$flagCountBefore, trustFactorBefore=$trustFactorBefore, trustFactorAfter=$trustFactorAfter, referencedCommentId=$referencedCommentId, invalidLocale=$invalidLocale, detectedLocale=$detectedLocale, detectedLanguage=$detectedLanguage]';
@@ -727,10 +729,6 @@ class CommentLogData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CommentLogData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CommentLogData[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

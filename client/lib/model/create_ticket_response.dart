@@ -24,13 +24,15 @@ class CreateTicketResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateTicketResponse &&
     other.status == status &&
-    other.ticket == ticket;
+      other.ticket == ticket;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (ticket.hashCode);
+      (ticket.hashCode);
+  
 
   @override
   String toString() => 'CreateTicketResponse[status=$status, ticket=$ticket]';
@@ -53,10 +55,10 @@ class CreateTicketResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateTicketResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateTicketResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "CreateTicketResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "CreateTicketResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'ticket'), 'Required key "CreateTicketResponse[ticket]" is missing from JSON.');
+        assert(json[r'ticket'] != null, 'Required key "CreateTicketResponse[ticket]" has a null value in JSON.');
         return true;
       }());
 

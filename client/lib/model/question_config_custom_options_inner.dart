@@ -24,13 +24,15 @@ class QuestionConfigCustomOptionsInner {
   @override
   bool operator ==(Object other) => identical(this, other) || other is QuestionConfigCustomOptionsInner &&
     other.imageSrc == imageSrc &&
-    other.name == name;
+      other.name == name;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (imageSrc.hashCode) +
-    (name.hashCode);
+      (name.hashCode);
+  
 
   @override
   String toString() => 'QuestionConfigCustomOptionsInner[imageSrc=$imageSrc, name=$name]';
@@ -53,10 +55,10 @@ class QuestionConfigCustomOptionsInner {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "QuestionConfigCustomOptionsInner[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "QuestionConfigCustomOptionsInner[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'imageSrc'), 'Required key "QuestionConfigCustomOptionsInner[imageSrc]" is missing from JSON.');
+        assert(json[r'imageSrc'] != null, 'Required key "QuestionConfigCustomOptionsInner[imageSrc]" has a null value in JSON.');
+        assert(json.containsKey(r'name'), 'Required key "QuestionConfigCustomOptionsInner[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "QuestionConfigCustomOptionsInner[name]" has a null value in JSON.');
         return true;
       }());
 

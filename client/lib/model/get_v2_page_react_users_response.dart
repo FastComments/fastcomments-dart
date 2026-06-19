@@ -24,13 +24,15 @@ class GetV2PageReactUsersResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetV2PageReactUsersResponse &&
     _deepEquality.equals(other.userNames, userNames) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (userNames.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetV2PageReactUsersResponse[userNames=$userNames, status=$status]';
@@ -53,10 +55,10 @@ class GetV2PageReactUsersResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetV2PageReactUsersResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetV2PageReactUsersResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'userNames'), 'Required key "GetV2PageReactUsersResponse[userNames]" is missing from JSON.');
+        assert(json[r'userNames'] != null, 'Required key "GetV2PageReactUsersResponse[userNames]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GetV2PageReactUsersResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetV2PageReactUsersResponse[status]" has a null value in JSON.');
         return true;
       }());
 

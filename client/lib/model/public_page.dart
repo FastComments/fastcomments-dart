@@ -33,19 +33,21 @@ class PublicPage {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicPage &&
     other.updatedAt == updatedAt &&
-    other.commentCount == commentCount &&
-    other.title == title &&
-    other.url == url &&
-    other.urlId == urlId;
+      other.commentCount == commentCount &&
+      other.title == title &&
+      other.url == url &&
+      other.urlId == urlId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (updatedAt.hashCode) +
-    (commentCount.hashCode) +
-    (title.hashCode) +
-    (url.hashCode) +
-    (urlId.hashCode);
+      (commentCount.hashCode) +
+      (title.hashCode) +
+      (url.hashCode) +
+      (urlId.hashCode);
+  
 
   @override
   String toString() => 'PublicPage[updatedAt=$updatedAt, commentCount=$commentCount, title=$title, url=$url, urlId=$urlId]';
@@ -71,10 +73,16 @@ class PublicPage {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PublicPage[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PublicPage[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'updatedAt'), 'Required key "PublicPage[updatedAt]" is missing from JSON.');
+        assert(json[r'updatedAt'] != null, 'Required key "PublicPage[updatedAt]" has a null value in JSON.');
+        assert(json.containsKey(r'commentCount'), 'Required key "PublicPage[commentCount]" is missing from JSON.');
+        assert(json[r'commentCount'] != null, 'Required key "PublicPage[commentCount]" has a null value in JSON.');
+        assert(json.containsKey(r'title'), 'Required key "PublicPage[title]" is missing from JSON.');
+        assert(json[r'title'] != null, 'Required key "PublicPage[title]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "PublicPage[url]" is missing from JSON.');
+        assert(json[r'url'] != null, 'Required key "PublicPage[url]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "PublicPage[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "PublicPage[urlId]" has a null value in JSON.');
         return true;
       }());
 

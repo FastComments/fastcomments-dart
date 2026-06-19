@@ -51,27 +51,29 @@ class APIBannedUserWithMultiMatchInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIBannedUserWithMultiMatchInfo &&
     other.id == id &&
-    other.userId == userId &&
-    other.banType == banType &&
-    other.email == email &&
-    other.ipHash == ipHash &&
-    other.bannedUntil == bannedUntil &&
-    other.hasEmailWildcard == hasEmailWildcard &&
-    other.banReason == banReason &&
-    _deepEquality.equals(other.matches, matches);
+      other.userId == userId &&
+      other.banType == banType &&
+      other.email == email &&
+      other.ipHash == ipHash &&
+      other.bannedUntil == bannedUntil &&
+      other.hasEmailWildcard == hasEmailWildcard &&
+      other.banReason == banReason &&
+      _deepEquality.equals(other.matches, matches);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (banType.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (ipHash == null ? 0 : ipHash!.hashCode) +
-    (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
-    (hasEmailWildcard.hashCode) +
-    (banReason == null ? 0 : banReason!.hashCode) +
-    (matches.hashCode);
+      (userId == null ? 0 : userId!.hashCode) +
+      (banType.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (ipHash == null ? 0 : ipHash!.hashCode) +
+      (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
+      (hasEmailWildcard.hashCode) +
+      (banReason == null ? 0 : banReason!.hashCode) +
+      (matches.hashCode);
+  
 
   @override
   String toString() => 'APIBannedUserWithMultiMatchInfo[id=$id, userId=$userId, banType=$banType, email=$email, ipHash=$ipHash, bannedUntil=$bannedUntil, hasEmailWildcard=$hasEmailWildcard, banReason=$banReason, matches=$matches]';
@@ -121,10 +123,15 @@ class APIBannedUserWithMultiMatchInfo {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIBannedUserWithMultiMatchInfo[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIBannedUserWithMultiMatchInfo[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "APIBannedUserWithMultiMatchInfo[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "APIBannedUserWithMultiMatchInfo[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'banType'), 'Required key "APIBannedUserWithMultiMatchInfo[banType]" is missing from JSON.');
+        assert(json[r'banType'] != null, 'Required key "APIBannedUserWithMultiMatchInfo[banType]" has a null value in JSON.');
+        assert(json.containsKey(r'bannedUntil'), 'Required key "APIBannedUserWithMultiMatchInfo[bannedUntil]" is missing from JSON.');
+        assert(json.containsKey(r'hasEmailWildcard'), 'Required key "APIBannedUserWithMultiMatchInfo[hasEmailWildcard]" is missing from JSON.');
+        assert(json[r'hasEmailWildcard'] != null, 'Required key "APIBannedUserWithMultiMatchInfo[hasEmailWildcard]" has a null value in JSON.');
+        assert(json.containsKey(r'matches'), 'Required key "APIBannedUserWithMultiMatchInfo[matches]" is missing from JSON.');
+        assert(json[r'matches'] != null, 'Required key "APIBannedUserWithMultiMatchInfo[matches]" has a null value in JSON.');
         return true;
       }());
 

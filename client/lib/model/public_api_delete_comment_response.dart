@@ -33,15 +33,17 @@ class PublicAPIDeleteCommentResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicAPIDeleteCommentResponse &&
     other.comment == comment &&
-    other.hardRemoved == hardRemoved &&
-    other.status == status;
+      other.hardRemoved == hardRemoved &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment == null ? 0 : comment!.hashCode) +
-    (hardRemoved.hashCode) +
-    (status.hashCode);
+      (hardRemoved.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'PublicAPIDeleteCommentResponse[comment=$comment, hardRemoved=$hardRemoved, status=$status]';
@@ -69,10 +71,10 @@ class PublicAPIDeleteCommentResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PublicAPIDeleteCommentResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PublicAPIDeleteCommentResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'hardRemoved'), 'Required key "PublicAPIDeleteCommentResponse[hardRemoved]" is missing from JSON.');
+        assert(json[r'hardRemoved'] != null, 'Required key "PublicAPIDeleteCommentResponse[hardRemoved]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "PublicAPIDeleteCommentResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "PublicAPIDeleteCommentResponse[status]" has a null value in JSON.');
         return true;
       }());
 

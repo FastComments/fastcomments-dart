@@ -390,7 +390,6 @@ part 'model/users_list_location.dart';
 part 'model/vote_body_params.dart';
 part 'model/vote_delete_response.dart';
 part 'model/vote_response.dart';
-part 'model/vote_response_status.dart';
 part 'model/vote_response_user.dart';
 part 'model/vote_style.dart';
 

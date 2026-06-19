@@ -21,11 +21,13 @@ class BulkPreBanParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkPreBanParams &&
     _deepEquality.equals(other.commentIds, commentIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentIds.hashCode);
+  
 
   @override
   String toString() => 'BulkPreBanParams[commentIds=$commentIds]';
@@ -47,10 +49,8 @@ class BulkPreBanParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BulkPreBanParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BulkPreBanParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commentIds'), 'Required key "BulkPreBanParams[commentIds]" is missing from JSON.');
+        assert(json[r'commentIds'] != null, 'Required key "BulkPreBanParams[commentIds]" has a null value in JSON.');
         return true;
       }());
 

@@ -8,3 +8,4 @@ client/.dart_tool/
 client/.packages
 client/pubspec.lock
 node_modules/
+openapi-generator-cli.jar

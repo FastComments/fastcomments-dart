@@ -76,23 +76,25 @@ class PatchDomainConfigParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PatchDomainConfigParams &&
     other.domain == domain &&
-    other.emailFromName == emailFromName &&
-    other.emailFromEmail == emailFromEmail &&
-    other.logoSrc == logoSrc &&
-    other.logoSrc100px == logoSrc100px &&
-    other.footerUnsubscribeURL == footerUnsubscribeURL &&
-    _deepEquality.equals(other.emailHeaders, emailHeaders);
+      other.emailFromName == emailFromName &&
+      other.emailFromEmail == emailFromEmail &&
+      other.logoSrc == logoSrc &&
+      other.logoSrc100px == logoSrc100px &&
+      other.footerUnsubscribeURL == footerUnsubscribeURL &&
+      _deepEquality.equals(other.emailHeaders, emailHeaders);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (domain == null ? 0 : domain!.hashCode) +
-    (emailFromName == null ? 0 : emailFromName!.hashCode) +
-    (emailFromEmail == null ? 0 : emailFromEmail!.hashCode) +
-    (logoSrc == null ? 0 : logoSrc!.hashCode) +
-    (logoSrc100px == null ? 0 : logoSrc100px!.hashCode) +
-    (footerUnsubscribeURL == null ? 0 : footerUnsubscribeURL!.hashCode) +
-    (emailHeaders.hashCode);
+      (emailFromName == null ? 0 : emailFromName!.hashCode) +
+      (emailFromEmail == null ? 0 : emailFromEmail!.hashCode) +
+      (logoSrc == null ? 0 : logoSrc!.hashCode) +
+      (logoSrc100px == null ? 0 : logoSrc100px!.hashCode) +
+      (footerUnsubscribeURL == null ? 0 : footerUnsubscribeURL!.hashCode) +
+      (emailHeaders.hashCode);
+  
 
   @override
   String toString() => 'PatchDomainConfigParams[domain=$domain, emailFromName=$emailFromName, emailFromEmail=$emailFromEmail, logoSrc=$logoSrc, logoSrc100px=$logoSrc100px, footerUnsubscribeURL=$footerUnsubscribeURL, emailHeaders=$emailHeaders]';
@@ -144,10 +146,6 @@ class PatchDomainConfigParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PatchDomainConfigParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PatchDomainConfigParams[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

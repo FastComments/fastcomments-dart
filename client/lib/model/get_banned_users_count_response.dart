@@ -24,13 +24,15 @@ class GetBannedUsersCountResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetBannedUsersCountResponse &&
     other.totalCount == totalCount &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (totalCount.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetBannedUsersCountResponse[totalCount=$totalCount, status=$status]';
@@ -53,10 +55,10 @@ class GetBannedUsersCountResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetBannedUsersCountResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetBannedUsersCountResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'totalCount'), 'Required key "GetBannedUsersCountResponse[totalCount]" is missing from JSON.');
+        assert(json[r'totalCount'] != null, 'Required key "GetBannedUsersCountResponse[totalCount]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GetBannedUsersCountResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetBannedUsersCountResponse[status]" has a null value in JSON.');
         return true;
       }());
 

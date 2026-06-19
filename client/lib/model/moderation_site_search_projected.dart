@@ -24,13 +24,15 @@ class ModerationSiteSearchProjected {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationSiteSearchProjected &&
     other.domain == domain &&
-    other.logoSrc100px == logoSrc100px;
+      other.logoSrc100px == logoSrc100px;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (domain.hashCode) +
-    (logoSrc100px == null ? 0 : logoSrc100px!.hashCode);
+      (logoSrc100px == null ? 0 : logoSrc100px!.hashCode);
+  
 
   @override
   String toString() => 'ModerationSiteSearchProjected[domain=$domain, logoSrc100px=$logoSrc100px]';
@@ -57,10 +59,8 @@ class ModerationSiteSearchProjected {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationSiteSearchProjected[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationSiteSearchProjected[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'domain'), 'Required key "ModerationSiteSearchProjected[domain]" is missing from JSON.');
+        assert(json[r'domain'] != null, 'Required key "ModerationSiteSearchProjected[domain]" has a null value in JSON.');
         return true;
       }());
 

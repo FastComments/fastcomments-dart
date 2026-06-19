@@ -30,17 +30,19 @@ class GetVotesForUserResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetVotesForUserResponse &&
     other.status == status &&
-    _deepEquality.equals(other.appliedAuthorizedVotes, appliedAuthorizedVotes) &&
-    _deepEquality.equals(other.appliedAnonymousVotes, appliedAnonymousVotes) &&
-    _deepEquality.equals(other.pendingVotes, pendingVotes);
+      _deepEquality.equals(other.appliedAuthorizedVotes, appliedAuthorizedVotes) &&
+      _deepEquality.equals(other.appliedAnonymousVotes, appliedAnonymousVotes) &&
+      _deepEquality.equals(other.pendingVotes, pendingVotes);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (appliedAuthorizedVotes.hashCode) +
-    (appliedAnonymousVotes.hashCode) +
-    (pendingVotes.hashCode);
+      (appliedAuthorizedVotes.hashCode) +
+      (appliedAnonymousVotes.hashCode) +
+      (pendingVotes.hashCode);
+  
 
   @override
   String toString() => 'GetVotesForUserResponse[status=$status, appliedAuthorizedVotes=$appliedAuthorizedVotes, appliedAnonymousVotes=$appliedAnonymousVotes, pendingVotes=$pendingVotes]';
@@ -65,10 +67,14 @@ class GetVotesForUserResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetVotesForUserResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetVotesForUserResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetVotesForUserResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetVotesForUserResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'appliedAuthorizedVotes'), 'Required key "GetVotesForUserResponse[appliedAuthorizedVotes]" is missing from JSON.');
+        assert(json[r'appliedAuthorizedVotes'] != null, 'Required key "GetVotesForUserResponse[appliedAuthorizedVotes]" has a null value in JSON.');
+        assert(json.containsKey(r'appliedAnonymousVotes'), 'Required key "GetVotesForUserResponse[appliedAnonymousVotes]" is missing from JSON.');
+        assert(json[r'appliedAnonymousVotes'] != null, 'Required key "GetVotesForUserResponse[appliedAnonymousVotes]" has a null value in JSON.');
+        assert(json.containsKey(r'pendingVotes'), 'Required key "GetVotesForUserResponse[pendingVotes]" is missing from JSON.');
+        assert(json[r'pendingVotes'] != null, 'Required key "GetVotesForUserResponse[pendingVotes]" has a null value in JSON.');
         return true;
       }());
 

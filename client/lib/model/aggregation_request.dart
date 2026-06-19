@@ -39,19 +39,21 @@ class AggregationRequest {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationRequest &&
     _deepEquality.equals(other.query, query) &&
-    other.resourceName == resourceName &&
-    _deepEquality.equals(other.groupBy, groupBy) &&
-    _deepEquality.equals(other.operations, operations) &&
-    other.sort == sort;
+      other.resourceName == resourceName &&
+      _deepEquality.equals(other.groupBy, groupBy) &&
+      _deepEquality.equals(other.operations, operations) &&
+      other.sort == sort;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (query.hashCode) +
-    (resourceName.hashCode) +
-    (groupBy.hashCode) +
-    (operations.hashCode) +
-    (sort == null ? 0 : sort!.hashCode);
+      (resourceName.hashCode) +
+      (groupBy.hashCode) +
+      (operations.hashCode) +
+      (sort == null ? 0 : sort!.hashCode);
+  
 
   @override
   String toString() => 'AggregationRequest[query=$query, resourceName=$resourceName, groupBy=$groupBy, operations=$operations, sort=$sort]';
@@ -81,10 +83,10 @@ class AggregationRequest {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationRequest[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationRequest[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'resourceName'), 'Required key "AggregationRequest[resourceName]" is missing from JSON.');
+        assert(json[r'resourceName'] != null, 'Required key "AggregationRequest[resourceName]" has a null value in JSON.');
+        assert(json.containsKey(r'operations'), 'Required key "AggregationRequest[operations]" is missing from JSON.');
+        assert(json[r'operations'] != null, 'Required key "AggregationRequest[operations]" has a null value in JSON.');
         return true;
       }());
 

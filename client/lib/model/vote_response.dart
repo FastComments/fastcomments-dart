@@ -20,7 +20,7 @@ class VoteResponse {
     this.editKey,
   });
 
-  VoteResponseStatus status;
+  String status;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -57,19 +57,21 @@ class VoteResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is VoteResponse &&
     other.status == status &&
-    other.voteId == voteId &&
-    other.isVerified == isVerified &&
-    other.user == user &&
-    other.editKey == editKey;
+      other.voteId == voteId &&
+      other.isVerified == isVerified &&
+      other.user == user &&
+      other.editKey == editKey;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (voteId == null ? 0 : voteId!.hashCode) +
-    (isVerified == null ? 0 : isVerified!.hashCode) +
-    (user == null ? 0 : user!.hashCode) +
-    (editKey == null ? 0 : editKey!.hashCode);
+      (voteId == null ? 0 : voteId!.hashCode) +
+      (isVerified == null ? 0 : isVerified!.hashCode) +
+      (user == null ? 0 : user!.hashCode) +
+      (editKey == null ? 0 : editKey!.hashCode);
+  
 
   @override
   String toString() => 'VoteResponse[status=$status, voteId=$voteId, isVerified=$isVerified, user=$user, editKey=$editKey]';
@@ -111,15 +113,13 @@ class VoteResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "VoteResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "VoteResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "VoteResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "VoteResponse[status]" has a null value in JSON.');
         return true;
       }());
 
       return VoteResponse(
-        status: VoteResponseStatus.fromJson(json[r'status'])!,
+        status: mapValueOfType<String>(json, r'status')!,
         voteId: mapValueOfType<String>(json, r'voteId'),
         isVerified: mapValueOfType<bool>(json, r'isVerified'),
         user: VoteResponseUser.fromJson(json[r'user']),

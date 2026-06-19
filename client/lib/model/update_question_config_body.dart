@@ -132,37 +132,39 @@ class UpdateQuestionConfigBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateQuestionConfigBody &&
     other.name == name &&
-    other.question == question &&
-    other.helpText == helpText &&
-    other.type == type &&
-    other.numStars == numStars &&
-    other.min == min &&
-    other.max == max &&
-    other.defaultValue == defaultValue &&
-    other.labelNegative == labelNegative &&
-    other.labelPositive == labelPositive &&
-    _deepEquality.equals(other.customOptions, customOptions) &&
-    _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
-    other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
-    other.reportingOrder == reportingOrder;
+      other.question == question &&
+      other.helpText == helpText &&
+      other.type == type &&
+      other.numStars == numStars &&
+      other.min == min &&
+      other.max == max &&
+      other.defaultValue == defaultValue &&
+      other.labelNegative == labelNegative &&
+      other.labelPositive == labelPositive &&
+      _deepEquality.equals(other.customOptions, customOptions) &&
+      _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
+      other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
+      other.reportingOrder == reportingOrder;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (question == null ? 0 : question!.hashCode) +
-    (helpText == null ? 0 : helpText!.hashCode) +
-    (type == null ? 0 : type!.hashCode) +
-    (numStars == null ? 0 : numStars!.hashCode) +
-    (min == null ? 0 : min!.hashCode) +
-    (max == null ? 0 : max!.hashCode) +
-    (defaultValue == null ? 0 : defaultValue!.hashCode) +
-    (labelNegative == null ? 0 : labelNegative!.hashCode) +
-    (labelPositive == null ? 0 : labelPositive!.hashCode) +
-    (customOptions.hashCode) +
-    (subQuestionIds.hashCode) +
-    (alwaysShowSubQuestions == null ? 0 : alwaysShowSubQuestions!.hashCode) +
-    (reportingOrder == null ? 0 : reportingOrder!.hashCode);
+      (question == null ? 0 : question!.hashCode) +
+      (helpText == null ? 0 : helpText!.hashCode) +
+      (type == null ? 0 : type!.hashCode) +
+      (numStars == null ? 0 : numStars!.hashCode) +
+      (min == null ? 0 : min!.hashCode) +
+      (max == null ? 0 : max!.hashCode) +
+      (defaultValue == null ? 0 : defaultValue!.hashCode) +
+      (labelNegative == null ? 0 : labelNegative!.hashCode) +
+      (labelPositive == null ? 0 : labelPositive!.hashCode) +
+      (customOptions.hashCode) +
+      (subQuestionIds.hashCode) +
+      (alwaysShowSubQuestions == null ? 0 : alwaysShowSubQuestions!.hashCode) +
+      (reportingOrder == null ? 0 : reportingOrder!.hashCode);
+  
 
   @override
   String toString() => 'UpdateQuestionConfigBody[name=$name, question=$question, helpText=$helpText, type=$type, numStars=$numStars, min=$min, max=$max, defaultValue=$defaultValue, labelNegative=$labelNegative, labelPositive=$labelPositive, customOptions=$customOptions, subQuestionIds=$subQuestionIds, alwaysShowSubQuestions=$alwaysShowSubQuestions, reportingOrder=$reportingOrder]';
@@ -245,10 +247,6 @@ class UpdateQuestionConfigBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateQuestionConfigBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateQuestionConfigBody[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

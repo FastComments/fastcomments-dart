@@ -33,19 +33,21 @@ class GetV1PageLikes {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetV1PageLikes &&
     other.urlIdWS == urlIdWS &&
-    other.didLike == didLike &&
-    other.commentCount == commentCount &&
-    other.likeCount == likeCount &&
-    other.status == status;
+      other.didLike == didLike &&
+      other.commentCount == commentCount &&
+      other.likeCount == likeCount &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (urlIdWS.hashCode) +
-    (didLike.hashCode) +
-    (commentCount.hashCode) +
-    (likeCount.hashCode) +
-    (status.hashCode);
+      (didLike.hashCode) +
+      (commentCount.hashCode) +
+      (likeCount.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'GetV1PageLikes[urlIdWS=$urlIdWS, didLike=$didLike, commentCount=$commentCount, likeCount=$likeCount, status=$status]';
@@ -71,10 +73,16 @@ class GetV1PageLikes {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetV1PageLikes[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetV1PageLikes[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'urlIdWS'), 'Required key "GetV1PageLikes[urlIdWS]" is missing from JSON.');
+        assert(json[r'urlIdWS'] != null, 'Required key "GetV1PageLikes[urlIdWS]" has a null value in JSON.');
+        assert(json.containsKey(r'didLike'), 'Required key "GetV1PageLikes[didLike]" is missing from JSON.');
+        assert(json[r'didLike'] != null, 'Required key "GetV1PageLikes[didLike]" has a null value in JSON.');
+        assert(json.containsKey(r'commentCount'), 'Required key "GetV1PageLikes[commentCount]" is missing from JSON.');
+        assert(json[r'commentCount'] != null, 'Required key "GetV1PageLikes[commentCount]" has a null value in JSON.');
+        assert(json.containsKey(r'likeCount'), 'Required key "GetV1PageLikes[likeCount]" is missing from JSON.');
+        assert(json[r'likeCount'] != null, 'Required key "GetV1PageLikes[likeCount]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "GetV1PageLikes[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetV1PageLikes[status]" has a null value in JSON.');
         return true;
       }());
 

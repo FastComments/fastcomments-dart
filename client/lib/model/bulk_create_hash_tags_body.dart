@@ -30,13 +30,15 @@ class BulkCreateHashTagsBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkCreateHashTagsBody &&
     other.tenantId == tenantId &&
-    _deepEquality.equals(other.tags, tags);
+      _deepEquality.equals(other.tags, tags);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (tenantId == null ? 0 : tenantId!.hashCode) +
-    (tags.hashCode);
+      (tags.hashCode);
+  
 
   @override
   String toString() => 'BulkCreateHashTagsBody[tenantId=$tenantId, tags=$tags]';
@@ -63,10 +65,8 @@ class BulkCreateHashTagsBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BulkCreateHashTagsBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BulkCreateHashTagsBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'tags'), 'Required key "BulkCreateHashTagsBody[tags]" is missing from JSON.');
+        assert(json[r'tags'] != null, 'Required key "BulkCreateHashTagsBody[tags]" has a null value in JSON.');
         return true;
       }());
 

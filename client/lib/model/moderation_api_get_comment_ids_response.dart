@@ -27,15 +27,17 @@ class ModerationAPIGetCommentIdsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationAPIGetCommentIdsResponse &&
     _deepEquality.equals(other.ids, ids) &&
-    other.hasMore == hasMore &&
-    other.status == status;
+      other.hasMore == hasMore &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (ids.hashCode) +
-    (hasMore.hashCode) +
-    (status.hashCode);
+      (hasMore.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'ModerationAPIGetCommentIdsResponse[ids=$ids, hasMore=$hasMore, status=$status]';
@@ -59,10 +61,12 @@ class ModerationAPIGetCommentIdsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationAPIGetCommentIdsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationAPIGetCommentIdsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'ids'), 'Required key "ModerationAPIGetCommentIdsResponse[ids]" is missing from JSON.');
+        assert(json[r'ids'] != null, 'Required key "ModerationAPIGetCommentIdsResponse[ids]" has a null value in JSON.');
+        assert(json.containsKey(r'hasMore'), 'Required key "ModerationAPIGetCommentIdsResponse[hasMore]" is missing from JSON.');
+        assert(json[r'hasMore'] != null, 'Required key "ModerationAPIGetCommentIdsResponse[hasMore]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "ModerationAPIGetCommentIdsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ModerationAPIGetCommentIdsResponse[status]" has a null value in JSON.');
         return true;
       }());
 

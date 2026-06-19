@@ -193,65 +193,67 @@ class APITenant {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITenant &&
     other.id == id &&
-    other.name == name &&
-    other.email == email &&
-    other.signUpDate == signUpDate &&
-    other.packageId == packageId &&
-    other.paymentFrequency == paymentFrequency &&
-    other.billingInfoValid == billingInfoValid &&
-    other.billingHandledExternally == billingHandledExternally &&
-    other.createdBy == createdBy &&
-    other.isSetup == isSetup &&
-    _deepEquality.equals(other.domainConfiguration, domainConfiguration) &&
-    other.billingInfo == billingInfo &&
-    other.stripeCustomerId == stripeCustomerId &&
-    other.stripeSubscriptionId == stripeSubscriptionId &&
-    other.stripePlanId == stripePlanId &&
-    other.enableProfanityFilter == enableProfanityFilter &&
-    other.enableSpamFilter == enableSpamFilter &&
-    other.lastBillingIssueReminderDate == lastBillingIssueReminderDate &&
-    other.removeUnverifiedComments == removeUnverifiedComments &&
-    other.unverifiedCommentsTTLms == unverifiedCommentsTTLms &&
-    other.commentsRequireApproval == commentsRequireApproval &&
-    other.autoApproveCommentOnVerification == autoApproveCommentOnVerification &&
-    other.sendProfaneToSpam == sendProfaneToSpam &&
-    other.hasFlexPricing == hasFlexPricing &&
-    other.hasAuditing == hasAuditing &&
-    other.flexLastBilledAmount == flexLastBilledAmount &&
-    other.deAnonIpAddr == deAnonIpAddr &&
-    _deepEquality.equals(other.meta, meta);
+      other.name == name &&
+      other.email == email &&
+      other.signUpDate == signUpDate &&
+      other.packageId == packageId &&
+      other.paymentFrequency == paymentFrequency &&
+      other.billingInfoValid == billingInfoValid &&
+      other.billingHandledExternally == billingHandledExternally &&
+      other.createdBy == createdBy &&
+      other.isSetup == isSetup &&
+      _deepEquality.equals(other.domainConfiguration, domainConfiguration) &&
+      other.billingInfo == billingInfo &&
+      other.stripeCustomerId == stripeCustomerId &&
+      other.stripeSubscriptionId == stripeSubscriptionId &&
+      other.stripePlanId == stripePlanId &&
+      other.enableProfanityFilter == enableProfanityFilter &&
+      other.enableSpamFilter == enableSpamFilter &&
+      other.lastBillingIssueReminderDate == lastBillingIssueReminderDate &&
+      other.removeUnverifiedComments == removeUnverifiedComments &&
+      other.unverifiedCommentsTTLms == unverifiedCommentsTTLms &&
+      other.commentsRequireApproval == commentsRequireApproval &&
+      other.autoApproveCommentOnVerification == autoApproveCommentOnVerification &&
+      other.sendProfaneToSpam == sendProfaneToSpam &&
+      other.hasFlexPricing == hasFlexPricing &&
+      other.hasAuditing == hasAuditing &&
+      other.flexLastBilledAmount == flexLastBilledAmount &&
+      other.deAnonIpAddr == deAnonIpAddr &&
+      _deepEquality.equals(other.meta, meta);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (name.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (signUpDate.hashCode) +
-    (packageId.hashCode) +
-    (paymentFrequency.hashCode) +
-    (billingInfoValid.hashCode) +
-    (billingHandledExternally == null ? 0 : billingHandledExternally!.hashCode) +
-    (createdBy.hashCode) +
-    (isSetup.hashCode) +
-    (domainConfiguration.hashCode) +
-    (billingInfo == null ? 0 : billingInfo!.hashCode) +
-    (stripeCustomerId == null ? 0 : stripeCustomerId!.hashCode) +
-    (stripeSubscriptionId == null ? 0 : stripeSubscriptionId!.hashCode) +
-    (stripePlanId == null ? 0 : stripePlanId!.hashCode) +
-    (enableProfanityFilter.hashCode) +
-    (enableSpamFilter.hashCode) +
-    (lastBillingIssueReminderDate == null ? 0 : lastBillingIssueReminderDate!.hashCode) +
-    (removeUnverifiedComments == null ? 0 : removeUnverifiedComments!.hashCode) +
-    (unverifiedCommentsTTLms == null ? 0 : unverifiedCommentsTTLms!.hashCode) +
-    (commentsRequireApproval == null ? 0 : commentsRequireApproval!.hashCode) +
-    (autoApproveCommentOnVerification == null ? 0 : autoApproveCommentOnVerification!.hashCode) +
-    (sendProfaneToSpam == null ? 0 : sendProfaneToSpam!.hashCode) +
-    (hasFlexPricing == null ? 0 : hasFlexPricing!.hashCode) +
-    (hasAuditing == null ? 0 : hasAuditing!.hashCode) +
-    (flexLastBilledAmount == null ? 0 : flexLastBilledAmount!.hashCode) +
-    (deAnonIpAddr == null ? 0 : deAnonIpAddr!.hashCode) +
-    (meta.hashCode);
+      (name.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (signUpDate.hashCode) +
+      (packageId.hashCode) +
+      (paymentFrequency.hashCode) +
+      (billingInfoValid.hashCode) +
+      (billingHandledExternally == null ? 0 : billingHandledExternally!.hashCode) +
+      (createdBy.hashCode) +
+      (isSetup.hashCode) +
+      (domainConfiguration.hashCode) +
+      (billingInfo == null ? 0 : billingInfo!.hashCode) +
+      (stripeCustomerId == null ? 0 : stripeCustomerId!.hashCode) +
+      (stripeSubscriptionId == null ? 0 : stripeSubscriptionId!.hashCode) +
+      (stripePlanId == null ? 0 : stripePlanId!.hashCode) +
+      (enableProfanityFilter.hashCode) +
+      (enableSpamFilter.hashCode) +
+      (lastBillingIssueReminderDate == null ? 0 : lastBillingIssueReminderDate!.hashCode) +
+      (removeUnverifiedComments == null ? 0 : removeUnverifiedComments!.hashCode) +
+      (unverifiedCommentsTTLms == null ? 0 : unverifiedCommentsTTLms!.hashCode) +
+      (commentsRequireApproval == null ? 0 : commentsRequireApproval!.hashCode) +
+      (autoApproveCommentOnVerification == null ? 0 : autoApproveCommentOnVerification!.hashCode) +
+      (sendProfaneToSpam == null ? 0 : sendProfaneToSpam!.hashCode) +
+      (hasFlexPricing == null ? 0 : hasFlexPricing!.hashCode) +
+      (hasAuditing == null ? 0 : hasAuditing!.hashCode) +
+      (flexLastBilledAmount == null ? 0 : flexLastBilledAmount!.hashCode) +
+      (deAnonIpAddr == null ? 0 : deAnonIpAddr!.hashCode) +
+      (meta.hashCode);
+  
 
   @override
   String toString() => 'APITenant[id=$id, name=$name, email=$email, signUpDate=$signUpDate, packageId=$packageId, paymentFrequency=$paymentFrequency, billingInfoValid=$billingInfoValid, billingHandledExternally=$billingHandledExternally, createdBy=$createdBy, isSetup=$isSetup, domainConfiguration=$domainConfiguration, billingInfo=$billingInfo, stripeCustomerId=$stripeCustomerId, stripeSubscriptionId=$stripeSubscriptionId, stripePlanId=$stripePlanId, enableProfanityFilter=$enableProfanityFilter, enableSpamFilter=$enableSpamFilter, lastBillingIssueReminderDate=$lastBillingIssueReminderDate, removeUnverifiedComments=$removeUnverifiedComments, unverifiedCommentsTTLms=$unverifiedCommentsTTLms, commentsRequireApproval=$commentsRequireApproval, autoApproveCommentOnVerification=$autoApproveCommentOnVerification, sendProfaneToSpam=$sendProfaneToSpam, hasFlexPricing=$hasFlexPricing, hasAuditing=$hasAuditing, flexLastBilledAmount=$flexLastBilledAmount, deAnonIpAddr=$deAnonIpAddr, meta=$meta]';
@@ -364,10 +366,28 @@ class APITenant {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APITenant[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APITenant[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "APITenant[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "APITenant[id]" has a null value in JSON.');
+        assert(json.containsKey(r'name'), 'Required key "APITenant[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "APITenant[name]" has a null value in JSON.');
+        assert(json.containsKey(r'signUpDate'), 'Required key "APITenant[signUpDate]" is missing from JSON.');
+        assert(json[r'signUpDate'] != null, 'Required key "APITenant[signUpDate]" has a null value in JSON.');
+        assert(json.containsKey(r'packageId'), 'Required key "APITenant[packageId]" is missing from JSON.');
+        assert(json[r'packageId'] != null, 'Required key "APITenant[packageId]" has a null value in JSON.');
+        assert(json.containsKey(r'paymentFrequency'), 'Required key "APITenant[paymentFrequency]" is missing from JSON.');
+        assert(json[r'paymentFrequency'] != null, 'Required key "APITenant[paymentFrequency]" has a null value in JSON.');
+        assert(json.containsKey(r'billingInfoValid'), 'Required key "APITenant[billingInfoValid]" is missing from JSON.');
+        assert(json[r'billingInfoValid'] != null, 'Required key "APITenant[billingInfoValid]" has a null value in JSON.');
+        assert(json.containsKey(r'createdBy'), 'Required key "APITenant[createdBy]" is missing from JSON.');
+        assert(json[r'createdBy'] != null, 'Required key "APITenant[createdBy]" has a null value in JSON.');
+        assert(json.containsKey(r'isSetup'), 'Required key "APITenant[isSetup]" is missing from JSON.');
+        assert(json[r'isSetup'] != null, 'Required key "APITenant[isSetup]" has a null value in JSON.');
+        assert(json.containsKey(r'domainConfiguration'), 'Required key "APITenant[domainConfiguration]" is missing from JSON.');
+        assert(json[r'domainConfiguration'] != null, 'Required key "APITenant[domainConfiguration]" has a null value in JSON.');
+        assert(json.containsKey(r'enableProfanityFilter'), 'Required key "APITenant[enableProfanityFilter]" is missing from JSON.');
+        assert(json[r'enableProfanityFilter'] != null, 'Required key "APITenant[enableProfanityFilter]" has a null value in JSON.');
+        assert(json.containsKey(r'enableSpamFilter'), 'Required key "APITenant[enableSpamFilter]" is missing from JSON.');
+        assert(json[r'enableSpamFilter'] != null, 'Required key "APITenant[enableSpamFilter]" has a null value in JSON.');
         return true;
       }());
 

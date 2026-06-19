@@ -24,13 +24,15 @@ class NotificationAndCount {
   @override
   bool operator ==(Object other) => identical(this, other) || other is NotificationAndCount &&
     other.type == type &&
-    other.count == count;
+      other.count == count;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (type.hashCode) +
-    (count.hashCode);
+      (count.hashCode);
+  
 
   @override
   String toString() => 'NotificationAndCount[type=$type, count=$count]';
@@ -53,10 +55,10 @@ class NotificationAndCount {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "NotificationAndCount[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "NotificationAndCount[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'type'), 'Required key "NotificationAndCount[type]" is missing from JSON.');
+        assert(json[r'type'] != null, 'Required key "NotificationAndCount[type]" has a null value in JSON.');
+        assert(json.containsKey(r'count'), 'Required key "NotificationAndCount[count]" is missing from JSON.');
+        assert(json[r'count'] != null, 'Required key "NotificationAndCount[count]" has a null value in JSON.');
         return true;
       }());
 

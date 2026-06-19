@@ -36,17 +36,19 @@ class ModerationAPICommentLog {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationAPICommentLog &&
     other.date == date &&
-    other.username == username &&
-    other.actionName == actionName &&
-    other.messageHTML == messageHTML;
+      other.username == username &&
+      other.actionName == actionName &&
+      other.messageHTML == messageHTML;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (date.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (actionName.hashCode) +
-    (messageHTML.hashCode);
+      (username == null ? 0 : username!.hashCode) +
+      (actionName.hashCode) +
+      (messageHTML.hashCode);
+  
 
   @override
   String toString() => 'ModerationAPICommentLog[date=$date, username=$username, actionName=$actionName, messageHTML=$messageHTML]';
@@ -75,10 +77,12 @@ class ModerationAPICommentLog {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationAPICommentLog[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationAPICommentLog[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'date'), 'Required key "ModerationAPICommentLog[date]" is missing from JSON.');
+        assert(json[r'date'] != null, 'Required key "ModerationAPICommentLog[date]" has a null value in JSON.');
+        assert(json.containsKey(r'actionName'), 'Required key "ModerationAPICommentLog[actionName]" is missing from JSON.');
+        assert(json[r'actionName'] != null, 'Required key "ModerationAPICommentLog[actionName]" has a null value in JSON.');
+        assert(json.containsKey(r'messageHTML'), 'Required key "ModerationAPICommentLog[messageHTML]" is missing from JSON.');
+        assert(json[r'messageHTML'] != null, 'Required key "ModerationAPICommentLog[messageHTML]" has a null value in JSON.');
         return true;
       }());
 

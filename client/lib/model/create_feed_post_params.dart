@@ -67,25 +67,27 @@ class CreateFeedPostParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateFeedPostParams &&
     other.title == title &&
-    other.contentHTML == contentHTML &&
-    _deepEquality.equals(other.media, media) &&
-    _deepEquality.equals(other.links, links) &&
-    other.fromUserId == fromUserId &&
-    other.fromUserDisplayName == fromUserDisplayName &&
-    _deepEquality.equals(other.tags, tags) &&
-    _deepEquality.equals(other.meta, meta);
+      other.contentHTML == contentHTML &&
+      _deepEquality.equals(other.media, media) &&
+      _deepEquality.equals(other.links, links) &&
+      other.fromUserId == fromUserId &&
+      other.fromUserDisplayName == fromUserDisplayName &&
+      _deepEquality.equals(other.tags, tags) &&
+      _deepEquality.equals(other.meta, meta);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (title == null ? 0 : title!.hashCode) +
-    (contentHTML == null ? 0 : contentHTML!.hashCode) +
-    (media.hashCode) +
-    (links.hashCode) +
-    (fromUserId == null ? 0 : fromUserId!.hashCode) +
-    (fromUserDisplayName == null ? 0 : fromUserDisplayName!.hashCode) +
-    (tags.hashCode) +
-    (meta.hashCode);
+      (contentHTML == null ? 0 : contentHTML!.hashCode) +
+      (media.hashCode) +
+      (links.hashCode) +
+      (fromUserId == null ? 0 : fromUserId!.hashCode) +
+      (fromUserDisplayName == null ? 0 : fromUserDisplayName!.hashCode) +
+      (tags.hashCode) +
+      (meta.hashCode);
+  
 
   @override
   String toString() => 'CreateFeedPostParams[title=$title, contentHTML=$contentHTML, media=$media, links=$links, fromUserId=$fromUserId, fromUserDisplayName=$fromUserDisplayName, tags=$tags, meta=$meta]';
@@ -130,10 +132,6 @@ class CreateFeedPostParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateFeedPostParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateFeedPostParams[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

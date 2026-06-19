@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **commentCount** | **int** |  | [optional] 
 **isSiteAdmin** | **bool** |  | [optional] 
 **hasBillingIssue** | **bool** |  | [optional] 
-**moduleData** | [**Map<String, Object>**](Object.md) | Construct a type with a set of properties K of type T | [optional] [default to const {}]
+**moduleData** | **Map<String, Object>** | Construct a type with a set of properties K of type T | [optional] [default to const {}]
 **pageNumber** | **int** |  | 
 **isWhiteLabeled** | **bool** |  | [optional] 
 **isProd** | **bool** |  | [optional] 

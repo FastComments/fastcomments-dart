@@ -9,8 +9,8 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**sections** | [**List<UserSearchSectionResult>**](UserSearchSectionResult.md) |  | [default to const []]
-**users** | [**List<UserSearchResult>**](UserSearchResult.md) |  | [default to const []]
+**sections** | [**List<UserSearchSectionResult>**](UserSearchSectionResult.md) |  | [optional] [default to const []]
+**users** | [**List<UserSearchResult>**](UserSearchResult.md) |  | [optional] [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

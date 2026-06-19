@@ -192,49 +192,51 @@ class UpdateAPISSOUserData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateAPISSOUserData &&
     _deepEquality.equals(other.groupIds, groupIds) &&
-    other.hasBlockedUsers == hasBlockedUsers &&
-    other.isProfileDMDisabled == isProfileDMDisabled &&
-    other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
-    other.isProfileActivityPrivate == isProfileActivityPrivate &&
-    other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
-    other.isAdminAdmin == isAdminAdmin &&
-    other.isAccountOwner == isAccountOwner &&
-    other.displayName == displayName &&
-    other.displayLabel == displayLabel &&
-    other.optedInSubscriptionNotifications == optedInSubscriptionNotifications &&
-    other.optedInNotifications == optedInNotifications &&
-    other.avatarSrc == avatarSrc &&
-    other.loginCount == loginCount &&
-    other.createdFromUrlId == createdFromUrlId &&
-    other.signUpDate == signUpDate &&
-    other.email == email &&
-    other.websiteUrl == websiteUrl &&
-    other.username == username &&
-    other.id == id;
+      other.hasBlockedUsers == hasBlockedUsers &&
+      other.isProfileDMDisabled == isProfileDMDisabled &&
+      other.isProfileCommentsPrivate == isProfileCommentsPrivate &&
+      other.isProfileActivityPrivate == isProfileActivityPrivate &&
+      other.isCommentModeratorAdmin == isCommentModeratorAdmin &&
+      other.isAdminAdmin == isAdminAdmin &&
+      other.isAccountOwner == isAccountOwner &&
+      other.displayName == displayName &&
+      other.displayLabel == displayLabel &&
+      other.optedInSubscriptionNotifications == optedInSubscriptionNotifications &&
+      other.optedInNotifications == optedInNotifications &&
+      other.avatarSrc == avatarSrc &&
+      other.loginCount == loginCount &&
+      other.createdFromUrlId == createdFromUrlId &&
+      other.signUpDate == signUpDate &&
+      other.email == email &&
+      other.websiteUrl == websiteUrl &&
+      other.username == username &&
+      other.id == id;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (groupIds.hashCode) +
-    (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
-    (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
-    (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
-    (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
-    (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
-    (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
-    (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (optedInSubscriptionNotifications == null ? 0 : optedInSubscriptionNotifications!.hashCode) +
-    (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (loginCount == null ? 0 : loginCount!.hashCode) +
-    (createdFromUrlId == null ? 0 : createdFromUrlId!.hashCode) +
-    (signUpDate == null ? 0 : signUpDate!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (id == null ? 0 : id!.hashCode);
+      (hasBlockedUsers == null ? 0 : hasBlockedUsers!.hashCode) +
+      (isProfileDMDisabled == null ? 0 : isProfileDMDisabled!.hashCode) +
+      (isProfileCommentsPrivate == null ? 0 : isProfileCommentsPrivate!.hashCode) +
+      (isProfileActivityPrivate == null ? 0 : isProfileActivityPrivate!.hashCode) +
+      (isCommentModeratorAdmin == null ? 0 : isCommentModeratorAdmin!.hashCode) +
+      (isAdminAdmin == null ? 0 : isAdminAdmin!.hashCode) +
+      (isAccountOwner == null ? 0 : isAccountOwner!.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (optedInSubscriptionNotifications == null ? 0 : optedInSubscriptionNotifications!.hashCode) +
+      (optedInNotifications == null ? 0 : optedInNotifications!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (loginCount == null ? 0 : loginCount!.hashCode) +
+      (createdFromUrlId == null ? 0 : createdFromUrlId!.hashCode) +
+      (signUpDate == null ? 0 : signUpDate!.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
+      (username == null ? 0 : username!.hashCode) +
+      (id == null ? 0 : id!.hashCode);
+  
 
   @override
   String toString() => 'UpdateAPISSOUserData[groupIds=$groupIds, hasBlockedUsers=$hasBlockedUsers, isProfileDMDisabled=$isProfileDMDisabled, isProfileCommentsPrivate=$isProfileCommentsPrivate, isProfileActivityPrivate=$isProfileActivityPrivate, isCommentModeratorAdmin=$isCommentModeratorAdmin, isAdminAdmin=$isAdminAdmin, isAccountOwner=$isAccountOwner, displayName=$displayName, displayLabel=$displayLabel, optedInSubscriptionNotifications=$optedInSubscriptionNotifications, optedInNotifications=$optedInNotifications, avatarSrc=$avatarSrc, loginCount=$loginCount, createdFromUrlId=$createdFromUrlId, signUpDate=$signUpDate, email=$email, websiteUrl=$websiteUrl, username=$username, id=$id]';
@@ -351,10 +353,6 @@ class UpdateAPISSOUserData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UpdateAPISSOUserData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UpdateAPISSOUserData[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

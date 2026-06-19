@@ -32,17 +32,19 @@ class EmailTemplateDefinition {
   @override
   bool operator ==(Object other) => identical(this, other) || other is EmailTemplateDefinition &&
     other.emailTemplateId == emailTemplateId &&
-    _deepEquality.equals(other.defaultTestData, defaultTestData) &&
-    _deepEquality.equals(other.defaultTranslationsByLocale, defaultTranslationsByLocale) &&
-    other.defaultEJS == defaultEJS;
+      _deepEquality.equals(other.defaultTestData, defaultTestData) &&
+      _deepEquality.equals(other.defaultTranslationsByLocale, defaultTranslationsByLocale) &&
+      other.defaultEJS == defaultEJS;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (emailTemplateId.hashCode) +
-    (defaultTestData.hashCode) +
-    (defaultTranslationsByLocale.hashCode) +
-    (defaultEJS.hashCode);
+      (defaultTestData.hashCode) +
+      (defaultTranslationsByLocale.hashCode) +
+      (defaultEJS.hashCode);
+  
 
   @override
   String toString() => 'EmailTemplateDefinition[emailTemplateId=$emailTemplateId, defaultTestData=$defaultTestData, defaultTranslationsByLocale=$defaultTranslationsByLocale, defaultEJS=$defaultEJS]';
@@ -67,17 +69,21 @@ class EmailTemplateDefinition {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "EmailTemplateDefinition[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "EmailTemplateDefinition[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'emailTemplateId'), 'Required key "EmailTemplateDefinition[emailTemplateId]" is missing from JSON.');
+        assert(json[r'emailTemplateId'] != null, 'Required key "EmailTemplateDefinition[emailTemplateId]" has a null value in JSON.');
+        assert(json.containsKey(r'defaultTestData'), 'Required key "EmailTemplateDefinition[defaultTestData]" is missing from JSON.');
+        assert(json[r'defaultTestData'] != null, 'Required key "EmailTemplateDefinition[defaultTestData]" has a null value in JSON.');
+        assert(json.containsKey(r'defaultTranslationsByLocale'), 'Required key "EmailTemplateDefinition[defaultTranslationsByLocale]" is missing from JSON.');
+        assert(json[r'defaultTranslationsByLocale'] != null, 'Required key "EmailTemplateDefinition[defaultTranslationsByLocale]" has a null value in JSON.');
+        assert(json.containsKey(r'defaultEJS'), 'Required key "EmailTemplateDefinition[defaultEJS]" is missing from JSON.');
+        assert(json[r'defaultEJS'] != null, 'Required key "EmailTemplateDefinition[defaultEJS]" has a null value in JSON.');
         return true;
       }());
 
       return EmailTemplateDefinition(
         emailTemplateId: mapValueOfType<String>(json, r'emailTemplateId')!,
         defaultTestData: mapCastOfType<String, Object>(json, r'defaultTestData')!,
-        defaultTranslationsByLocale: mapCastOfType<String, dynamic>(json, r'defaultTranslationsByLocale')!,
+        defaultTranslationsByLocale: ((json[r'defaultTranslationsByLocale'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, String>())))!,
         defaultEJS: mapValueOfType<String>(json, r'defaultEJS')!,
       );
     }

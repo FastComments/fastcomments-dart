@@ -9,9 +9,9 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**hashTag** | [**TenantHashTag**](TenantHashTag.md) |  | 
-**reason** | **String** |  | 
-**code** | **String** |  | 
+**hashTag** | [**TenantHashTag**](TenantHashTag.md) |  | [optional] 
+**reason** | **String** |  | [optional] 
+**code** | **String** |  | [optional] 
 **secondaryCode** | **String** |  | [optional] 
 **bannedUntil** | **int** |  | [optional] 
 **maxCharacterLength** | **int** |  | [optional] 

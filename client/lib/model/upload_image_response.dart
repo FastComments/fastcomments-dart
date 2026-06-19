@@ -51,19 +51,21 @@ class UploadImageResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UploadImageResponse &&
     other.status == status &&
-    other.url == url &&
-    _deepEquality.equals(other.media, media) &&
-    other.reason == reason &&
-    other.code == code;
+      other.url == url &&
+      _deepEquality.equals(other.media, media) &&
+      other.reason == reason &&
+      other.code == code;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (media.hashCode) +
-    (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode);
+      (url == null ? 0 : url!.hashCode) +
+      (media.hashCode) +
+      (reason == null ? 0 : reason!.hashCode) +
+      (code == null ? 0 : code!.hashCode);
+  
 
   @override
   String toString() => 'UploadImageResponse[status=$status, url=$url, media=$media, reason=$reason, code=$code]';
@@ -101,10 +103,8 @@ class UploadImageResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UploadImageResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UploadImageResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "UploadImageResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "UploadImageResponse[status]" has a null value in JSON.');
         return true;
       }());
 

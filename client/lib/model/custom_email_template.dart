@@ -52,31 +52,33 @@ class CustomEmailTemplate {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CustomEmailTemplate &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.emailTemplateId == emailTemplateId &&
-    other.displayName == displayName &&
-    other.createdAt == createdAt &&
-    other.updatedAt == updatedAt &&
-    other.updatedByUserId == updatedByUserId &&
-    other.domain == domain &&
-    other.ejs == ejs &&
-    _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale) &&
-    other.testData == testData;
+      other.tenantId == tenantId &&
+      other.emailTemplateId == emailTemplateId &&
+      other.displayName == displayName &&
+      other.createdAt == createdAt &&
+      other.updatedAt == updatedAt &&
+      other.updatedByUserId == updatedByUserId &&
+      other.domain == domain &&
+      other.ejs == ejs &&
+      _deepEquality.equals(other.translationOverridesByLocale, translationOverridesByLocale) &&
+      other.testData == testData;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (emailTemplateId.hashCode) +
-    (displayName.hashCode) +
-    (createdAt.hashCode) +
-    (updatedAt == null ? 0 : updatedAt!.hashCode) +
-    (updatedByUserId == null ? 0 : updatedByUserId!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (ejs.hashCode) +
-    (translationOverridesByLocale.hashCode) +
-    (testData == null ? 0 : testData!.hashCode);
+      (tenantId.hashCode) +
+      (emailTemplateId.hashCode) +
+      (displayName.hashCode) +
+      (createdAt.hashCode) +
+      (updatedAt == null ? 0 : updatedAt!.hashCode) +
+      (updatedByUserId == null ? 0 : updatedByUserId!.hashCode) +
+      (domain == null ? 0 : domain!.hashCode) +
+      (ejs.hashCode) +
+      (translationOverridesByLocale.hashCode) +
+      (testData == null ? 0 : testData!.hashCode);
+  
 
   @override
   String toString() => 'CustomEmailTemplate[id=$id, tenantId=$tenantId, emailTemplateId=$emailTemplateId, displayName=$displayName, createdAt=$createdAt, updatedAt=$updatedAt, updatedByUserId=$updatedByUserId, domain=$domain, ejs=$ejs, translationOverridesByLocale=$translationOverridesByLocale, testData=$testData]';
@@ -124,10 +126,23 @@ class CustomEmailTemplate {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CustomEmailTemplate[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CustomEmailTemplate[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "CustomEmailTemplate[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "CustomEmailTemplate[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "CustomEmailTemplate[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "CustomEmailTemplate[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'emailTemplateId'), 'Required key "CustomEmailTemplate[emailTemplateId]" is missing from JSON.');
+        assert(json[r'emailTemplateId'] != null, 'Required key "CustomEmailTemplate[emailTemplateId]" has a null value in JSON.');
+        assert(json.containsKey(r'displayName'), 'Required key "CustomEmailTemplate[displayName]" is missing from JSON.');
+        assert(json[r'displayName'] != null, 'Required key "CustomEmailTemplate[displayName]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "CustomEmailTemplate[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "CustomEmailTemplate[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'updatedAt'), 'Required key "CustomEmailTemplate[updatedAt]" is missing from JSON.');
+        assert(json.containsKey(r'updatedByUserId'), 'Required key "CustomEmailTemplate[updatedByUserId]" is missing from JSON.');
+        assert(json.containsKey(r'ejs'), 'Required key "CustomEmailTemplate[ejs]" is missing from JSON.');
+        assert(json[r'ejs'] != null, 'Required key "CustomEmailTemplate[ejs]" has a null value in JSON.');
+        assert(json.containsKey(r'translationOverridesByLocale'), 'Required key "CustomEmailTemplate[translationOverridesByLocale]" is missing from JSON.');
+        assert(json[r'translationOverridesByLocale'] != null, 'Required key "CustomEmailTemplate[translationOverridesByLocale]" has a null value in JSON.');
+        assert(json.containsKey(r'testData'), 'Required key "CustomEmailTemplate[testData]" is missing from JSON.');
         return true;
       }());
 
@@ -141,7 +156,7 @@ class CustomEmailTemplate {
         updatedByUserId: mapValueOfType<String>(json, r'updatedByUserId'),
         domain: mapValueOfType<String>(json, r'domain'),
         ejs: mapValueOfType<String>(json, r'ejs')!,
-        translationOverridesByLocale: mapCastOfType<String, dynamic>(json, r'translationOverridesByLocale')!,
+        translationOverridesByLocale: ((json[r'translationOverridesByLocale'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, String>())))!,
         testData: mapValueOfType<Object>(json, r'testData'),
       );
     }

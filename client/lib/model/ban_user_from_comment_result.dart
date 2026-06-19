@@ -48,17 +48,19 @@ class BanUserFromCommentResult {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BanUserFromCommentResult &&
     other.status == status &&
-    other.changelog == changelog &&
-    other.code == code &&
-    other.reason == reason;
+      other.changelog == changelog &&
+      other.code == code &&
+      other.reason == reason;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (changelog == null ? 0 : changelog!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (reason == null ? 0 : reason!.hashCode);
+      (changelog == null ? 0 : changelog!.hashCode) +
+      (code == null ? 0 : code!.hashCode) +
+      (reason == null ? 0 : reason!.hashCode);
+  
 
   @override
   String toString() => 'BanUserFromCommentResult[status=$status, changelog=$changelog, code=$code, reason=$reason]';
@@ -95,10 +97,8 @@ class BanUserFromCommentResult {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BanUserFromCommentResult[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BanUserFromCommentResult[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "BanUserFromCommentResult[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "BanUserFromCommentResult[status]" has a null value in JSON.');
         return true;
       }());
 

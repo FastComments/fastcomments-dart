@@ -9,11 +9,11 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**comment** | [**APIComment**](APIComment.md) |  | 
-**user** | [**UserSessionInfo**](UserSessionInfo.md) |  | 
-**moduleData** | [**Map<String, Object>**](Object.md) | Construct a type with a set of properties K of type T | [optional] [default to const {}]
-**reason** | **String** |  | 
-**code** | **String** |  | 
+**comment** | [**APIComment**](APIComment.md) |  | [optional] 
+**user** | [**UserSessionInfo**](UserSessionInfo.md) |  | [optional] 
+**moduleData** | **Map<String, Object>** | Construct a type with a set of properties K of type T | [optional] [default to const {}]
+**reason** | **String** |  | [optional] 
+**code** | **String** |  | [optional] 
 **secondaryCode** | **String** |  | [optional] 
 **bannedUntil** | **int** |  | [optional] 
 **maxCharacterLength** | **int** |  | [optional] 

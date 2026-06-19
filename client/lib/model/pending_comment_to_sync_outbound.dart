@@ -69,35 +69,37 @@ class PendingCommentToSyncOutbound {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PendingCommentToSyncOutbound &&
     other.id == id &&
-    other.commentId == commentId &&
-    other.comment == comment &&
-    other.externalId == externalId &&
-    other.createdAt == createdAt &&
-    other.tenantId == tenantId &&
-    other.attemptCount == attemptCount &&
-    other.nextAttemptAt == nextAttemptAt &&
-    other.eventType == eventType &&
-    other.type == type &&
-    other.domain == domain &&
-    other.lastError == lastError &&
-    other.webhookId == webhookId;
+      other.commentId == commentId &&
+      other.comment == comment &&
+      other.externalId == externalId &&
+      other.createdAt == createdAt &&
+      other.tenantId == tenantId &&
+      other.attemptCount == attemptCount &&
+      other.nextAttemptAt == nextAttemptAt &&
+      other.eventType == eventType &&
+      other.type == type &&
+      other.domain == domain &&
+      other.lastError == lastError &&
+      other.webhookId == webhookId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (commentId.hashCode) +
-    (comment == null ? 0 : comment!.hashCode) +
-    (externalId == null ? 0 : externalId!.hashCode) +
-    (createdAt.hashCode) +
-    (tenantId.hashCode) +
-    (attemptCount.hashCode) +
-    (nextAttemptAt.hashCode) +
-    (eventType.hashCode) +
-    (type.hashCode) +
-    (domain.hashCode) +
-    (lastError.hashCode) +
-    (webhookId == null ? 0 : webhookId!.hashCode);
+      (commentId.hashCode) +
+      (comment == null ? 0 : comment!.hashCode) +
+      (externalId == null ? 0 : externalId!.hashCode) +
+      (createdAt.hashCode) +
+      (tenantId.hashCode) +
+      (attemptCount.hashCode) +
+      (nextAttemptAt.hashCode) +
+      (eventType.hashCode) +
+      (type.hashCode) +
+      (domain.hashCode) +
+      (lastError.hashCode) +
+      (webhookId == null ? 0 : webhookId!.hashCode);
+  
 
   @override
   String toString() => 'PendingCommentToSyncOutbound[id=$id, commentId=$commentId, comment=$comment, externalId=$externalId, createdAt=$createdAt, tenantId=$tenantId, attemptCount=$attemptCount, nextAttemptAt=$nextAttemptAt, eventType=$eventType, type=$type, domain=$domain, lastError=$lastError, webhookId=$webhookId]';
@@ -143,10 +145,27 @@ class PendingCommentToSyncOutbound {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PendingCommentToSyncOutbound[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PendingCommentToSyncOutbound[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "PendingCommentToSyncOutbound[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "PendingCommentToSyncOutbound[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'commentId'), 'Required key "PendingCommentToSyncOutbound[commentId]" is missing from JSON.');
+        assert(json[r'commentId'] != null, 'Required key "PendingCommentToSyncOutbound[commentId]" has a null value in JSON.');
+        assert(json.containsKey(r'externalId'), 'Required key "PendingCommentToSyncOutbound[externalId]" is missing from JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "PendingCommentToSyncOutbound[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "PendingCommentToSyncOutbound[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "PendingCommentToSyncOutbound[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "PendingCommentToSyncOutbound[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'attemptCount'), 'Required key "PendingCommentToSyncOutbound[attemptCount]" is missing from JSON.');
+        assert(json[r'attemptCount'] != null, 'Required key "PendingCommentToSyncOutbound[attemptCount]" has a null value in JSON.');
+        assert(json.containsKey(r'nextAttemptAt'), 'Required key "PendingCommentToSyncOutbound[nextAttemptAt]" is missing from JSON.');
+        assert(json[r'nextAttemptAt'] != null, 'Required key "PendingCommentToSyncOutbound[nextAttemptAt]" has a null value in JSON.');
+        assert(json.containsKey(r'eventType'), 'Required key "PendingCommentToSyncOutbound[eventType]" is missing from JSON.');
+        assert(json[r'eventType'] != null, 'Required key "PendingCommentToSyncOutbound[eventType]" has a null value in JSON.');
+        assert(json.containsKey(r'type'), 'Required key "PendingCommentToSyncOutbound[type]" is missing from JSON.');
+        assert(json[r'type'] != null, 'Required key "PendingCommentToSyncOutbound[type]" has a null value in JSON.');
+        assert(json.containsKey(r'domain'), 'Required key "PendingCommentToSyncOutbound[domain]" is missing from JSON.');
+        assert(json[r'domain'] != null, 'Required key "PendingCommentToSyncOutbound[domain]" has a null value in JSON.');
+        assert(json.containsKey(r'lastError'), 'Required key "PendingCommentToSyncOutbound[lastError]" is missing from JSON.');
+        assert(json[r'lastError'] != null, 'Required key "PendingCommentToSyncOutbound[lastError]" has a null value in JSON.');
         return true;
       }());
 

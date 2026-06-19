@@ -8,7 +8,7 @@ import 'package:fastcomments_dart/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**VoteResponseStatus**](VoteResponseStatus.md) |  | 
+**status** | **String** |  | 
 **voteId** | **String** |  | [optional] 
 **isVerified** | **bool** |  | [optional] 
 **user** | [**VoteResponseUser**](VoteResponseUser.md) |  | [optional] 

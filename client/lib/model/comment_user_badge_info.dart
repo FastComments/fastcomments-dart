@@ -45,27 +45,29 @@ class CommentUserBadgeInfo {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentUserBadgeInfo &&
     other.id == id &&
-    other.type == type &&
-    other.description == description &&
-    other.displayLabel == displayLabel &&
-    other.displaySrc == displaySrc &&
-    other.backgroundColor == backgroundColor &&
-    other.borderColor == borderColor &&
-    other.textColor == textColor &&
-    other.cssClass == cssClass;
+      other.type == type &&
+      other.description == description &&
+      other.displayLabel == displayLabel &&
+      other.displaySrc == displaySrc &&
+      other.backgroundColor == backgroundColor &&
+      other.borderColor == borderColor &&
+      other.textColor == textColor &&
+      other.cssClass == cssClass;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (type.hashCode) +
-    (description.hashCode) +
-    (displayLabel == null ? 0 : displayLabel!.hashCode) +
-    (displaySrc == null ? 0 : displaySrc!.hashCode) +
-    (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
-    (borderColor == null ? 0 : borderColor!.hashCode) +
-    (textColor == null ? 0 : textColor!.hashCode) +
-    (cssClass == null ? 0 : cssClass!.hashCode);
+      (type.hashCode) +
+      (description.hashCode) +
+      (displayLabel == null ? 0 : displayLabel!.hashCode) +
+      (displaySrc == null ? 0 : displaySrc!.hashCode) +
+      (backgroundColor == null ? 0 : backgroundColor!.hashCode) +
+      (borderColor == null ? 0 : borderColor!.hashCode) +
+      (textColor == null ? 0 : textColor!.hashCode) +
+      (cssClass == null ? 0 : cssClass!.hashCode);
+  
 
   @override
   String toString() => 'CommentUserBadgeInfo[id=$id, type=$type, description=$description, displayLabel=$displayLabel, displaySrc=$displaySrc, backgroundColor=$backgroundColor, borderColor=$borderColor, textColor=$textColor, cssClass=$cssClass]';
@@ -119,10 +121,12 @@ class CommentUserBadgeInfo {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CommentUserBadgeInfo[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CommentUserBadgeInfo[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "CommentUserBadgeInfo[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "CommentUserBadgeInfo[id]" has a null value in JSON.');
+        assert(json.containsKey(r'type'), 'Required key "CommentUserBadgeInfo[type]" is missing from JSON.');
+        assert(json[r'type'] != null, 'Required key "CommentUserBadgeInfo[type]" has a null value in JSON.');
+        assert(json.containsKey(r'description'), 'Required key "CommentUserBadgeInfo[description]" is missing from JSON.');
+        assert(json[r'description'] != null, 'Required key "CommentUserBadgeInfo[description]" has a null value in JSON.');
         return true;
       }());
 

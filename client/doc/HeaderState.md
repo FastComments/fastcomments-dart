@@ -9,7 +9,7 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**notificationType** | [**Object**](.md) |  | 
+**notificationType** | **Object** |  | 
 **userId** | **String** |  | 
 **userIdWS** | **String** |  | 
 **notificationCounts** | [**List<NotificationAndCount>**](NotificationAndCount.md) |  | [default to const []]

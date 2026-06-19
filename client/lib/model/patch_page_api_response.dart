@@ -57,19 +57,21 @@ class PatchPageAPIResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PatchPageAPIResponse &&
     other.reason == reason &&
-    other.code == code &&
-    other.commentsUpdated == commentsUpdated &&
-    other.page == page &&
-    other.status == status;
+      other.code == code &&
+      other.commentsUpdated == commentsUpdated &&
+      other.page == page &&
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reason == null ? 0 : reason!.hashCode) +
-    (code == null ? 0 : code!.hashCode) +
-    (commentsUpdated == null ? 0 : commentsUpdated!.hashCode) +
-    (page == null ? 0 : page!.hashCode) +
-    (status.hashCode);
+      (code == null ? 0 : code!.hashCode) +
+      (commentsUpdated == null ? 0 : commentsUpdated!.hashCode) +
+      (page == null ? 0 : page!.hashCode) +
+      (status.hashCode);
+  
 
   @override
   String toString() => 'PatchPageAPIResponse[reason=$reason, code=$code, commentsUpdated=$commentsUpdated, page=$page, status=$status]';
@@ -111,10 +113,8 @@ class PatchPageAPIResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PatchPageAPIResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PatchPageAPIResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "PatchPageAPIResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "PatchPageAPIResponse[status]" has a null value in JSON.');
         return true;
       }());
 

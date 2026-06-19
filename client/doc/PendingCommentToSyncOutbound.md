@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **eventType** | **double** |  | 
 **type** | **double** |  | 
 **domain** | **String** |  | 
-**lastError** | [**Object**](.md) |  | 
+**lastError** | **Object** |  | 
 **webhookId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -57,35 +57,37 @@ class APITicketDetail {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITicketDetail &&
     other.id == id &&
-    other.urlId == urlId &&
-    other.userId == userId &&
-    other.managedByTenantId == managedByTenantId &&
-    _deepEquality.equals(other.assignedUserIds, assignedUserIds) &&
-    other.subject == subject &&
-    other.createdAt == createdAt &&
-    other.state == state &&
-    other.fileCount == fileCount &&
-    _deepEquality.equals(other.files, files) &&
-    other.reopenedAt == reopenedAt &&
-    other.resolvedAt == resolvedAt &&
-    other.ackAt == ackAt;
+      other.urlId == urlId &&
+      other.userId == userId &&
+      other.managedByTenantId == managedByTenantId &&
+      _deepEquality.equals(other.assignedUserIds, assignedUserIds) &&
+      other.subject == subject &&
+      other.createdAt == createdAt &&
+      other.state == state &&
+      other.fileCount == fileCount &&
+      _deepEquality.equals(other.files, files) &&
+      other.reopenedAt == reopenedAt &&
+      other.resolvedAt == resolvedAt &&
+      other.ackAt == ackAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (urlId.hashCode) +
-    (userId.hashCode) +
-    (managedByTenantId.hashCode) +
-    (assignedUserIds.hashCode) +
-    (subject.hashCode) +
-    (createdAt.hashCode) +
-    (state.hashCode) +
-    (fileCount.hashCode) +
-    (files.hashCode) +
-    (reopenedAt == null ? 0 : reopenedAt!.hashCode) +
-    (resolvedAt == null ? 0 : resolvedAt!.hashCode) +
-    (ackAt == null ? 0 : ackAt!.hashCode);
+      (urlId.hashCode) +
+      (userId.hashCode) +
+      (managedByTenantId.hashCode) +
+      (assignedUserIds.hashCode) +
+      (subject.hashCode) +
+      (createdAt.hashCode) +
+      (state.hashCode) +
+      (fileCount.hashCode) +
+      (files.hashCode) +
+      (reopenedAt == null ? 0 : reopenedAt!.hashCode) +
+      (resolvedAt == null ? 0 : resolvedAt!.hashCode) +
+      (ackAt == null ? 0 : ackAt!.hashCode);
+  
 
   @override
   String toString() => 'APITicketDetail[id=$id, urlId=$urlId, userId=$userId, managedByTenantId=$managedByTenantId, assignedUserIds=$assignedUserIds, subject=$subject, createdAt=$createdAt, state=$state, fileCount=$fileCount, files=$files, reopenedAt=$reopenedAt, resolvedAt=$resolvedAt, ackAt=$ackAt]';
@@ -131,10 +133,26 @@ class APITicketDetail {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APITicketDetail[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APITicketDetail[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "APITicketDetail[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "APITicketDetail[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "APITicketDetail[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "APITicketDetail[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'userId'), 'Required key "APITicketDetail[userId]" is missing from JSON.');
+        assert(json[r'userId'] != null, 'Required key "APITicketDetail[userId]" has a null value in JSON.');
+        assert(json.containsKey(r'managedByTenantId'), 'Required key "APITicketDetail[managedByTenantId]" is missing from JSON.');
+        assert(json[r'managedByTenantId'] != null, 'Required key "APITicketDetail[managedByTenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'assignedUserIds'), 'Required key "APITicketDetail[assignedUserIds]" is missing from JSON.');
+        assert(json[r'assignedUserIds'] != null, 'Required key "APITicketDetail[assignedUserIds]" has a null value in JSON.');
+        assert(json.containsKey(r'subject'), 'Required key "APITicketDetail[subject]" is missing from JSON.');
+        assert(json[r'subject'] != null, 'Required key "APITicketDetail[subject]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "APITicketDetail[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "APITicketDetail[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'state'), 'Required key "APITicketDetail[state]" is missing from JSON.');
+        assert(json[r'state'] != null, 'Required key "APITicketDetail[state]" has a null value in JSON.');
+        assert(json.containsKey(r'fileCount'), 'Required key "APITicketDetail[fileCount]" is missing from JSON.');
+        assert(json[r'fileCount'] != null, 'Required key "APITicketDetail[fileCount]" has a null value in JSON.');
+        assert(json.containsKey(r'files'), 'Required key "APITicketDetail[files]" is missing from JSON.');
+        assert(json[r'files'] != null, 'Required key "APITicketDetail[files]" has a null value in JSON.');
         return true;
       }());
 

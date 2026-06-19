@@ -24,13 +24,15 @@ class ResetUserNotificationsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ResetUserNotificationsResponse &&
     other.status == status &&
-    other.code == code;
+      other.code == code;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (code == null ? 0 : code!.hashCode);
+      (code == null ? 0 : code!.hashCode);
+  
 
   @override
   String toString() => 'ResetUserNotificationsResponse[status=$status, code=$code]';
@@ -57,10 +59,8 @@ class ResetUserNotificationsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ResetUserNotificationsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ResetUserNotificationsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "ResetUserNotificationsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ResetUserNotificationsResponse[status]" has a null value in JSON.');
         return true;
       }());
 

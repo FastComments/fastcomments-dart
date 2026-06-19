@@ -33,15 +33,17 @@ class AggregationResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationResponse &&
     other.status == status &&
-    _deepEquality.equals(other.data, data) &&
-    other.stats == stats;
+      _deepEquality.equals(other.data, data) &&
+      other.stats == stats;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (data.hashCode) +
-    (stats == null ? 0 : stats!.hashCode);
+      (data.hashCode) +
+      (stats == null ? 0 : stats!.hashCode);
+  
 
   @override
   String toString() => 'AggregationResponse[status=$status, data=$data, stats=$stats]';
@@ -69,10 +71,10 @@ class AggregationResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "AggregationResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "AggregationResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'data'), 'Required key "AggregationResponse[data]" is missing from JSON.');
+        assert(json[r'data'] != null, 'Required key "AggregationResponse[data]" has a null value in JSON.');
         return true;
       }());
 

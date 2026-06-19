@@ -36,21 +36,23 @@ class BulkPreBanSummary {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BulkPreBanSummary &&
     other.status == status &&
-    other.totalRelatedCommentCount == totalRelatedCommentCount &&
-    _deepEquality.equals(other.emailDomains, emailDomains) &&
-    _deepEquality.equals(other.emails, emails) &&
-    _deepEquality.equals(other.userIds, userIds) &&
-    _deepEquality.equals(other.ipHashes, ipHashes);
+      other.totalRelatedCommentCount == totalRelatedCommentCount &&
+      _deepEquality.equals(other.emailDomains, emailDomains) &&
+      _deepEquality.equals(other.emails, emails) &&
+      _deepEquality.equals(other.userIds, userIds) &&
+      _deepEquality.equals(other.ipHashes, ipHashes);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (totalRelatedCommentCount.hashCode) +
-    (emailDomains.hashCode) +
-    (emails.hashCode) +
-    (userIds.hashCode) +
-    (ipHashes.hashCode);
+      (totalRelatedCommentCount.hashCode) +
+      (emailDomains.hashCode) +
+      (emails.hashCode) +
+      (userIds.hashCode) +
+      (ipHashes.hashCode);
+  
 
   @override
   String toString() => 'BulkPreBanSummary[status=$status, totalRelatedCommentCount=$totalRelatedCommentCount, emailDomains=$emailDomains, emails=$emails, userIds=$userIds, ipHashes=$ipHashes]';
@@ -77,10 +79,18 @@ class BulkPreBanSummary {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "BulkPreBanSummary[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "BulkPreBanSummary[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "BulkPreBanSummary[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "BulkPreBanSummary[status]" has a null value in JSON.');
+        assert(json.containsKey(r'totalRelatedCommentCount'), 'Required key "BulkPreBanSummary[totalRelatedCommentCount]" is missing from JSON.');
+        assert(json[r'totalRelatedCommentCount'] != null, 'Required key "BulkPreBanSummary[totalRelatedCommentCount]" has a null value in JSON.');
+        assert(json.containsKey(r'emailDomains'), 'Required key "BulkPreBanSummary[emailDomains]" is missing from JSON.');
+        assert(json[r'emailDomains'] != null, 'Required key "BulkPreBanSummary[emailDomains]" has a null value in JSON.');
+        assert(json.containsKey(r'emails'), 'Required key "BulkPreBanSummary[emails]" is missing from JSON.');
+        assert(json[r'emails'] != null, 'Required key "BulkPreBanSummary[emails]" has a null value in JSON.');
+        assert(json.containsKey(r'userIds'), 'Required key "BulkPreBanSummary[userIds]" is missing from JSON.');
+        assert(json[r'userIds'] != null, 'Required key "BulkPreBanSummary[userIds]" has a null value in JSON.');
+        assert(json.containsKey(r'ipHashes'), 'Required key "BulkPreBanSummary[ipHashes]" is missing from JSON.');
+        assert(json[r'ipHashes'] != null, 'Required key "BulkPreBanSummary[ipHashes]" has a null value in JSON.');
         return true;
       }());
 

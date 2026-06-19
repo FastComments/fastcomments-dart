@@ -207,71 +207,73 @@ class ReplaceTenantPackageBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ReplaceTenantPackageBody &&
     other.name == name &&
-    other.monthlyCostUSD == monthlyCostUSD &&
-    other.yearlyCostUSD == yearlyCostUSD &&
-    other.maxMonthlyPageLoads == maxMonthlyPageLoads &&
-    other.maxMonthlyAPICredits == maxMonthlyAPICredits &&
-    other.maxMonthlyComments == maxMonthlyComments &&
-    other.maxConcurrentUsers == maxConcurrentUsers &&
-    other.maxTenantUsers == maxTenantUsers &&
-    other.maxSSOUsers == maxSSOUsers &&
-    other.maxModerators == maxModerators &&
-    other.maxDomains == maxDomains &&
-    other.maxCustomCollectionSize == maxCustomCollectionSize &&
-    other.hasDebranding == hasDebranding &&
-    other.forWhoText == forWhoText &&
-    _deepEquality.equals(other.featureTaglines, featureTaglines) &&
-    other.hasFlexPricing == hasFlexPricing &&
-    other.flexPageLoadCostCents == flexPageLoadCostCents &&
-    other.flexPageLoadUnit == flexPageLoadUnit &&
-    other.flexCommentCostCents == flexCommentCostCents &&
-    other.flexCommentUnit == flexCommentUnit &&
-    other.flexSSOUserCostCents == flexSSOUserCostCents &&
-    other.flexSSOUserUnit == flexSSOUserUnit &&
-    other.flexAPICreditCostCents == flexAPICreditCostCents &&
-    other.flexAPICreditUnit == flexAPICreditUnit &&
-    other.flexModeratorCostCents == flexModeratorCostCents &&
-    other.flexModeratorUnit == flexModeratorUnit &&
-    other.flexAdminCostCents == flexAdminCostCents &&
-    other.flexAdminUnit == flexAdminUnit &&
-    other.flexDomainCostCents == flexDomainCostCents &&
-    other.flexDomainUnit == flexDomainUnit &&
-    other.flexMinimumCostCents == flexMinimumCostCents;
+      other.monthlyCostUSD == monthlyCostUSD &&
+      other.yearlyCostUSD == yearlyCostUSD &&
+      other.maxMonthlyPageLoads == maxMonthlyPageLoads &&
+      other.maxMonthlyAPICredits == maxMonthlyAPICredits &&
+      other.maxMonthlyComments == maxMonthlyComments &&
+      other.maxConcurrentUsers == maxConcurrentUsers &&
+      other.maxTenantUsers == maxTenantUsers &&
+      other.maxSSOUsers == maxSSOUsers &&
+      other.maxModerators == maxModerators &&
+      other.maxDomains == maxDomains &&
+      other.maxCustomCollectionSize == maxCustomCollectionSize &&
+      other.hasDebranding == hasDebranding &&
+      other.forWhoText == forWhoText &&
+      _deepEquality.equals(other.featureTaglines, featureTaglines) &&
+      other.hasFlexPricing == hasFlexPricing &&
+      other.flexPageLoadCostCents == flexPageLoadCostCents &&
+      other.flexPageLoadUnit == flexPageLoadUnit &&
+      other.flexCommentCostCents == flexCommentCostCents &&
+      other.flexCommentUnit == flexCommentUnit &&
+      other.flexSSOUserCostCents == flexSSOUserCostCents &&
+      other.flexSSOUserUnit == flexSSOUserUnit &&
+      other.flexAPICreditCostCents == flexAPICreditCostCents &&
+      other.flexAPICreditUnit == flexAPICreditUnit &&
+      other.flexModeratorCostCents == flexModeratorCostCents &&
+      other.flexModeratorUnit == flexModeratorUnit &&
+      other.flexAdminCostCents == flexAdminCostCents &&
+      other.flexAdminUnit == flexAdminUnit &&
+      other.flexDomainCostCents == flexDomainCostCents &&
+      other.flexDomainUnit == flexDomainUnit &&
+      other.flexMinimumCostCents == flexMinimumCostCents;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (monthlyCostUSD.hashCode) +
-    (yearlyCostUSD.hashCode) +
-    (maxMonthlyPageLoads.hashCode) +
-    (maxMonthlyAPICredits.hashCode) +
-    (maxMonthlyComments.hashCode) +
-    (maxConcurrentUsers.hashCode) +
-    (maxTenantUsers.hashCode) +
-    (maxSSOUsers.hashCode) +
-    (maxModerators.hashCode) +
-    (maxDomains.hashCode) +
-    (maxCustomCollectionSize == null ? 0 : maxCustomCollectionSize!.hashCode) +
-    (hasDebranding.hashCode) +
-    (forWhoText.hashCode) +
-    (featureTaglines.hashCode) +
-    (hasFlexPricing.hashCode) +
-    (flexPageLoadCostCents == null ? 0 : flexPageLoadCostCents!.hashCode) +
-    (flexPageLoadUnit == null ? 0 : flexPageLoadUnit!.hashCode) +
-    (flexCommentCostCents == null ? 0 : flexCommentCostCents!.hashCode) +
-    (flexCommentUnit == null ? 0 : flexCommentUnit!.hashCode) +
-    (flexSSOUserCostCents == null ? 0 : flexSSOUserCostCents!.hashCode) +
-    (flexSSOUserUnit == null ? 0 : flexSSOUserUnit!.hashCode) +
-    (flexAPICreditCostCents == null ? 0 : flexAPICreditCostCents!.hashCode) +
-    (flexAPICreditUnit == null ? 0 : flexAPICreditUnit!.hashCode) +
-    (flexModeratorCostCents == null ? 0 : flexModeratorCostCents!.hashCode) +
-    (flexModeratorUnit == null ? 0 : flexModeratorUnit!.hashCode) +
-    (flexAdminCostCents == null ? 0 : flexAdminCostCents!.hashCode) +
-    (flexAdminUnit == null ? 0 : flexAdminUnit!.hashCode) +
-    (flexDomainCostCents == null ? 0 : flexDomainCostCents!.hashCode) +
-    (flexDomainUnit == null ? 0 : flexDomainUnit!.hashCode) +
-    (flexMinimumCostCents == null ? 0 : flexMinimumCostCents!.hashCode);
+      (monthlyCostUSD.hashCode) +
+      (yearlyCostUSD.hashCode) +
+      (maxMonthlyPageLoads.hashCode) +
+      (maxMonthlyAPICredits.hashCode) +
+      (maxMonthlyComments.hashCode) +
+      (maxConcurrentUsers.hashCode) +
+      (maxTenantUsers.hashCode) +
+      (maxSSOUsers.hashCode) +
+      (maxModerators.hashCode) +
+      (maxDomains.hashCode) +
+      (maxCustomCollectionSize == null ? 0 : maxCustomCollectionSize!.hashCode) +
+      (hasDebranding.hashCode) +
+      (forWhoText.hashCode) +
+      (featureTaglines.hashCode) +
+      (hasFlexPricing.hashCode) +
+      (flexPageLoadCostCents == null ? 0 : flexPageLoadCostCents!.hashCode) +
+      (flexPageLoadUnit == null ? 0 : flexPageLoadUnit!.hashCode) +
+      (flexCommentCostCents == null ? 0 : flexCommentCostCents!.hashCode) +
+      (flexCommentUnit == null ? 0 : flexCommentUnit!.hashCode) +
+      (flexSSOUserCostCents == null ? 0 : flexSSOUserCostCents!.hashCode) +
+      (flexSSOUserUnit == null ? 0 : flexSSOUserUnit!.hashCode) +
+      (flexAPICreditCostCents == null ? 0 : flexAPICreditCostCents!.hashCode) +
+      (flexAPICreditUnit == null ? 0 : flexAPICreditUnit!.hashCode) +
+      (flexModeratorCostCents == null ? 0 : flexModeratorCostCents!.hashCode) +
+      (flexModeratorUnit == null ? 0 : flexModeratorUnit!.hashCode) +
+      (flexAdminCostCents == null ? 0 : flexAdminCostCents!.hashCode) +
+      (flexAdminUnit == null ? 0 : flexAdminUnit!.hashCode) +
+      (flexDomainCostCents == null ? 0 : flexDomainCostCents!.hashCode) +
+      (flexDomainUnit == null ? 0 : flexDomainUnit!.hashCode) +
+      (flexMinimumCostCents == null ? 0 : flexMinimumCostCents!.hashCode);
+  
 
   @override
   String toString() => 'ReplaceTenantPackageBody[name=$name, monthlyCostUSD=$monthlyCostUSD, yearlyCostUSD=$yearlyCostUSD, maxMonthlyPageLoads=$maxMonthlyPageLoads, maxMonthlyAPICredits=$maxMonthlyAPICredits, maxMonthlyComments=$maxMonthlyComments, maxConcurrentUsers=$maxConcurrentUsers, maxTenantUsers=$maxTenantUsers, maxSSOUsers=$maxSSOUsers, maxModerators=$maxModerators, maxDomains=$maxDomains, maxCustomCollectionSize=$maxCustomCollectionSize, hasDebranding=$hasDebranding, forWhoText=$forWhoText, featureTaglines=$featureTaglines, hasFlexPricing=$hasFlexPricing, flexPageLoadCostCents=$flexPageLoadCostCents, flexPageLoadUnit=$flexPageLoadUnit, flexCommentCostCents=$flexCommentCostCents, flexCommentUnit=$flexCommentUnit, flexSSOUserCostCents=$flexSSOUserCostCents, flexSSOUserUnit=$flexSSOUserUnit, flexAPICreditCostCents=$flexAPICreditCostCents, flexAPICreditUnit=$flexAPICreditUnit, flexModeratorCostCents=$flexModeratorCostCents, flexModeratorUnit=$flexModeratorUnit, flexAdminCostCents=$flexAdminCostCents, flexAdminUnit=$flexAdminUnit, flexDomainCostCents=$flexDomainCostCents, flexDomainUnit=$flexDomainUnit, flexMinimumCostCents=$flexMinimumCostCents]';
@@ -387,10 +389,36 @@ class ReplaceTenantPackageBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReplaceTenantPackageBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReplaceTenantPackageBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'name'), 'Required key "ReplaceTenantPackageBody[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "ReplaceTenantPackageBody[name]" has a null value in JSON.');
+        assert(json.containsKey(r'monthlyCostUSD'), 'Required key "ReplaceTenantPackageBody[monthlyCostUSD]" is missing from JSON.');
+        assert(json[r'monthlyCostUSD'] != null, 'Required key "ReplaceTenantPackageBody[monthlyCostUSD]" has a null value in JSON.');
+        assert(json.containsKey(r'yearlyCostUSD'), 'Required key "ReplaceTenantPackageBody[yearlyCostUSD]" is missing from JSON.');
+        assert(json[r'yearlyCostUSD'] != null, 'Required key "ReplaceTenantPackageBody[yearlyCostUSD]" has a null value in JSON.');
+        assert(json.containsKey(r'maxMonthlyPageLoads'), 'Required key "ReplaceTenantPackageBody[maxMonthlyPageLoads]" is missing from JSON.');
+        assert(json[r'maxMonthlyPageLoads'] != null, 'Required key "ReplaceTenantPackageBody[maxMonthlyPageLoads]" has a null value in JSON.');
+        assert(json.containsKey(r'maxMonthlyAPICredits'), 'Required key "ReplaceTenantPackageBody[maxMonthlyAPICredits]" is missing from JSON.');
+        assert(json[r'maxMonthlyAPICredits'] != null, 'Required key "ReplaceTenantPackageBody[maxMonthlyAPICredits]" has a null value in JSON.');
+        assert(json.containsKey(r'maxMonthlyComments'), 'Required key "ReplaceTenantPackageBody[maxMonthlyComments]" is missing from JSON.');
+        assert(json[r'maxMonthlyComments'] != null, 'Required key "ReplaceTenantPackageBody[maxMonthlyComments]" has a null value in JSON.');
+        assert(json.containsKey(r'maxConcurrentUsers'), 'Required key "ReplaceTenantPackageBody[maxConcurrentUsers]" is missing from JSON.');
+        assert(json[r'maxConcurrentUsers'] != null, 'Required key "ReplaceTenantPackageBody[maxConcurrentUsers]" has a null value in JSON.');
+        assert(json.containsKey(r'maxTenantUsers'), 'Required key "ReplaceTenantPackageBody[maxTenantUsers]" is missing from JSON.');
+        assert(json[r'maxTenantUsers'] != null, 'Required key "ReplaceTenantPackageBody[maxTenantUsers]" has a null value in JSON.');
+        assert(json.containsKey(r'maxSSOUsers'), 'Required key "ReplaceTenantPackageBody[maxSSOUsers]" is missing from JSON.');
+        assert(json[r'maxSSOUsers'] != null, 'Required key "ReplaceTenantPackageBody[maxSSOUsers]" has a null value in JSON.');
+        assert(json.containsKey(r'maxModerators'), 'Required key "ReplaceTenantPackageBody[maxModerators]" is missing from JSON.');
+        assert(json[r'maxModerators'] != null, 'Required key "ReplaceTenantPackageBody[maxModerators]" has a null value in JSON.');
+        assert(json.containsKey(r'maxDomains'), 'Required key "ReplaceTenantPackageBody[maxDomains]" is missing from JSON.');
+        assert(json[r'maxDomains'] != null, 'Required key "ReplaceTenantPackageBody[maxDomains]" has a null value in JSON.');
+        assert(json.containsKey(r'hasDebranding'), 'Required key "ReplaceTenantPackageBody[hasDebranding]" is missing from JSON.');
+        assert(json[r'hasDebranding'] != null, 'Required key "ReplaceTenantPackageBody[hasDebranding]" has a null value in JSON.');
+        assert(json.containsKey(r'forWhoText'), 'Required key "ReplaceTenantPackageBody[forWhoText]" is missing from JSON.');
+        assert(json[r'forWhoText'] != null, 'Required key "ReplaceTenantPackageBody[forWhoText]" has a null value in JSON.');
+        assert(json.containsKey(r'featureTaglines'), 'Required key "ReplaceTenantPackageBody[featureTaglines]" is missing from JSON.');
+        assert(json[r'featureTaglines'] != null, 'Required key "ReplaceTenantPackageBody[featureTaglines]" has a null value in JSON.');
+        assert(json.containsKey(r'hasFlexPricing'), 'Required key "ReplaceTenantPackageBody[hasFlexPricing]" is missing from JSON.');
+        assert(json[r'hasFlexPricing'] != null, 'Required key "ReplaceTenantPackageBody[hasFlexPricing]" has a null value in JSON.');
         return true;
       }());
 

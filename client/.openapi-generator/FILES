@@ -364,7 +364,6 @@ doc/UsersListLocation.md
 doc/VoteBodyParams.md
 doc/VoteDeleteResponse.md
 doc/VoteResponse.md
-doc/VoteResponseStatus.md
 doc/VoteResponseUser.md
 doc/VoteStyle.md
 git_push.sh
@@ -738,7 +737,6 @@ lib/model/users_list_location.dart
 lib/model/vote_body_params.dart
 lib/model/vote_delete_response.dart
 lib/model/vote_response.dart
-lib/model/vote_response_status.dart
 lib/model/vote_response_user.dart
 lib/model/vote_style.dart
 pubspec.yaml
@@ -1102,7 +1100,6 @@ test/user_test.dart
 test/users_list_location_test.dart
 test/vote_body_params_test.dart
 test/vote_delete_response_test.dart
-test/vote_response_status_test.dart
 test/vote_response_test.dart
 test/vote_response_user_test.dart
 test/vote_style_test.dart

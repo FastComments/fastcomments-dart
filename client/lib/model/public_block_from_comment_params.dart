@@ -22,11 +22,13 @@ class PublicBlockFromCommentParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PublicBlockFromCommentParams &&
     _deepEquality.equals(other.commentIds, commentIds);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentIds == null ? 0 : commentIds!.hashCode);
+  
 
   @override
   String toString() => 'PublicBlockFromCommentParams[commentIds=$commentIds]';
@@ -52,10 +54,7 @@ class PublicBlockFromCommentParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PublicBlockFromCommentParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PublicBlockFromCommentParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commentIds'), 'Required key "PublicBlockFromCommentParams[commentIds]" is missing from JSON.');
         return true;
       }());
 

@@ -39,23 +39,25 @@ class EmailTemplateRenderErrorResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is EmailTemplateRenderErrorResponse &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.customTemplateId == customTemplateId &&
-    other.error == error &&
-    other.count == count &&
-    other.createdAt == createdAt &&
-    other.lastOccurredAt == lastOccurredAt;
+      other.tenantId == tenantId &&
+      other.customTemplateId == customTemplateId &&
+      other.error == error &&
+      other.count == count &&
+      other.createdAt == createdAt &&
+      other.lastOccurredAt == lastOccurredAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (customTemplateId.hashCode) +
-    (error.hashCode) +
-    (count.hashCode) +
-    (createdAt.hashCode) +
-    (lastOccurredAt.hashCode);
+      (tenantId.hashCode) +
+      (customTemplateId.hashCode) +
+      (error.hashCode) +
+      (count.hashCode) +
+      (createdAt.hashCode) +
+      (lastOccurredAt.hashCode);
+  
 
   @override
   String toString() => 'EmailTemplateRenderErrorResponse[id=$id, tenantId=$tenantId, customTemplateId=$customTemplateId, error=$error, count=$count, createdAt=$createdAt, lastOccurredAt=$lastOccurredAt]';
@@ -83,10 +85,20 @@ class EmailTemplateRenderErrorResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "EmailTemplateRenderErrorResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "EmailTemplateRenderErrorResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "EmailTemplateRenderErrorResponse[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "EmailTemplateRenderErrorResponse[id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "EmailTemplateRenderErrorResponse[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "EmailTemplateRenderErrorResponse[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'customTemplateId'), 'Required key "EmailTemplateRenderErrorResponse[customTemplateId]" is missing from JSON.');
+        assert(json[r'customTemplateId'] != null, 'Required key "EmailTemplateRenderErrorResponse[customTemplateId]" has a null value in JSON.');
+        assert(json.containsKey(r'error'), 'Required key "EmailTemplateRenderErrorResponse[error]" is missing from JSON.');
+        assert(json[r'error'] != null, 'Required key "EmailTemplateRenderErrorResponse[error]" has a null value in JSON.');
+        assert(json.containsKey(r'count'), 'Required key "EmailTemplateRenderErrorResponse[count]" is missing from JSON.');
+        assert(json[r'count'] != null, 'Required key "EmailTemplateRenderErrorResponse[count]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "EmailTemplateRenderErrorResponse[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "EmailTemplateRenderErrorResponse[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'lastOccurredAt'), 'Required key "EmailTemplateRenderErrorResponse[lastOccurredAt]" is missing from JSON.');
+        assert(json[r'lastOccurredAt'] != null, 'Required key "EmailTemplateRenderErrorResponse[lastOccurredAt]" has a null value in JSON.');
         return true;
       }());
 

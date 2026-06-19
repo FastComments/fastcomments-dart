@@ -30,17 +30,19 @@ class ModerationUserSearchProjected {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationUserSearchProjected &&
     other.id == id &&
-    other.username == username &&
-    other.displayName == displayName &&
-    other.avatarSrc == avatarSrc;
+      other.username == username &&
+      other.displayName == displayName &&
+      other.avatarSrc == avatarSrc;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (username.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode);
+      (username.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode);
+  
 
   @override
   String toString() => 'ModerationUserSearchProjected[id=$id, username=$username, displayName=$displayName, avatarSrc=$avatarSrc]';
@@ -73,10 +75,10 @@ class ModerationUserSearchProjected {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationUserSearchProjected[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationUserSearchProjected[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "ModerationUserSearchProjected[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "ModerationUserSearchProjected[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'username'), 'Required key "ModerationUserSearchProjected[username]" is missing from JSON.');
+        assert(json[r'username'] != null, 'Required key "ModerationUserSearchProjected[username]" has a null value in JSON.');
         return true;
       }());
 

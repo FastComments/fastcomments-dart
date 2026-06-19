@@ -24,13 +24,15 @@ class AggregationResponseStats {
   @override
   bool operator ==(Object other) => identical(this, other) || other is AggregationResponseStats &&
     other.timeMS == timeMS &&
-    other.scanned == scanned;
+      other.scanned == scanned;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (timeMS.hashCode) +
-    (scanned.hashCode);
+      (scanned.hashCode);
+  
 
   @override
   String toString() => 'AggregationResponseStats[timeMS=$timeMS, scanned=$scanned]';
@@ -53,10 +55,10 @@ class AggregationResponseStats {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "AggregationResponseStats[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "AggregationResponseStats[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'timeMS'), 'Required key "AggregationResponseStats[timeMS]" is missing from JSON.');
+        assert(json[r'timeMS'] != null, 'Required key "AggregationResponseStats[timeMS]" has a null value in JSON.');
+        assert(json.containsKey(r'scanned'), 'Required key "AggregationResponseStats[scanned]" is missing from JSON.');
+        assert(json[r'scanned'] != null, 'Required key "AggregationResponseStats[scanned]" has a null value in JSON.');
         return true;
       }());
 

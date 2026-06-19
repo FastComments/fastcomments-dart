@@ -15,27 +15,35 @@ class GetGifsSearchResponse {
   GetGifsSearchResponse({
     this.images = const [],
     required this.status,
-    required this.code,
+    this.code,
   });
 
   List<List<GifSearchResponseImagesInnerInner>> images;
 
   APIStatus status;
 
-  String code;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? code;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetGifsSearchResponse &&
     _deepEquality.equals(other.images, images) &&
-    other.status == status &&
-    other.code == code;
+      other.status == status &&
+      other.code == code;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (images.hashCode) +
-    (status.hashCode) +
-    (code.hashCode);
+      (status.hashCode) +
+      (code == null ? 0 : code!.hashCode);
+  
 
   @override
   String toString() => 'GetGifsSearchResponse[images=$images, status=$status, code=$code]';
@@ -44,7 +52,11 @@ class GetGifsSearchResponse {
     final json = <String, dynamic>{};
       json[r'images'] = this.images;
       json[r'status'] = this.status;
+    if (this.code != null) {
       json[r'code'] = this.code;
+    } else {
+      json[r'code'] = null;
+    }
     return json;
   }
 
@@ -59,10 +71,8 @@ class GetGifsSearchResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetGifsSearchResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetGifsSearchResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetGifsSearchResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetGifsSearchResponse[status]" has a null value in JSON.');
         return true;
       }());
 
@@ -73,7 +83,7 @@ class GetGifsSearchResponse {
             ).toList()
           :  const [],
         status: APIStatus.fromJson(json[r'status'])!,
-        code: mapValueOfType<String>(json, r'code')!,
+        code: mapValueOfType<String>(json, r'code'),
       );
     }
     return null;
@@ -121,9 +131,7 @@ class GetGifsSearchResponse {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'images',
     'status',
-    'code',
   };
 }
 

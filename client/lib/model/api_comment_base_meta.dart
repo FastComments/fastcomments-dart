@@ -36,13 +36,15 @@ class APICommentBaseMeta {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APICommentBaseMeta &&
     other.wpUserId == wpUserId &&
-    other.wpPostId == wpPostId;
+      other.wpPostId == wpPostId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (wpUserId == null ? 0 : wpUserId!.hashCode) +
-    (wpPostId == null ? 0 : wpPostId!.hashCode);
+      (wpPostId == null ? 0 : wpPostId!.hashCode);
+  
 
   @override
   String toString() => 'APICommentBaseMeta[wpUserId=$wpUserId, wpPostId=$wpPostId]';
@@ -73,10 +75,6 @@ class APICommentBaseMeta {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APICommentBaseMeta[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APICommentBaseMeta[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

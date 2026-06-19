@@ -21,11 +21,13 @@ class UnBlockFromCommentParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UnBlockFromCommentParams &&
     _deepEquality.equals(other.commentIdsToCheck, commentIdsToCheck);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentIdsToCheck.hashCode);
+  
 
   @override
   String toString() => 'UnBlockFromCommentParams[commentIdsToCheck=$commentIdsToCheck]';
@@ -47,10 +49,6 @@ class UnBlockFromCommentParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UnBlockFromCommentParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UnBlockFromCommentParams[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

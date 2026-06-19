@@ -208,55 +208,57 @@ class CreateTenantBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateTenantBody &&
     other.name == name &&
-    _deepEquality.equals(other.domainConfiguration, domainConfiguration) &&
-    other.email == email &&
-    other.signUpDate == signUpDate &&
-    other.packageId == packageId &&
-    other.paymentFrequency == paymentFrequency &&
-    other.billingInfoValid == billingInfoValid &&
-    other.billingHandledExternally == billingHandledExternally &&
-    other.createdBy == createdBy &&
-    other.isSetup == isSetup &&
-    other.billingInfo == billingInfo &&
-    other.stripeCustomerId == stripeCustomerId &&
-    other.stripeSubscriptionId == stripeSubscriptionId &&
-    other.stripePlanId == stripePlanId &&
-    other.enableProfanityFilter == enableProfanityFilter &&
-    other.enableSpamFilter == enableSpamFilter &&
-    other.removeUnverifiedComments == removeUnverifiedComments &&
-    other.unverifiedCommentsTTLms == unverifiedCommentsTTLms &&
-    other.commentsRequireApproval == commentsRequireApproval &&
-    other.autoApproveCommentOnVerification == autoApproveCommentOnVerification &&
-    other.sendProfaneToSpam == sendProfaneToSpam &&
-    other.deAnonIpAddr == deAnonIpAddr &&
-    _deepEquality.equals(other.meta, meta);
+      _deepEquality.equals(other.domainConfiguration, domainConfiguration) &&
+      other.email == email &&
+      other.signUpDate == signUpDate &&
+      other.packageId == packageId &&
+      other.paymentFrequency == paymentFrequency &&
+      other.billingInfoValid == billingInfoValid &&
+      other.billingHandledExternally == billingHandledExternally &&
+      other.createdBy == createdBy &&
+      other.isSetup == isSetup &&
+      other.billingInfo == billingInfo &&
+      other.stripeCustomerId == stripeCustomerId &&
+      other.stripeSubscriptionId == stripeSubscriptionId &&
+      other.stripePlanId == stripePlanId &&
+      other.enableProfanityFilter == enableProfanityFilter &&
+      other.enableSpamFilter == enableSpamFilter &&
+      other.removeUnverifiedComments == removeUnverifiedComments &&
+      other.unverifiedCommentsTTLms == unverifiedCommentsTTLms &&
+      other.commentsRequireApproval == commentsRequireApproval &&
+      other.autoApproveCommentOnVerification == autoApproveCommentOnVerification &&
+      other.sendProfaneToSpam == sendProfaneToSpam &&
+      other.deAnonIpAddr == deAnonIpAddr &&
+      _deepEquality.equals(other.meta, meta);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (domainConfiguration.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (signUpDate == null ? 0 : signUpDate!.hashCode) +
-    (packageId == null ? 0 : packageId!.hashCode) +
-    (paymentFrequency == null ? 0 : paymentFrequency!.hashCode) +
-    (billingInfoValid == null ? 0 : billingInfoValid!.hashCode) +
-    (billingHandledExternally == null ? 0 : billingHandledExternally!.hashCode) +
-    (createdBy == null ? 0 : createdBy!.hashCode) +
-    (isSetup == null ? 0 : isSetup!.hashCode) +
-    (billingInfo == null ? 0 : billingInfo!.hashCode) +
-    (stripeCustomerId == null ? 0 : stripeCustomerId!.hashCode) +
-    (stripeSubscriptionId == null ? 0 : stripeSubscriptionId!.hashCode) +
-    (stripePlanId == null ? 0 : stripePlanId!.hashCode) +
-    (enableProfanityFilter == null ? 0 : enableProfanityFilter!.hashCode) +
-    (enableSpamFilter == null ? 0 : enableSpamFilter!.hashCode) +
-    (removeUnverifiedComments == null ? 0 : removeUnverifiedComments!.hashCode) +
-    (unverifiedCommentsTTLms == null ? 0 : unverifiedCommentsTTLms!.hashCode) +
-    (commentsRequireApproval == null ? 0 : commentsRequireApproval!.hashCode) +
-    (autoApproveCommentOnVerification == null ? 0 : autoApproveCommentOnVerification!.hashCode) +
-    (sendProfaneToSpam == null ? 0 : sendProfaneToSpam!.hashCode) +
-    (deAnonIpAddr == null ? 0 : deAnonIpAddr!.hashCode) +
-    (meta.hashCode);
+      (domainConfiguration.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (signUpDate == null ? 0 : signUpDate!.hashCode) +
+      (packageId == null ? 0 : packageId!.hashCode) +
+      (paymentFrequency == null ? 0 : paymentFrequency!.hashCode) +
+      (billingInfoValid == null ? 0 : billingInfoValid!.hashCode) +
+      (billingHandledExternally == null ? 0 : billingHandledExternally!.hashCode) +
+      (createdBy == null ? 0 : createdBy!.hashCode) +
+      (isSetup == null ? 0 : isSetup!.hashCode) +
+      (billingInfo == null ? 0 : billingInfo!.hashCode) +
+      (stripeCustomerId == null ? 0 : stripeCustomerId!.hashCode) +
+      (stripeSubscriptionId == null ? 0 : stripeSubscriptionId!.hashCode) +
+      (stripePlanId == null ? 0 : stripePlanId!.hashCode) +
+      (enableProfanityFilter == null ? 0 : enableProfanityFilter!.hashCode) +
+      (enableSpamFilter == null ? 0 : enableSpamFilter!.hashCode) +
+      (removeUnverifiedComments == null ? 0 : removeUnverifiedComments!.hashCode) +
+      (unverifiedCommentsTTLms == null ? 0 : unverifiedCommentsTTLms!.hashCode) +
+      (commentsRequireApproval == null ? 0 : commentsRequireApproval!.hashCode) +
+      (autoApproveCommentOnVerification == null ? 0 : autoApproveCommentOnVerification!.hashCode) +
+      (sendProfaneToSpam == null ? 0 : sendProfaneToSpam!.hashCode) +
+      (deAnonIpAddr == null ? 0 : deAnonIpAddr!.hashCode) +
+      (meta.hashCode);
+  
 
   @override
   String toString() => 'CreateTenantBody[name=$name, domainConfiguration=$domainConfiguration, email=$email, signUpDate=$signUpDate, packageId=$packageId, paymentFrequency=$paymentFrequency, billingInfoValid=$billingInfoValid, billingHandledExternally=$billingHandledExternally, createdBy=$createdBy, isSetup=$isSetup, billingInfo=$billingInfo, stripeCustomerId=$stripeCustomerId, stripeSubscriptionId=$stripeSubscriptionId, stripePlanId=$stripePlanId, enableProfanityFilter=$enableProfanityFilter, enableSpamFilter=$enableSpamFilter, removeUnverifiedComments=$removeUnverifiedComments, unverifiedCommentsTTLms=$unverifiedCommentsTTLms, commentsRequireApproval=$commentsRequireApproval, autoApproveCommentOnVerification=$autoApproveCommentOnVerification, sendProfaneToSpam=$sendProfaneToSpam, deAnonIpAddr=$deAnonIpAddr, meta=$meta]';
@@ -380,10 +382,10 @@ class CreateTenantBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateTenantBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateTenantBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'name'), 'Required key "CreateTenantBody[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "CreateTenantBody[name]" has a null value in JSON.');
+        assert(json.containsKey(r'domainConfiguration'), 'Required key "CreateTenantBody[domainConfiguration]" is missing from JSON.');
+        assert(json[r'domainConfiguration'] != null, 'Required key "CreateTenantBody[domainConfiguration]" has a null value in JSON.');
         return true;
       }());
 

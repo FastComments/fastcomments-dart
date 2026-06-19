@@ -27,15 +27,17 @@ class GetCommentBanStatusResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetCommentBanStatusResponse &&
     other.status == status &&
-    other.emailDomain == emailDomain &&
-    other.canIPBan == canIPBan;
+      other.emailDomain == emailDomain &&
+      other.canIPBan == canIPBan;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (emailDomain == null ? 0 : emailDomain!.hashCode) +
-    (canIPBan == null ? 0 : canIPBan!.hashCode);
+      (emailDomain == null ? 0 : emailDomain!.hashCode) +
+      (canIPBan == null ? 0 : canIPBan!.hashCode);
+  
 
   @override
   String toString() => 'GetCommentBanStatusResponse[status=$status, emailDomain=$emailDomain, canIPBan=$canIPBan]';
@@ -67,10 +69,10 @@ class GetCommentBanStatusResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetCommentBanStatusResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetCommentBanStatusResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "GetCommentBanStatusResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "GetCommentBanStatusResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'emailDomain'), 'Required key "GetCommentBanStatusResponse[emailDomain]" is missing from JSON.');
+        assert(json.containsKey(r'canIPBan'), 'Required key "GetCommentBanStatusResponse[canIPBan]" is missing from JSON.');
         return true;
       }());
 

@@ -30,17 +30,19 @@ class UserNotificationCount {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserNotificationCount &&
     other.id == id &&
-    other.count == count &&
-    other.createdAt == createdAt &&
-    other.expireAt == expireAt;
+      other.count == count &&
+      other.createdAt == createdAt &&
+      other.expireAt == expireAt;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (count.hashCode) +
-    (createdAt.hashCode) +
-    (expireAt.hashCode);
+      (count.hashCode) +
+      (createdAt.hashCode) +
+      (expireAt.hashCode);
+  
 
   @override
   String toString() => 'UserNotificationCount[id=$id, count=$count, createdAt=$createdAt, expireAt=$expireAt]';
@@ -65,10 +67,14 @@ class UserNotificationCount {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserNotificationCount[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserNotificationCount[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "UserNotificationCount[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "UserNotificationCount[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'count'), 'Required key "UserNotificationCount[count]" is missing from JSON.');
+        assert(json[r'count'] != null, 'Required key "UserNotificationCount[count]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "UserNotificationCount[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "UserNotificationCount[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'expireAt'), 'Required key "UserNotificationCount[expireAt]" is missing from JSON.');
+        assert(json[r'expireAt'] != null, 'Required key "UserNotificationCount[expireAt]" has a null value in JSON.');
         return true;
       }());
 

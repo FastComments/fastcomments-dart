@@ -129,43 +129,45 @@ class GetUserInternalProfileResponseProfile {
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetUserInternalProfileResponseProfile &&
     other.commenterName == commenterName &&
-    other.firstCommentDate == firstCommentDate &&
-    other.ipHash == ipHash &&
-    other.countryFlag == countryFlag &&
-    other.countryCode == countryCode &&
-    other.websiteUrl == websiteUrl &&
-    other.bio == bio &&
-    other.karma == karma &&
-    other.locale == locale &&
-    other.verified == verified &&
-    other.avatarSrc == avatarSrc &&
-    other.displayName == displayName &&
-    other.username == username &&
-    other.commenterEmail == commenterEmail &&
-    other.email == email &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId;
+      other.firstCommentDate == firstCommentDate &&
+      other.ipHash == ipHash &&
+      other.countryFlag == countryFlag &&
+      other.countryCode == countryCode &&
+      other.websiteUrl == websiteUrl &&
+      other.bio == bio &&
+      other.karma == karma &&
+      other.locale == locale &&
+      other.verified == verified &&
+      other.avatarSrc == avatarSrc &&
+      other.displayName == displayName &&
+      other.username == username &&
+      other.commenterEmail == commenterEmail &&
+      other.email == email &&
+      other.anonUserId == anonUserId &&
+      other.userId == userId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commenterName == null ? 0 : commenterName!.hashCode) +
-    (firstCommentDate == null ? 0 : firstCommentDate!.hashCode) +
-    (ipHash == null ? 0 : ipHash!.hashCode) +
-    (countryFlag == null ? 0 : countryFlag!.hashCode) +
-    (countryCode == null ? 0 : countryCode!.hashCode) +
-    (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
-    (bio == null ? 0 : bio!.hashCode) +
-    (karma == null ? 0 : karma!.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (verified == null ? 0 : verified!.hashCode) +
-    (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
-    (displayName == null ? 0 : displayName!.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode);
+      (firstCommentDate == null ? 0 : firstCommentDate!.hashCode) +
+      (ipHash == null ? 0 : ipHash!.hashCode) +
+      (countryFlag == null ? 0 : countryFlag!.hashCode) +
+      (countryCode == null ? 0 : countryCode!.hashCode) +
+      (websiteUrl == null ? 0 : websiteUrl!.hashCode) +
+      (bio == null ? 0 : bio!.hashCode) +
+      (karma == null ? 0 : karma!.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (verified == null ? 0 : verified!.hashCode) +
+      (avatarSrc == null ? 0 : avatarSrc!.hashCode) +
+      (displayName == null ? 0 : displayName!.hashCode) +
+      (username == null ? 0 : username!.hashCode) +
+      (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode);
+  
 
   @override
   String toString() => 'GetUserInternalProfileResponseProfile[commenterName=$commenterName, firstCommentDate=$firstCommentDate, ipHash=$ipHash, countryFlag=$countryFlag, countryCode=$countryCode, websiteUrl=$websiteUrl, bio=$bio, karma=$karma, locale=$locale, verified=$verified, avatarSrc=$avatarSrc, displayName=$displayName, username=$username, commenterEmail=$commenterEmail, email=$email, anonUserId=$anonUserId, userId=$userId]';
@@ -271,10 +273,6 @@ class GetUserInternalProfileResponseProfile {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "GetUserInternalProfileResponseProfile[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "GetUserInternalProfileResponseProfile[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

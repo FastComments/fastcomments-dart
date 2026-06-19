@@ -75,47 +75,49 @@ class APITenantDailyUsage {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APITenantDailyUsage &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.yearNumber == yearNumber &&
-    other.monthNumber == monthNumber &&
-    other.dayNumber == dayNumber &&
-    other.commentFetchCount == commentFetchCount &&
-    other.commentCreateCount == commentCreateCount &&
-    other.conversationCreateCount == conversationCreateCount &&
-    other.voteCount == voteCount &&
-    other.accountCreatedCount == accountCreatedCount &&
-    other.userMentionSearch == userMentionSearch &&
-    other.hashTagSearch == hashTagSearch &&
-    other.gifSearchTrending == gifSearchTrending &&
-    other.gifSearch == gifSearch &&
-    other.apiCreditsUsed == apiCreditsUsed &&
-    other.createdAt == createdAt &&
-    other.billed == billed &&
-    other.ignored == ignored &&
-    other.apiErrorCount == apiErrorCount;
+      other.tenantId == tenantId &&
+      other.yearNumber == yearNumber &&
+      other.monthNumber == monthNumber &&
+      other.dayNumber == dayNumber &&
+      other.commentFetchCount == commentFetchCount &&
+      other.commentCreateCount == commentCreateCount &&
+      other.conversationCreateCount == conversationCreateCount &&
+      other.voteCount == voteCount &&
+      other.accountCreatedCount == accountCreatedCount &&
+      other.userMentionSearch == userMentionSearch &&
+      other.hashTagSearch == hashTagSearch &&
+      other.gifSearchTrending == gifSearchTrending &&
+      other.gifSearch == gifSearch &&
+      other.apiCreditsUsed == apiCreditsUsed &&
+      other.createdAt == createdAt &&
+      other.billed == billed &&
+      other.ignored == ignored &&
+      other.apiErrorCount == apiErrorCount;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (yearNumber.hashCode) +
-    (monthNumber.hashCode) +
-    (dayNumber.hashCode) +
-    (commentFetchCount.hashCode) +
-    (commentCreateCount.hashCode) +
-    (conversationCreateCount.hashCode) +
-    (voteCount.hashCode) +
-    (accountCreatedCount.hashCode) +
-    (userMentionSearch.hashCode) +
-    (hashTagSearch.hashCode) +
-    (gifSearchTrending.hashCode) +
-    (gifSearch.hashCode) +
-    (apiCreditsUsed.hashCode) +
-    (createdAt.hashCode) +
-    (billed.hashCode) +
-    (ignored.hashCode) +
-    (apiErrorCount.hashCode);
+      (tenantId.hashCode) +
+      (yearNumber.hashCode) +
+      (monthNumber.hashCode) +
+      (dayNumber.hashCode) +
+      (commentFetchCount.hashCode) +
+      (commentCreateCount.hashCode) +
+      (conversationCreateCount.hashCode) +
+      (voteCount.hashCode) +
+      (accountCreatedCount.hashCode) +
+      (userMentionSearch.hashCode) +
+      (hashTagSearch.hashCode) +
+      (gifSearchTrending.hashCode) +
+      (gifSearch.hashCode) +
+      (apiCreditsUsed.hashCode) +
+      (createdAt.hashCode) +
+      (billed.hashCode) +
+      (ignored.hashCode) +
+      (apiErrorCount.hashCode);
+  
 
   @override
   String toString() => 'APITenantDailyUsage[id=$id, tenantId=$tenantId, yearNumber=$yearNumber, monthNumber=$monthNumber, dayNumber=$dayNumber, commentFetchCount=$commentFetchCount, commentCreateCount=$commentCreateCount, conversationCreateCount=$conversationCreateCount, voteCount=$voteCount, accountCreatedCount=$accountCreatedCount, userMentionSearch=$userMentionSearch, hashTagSearch=$hashTagSearch, gifSearchTrending=$gifSearchTrending, gifSearch=$gifSearch, apiCreditsUsed=$apiCreditsUsed, createdAt=$createdAt, billed=$billed, ignored=$ignored, apiErrorCount=$apiErrorCount]';
@@ -155,10 +157,44 @@ class APITenantDailyUsage {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APITenantDailyUsage[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APITenantDailyUsage[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'id'), 'Required key "APITenantDailyUsage[id]" is missing from JSON.');
+        assert(json[r'id'] != null, 'Required key "APITenantDailyUsage[id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "APITenantDailyUsage[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "APITenantDailyUsage[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'yearNumber'), 'Required key "APITenantDailyUsage[yearNumber]" is missing from JSON.');
+        assert(json[r'yearNumber'] != null, 'Required key "APITenantDailyUsage[yearNumber]" has a null value in JSON.');
+        assert(json.containsKey(r'monthNumber'), 'Required key "APITenantDailyUsage[monthNumber]" is missing from JSON.');
+        assert(json[r'monthNumber'] != null, 'Required key "APITenantDailyUsage[monthNumber]" has a null value in JSON.');
+        assert(json.containsKey(r'dayNumber'), 'Required key "APITenantDailyUsage[dayNumber]" is missing from JSON.');
+        assert(json[r'dayNumber'] != null, 'Required key "APITenantDailyUsage[dayNumber]" has a null value in JSON.');
+        assert(json.containsKey(r'commentFetchCount'), 'Required key "APITenantDailyUsage[commentFetchCount]" is missing from JSON.');
+        assert(json[r'commentFetchCount'] != null, 'Required key "APITenantDailyUsage[commentFetchCount]" has a null value in JSON.');
+        assert(json.containsKey(r'commentCreateCount'), 'Required key "APITenantDailyUsage[commentCreateCount]" is missing from JSON.');
+        assert(json[r'commentCreateCount'] != null, 'Required key "APITenantDailyUsage[commentCreateCount]" has a null value in JSON.');
+        assert(json.containsKey(r'conversationCreateCount'), 'Required key "APITenantDailyUsage[conversationCreateCount]" is missing from JSON.');
+        assert(json[r'conversationCreateCount'] != null, 'Required key "APITenantDailyUsage[conversationCreateCount]" has a null value in JSON.');
+        assert(json.containsKey(r'voteCount'), 'Required key "APITenantDailyUsage[voteCount]" is missing from JSON.');
+        assert(json[r'voteCount'] != null, 'Required key "APITenantDailyUsage[voteCount]" has a null value in JSON.');
+        assert(json.containsKey(r'accountCreatedCount'), 'Required key "APITenantDailyUsage[accountCreatedCount]" is missing from JSON.');
+        assert(json[r'accountCreatedCount'] != null, 'Required key "APITenantDailyUsage[accountCreatedCount]" has a null value in JSON.');
+        assert(json.containsKey(r'userMentionSearch'), 'Required key "APITenantDailyUsage[userMentionSearch]" is missing from JSON.');
+        assert(json[r'userMentionSearch'] != null, 'Required key "APITenantDailyUsage[userMentionSearch]" has a null value in JSON.');
+        assert(json.containsKey(r'hashTagSearch'), 'Required key "APITenantDailyUsage[hashTagSearch]" is missing from JSON.');
+        assert(json[r'hashTagSearch'] != null, 'Required key "APITenantDailyUsage[hashTagSearch]" has a null value in JSON.');
+        assert(json.containsKey(r'gifSearchTrending'), 'Required key "APITenantDailyUsage[gifSearchTrending]" is missing from JSON.');
+        assert(json[r'gifSearchTrending'] != null, 'Required key "APITenantDailyUsage[gifSearchTrending]" has a null value in JSON.');
+        assert(json.containsKey(r'gifSearch'), 'Required key "APITenantDailyUsage[gifSearch]" is missing from JSON.');
+        assert(json[r'gifSearch'] != null, 'Required key "APITenantDailyUsage[gifSearch]" has a null value in JSON.');
+        assert(json.containsKey(r'apiCreditsUsed'), 'Required key "APITenantDailyUsage[apiCreditsUsed]" is missing from JSON.');
+        assert(json[r'apiCreditsUsed'] != null, 'Required key "APITenantDailyUsage[apiCreditsUsed]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "APITenantDailyUsage[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "APITenantDailyUsage[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'billed'), 'Required key "APITenantDailyUsage[billed]" is missing from JSON.');
+        assert(json[r'billed'] != null, 'Required key "APITenantDailyUsage[billed]" has a null value in JSON.');
+        assert(json.containsKey(r'ignored'), 'Required key "APITenantDailyUsage[ignored]" is missing from JSON.');
+        assert(json[r'ignored'] != null, 'Required key "APITenantDailyUsage[ignored]" has a null value in JSON.');
+        assert(json.containsKey(r'apiErrorCount'), 'Required key "APITenantDailyUsage[apiErrorCount]" is missing from JSON.');
+        assert(json[r'apiErrorCount'] != null, 'Required key "APITenantDailyUsage[apiErrorCount]" has a null value in JSON.');
         return true;
       }());
 

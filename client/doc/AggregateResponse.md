@@ -9,10 +9,10 @@ import 'package:fastcomments_dart/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**APIStatus**](APIStatus.md) |  | 
-**data** | [**List<AggregationItem>**](AggregationItem.md) |  | [default to const []]
+**data** | [**List<AggregationItem>**](AggregationItem.md) |  | [optional] [default to const []]
 **stats** | [**AggregationResponseStats**](AggregationResponseStats.md) |  | [optional] 
-**reason** | **String** |  | 
-**code** | **String** |  | 
+**reason** | **String** |  | [optional] 
+**code** | **String** |  | [optional] 
 **validResourceNames** | **List<String>** |  | [optional] [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

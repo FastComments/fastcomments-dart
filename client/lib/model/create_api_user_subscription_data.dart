@@ -66,21 +66,23 @@ class CreateAPIUserSubscriptionData {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateAPIUserSubscriptionData &&
     other.notificationFrequency == notificationFrequency &&
-    other.pageTitle == pageTitle &&
-    other.url == url &&
-    other.urlId == urlId &&
-    other.anonUserId == anonUserId &&
-    other.userId == userId;
+      other.pageTitle == pageTitle &&
+      other.url == url &&
+      other.urlId == urlId &&
+      other.anonUserId == anonUserId &&
+      other.userId == userId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (notificationFrequency == null ? 0 : notificationFrequency!.hashCode) +
-    (pageTitle == null ? 0 : pageTitle!.hashCode) +
-    (url == null ? 0 : url!.hashCode) +
-    (urlId.hashCode) +
-    (anonUserId == null ? 0 : anonUserId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode);
+      (pageTitle == null ? 0 : pageTitle!.hashCode) +
+      (url == null ? 0 : url!.hashCode) +
+      (urlId.hashCode) +
+      (anonUserId == null ? 0 : anonUserId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode);
+  
 
   @override
   String toString() => 'CreateAPIUserSubscriptionData[notificationFrequency=$notificationFrequency, pageTitle=$pageTitle, url=$url, urlId=$urlId, anonUserId=$anonUserId, userId=$userId]';
@@ -127,10 +129,8 @@ class CreateAPIUserSubscriptionData {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateAPIUserSubscriptionData[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateAPIUserSubscriptionData[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'urlId'), 'Required key "CreateAPIUserSubscriptionData[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "CreateAPIUserSubscriptionData[urlId]" has a null value in JSON.');
         return true;
       }());
 

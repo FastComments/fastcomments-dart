@@ -25,13 +25,15 @@ class CheckBlockedCommentsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CheckBlockedCommentsResponse &&
     _deepEquality.equals(other.commentStatuses, commentStatuses) &&
-    other.status == status;
+      other.status == status;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commentStatuses.hashCode) +
-    (status.hashCode);
+      (status.hashCode);
+  
 
   @override
   String toString() => 'CheckBlockedCommentsResponse[commentStatuses=$commentStatuses, status=$status]';
@@ -54,10 +56,10 @@ class CheckBlockedCommentsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CheckBlockedCommentsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CheckBlockedCommentsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commentStatuses'), 'Required key "CheckBlockedCommentsResponse[commentStatuses]" is missing from JSON.');
+        assert(json[r'commentStatuses'] != null, 'Required key "CheckBlockedCommentsResponse[commentStatuses]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "CheckBlockedCommentsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "CheckBlockedCommentsResponse[status]" has a null value in JSON.');
         return true;
       }());
 

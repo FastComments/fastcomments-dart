@@ -691,185 +691,187 @@ class CustomConfigParameters {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CustomConfigParameters &&
     other.absoluteAndRelativeDates == absoluteAndRelativeDates &&
-    other.absoluteDates == absoluteDates &&
-    other.allowAnon == allowAnon &&
-    other.allowAnonFlag == allowAnonFlag &&
-    other.allowAnonVotes == allowAnonVotes &&
-    _deepEquality.equals(other.allowedLanguages, allowedLanguages) &&
-    other.collapseReplies == collapseReplies &&
-    other.commentCountFormat == commentCountFormat &&
-    other.commentHTMLRenderingMode == commentHTMLRenderingMode &&
-    other.commentThreadDeleteMode == commentThreadDeleteMode &&
-    other.commenterNameFormat == commenterNameFormat &&
-    other.countAboveToggle == countAboveToggle &&
-    other.customCSS == customCSS &&
-    other.defaultAvatarSrc == defaultAvatarSrc &&
-    other.defaultSortDirection == defaultSortDirection &&
-    other.defaultUsername == defaultUsername &&
-    other.disableAutoAdminMigration == disableAutoAdminMigration &&
-    other.disableAutoHashTagCreation == disableAutoHashTagCreation &&
-    other.disableBlocking == disableBlocking &&
-    other.disableCommenterCommentDelete == disableCommenterCommentDelete &&
-    other.disableCommenterCommentEdit == disableCommenterCommentEdit &&
-    other.disableEmailInputs == disableEmailInputs &&
-    other.disableLiveCommenting == disableLiveCommenting &&
-    other.disableNotificationBell == disableNotificationBell &&
-    other.disableProfileComments == disableProfileComments &&
-    other.disableProfileDirectMessages == disableProfileDirectMessages &&
-    other.disableProfiles == disableProfiles &&
-    other.disableSuccessMessage == disableSuccessMessage &&
-    other.disableToolbar == disableToolbar &&
-    other.disableUnverifiedLabel == disableUnverifiedLabel &&
-    other.disableVoting == disableVoting &&
-    other.enableCommenterLinks == enableCommenterLinks &&
-    other.enableSearch == enableSearch &&
-    other.enableSpoilers == enableSpoilers &&
-    other.enableThirdPartyCookieBypass == enableThirdPartyCookieBypass &&
-    other.enableViewCounts == enableViewCounts &&
-    other.enableVoteList == enableVoteList &&
-    other.enableWYSIWYG == enableWYSIWYG &&
-    other.gifRating == gifRating &&
-    other.hasDarkBackground == hasDarkBackground &&
-    other.headerHTML == headerHTML &&
-    other.hideAvatars == hideAvatars &&
-    other.hideCommentsUnderCountTextFormat == hideCommentsUnderCountTextFormat &&
-    other.imageContentProfanityLevel == imageContentProfanityLevel &&
-    other.inputAfterComments == inputAfterComments &&
-    other.limitCommentsByGroups == limitCommentsByGroups &&
-    other.locale == locale &&
-    other.maxCommentCharacterLength == maxCommentCharacterLength &&
-    other.maxCommentCreatedCountPUPM == maxCommentCreatedCountPUPM &&
-    other.noCustomConfig == noCustomConfig &&
-    other.mentionAutoCompleteMode == mentionAutoCompleteMode &&
-    other.noImageUploads == noImageUploads &&
-    other.allowEmbeds == allowEmbeds &&
-    _deepEquality.equals(other.allowedEmbedDomains, allowedEmbedDomains) &&
-    other.noStyles == noStyles &&
-    other.pageSize == pageSize &&
-    other.readonly == readonly &&
-    other.noNewRootComments == noNewRootComments &&
-    other.requireSSO == requireSSO &&
-    other.enableFChat == enableFChat &&
-    other.enableResizeHandle == enableResizeHandle &&
-    _deepEquality.equals(other.restrictedLinkDomains, restrictedLinkDomains) &&
-    other.showBadgesInTopBar == showBadgesInTopBar &&
-    other.showCommentSaveSuccess == showCommentSaveSuccess &&
-    other.showLiveRightAway == showLiveRightAway &&
-    other.showQuestion == showQuestion &&
-    _deepEquality.equals(other.spamRules, spamRules) &&
-    other.ssoSecLvl == ssoSecLvl &&
-    _deepEquality.equals(other.translations, translations) &&
-    other.useShowCommentsToggle == useShowCommentsToggle &&
-    other.useSingleLineCommentInput == useSingleLineCommentInput &&
-    other.voteStyle == voteStyle &&
-    other.widgetQuestionId == widgetQuestionId &&
-    other.widgetQuestionResultsStyle == widgetQuestionResultsStyle &&
-    other.widgetQuestionShowBreakdown == widgetQuestionShowBreakdown &&
-    other.widgetQuestionStyle == widgetQuestionStyle &&
-    other.widgetQuestionWhenToSave == widgetQuestionWhenToSave &&
-    other.widgetQuestionsRequired == widgetQuestionsRequired &&
-    other.widgetSubQuestionVisibility == widgetSubQuestionVisibility &&
-    other.wrap == wrap &&
-    other.usersListLocation == usersListLocation &&
-    other.usersListIncludeOffline == usersListIncludeOffline &&
-    other.ticketBaseUrl == ticketBaseUrl &&
-    other.ticketKBSearchEndpoint == ticketKBSearchEndpoint &&
-    other.ticketFileUploadsEnabled == ticketFileUploadsEnabled &&
-    other.ticketMaxFileSize == ticketMaxFileSize &&
-    _deepEquality.equals(other.ticketAutoAssignUserIds, ticketAutoAssignUserIds) &&
-    other.tos == tos;
+      other.absoluteDates == absoluteDates &&
+      other.allowAnon == allowAnon &&
+      other.allowAnonFlag == allowAnonFlag &&
+      other.allowAnonVotes == allowAnonVotes &&
+      _deepEquality.equals(other.allowedLanguages, allowedLanguages) &&
+      other.collapseReplies == collapseReplies &&
+      other.commentCountFormat == commentCountFormat &&
+      other.commentHTMLRenderingMode == commentHTMLRenderingMode &&
+      other.commentThreadDeleteMode == commentThreadDeleteMode &&
+      other.commenterNameFormat == commenterNameFormat &&
+      other.countAboveToggle == countAboveToggle &&
+      other.customCSS == customCSS &&
+      other.defaultAvatarSrc == defaultAvatarSrc &&
+      other.defaultSortDirection == defaultSortDirection &&
+      other.defaultUsername == defaultUsername &&
+      other.disableAutoAdminMigration == disableAutoAdminMigration &&
+      other.disableAutoHashTagCreation == disableAutoHashTagCreation &&
+      other.disableBlocking == disableBlocking &&
+      other.disableCommenterCommentDelete == disableCommenterCommentDelete &&
+      other.disableCommenterCommentEdit == disableCommenterCommentEdit &&
+      other.disableEmailInputs == disableEmailInputs &&
+      other.disableLiveCommenting == disableLiveCommenting &&
+      other.disableNotificationBell == disableNotificationBell &&
+      other.disableProfileComments == disableProfileComments &&
+      other.disableProfileDirectMessages == disableProfileDirectMessages &&
+      other.disableProfiles == disableProfiles &&
+      other.disableSuccessMessage == disableSuccessMessage &&
+      other.disableToolbar == disableToolbar &&
+      other.disableUnverifiedLabel == disableUnverifiedLabel &&
+      other.disableVoting == disableVoting &&
+      other.enableCommenterLinks == enableCommenterLinks &&
+      other.enableSearch == enableSearch &&
+      other.enableSpoilers == enableSpoilers &&
+      other.enableThirdPartyCookieBypass == enableThirdPartyCookieBypass &&
+      other.enableViewCounts == enableViewCounts &&
+      other.enableVoteList == enableVoteList &&
+      other.enableWYSIWYG == enableWYSIWYG &&
+      other.gifRating == gifRating &&
+      other.hasDarkBackground == hasDarkBackground &&
+      other.headerHTML == headerHTML &&
+      other.hideAvatars == hideAvatars &&
+      other.hideCommentsUnderCountTextFormat == hideCommentsUnderCountTextFormat &&
+      other.imageContentProfanityLevel == imageContentProfanityLevel &&
+      other.inputAfterComments == inputAfterComments &&
+      other.limitCommentsByGroups == limitCommentsByGroups &&
+      other.locale == locale &&
+      other.maxCommentCharacterLength == maxCommentCharacterLength &&
+      other.maxCommentCreatedCountPUPM == maxCommentCreatedCountPUPM &&
+      other.noCustomConfig == noCustomConfig &&
+      other.mentionAutoCompleteMode == mentionAutoCompleteMode &&
+      other.noImageUploads == noImageUploads &&
+      other.allowEmbeds == allowEmbeds &&
+      _deepEquality.equals(other.allowedEmbedDomains, allowedEmbedDomains) &&
+      other.noStyles == noStyles &&
+      other.pageSize == pageSize &&
+      other.readonly == readonly &&
+      other.noNewRootComments == noNewRootComments &&
+      other.requireSSO == requireSSO &&
+      other.enableFChat == enableFChat &&
+      other.enableResizeHandle == enableResizeHandle &&
+      _deepEquality.equals(other.restrictedLinkDomains, restrictedLinkDomains) &&
+      other.showBadgesInTopBar == showBadgesInTopBar &&
+      other.showCommentSaveSuccess == showCommentSaveSuccess &&
+      other.showLiveRightAway == showLiveRightAway &&
+      other.showQuestion == showQuestion &&
+      _deepEquality.equals(other.spamRules, spamRules) &&
+      other.ssoSecLvl == ssoSecLvl &&
+      _deepEquality.equals(other.translations, translations) &&
+      other.useShowCommentsToggle == useShowCommentsToggle &&
+      other.useSingleLineCommentInput == useSingleLineCommentInput &&
+      other.voteStyle == voteStyle &&
+      other.widgetQuestionId == widgetQuestionId &&
+      other.widgetQuestionResultsStyle == widgetQuestionResultsStyle &&
+      other.widgetQuestionShowBreakdown == widgetQuestionShowBreakdown &&
+      other.widgetQuestionStyle == widgetQuestionStyle &&
+      other.widgetQuestionWhenToSave == widgetQuestionWhenToSave &&
+      other.widgetQuestionsRequired == widgetQuestionsRequired &&
+      other.widgetSubQuestionVisibility == widgetSubQuestionVisibility &&
+      other.wrap == wrap &&
+      other.usersListLocation == usersListLocation &&
+      other.usersListIncludeOffline == usersListIncludeOffline &&
+      other.ticketBaseUrl == ticketBaseUrl &&
+      other.ticketKBSearchEndpoint == ticketKBSearchEndpoint &&
+      other.ticketFileUploadsEnabled == ticketFileUploadsEnabled &&
+      other.ticketMaxFileSize == ticketMaxFileSize &&
+      _deepEquality.equals(other.ticketAutoAssignUserIds, ticketAutoAssignUserIds) &&
+      other.tos == tos;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (absoluteAndRelativeDates == null ? 0 : absoluteAndRelativeDates!.hashCode) +
-    (absoluteDates == null ? 0 : absoluteDates!.hashCode) +
-    (allowAnon == null ? 0 : allowAnon!.hashCode) +
-    (allowAnonFlag == null ? 0 : allowAnonFlag!.hashCode) +
-    (allowAnonVotes == null ? 0 : allowAnonVotes!.hashCode) +
-    (allowedLanguages == null ? 0 : allowedLanguages!.hashCode) +
-    (collapseReplies == null ? 0 : collapseReplies!.hashCode) +
-    (commentCountFormat == null ? 0 : commentCountFormat!.hashCode) +
-    (commentHTMLRenderingMode == null ? 0 : commentHTMLRenderingMode!.hashCode) +
-    (commentThreadDeleteMode == null ? 0 : commentThreadDeleteMode!.hashCode) +
-    (commenterNameFormat == null ? 0 : commenterNameFormat!.hashCode) +
-    (countAboveToggle == null ? 0 : countAboveToggle!.hashCode) +
-    (customCSS == null ? 0 : customCSS!.hashCode) +
-    (defaultAvatarSrc == null ? 0 : defaultAvatarSrc!.hashCode) +
-    (defaultSortDirection == null ? 0 : defaultSortDirection!.hashCode) +
-    (defaultUsername == null ? 0 : defaultUsername!.hashCode) +
-    (disableAutoAdminMigration == null ? 0 : disableAutoAdminMigration!.hashCode) +
-    (disableAutoHashTagCreation == null ? 0 : disableAutoHashTagCreation!.hashCode) +
-    (disableBlocking == null ? 0 : disableBlocking!.hashCode) +
-    (disableCommenterCommentDelete == null ? 0 : disableCommenterCommentDelete!.hashCode) +
-    (disableCommenterCommentEdit == null ? 0 : disableCommenterCommentEdit!.hashCode) +
-    (disableEmailInputs == null ? 0 : disableEmailInputs!.hashCode) +
-    (disableLiveCommenting == null ? 0 : disableLiveCommenting!.hashCode) +
-    (disableNotificationBell == null ? 0 : disableNotificationBell!.hashCode) +
-    (disableProfileComments == null ? 0 : disableProfileComments!.hashCode) +
-    (disableProfileDirectMessages == null ? 0 : disableProfileDirectMessages!.hashCode) +
-    (disableProfiles == null ? 0 : disableProfiles!.hashCode) +
-    (disableSuccessMessage == null ? 0 : disableSuccessMessage!.hashCode) +
-    (disableToolbar == null ? 0 : disableToolbar!.hashCode) +
-    (disableUnverifiedLabel == null ? 0 : disableUnverifiedLabel!.hashCode) +
-    (disableVoting == null ? 0 : disableVoting!.hashCode) +
-    (enableCommenterLinks == null ? 0 : enableCommenterLinks!.hashCode) +
-    (enableSearch == null ? 0 : enableSearch!.hashCode) +
-    (enableSpoilers == null ? 0 : enableSpoilers!.hashCode) +
-    (enableThirdPartyCookieBypass == null ? 0 : enableThirdPartyCookieBypass!.hashCode) +
-    (enableViewCounts == null ? 0 : enableViewCounts!.hashCode) +
-    (enableVoteList == null ? 0 : enableVoteList!.hashCode) +
-    (enableWYSIWYG == null ? 0 : enableWYSIWYG!.hashCode) +
-    (gifRating == null ? 0 : gifRating!.hashCode) +
-    (hasDarkBackground == null ? 0 : hasDarkBackground!.hashCode) +
-    (headerHTML == null ? 0 : headerHTML!.hashCode) +
-    (hideAvatars == null ? 0 : hideAvatars!.hashCode) +
-    (hideCommentsUnderCountTextFormat == null ? 0 : hideCommentsUnderCountTextFormat!.hashCode) +
-    (imageContentProfanityLevel == null ? 0 : imageContentProfanityLevel!.hashCode) +
-    (inputAfterComments == null ? 0 : inputAfterComments!.hashCode) +
-    (limitCommentsByGroups == null ? 0 : limitCommentsByGroups!.hashCode) +
-    (locale == null ? 0 : locale!.hashCode) +
-    (maxCommentCharacterLength == null ? 0 : maxCommentCharacterLength!.hashCode) +
-    (maxCommentCreatedCountPUPM == null ? 0 : maxCommentCreatedCountPUPM!.hashCode) +
-    (noCustomConfig == null ? 0 : noCustomConfig!.hashCode) +
-    (mentionAutoCompleteMode == null ? 0 : mentionAutoCompleteMode!.hashCode) +
-    (noImageUploads == null ? 0 : noImageUploads!.hashCode) +
-    (allowEmbeds == null ? 0 : allowEmbeds!.hashCode) +
-    (allowedEmbedDomains == null ? 0 : allowedEmbedDomains!.hashCode) +
-    (noStyles == null ? 0 : noStyles!.hashCode) +
-    (pageSize == null ? 0 : pageSize!.hashCode) +
-    (readonly == null ? 0 : readonly!.hashCode) +
-    (noNewRootComments == null ? 0 : noNewRootComments!.hashCode) +
-    (requireSSO == null ? 0 : requireSSO!.hashCode) +
-    (enableFChat == null ? 0 : enableFChat!.hashCode) +
-    (enableResizeHandle == null ? 0 : enableResizeHandle!.hashCode) +
-    (restrictedLinkDomains == null ? 0 : restrictedLinkDomains!.hashCode) +
-    (showBadgesInTopBar == null ? 0 : showBadgesInTopBar!.hashCode) +
-    (showCommentSaveSuccess == null ? 0 : showCommentSaveSuccess!.hashCode) +
-    (showLiveRightAway == null ? 0 : showLiveRightAway!.hashCode) +
-    (showQuestion == null ? 0 : showQuestion!.hashCode) +
-    (spamRules.hashCode) +
-    (ssoSecLvl == null ? 0 : ssoSecLvl!.hashCode) +
-    (translations == null ? 0 : translations!.hashCode) +
-    (useShowCommentsToggle == null ? 0 : useShowCommentsToggle!.hashCode) +
-    (useSingleLineCommentInput == null ? 0 : useSingleLineCommentInput!.hashCode) +
-    (voteStyle == null ? 0 : voteStyle!.hashCode) +
-    (widgetQuestionId == null ? 0 : widgetQuestionId!.hashCode) +
-    (widgetQuestionResultsStyle == null ? 0 : widgetQuestionResultsStyle!.hashCode) +
-    (widgetQuestionShowBreakdown == null ? 0 : widgetQuestionShowBreakdown!.hashCode) +
-    (widgetQuestionStyle == null ? 0 : widgetQuestionStyle!.hashCode) +
-    (widgetQuestionWhenToSave == null ? 0 : widgetQuestionWhenToSave!.hashCode) +
-    (widgetQuestionsRequired == null ? 0 : widgetQuestionsRequired!.hashCode) +
-    (widgetSubQuestionVisibility == null ? 0 : widgetSubQuestionVisibility!.hashCode) +
-    (wrap == null ? 0 : wrap!.hashCode) +
-    (usersListLocation == null ? 0 : usersListLocation!.hashCode) +
-    (usersListIncludeOffline == null ? 0 : usersListIncludeOffline!.hashCode) +
-    (ticketBaseUrl == null ? 0 : ticketBaseUrl!.hashCode) +
-    (ticketKBSearchEndpoint == null ? 0 : ticketKBSearchEndpoint!.hashCode) +
-    (ticketFileUploadsEnabled == null ? 0 : ticketFileUploadsEnabled!.hashCode) +
-    (ticketMaxFileSize == null ? 0 : ticketMaxFileSize!.hashCode) +
-    (ticketAutoAssignUserIds.hashCode) +
-    (tos == null ? 0 : tos!.hashCode);
+      (absoluteDates == null ? 0 : absoluteDates!.hashCode) +
+      (allowAnon == null ? 0 : allowAnon!.hashCode) +
+      (allowAnonFlag == null ? 0 : allowAnonFlag!.hashCode) +
+      (allowAnonVotes == null ? 0 : allowAnonVotes!.hashCode) +
+      (allowedLanguages == null ? 0 : allowedLanguages!.hashCode) +
+      (collapseReplies == null ? 0 : collapseReplies!.hashCode) +
+      (commentCountFormat == null ? 0 : commentCountFormat!.hashCode) +
+      (commentHTMLRenderingMode == null ? 0 : commentHTMLRenderingMode!.hashCode) +
+      (commentThreadDeleteMode == null ? 0 : commentThreadDeleteMode!.hashCode) +
+      (commenterNameFormat == null ? 0 : commenterNameFormat!.hashCode) +
+      (countAboveToggle == null ? 0 : countAboveToggle!.hashCode) +
+      (customCSS == null ? 0 : customCSS!.hashCode) +
+      (defaultAvatarSrc == null ? 0 : defaultAvatarSrc!.hashCode) +
+      (defaultSortDirection == null ? 0 : defaultSortDirection!.hashCode) +
+      (defaultUsername == null ? 0 : defaultUsername!.hashCode) +
+      (disableAutoAdminMigration == null ? 0 : disableAutoAdminMigration!.hashCode) +
+      (disableAutoHashTagCreation == null ? 0 : disableAutoHashTagCreation!.hashCode) +
+      (disableBlocking == null ? 0 : disableBlocking!.hashCode) +
+      (disableCommenterCommentDelete == null ? 0 : disableCommenterCommentDelete!.hashCode) +
+      (disableCommenterCommentEdit == null ? 0 : disableCommenterCommentEdit!.hashCode) +
+      (disableEmailInputs == null ? 0 : disableEmailInputs!.hashCode) +
+      (disableLiveCommenting == null ? 0 : disableLiveCommenting!.hashCode) +
+      (disableNotificationBell == null ? 0 : disableNotificationBell!.hashCode) +
+      (disableProfileComments == null ? 0 : disableProfileComments!.hashCode) +
+      (disableProfileDirectMessages == null ? 0 : disableProfileDirectMessages!.hashCode) +
+      (disableProfiles == null ? 0 : disableProfiles!.hashCode) +
+      (disableSuccessMessage == null ? 0 : disableSuccessMessage!.hashCode) +
+      (disableToolbar == null ? 0 : disableToolbar!.hashCode) +
+      (disableUnverifiedLabel == null ? 0 : disableUnverifiedLabel!.hashCode) +
+      (disableVoting == null ? 0 : disableVoting!.hashCode) +
+      (enableCommenterLinks == null ? 0 : enableCommenterLinks!.hashCode) +
+      (enableSearch == null ? 0 : enableSearch!.hashCode) +
+      (enableSpoilers == null ? 0 : enableSpoilers!.hashCode) +
+      (enableThirdPartyCookieBypass == null ? 0 : enableThirdPartyCookieBypass!.hashCode) +
+      (enableViewCounts == null ? 0 : enableViewCounts!.hashCode) +
+      (enableVoteList == null ? 0 : enableVoteList!.hashCode) +
+      (enableWYSIWYG == null ? 0 : enableWYSIWYG!.hashCode) +
+      (gifRating == null ? 0 : gifRating!.hashCode) +
+      (hasDarkBackground == null ? 0 : hasDarkBackground!.hashCode) +
+      (headerHTML == null ? 0 : headerHTML!.hashCode) +
+      (hideAvatars == null ? 0 : hideAvatars!.hashCode) +
+      (hideCommentsUnderCountTextFormat == null ? 0 : hideCommentsUnderCountTextFormat!.hashCode) +
+      (imageContentProfanityLevel == null ? 0 : imageContentProfanityLevel!.hashCode) +
+      (inputAfterComments == null ? 0 : inputAfterComments!.hashCode) +
+      (limitCommentsByGroups == null ? 0 : limitCommentsByGroups!.hashCode) +
+      (locale == null ? 0 : locale!.hashCode) +
+      (maxCommentCharacterLength == null ? 0 : maxCommentCharacterLength!.hashCode) +
+      (maxCommentCreatedCountPUPM == null ? 0 : maxCommentCreatedCountPUPM!.hashCode) +
+      (noCustomConfig == null ? 0 : noCustomConfig!.hashCode) +
+      (mentionAutoCompleteMode == null ? 0 : mentionAutoCompleteMode!.hashCode) +
+      (noImageUploads == null ? 0 : noImageUploads!.hashCode) +
+      (allowEmbeds == null ? 0 : allowEmbeds!.hashCode) +
+      (allowedEmbedDomains == null ? 0 : allowedEmbedDomains!.hashCode) +
+      (noStyles == null ? 0 : noStyles!.hashCode) +
+      (pageSize == null ? 0 : pageSize!.hashCode) +
+      (readonly == null ? 0 : readonly!.hashCode) +
+      (noNewRootComments == null ? 0 : noNewRootComments!.hashCode) +
+      (requireSSO == null ? 0 : requireSSO!.hashCode) +
+      (enableFChat == null ? 0 : enableFChat!.hashCode) +
+      (enableResizeHandle == null ? 0 : enableResizeHandle!.hashCode) +
+      (restrictedLinkDomains == null ? 0 : restrictedLinkDomains!.hashCode) +
+      (showBadgesInTopBar == null ? 0 : showBadgesInTopBar!.hashCode) +
+      (showCommentSaveSuccess == null ? 0 : showCommentSaveSuccess!.hashCode) +
+      (showLiveRightAway == null ? 0 : showLiveRightAway!.hashCode) +
+      (showQuestion == null ? 0 : showQuestion!.hashCode) +
+      (spamRules.hashCode) +
+      (ssoSecLvl == null ? 0 : ssoSecLvl!.hashCode) +
+      (translations == null ? 0 : translations!.hashCode) +
+      (useShowCommentsToggle == null ? 0 : useShowCommentsToggle!.hashCode) +
+      (useSingleLineCommentInput == null ? 0 : useSingleLineCommentInput!.hashCode) +
+      (voteStyle == null ? 0 : voteStyle!.hashCode) +
+      (widgetQuestionId == null ? 0 : widgetQuestionId!.hashCode) +
+      (widgetQuestionResultsStyle == null ? 0 : widgetQuestionResultsStyle!.hashCode) +
+      (widgetQuestionShowBreakdown == null ? 0 : widgetQuestionShowBreakdown!.hashCode) +
+      (widgetQuestionStyle == null ? 0 : widgetQuestionStyle!.hashCode) +
+      (widgetQuestionWhenToSave == null ? 0 : widgetQuestionWhenToSave!.hashCode) +
+      (widgetQuestionsRequired == null ? 0 : widgetQuestionsRequired!.hashCode) +
+      (widgetSubQuestionVisibility == null ? 0 : widgetSubQuestionVisibility!.hashCode) +
+      (wrap == null ? 0 : wrap!.hashCode) +
+      (usersListLocation == null ? 0 : usersListLocation!.hashCode) +
+      (usersListIncludeOffline == null ? 0 : usersListIncludeOffline!.hashCode) +
+      (ticketBaseUrl == null ? 0 : ticketBaseUrl!.hashCode) +
+      (ticketKBSearchEndpoint == null ? 0 : ticketKBSearchEndpoint!.hashCode) +
+      (ticketFileUploadsEnabled == null ? 0 : ticketFileUploadsEnabled!.hashCode) +
+      (ticketMaxFileSize == null ? 0 : ticketMaxFileSize!.hashCode) +
+      (ticketAutoAssignUserIds.hashCode) +
+      (tos == null ? 0 : tos!.hashCode);
+  
 
   @override
   String toString() => 'CustomConfigParameters[absoluteAndRelativeDates=$absoluteAndRelativeDates, absoluteDates=$absoluteDates, allowAnon=$allowAnon, allowAnonFlag=$allowAnonFlag, allowAnonVotes=$allowAnonVotes, allowedLanguages=$allowedLanguages, collapseReplies=$collapseReplies, commentCountFormat=$commentCountFormat, commentHTMLRenderingMode=$commentHTMLRenderingMode, commentThreadDeleteMode=$commentThreadDeleteMode, commenterNameFormat=$commenterNameFormat, countAboveToggle=$countAboveToggle, customCSS=$customCSS, defaultAvatarSrc=$defaultAvatarSrc, defaultSortDirection=$defaultSortDirection, defaultUsername=$defaultUsername, disableAutoAdminMigration=$disableAutoAdminMigration, disableAutoHashTagCreation=$disableAutoHashTagCreation, disableBlocking=$disableBlocking, disableCommenterCommentDelete=$disableCommenterCommentDelete, disableCommenterCommentEdit=$disableCommenterCommentEdit, disableEmailInputs=$disableEmailInputs, disableLiveCommenting=$disableLiveCommenting, disableNotificationBell=$disableNotificationBell, disableProfileComments=$disableProfileComments, disableProfileDirectMessages=$disableProfileDirectMessages, disableProfiles=$disableProfiles, disableSuccessMessage=$disableSuccessMessage, disableToolbar=$disableToolbar, disableUnverifiedLabel=$disableUnverifiedLabel, disableVoting=$disableVoting, enableCommenterLinks=$enableCommenterLinks, enableSearch=$enableSearch, enableSpoilers=$enableSpoilers, enableThirdPartyCookieBypass=$enableThirdPartyCookieBypass, enableViewCounts=$enableViewCounts, enableVoteList=$enableVoteList, enableWYSIWYG=$enableWYSIWYG, gifRating=$gifRating, hasDarkBackground=$hasDarkBackground, headerHTML=$headerHTML, hideAvatars=$hideAvatars, hideCommentsUnderCountTextFormat=$hideCommentsUnderCountTextFormat, imageContentProfanityLevel=$imageContentProfanityLevel, inputAfterComments=$inputAfterComments, limitCommentsByGroups=$limitCommentsByGroups, locale=$locale, maxCommentCharacterLength=$maxCommentCharacterLength, maxCommentCreatedCountPUPM=$maxCommentCreatedCountPUPM, noCustomConfig=$noCustomConfig, mentionAutoCompleteMode=$mentionAutoCompleteMode, noImageUploads=$noImageUploads, allowEmbeds=$allowEmbeds, allowedEmbedDomains=$allowedEmbedDomains, noStyles=$noStyles, pageSize=$pageSize, readonly=$readonly, noNewRootComments=$noNewRootComments, requireSSO=$requireSSO, enableFChat=$enableFChat, enableResizeHandle=$enableResizeHandle, restrictedLinkDomains=$restrictedLinkDomains, showBadgesInTopBar=$showBadgesInTopBar, showCommentSaveSuccess=$showCommentSaveSuccess, showLiveRightAway=$showLiveRightAway, showQuestion=$showQuestion, spamRules=$spamRules, ssoSecLvl=$ssoSecLvl, translations=$translations, useShowCommentsToggle=$useShowCommentsToggle, useSingleLineCommentInput=$useSingleLineCommentInput, voteStyle=$voteStyle, widgetQuestionId=$widgetQuestionId, widgetQuestionResultsStyle=$widgetQuestionResultsStyle, widgetQuestionShowBreakdown=$widgetQuestionShowBreakdown, widgetQuestionStyle=$widgetQuestionStyle, widgetQuestionWhenToSave=$widgetQuestionWhenToSave, widgetQuestionsRequired=$widgetQuestionsRequired, widgetSubQuestionVisibility=$widgetSubQuestionVisibility, wrap=$wrap, usersListLocation=$usersListLocation, usersListIncludeOffline=$usersListIncludeOffline, ticketBaseUrl=$ticketBaseUrl, ticketKBSearchEndpoint=$ticketKBSearchEndpoint, ticketFileUploadsEnabled=$ticketFileUploadsEnabled, ticketMaxFileSize=$ticketMaxFileSize, ticketAutoAssignUserIds=$ticketAutoAssignUserIds, tos=$tos]';
@@ -1322,10 +1324,6 @@ class CustomConfigParameters {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CustomConfigParameters[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CustomConfigParameters[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

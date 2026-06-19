@@ -24,13 +24,15 @@ class UserReactsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserReactsResponse &&
     other.status == status &&
-    _deepEquality.equals(other.reacts, reacts);
+      _deepEquality.equals(other.reacts, reacts);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (reacts.hashCode);
+      (reacts.hashCode);
+  
 
   @override
   String toString() => 'UserReactsResponse[status=$status, reacts=$reacts]';
@@ -53,16 +55,16 @@ class UserReactsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "UserReactsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "UserReactsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "UserReactsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "UserReactsResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'reacts'), 'Required key "UserReactsResponse[reacts]" is missing from JSON.');
+        assert(json[r'reacts'] != null, 'Required key "UserReactsResponse[reacts]" has a null value in JSON.');
         return true;
       }());
 
       return UserReactsResponse(
         status: APIStatus.fromJson(json[r'status'])!,
-        reacts: mapCastOfType<String, dynamic>(json, r'reacts')!,
+        reacts: ((json[r'reacts'] as Map?)?.map((k, v) => MapEntry(k as String, (v as Map).cast<String, bool>())))!,
       );
     }
     return null;

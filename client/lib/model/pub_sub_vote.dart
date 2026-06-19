@@ -45,27 +45,29 @@ class PubSubVote {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PubSubVote &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.urlId == urlId &&
-    other.urlIdRaw == urlIdRaw &&
-    other.commentId == commentId &&
-    other.userId == userId &&
-    other.direction == direction &&
-    other.createdAt == createdAt &&
-    other.verificationId == verificationId;
+      other.tenantId == tenantId &&
+      other.urlId == urlId &&
+      other.urlIdRaw == urlIdRaw &&
+      other.commentId == commentId &&
+      other.userId == userId &&
+      other.direction == direction &&
+      other.createdAt == createdAt &&
+      other.verificationId == verificationId;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
-    (tenantId.hashCode) +
-    (urlId.hashCode) +
-    (urlIdRaw.hashCode) +
-    (commentId.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (direction.hashCode) +
-    (createdAt.hashCode) +
-    (verificationId == null ? 0 : verificationId!.hashCode);
+      (tenantId.hashCode) +
+      (urlId.hashCode) +
+      (urlIdRaw.hashCode) +
+      (commentId.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (direction.hashCode) +
+      (createdAt.hashCode) +
+      (verificationId == null ? 0 : verificationId!.hashCode);
+  
 
   @override
   String toString() => 'PubSubVote[id=$id, tenantId=$tenantId, urlId=$urlId, urlIdRaw=$urlIdRaw, commentId=$commentId, userId=$userId, direction=$direction, createdAt=$createdAt, verificationId=$verificationId]';
@@ -103,10 +105,21 @@ class PubSubVote {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "PubSubVote[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "PubSubVote[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'_id'), 'Required key "PubSubVote[_id]" is missing from JSON.');
+        assert(json[r'_id'] != null, 'Required key "PubSubVote[_id]" has a null value in JSON.');
+        assert(json.containsKey(r'tenantId'), 'Required key "PubSubVote[tenantId]" is missing from JSON.');
+        assert(json[r'tenantId'] != null, 'Required key "PubSubVote[tenantId]" has a null value in JSON.');
+        assert(json.containsKey(r'urlId'), 'Required key "PubSubVote[urlId]" is missing from JSON.');
+        assert(json[r'urlId'] != null, 'Required key "PubSubVote[urlId]" has a null value in JSON.');
+        assert(json.containsKey(r'urlIdRaw'), 'Required key "PubSubVote[urlIdRaw]" is missing from JSON.');
+        assert(json[r'urlIdRaw'] != null, 'Required key "PubSubVote[urlIdRaw]" has a null value in JSON.');
+        assert(json.containsKey(r'commentId'), 'Required key "PubSubVote[commentId]" is missing from JSON.');
+        assert(json[r'commentId'] != null, 'Required key "PubSubVote[commentId]" has a null value in JSON.');
+        assert(json.containsKey(r'direction'), 'Required key "PubSubVote[direction]" is missing from JSON.');
+        assert(json[r'direction'] != null, 'Required key "PubSubVote[direction]" has a null value in JSON.');
+        assert(json.containsKey(r'createdAt'), 'Required key "PubSubVote[createdAt]" is missing from JSON.');
+        assert(json[r'createdAt'] != null, 'Required key "PubSubVote[createdAt]" has a null value in JSON.');
+        assert(json.containsKey(r'verificationId'), 'Required key "PubSubVote[verificationId]" is missing from JSON.');
         return true;
       }());
 

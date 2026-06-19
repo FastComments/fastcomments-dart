@@ -27,15 +27,17 @@ class ReactFeedPostResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ReactFeedPostResponse &&
     other.status == status &&
-    other.reactType == reactType &&
-    other.isUndo == isUndo;
+      other.reactType == reactType &&
+      other.isUndo == isUndo;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (reactType.hashCode) +
-    (isUndo.hashCode);
+      (reactType.hashCode) +
+      (isUndo.hashCode);
+  
 
   @override
   String toString() => 'ReactFeedPostResponse[status=$status, reactType=$reactType, isUndo=$isUndo]';
@@ -59,10 +61,12 @@ class ReactFeedPostResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ReactFeedPostResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ReactFeedPostResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "ReactFeedPostResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "ReactFeedPostResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'reactType'), 'Required key "ReactFeedPostResponse[reactType]" is missing from JSON.');
+        assert(json[r'reactType'] != null, 'Required key "ReactFeedPostResponse[reactType]" has a null value in JSON.');
+        assert(json.containsKey(r'isUndo'), 'Required key "ReactFeedPostResponse[isUndo]" is missing from JSON.');
+        assert(json[r'isUndo'] != null, 'Required key "ReactFeedPostResponse[isUndo]" has a null value in JSON.');
         return true;
       }());
 

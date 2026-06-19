@@ -108,37 +108,39 @@ class CreateQuestionConfigBody {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateQuestionConfigBody &&
     other.name == name &&
-    other.question == question &&
-    other.helpText == helpText &&
-    other.type == type &&
-    other.numStars == numStars &&
-    other.min == min &&
-    other.max == max &&
-    other.defaultValue == defaultValue &&
-    other.labelNegative == labelNegative &&
-    other.labelPositive == labelPositive &&
-    _deepEquality.equals(other.customOptions, customOptions) &&
-    _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
-    other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
-    other.reportingOrder == reportingOrder;
+      other.question == question &&
+      other.helpText == helpText &&
+      other.type == type &&
+      other.numStars == numStars &&
+      other.min == min &&
+      other.max == max &&
+      other.defaultValue == defaultValue &&
+      other.labelNegative == labelNegative &&
+      other.labelPositive == labelPositive &&
+      _deepEquality.equals(other.customOptions, customOptions) &&
+      _deepEquality.equals(other.subQuestionIds, subQuestionIds) &&
+      other.alwaysShowSubQuestions == alwaysShowSubQuestions &&
+      other.reportingOrder == reportingOrder;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name.hashCode) +
-    (question.hashCode) +
-    (helpText == null ? 0 : helpText!.hashCode) +
-    (type.hashCode) +
-    (numStars == null ? 0 : numStars!.hashCode) +
-    (min == null ? 0 : min!.hashCode) +
-    (max == null ? 0 : max!.hashCode) +
-    (defaultValue == null ? 0 : defaultValue!.hashCode) +
-    (labelNegative == null ? 0 : labelNegative!.hashCode) +
-    (labelPositive == null ? 0 : labelPositive!.hashCode) +
-    (customOptions.hashCode) +
-    (subQuestionIds.hashCode) +
-    (alwaysShowSubQuestions == null ? 0 : alwaysShowSubQuestions!.hashCode) +
-    (reportingOrder.hashCode);
+      (question.hashCode) +
+      (helpText == null ? 0 : helpText!.hashCode) +
+      (type.hashCode) +
+      (numStars == null ? 0 : numStars!.hashCode) +
+      (min == null ? 0 : min!.hashCode) +
+      (max == null ? 0 : max!.hashCode) +
+      (defaultValue == null ? 0 : defaultValue!.hashCode) +
+      (labelNegative == null ? 0 : labelNegative!.hashCode) +
+      (labelPositive == null ? 0 : labelPositive!.hashCode) +
+      (customOptions.hashCode) +
+      (subQuestionIds.hashCode) +
+      (alwaysShowSubQuestions == null ? 0 : alwaysShowSubQuestions!.hashCode) +
+      (reportingOrder.hashCode);
+  
 
   @override
   String toString() => 'CreateQuestionConfigBody[name=$name, question=$question, helpText=$helpText, type=$type, numStars=$numStars, min=$min, max=$max, defaultValue=$defaultValue, labelNegative=$labelNegative, labelPositive=$labelPositive, customOptions=$customOptions, subQuestionIds=$subQuestionIds, alwaysShowSubQuestions=$alwaysShowSubQuestions, reportingOrder=$reportingOrder]';
@@ -205,10 +207,14 @@ class CreateQuestionConfigBody {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateQuestionConfigBody[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateQuestionConfigBody[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'name'), 'Required key "CreateQuestionConfigBody[name]" is missing from JSON.');
+        assert(json[r'name'] != null, 'Required key "CreateQuestionConfigBody[name]" has a null value in JSON.');
+        assert(json.containsKey(r'question'), 'Required key "CreateQuestionConfigBody[question]" is missing from JSON.');
+        assert(json[r'question'] != null, 'Required key "CreateQuestionConfigBody[question]" has a null value in JSON.');
+        assert(json.containsKey(r'type'), 'Required key "CreateQuestionConfigBody[type]" is missing from JSON.');
+        assert(json[r'type'] != null, 'Required key "CreateQuestionConfigBody[type]" has a null value in JSON.');
+        assert(json.containsKey(r'reportingOrder'), 'Required key "CreateQuestionConfigBody[reportingOrder]" is missing from JSON.');
+        assert(json[r'reportingOrder'] != null, 'Required key "CreateQuestionConfigBody[reportingOrder]" has a null value in JSON.');
         return true;
       }());
 

@@ -30,17 +30,19 @@ class VoteBodyParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is VoteBodyParams &&
     other.commenterEmail == commenterEmail &&
-    other.commenterName == commenterName &&
-    other.voteDir == voteDir &&
-    other.url == url;
+      other.commenterName == commenterName &&
+      other.voteDir == voteDir &&
+      other.url == url;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (commenterEmail == null ? 0 : commenterEmail!.hashCode) +
-    (commenterName == null ? 0 : commenterName!.hashCode) +
-    (voteDir.hashCode) +
-    (url == null ? 0 : url!.hashCode);
+      (commenterName == null ? 0 : commenterName!.hashCode) +
+      (voteDir.hashCode) +
+      (url == null ? 0 : url!.hashCode);
+  
 
   @override
   String toString() => 'VoteBodyParams[commenterEmail=$commenterEmail, commenterName=$commenterName, voteDir=$voteDir, url=$url]';
@@ -77,10 +79,11 @@ class VoteBodyParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "VoteBodyParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "VoteBodyParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'commenterEmail'), 'Required key "VoteBodyParams[commenterEmail]" is missing from JSON.');
+        assert(json.containsKey(r'commenterName'), 'Required key "VoteBodyParams[commenterName]" is missing from JSON.');
+        assert(json.containsKey(r'voteDir'), 'Required key "VoteBodyParams[voteDir]" is missing from JSON.');
+        assert(json[r'voteDir'] != null, 'Required key "VoteBodyParams[voteDir]" has a null value in JSON.');
+        assert(json.containsKey(r'url'), 'Required key "VoteBodyParams[url]" is missing from JSON.');
         return true;
       }());
 

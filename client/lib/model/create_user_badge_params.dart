@@ -33,15 +33,17 @@ class CreateUserBadgeParams {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUserBadgeParams &&
     other.userId == userId &&
-    other.badgeId == badgeId &&
-    other.displayedOnComments == displayedOnComments;
+      other.badgeId == badgeId &&
+      other.displayedOnComments == displayedOnComments;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (userId.hashCode) +
-    (badgeId.hashCode) +
-    (displayedOnComments == null ? 0 : displayedOnComments!.hashCode);
+      (badgeId.hashCode) +
+      (displayedOnComments == null ? 0 : displayedOnComments!.hashCode);
+  
 
   @override
   String toString() => 'CreateUserBadgeParams[userId=$userId, badgeId=$badgeId, displayedOnComments=$displayedOnComments]';
@@ -69,10 +71,10 @@ class CreateUserBadgeParams {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateUserBadgeParams[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateUserBadgeParams[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'userId'), 'Required key "CreateUserBadgeParams[userId]" is missing from JSON.');
+        assert(json[r'userId'] != null, 'Required key "CreateUserBadgeParams[userId]" has a null value in JSON.');
+        assert(json.containsKey(r'badgeId'), 'Required key "CreateUserBadgeParams[badgeId]" is missing from JSON.');
+        assert(json[r'badgeId'] != null, 'Required key "CreateUserBadgeParams[badgeId]" has a null value in JSON.');
         return true;
       }());
 

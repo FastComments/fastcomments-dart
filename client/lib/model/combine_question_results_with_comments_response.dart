@@ -24,13 +24,15 @@ class CombineQuestionResultsWithCommentsResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CombineQuestionResultsWithCommentsResponse &&
     other.status == status &&
-    other.data == data;
+      other.data == data;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (data.hashCode);
+      (data.hashCode);
+  
 
   @override
   String toString() => 'CombineQuestionResultsWithCommentsResponse[status=$status, data=$data]';
@@ -53,10 +55,10 @@ class CombineQuestionResultsWithCommentsResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CombineQuestionResultsWithCommentsResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CombineQuestionResultsWithCommentsResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "CombineQuestionResultsWithCommentsResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "CombineQuestionResultsWithCommentsResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'data'), 'Required key "CombineQuestionResultsWithCommentsResponse[data]" is missing from JSON.');
+        assert(json[r'data'] != null, 'Required key "CombineQuestionResultsWithCommentsResponse[data]" has a null value in JSON.');
         return true;
       }());
 

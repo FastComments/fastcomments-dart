@@ -116,33 +116,35 @@ class ModerationFilter {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModerationFilter &&
     other.reviewed == reviewed &&
-    other.approved == approved &&
-    other.isSpam == isSpam &&
-    other.isBannedUser == isBannedUser &&
-    other.isLocked == isLocked &&
-    other.flagCountGt == flagCountGt &&
-    other.userId == userId &&
-    other.urlId == urlId &&
-    other.domain == domain &&
-    _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
-    _deepEquality.equals(other.commentTextSearch, commentTextSearch) &&
-    other.exactCommentText == exactCommentText;
+      other.approved == approved &&
+      other.isSpam == isSpam &&
+      other.isBannedUser == isBannedUser &&
+      other.isLocked == isLocked &&
+      other.flagCountGt == flagCountGt &&
+      other.userId == userId &&
+      other.urlId == urlId &&
+      other.domain == domain &&
+      _deepEquality.equals(other.moderationGroupIds, moderationGroupIds) &&
+      _deepEquality.equals(other.commentTextSearch, commentTextSearch) &&
+      other.exactCommentText == exactCommentText;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (reviewed == null ? 0 : reviewed!.hashCode) +
-    (approved == null ? 0 : approved!.hashCode) +
-    (isSpam == null ? 0 : isSpam!.hashCode) +
-    (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
-    (isLocked == null ? 0 : isLocked!.hashCode) +
-    (flagCountGt == null ? 0 : flagCountGt!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (urlId == null ? 0 : urlId!.hashCode) +
-    (domain == null ? 0 : domain!.hashCode) +
-    (moderationGroupIds.hashCode) +
-    (commentTextSearch.hashCode) +
-    (exactCommentText == null ? 0 : exactCommentText!.hashCode);
+      (approved == null ? 0 : approved!.hashCode) +
+      (isSpam == null ? 0 : isSpam!.hashCode) +
+      (isBannedUser == null ? 0 : isBannedUser!.hashCode) +
+      (isLocked == null ? 0 : isLocked!.hashCode) +
+      (flagCountGt == null ? 0 : flagCountGt!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (urlId == null ? 0 : urlId!.hashCode) +
+      (domain == null ? 0 : domain!.hashCode) +
+      (moderationGroupIds.hashCode) +
+      (commentTextSearch.hashCode) +
+      (exactCommentText == null ? 0 : exactCommentText!.hashCode);
+  
 
   @override
   String toString() => 'ModerationFilter[reviewed=$reviewed, approved=$approved, isSpam=$isSpam, isBannedUser=$isBannedUser, isLocked=$isLocked, flagCountGt=$flagCountGt, userId=$userId, urlId=$urlId, domain=$domain, moderationGroupIds=$moderationGroupIds, commentTextSearch=$commentTextSearch, exactCommentText=$exactCommentText]';
@@ -215,10 +217,6 @@ class ModerationFilter {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ModerationFilter[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ModerationFilter[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 

@@ -27,15 +27,17 @@ class CommentTextUpdateRequest {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CommentTextUpdateRequest &&
     other.comment == comment &&
-    _deepEquality.equals(other.mentions, mentions) &&
-    _deepEquality.equals(other.hashTags, hashTags);
+      _deepEquality.equals(other.mentions, mentions) &&
+      _deepEquality.equals(other.hashTags, hashTags);
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (comment.hashCode) +
-    (mentions.hashCode) +
-    (hashTags.hashCode);
+      (mentions.hashCode) +
+      (hashTags.hashCode);
+  
 
   @override
   String toString() => 'CommentTextUpdateRequest[comment=$comment, mentions=$mentions, hashTags=$hashTags]';
@@ -59,10 +61,8 @@ class CommentTextUpdateRequest {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CommentTextUpdateRequest[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CommentTextUpdateRequest[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'comment'), 'Required key "CommentTextUpdateRequest[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "CommentTextUpdateRequest[comment]" has a null value in JSON.');
         return true;
       }());
 

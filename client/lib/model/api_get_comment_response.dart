@@ -24,13 +24,15 @@ class APIGetCommentResponse {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIGetCommentResponse &&
     other.status == status &&
-    other.comment == comment;
+      other.comment == comment;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (status.hashCode) +
-    (comment.hashCode);
+      (comment.hashCode);
+  
 
   @override
   String toString() => 'APIGetCommentResponse[status=$status, comment=$comment]';
@@ -53,10 +55,10 @@ class APIGetCommentResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIGetCommentResponse[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIGetCommentResponse[$key]" has a null value in JSON.');
-        });
+        assert(json.containsKey(r'status'), 'Required key "APIGetCommentResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "APIGetCommentResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'comment'), 'Required key "APIGetCommentResponse[comment]" is missing from JSON.');
+        assert(json[r'comment'] != null, 'Required key "APIGetCommentResponse[comment]" has a null value in JSON.');
         return true;
       }());
 

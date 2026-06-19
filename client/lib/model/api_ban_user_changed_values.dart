@@ -105,35 +105,37 @@ class APIBanUserChangedValues {
   @override
   bool operator ==(Object other) => identical(this, other) || other is APIBanUserChangedValues &&
     other.id == id &&
-    other.tenantId == tenantId &&
-    other.userId == userId &&
-    other.email == email &&
-    other.username == username &&
-    other.ipHash == ipHash &&
-    other.createdAt == createdAt &&
-    other.bannedByUserId == bannedByUserId &&
-    other.bannedCommentText == bannedCommentText &&
-    other.banType == banType &&
-    other.bannedUntil == bannedUntil &&
-    other.hasEmailWildcard == hasEmailWildcard &&
-    other.banReason == banReason;
+      other.tenantId == tenantId &&
+      other.userId == userId &&
+      other.email == email &&
+      other.username == username &&
+      other.ipHash == ipHash &&
+      other.createdAt == createdAt &&
+      other.bannedByUserId == bannedByUserId &&
+      other.bannedCommentText == bannedCommentText &&
+      other.banType == banType &&
+      other.bannedUntil == bannedUntil &&
+      other.hasEmailWildcard == hasEmailWildcard &&
+      other.banReason == banReason;
+  
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id == null ? 0 : id!.hashCode) +
-    (tenantId == null ? 0 : tenantId!.hashCode) +
-    (userId == null ? 0 : userId!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (username == null ? 0 : username!.hashCode) +
-    (ipHash == null ? 0 : ipHash!.hashCode) +
-    (createdAt == null ? 0 : createdAt!.hashCode) +
-    (bannedByUserId == null ? 0 : bannedByUserId!.hashCode) +
-    (bannedCommentText == null ? 0 : bannedCommentText!.hashCode) +
-    (banType == null ? 0 : banType!.hashCode) +
-    (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
-    (hasEmailWildcard == null ? 0 : hasEmailWildcard!.hashCode) +
-    (banReason == null ? 0 : banReason!.hashCode);
+      (tenantId == null ? 0 : tenantId!.hashCode) +
+      (userId == null ? 0 : userId!.hashCode) +
+      (email == null ? 0 : email!.hashCode) +
+      (username == null ? 0 : username!.hashCode) +
+      (ipHash == null ? 0 : ipHash!.hashCode) +
+      (createdAt == null ? 0 : createdAt!.hashCode) +
+      (bannedByUserId == null ? 0 : bannedByUserId!.hashCode) +
+      (bannedCommentText == null ? 0 : bannedCommentText!.hashCode) +
+      (banType == null ? 0 : banType!.hashCode) +
+      (bannedUntil == null ? 0 : bannedUntil!.hashCode) +
+      (hasEmailWildcard == null ? 0 : hasEmailWildcard!.hashCode) +
+      (banReason == null ? 0 : banReason!.hashCode);
+  
 
   @override
   String toString() => 'APIBanUserChangedValues[id=$id, tenantId=$tenantId, userId=$userId, email=$email, username=$username, ipHash=$ipHash, createdAt=$createdAt, bannedByUserId=$bannedByUserId, bannedCommentText=$bannedCommentText, banType=$banType, bannedUntil=$bannedUntil, hasEmailWildcard=$hasEmailWildcard, banReason=$banReason]';
@@ -219,10 +221,6 @@ class APIBanUserChangedValues {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "APIBanUserChangedValues[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "APIBanUserChangedValues[$key]" has a null value in JSON.');
-        });
         return true;
       }());
 
