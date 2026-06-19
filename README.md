@@ -34,10 +34,11 @@ Requires `node`/`npx` (for `@openapitools/openapi-generator-cli`) and Java.
 
 ```yaml
 dependencies:
-  fastcomments_dart:
-    path: ../fastcomments-dart/client
-  crypto: ^3.0.0
+  fastcomments_dart: ^2.0.0
 ```
+
+The SSO helpers in this repo's `sso/` directory are not part of the published
+package; copy them into your project (they depend on `crypto`) if you need SSO.
 
 The client exposes three API classes:
 
