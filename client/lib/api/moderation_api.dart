@@ -23,8 +23,12 @@ class ModerationApi {
   ///
   /// * [String] voteId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> deleteModerationVoteWithHttpInfo(String commentId, String voteId, { String? sso, }) async {
+  Future<Response> deleteModerationVoteWithHttpInfo(String commentId, String voteId, { String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/vote/{commentId}/{voteId}'
       .replaceAll('{commentId}', commentId)
@@ -37,6 +41,12 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -61,9 +71,13 @@ class ModerationApi {
   ///
   /// * [String] voteId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<VoteDeleteResponse?> deleteModerationVote(String commentId, String voteId, { String? sso, }) async {
-    final response = await deleteModerationVoteWithHttpInfo(commentId, voteId,  sso: sso, );
+  Future<VoteDeleteResponse?> deleteModerationVote(String commentId, String voteId, { String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await deleteModerationVoteWithHttpInfo(commentId, voteId,  broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -96,8 +110,10 @@ class ModerationApi {
   ///
   /// * [bool] demo:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getApiCommentsWithHttpInfo({ double? page, double? count, String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, bool? demo, String? sso, }) async {
+  Future<Response> getApiCommentsWithHttpInfo({ double? page, double? count, String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, bool? demo, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/api/comments';
 
@@ -132,6 +148,9 @@ class ModerationApi {
     if (demo != null) {
       queryParams.addAll(_queryParams('', 'demo', demo));
     }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -168,9 +187,11 @@ class ModerationApi {
   ///
   /// * [bool] demo:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationAPIGetCommentsResponse?> getApiComments({ double? page, double? count, String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, bool? demo, String? sso, }) async {
-    final response = await getApiCommentsWithHttpInfo( page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso, );
+  Future<ModerationAPIGetCommentsResponse?> getApiComments({ double? page, double? count, String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, bool? demo, String? tenantId, String? sso, }) async {
+    final response = await getApiCommentsWithHttpInfo( page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -189,8 +210,10 @@ class ModerationApi {
   ///
   /// * [String] batchJobId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getApiExportStatusWithHttpInfo({ String? batchJobId, String? sso, }) async {
+  Future<Response> getApiExportStatusWithHttpInfo({ String? batchJobId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/api/export/status';
 
@@ -203,6 +226,9 @@ class ModerationApi {
 
     if (batchJobId != null) {
       queryParams.addAll(_queryParams('', 'batchJobId', batchJobId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -226,9 +252,11 @@ class ModerationApi {
   ///
   /// * [String] batchJobId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationExportStatusResponse?> getApiExportStatus({ String? batchJobId, String? sso, }) async {
-    final response = await getApiExportStatusWithHttpInfo( batchJobId: batchJobId, sso: sso, );
+  Future<ModerationExportStatusResponse?> getApiExportStatus({ String? batchJobId, String? tenantId, String? sso, }) async {
+    final response = await getApiExportStatusWithHttpInfo( batchJobId: batchJobId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -257,8 +285,10 @@ class ModerationApi {
   ///
   /// * [bool] demo:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getApiIdsWithHttpInfo({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? afterId, bool? demo, String? sso, }) async {
+  Future<Response> getApiIdsWithHttpInfo({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? afterId, bool? demo, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/api/ids';
 
@@ -286,6 +316,9 @@ class ModerationApi {
     }
     if (demo != null) {
       queryParams.addAll(_queryParams('', 'demo', demo));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -319,9 +352,11 @@ class ModerationApi {
   ///
   /// * [bool] demo:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationAPIGetCommentIdsResponse?> getApiIds({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? afterId, bool? demo, String? sso, }) async {
-    final response = await getApiIdsWithHttpInfo( textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, sso: sso, );
+  Future<ModerationAPIGetCommentIdsResponse?> getApiIds({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? afterId, bool? demo, String? tenantId, String? sso, }) async {
+    final response = await getApiIdsWithHttpInfo( textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -340,8 +375,10 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getBanUsersFromCommentWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> getBanUsersFromCommentWithHttpInfo(String commentId, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/ban-users/from-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -353,6 +390,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -375,9 +415,11 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetBannedUsersFromCommentResponse?> getBanUsersFromComment(String commentId, { String? sso, }) async {
-    final response = await getBanUsersFromCommentWithHttpInfo(commentId,  sso: sso, );
+  Future<GetBannedUsersFromCommentResponse?> getBanUsersFromComment(String commentId, { String? tenantId, String? sso, }) async {
+    final response = await getBanUsersFromCommentWithHttpInfo(commentId,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -396,8 +438,10 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getCommentBanStatusWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> getCommentBanStatusWithHttpInfo(String commentId, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/get-comment-ban-status/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -409,6 +453,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -431,9 +478,11 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetCommentBanStatusResponse?> getCommentBanStatus(String commentId, { String? sso, }) async {
-    final response = await getCommentBanStatusWithHttpInfo(commentId,  sso: sso, );
+  Future<GetCommentBanStatusResponse?> getCommentBanStatus(String commentId, { String? tenantId, String? sso, }) async {
+    final response = await getCommentBanStatusWithHttpInfo(commentId,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -452,8 +501,10 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getCommentChildrenWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> getCommentChildrenWithHttpInfo(String commentId, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/comment-children/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -465,6 +516,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -487,9 +541,11 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationAPIChildCommentsResponse?> getCommentChildren(String commentId, { String? sso, }) async {
-    final response = await getCommentChildrenWithHttpInfo(commentId,  sso: sso, );
+  Future<ModerationAPIChildCommentsResponse?> getCommentChildren(String commentId, { String? tenantId, String? sso, }) async {
+    final response = await getCommentChildrenWithHttpInfo(commentId,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -516,8 +572,10 @@ class ModerationApi {
   ///
   /// * [bool] demo:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getCountWithHttpInfo({ String? textSearch, String? byIPFromComment, String? filter, String? searchFilters, bool? demo, String? sso, }) async {
+  Future<Response> getCountWithHttpInfo({ String? textSearch, String? byIPFromComment, String? filter, String? searchFilters, bool? demo, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/count';
 
@@ -542,6 +600,9 @@ class ModerationApi {
     }
     if (demo != null) {
       queryParams.addAll(_queryParams('', 'demo', demo));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -573,9 +634,11 @@ class ModerationApi {
   ///
   /// * [bool] demo:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationAPICountCommentsResponse?> getCount({ String? textSearch, String? byIPFromComment, String? filter, String? searchFilters, bool? demo, String? sso, }) async {
-    final response = await getCountWithHttpInfo( textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso, );
+  Future<ModerationAPICountCommentsResponse?> getCount({ String? textSearch, String? byIPFromComment, String? filter, String? searchFilters, bool? demo, String? tenantId, String? sso, }) async {
+    final response = await getCountWithHttpInfo( textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -592,8 +655,10 @@ class ModerationApi {
   /// Performs an HTTP 'GET /auth/my-account/moderate-comments/banned-users/counts' operation and returns the [Response].
   /// Parameters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getCountsWithHttpInfo({ String? sso, }) async {
+  Future<Response> getCountsWithHttpInfo({ String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/banned-users/counts';
 
@@ -604,6 +669,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -624,9 +692,11 @@ class ModerationApi {
 
   /// Parameters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetBannedUsersCountResponse?> getCounts({ String? sso, }) async {
-    final response = await getCountsWithHttpInfo( sso: sso, );
+  Future<GetBannedUsersCountResponse?> getCounts({ String? tenantId, String? sso, }) async {
+    final response = await getCountsWithHttpInfo( tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -645,8 +715,10 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getLogsWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> getLogsWithHttpInfo(String commentId, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/logs/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -658,6 +730,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -680,9 +755,11 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationAPIGetLogsResponse?> getLogs(String commentId, { String? sso, }) async {
-    final response = await getLogsWithHttpInfo(commentId,  sso: sso, );
+  Future<ModerationAPIGetLogsResponse?> getLogs(String commentId, { String? tenantId, String? sso, }) async {
+    final response = await getLogsWithHttpInfo(commentId,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -699,8 +776,10 @@ class ModerationApi {
   /// Performs an HTTP 'GET /auth/my-account/moderate-comments/get-manual-badges' operation and returns the [Response].
   /// Parameters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getManualBadgesWithHttpInfo({ String? sso, }) async {
+  Future<Response> getManualBadgesWithHttpInfo({ String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/get-manual-badges';
 
@@ -711,6 +790,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -731,9 +813,11 @@ class ModerationApi {
 
   /// Parameters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetTenantManualBadgesResponse?> getManualBadges({ String? sso, }) async {
-    final response = await getManualBadgesWithHttpInfo( sso: sso, );
+  Future<GetTenantManualBadgesResponse?> getManualBadges({ String? tenantId, String? sso, }) async {
+    final response = await getManualBadgesWithHttpInfo( tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -754,8 +838,10 @@ class ModerationApi {
   ///
   /// * [String] commentId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getManualBadgesForUserWithHttpInfo({ String? badgesUserId, String? commentId, String? sso, }) async {
+  Future<Response> getManualBadgesForUserWithHttpInfo({ String? badgesUserId, String? commentId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/get-manual-badges-for-user';
 
@@ -771,6 +857,9 @@ class ModerationApi {
     }
     if (commentId != null) {
       queryParams.addAll(_queryParams('', 'commentId', commentId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -796,9 +885,11 @@ class ModerationApi {
   ///
   /// * [String] commentId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetUserManualBadgesResponse?> getManualBadgesForUser({ String? badgesUserId, String? commentId, String? sso, }) async {
-    final response = await getManualBadgesForUserWithHttpInfo( badgesUserId: badgesUserId, commentId: commentId, sso: sso, );
+  Future<GetUserManualBadgesResponse?> getManualBadgesForUser({ String? badgesUserId, String? commentId, String? tenantId, String? sso, }) async {
+    final response = await getManualBadgesForUserWithHttpInfo( badgesUserId: badgesUserId, commentId: commentId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -821,8 +912,10 @@ class ModerationApi {
   ///
   /// * [bool] includeIP:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getModerationCommentWithHttpInfo(String commentId, { bool? includeEmail, bool? includeIP, String? sso, }) async {
+  Future<Response> getModerationCommentWithHttpInfo(String commentId, { bool? includeEmail, bool? includeIP, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -839,6 +932,9 @@ class ModerationApi {
     }
     if (includeIP != null) {
       queryParams.addAll(_queryParams('', 'includeIP', includeIP));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -866,9 +962,11 @@ class ModerationApi {
   ///
   /// * [bool] includeIP:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationAPICommentResponse?> getModerationComment(String commentId, { bool? includeEmail, bool? includeIP, String? sso, }) async {
-    final response = await getModerationCommentWithHttpInfo(commentId,  includeEmail: includeEmail, includeIP: includeIP, sso: sso, );
+  Future<ModerationAPICommentResponse?> getModerationComment(String commentId, { bool? includeEmail, bool? includeIP, String? tenantId, String? sso, }) async {
+    final response = await getModerationCommentWithHttpInfo(commentId,  includeEmail: includeEmail, includeIP: includeIP, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -887,8 +985,10 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getModerationCommentTextWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> getModerationCommentTextWithHttpInfo(String commentId, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/get-comment-text/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -900,6 +1000,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -922,9 +1025,11 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetCommentTextResponse?> getModerationCommentText(String commentId, { String? sso, }) async {
-    final response = await getModerationCommentTextWithHttpInfo(commentId,  sso: sso, );
+  Future<GetCommentTextResponse?> getModerationCommentText(String commentId, { String? tenantId, String? sso, }) async {
+    final response = await getModerationCommentTextWithHttpInfo(commentId,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -949,8 +1054,10 @@ class ModerationApi {
   ///
   /// * [bool] includeByEmailDomain:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getPreBanSummaryWithHttpInfo(String commentId, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? sso, }) async {
+  Future<Response> getPreBanSummaryWithHttpInfo(String commentId, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/pre-ban-summary/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -970,6 +1077,9 @@ class ModerationApi {
     }
     if (includeByEmailDomain != null) {
       queryParams.addAll(_queryParams('', 'includeByEmailDomain', includeByEmailDomain));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -999,9 +1109,11 @@ class ModerationApi {
   ///
   /// * [bool] includeByEmailDomain:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<PreBanSummary?> getPreBanSummary(String commentId, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? sso, }) async {
-    final response = await getPreBanSummaryWithHttpInfo(commentId,  includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso, );
+  Future<PreBanSummary?> getPreBanSummary(String commentId, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? tenantId, String? sso, }) async {
+    final response = await getPreBanSummaryWithHttpInfo(commentId,  includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1024,8 +1136,10 @@ class ModerationApi {
   ///
   /// * [String] searchFilters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getSearchCommentsSummaryWithHttpInfo({ String? value, String? filters, String? searchFilters, String? sso, }) async {
+  Future<Response> getSearchCommentsSummaryWithHttpInfo({ String? value, String? filters, String? searchFilters, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/search/comments/summary';
 
@@ -1044,6 +1158,9 @@ class ModerationApi {
     }
     if (searchFilters != null) {
       queryParams.addAll(_queryParams('', 'searchFilters', searchFilters));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1071,9 +1188,11 @@ class ModerationApi {
   ///
   /// * [String] searchFilters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationCommentSearchResponse?> getSearchCommentsSummary({ String? value, String? filters, String? searchFilters, String? sso, }) async {
-    final response = await getSearchCommentsSummaryWithHttpInfo( value: value, filters: filters, searchFilters: searchFilters, sso: sso, );
+  Future<ModerationCommentSearchResponse?> getSearchCommentsSummary({ String? value, String? filters, String? searchFilters, String? tenantId, String? sso, }) async {
+    final response = await getSearchCommentsSummaryWithHttpInfo( value: value, filters: filters, searchFilters: searchFilters, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1092,8 +1211,10 @@ class ModerationApi {
   ///
   /// * [String] value:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getSearchPagesWithHttpInfo({ String? value, String? sso, }) async {
+  Future<Response> getSearchPagesWithHttpInfo({ String? value, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/search/pages';
 
@@ -1106,6 +1227,9 @@ class ModerationApi {
 
     if (value != null) {
       queryParams.addAll(_queryParams('', 'value', value));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1129,9 +1253,11 @@ class ModerationApi {
   ///
   /// * [String] value:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationPageSearchResponse?> getSearchPages({ String? value, String? sso, }) async {
-    final response = await getSearchPagesWithHttpInfo( value: value, sso: sso, );
+  Future<ModerationPageSearchResponse?> getSearchPages({ String? value, String? tenantId, String? sso, }) async {
+    final response = await getSearchPagesWithHttpInfo( value: value, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1150,8 +1276,10 @@ class ModerationApi {
   ///
   /// * [String] value:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getSearchSitesWithHttpInfo({ String? value, String? sso, }) async {
+  Future<Response> getSearchSitesWithHttpInfo({ String? value, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/search/sites';
 
@@ -1164,6 +1292,9 @@ class ModerationApi {
 
     if (value != null) {
       queryParams.addAll(_queryParams('', 'value', value));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1187,9 +1318,11 @@ class ModerationApi {
   ///
   /// * [String] value:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationSiteSearchResponse?> getSearchSites({ String? value, String? sso, }) async {
-    final response = await getSearchSitesWithHttpInfo( value: value, sso: sso, );
+  Future<ModerationSiteSearchResponse?> getSearchSites({ String? value, String? tenantId, String? sso, }) async {
+    final response = await getSearchSitesWithHttpInfo( value: value, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1208,8 +1341,10 @@ class ModerationApi {
   ///
   /// * [String] textSearch:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getSearchSuggestWithHttpInfo({ String? textSearch, String? sso, }) async {
+  Future<Response> getSearchSuggestWithHttpInfo({ String? textSearch, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/search/suggest';
 
@@ -1222,6 +1357,9 @@ class ModerationApi {
 
     if (textSearch != null) {
       queryParams.addAll(_queryParams('', 'text-search', textSearch));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1245,9 +1383,11 @@ class ModerationApi {
   ///
   /// * [String] textSearch:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationSuggestResponse?> getSearchSuggest({ String? textSearch, String? sso, }) async {
-    final response = await getSearchSuggestWithHttpInfo( textSearch: textSearch, sso: sso, );
+  Future<ModerationSuggestResponse?> getSearchSuggest({ String? textSearch, String? tenantId, String? sso, }) async {
+    final response = await getSearchSuggestWithHttpInfo( textSearch: textSearch, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1266,8 +1406,10 @@ class ModerationApi {
   ///
   /// * [String] value:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getSearchUsersWithHttpInfo({ String? value, String? sso, }) async {
+  Future<Response> getSearchUsersWithHttpInfo({ String? value, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/search/users';
 
@@ -1280,6 +1422,9 @@ class ModerationApi {
 
     if (value != null) {
       queryParams.addAll(_queryParams('', 'value', value));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1303,9 +1448,11 @@ class ModerationApi {
   ///
   /// * [String] value:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationUserSearchResponse?> getSearchUsers({ String? value, String? sso, }) async {
-    final response = await getSearchUsersWithHttpInfo( value: value, sso: sso, );
+  Future<ModerationUserSearchResponse?> getSearchUsers({ String? value, String? tenantId, String? sso, }) async {
+    final response = await getSearchUsersWithHttpInfo( value: value, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1324,8 +1471,10 @@ class ModerationApi {
   ///
   /// * [String] userId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getTrustFactorWithHttpInfo({ String? userId, String? sso, }) async {
+  Future<Response> getTrustFactorWithHttpInfo({ String? userId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/get-trust-factor';
 
@@ -1338,6 +1487,9 @@ class ModerationApi {
 
     if (userId != null) {
       queryParams.addAll(_queryParams('', 'userId', userId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1361,9 +1513,11 @@ class ModerationApi {
   ///
   /// * [String] userId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetUserTrustFactorResponse?> getTrustFactor({ String? userId, String? sso, }) async {
-    final response = await getTrustFactorWithHttpInfo( userId: userId, sso: sso, );
+  Future<GetUserTrustFactorResponse?> getTrustFactor({ String? userId, String? tenantId, String? sso, }) async {
+    final response = await getTrustFactorWithHttpInfo( userId: userId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1380,8 +1534,10 @@ class ModerationApi {
   /// Performs an HTTP 'GET /auth/my-account/moderate-comments/user-ban-preference' operation and returns the [Response].
   /// Parameters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getUserBanPreferenceWithHttpInfo({ String? sso, }) async {
+  Future<Response> getUserBanPreferenceWithHttpInfo({ String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/user-ban-preference';
 
@@ -1392,6 +1548,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -1412,9 +1571,11 @@ class ModerationApi {
 
   /// Parameters:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIModerateGetUserBanPreferencesResponse?> getUserBanPreference({ String? sso, }) async {
-    final response = await getUserBanPreferenceWithHttpInfo( sso: sso, );
+  Future<APIModerateGetUserBanPreferencesResponse?> getUserBanPreference({ String? tenantId, String? sso, }) async {
+    final response = await getUserBanPreferenceWithHttpInfo( tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1433,8 +1594,10 @@ class ModerationApi {
   ///
   /// * [String] commentId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> getUserInternalProfileWithHttpInfo({ String? commentId, String? sso, }) async {
+  Future<Response> getUserInternalProfileWithHttpInfo({ String? commentId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/get-user-internal-profile';
 
@@ -1447,6 +1610,9 @@ class ModerationApi {
 
     if (commentId != null) {
       queryParams.addAll(_queryParams('', 'commentId', commentId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1470,9 +1636,11 @@ class ModerationApi {
   ///
   /// * [String] commentId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<GetUserInternalProfileResponse?> getUserInternalProfile({ String? commentId, String? sso, }) async {
-    final response = await getUserInternalProfileWithHttpInfo( commentId: commentId, sso: sso, );
+  Future<GetUserInternalProfileResponse?> getUserInternalProfile({ String? commentId, String? tenantId, String? sso, }) async {
+    final response = await getUserInternalProfileWithHttpInfo( commentId: commentId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1493,8 +1661,12 @@ class ModerationApi {
   ///
   /// * [AdjustCommentVotesParams] adjustCommentVotesParams (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postAdjustCommentVotesWithHttpInfo(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, { String? sso, }) async {
+  Future<Response> postAdjustCommentVotesWithHttpInfo(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, { String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/adjust-comment-votes/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -1506,6 +1678,12 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -1530,9 +1708,13 @@ class ModerationApi {
   ///
   /// * [AdjustCommentVotesParams] adjustCommentVotesParams (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<AdjustVotesResponse?> postAdjustCommentVotes(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, { String? sso, }) async {
-    final response = await postAdjustCommentVotesWithHttpInfo(commentId, adjustCommentVotesParams,  sso: sso, );
+  Future<AdjustVotesResponse?> postAdjustCommentVotes(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, { String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postAdjustCommentVotesWithHttpInfo(commentId, adjustCommentVotesParams,  broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1559,8 +1741,10 @@ class ModerationApi {
   ///
   /// * [String] sorts:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postApiExportWithHttpInfo({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, String? sso, }) async {
+  Future<Response> postApiExportWithHttpInfo({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/api/export';
 
@@ -1585,6 +1769,9 @@ class ModerationApi {
     }
     if (sorts != null) {
       queryParams.addAll(_queryParams('', 'sorts', sorts));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1616,9 +1803,11 @@ class ModerationApi {
   ///
   /// * [String] sorts:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationExportResponse?> postApiExport({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, String? sso, }) async {
-    final response = await postApiExportWithHttpInfo( textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso, );
+  Future<ModerationExportResponse?> postApiExport({ String? textSearch, String? byIPFromComment, String? filters, String? searchFilters, String? sorts, String? tenantId, String? sso, }) async {
+    final response = await postApiExportWithHttpInfo( textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1653,8 +1842,10 @@ class ModerationApi {
   ///
   /// * [String] banReason:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postBanUserFromCommentWithHttpInfo(String commentId, { bool? banEmail, bool? banEmailDomain, bool? banIP, bool? deleteAllUsersComments, String? bannedUntil, bool? isShadowBan, String? updateId, String? banReason, String? sso, }) async {
+  Future<Response> postBanUserFromCommentWithHttpInfo(String commentId, { bool? banEmail, bool? banEmailDomain, bool? banIP, bool? deleteAllUsersComments, String? bannedUntil, bool? isShadowBan, String? updateId, String? banReason, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/ban-user/from-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -1690,6 +1881,9 @@ class ModerationApi {
     if (banReason != null) {
       queryParams.addAll(_queryParams('', 'banReason', banReason));
     }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -1728,9 +1922,11 @@ class ModerationApi {
   ///
   /// * [String] banReason:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<BanUserFromCommentResult?> postBanUserFromComment(String commentId, { bool? banEmail, bool? banEmailDomain, bool? banIP, bool? deleteAllUsersComments, String? bannedUntil, bool? isShadowBan, String? updateId, String? banReason, String? sso, }) async {
-    final response = await postBanUserFromCommentWithHttpInfo(commentId,  banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso, );
+  Future<BanUserFromCommentResult?> postBanUserFromComment(String commentId, { bool? banEmail, bool? banEmailDomain, bool? banIP, bool? deleteAllUsersComments, String? bannedUntil, bool? isShadowBan, String? updateId, String? banReason, String? tenantId, String? sso, }) async {
+    final response = await postBanUserFromCommentWithHttpInfo(commentId,  banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1749,8 +1945,10 @@ class ModerationApi {
   ///
   /// * [BanUserUndoParams] banUserUndoParams (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postBanUserUndoWithHttpInfo(BanUserUndoParams banUserUndoParams, { String? sso, }) async {
+  Future<Response> postBanUserUndoWithHttpInfo(BanUserUndoParams banUserUndoParams, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/ban-user/undo';
 
@@ -1761,6 +1959,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -1783,9 +1984,11 @@ class ModerationApi {
   ///
   /// * [BanUserUndoParams] banUserUndoParams (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postBanUserUndo(BanUserUndoParams banUserUndoParams, { String? sso, }) async {
-    final response = await postBanUserUndoWithHttpInfo(banUserUndoParams,  sso: sso, );
+  Future<APIEmptyResponse?> postBanUserUndo(BanUserUndoParams banUserUndoParams, { String? tenantId, String? sso, }) async {
+    final response = await postBanUserUndoWithHttpInfo(banUserUndoParams,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1810,8 +2013,10 @@ class ModerationApi {
   ///
   /// * [bool] includeByEmailDomain:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postBulkPreBanSummaryWithHttpInfo(BulkPreBanParams bulkPreBanParams, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? sso, }) async {
+  Future<Response> postBulkPreBanSummaryWithHttpInfo(BulkPreBanParams bulkPreBanParams, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/bulk-pre-ban-summary';
 
@@ -1830,6 +2035,9 @@ class ModerationApi {
     }
     if (includeByEmailDomain != null) {
       queryParams.addAll(_queryParams('', 'includeByEmailDomain', includeByEmailDomain));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -1859,9 +2067,11 @@ class ModerationApi {
   ///
   /// * [bool] includeByEmailDomain:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<BulkPreBanSummary?> postBulkPreBanSummary(BulkPreBanParams bulkPreBanParams, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? sso, }) async {
-    final response = await postBulkPreBanSummaryWithHttpInfo(bulkPreBanParams,  includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso, );
+  Future<BulkPreBanSummary?> postBulkPreBanSummary(BulkPreBanParams bulkPreBanParams, { bool? includeByUserIdAndEmail, bool? includeByIP, bool? includeByEmailDomain, String? tenantId, String? sso, }) async {
+    final response = await postBulkPreBanSummaryWithHttpInfo(bulkPreBanParams,  includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1880,8 +2090,10 @@ class ModerationApi {
   ///
   /// * [CommentsByIdsParams] commentsByIdsParams (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postCommentsByIdsWithHttpInfo(CommentsByIdsParams commentsByIdsParams, { String? sso, }) async {
+  Future<Response> postCommentsByIdsWithHttpInfo(CommentsByIdsParams commentsByIdsParams, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/comments-by-ids';
 
@@ -1892,6 +2104,9 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -1914,9 +2129,11 @@ class ModerationApi {
   ///
   /// * [CommentsByIdsParams] commentsByIdsParams (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<ModerationAPIChildCommentsResponse?> postCommentsByIds(CommentsByIdsParams commentsByIdsParams, { String? sso, }) async {
-    final response = await postCommentsByIdsWithHttpInfo(commentsByIdsParams,  sso: sso, );
+  Future<ModerationAPIChildCommentsResponse?> postCommentsByIds(CommentsByIdsParams commentsByIdsParams, { String? tenantId, String? sso, }) async {
+    final response = await postCommentsByIdsWithHttpInfo(commentsByIdsParams,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1935,8 +2152,12 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postFlagCommentWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> postFlagCommentWithHttpInfo(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/flag-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -1948,6 +2169,12 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -1970,9 +2197,13 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postFlagComment(String commentId, { String? sso, }) async {
-    final response = await postFlagCommentWithHttpInfo(commentId,  sso: sso, );
+  Future<APIEmptyResponse?> postFlagComment(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postFlagCommentWithHttpInfo(commentId,  broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1991,8 +2222,12 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postRemoveCommentWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> postRemoveCommentWithHttpInfo(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/remove-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2004,6 +2239,12 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -2026,9 +2267,13 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<PostRemoveCommentResponse?> postRemoveComment(String commentId, { String? sso, }) async {
-    final response = await postRemoveCommentWithHttpInfo(commentId,  sso: sso, );
+  Future<PostRemoveCommentResponse?> postRemoveComment(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postRemoveCommentWithHttpInfo(commentId,  broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2047,8 +2292,12 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postRestoreDeletedCommentWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> postRestoreDeletedCommentWithHttpInfo(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/restore-deleted-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2060,6 +2309,12 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -2082,9 +2337,13 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postRestoreDeletedComment(String commentId, { String? sso, }) async {
-    final response = await postRestoreDeletedCommentWithHttpInfo(commentId,  sso: sso, );
+  Future<APIEmptyResponse?> postRestoreDeletedComment(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postRestoreDeletedCommentWithHttpInfo(commentId,  broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2105,8 +2364,12 @@ class ModerationApi {
   ///
   /// * [bool] approved:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postSetCommentApprovalStatusWithHttpInfo(String commentId, { bool? approved, String? sso, }) async {
+  Future<Response> postSetCommentApprovalStatusWithHttpInfo(String commentId, { bool? approved, String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/set-comment-approval-status/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2120,6 +2383,12 @@ class ModerationApi {
 
     if (approved != null) {
       queryParams.addAll(_queryParams('', 'approved', approved));
+    }
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -2145,9 +2414,13 @@ class ModerationApi {
   ///
   /// * [bool] approved:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<SetCommentApprovedResponse?> postSetCommentApprovalStatus(String commentId, { bool? approved, String? sso, }) async {
-    final response = await postSetCommentApprovalStatusWithHttpInfo(commentId,  approved: approved, sso: sso, );
+  Future<SetCommentApprovedResponse?> postSetCommentApprovalStatus(String commentId, { bool? approved, String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postSetCommentApprovalStatusWithHttpInfo(commentId,  approved: approved, broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2168,8 +2441,12 @@ class ModerationApi {
   ///
   /// * [bool] reviewed:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postSetCommentReviewStatusWithHttpInfo(String commentId, { bool? reviewed, String? sso, }) async {
+  Future<Response> postSetCommentReviewStatusWithHttpInfo(String commentId, { bool? reviewed, String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/set-comment-review-status/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2183,6 +2460,12 @@ class ModerationApi {
 
     if (reviewed != null) {
       queryParams.addAll(_queryParams('', 'reviewed', reviewed));
+    }
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -2208,9 +2491,13 @@ class ModerationApi {
   ///
   /// * [bool] reviewed:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postSetCommentReviewStatus(String commentId, { bool? reviewed, String? sso, }) async {
-    final response = await postSetCommentReviewStatusWithHttpInfo(commentId,  reviewed: reviewed, sso: sso, );
+  Future<APIEmptyResponse?> postSetCommentReviewStatus(String commentId, { bool? reviewed, String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postSetCommentReviewStatusWithHttpInfo(commentId,  reviewed: reviewed, broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2233,8 +2520,12 @@ class ModerationApi {
   ///
   /// * [bool] permNotSpam:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postSetCommentSpamStatusWithHttpInfo(String commentId, { bool? spam, bool? permNotSpam, String? sso, }) async {
+  Future<Response> postSetCommentSpamStatusWithHttpInfo(String commentId, { bool? spam, bool? permNotSpam, String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/set-comment-spam-status/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2251,6 +2542,12 @@ class ModerationApi {
     }
     if (permNotSpam != null) {
       queryParams.addAll(_queryParams('', 'permNotSpam', permNotSpam));
+    }
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -2278,9 +2575,13 @@ class ModerationApi {
   ///
   /// * [bool] permNotSpam:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postSetCommentSpamStatus(String commentId, { bool? spam, bool? permNotSpam, String? sso, }) async {
-    final response = await postSetCommentSpamStatusWithHttpInfo(commentId,  spam: spam, permNotSpam: permNotSpam, sso: sso, );
+  Future<APIEmptyResponse?> postSetCommentSpamStatus(String commentId, { bool? spam, bool? permNotSpam, String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postSetCommentSpamStatusWithHttpInfo(commentId,  spam: spam, permNotSpam: permNotSpam, broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2301,8 +2602,12 @@ class ModerationApi {
   ///
   /// * [SetCommentTextParams] setCommentTextParams (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postSetCommentTextWithHttpInfo(String commentId, SetCommentTextParams setCommentTextParams, { String? sso, }) async {
+  Future<Response> postSetCommentTextWithHttpInfo(String commentId, SetCommentTextParams setCommentTextParams, { String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/set-comment-text/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2314,6 +2619,12 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -2338,9 +2649,13 @@ class ModerationApi {
   ///
   /// * [SetCommentTextParams] setCommentTextParams (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<SetCommentTextResponse?> postSetCommentText(String commentId, SetCommentTextParams setCommentTextParams, { String? sso, }) async {
-    final response = await postSetCommentTextWithHttpInfo(commentId, setCommentTextParams,  sso: sso, );
+  Future<SetCommentTextResponse?> postSetCommentText(String commentId, SetCommentTextParams setCommentTextParams, { String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postSetCommentTextWithHttpInfo(commentId, setCommentTextParams,  broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2359,8 +2674,12 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postUnFlagCommentWithHttpInfo(String commentId, { String? sso, }) async {
+  Future<Response> postUnFlagCommentWithHttpInfo(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/un-flag-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2372,6 +2691,12 @@ class ModerationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -2394,9 +2719,13 @@ class ModerationApi {
   ///
   /// * [String] commentId (required):
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postUnFlagComment(String commentId, { String? sso, }) async {
-    final response = await postUnFlagCommentWithHttpInfo(commentId,  sso: sso, );
+  Future<APIEmptyResponse?> postUnFlagComment(String commentId, { String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postUnFlagCommentWithHttpInfo(commentId,  broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2417,8 +2746,12 @@ class ModerationApi {
   ///
   /// * [String] direction:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> postVoteWithHttpInfo(String commentId, { String? direction, String? sso, }) async {
+  Future<Response> postVoteWithHttpInfo(String commentId, { String? direction, String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/vote/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -2432,6 +2765,12 @@ class ModerationApi {
 
     if (direction != null) {
       queryParams.addAll(_queryParams('', 'direction', direction));
+    }
+    if (broadcastId != null) {
+      queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -2457,9 +2796,13 @@ class ModerationApi {
   ///
   /// * [String] direction:
   ///
+  /// * [String] broadcastId:
+  ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<VoteResponse?> postVote(String commentId, { String? direction, String? sso, }) async {
-    final response = await postVoteWithHttpInfo(commentId,  direction: direction, sso: sso, );
+  Future<VoteResponse?> postVote(String commentId, { String? direction, String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await postVoteWithHttpInfo(commentId,  direction: direction, broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2484,8 +2827,10 @@ class ModerationApi {
   ///
   /// * [String] broadcastId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> putAwardBadgeWithHttpInfo(String badgeId, { String? userId, String? commentId, String? broadcastId, String? sso, }) async {
+  Future<Response> putAwardBadgeWithHttpInfo(String badgeId, { String? userId, String? commentId, String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/award-badge';
 
@@ -2505,6 +2850,9 @@ class ModerationApi {
     }
     if (broadcastId != null) {
       queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -2534,9 +2882,11 @@ class ModerationApi {
   ///
   /// * [String] broadcastId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<AwardUserBadgeResponse?> putAwardBadge(String badgeId, { String? userId, String? commentId, String? broadcastId, String? sso, }) async {
-    final response = await putAwardBadgeWithHttpInfo(badgeId,  userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso, );
+  Future<AwardUserBadgeResponse?> putAwardBadge(String badgeId, { String? userId, String? commentId, String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await putAwardBadgeWithHttpInfo(badgeId,  userId: userId, commentId: commentId, broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2555,8 +2905,10 @@ class ModerationApi {
   ///
   /// * [String] urlId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> putCloseThreadWithHttpInfo(String urlId, { String? sso, }) async {
+  Future<Response> putCloseThreadWithHttpInfo(String urlId, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/close-thread';
 
@@ -2568,6 +2920,9 @@ class ModerationApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'urlId', urlId));
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -2590,9 +2945,11 @@ class ModerationApi {
   ///
   /// * [String] urlId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> putCloseThread(String urlId, { String? sso, }) async {
-    final response = await putCloseThreadWithHttpInfo(urlId,  sso: sso, );
+  Future<APIEmptyResponse?> putCloseThread(String urlId, { String? tenantId, String? sso, }) async {
+    final response = await putCloseThreadWithHttpInfo(urlId,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2617,8 +2974,10 @@ class ModerationApi {
   ///
   /// * [String] broadcastId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> putRemoveBadgeWithHttpInfo(String badgeId, { String? userId, String? commentId, String? broadcastId, String? sso, }) async {
+  Future<Response> putRemoveBadgeWithHttpInfo(String badgeId, { String? userId, String? commentId, String? broadcastId, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/remove-badge';
 
@@ -2638,6 +2997,9 @@ class ModerationApi {
     }
     if (broadcastId != null) {
       queryParams.addAll(_queryParams('', 'broadcastId', broadcastId));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -2667,9 +3029,11 @@ class ModerationApi {
   ///
   /// * [String] broadcastId:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<RemoveUserBadgeResponse?> putRemoveBadge(String badgeId, { String? userId, String? commentId, String? broadcastId, String? sso, }) async {
-    final response = await putRemoveBadgeWithHttpInfo(badgeId,  userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso, );
+  Future<RemoveUserBadgeResponse?> putRemoveBadge(String badgeId, { String? userId, String? commentId, String? broadcastId, String? tenantId, String? sso, }) async {
+    final response = await putRemoveBadgeWithHttpInfo(badgeId,  userId: userId, commentId: commentId, broadcastId: broadcastId, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2688,8 +3052,10 @@ class ModerationApi {
   ///
   /// * [String] urlId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> putReopenThreadWithHttpInfo(String urlId, { String? sso, }) async {
+  Future<Response> putReopenThreadWithHttpInfo(String urlId, { String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/reopen-thread';
 
@@ -2701,6 +3067,9 @@ class ModerationApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'urlId', urlId));
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
+    }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
     }
@@ -2723,9 +3092,11 @@ class ModerationApi {
   ///
   /// * [String] urlId (required):
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> putReopenThread(String urlId, { String? sso, }) async {
-    final response = await putReopenThreadWithHttpInfo(urlId,  sso: sso, );
+  Future<APIEmptyResponse?> putReopenThread(String urlId, { String? tenantId, String? sso, }) async {
+    final response = await putReopenThreadWithHttpInfo(urlId,  tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2746,8 +3117,10 @@ class ModerationApi {
   ///
   /// * [String] trustFactor:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<Response> setTrustFactorWithHttpInfo({ String? userId, String? trustFactor, String? sso, }) async {
+  Future<Response> setTrustFactorWithHttpInfo({ String? userId, String? trustFactor, String? tenantId, String? sso, }) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/my-account/moderate-comments/set-trust-factor';
 
@@ -2763,6 +3136,9 @@ class ModerationApi {
     }
     if (trustFactor != null) {
       queryParams.addAll(_queryParams('', 'trustFactor', trustFactor));
+    }
+    if (tenantId != null) {
+      queryParams.addAll(_queryParams('', 'tenantId', tenantId));
     }
     if (sso != null) {
       queryParams.addAll(_queryParams('', 'sso', sso));
@@ -2788,9 +3164,11 @@ class ModerationApi {
   ///
   /// * [String] trustFactor:
   ///
+  /// * [String] tenantId:
+  ///
   /// * [String] sso:
-  Future<SetUserTrustFactorResponse?> setTrustFactor({ String? userId, String? trustFactor, String? sso, }) async {
-    final response = await setTrustFactorWithHttpInfo( userId: userId, trustFactor: trustFactor, sso: sso, );
+  Future<SetUserTrustFactorResponse?> setTrustFactor({ String? userId, String? trustFactor, String? tenantId, String? sso, }) async {
+    final response = await setTrustFactorWithHttpInfo( userId: userId, trustFactor: trustFactor, tenantId: tenantId, sso: sso, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

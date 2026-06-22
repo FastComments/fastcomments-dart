@@ -2,7 +2,7 @@
   "pubName": "fastcomments_dart",
   "pubAuthor": "FastComments",
   "pubAuthorEmail": "support@fastcomments.com",
-  "pubVersion": "2.0.1",
+  "pubVersion": "2.1.0",
   "pubDescription": "Official Dart client for the FastComments REST API.",
   "pubHomepage": "https://fastcomments.com",
   "pubRepository": "https://github.com/fastcomments/fastcomments-dart",
