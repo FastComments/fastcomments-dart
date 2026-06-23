@@ -55,7 +55,7 @@ Method | HTTP request | Description
 
 
 # **deleteModerationVote**
-> VoteDeleteResponse deleteModerationVote(ApiDeleteModerationVoteRequest)
+> VoteDeleteResponse deleteModerationVote(commentId, voteId, ApiDeleteModerationVoteOptions options)
 
 
 
@@ -71,7 +71,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.deleteModerationVote(ApiDeleteModerationVoteRequest(commentId: commentId, voteId: voteId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.deleteModerationVote(commentId, voteId, ApiDeleteModerationVoteOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->deleteModerationVote: $e\n');
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getApiComments**
-> ModerationAPIGetCommentsResponse getApiComments(ApiGetApiCommentsRequest)
+> ModerationAPIGetCommentsResponse getApiComments(ApiGetApiCommentsOptions options)
 
 
 
@@ -125,7 +125,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getApiComments(ApiGetApiCommentsRequest(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, tenantId: tenantId, sso: sso));
+    final result = api_instance.getApiComments(ApiGetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getApiComments: $e\n');
@@ -163,7 +163,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getApiExportStatus**
-> ModerationExportStatusResponse getApiExportStatus(ApiGetApiExportStatusRequest)
+> ModerationExportStatusResponse getApiExportStatus(ApiGetApiExportStatusOptions options)
 
 
 
@@ -177,7 +177,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getApiExportStatus(ApiGetApiExportStatusRequest(batchJobId: batchJobId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getApiExportStatus(ApiGetApiExportStatusOptions(batchJobId: batchJobId, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getApiExportStatus: $e\n');
@@ -208,7 +208,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getApiIds**
-> ModerationAPIGetCommentIdsResponse getApiIds(ApiGetApiIdsRequest)
+> ModerationAPIGetCommentIdsResponse getApiIds(ApiGetApiIdsOptions options)
 
 
 
@@ -227,7 +227,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getApiIds(ApiGetApiIdsRequest(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, tenantId: tenantId, sso: sso));
+    final result = api_instance.getApiIds(ApiGetApiIdsOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getApiIds: $e\n');
@@ -263,7 +263,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBanUsersFromComment**
-> GetBannedUsersFromCommentResponse getBanUsersFromComment(ApiGetBanUsersFromCommentRequest)
+> GetBannedUsersFromCommentResponse getBanUsersFromComment(commentId, ApiGetBanUsersFromCommentOptions options)
 
 
 
@@ -277,7 +277,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getBanUsersFromComment(ApiGetBanUsersFromCommentRequest(commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getBanUsersFromComment(commentId, ApiGetBanUsersFromCommentOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getBanUsersFromComment: $e\n');
@@ -308,7 +308,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentBanStatus**
-> GetCommentBanStatusResponse getCommentBanStatus(ApiGetCommentBanStatusRequest)
+> GetCommentBanStatusResponse getCommentBanStatus(commentId, ApiGetCommentBanStatusOptions options)
 
 
 
@@ -322,7 +322,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCommentBanStatus(ApiGetCommentBanStatusRequest(commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getCommentBanStatus(commentId, ApiGetCommentBanStatusOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCommentBanStatus: $e\n');
@@ -353,7 +353,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentChildren**
-> ModerationAPIChildCommentsResponse getCommentChildren(ApiGetCommentChildrenRequest)
+> ModerationAPIChildCommentsResponse getCommentChildren(commentId, ApiGetCommentChildrenOptions options)
 
 
 
@@ -367,7 +367,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCommentChildren(ApiGetCommentChildrenRequest(commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getCommentChildren(commentId, ApiGetCommentChildrenOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCommentChildren: $e\n');
@@ -398,7 +398,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCount**
-> ModerationAPICountCommentsResponse getCount(ApiGetCountRequest)
+> ModerationAPICountCommentsResponse getCount(ApiGetCountOptions options)
 
 
 
@@ -416,7 +416,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCount(ApiGetCountRequest(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, tenantId: tenantId, sso: sso));
+    final result = api_instance.getCount(ApiGetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCount: $e\n');
@@ -451,7 +451,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCounts**
-> GetBannedUsersCountResponse getCounts(ApiGetCountsRequest)
+> GetBannedUsersCountResponse getCounts(ApiGetCountsOptions options)
 
 
 
@@ -464,7 +464,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCounts(ApiGetCountsRequest(tenantId: tenantId, sso: sso));
+    final result = api_instance.getCounts(ApiGetCountsOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCounts: $e\n');
@@ -494,7 +494,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getLogs**
-> ModerationAPIGetLogsResponse getLogs(ApiGetLogsRequest)
+> ModerationAPIGetLogsResponse getLogs(commentId, ApiGetLogsOptions options)
 
 
 
@@ -508,7 +508,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getLogs(ApiGetLogsRequest(commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getLogs(commentId, ApiGetLogsOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getLogs: $e\n');
@@ -539,7 +539,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getManualBadges**
-> GetTenantManualBadgesResponse getManualBadges(ApiGetManualBadgesRequest)
+> GetTenantManualBadgesResponse getManualBadges(ApiGetManualBadgesOptions options)
 
 
 
@@ -552,7 +552,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getManualBadges(ApiGetManualBadgesRequest(tenantId: tenantId, sso: sso));
+    final result = api_instance.getManualBadges(ApiGetManualBadgesOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getManualBadges: $e\n');
@@ -582,7 +582,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getManualBadgesForUser**
-> GetUserManualBadgesResponse getManualBadgesForUser(ApiGetManualBadgesForUserRequest)
+> GetUserManualBadgesResponse getManualBadgesForUser(ApiGetManualBadgesForUserOptions options)
 
 
 
@@ -597,7 +597,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getManualBadgesForUser(ApiGetManualBadgesForUserRequest(badgesUserId: badgesUserId, commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getManualBadgesForUser(ApiGetManualBadgesForUserOptions(badgesUserId: badgesUserId, commentId: commentId, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getManualBadgesForUser: $e\n');
@@ -629,7 +629,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getModerationComment**
-> ModerationAPICommentResponse getModerationComment(ApiGetModerationCommentRequest)
+> ModerationAPICommentResponse getModerationComment(commentId, ApiGetModerationCommentOptions options)
 
 
 
@@ -645,7 +645,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getModerationComment(ApiGetModerationCommentRequest(commentId: commentId, includeEmail: includeEmail, includeIP: includeIP, tenantId: tenantId, sso: sso));
+    final result = api_instance.getModerationComment(commentId, ApiGetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getModerationComment: $e\n');
@@ -678,7 +678,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getModerationCommentText**
-> GetCommentTextResponse getModerationCommentText(ApiGetModerationCommentTextRequest)
+> GetCommentTextResponse getModerationCommentText(commentId, ApiGetModerationCommentTextOptions options)
 
 
 
@@ -692,7 +692,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getModerationCommentText(ApiGetModerationCommentTextRequest(commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getModerationCommentText(commentId, ApiGetModerationCommentTextOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getModerationCommentText: $e\n');
@@ -723,7 +723,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPreBanSummary**
-> PreBanSummary getPreBanSummary(ApiGetPreBanSummaryRequest)
+> PreBanSummary getPreBanSummary(commentId, ApiGetPreBanSummaryOptions options)
 
 
 
@@ -740,7 +740,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getPreBanSummary(ApiGetPreBanSummaryRequest(commentId: commentId, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso));
+    final result = api_instance.getPreBanSummary(commentId, ApiGetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getPreBanSummary: $e\n');
@@ -774,7 +774,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchCommentsSummary**
-> ModerationCommentSearchResponse getSearchCommentsSummary(ApiGetSearchCommentsSummaryRequest)
+> ModerationCommentSearchResponse getSearchCommentsSummary(ApiGetSearchCommentsSummaryOptions options)
 
 
 
@@ -790,7 +790,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchCommentsSummary(ApiGetSearchCommentsSummaryRequest(value: value, filters: filters, searchFilters: searchFilters, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchCommentsSummary(ApiGetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchCommentsSummary: $e\n');
@@ -823,7 +823,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchPages**
-> ModerationPageSearchResponse getSearchPages(ApiGetSearchPagesRequest)
+> ModerationPageSearchResponse getSearchPages(ApiGetSearchPagesOptions options)
 
 
 
@@ -837,7 +837,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchPages(ApiGetSearchPagesRequest(value: value, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchPages(ApiGetSearchPagesOptions(value: value, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchPages: $e\n');
@@ -868,7 +868,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchSites**
-> ModerationSiteSearchResponse getSearchSites(ApiGetSearchSitesRequest)
+> ModerationSiteSearchResponse getSearchSites(ApiGetSearchSitesOptions options)
 
 
 
@@ -882,7 +882,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchSites(ApiGetSearchSitesRequest(value: value, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchSites(ApiGetSearchSitesOptions(value: value, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchSites: $e\n');
@@ -913,7 +913,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchSuggest**
-> ModerationSuggestResponse getSearchSuggest(ApiGetSearchSuggestRequest)
+> ModerationSuggestResponse getSearchSuggest(ApiGetSearchSuggestOptions options)
 
 
 
@@ -927,7 +927,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchSuggest(ApiGetSearchSuggestRequest(textSearch: textSearch, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchSuggest(ApiGetSearchSuggestOptions(textSearch: textSearch, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchSuggest: $e\n');
@@ -958,7 +958,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchUsers**
-> ModerationUserSearchResponse getSearchUsers(ApiGetSearchUsersRequest)
+> ModerationUserSearchResponse getSearchUsers(ApiGetSearchUsersOptions options)
 
 
 
@@ -972,7 +972,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchUsers(ApiGetSearchUsersRequest(value: value, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchUsers(ApiGetSearchUsersOptions(value: value, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchUsers: $e\n');
@@ -1003,7 +1003,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTrustFactor**
-> GetUserTrustFactorResponse getTrustFactor(ApiGetTrustFactorRequest)
+> GetUserTrustFactorResponse getTrustFactor(ApiGetTrustFactorOptions options)
 
 
 
@@ -1017,7 +1017,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getTrustFactor(ApiGetTrustFactorRequest(userId: userId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getTrustFactor(ApiGetTrustFactorOptions(userId: userId, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getTrustFactor: $e\n');
@@ -1048,7 +1048,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBanPreference**
-> APIModerateGetUserBanPreferencesResponse getUserBanPreference(ApiGetUserBanPreferenceRequest)
+> APIModerateGetUserBanPreferencesResponse getUserBanPreference(ApiGetUserBanPreferenceOptions options)
 
 
 
@@ -1061,7 +1061,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserBanPreference(ApiGetUserBanPreferenceRequest(tenantId: tenantId, sso: sso));
+    final result = api_instance.getUserBanPreference(ApiGetUserBanPreferenceOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getUserBanPreference: $e\n');
@@ -1091,7 +1091,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserInternalProfile**
-> GetUserInternalProfileResponse getUserInternalProfile(ApiGetUserInternalProfileRequest)
+> GetUserInternalProfileResponse getUserInternalProfile(ApiGetUserInternalProfileOptions options)
 
 
 
@@ -1105,7 +1105,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserInternalProfile(ApiGetUserInternalProfileRequest(commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getUserInternalProfile(ApiGetUserInternalProfileOptions(commentId: commentId, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getUserInternalProfile: $e\n');
@@ -1136,7 +1136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postAdjustCommentVotes**
-> AdjustVotesResponse postAdjustCommentVotes(ApiPostAdjustCommentVotesRequest)
+> AdjustVotesResponse postAdjustCommentVotes(commentId, adjustCommentVotesParams, ApiPostAdjustCommentVotesOptions options)
 
 
 
@@ -1152,7 +1152,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postAdjustCommentVotes(ApiPostAdjustCommentVotesRequest(commentId: commentId, adjustCommentVotesParams: adjustCommentVotesParams, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postAdjustCommentVotes(commentId, adjustCommentVotesParams, ApiPostAdjustCommentVotesOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postAdjustCommentVotes: $e\n');
@@ -1185,7 +1185,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postApiExport**
-> ModerationExportResponse postApiExport(ApiPostApiExportRequest)
+> ModerationExportResponse postApiExport(ApiPostApiExportOptions options)
 
 
 
@@ -1203,7 +1203,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postApiExport(ApiPostApiExportRequest(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, tenantId: tenantId, sso: sso));
+    final result = api_instance.postApiExport(ApiPostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postApiExport: $e\n');
@@ -1238,7 +1238,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postBanUserFromComment**
-> BanUserFromCommentResult postBanUserFromComment(ApiPostBanUserFromCommentRequest)
+> BanUserFromCommentResult postBanUserFromComment(commentId, ApiPostBanUserFromCommentOptions options)
 
 
 
@@ -1260,7 +1260,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postBanUserFromComment(ApiPostBanUserFromCommentRequest(commentId: commentId, banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, tenantId: tenantId, sso: sso));
+    final result = api_instance.postBanUserFromComment(commentId, ApiPostBanUserFromCommentOptions(banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postBanUserFromComment: $e\n');
@@ -1299,7 +1299,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postBanUserUndo**
-> APIEmptyResponse postBanUserUndo(ApiPostBanUserUndoRequest)
+> APIEmptyResponse postBanUserUndo(banUserUndoParams, ApiPostBanUserUndoOptions options)
 
 
 
@@ -1313,7 +1313,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postBanUserUndo(ApiPostBanUserUndoRequest(banUserUndoParams: banUserUndoParams, tenantId: tenantId, sso: sso));
+    final result = api_instance.postBanUserUndo(banUserUndoParams, ApiPostBanUserUndoOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postBanUserUndo: $e\n');
@@ -1344,7 +1344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postBulkPreBanSummary**
-> BulkPreBanSummary postBulkPreBanSummary(ApiPostBulkPreBanSummaryRequest)
+> BulkPreBanSummary postBulkPreBanSummary(bulkPreBanParams, ApiPostBulkPreBanSummaryOptions options)
 
 
 
@@ -1361,7 +1361,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postBulkPreBanSummary(ApiPostBulkPreBanSummaryRequest(bulkPreBanParams: bulkPreBanParams, includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso));
+    final result = api_instance.postBulkPreBanSummary(bulkPreBanParams, ApiPostBulkPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postBulkPreBanSummary: $e\n');
@@ -1395,7 +1395,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postCommentsByIds**
-> ModerationAPIChildCommentsResponse postCommentsByIds(ApiPostCommentsByIdsRequest)
+> ModerationAPIChildCommentsResponse postCommentsByIds(commentsByIdsParams, ApiPostCommentsByIdsOptions options)
 
 
 
@@ -1409,7 +1409,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postCommentsByIds(ApiPostCommentsByIdsRequest(commentsByIdsParams: commentsByIdsParams, tenantId: tenantId, sso: sso));
+    final result = api_instance.postCommentsByIds(commentsByIdsParams, ApiPostCommentsByIdsOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postCommentsByIds: $e\n');
@@ -1440,7 +1440,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postFlagComment**
-> APIEmptyResponse postFlagComment(ApiPostFlagCommentRequest)
+> APIEmptyResponse postFlagComment(commentId, ApiPostFlagCommentOptions options)
 
 
 
@@ -1455,7 +1455,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postFlagComment(ApiPostFlagCommentRequest(commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postFlagComment(commentId, ApiPostFlagCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postFlagComment: $e\n');
@@ -1487,7 +1487,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRemoveComment**
-> PostRemoveCommentResponse postRemoveComment(ApiPostRemoveCommentRequest)
+> PostRemoveCommentResponse postRemoveComment(commentId, ApiPostRemoveCommentOptions options)
 
 
 
@@ -1502,7 +1502,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postRemoveComment(ApiPostRemoveCommentRequest(commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postRemoveComment(commentId, ApiPostRemoveCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postRemoveComment: $e\n');
@@ -1534,7 +1534,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRestoreDeletedComment**
-> APIEmptyResponse postRestoreDeletedComment(ApiPostRestoreDeletedCommentRequest)
+> APIEmptyResponse postRestoreDeletedComment(commentId, ApiPostRestoreDeletedCommentOptions options)
 
 
 
@@ -1549,7 +1549,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postRestoreDeletedComment(ApiPostRestoreDeletedCommentRequest(commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postRestoreDeletedComment(commentId, ApiPostRestoreDeletedCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postRestoreDeletedComment: $e\n');
@@ -1581,7 +1581,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentApprovalStatus**
-> SetCommentApprovedResponse postSetCommentApprovalStatus(ApiPostSetCommentApprovalStatusRequest)
+> SetCommentApprovedResponse postSetCommentApprovalStatus(commentId, ApiPostSetCommentApprovalStatusOptions options)
 
 
 
@@ -1597,7 +1597,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentApprovalStatus(ApiPostSetCommentApprovalStatusRequest(commentId: commentId, approved: approved, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentApprovalStatus(commentId, ApiPostSetCommentApprovalStatusOptions(approved: approved, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentApprovalStatus: $e\n');
@@ -1630,7 +1630,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentReviewStatus**
-> APIEmptyResponse postSetCommentReviewStatus(ApiPostSetCommentReviewStatusRequest)
+> APIEmptyResponse postSetCommentReviewStatus(commentId, ApiPostSetCommentReviewStatusOptions options)
 
 
 
@@ -1646,7 +1646,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentReviewStatus(ApiPostSetCommentReviewStatusRequest(commentId: commentId, reviewed: reviewed, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentReviewStatus(commentId, ApiPostSetCommentReviewStatusOptions(reviewed: reviewed, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentReviewStatus: $e\n');
@@ -1679,7 +1679,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentSpamStatus**
-> APIEmptyResponse postSetCommentSpamStatus(ApiPostSetCommentSpamStatusRequest)
+> APIEmptyResponse postSetCommentSpamStatus(commentId, ApiPostSetCommentSpamStatusOptions options)
 
 
 
@@ -1696,7 +1696,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentSpamStatus(ApiPostSetCommentSpamStatusRequest(commentId: commentId, spam: spam, permNotSpam: permNotSpam, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentSpamStatus(commentId, ApiPostSetCommentSpamStatusOptions(spam: spam, permNotSpam: permNotSpam, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentSpamStatus: $e\n');
@@ -1730,7 +1730,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentText**
-> SetCommentTextResponse postSetCommentText(ApiPostSetCommentTextRequest)
+> SetCommentTextResponse postSetCommentText(commentId, setCommentTextParams, ApiPostSetCommentTextOptions options)
 
 
 
@@ -1746,7 +1746,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentText(ApiPostSetCommentTextRequest(commentId: commentId, setCommentTextParams: setCommentTextParams, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentText(commentId, setCommentTextParams, ApiPostSetCommentTextOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentText: $e\n');
@@ -1779,7 +1779,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postUnFlagComment**
-> APIEmptyResponse postUnFlagComment(ApiPostUnFlagCommentRequest)
+> APIEmptyResponse postUnFlagComment(commentId, ApiPostUnFlagCommentOptions options)
 
 
 
@@ -1794,7 +1794,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postUnFlagComment(ApiPostUnFlagCommentRequest(commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postUnFlagComment(commentId, ApiPostUnFlagCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postUnFlagComment: $e\n');
@@ -1826,7 +1826,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postVote**
-> VoteResponse postVote(ApiPostVoteRequest)
+> VoteResponse postVote(commentId, ApiPostVoteOptions options)
 
 
 
@@ -1842,7 +1842,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postVote(ApiPostVoteRequest(commentId: commentId, direction: direction, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postVote(commentId, ApiPostVoteOptions(direction: direction, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postVote: $e\n');
@@ -1875,7 +1875,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putAwardBadge**
-> AwardUserBadgeResponse putAwardBadge(ApiPutAwardBadgeRequest)
+> AwardUserBadgeResponse putAwardBadge(badgeId, ApiPutAwardBadgeOptions options)
 
 
 
@@ -1892,7 +1892,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putAwardBadge(ApiPutAwardBadgeRequest(badgeId: badgeId, userId: userId, commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.putAwardBadge(badgeId, ApiPutAwardBadgeOptions(userId: userId, commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putAwardBadge: $e\n');
@@ -1926,7 +1926,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putCloseThread**
-> APIEmptyResponse putCloseThread(ApiPutCloseThreadRequest)
+> APIEmptyResponse putCloseThread(urlId, ApiPutCloseThreadOptions options)
 
 
 
@@ -1940,7 +1940,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putCloseThread(ApiPutCloseThreadRequest(urlId: urlId, tenantId: tenantId, sso: sso));
+    final result = api_instance.putCloseThread(urlId, ApiPutCloseThreadOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putCloseThread: $e\n');
@@ -1971,7 +1971,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putRemoveBadge**
-> RemoveUserBadgeResponse putRemoveBadge(ApiPutRemoveBadgeRequest)
+> RemoveUserBadgeResponse putRemoveBadge(badgeId, ApiPutRemoveBadgeOptions options)
 
 
 
@@ -1988,7 +1988,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putRemoveBadge(ApiPutRemoveBadgeRequest(badgeId: badgeId, userId: userId, commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.putRemoveBadge(badgeId, ApiPutRemoveBadgeOptions(userId: userId, commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putRemoveBadge: $e\n');
@@ -2022,7 +2022,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putReopenThread**
-> APIEmptyResponse putReopenThread(ApiPutReopenThreadRequest)
+> APIEmptyResponse putReopenThread(urlId, ApiPutReopenThreadOptions options)
 
 
 
@@ -2036,7 +2036,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putReopenThread(ApiPutReopenThreadRequest(urlId: urlId, tenantId: tenantId, sso: sso));
+    final result = api_instance.putReopenThread(urlId, ApiPutReopenThreadOptions(tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putReopenThread: $e\n');
@@ -2067,7 +2067,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **setTrustFactor**
-> SetUserTrustFactorResponse setTrustFactor(ApiSetTrustFactorRequest)
+> SetUserTrustFactorResponse setTrustFactor(ApiSetTrustFactorOptions options)
 
 
 
@@ -2082,7 +2082,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.setTrustFactor(ApiSetTrustFactorRequest(userId: userId, trustFactor: trustFactor, tenantId: tenantId, sso: sso));
+    final result = api_instance.setTrustFactor(ApiSetTrustFactorOptions(userId: userId, trustFactor: trustFactor, tenantId: tenantId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->setTrustFactor: $e\n');

@@ -22,9 +22,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [AddDomainConfigParams] addDomainConfigParams (required):
-  Future<Response> addDomainConfigWithHttpInfo(ApiAddDomainConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final addDomainConfigParams = request.addDomainConfigParams;
+  Future<Response> addDomainConfigWithHttpInfo(String tenantId, AddDomainConfigParams addDomainConfigParams, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/domain-configs';
 
@@ -56,8 +54,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [AddDomainConfigParams] addDomainConfigParams (required):
-  Future<AddDomainConfigResponse?> addDomainConfig(ApiAddDomainConfigRequest request,) async {
-    final response = await addDomainConfigWithHttpInfo(request,);
+  Future<AddDomainConfigResponse?> addDomainConfig(String tenantId, AddDomainConfigParams addDomainConfigParams, ) async {
+    final response = await addDomainConfigWithHttpInfo(tenantId, addDomainConfigParams, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -77,9 +75,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [CreateHashTagBody] createHashTagBody:
-  Future<Response> addHashTagWithHttpInfo(ApiAddHashTagRequest request,) async {
-    final tenantId = request.tenantId;
-    final createHashTagBody = request.createHashTagBody;
+  Future<Response> addHashTagWithHttpInfo(CreateHashTagBody createHashTagBody, [ ApiAddHashTagOptions? options, ]) async {
+    final tenantId = options?.tenantId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/hash-tags';
 
@@ -113,8 +110,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [CreateHashTagBody] createHashTagBody:
-  Future<CreateHashTagResponse?> addHashTag(ApiAddHashTagRequest request,) async {
-    final response = await addHashTagWithHttpInfo(request,);
+  Future<CreateHashTagResponse?> addHashTag(CreateHashTagBody createHashTagBody, [ ApiAddHashTagOptions? options, ]) async {
+    final response = await addHashTagWithHttpInfo(createHashTagBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -134,9 +131,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [BulkCreateHashTagsBody] bulkCreateHashTagsBody:
-  Future<Response> addHashTagsBulkWithHttpInfo(ApiAddHashTagsBulkRequest request,) async {
-    final tenantId = request.tenantId;
-    final bulkCreateHashTagsBody = request.bulkCreateHashTagsBody;
+  Future<Response> addHashTagsBulkWithHttpInfo(BulkCreateHashTagsBody bulkCreateHashTagsBody, [ ApiAddHashTagsBulkOptions? options, ]) async {
+    final tenantId = options?.tenantId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/hash-tags/bulk';
 
@@ -170,8 +166,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [BulkCreateHashTagsBody] bulkCreateHashTagsBody:
-  Future<BulkCreateHashTagsResponse?> addHashTagsBulk(ApiAddHashTagsBulkRequest request,) async {
-    final response = await addHashTagsBulkWithHttpInfo(request,);
+  Future<BulkCreateHashTagsResponse?> addHashTagsBulk(BulkCreateHashTagsBody bulkCreateHashTagsBody, [ ApiAddHashTagsBulkOptions? options, ]) async {
+    final response = await addHashTagsBulkWithHttpInfo(bulkCreateHashTagsBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -191,9 +187,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateAPIPageData] createAPIPageData (required):
-  Future<Response> addPageWithHttpInfo(ApiAddPageRequest request,) async {
-    final tenantId = request.tenantId;
-    final createAPIPageData = request.createAPIPageData;
+  Future<Response> addPageWithHttpInfo(String tenantId, CreateAPIPageData createAPIPageData, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pages';
 
@@ -225,8 +219,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateAPIPageData] createAPIPageData (required):
-  Future<AddPageAPIResponse?> addPage(ApiAddPageRequest request,) async {
-    final response = await addPageWithHttpInfo(request,);
+  Future<AddPageAPIResponse?> addPage(String tenantId, CreateAPIPageData createAPIPageData, ) async {
+    final response = await addPageWithHttpInfo(tenantId, createAPIPageData, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -246,9 +240,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateAPISSOUserData] createAPISSOUserData (required):
-  Future<Response> addSSOUserWithHttpInfo(ApiAddSSOUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final createAPISSOUserData = request.createAPISSOUserData;
+  Future<Response> addSSOUserWithHttpInfo(String tenantId, CreateAPISSOUserData createAPISSOUserData, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/sso-users';
 
@@ -280,8 +272,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateAPISSOUserData] createAPISSOUserData (required):
-  Future<AddSSOUserAPIResponse?> addSSOUser(ApiAddSSOUserRequest request,) async {
-    final response = await addSSOUserWithHttpInfo(request,);
+  Future<AddSSOUserAPIResponse?> addSSOUser(String tenantId, CreateAPISSOUserData createAPISSOUserData, ) async {
+    final response = await addSSOUserWithHttpInfo(tenantId, createAPISSOUserData, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -308,11 +300,9 @@ class DefaultApi {
   /// * [String] parentTenantId:
   ///
   /// * [bool] includeStats:
-  Future<Response> aggregateWithHttpInfo(ApiAggregateRequest request,) async {
-    final tenantId = request.tenantId;
-    final aggregationRequest = request.aggregationRequest;
-    final parentTenantId = request.parentTenantId;
-    final includeStats = request.includeStats;
+  Future<Response> aggregateWithHttpInfo(String tenantId, AggregationRequest aggregationRequest, [ ApiAggregateOptions? options, ]) async {
+    final parentTenantId = options?.parentTenantId;
+    final includeStats = options?.includeStats;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/aggregate';
 
@@ -356,8 +346,8 @@ class DefaultApi {
   /// * [String] parentTenantId:
   ///
   /// * [bool] includeStats:
-  Future<AggregateResponse?> aggregate(ApiAggregateRequest request,) async {
-    final response = await aggregateWithHttpInfo(request,);
+  Future<AggregateResponse?> aggregate(String tenantId, AggregationRequest aggregationRequest, [ ApiAggregateOptions? options, ]) async {
+    final response = await aggregateWithHttpInfo(tenantId, aggregationRequest, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -387,14 +377,13 @@ class DefaultApi {
   /// * [DateTime] startDate:
   ///
   /// * [bool] forceRecalculate:
-  Future<Response> aggregateQuestionResultsWithHttpInfo(ApiAggregateQuestionResultsRequest request,) async {
-    final tenantId = request.tenantId;
-    final questionId = request.questionId;
-    final questionIds = request.questionIds;
-    final urlId = request.urlId;
-    final timeBucket = request.timeBucket;
-    final startDate = request.startDate;
-    final forceRecalculate = request.forceRecalculate;
+  Future<Response> aggregateQuestionResultsWithHttpInfo(String tenantId, [ ApiAggregateQuestionResultsOptions? options, ]) async {
+    final questionId = options?.questionId;
+    final questionIds = options?.questionIds;
+    final urlId = options?.urlId;
+    final timeBucket = options?.timeBucket;
+    final startDate = options?.startDate;
+    final forceRecalculate = options?.forceRecalculate;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results-aggregation';
 
@@ -454,8 +443,8 @@ class DefaultApi {
   /// * [DateTime] startDate:
   ///
   /// * [bool] forceRecalculate:
-  Future<AggregateQuestionResultsResponse?> aggregateQuestionResults(ApiAggregateQuestionResultsRequest request,) async {
-    final response = await aggregateQuestionResultsWithHttpInfo(request,);
+  Future<AggregateQuestionResultsResponse?> aggregateQuestionResults(String tenantId, [ ApiAggregateQuestionResultsOptions? options, ]) async {
+    final response = await aggregateQuestionResultsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -481,12 +470,9 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<Response> blockUserFromCommentWithHttpInfo(ApiBlockUserFromCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final blockFromCommentParams = request.blockFromCommentParams;
-    final userId = request.userId;
-    final anonUserId = request.anonUserId;
+  Future<Response> blockUserFromCommentWithHttpInfo(String tenantId, String id, BlockFromCommentParams blockFromCommentParams, [ ApiBlockUserFromCommentOptions? options, ]) async {
+    final userId = options?.userId;
+    final anonUserId = options?.anonUserId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/{id}/block'
       .replaceAll('{id}', id);
@@ -531,8 +517,8 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<BlockSuccess?> blockUserFromComment(ApiBlockUserFromCommentRequest request,) async {
-    final response = await blockUserFromCommentWithHttpInfo(request,);
+  Future<BlockSuccess?> blockUserFromComment(String tenantId, String id, BlockFromCommentParams blockFromCommentParams, [ ApiBlockUserFromCommentOptions? options, ]) async {
+    final response = await blockUserFromCommentWithHttpInfo(tenantId, id, blockFromCommentParams, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -554,10 +540,8 @@ class DefaultApi {
   /// * [BulkAggregateQuestionResultsRequest] bulkAggregateQuestionResultsRequest (required):
   ///
   /// * [bool] forceRecalculate:
-  Future<Response> bulkAggregateQuestionResultsWithHttpInfo(ApiBulkAggregateQuestionResultsRequest request,) async {
-    final tenantId = request.tenantId;
-    final bulkAggregateQuestionResultsRequest = request.bulkAggregateQuestionResultsRequest;
-    final forceRecalculate = request.forceRecalculate;
+  Future<Response> bulkAggregateQuestionResultsWithHttpInfo(String tenantId, BulkAggregateQuestionResultsRequest bulkAggregateQuestionResultsRequest, [ ApiBulkAggregateQuestionResultsOptions? options, ]) async {
+    final forceRecalculate = options?.forceRecalculate;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results-aggregation/bulk';
 
@@ -594,8 +578,8 @@ class DefaultApi {
   /// * [BulkAggregateQuestionResultsRequest] bulkAggregateQuestionResultsRequest (required):
   ///
   /// * [bool] forceRecalculate:
-  Future<BulkAggregateQuestionResultsResponse?> bulkAggregateQuestionResults(ApiBulkAggregateQuestionResultsRequest request,) async {
-    final response = await bulkAggregateQuestionResultsWithHttpInfo(request,);
+  Future<BulkAggregateQuestionResultsResponse?> bulkAggregateQuestionResults(String tenantId, BulkAggregateQuestionResultsRequest bulkAggregateQuestionResultsRequest, [ ApiBulkAggregateQuestionResultsOptions? options, ]) async {
+    final response = await bulkAggregateQuestionResultsWithHttpInfo(tenantId, bulkAggregateQuestionResultsRequest, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -619,11 +603,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [ChangeTicketStateBody] changeTicketStateBody (required):
-  Future<Response> changeTicketStateWithHttpInfo(ApiChangeTicketStateRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
-    final id = request.id;
-    final changeTicketStateBody = request.changeTicketStateBody;
+  Future<Response> changeTicketStateWithHttpInfo(String tenantId, String userId, String id, ChangeTicketStateBody changeTicketStateBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tickets/{id}/state'
       .replaceAll('{id}', id);
@@ -661,8 +641,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [ChangeTicketStateBody] changeTicketStateBody (required):
-  Future<ChangeTicketStateResponse?> changeTicketState(ApiChangeTicketStateRequest request,) async {
-    final response = await changeTicketStateWithHttpInfo(request,);
+  Future<ChangeTicketStateResponse?> changeTicketState(String tenantId, String userId, String id, ChangeTicketStateBody changeTicketStateBody, ) async {
+    final response = await changeTicketStateWithHttpInfo(tenantId, userId, id, changeTicketStateBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -696,16 +676,15 @@ class DefaultApi {
   /// * [double] maxValue:
   ///
   /// * [double] limit:
-  Future<Response> combineCommentsWithQuestionResultsWithHttpInfo(ApiCombineCommentsWithQuestionResultsRequest request,) async {
-    final tenantId = request.tenantId;
-    final questionId = request.questionId;
-    final questionIds = request.questionIds;
-    final urlId = request.urlId;
-    final startDate = request.startDate;
-    final forceRecalculate = request.forceRecalculate;
-    final minValue = request.minValue;
-    final maxValue = request.maxValue;
-    final limit = request.limit;
+  Future<Response> combineCommentsWithQuestionResultsWithHttpInfo(String tenantId, [ ApiCombineCommentsWithQuestionResultsOptions? options, ]) async {
+    final questionId = options?.questionId;
+    final questionIds = options?.questionIds;
+    final urlId = options?.urlId;
+    final startDate = options?.startDate;
+    final forceRecalculate = options?.forceRecalculate;
+    final minValue = options?.minValue;
+    final maxValue = options?.maxValue;
+    final limit = options?.limit;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results-aggregation/combine/comments';
 
@@ -775,8 +754,8 @@ class DefaultApi {
   /// * [double] maxValue:
   ///
   /// * [double] limit:
-  Future<CombineQuestionResultsWithCommentsResponse?> combineCommentsWithQuestionResults(ApiCombineCommentsWithQuestionResultsRequest request,) async {
-    final response = await combineCommentsWithQuestionResultsWithHttpInfo(request,);
+  Future<CombineQuestionResultsWithCommentsResponse?> combineCommentsWithQuestionResults(String tenantId, [ ApiCombineCommentsWithQuestionResultsOptions? options, ]) async {
+    final response = await combineCommentsWithQuestionResultsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -796,9 +775,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateEmailTemplateBody] createEmailTemplateBody (required):
-  Future<Response> createEmailTemplateWithHttpInfo(ApiCreateEmailTemplateRequest request,) async {
-    final tenantId = request.tenantId;
-    final createEmailTemplateBody = request.createEmailTemplateBody;
+  Future<Response> createEmailTemplateWithHttpInfo(String tenantId, CreateEmailTemplateBody createEmailTemplateBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates';
 
@@ -830,8 +807,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateEmailTemplateBody] createEmailTemplateBody (required):
-  Future<CreateEmailTemplateResponse?> createEmailTemplate(ApiCreateEmailTemplateRequest request,) async {
-    final response = await createEmailTemplateWithHttpInfo(request,);
+  Future<CreateEmailTemplateResponse?> createEmailTemplate(String tenantId, CreateEmailTemplateBody createEmailTemplateBody, ) async {
+    final response = await createEmailTemplateWithHttpInfo(tenantId, createEmailTemplateBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -859,13 +836,11 @@ class DefaultApi {
   /// * [bool] doSpamCheck:
   ///
   /// * [bool] skipDupCheck:
-  Future<Response> createFeedPostWithHttpInfo(ApiCreateFeedPostRequest request,) async {
-    final tenantId = request.tenantId;
-    final createFeedPostParams = request.createFeedPostParams;
-    final broadcastId = request.broadcastId;
-    final isLive = request.isLive;
-    final doSpamCheck = request.doSpamCheck;
-    final skipDupCheck = request.skipDupCheck;
+  Future<Response> createFeedPostWithHttpInfo(String tenantId, CreateFeedPostParams createFeedPostParams, [ ApiCreateFeedPostOptions? options, ]) async {
+    final broadcastId = options?.broadcastId;
+    final isLive = options?.isLive;
+    final doSpamCheck = options?.doSpamCheck;
+    final skipDupCheck = options?.skipDupCheck;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/feed-posts';
 
@@ -917,8 +892,8 @@ class DefaultApi {
   /// * [bool] doSpamCheck:
   ///
   /// * [bool] skipDupCheck:
-  Future<CreateFeedPostsResponse?> createFeedPost(ApiCreateFeedPostRequest request,) async {
-    final response = await createFeedPostWithHttpInfo(request,);
+  Future<CreateFeedPostsResponse?> createFeedPost(String tenantId, CreateFeedPostParams createFeedPostParams, [ ApiCreateFeedPostOptions? options, ]) async {
+    final response = await createFeedPostWithHttpInfo(tenantId, createFeedPostParams, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -938,9 +913,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateModeratorBody] createModeratorBody (required):
-  Future<Response> createModeratorWithHttpInfo(ApiCreateModeratorRequest request,) async {
-    final tenantId = request.tenantId;
-    final createModeratorBody = request.createModeratorBody;
+  Future<Response> createModeratorWithHttpInfo(String tenantId, CreateModeratorBody createModeratorBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/moderators';
 
@@ -972,8 +945,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateModeratorBody] createModeratorBody (required):
-  Future<CreateModeratorResponse?> createModerator(ApiCreateModeratorRequest request,) async {
-    final response = await createModeratorWithHttpInfo(request,);
+  Future<CreateModeratorResponse?> createModerator(String tenantId, CreateModeratorBody createModeratorBody, ) async {
+    final response = await createModeratorWithHttpInfo(tenantId, createModeratorBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -993,9 +966,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateQuestionConfigBody] createQuestionConfigBody (required):
-  Future<Response> createQuestionConfigWithHttpInfo(ApiCreateQuestionConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final createQuestionConfigBody = request.createQuestionConfigBody;
+  Future<Response> createQuestionConfigWithHttpInfo(String tenantId, CreateQuestionConfigBody createQuestionConfigBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-configs';
 
@@ -1027,8 +998,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateQuestionConfigBody] createQuestionConfigBody (required):
-  Future<CreateQuestionConfigResponse?> createQuestionConfig(ApiCreateQuestionConfigRequest request,) async {
-    final response = await createQuestionConfigWithHttpInfo(request,);
+  Future<CreateQuestionConfigResponse?> createQuestionConfig(String tenantId, CreateQuestionConfigBody createQuestionConfigBody, ) async {
+    final response = await createQuestionConfigWithHttpInfo(tenantId, createQuestionConfigBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1048,9 +1019,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateQuestionResultBody] createQuestionResultBody (required):
-  Future<Response> createQuestionResultWithHttpInfo(ApiCreateQuestionResultRequest request,) async {
-    final tenantId = request.tenantId;
-    final createQuestionResultBody = request.createQuestionResultBody;
+  Future<Response> createQuestionResultWithHttpInfo(String tenantId, CreateQuestionResultBody createQuestionResultBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results';
 
@@ -1082,8 +1051,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateQuestionResultBody] createQuestionResultBody (required):
-  Future<CreateQuestionResultResponse?> createQuestionResult(ApiCreateQuestionResultRequest request,) async {
-    final response = await createQuestionResultWithHttpInfo(request,);
+  Future<CreateQuestionResultResponse?> createQuestionResult(String tenantId, CreateQuestionResultBody createQuestionResultBody, ) async {
+    final response = await createQuestionResultWithHttpInfo(tenantId, createQuestionResultBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1103,9 +1072,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateAPIUserSubscriptionData] createAPIUserSubscriptionData (required):
-  Future<Response> createSubscriptionWithHttpInfo(ApiCreateSubscriptionRequest request,) async {
-    final tenantId = request.tenantId;
-    final createAPIUserSubscriptionData = request.createAPIUserSubscriptionData;
+  Future<Response> createSubscriptionWithHttpInfo(String tenantId, CreateAPIUserSubscriptionData createAPIUserSubscriptionData, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/subscriptions';
 
@@ -1137,8 +1104,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateAPIUserSubscriptionData] createAPIUserSubscriptionData (required):
-  Future<CreateSubscriptionAPIResponse?> createSubscription(ApiCreateSubscriptionRequest request,) async {
-    final response = await createSubscriptionWithHttpInfo(request,);
+  Future<CreateSubscriptionAPIResponse?> createSubscription(String tenantId, CreateAPIUserSubscriptionData createAPIUserSubscriptionData, ) async {
+    final response = await createSubscriptionWithHttpInfo(tenantId, createAPIUserSubscriptionData, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1158,9 +1125,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateTenantBody] createTenantBody (required):
-  Future<Response> createTenantWithHttpInfo(ApiCreateTenantRequest request,) async {
-    final tenantId = request.tenantId;
-    final createTenantBody = request.createTenantBody;
+  Future<Response> createTenantWithHttpInfo(String tenantId, CreateTenantBody createTenantBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenants';
 
@@ -1192,8 +1157,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateTenantBody] createTenantBody (required):
-  Future<CreateTenantResponse?> createTenant(ApiCreateTenantRequest request,) async {
-    final response = await createTenantWithHttpInfo(request,);
+  Future<CreateTenantResponse?> createTenant(String tenantId, CreateTenantBody createTenantBody, ) async {
+    final response = await createTenantWithHttpInfo(tenantId, createTenantBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1213,9 +1178,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateTenantPackageBody] createTenantPackageBody (required):
-  Future<Response> createTenantPackageWithHttpInfo(ApiCreateTenantPackageRequest request,) async {
-    final tenantId = request.tenantId;
-    final createTenantPackageBody = request.createTenantPackageBody;
+  Future<Response> createTenantPackageWithHttpInfo(String tenantId, CreateTenantPackageBody createTenantPackageBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-packages';
 
@@ -1247,8 +1210,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateTenantPackageBody] createTenantPackageBody (required):
-  Future<CreateTenantPackageResponse?> createTenantPackage(ApiCreateTenantPackageRequest request,) async {
-    final response = await createTenantPackageWithHttpInfo(request,);
+  Future<CreateTenantPackageResponse?> createTenantPackage(String tenantId, CreateTenantPackageBody createTenantPackageBody, ) async {
+    final response = await createTenantPackageWithHttpInfo(tenantId, createTenantPackageBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1268,9 +1231,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateTenantUserBody] createTenantUserBody (required):
-  Future<Response> createTenantUserWithHttpInfo(ApiCreateTenantUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final createTenantUserBody = request.createTenantUserBody;
+  Future<Response> createTenantUserWithHttpInfo(String tenantId, CreateTenantUserBody createTenantUserBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-users';
 
@@ -1302,8 +1263,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateTenantUserBody] createTenantUserBody (required):
-  Future<CreateTenantUserResponse?> createTenantUser(ApiCreateTenantUserRequest request,) async {
-    final response = await createTenantUserWithHttpInfo(request,);
+  Future<CreateTenantUserResponse?> createTenantUser(String tenantId, CreateTenantUserBody createTenantUserBody, ) async {
+    final response = await createTenantUserWithHttpInfo(tenantId, createTenantUserBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1325,10 +1286,7 @@ class DefaultApi {
   /// * [String] userId (required):
   ///
   /// * [CreateTicketBody] createTicketBody (required):
-  Future<Response> createTicketWithHttpInfo(ApiCreateTicketRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
-    final createTicketBody = request.createTicketBody;
+  Future<Response> createTicketWithHttpInfo(String tenantId, String userId, CreateTicketBody createTicketBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tickets';
 
@@ -1363,8 +1321,8 @@ class DefaultApi {
   /// * [String] userId (required):
   ///
   /// * [CreateTicketBody] createTicketBody (required):
-  Future<CreateTicketResponse?> createTicket(ApiCreateTicketRequest request,) async {
-    final response = await createTicketWithHttpInfo(request,);
+  Future<CreateTicketResponse?> createTicket(String tenantId, String userId, CreateTicketBody createTicketBody, ) async {
+    final response = await createTicketWithHttpInfo(tenantId, userId, createTicketBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1384,9 +1342,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateUserBadgeParams] createUserBadgeParams (required):
-  Future<Response> createUserBadgeWithHttpInfo(ApiCreateUserBadgeRequest request,) async {
-    final tenantId = request.tenantId;
-    final createUserBadgeParams = request.createUserBadgeParams;
+  Future<Response> createUserBadgeWithHttpInfo(String tenantId, CreateUserBadgeParams createUserBadgeParams, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badges';
 
@@ -1418,8 +1374,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [CreateUserBadgeParams] createUserBadgeParams (required):
-  Future<APICreateUserBadgeResponse?> createUserBadge(ApiCreateUserBadgeRequest request,) async {
-    final response = await createUserBadgeWithHttpInfo(request,);
+  Future<APICreateUserBadgeResponse?> createUserBadge(String tenantId, CreateUserBadgeParams createUserBadgeParams, ) async {
+    final response = await createUserBadgeWithHttpInfo(tenantId, createUserBadgeParams, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1445,12 +1401,9 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<Response> createVoteWithHttpInfo(ApiCreateVoteRequest request,) async {
-    final tenantId = request.tenantId;
-    final commentId = request.commentId;
-    final direction = request.direction;
-    final userId = request.userId;
-    final anonUserId = request.anonUserId;
+  Future<Response> createVoteWithHttpInfo(String tenantId, String commentId, String direction, [ ApiCreateVoteOptions? options, ]) async {
+    final userId = options?.userId;
+    final anonUserId = options?.anonUserId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/votes';
 
@@ -1496,8 +1449,8 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<VoteResponse?> createVote(ApiCreateVoteRequest request,) async {
-    final response = await createVoteWithHttpInfo(request,);
+  Future<VoteResponse?> createVote(String tenantId, String commentId, String direction, [ ApiCreateVoteOptions? options, ]) async {
+    final response = await createVoteWithHttpInfo(tenantId, commentId, direction, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1521,11 +1474,9 @@ class DefaultApi {
   /// * [String] contextUserId:
   ///
   /// * [bool] isLive:
-  Future<Response> deleteCommentWithHttpInfo(ApiDeleteCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final contextUserId = request.contextUserId;
-    final isLive = request.isLive;
+  Future<Response> deleteCommentWithHttpInfo(String tenantId, String id, [ ApiDeleteCommentOptions? options, ]) async {
+    final contextUserId = options?.contextUserId;
+    final isLive = options?.isLive;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/{id}'
       .replaceAll('{id}', id);
@@ -1568,8 +1519,8 @@ class DefaultApi {
   /// * [String] contextUserId:
   ///
   /// * [bool] isLive:
-  Future<DeleteCommentResult?> deleteComment(ApiDeleteCommentRequest request,) async {
-    final response = await deleteCommentWithHttpInfo(request,);
+  Future<DeleteCommentResult?> deleteComment(String tenantId, String id, [ ApiDeleteCommentOptions? options, ]) async {
+    final response = await deleteCommentWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1589,9 +1540,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] domain (required):
-  Future<Response> deleteDomainConfigWithHttpInfo(ApiDeleteDomainConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final domain = request.domain;
+  Future<Response> deleteDomainConfigWithHttpInfo(String tenantId, String domain, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/domain-configs/{domain}'
       .replaceAll('{domain}', domain);
@@ -1624,8 +1573,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] domain (required):
-  Future<DeleteDomainConfigResponse?> deleteDomainConfig(ApiDeleteDomainConfigRequest request,) async {
-    final response = await deleteDomainConfigWithHttpInfo(request,);
+  Future<DeleteDomainConfigResponse?> deleteDomainConfig(String tenantId, String domain, ) async {
+    final response = await deleteDomainConfigWithHttpInfo(tenantId, domain, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1645,9 +1594,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deleteEmailTemplateWithHttpInfo(ApiDeleteEmailTemplateRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deleteEmailTemplateWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates/{id}'
       .replaceAll('{id}', id);
@@ -1680,8 +1627,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIEmptyResponse?> deleteEmailTemplate(ApiDeleteEmailTemplateRequest request,) async {
-    final response = await deleteEmailTemplateWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteEmailTemplate(String tenantId, String id, ) async {
+    final response = await deleteEmailTemplateWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1703,10 +1650,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] errorId (required):
-  Future<Response> deleteEmailTemplateRenderErrorWithHttpInfo(ApiDeleteEmailTemplateRenderErrorRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final errorId = request.errorId;
+  Future<Response> deleteEmailTemplateRenderErrorWithHttpInfo(String tenantId, String id, String errorId, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates/{id}/render-errors/{errorId}'
       .replaceAll('{id}', id)
@@ -1742,8 +1686,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] errorId (required):
-  Future<APIEmptyResponse?> deleteEmailTemplateRenderError(ApiDeleteEmailTemplateRenderErrorRequest request,) async {
-    final response = await deleteEmailTemplateRenderErrorWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteEmailTemplateRenderError(String tenantId, String id, String errorId, ) async {
+    final response = await deleteEmailTemplateRenderErrorWithHttpInfo(tenantId, id, errorId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1765,10 +1709,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [DeleteHashTagRequestBody] deleteHashTagRequestBody:
-  Future<Response> deleteHashTagWithHttpInfo(ApiDeleteHashTagRequest request,) async {
-    final tag = request.tag;
-    final tenantId = request.tenantId;
-    final deleteHashTagRequestBody = request.deleteHashTagRequestBody;
+  Future<Response> deleteHashTagWithHttpInfo(String tag, DeleteHashTagRequestBody deleteHashTagRequestBody, [ ApiDeleteHashTagOptions? options, ]) async {
+    final tenantId = options?.tenantId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/hash-tags/{tag}'
       .replaceAll('{tag}', tag);
@@ -1805,8 +1747,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [DeleteHashTagRequestBody] deleteHashTagRequestBody:
-  Future<APIEmptyResponse?> deleteHashTag(ApiDeleteHashTagRequest request,) async {
-    final response = await deleteHashTagWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteHashTag(String tag, DeleteHashTagRequestBody deleteHashTagRequestBody, [ ApiDeleteHashTagOptions? options, ]) async {
+    final response = await deleteHashTagWithHttpInfo(tag, deleteHashTagRequestBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1828,10 +1770,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] sendEmail:
-  Future<Response> deleteModeratorWithHttpInfo(ApiDeleteModeratorRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final sendEmail = request.sendEmail;
+  Future<Response> deleteModeratorWithHttpInfo(String tenantId, String id, [ ApiDeleteModeratorOptions? options, ]) async {
+    final sendEmail = options?.sendEmail;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/moderators/{id}'
       .replaceAll('{id}', id);
@@ -1869,8 +1809,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] sendEmail:
-  Future<APIEmptyResponse?> deleteModerator(ApiDeleteModeratorRequest request,) async {
-    final response = await deleteModeratorWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteModerator(String tenantId, String id, [ ApiDeleteModeratorOptions? options, ]) async {
+    final response = await deleteModeratorWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1890,9 +1830,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deleteNotificationCountWithHttpInfo(ApiDeleteNotificationCountRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deleteNotificationCountWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/notification-count/{id}'
       .replaceAll('{id}', id);
@@ -1925,8 +1863,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIEmptyResponse?> deleteNotificationCount(ApiDeleteNotificationCountRequest request,) async {
-    final response = await deleteNotificationCountWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteNotificationCount(String tenantId, String id, ) async {
+    final response = await deleteNotificationCountWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1946,9 +1884,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deletePageWithHttpInfo(ApiDeletePageRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deletePageWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pages/{id}'
       .replaceAll('{id}', id);
@@ -1981,8 +1917,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<DeletePageAPIResponse?> deletePage(ApiDeletePageRequest request,) async {
-    final response = await deletePageWithHttpInfo(request,);
+  Future<DeletePageAPIResponse?> deletePage(String tenantId, String id, ) async {
+    final response = await deletePageWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2002,9 +1938,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deletePendingWebhookEventWithHttpInfo(ApiDeletePendingWebhookEventRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deletePendingWebhookEventWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pending-webhook-events/{id}'
       .replaceAll('{id}', id);
@@ -2037,8 +1971,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIEmptyResponse?> deletePendingWebhookEvent(ApiDeletePendingWebhookEventRequest request,) async {
-    final response = await deletePendingWebhookEventWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deletePendingWebhookEvent(String tenantId, String id, ) async {
+    final response = await deletePendingWebhookEventWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2058,9 +1992,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deleteQuestionConfigWithHttpInfo(ApiDeleteQuestionConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deleteQuestionConfigWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-configs/{id}'
       .replaceAll('{id}', id);
@@ -2093,8 +2025,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIEmptyResponse?> deleteQuestionConfig(ApiDeleteQuestionConfigRequest request,) async {
-    final response = await deleteQuestionConfigWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteQuestionConfig(String tenantId, String id, ) async {
+    final response = await deleteQuestionConfigWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2114,9 +2046,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deleteQuestionResultWithHttpInfo(ApiDeleteQuestionResultRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deleteQuestionResultWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results/{id}'
       .replaceAll('{id}', id);
@@ -2149,8 +2079,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIEmptyResponse?> deleteQuestionResult(ApiDeleteQuestionResultRequest request,) async {
-    final response = await deleteQuestionResultWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteQuestionResult(String tenantId, String id, ) async {
+    final response = await deleteQuestionResultWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2174,11 +2104,9 @@ class DefaultApi {
   /// * [bool] deleteComments:
   ///
   /// * [String] commentDeleteMode:
-  Future<Response> deleteSSOUserWithHttpInfo(ApiDeleteSSOUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final deleteComments = request.deleteComments;
-    final commentDeleteMode = request.commentDeleteMode;
+  Future<Response> deleteSSOUserWithHttpInfo(String tenantId, String id, [ ApiDeleteSSOUserOptions? options, ]) async {
+    final deleteComments = options?.deleteComments;
+    final commentDeleteMode = options?.commentDeleteMode;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/sso-users/{id}'
       .replaceAll('{id}', id);
@@ -2221,8 +2149,8 @@ class DefaultApi {
   /// * [bool] deleteComments:
   ///
   /// * [String] commentDeleteMode:
-  Future<DeleteSSOUserAPIResponse?> deleteSSOUser(ApiDeleteSSOUserRequest request,) async {
-    final response = await deleteSSOUserWithHttpInfo(request,);
+  Future<DeleteSSOUserAPIResponse?> deleteSSOUser(String tenantId, String id, [ ApiDeleteSSOUserOptions? options, ]) async {
+    final response = await deleteSSOUserWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2244,10 +2172,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] userId:
-  Future<Response> deleteSubscriptionWithHttpInfo(ApiDeleteSubscriptionRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final userId = request.userId;
+  Future<Response> deleteSubscriptionWithHttpInfo(String tenantId, String id, [ ApiDeleteSubscriptionOptions? options, ]) async {
+    final userId = options?.userId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/subscriptions/{id}'
       .replaceAll('{id}', id);
@@ -2285,8 +2211,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] userId:
-  Future<DeleteSubscriptionAPIResponse?> deleteSubscription(ApiDeleteSubscriptionRequest request,) async {
-    final response = await deleteSubscriptionWithHttpInfo(request,);
+  Future<DeleteSubscriptionAPIResponse?> deleteSubscription(String tenantId, String id, [ ApiDeleteSubscriptionOptions? options, ]) async {
+    final response = await deleteSubscriptionWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2308,10 +2234,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] sure:
-  Future<Response> deleteTenantWithHttpInfo(ApiDeleteTenantRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final sure = request.sure;
+  Future<Response> deleteTenantWithHttpInfo(String tenantId, String id, [ ApiDeleteTenantOptions? options, ]) async {
+    final sure = options?.sure;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenants/{id}'
       .replaceAll('{id}', id);
@@ -2349,8 +2273,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] sure:
-  Future<APIEmptyResponse?> deleteTenant(ApiDeleteTenantRequest request,) async {
-    final response = await deleteTenantWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteTenant(String tenantId, String id, [ ApiDeleteTenantOptions? options, ]) async {
+    final response = await deleteTenantWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2370,9 +2294,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deleteTenantPackageWithHttpInfo(ApiDeleteTenantPackageRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deleteTenantPackageWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-packages/{id}'
       .replaceAll('{id}', id);
@@ -2405,8 +2327,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIEmptyResponse?> deleteTenantPackage(ApiDeleteTenantPackageRequest request,) async {
-    final response = await deleteTenantPackageWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteTenantPackage(String tenantId, String id, ) async {
+    final response = await deleteTenantPackageWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2430,11 +2352,9 @@ class DefaultApi {
   /// * [String] deleteComments:
   ///
   /// * [String] commentDeleteMode:
-  Future<Response> deleteTenantUserWithHttpInfo(ApiDeleteTenantUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final deleteComments = request.deleteComments;
-    final commentDeleteMode = request.commentDeleteMode;
+  Future<Response> deleteTenantUserWithHttpInfo(String tenantId, String id, [ ApiDeleteTenantUserOptions? options, ]) async {
+    final deleteComments = options?.deleteComments;
+    final commentDeleteMode = options?.commentDeleteMode;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-users/{id}'
       .replaceAll('{id}', id);
@@ -2477,8 +2397,8 @@ class DefaultApi {
   /// * [String] deleteComments:
   ///
   /// * [String] commentDeleteMode:
-  Future<APIEmptyResponse?> deleteTenantUser(ApiDeleteTenantUserRequest request,) async {
-    final response = await deleteTenantUserWithHttpInfo(request,);
+  Future<APIEmptyResponse?> deleteTenantUser(String tenantId, String id, [ ApiDeleteTenantUserOptions? options, ]) async {
+    final response = await deleteTenantUserWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2498,9 +2418,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deleteUserBadgeWithHttpInfo(ApiDeleteUserBadgeRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> deleteUserBadgeWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badges/{id}'
       .replaceAll('{id}', id);
@@ -2533,8 +2451,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIEmptySuccessResponse?> deleteUserBadge(ApiDeleteUserBadgeRequest request,) async {
-    final response = await deleteUserBadgeWithHttpInfo(request,);
+  Future<APIEmptySuccessResponse?> deleteUserBadge(String tenantId, String id, ) async {
+    final response = await deleteUserBadgeWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2556,10 +2474,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] editKey:
-  Future<Response> deleteVoteWithHttpInfo(ApiDeleteVoteRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final editKey = request.editKey;
+  Future<Response> deleteVoteWithHttpInfo(String tenantId, String id, [ ApiDeleteVoteOptions? options, ]) async {
+    final editKey = options?.editKey;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/votes/{id}'
       .replaceAll('{id}', id);
@@ -2597,8 +2513,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] editKey:
-  Future<VoteDeleteResponse?> deleteVote(ApiDeleteVoteRequest request,) async {
-    final response = await deleteVoteWithHttpInfo(request,);
+  Future<VoteDeleteResponse?> deleteVote(String tenantId, String id, [ ApiDeleteVoteOptions? options, ]) async {
+    final response = await deleteVoteWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2622,11 +2538,9 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<Response> flagCommentWithHttpInfo(ApiFlagCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final userId = request.userId;
-    final anonUserId = request.anonUserId;
+  Future<Response> flagCommentWithHttpInfo(String tenantId, String id, [ ApiFlagCommentOptions? options, ]) async {
+    final userId = options?.userId;
+    final anonUserId = options?.anonUserId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/{id}/flag'
       .replaceAll('{id}', id);
@@ -2669,8 +2583,8 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<FlagCommentResponse?> flagComment(ApiFlagCommentRequest request,) async {
-    final response = await flagCommentWithHttpInfo(request,);
+  Future<FlagCommentResponse?> flagComment(String tenantId, String id, [ ApiFlagCommentOptions? options, ]) async {
+    final response = await flagCommentWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2698,13 +2612,12 @@ class DefaultApi {
   /// * [double] after:
   ///
   /// * [double] before:
-  Future<Response> getAuditLogsWithHttpInfo(ApiGetAuditLogsRequest request,) async {
-    final tenantId = request.tenantId;
-    final limit = request.limit;
-    final skip = request.skip;
-    final order = request.order;
-    final after = request.after;
-    final before = request.before;
+  Future<Response> getAuditLogsWithHttpInfo(String tenantId, [ ApiGetAuditLogsOptions? options, ]) async {
+    final limit = options?.limit;
+    final skip = options?.skip;
+    final order = options?.order;
+    final after = options?.after;
+    final before = options?.before;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/audit-logs';
 
@@ -2759,8 +2672,8 @@ class DefaultApi {
   /// * [double] after:
   ///
   /// * [double] before:
-  Future<GetAuditLogsResponse?> getAuditLogs(ApiGetAuditLogsRequest request,) async {
-    final response = await getAuditLogsWithHttpInfo(request,);
+  Future<GetAuditLogsResponse?> getAuditLogs(String tenantId, [ ApiGetAuditLogsOptions? options, ]) async {
+    final response = await getAuditLogsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2780,9 +2693,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getCachedNotificationCountWithHttpInfo(ApiGetCachedNotificationCountRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getCachedNotificationCountWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/notification-count/{id}'
       .replaceAll('{id}', id);
@@ -2815,8 +2726,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetCachedNotificationCountResponse?> getCachedNotificationCount(ApiGetCachedNotificationCountRequest request,) async {
-    final response = await getCachedNotificationCountWithHttpInfo(request,);
+  Future<GetCachedNotificationCountResponse?> getCachedNotificationCount(String tenantId, String id, ) async {
+    final response = await getCachedNotificationCountWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2836,9 +2747,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getCommentWithHttpInfo(ApiGetCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getCommentWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/{id}'
       .replaceAll('{id}', id);
@@ -2871,8 +2780,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIGetCommentResponse?> getComment(ApiGetCommentRequest request,) async {
-    final response = await getCommentWithHttpInfo(request,);
+  Future<APIGetCommentResponse?> getComment(String tenantId, String id, ) async {
+    final response = await getCommentWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2922,24 +2831,23 @@ class DefaultApi {
   /// * [int] fromDate:
   ///
   /// * [int] toDate:
-  Future<Response> getCommentsWithHttpInfo(ApiGetCommentsRequest request,) async {
-    final tenantId = request.tenantId;
-    final page = request.page;
-    final limit = request.limit;
-    final skip = request.skip;
-    final asTree = request.asTree;
-    final skipChildren = request.skipChildren;
-    final limitChildren = request.limitChildren;
-    final maxTreeDepth = request.maxTreeDepth;
-    final urlId = request.urlId;
-    final userId = request.userId;
-    final anonUserId = request.anonUserId;
-    final contextUserId = request.contextUserId;
-    final hashTag = request.hashTag;
-    final parentId = request.parentId;
-    final direction = request.direction;
-    final fromDate = request.fromDate;
-    final toDate = request.toDate;
+  Future<Response> getCommentsWithHttpInfo(String tenantId, [ ApiGetCommentsOptions? options, ]) async {
+    final page = options?.page;
+    final limit = options?.limit;
+    final skip = options?.skip;
+    final asTree = options?.asTree;
+    final skipChildren = options?.skipChildren;
+    final limitChildren = options?.limitChildren;
+    final maxTreeDepth = options?.maxTreeDepth;
+    final urlId = options?.urlId;
+    final userId = options?.userId;
+    final anonUserId = options?.anonUserId;
+    final contextUserId = options?.contextUserId;
+    final hashTag = options?.hashTag;
+    final parentId = options?.parentId;
+    final direction = options?.direction;
+    final fromDate = options?.fromDate;
+    final toDate = options?.toDate;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments';
 
@@ -3049,8 +2957,8 @@ class DefaultApi {
   /// * [int] fromDate:
   ///
   /// * [int] toDate:
-  Future<APIGetCommentsResponse?> getComments(ApiGetCommentsRequest request,) async {
-    final response = await getCommentsWithHttpInfo(request,);
+  Future<APIGetCommentsResponse?> getComments(String tenantId, [ ApiGetCommentsOptions? options, ]) async {
+    final response = await getCommentsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3070,9 +2978,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] domain (required):
-  Future<Response> getDomainConfigWithHttpInfo(ApiGetDomainConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final domain = request.domain;
+  Future<Response> getDomainConfigWithHttpInfo(String tenantId, String domain, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/domain-configs/{domain}'
       .replaceAll('{domain}', domain);
@@ -3105,8 +3011,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] domain (required):
-  Future<GetDomainConfigResponse?> getDomainConfig(ApiGetDomainConfigRequest request,) async {
-    final response = await getDomainConfigWithHttpInfo(request,);
+  Future<GetDomainConfigResponse?> getDomainConfig(String tenantId, String domain, ) async {
+    final response = await getDomainConfigWithHttpInfo(tenantId, domain, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3124,8 +3030,7 @@ class DefaultApi {
   /// Parameters:
   ///
   /// * [String] tenantId (required):
-  Future<Response> getDomainConfigsWithHttpInfo(ApiGetDomainConfigsRequest request,) async {
-    final tenantId = request.tenantId;
+  Future<Response> getDomainConfigsWithHttpInfo(String tenantId, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/domain-configs';
 
@@ -3155,8 +3060,8 @@ class DefaultApi {
   /// Parameters:
   ///
   /// * [String] tenantId (required):
-  Future<GetDomainConfigsResponse?> getDomainConfigs(ApiGetDomainConfigsRequest request,) async {
-    final response = await getDomainConfigsWithHttpInfo(request,);
+  Future<GetDomainConfigsResponse?> getDomainConfigs(String tenantId, ) async {
+    final response = await getDomainConfigsWithHttpInfo(tenantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3176,9 +3081,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getEmailTemplateWithHttpInfo(ApiGetEmailTemplateRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getEmailTemplateWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates/{id}'
       .replaceAll('{id}', id);
@@ -3211,8 +3114,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetEmailTemplateResponse?> getEmailTemplate(ApiGetEmailTemplateRequest request,) async {
-    final response = await getEmailTemplateWithHttpInfo(request,);
+  Future<GetEmailTemplateResponse?> getEmailTemplate(String tenantId, String id, ) async {
+    final response = await getEmailTemplateWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3230,8 +3133,7 @@ class DefaultApi {
   /// Parameters:
   ///
   /// * [String] tenantId (required):
-  Future<Response> getEmailTemplateDefinitionsWithHttpInfo(ApiGetEmailTemplateDefinitionsRequest request,) async {
-    final tenantId = request.tenantId;
+  Future<Response> getEmailTemplateDefinitionsWithHttpInfo(String tenantId, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates/definitions';
 
@@ -3261,8 +3163,8 @@ class DefaultApi {
   /// Parameters:
   ///
   /// * [String] tenantId (required):
-  Future<GetEmailTemplateDefinitionsResponse?> getEmailTemplateDefinitions(ApiGetEmailTemplateDefinitionsRequest request,) async {
-    final response = await getEmailTemplateDefinitionsWithHttpInfo(request,);
+  Future<GetEmailTemplateDefinitionsResponse?> getEmailTemplateDefinitions(String tenantId, ) async {
+    final response = await getEmailTemplateDefinitionsWithHttpInfo(tenantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3284,10 +3186,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [double] skip:
-  Future<Response> getEmailTemplateRenderErrorsWithHttpInfo(ApiGetEmailTemplateRenderErrorsRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final skip = request.skip;
+  Future<Response> getEmailTemplateRenderErrorsWithHttpInfo(String tenantId, String id, [ ApiGetEmailTemplateRenderErrorsOptions? options, ]) async {
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates/{id}/render-errors'
       .replaceAll('{id}', id);
@@ -3325,8 +3225,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [double] skip:
-  Future<GetEmailTemplateRenderErrorsResponse?> getEmailTemplateRenderErrors(ApiGetEmailTemplateRenderErrorsRequest request,) async {
-    final response = await getEmailTemplateRenderErrorsWithHttpInfo(request,);
+  Future<GetEmailTemplateRenderErrorsResponse?> getEmailTemplateRenderErrors(String tenantId, String id, [ ApiGetEmailTemplateRenderErrorsOptions? options, ]) async {
+    final response = await getEmailTemplateRenderErrorsWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3346,9 +3246,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<Response> getEmailTemplatesWithHttpInfo(ApiGetEmailTemplatesRequest request,) async {
-    final tenantId = request.tenantId;
-    final skip = request.skip;
+  Future<Response> getEmailTemplatesWithHttpInfo(String tenantId, [ ApiGetEmailTemplatesOptions? options, ]) async {
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates';
 
@@ -3383,8 +3282,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<GetEmailTemplatesResponse?> getEmailTemplates(ApiGetEmailTemplatesRequest request,) async {
-    final response = await getEmailTemplatesWithHttpInfo(request,);
+  Future<GetEmailTemplatesResponse?> getEmailTemplates(String tenantId, [ ApiGetEmailTemplatesOptions? options, ]) async {
+    final response = await getEmailTemplatesWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3411,11 +3310,10 @@ class DefaultApi {
   /// * [int] limit:
   ///
   /// * [List<String>] tags:
-  Future<Response> getFeedPostsWithHttpInfo(ApiGetFeedPostsRequest request,) async {
-    final tenantId = request.tenantId;
-    final afterId = request.afterId;
-    final limit = request.limit;
-    final tags = request.tags;
+  Future<Response> getFeedPostsWithHttpInfo(String tenantId, [ ApiGetFeedPostsOptions? options, ]) async {
+    final afterId = options?.afterId;
+    final limit = options?.limit;
+    final tags = options?.tags;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/feed-posts';
 
@@ -3462,8 +3360,8 @@ class DefaultApi {
   /// * [int] limit:
   ///
   /// * [List<String>] tags:
-  Future<GetFeedPostsResponse?> getFeedPosts(ApiGetFeedPostsRequest request,) async {
-    final response = await getFeedPostsWithHttpInfo(request,);
+  Future<GetFeedPostsResponse?> getFeedPosts(String tenantId, [ ApiGetFeedPostsOptions? options, ]) async {
+    final response = await getFeedPostsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3483,9 +3381,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] page:
-  Future<Response> getHashTagsWithHttpInfo(ApiGetHashTagsRequest request,) async {
-    final tenantId = request.tenantId;
-    final page = request.page;
+  Future<Response> getHashTagsWithHttpInfo(String tenantId, [ ApiGetHashTagsOptions? options, ]) async {
+    final page = options?.page;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/hash-tags';
 
@@ -3520,8 +3417,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] page:
-  Future<GetHashTagsResponse?> getHashTags(ApiGetHashTagsRequest request,) async {
-    final response = await getHashTagsWithHttpInfo(request,);
+  Future<GetHashTagsResponse?> getHashTags(String tenantId, [ ApiGetHashTagsOptions? options, ]) async {
+    final response = await getHashTagsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3541,9 +3438,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getModeratorWithHttpInfo(ApiGetModeratorRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getModeratorWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/moderators/{id}'
       .replaceAll('{id}', id);
@@ -3576,8 +3471,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetModeratorResponse?> getModerator(ApiGetModeratorRequest request,) async {
-    final response = await getModeratorWithHttpInfo(request,);
+  Future<GetModeratorResponse?> getModerator(String tenantId, String id, ) async {
+    final response = await getModeratorWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3597,9 +3492,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<Response> getModeratorsWithHttpInfo(ApiGetModeratorsRequest request,) async {
-    final tenantId = request.tenantId;
-    final skip = request.skip;
+  Future<Response> getModeratorsWithHttpInfo(String tenantId, [ ApiGetModeratorsOptions? options, ]) async {
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/moderators';
 
@@ -3634,8 +3528,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<GetModeratorsResponse?> getModerators(ApiGetModeratorsRequest request,) async {
-    final response = await getModeratorsWithHttpInfo(request,);
+  Future<GetModeratorsResponse?> getModerators(String tenantId, [ ApiGetModeratorsOptions? options, ]) async {
+    final response = await getModeratorsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3663,13 +3557,12 @@ class DefaultApi {
   /// * [bool] viewed:
   ///
   /// * [String] type:
-  Future<Response> getNotificationCountWithHttpInfo(ApiGetNotificationCountRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
-    final urlId = request.urlId;
-    final fromCommentId = request.fromCommentId;
-    final viewed = request.viewed;
-    final type = request.type;
+  Future<Response> getNotificationCountWithHttpInfo(String tenantId, [ ApiGetNotificationCountOptions? options, ]) async {
+    final userId = options?.userId;
+    final urlId = options?.urlId;
+    final fromCommentId = options?.fromCommentId;
+    final viewed = options?.viewed;
+    final type = options?.type;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/notifications/count';
 
@@ -3724,8 +3617,8 @@ class DefaultApi {
   /// * [bool] viewed:
   ///
   /// * [String] type:
-  Future<GetNotificationCountResponse?> getNotificationCount(ApiGetNotificationCountRequest request,) async {
-    final response = await getNotificationCountWithHttpInfo(request,);
+  Future<GetNotificationCountResponse?> getNotificationCount(String tenantId, [ ApiGetNotificationCountOptions? options, ]) async {
+    final response = await getNotificationCountWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3755,14 +3648,13 @@ class DefaultApi {
   /// * [String] type:
   ///
   /// * [double] skip:
-  Future<Response> getNotificationsWithHttpInfo(ApiGetNotificationsRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
-    final urlId = request.urlId;
-    final fromCommentId = request.fromCommentId;
-    final viewed = request.viewed;
-    final type = request.type;
-    final skip = request.skip;
+  Future<Response> getNotificationsWithHttpInfo(String tenantId, [ ApiGetNotificationsOptions? options, ]) async {
+    final userId = options?.userId;
+    final urlId = options?.urlId;
+    final fromCommentId = options?.fromCommentId;
+    final viewed = options?.viewed;
+    final type = options?.type;
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/notifications';
 
@@ -3822,8 +3714,8 @@ class DefaultApi {
   /// * [String] type:
   ///
   /// * [double] skip:
-  Future<GetNotificationsResponse?> getNotifications(ApiGetNotificationsRequest request,) async {
-    final response = await getNotificationsWithHttpInfo(request,);
+  Future<GetNotificationsResponse?> getNotifications(String tenantId, [ ApiGetNotificationsOptions? options, ]) async {
+    final response = await getNotificationsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3843,9 +3735,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<Response> getPageByURLIdWithHttpInfo(ApiGetPageByURLIdRequest request,) async {
-    final tenantId = request.tenantId;
-    final urlId = request.urlId;
+  Future<Response> getPageByURLIdWithHttpInfo(String tenantId, String urlId, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pages/by-url-id';
 
@@ -3878,8 +3768,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<GetPageByURLIdAPIResponse?> getPageByURLId(ApiGetPageByURLIdRequest request,) async {
-    final response = await getPageByURLIdWithHttpInfo(request,);
+  Future<GetPageByURLIdAPIResponse?> getPageByURLId(String tenantId, String urlId, ) async {
+    final response = await getPageByURLIdWithHttpInfo(tenantId, urlId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3897,8 +3787,7 @@ class DefaultApi {
   /// Parameters:
   ///
   /// * [String] tenantId (required):
-  Future<Response> getPagesWithHttpInfo(ApiGetPagesRequest request,) async {
-    final tenantId = request.tenantId;
+  Future<Response> getPagesWithHttpInfo(String tenantId, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pages';
 
@@ -3928,8 +3817,8 @@ class DefaultApi {
   /// Parameters:
   ///
   /// * [String] tenantId (required):
-  Future<GetPagesAPIResponse?> getPages(ApiGetPagesRequest request,) async {
-    final response = await getPagesWithHttpInfo(request,);
+  Future<GetPagesAPIResponse?> getPages(String tenantId, ) async {
+    final response = await getPagesWithHttpInfo(tenantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3959,14 +3848,13 @@ class DefaultApi {
   /// * [String] domain:
   ///
   /// * [double] attemptCountGT:
-  Future<Response> getPendingWebhookEventCountWithHttpInfo(ApiGetPendingWebhookEventCountRequest request,) async {
-    final tenantId = request.tenantId;
-    final commentId = request.commentId;
-    final externalId = request.externalId;
-    final eventType = request.eventType;
-    final type = request.type;
-    final domain = request.domain;
-    final attemptCountGT = request.attemptCountGT;
+  Future<Response> getPendingWebhookEventCountWithHttpInfo(String tenantId, [ ApiGetPendingWebhookEventCountOptions? options, ]) async {
+    final commentId = options?.commentId;
+    final externalId = options?.externalId;
+    final eventType = options?.eventType;
+    final type = options?.type;
+    final domain = options?.domain;
+    final attemptCountGT = options?.attemptCountGT;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pending-webhook-events/count';
 
@@ -4026,8 +3914,8 @@ class DefaultApi {
   /// * [String] domain:
   ///
   /// * [double] attemptCountGT:
-  Future<GetPendingWebhookEventCountResponse?> getPendingWebhookEventCount(ApiGetPendingWebhookEventCountRequest request,) async {
-    final response = await getPendingWebhookEventCountWithHttpInfo(request,);
+  Future<GetPendingWebhookEventCountResponse?> getPendingWebhookEventCount(String tenantId, [ ApiGetPendingWebhookEventCountOptions? options, ]) async {
+    final response = await getPendingWebhookEventCountWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4059,15 +3947,14 @@ class DefaultApi {
   /// * [double] attemptCountGT:
   ///
   /// * [double] skip:
-  Future<Response> getPendingWebhookEventsWithHttpInfo(ApiGetPendingWebhookEventsRequest request,) async {
-    final tenantId = request.tenantId;
-    final commentId = request.commentId;
-    final externalId = request.externalId;
-    final eventType = request.eventType;
-    final type = request.type;
-    final domain = request.domain;
-    final attemptCountGT = request.attemptCountGT;
-    final skip = request.skip;
+  Future<Response> getPendingWebhookEventsWithHttpInfo(String tenantId, [ ApiGetPendingWebhookEventsOptions? options, ]) async {
+    final commentId = options?.commentId;
+    final externalId = options?.externalId;
+    final eventType = options?.eventType;
+    final type = options?.type;
+    final domain = options?.domain;
+    final attemptCountGT = options?.attemptCountGT;
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pending-webhook-events';
 
@@ -4132,8 +4019,8 @@ class DefaultApi {
   /// * [double] attemptCountGT:
   ///
   /// * [double] skip:
-  Future<GetPendingWebhookEventsResponse?> getPendingWebhookEvents(ApiGetPendingWebhookEventsRequest request,) async {
-    final response = await getPendingWebhookEventsWithHttpInfo(request,);
+  Future<GetPendingWebhookEventsResponse?> getPendingWebhookEvents(String tenantId, [ ApiGetPendingWebhookEventsOptions? options, ]) async {
+    final response = await getPendingWebhookEventsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4153,9 +4040,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getQuestionConfigWithHttpInfo(ApiGetQuestionConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getQuestionConfigWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-configs/{id}'
       .replaceAll('{id}', id);
@@ -4188,8 +4073,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetQuestionConfigResponse?> getQuestionConfig(ApiGetQuestionConfigRequest request,) async {
-    final response = await getQuestionConfigWithHttpInfo(request,);
+  Future<GetQuestionConfigResponse?> getQuestionConfig(String tenantId, String id, ) async {
+    final response = await getQuestionConfigWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4209,9 +4094,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<Response> getQuestionConfigsWithHttpInfo(ApiGetQuestionConfigsRequest request,) async {
-    final tenantId = request.tenantId;
-    final skip = request.skip;
+  Future<Response> getQuestionConfigsWithHttpInfo(String tenantId, [ ApiGetQuestionConfigsOptions? options, ]) async {
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-configs';
 
@@ -4246,8 +4130,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<GetQuestionConfigsResponse?> getQuestionConfigs(ApiGetQuestionConfigsRequest request,) async {
-    final response = await getQuestionConfigsWithHttpInfo(request,);
+  Future<GetQuestionConfigsResponse?> getQuestionConfigs(String tenantId, [ ApiGetQuestionConfigsOptions? options, ]) async {
+    final response = await getQuestionConfigsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4267,9 +4151,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getQuestionResultWithHttpInfo(ApiGetQuestionResultRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getQuestionResultWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results/{id}'
       .replaceAll('{id}', id);
@@ -4302,8 +4184,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetQuestionResultResponse?> getQuestionResult(ApiGetQuestionResultRequest request,) async {
-    final response = await getQuestionResultWithHttpInfo(request,);
+  Future<GetQuestionResultResponse?> getQuestionResult(String tenantId, String id, ) async {
+    final response = await getQuestionResultWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4333,14 +4215,13 @@ class DefaultApi {
   /// * [String] questionIds:
   ///
   /// * [double] skip:
-  Future<Response> getQuestionResultsWithHttpInfo(ApiGetQuestionResultsRequest request,) async {
-    final tenantId = request.tenantId;
-    final urlId = request.urlId;
-    final userId = request.userId;
-    final startDate = request.startDate;
-    final questionId = request.questionId;
-    final questionIds = request.questionIds;
-    final skip = request.skip;
+  Future<Response> getQuestionResultsWithHttpInfo(String tenantId, [ ApiGetQuestionResultsOptions? options, ]) async {
+    final urlId = options?.urlId;
+    final userId = options?.userId;
+    final startDate = options?.startDate;
+    final questionId = options?.questionId;
+    final questionIds = options?.questionIds;
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results';
 
@@ -4400,8 +4281,8 @@ class DefaultApi {
   /// * [String] questionIds:
   ///
   /// * [double] skip:
-  Future<GetQuestionResultsResponse?> getQuestionResults(ApiGetQuestionResultsRequest request,) async {
-    final response = await getQuestionResultsWithHttpInfo(request,);
+  Future<GetQuestionResultsResponse?> getQuestionResults(String tenantId, [ ApiGetQuestionResultsOptions? options, ]) async {
+    final response = await getQuestionResultsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4421,9 +4302,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] email (required):
-  Future<Response> getSSOUserByEmailWithHttpInfo(ApiGetSSOUserByEmailRequest request,) async {
-    final tenantId = request.tenantId;
-    final email = request.email;
+  Future<Response> getSSOUserByEmailWithHttpInfo(String tenantId, String email, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/sso-users/by-email/{email}'
       .replaceAll('{email}', email);
@@ -4456,8 +4335,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] email (required):
-  Future<GetSSOUserByEmailAPIResponse?> getSSOUserByEmail(ApiGetSSOUserByEmailRequest request,) async {
-    final response = await getSSOUserByEmailWithHttpInfo(request,);
+  Future<GetSSOUserByEmailAPIResponse?> getSSOUserByEmail(String tenantId, String email, ) async {
+    final response = await getSSOUserByEmailWithHttpInfo(tenantId, email, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4477,9 +4356,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getSSOUserByIdWithHttpInfo(ApiGetSSOUserByIdRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getSSOUserByIdWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/sso-users/by-id/{id}'
       .replaceAll('{id}', id);
@@ -4512,8 +4389,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetSSOUserByIdAPIResponse?> getSSOUserById(ApiGetSSOUserByIdRequest request,) async {
-    final response = await getSSOUserByIdWithHttpInfo(request,);
+  Future<GetSSOUserByIdAPIResponse?> getSSOUserById(String tenantId, String id, ) async {
+    final response = await getSSOUserByIdWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4533,9 +4410,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [int] skip:
-  Future<Response> getSSOUsersWithHttpInfo(ApiGetSSOUsersRequest request,) async {
-    final tenantId = request.tenantId;
-    final skip = request.skip;
+  Future<Response> getSSOUsersWithHttpInfo(String tenantId, [ ApiGetSSOUsersOptions? options, ]) async {
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/sso-users';
 
@@ -4570,8 +4446,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [int] skip:
-  Future<GetSSOUsersResponse?> getSSOUsers(ApiGetSSOUsersRequest request,) async {
-    final response = await getSSOUsersWithHttpInfo(request,);
+  Future<GetSSOUsersResponse?> getSSOUsers(String tenantId, [ ApiGetSSOUsersOptions? options, ]) async {
+    final response = await getSSOUsersWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4591,9 +4467,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] userId:
-  Future<Response> getSubscriptionsWithHttpInfo(ApiGetSubscriptionsRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
+  Future<Response> getSubscriptionsWithHttpInfo(String tenantId, [ ApiGetSubscriptionsOptions? options, ]) async {
+    final userId = options?.userId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/subscriptions';
 
@@ -4628,8 +4503,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] userId:
-  Future<GetSubscriptionsAPIResponse?> getSubscriptions(ApiGetSubscriptionsRequest request,) async {
-    final response = await getSubscriptionsWithHttpInfo(request,);
+  Future<GetSubscriptionsAPIResponse?> getSubscriptions(String tenantId, [ ApiGetSubscriptionsOptions? options, ]) async {
+    final response = await getSubscriptionsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4649,9 +4524,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getTenantWithHttpInfo(ApiGetTenantRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getTenantWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenants/{id}'
       .replaceAll('{id}', id);
@@ -4684,8 +4557,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetTenantResponse?> getTenant(ApiGetTenantRequest request,) async {
-    final response = await getTenantWithHttpInfo(request,);
+  Future<GetTenantResponse?> getTenant(String tenantId, String id, ) async {
+    final response = await getTenantWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4711,12 +4584,11 @@ class DefaultApi {
   /// * [double] dayNumber:
   ///
   /// * [double] skip:
-  Future<Response> getTenantDailyUsagesWithHttpInfo(ApiGetTenantDailyUsagesRequest request,) async {
-    final tenantId = request.tenantId;
-    final yearNumber = request.yearNumber;
-    final monthNumber = request.monthNumber;
-    final dayNumber = request.dayNumber;
-    final skip = request.skip;
+  Future<Response> getTenantDailyUsagesWithHttpInfo(String tenantId, [ ApiGetTenantDailyUsagesOptions? options, ]) async {
+    final yearNumber = options?.yearNumber;
+    final monthNumber = options?.monthNumber;
+    final dayNumber = options?.dayNumber;
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-daily-usage';
 
@@ -4766,8 +4638,8 @@ class DefaultApi {
   /// * [double] dayNumber:
   ///
   /// * [double] skip:
-  Future<GetTenantDailyUsagesResponse?> getTenantDailyUsages(ApiGetTenantDailyUsagesRequest request,) async {
-    final response = await getTenantDailyUsagesWithHttpInfo(request,);
+  Future<GetTenantDailyUsagesResponse?> getTenantDailyUsages(String tenantId, [ ApiGetTenantDailyUsagesOptions? options, ]) async {
+    final response = await getTenantDailyUsagesWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4787,9 +4659,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getTenantPackageWithHttpInfo(ApiGetTenantPackageRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getTenantPackageWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-packages/{id}'
       .replaceAll('{id}', id);
@@ -4822,8 +4692,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetTenantPackageResponse?> getTenantPackage(ApiGetTenantPackageRequest request,) async {
-    final response = await getTenantPackageWithHttpInfo(request,);
+  Future<GetTenantPackageResponse?> getTenantPackage(String tenantId, String id, ) async {
+    final response = await getTenantPackageWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4843,9 +4713,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<Response> getTenantPackagesWithHttpInfo(ApiGetTenantPackagesRequest request,) async {
-    final tenantId = request.tenantId;
-    final skip = request.skip;
+  Future<Response> getTenantPackagesWithHttpInfo(String tenantId, [ ApiGetTenantPackagesOptions? options, ]) async {
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-packages';
 
@@ -4880,8 +4749,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<GetTenantPackagesResponse?> getTenantPackages(ApiGetTenantPackagesRequest request,) async {
-    final response = await getTenantPackagesWithHttpInfo(request,);
+  Future<GetTenantPackagesResponse?> getTenantPackages(String tenantId, [ ApiGetTenantPackagesOptions? options, ]) async {
+    final response = await getTenantPackagesWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4901,9 +4770,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getTenantUserWithHttpInfo(ApiGetTenantUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getTenantUserWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-users/{id}'
       .replaceAll('{id}', id);
@@ -4936,8 +4803,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetTenantUserResponse?> getTenantUser(ApiGetTenantUserRequest request,) async {
-    final response = await getTenantUserWithHttpInfo(request,);
+  Future<GetTenantUserResponse?> getTenantUser(String tenantId, String id, ) async {
+    final response = await getTenantUserWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -4957,9 +4824,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<Response> getTenantUsersWithHttpInfo(ApiGetTenantUsersRequest request,) async {
-    final tenantId = request.tenantId;
-    final skip = request.skip;
+  Future<Response> getTenantUsersWithHttpInfo(String tenantId, [ ApiGetTenantUsersOptions? options, ]) async {
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-users';
 
@@ -4994,8 +4860,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [double] skip:
-  Future<GetTenantUsersResponse?> getTenantUsers(ApiGetTenantUsersRequest request,) async {
-    final response = await getTenantUsersWithHttpInfo(request,);
+  Future<GetTenantUsersResponse?> getTenantUsers(String tenantId, [ ApiGetTenantUsersOptions? options, ]) async {
+    final response = await getTenantUsersWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5017,10 +4883,9 @@ class DefaultApi {
   /// * [String] meta:
   ///
   /// * [double] skip:
-  Future<Response> getTenantsWithHttpInfo(ApiGetTenantsRequest request,) async {
-    final tenantId = request.tenantId;
-    final meta = request.meta;
-    final skip = request.skip;
+  Future<Response> getTenantsWithHttpInfo(String tenantId, [ ApiGetTenantsOptions? options, ]) async {
+    final meta = options?.meta;
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenants';
 
@@ -5060,8 +4925,8 @@ class DefaultApi {
   /// * [String] meta:
   ///
   /// * [double] skip:
-  Future<GetTenantsResponse?> getTenants(ApiGetTenantsRequest request,) async {
-    final response = await getTenantsWithHttpInfo(request,);
+  Future<GetTenantsResponse?> getTenants(String tenantId, [ ApiGetTenantsOptions? options, ]) async {
+    final response = await getTenantsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5083,10 +4948,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] userId:
-  Future<Response> getTicketWithHttpInfo(ApiGetTicketRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final userId = request.userId;
+  Future<Response> getTicketWithHttpInfo(String tenantId, String id, [ ApiGetTicketOptions? options, ]) async {
+    final userId = options?.userId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tickets/{id}'
       .replaceAll('{id}', id);
@@ -5124,8 +4987,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] userId:
-  Future<GetTicketResponse?> getTicket(ApiGetTicketRequest request,) async {
-    final response = await getTicketWithHttpInfo(request,);
+  Future<GetTicketResponse?> getTicket(String tenantId, String id, [ ApiGetTicketOptions? options, ]) async {
+    final response = await getTicketWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5151,12 +5014,11 @@ class DefaultApi {
   /// * [double] skip:
   ///
   /// * [double] limit:
-  Future<Response> getTicketsWithHttpInfo(ApiGetTicketsRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
-    final state = request.state;
-    final skip = request.skip;
-    final limit = request.limit;
+  Future<Response> getTicketsWithHttpInfo(String tenantId, [ ApiGetTicketsOptions? options, ]) async {
+    final userId = options?.userId;
+    final state = options?.state;
+    final skip = options?.skip;
+    final limit = options?.limit;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tickets';
 
@@ -5206,8 +5068,8 @@ class DefaultApi {
   /// * [double] skip:
   ///
   /// * [double] limit:
-  Future<GetTicketsResponse?> getTickets(ApiGetTicketsRequest request,) async {
-    final response = await getTicketsWithHttpInfo(request,);
+  Future<GetTicketsResponse?> getTickets(String tenantId, [ ApiGetTicketsOptions? options, ]) async {
+    final response = await getTicketsWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5227,9 +5089,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getUserWithHttpInfo(ApiGetUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getUserWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/users/{id}'
       .replaceAll('{id}', id);
@@ -5262,8 +5122,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<GetUserResponse?> getUser(ApiGetUserRequest request,) async {
-    final response = await getUserWithHttpInfo(request,);
+  Future<GetUserResponse?> getUser(String tenantId, String id, ) async {
+    final response = await getUserWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5283,9 +5143,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getUserBadgeWithHttpInfo(ApiGetUserBadgeRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getUserBadgeWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badges/{id}'
       .replaceAll('{id}', id);
@@ -5318,8 +5176,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIGetUserBadgeResponse?> getUserBadge(ApiGetUserBadgeRequest request,) async {
-    final response = await getUserBadgeWithHttpInfo(request,);
+  Future<APIGetUserBadgeResponse?> getUserBadge(String tenantId, String id, ) async {
+    final response = await getUserBadgeWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5339,9 +5197,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getUserBadgeProgressByIdWithHttpInfo(ApiGetUserBadgeProgressByIdRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
+  Future<Response> getUserBadgeProgressByIdWithHttpInfo(String tenantId, String id, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badge-progress/{id}'
       .replaceAll('{id}', id);
@@ -5374,8 +5230,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] id (required):
-  Future<APIGetUserBadgeProgressResponse?> getUserBadgeProgressById(ApiGetUserBadgeProgressByIdRequest request,) async {
-    final response = await getUserBadgeProgressByIdWithHttpInfo(request,);
+  Future<APIGetUserBadgeProgressResponse?> getUserBadgeProgressById(String tenantId, String id, ) async {
+    final response = await getUserBadgeProgressByIdWithHttpInfo(tenantId, id, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5395,9 +5251,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] userId (required):
-  Future<Response> getUserBadgeProgressByUserIdWithHttpInfo(ApiGetUserBadgeProgressByUserIdRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
+  Future<Response> getUserBadgeProgressByUserIdWithHttpInfo(String tenantId, String userId, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badge-progress/user/{userId}'
       .replaceAll('{userId}', userId);
@@ -5430,8 +5284,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] userId (required):
-  Future<APIGetUserBadgeProgressResponse?> getUserBadgeProgressByUserId(ApiGetUserBadgeProgressByUserIdRequest request,) async {
-    final response = await getUserBadgeProgressByUserIdWithHttpInfo(request,);
+  Future<APIGetUserBadgeProgressResponse?> getUserBadgeProgressByUserId(String tenantId, String userId, ) async {
+    final response = await getUserBadgeProgressByUserIdWithHttpInfo(tenantId, userId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5455,11 +5309,10 @@ class DefaultApi {
   /// * [double] limit:
   ///
   /// * [double] skip:
-  Future<Response> getUserBadgeProgressListWithHttpInfo(ApiGetUserBadgeProgressListRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
-    final limit = request.limit;
-    final skip = request.skip;
+  Future<Response> getUserBadgeProgressListWithHttpInfo(String tenantId, [ ApiGetUserBadgeProgressListOptions? options, ]) async {
+    final userId = options?.userId;
+    final limit = options?.limit;
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badge-progress';
 
@@ -5504,8 +5357,8 @@ class DefaultApi {
   /// * [double] limit:
   ///
   /// * [double] skip:
-  Future<APIGetUserBadgeProgressListResponse?> getUserBadgeProgressList(ApiGetUserBadgeProgressListRequest request,) async {
-    final response = await getUserBadgeProgressListWithHttpInfo(request,);
+  Future<APIGetUserBadgeProgressListResponse?> getUserBadgeProgressList(String tenantId, [ ApiGetUserBadgeProgressListOptions? options, ]) async {
+    final response = await getUserBadgeProgressListWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5535,14 +5388,13 @@ class DefaultApi {
   /// * [double] limit:
   ///
   /// * [double] skip:
-  Future<Response> getUserBadgesWithHttpInfo(ApiGetUserBadgesRequest request,) async {
-    final tenantId = request.tenantId;
-    final userId = request.userId;
-    final badgeId = request.badgeId;
-    final type = request.type;
-    final displayedOnComments = request.displayedOnComments;
-    final limit = request.limit;
-    final skip = request.skip;
+  Future<Response> getUserBadgesWithHttpInfo(String tenantId, [ ApiGetUserBadgesOptions? options, ]) async {
+    final userId = options?.userId;
+    final badgeId = options?.badgeId;
+    final type = options?.type;
+    final displayedOnComments = options?.displayedOnComments;
+    final limit = options?.limit;
+    final skip = options?.skip;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badges';
 
@@ -5602,8 +5454,8 @@ class DefaultApi {
   /// * [double] limit:
   ///
   /// * [double] skip:
-  Future<APIGetUserBadgesResponse?> getUserBadges(ApiGetUserBadgesRequest request,) async {
-    final response = await getUserBadgesWithHttpInfo(request,);
+  Future<APIGetUserBadgesResponse?> getUserBadges(String tenantId, [ ApiGetUserBadgesOptions? options, ]) async {
+    final response = await getUserBadgesWithHttpInfo(tenantId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5623,9 +5475,7 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<Response> getVotesWithHttpInfo(ApiGetVotesRequest request,) async {
-    final tenantId = request.tenantId;
-    final urlId = request.urlId;
+  Future<Response> getVotesWithHttpInfo(String tenantId, String urlId, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/votes';
 
@@ -5658,8 +5508,8 @@ class DefaultApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<GetVotesResponse?> getVotes(ApiGetVotesRequest request,) async {
-    final response = await getVotesWithHttpInfo(request,);
+  Future<GetVotesResponse?> getVotes(String tenantId, String urlId, ) async {
+    final response = await getVotesWithHttpInfo(tenantId, urlId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5683,11 +5533,9 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<Response> getVotesForUserWithHttpInfo(ApiGetVotesForUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final urlId = request.urlId;
-    final userId = request.userId;
-    final anonUserId = request.anonUserId;
+  Future<Response> getVotesForUserWithHttpInfo(String tenantId, String urlId, [ ApiGetVotesForUserOptions? options, ]) async {
+    final userId = options?.userId;
+    final anonUserId = options?.anonUserId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/votes/for-user';
 
@@ -5730,8 +5578,8 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<GetVotesForUserResponse?> getVotesForUser(ApiGetVotesForUserRequest request,) async {
-    final response = await getVotesForUserWithHttpInfo(request,);
+  Future<GetVotesForUserResponse?> getVotesForUser(String tenantId, String urlId, [ ApiGetVotesForUserOptions? options, ]) async {
+    final response = await getVotesForUserWithHttpInfo(tenantId, urlId, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5753,10 +5601,7 @@ class DefaultApi {
   /// * [String] domainToUpdate (required):
   ///
   /// * [PatchDomainConfigParams] patchDomainConfigParams (required):
-  Future<Response> patchDomainConfigWithHttpInfo(ApiPatchDomainConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final domainToUpdate = request.domainToUpdate;
-    final patchDomainConfigParams = request.patchDomainConfigParams;
+  Future<Response> patchDomainConfigWithHttpInfo(String tenantId, String domainToUpdate, PatchDomainConfigParams patchDomainConfigParams, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/domain-configs/{domainToUpdate}'
       .replaceAll('{domainToUpdate}', domainToUpdate);
@@ -5791,8 +5636,8 @@ class DefaultApi {
   /// * [String] domainToUpdate (required):
   ///
   /// * [PatchDomainConfigParams] patchDomainConfigParams (required):
-  Future<PatchDomainConfigResponse?> patchDomainConfig(ApiPatchDomainConfigRequest request,) async {
-    final response = await patchDomainConfigWithHttpInfo(request,);
+  Future<PatchDomainConfigResponse?> patchDomainConfig(String tenantId, String domainToUpdate, PatchDomainConfigParams patchDomainConfigParams, ) async {
+    final response = await patchDomainConfigWithHttpInfo(tenantId, domainToUpdate, patchDomainConfigParams, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5814,10 +5659,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [UpdateHashTagBody] updateHashTagBody:
-  Future<Response> patchHashTagWithHttpInfo(ApiPatchHashTagRequest request,) async {
-    final tag = request.tag;
-    final tenantId = request.tenantId;
-    final updateHashTagBody = request.updateHashTagBody;
+  Future<Response> patchHashTagWithHttpInfo(String tag, UpdateHashTagBody updateHashTagBody, [ ApiPatchHashTagOptions? options, ]) async {
+    final tenantId = options?.tenantId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/hash-tags/{tag}'
       .replaceAll('{tag}', tag);
@@ -5854,8 +5697,8 @@ class DefaultApi {
   /// * [String] tenantId:
   ///
   /// * [UpdateHashTagBody] updateHashTagBody:
-  Future<UpdateHashTagResponse?> patchHashTag(ApiPatchHashTagRequest request,) async {
-    final response = await patchHashTagWithHttpInfo(request,);
+  Future<UpdateHashTagResponse?> patchHashTag(String tag, UpdateHashTagBody updateHashTagBody, [ ApiPatchHashTagOptions? options, ]) async {
+    final response = await patchHashTagWithHttpInfo(tag, updateHashTagBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5877,10 +5720,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateAPIPageData] updateAPIPageData (required):
-  Future<Response> patchPageWithHttpInfo(ApiPatchPageRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateAPIPageData = request.updateAPIPageData;
+  Future<Response> patchPageWithHttpInfo(String tenantId, String id, UpdateAPIPageData updateAPIPageData, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/pages/{id}'
       .replaceAll('{id}', id);
@@ -5915,8 +5755,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateAPIPageData] updateAPIPageData (required):
-  Future<PatchPageAPIResponse?> patchPage(ApiPatchPageRequest request,) async {
-    final response = await patchPageWithHttpInfo(request,);
+  Future<PatchPageAPIResponse?> patchPage(String tenantId, String id, UpdateAPIPageData updateAPIPageData, ) async {
+    final response = await patchPageWithHttpInfo(tenantId, id, updateAPIPageData, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -5940,11 +5780,8 @@ class DefaultApi {
   /// * [UpdateAPISSOUserData] updateAPISSOUserData (required):
   ///
   /// * [bool] updateComments:
-  Future<Response> patchSSOUserWithHttpInfo(ApiPatchSSOUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateAPISSOUserData = request.updateAPISSOUserData;
-    final updateComments = request.updateComments;
+  Future<Response> patchSSOUserWithHttpInfo(String tenantId, String id, UpdateAPISSOUserData updateAPISSOUserData, [ ApiPatchSSOUserOptions? options, ]) async {
+    final updateComments = options?.updateComments;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/sso-users/{id}'
       .replaceAll('{id}', id);
@@ -5984,8 +5821,8 @@ class DefaultApi {
   /// * [UpdateAPISSOUserData] updateAPISSOUserData (required):
   ///
   /// * [bool] updateComments:
-  Future<PatchSSOUserAPIResponse?> patchSSOUser(ApiPatchSSOUserRequest request,) async {
-    final response = await patchSSOUserWithHttpInfo(request,);
+  Future<PatchSSOUserAPIResponse?> patchSSOUser(String tenantId, String id, UpdateAPISSOUserData updateAPISSOUserData, [ ApiPatchSSOUserOptions? options, ]) async {
+    final response = await patchSSOUserWithHttpInfo(tenantId, id, updateAPISSOUserData, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6007,10 +5844,7 @@ class DefaultApi {
   /// * [String] domainToUpdate (required):
   ///
   /// * [UpdateDomainConfigParams] updateDomainConfigParams (required):
-  Future<Response> putDomainConfigWithHttpInfo(ApiPutDomainConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final domainToUpdate = request.domainToUpdate;
-    final updateDomainConfigParams = request.updateDomainConfigParams;
+  Future<Response> putDomainConfigWithHttpInfo(String tenantId, String domainToUpdate, UpdateDomainConfigParams updateDomainConfigParams, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/domain-configs/{domainToUpdate}'
       .replaceAll('{domainToUpdate}', domainToUpdate);
@@ -6045,8 +5879,8 @@ class DefaultApi {
   /// * [String] domainToUpdate (required):
   ///
   /// * [UpdateDomainConfigParams] updateDomainConfigParams (required):
-  Future<PutDomainConfigResponse?> putDomainConfig(ApiPutDomainConfigRequest request,) async {
-    final response = await putDomainConfigWithHttpInfo(request,);
+  Future<PutDomainConfigResponse?> putDomainConfig(String tenantId, String domainToUpdate, UpdateDomainConfigParams updateDomainConfigParams, ) async {
+    final response = await putDomainConfigWithHttpInfo(tenantId, domainToUpdate, updateDomainConfigParams, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6070,11 +5904,8 @@ class DefaultApi {
   /// * [UpdateAPISSOUserData] updateAPISSOUserData (required):
   ///
   /// * [bool] updateComments:
-  Future<Response> putSSOUserWithHttpInfo(ApiPutSSOUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateAPISSOUserData = request.updateAPISSOUserData;
-    final updateComments = request.updateComments;
+  Future<Response> putSSOUserWithHttpInfo(String tenantId, String id, UpdateAPISSOUserData updateAPISSOUserData, [ ApiPutSSOUserOptions? options, ]) async {
+    final updateComments = options?.updateComments;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/sso-users/{id}'
       .replaceAll('{id}', id);
@@ -6114,8 +5945,8 @@ class DefaultApi {
   /// * [UpdateAPISSOUserData] updateAPISSOUserData (required):
   ///
   /// * [bool] updateComments:
-  Future<PutSSOUserAPIResponse?> putSSOUser(ApiPutSSOUserRequest request,) async {
-    final response = await putSSOUserWithHttpInfo(request,);
+  Future<PutSSOUserAPIResponse?> putSSOUser(String tenantId, String id, UpdateAPISSOUserData updateAPISSOUserData, [ ApiPutSSOUserOptions? options, ]) async {
+    final response = await putSSOUserWithHttpInfo(tenantId, id, updateAPISSOUserData, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6137,10 +5968,8 @@ class DefaultApi {
   /// * [RenderEmailTemplateBody] renderEmailTemplateBody (required):
   ///
   /// * [String] locale:
-  Future<Response> renderEmailTemplateWithHttpInfo(ApiRenderEmailTemplateRequest request,) async {
-    final tenantId = request.tenantId;
-    final renderEmailTemplateBody = request.renderEmailTemplateBody;
-    final locale = request.locale;
+  Future<Response> renderEmailTemplateWithHttpInfo(String tenantId, RenderEmailTemplateBody renderEmailTemplateBody, [ ApiRenderEmailTemplateOptions? options, ]) async {
+    final locale = options?.locale;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates/render';
 
@@ -6177,8 +6006,8 @@ class DefaultApi {
   /// * [RenderEmailTemplateBody] renderEmailTemplateBody (required):
   ///
   /// * [String] locale:
-  Future<RenderEmailTemplateResponse?> renderEmailTemplate(ApiRenderEmailTemplateRequest request,) async {
-    final response = await renderEmailTemplateWithHttpInfo(request,);
+  Future<RenderEmailTemplateResponse?> renderEmailTemplate(String tenantId, RenderEmailTemplateBody renderEmailTemplateBody, [ ApiRenderEmailTemplateOptions? options, ]) async {
+    final response = await renderEmailTemplateWithHttpInfo(tenantId, renderEmailTemplateBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6200,10 +6029,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [ReplaceTenantPackageBody] replaceTenantPackageBody (required):
-  Future<Response> replaceTenantPackageWithHttpInfo(ApiReplaceTenantPackageRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final replaceTenantPackageBody = request.replaceTenantPackageBody;
+  Future<Response> replaceTenantPackageWithHttpInfo(String tenantId, String id, ReplaceTenantPackageBody replaceTenantPackageBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-packages/{id}'
       .replaceAll('{id}', id);
@@ -6238,8 +6064,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [ReplaceTenantPackageBody] replaceTenantPackageBody (required):
-  Future<APIEmptyResponse?> replaceTenantPackage(ApiReplaceTenantPackageRequest request,) async {
-    final response = await replaceTenantPackageWithHttpInfo(request,);
+  Future<APIEmptyResponse?> replaceTenantPackage(String tenantId, String id, ReplaceTenantPackageBody replaceTenantPackageBody, ) async {
+    final response = await replaceTenantPackageWithHttpInfo(tenantId, id, replaceTenantPackageBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6263,11 +6089,8 @@ class DefaultApi {
   /// * [ReplaceTenantUserBody] replaceTenantUserBody (required):
   ///
   /// * [String] updateComments:
-  Future<Response> replaceTenantUserWithHttpInfo(ApiReplaceTenantUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final replaceTenantUserBody = request.replaceTenantUserBody;
-    final updateComments = request.updateComments;
+  Future<Response> replaceTenantUserWithHttpInfo(String tenantId, String id, ReplaceTenantUserBody replaceTenantUserBody, [ ApiReplaceTenantUserOptions? options, ]) async {
+    final updateComments = options?.updateComments;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-users/{id}'
       .replaceAll('{id}', id);
@@ -6307,8 +6130,8 @@ class DefaultApi {
   /// * [ReplaceTenantUserBody] replaceTenantUserBody (required):
   ///
   /// * [String] updateComments:
-  Future<APIEmptyResponse?> replaceTenantUser(ApiReplaceTenantUserRequest request,) async {
-    final response = await replaceTenantUserWithHttpInfo(request,);
+  Future<APIEmptyResponse?> replaceTenantUser(String tenantId, String id, ReplaceTenantUserBody replaceTenantUserBody, [ ApiReplaceTenantUserOptions? options, ]) async {
+    final response = await replaceTenantUserWithHttpInfo(tenantId, id, replaceTenantUserBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6336,13 +6159,11 @@ class DefaultApi {
   /// * [bool] sendEmails:
   ///
   /// * [bool] populateNotifications:
-  Future<Response> saveCommentWithHttpInfo(ApiSaveCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final createCommentParams = request.createCommentParams;
-    final isLive = request.isLive;
-    final doSpamCheck = request.doSpamCheck;
-    final sendEmails = request.sendEmails;
-    final populateNotifications = request.populateNotifications;
+  Future<Response> saveCommentWithHttpInfo(String tenantId, CreateCommentParams createCommentParams, [ ApiSaveCommentOptions? options, ]) async {
+    final isLive = options?.isLive;
+    final doSpamCheck = options?.doSpamCheck;
+    final sendEmails = options?.sendEmails;
+    final populateNotifications = options?.populateNotifications;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments';
 
@@ -6394,8 +6215,8 @@ class DefaultApi {
   /// * [bool] sendEmails:
   ///
   /// * [bool] populateNotifications:
-  Future<APISaveCommentResponse?> saveComment(ApiSaveCommentRequest request,) async {
-    final response = await saveCommentWithHttpInfo(request,);
+  Future<APISaveCommentResponse?> saveComment(String tenantId, CreateCommentParams createCommentParams, [ ApiSaveCommentOptions? options, ]) async {
+    final response = await saveCommentWithHttpInfo(tenantId, createCommentParams, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6423,13 +6244,11 @@ class DefaultApi {
   /// * [bool] sendEmails:
   ///
   /// * [bool] populateNotifications:
-  Future<Response> saveCommentsBulkWithHttpInfo(ApiSaveCommentsBulkRequest request,) async {
-    final tenantId = request.tenantId;
-    final createCommentParams = request.createCommentParams;
-    final isLive = request.isLive;
-    final doSpamCheck = request.doSpamCheck;
-    final sendEmails = request.sendEmails;
-    final populateNotifications = request.populateNotifications;
+  Future<Response> saveCommentsBulkWithHttpInfo(String tenantId, List<CreateCommentParams> createCommentParams, [ ApiSaveCommentsBulkOptions? options, ]) async {
+    final isLive = options?.isLive;
+    final doSpamCheck = options?.doSpamCheck;
+    final sendEmails = options?.sendEmails;
+    final populateNotifications = options?.populateNotifications;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/bulk';
 
@@ -6481,8 +6300,8 @@ class DefaultApi {
   /// * [bool] sendEmails:
   ///
   /// * [bool] populateNotifications:
-  Future<List<SaveCommentsBulkResponse>?> saveCommentsBulk(ApiSaveCommentsBulkRequest request,) async {
-    final response = await saveCommentsBulkWithHttpInfo(request,);
+  Future<List<SaveCommentsBulkResponse>?> saveCommentsBulk(String tenantId, List<CreateCommentParams> createCommentParams, [ ApiSaveCommentsBulkOptions? options, ]) async {
+    final response = await saveCommentsBulkWithHttpInfo(tenantId, createCommentParams, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6507,10 +6326,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] fromName (required):
-  Future<Response> sendInviteWithHttpInfo(ApiSendInviteRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final fromName = request.fromName;
+  Future<Response> sendInviteWithHttpInfo(String tenantId, String id, String fromName, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/moderators/{id}/send-invite'
       .replaceAll('{id}', id);
@@ -6546,8 +6362,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] fromName (required):
-  Future<APIEmptyResponse?> sendInvite(ApiSendInviteRequest request,) async {
-    final response = await sendInviteWithHttpInfo(request,);
+  Future<APIEmptyResponse?> sendInvite(String tenantId, String id, String fromName, ) async {
+    final response = await sendInviteWithHttpInfo(tenantId, id, fromName, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6569,10 +6385,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] redirectURL:
-  Future<Response> sendLoginLinkWithHttpInfo(ApiSendLoginLinkRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final redirectURL = request.redirectURL;
+  Future<Response> sendLoginLinkWithHttpInfo(String tenantId, String id, [ ApiSendLoginLinkOptions? options, ]) async {
+    final redirectURL = options?.redirectURL;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-users/{id}/send-login-link'
       .replaceAll('{id}', id);
@@ -6610,8 +6424,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [String] redirectURL:
-  Future<APIEmptyResponse?> sendLoginLink(ApiSendLoginLinkRequest request,) async {
-    final response = await sendLoginLinkWithHttpInfo(request,);
+  Future<APIEmptyResponse?> sendLoginLink(String tenantId, String id, [ ApiSendLoginLinkOptions? options, ]) async {
+    final response = await sendLoginLinkWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6637,12 +6451,9 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<Response> unBlockUserFromCommentWithHttpInfo(ApiUnBlockUserFromCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final unBlockFromCommentParams = request.unBlockFromCommentParams;
-    final userId = request.userId;
-    final anonUserId = request.anonUserId;
+  Future<Response> unBlockUserFromCommentWithHttpInfo(String tenantId, String id, UnBlockFromCommentParams unBlockFromCommentParams, [ ApiUnBlockUserFromCommentOptions? options, ]) async {
+    final userId = options?.userId;
+    final anonUserId = options?.anonUserId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/{id}/un-block'
       .replaceAll('{id}', id);
@@ -6687,8 +6498,8 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<UnblockSuccess?> unBlockUserFromComment(ApiUnBlockUserFromCommentRequest request,) async {
-    final response = await unBlockUserFromCommentWithHttpInfo(request,);
+  Future<UnblockSuccess?> unBlockUserFromComment(String tenantId, String id, UnBlockFromCommentParams unBlockFromCommentParams, [ ApiUnBlockUserFromCommentOptions? options, ]) async {
+    final response = await unBlockUserFromCommentWithHttpInfo(tenantId, id, unBlockFromCommentParams, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6712,11 +6523,9 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<Response> unFlagCommentWithHttpInfo(ApiUnFlagCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final userId = request.userId;
-    final anonUserId = request.anonUserId;
+  Future<Response> unFlagCommentWithHttpInfo(String tenantId, String id, [ ApiUnFlagCommentOptions? options, ]) async {
+    final userId = options?.userId;
+    final anonUserId = options?.anonUserId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/{id}/un-flag'
       .replaceAll('{id}', id);
@@ -6759,8 +6568,8 @@ class DefaultApi {
   /// * [String] userId:
   ///
   /// * [String] anonUserId:
-  Future<FlagCommentResponse?> unFlagComment(ApiUnFlagCommentRequest request,) async {
-    final response = await unFlagCommentWithHttpInfo(request,);
+  Future<FlagCommentResponse?> unFlagComment(String tenantId, String id, [ ApiUnFlagCommentOptions? options, ]) async {
+    final response = await unFlagCommentWithHttpInfo(tenantId, id, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6788,13 +6597,10 @@ class DefaultApi {
   /// * [bool] doSpamCheck:
   ///
   /// * [bool] isLive:
-  Future<Response> updateCommentWithHttpInfo(ApiUpdateCommentRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updatableCommentParams = request.updatableCommentParams;
-    final contextUserId = request.contextUserId;
-    final doSpamCheck = request.doSpamCheck;
-    final isLive = request.isLive;
+  Future<Response> updateCommentWithHttpInfo(String tenantId, String id, UpdatableCommentParams updatableCommentParams, [ ApiUpdateCommentOptions? options, ]) async {
+    final contextUserId = options?.contextUserId;
+    final doSpamCheck = options?.doSpamCheck;
+    final isLive = options?.isLive;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/comments/{id}'
       .replaceAll('{id}', id);
@@ -6844,8 +6650,8 @@ class DefaultApi {
   /// * [bool] doSpamCheck:
   ///
   /// * [bool] isLive:
-  Future<APIEmptyResponse?> updateComment(ApiUpdateCommentRequest request,) async {
-    final response = await updateCommentWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateComment(String tenantId, String id, UpdatableCommentParams updatableCommentParams, [ ApiUpdateCommentOptions? options, ]) async {
+    final response = await updateCommentWithHttpInfo(tenantId, id, updatableCommentParams, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6867,10 +6673,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateEmailTemplateBody] updateEmailTemplateBody (required):
-  Future<Response> updateEmailTemplateWithHttpInfo(ApiUpdateEmailTemplateRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateEmailTemplateBody = request.updateEmailTemplateBody;
+  Future<Response> updateEmailTemplateWithHttpInfo(String tenantId, String id, UpdateEmailTemplateBody updateEmailTemplateBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/email-templates/{id}'
       .replaceAll('{id}', id);
@@ -6905,8 +6708,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateEmailTemplateBody] updateEmailTemplateBody (required):
-  Future<APIEmptyResponse?> updateEmailTemplate(ApiUpdateEmailTemplateRequest request,) async {
-    final response = await updateEmailTemplateWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateEmailTemplate(String tenantId, String id, UpdateEmailTemplateBody updateEmailTemplateBody, ) async {
+    final response = await updateEmailTemplateWithHttpInfo(tenantId, id, updateEmailTemplateBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6928,10 +6731,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [FeedPost] feedPost (required):
-  Future<Response> updateFeedPostWithHttpInfo(ApiUpdateFeedPostRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final feedPost = request.feedPost;
+  Future<Response> updateFeedPostWithHttpInfo(String tenantId, String id, FeedPost feedPost, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/feed-posts/{id}'
       .replaceAll('{id}', id);
@@ -6966,8 +6766,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [FeedPost] feedPost (required):
-  Future<APIEmptyResponse?> updateFeedPost(ApiUpdateFeedPostRequest request,) async {
-    final response = await updateFeedPostWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateFeedPost(String tenantId, String id, FeedPost feedPost, ) async {
+    final response = await updateFeedPostWithHttpInfo(tenantId, id, feedPost, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -6989,10 +6789,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateModeratorBody] updateModeratorBody (required):
-  Future<Response> updateModeratorWithHttpInfo(ApiUpdateModeratorRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateModeratorBody = request.updateModeratorBody;
+  Future<Response> updateModeratorWithHttpInfo(String tenantId, String id, UpdateModeratorBody updateModeratorBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/moderators/{id}'
       .replaceAll('{id}', id);
@@ -7027,8 +6824,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateModeratorBody] updateModeratorBody (required):
-  Future<APIEmptyResponse?> updateModerator(ApiUpdateModeratorRequest request,) async {
-    final response = await updateModeratorWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateModerator(String tenantId, String id, UpdateModeratorBody updateModeratorBody, ) async {
+    final response = await updateModeratorWithHttpInfo(tenantId, id, updateModeratorBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7052,11 +6849,8 @@ class DefaultApi {
   /// * [UpdateNotificationBody] updateNotificationBody (required):
   ///
   /// * [String] userId:
-  Future<Response> updateNotificationWithHttpInfo(ApiUpdateNotificationRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateNotificationBody = request.updateNotificationBody;
-    final userId = request.userId;
+  Future<Response> updateNotificationWithHttpInfo(String tenantId, String id, UpdateNotificationBody updateNotificationBody, [ ApiUpdateNotificationOptions? options, ]) async {
+    final userId = options?.userId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/notifications/{id}'
       .replaceAll('{id}', id);
@@ -7096,8 +6890,8 @@ class DefaultApi {
   /// * [UpdateNotificationBody] updateNotificationBody (required):
   ///
   /// * [String] userId:
-  Future<APIEmptyResponse?> updateNotification(ApiUpdateNotificationRequest request,) async {
-    final response = await updateNotificationWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateNotification(String tenantId, String id, UpdateNotificationBody updateNotificationBody, [ ApiUpdateNotificationOptions? options, ]) async {
+    final response = await updateNotificationWithHttpInfo(tenantId, id, updateNotificationBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7119,10 +6913,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateQuestionConfigBody] updateQuestionConfigBody (required):
-  Future<Response> updateQuestionConfigWithHttpInfo(ApiUpdateQuestionConfigRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateQuestionConfigBody = request.updateQuestionConfigBody;
+  Future<Response> updateQuestionConfigWithHttpInfo(String tenantId, String id, UpdateQuestionConfigBody updateQuestionConfigBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-configs/{id}'
       .replaceAll('{id}', id);
@@ -7157,8 +6948,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateQuestionConfigBody] updateQuestionConfigBody (required):
-  Future<APIEmptyResponse?> updateQuestionConfig(ApiUpdateQuestionConfigRequest request,) async {
-    final response = await updateQuestionConfigWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateQuestionConfig(String tenantId, String id, UpdateQuestionConfigBody updateQuestionConfigBody, ) async {
+    final response = await updateQuestionConfigWithHttpInfo(tenantId, id, updateQuestionConfigBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7180,10 +6971,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateQuestionResultBody] updateQuestionResultBody (required):
-  Future<Response> updateQuestionResultWithHttpInfo(ApiUpdateQuestionResultRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateQuestionResultBody = request.updateQuestionResultBody;
+  Future<Response> updateQuestionResultWithHttpInfo(String tenantId, String id, UpdateQuestionResultBody updateQuestionResultBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/question-results/{id}'
       .replaceAll('{id}', id);
@@ -7218,8 +7006,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateQuestionResultBody] updateQuestionResultBody (required):
-  Future<APIEmptyResponse?> updateQuestionResult(ApiUpdateQuestionResultRequest request,) async {
-    final response = await updateQuestionResultWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateQuestionResult(String tenantId, String id, UpdateQuestionResultBody updateQuestionResultBody, ) async {
+    final response = await updateQuestionResultWithHttpInfo(tenantId, id, updateQuestionResultBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7243,11 +7031,8 @@ class DefaultApi {
   /// * [UpdateAPIUserSubscriptionData] updateAPIUserSubscriptionData (required):
   ///
   /// * [String] userId:
-  Future<Response> updateSubscriptionWithHttpInfo(ApiUpdateSubscriptionRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateAPIUserSubscriptionData = request.updateAPIUserSubscriptionData;
-    final userId = request.userId;
+  Future<Response> updateSubscriptionWithHttpInfo(String tenantId, String id, UpdateAPIUserSubscriptionData updateAPIUserSubscriptionData, [ ApiUpdateSubscriptionOptions? options, ]) async {
+    final userId = options?.userId;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/subscriptions/{id}'
       .replaceAll('{id}', id);
@@ -7287,8 +7072,8 @@ class DefaultApi {
   /// * [UpdateAPIUserSubscriptionData] updateAPIUserSubscriptionData (required):
   ///
   /// * [String] userId:
-  Future<UpdateSubscriptionAPIResponse?> updateSubscription(ApiUpdateSubscriptionRequest request,) async {
-    final response = await updateSubscriptionWithHttpInfo(request,);
+  Future<UpdateSubscriptionAPIResponse?> updateSubscription(String tenantId, String id, UpdateAPIUserSubscriptionData updateAPIUserSubscriptionData, [ ApiUpdateSubscriptionOptions? options, ]) async {
+    final response = await updateSubscriptionWithHttpInfo(tenantId, id, updateAPIUserSubscriptionData, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7310,10 +7095,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateTenantBody] updateTenantBody (required):
-  Future<Response> updateTenantWithHttpInfo(ApiUpdateTenantRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateTenantBody = request.updateTenantBody;
+  Future<Response> updateTenantWithHttpInfo(String tenantId, String id, UpdateTenantBody updateTenantBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenants/{id}'
       .replaceAll('{id}', id);
@@ -7348,8 +7130,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateTenantBody] updateTenantBody (required):
-  Future<APIEmptyResponse?> updateTenant(ApiUpdateTenantRequest request,) async {
-    final response = await updateTenantWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateTenant(String tenantId, String id, UpdateTenantBody updateTenantBody, ) async {
+    final response = await updateTenantWithHttpInfo(tenantId, id, updateTenantBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7371,10 +7153,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateTenantPackageBody] updateTenantPackageBody (required):
-  Future<Response> updateTenantPackageWithHttpInfo(ApiUpdateTenantPackageRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateTenantPackageBody = request.updateTenantPackageBody;
+  Future<Response> updateTenantPackageWithHttpInfo(String tenantId, String id, UpdateTenantPackageBody updateTenantPackageBody, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-packages/{id}'
       .replaceAll('{id}', id);
@@ -7409,8 +7188,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateTenantPackageBody] updateTenantPackageBody (required):
-  Future<APIEmptyResponse?> updateTenantPackage(ApiUpdateTenantPackageRequest request,) async {
-    final response = await updateTenantPackageWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateTenantPackage(String tenantId, String id, UpdateTenantPackageBody updateTenantPackageBody, ) async {
+    final response = await updateTenantPackageWithHttpInfo(tenantId, id, updateTenantPackageBody, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7434,11 +7213,8 @@ class DefaultApi {
   /// * [UpdateTenantUserBody] updateTenantUserBody (required):
   ///
   /// * [String] updateComments:
-  Future<Response> updateTenantUserWithHttpInfo(ApiUpdateTenantUserRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateTenantUserBody = request.updateTenantUserBody;
-    final updateComments = request.updateComments;
+  Future<Response> updateTenantUserWithHttpInfo(String tenantId, String id, UpdateTenantUserBody updateTenantUserBody, [ ApiUpdateTenantUserOptions? options, ]) async {
+    final updateComments = options?.updateComments;
     // ignore: prefer_const_declarations
     final path = r'/api/v1/tenant-users/{id}'
       .replaceAll('{id}', id);
@@ -7478,8 +7254,8 @@ class DefaultApi {
   /// * [UpdateTenantUserBody] updateTenantUserBody (required):
   ///
   /// * [String] updateComments:
-  Future<APIEmptyResponse?> updateTenantUser(ApiUpdateTenantUserRequest request,) async {
-    final response = await updateTenantUserWithHttpInfo(request,);
+  Future<APIEmptyResponse?> updateTenantUser(String tenantId, String id, UpdateTenantUserBody updateTenantUserBody, [ ApiUpdateTenantUserOptions? options, ]) async {
+    final response = await updateTenantUserWithHttpInfo(tenantId, id, updateTenantUserBody, options,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7501,10 +7277,7 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateUserBadgeParams] updateUserBadgeParams (required):
-  Future<Response> updateUserBadgeWithHttpInfo(ApiUpdateUserBadgeRequest request,) async {
-    final tenantId = request.tenantId;
-    final id = request.id;
-    final updateUserBadgeParams = request.updateUserBadgeParams;
+  Future<Response> updateUserBadgeWithHttpInfo(String tenantId, String id, UpdateUserBadgeParams updateUserBadgeParams, ) async {
     // ignore: prefer_const_declarations
     final path = r'/api/v1/user-badges/{id}'
       .replaceAll('{id}', id);
@@ -7539,8 +7312,8 @@ class DefaultApi {
   /// * [String] id (required):
   ///
   /// * [UpdateUserBadgeParams] updateUserBadgeParams (required):
-  Future<APIEmptySuccessResponse?> updateUserBadge(ApiUpdateUserBadgeRequest request,) async {
-    final response = await updateUserBadgeWithHttpInfo(request,);
+  Future<APIEmptySuccessResponse?> updateUserBadge(String tenantId, String id, UpdateUserBadgeParams updateUserBadgeParams, ) async {
+    final response = await updateUserBadgeWithHttpInfo(tenantId, id, updateUserBadgeParams, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -7555,74 +7328,35 @@ class DefaultApi {
   }
 }
 
-/// Request parameters for [DefaultApi.addDomainConfig].
-class ApiAddDomainConfigRequest {
-  const ApiAddDomainConfigRequest({
-    required this.tenantId,
-    required this.addDomainConfigParams,
-  });
-  final String tenantId;
-  final AddDomainConfigParams addDomainConfigParams;
-}
-
-/// Request parameters for [DefaultApi.addHashTag].
-class ApiAddHashTagRequest {
-  const ApiAddHashTagRequest({
+/// Optional parameters for [DefaultApi.addHashTag].
+class ApiAddHashTagOptions {
+  const ApiAddHashTagOptions({
     this.tenantId,
-    this.createHashTagBody,
   });
   final String? tenantId;
-  final CreateHashTagBody? createHashTagBody;
 }
 
-/// Request parameters for [DefaultApi.addHashTagsBulk].
-class ApiAddHashTagsBulkRequest {
-  const ApiAddHashTagsBulkRequest({
+/// Optional parameters for [DefaultApi.addHashTagsBulk].
+class ApiAddHashTagsBulkOptions {
+  const ApiAddHashTagsBulkOptions({
     this.tenantId,
-    this.bulkCreateHashTagsBody,
   });
   final String? tenantId;
-  final BulkCreateHashTagsBody? bulkCreateHashTagsBody;
 }
 
-/// Request parameters for [DefaultApi.addPage].
-class ApiAddPageRequest {
-  const ApiAddPageRequest({
-    required this.tenantId,
-    required this.createAPIPageData,
-  });
-  final String tenantId;
-  final CreateAPIPageData createAPIPageData;
-}
-
-/// Request parameters for [DefaultApi.addSSOUser].
-class ApiAddSSOUserRequest {
-  const ApiAddSSOUserRequest({
-    required this.tenantId,
-    required this.createAPISSOUserData,
-  });
-  final String tenantId;
-  final CreateAPISSOUserData createAPISSOUserData;
-}
-
-/// Request parameters for [DefaultApi.aggregate].
-class ApiAggregateRequest {
-  const ApiAggregateRequest({
-    required this.tenantId,
-    required this.aggregationRequest,
+/// Optional parameters for [DefaultApi.aggregate].
+class ApiAggregateOptions {
+  const ApiAggregateOptions({
     this.parentTenantId,
     this.includeStats,
   });
-  final String tenantId;
-  final AggregationRequest aggregationRequest;
   final String? parentTenantId;
   final bool? includeStats;
 }
 
-/// Request parameters for [DefaultApi.aggregateQuestionResults].
-class ApiAggregateQuestionResultsRequest {
-  const ApiAggregateQuestionResultsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.aggregateQuestionResults].
+class ApiAggregateQuestionResultsOptions {
+  const ApiAggregateQuestionResultsOptions({
     this.questionId,
     this.questionIds,
     this.urlId,
@@ -7630,7 +7364,6 @@ class ApiAggregateQuestionResultsRequest {
     this.startDate,
     this.forceRecalculate,
   });
-  final String tenantId;
   final String? questionId;
   final List<String>? questionIds;
   final String? urlId;
@@ -7639,52 +7372,27 @@ class ApiAggregateQuestionResultsRequest {
   final bool? forceRecalculate;
 }
 
-/// Request parameters for [DefaultApi.blockUserFromComment].
-class ApiBlockUserFromCommentRequest {
-  const ApiBlockUserFromCommentRequest({
-    required this.tenantId,
-    required this.id,
-    required this.blockFromCommentParams,
+/// Optional parameters for [DefaultApi.blockUserFromComment].
+class ApiBlockUserFromCommentOptions {
+  const ApiBlockUserFromCommentOptions({
     this.userId,
     this.anonUserId,
   });
-  final String tenantId;
-  final String id;
-  final BlockFromCommentParams blockFromCommentParams;
   final String? userId;
   final String? anonUserId;
 }
 
-/// Request parameters for [DefaultApi.bulkAggregateQuestionResults].
-class ApiBulkAggregateQuestionResultsRequest {
-  const ApiBulkAggregateQuestionResultsRequest({
-    required this.tenantId,
-    required this.bulkAggregateQuestionResultsRequest,
+/// Optional parameters for [DefaultApi.bulkAggregateQuestionResults].
+class ApiBulkAggregateQuestionResultsOptions {
+  const ApiBulkAggregateQuestionResultsOptions({
     this.forceRecalculate,
   });
-  final String tenantId;
-  final BulkAggregateQuestionResultsRequest bulkAggregateQuestionResultsRequest;
   final bool? forceRecalculate;
 }
 
-/// Request parameters for [DefaultApi.changeTicketState].
-class ApiChangeTicketStateRequest {
-  const ApiChangeTicketStateRequest({
-    required this.tenantId,
-    required this.userId,
-    required this.id,
-    required this.changeTicketStateBody,
-  });
-  final String tenantId;
-  final String userId;
-  final String id;
-  final ChangeTicketStateBody changeTicketStateBody;
-}
-
-/// Request parameters for [DefaultApi.combineCommentsWithQuestionResults].
-class ApiCombineCommentsWithQuestionResultsRequest {
-  const ApiCombineCommentsWithQuestionResultsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.combineCommentsWithQuestionResults].
+class ApiCombineCommentsWithQuestionResultsOptions {
+  const ApiCombineCommentsWithQuestionResultsOptions({
     this.questionId,
     this.questionIds,
     this.urlId,
@@ -7694,7 +7402,6 @@ class ApiCombineCommentsWithQuestionResultsRequest {
     this.maxValue,
     this.limit,
   });
-  final String tenantId;
   final String? questionId;
   final List<String>? questionIds;
   final String? urlId;
@@ -7705,371 +7412,119 @@ class ApiCombineCommentsWithQuestionResultsRequest {
   final double? limit;
 }
 
-/// Request parameters for [DefaultApi.createEmailTemplate].
-class ApiCreateEmailTemplateRequest {
-  const ApiCreateEmailTemplateRequest({
-    required this.tenantId,
-    required this.createEmailTemplateBody,
-  });
-  final String tenantId;
-  final CreateEmailTemplateBody createEmailTemplateBody;
-}
-
-/// Request parameters for [DefaultApi.createFeedPost].
-class ApiCreateFeedPostRequest {
-  const ApiCreateFeedPostRequest({
-    required this.tenantId,
-    required this.createFeedPostParams,
+/// Optional parameters for [DefaultApi.createFeedPost].
+class ApiCreateFeedPostOptions {
+  const ApiCreateFeedPostOptions({
     this.broadcastId,
     this.isLive,
     this.doSpamCheck,
     this.skipDupCheck,
   });
-  final String tenantId;
-  final CreateFeedPostParams createFeedPostParams;
   final String? broadcastId;
   final bool? isLive;
   final bool? doSpamCheck;
   final bool? skipDupCheck;
 }
 
-/// Request parameters for [DefaultApi.createModerator].
-class ApiCreateModeratorRequest {
-  const ApiCreateModeratorRequest({
-    required this.tenantId,
-    required this.createModeratorBody,
-  });
-  final String tenantId;
-  final CreateModeratorBody createModeratorBody;
-}
-
-/// Request parameters for [DefaultApi.createQuestionConfig].
-class ApiCreateQuestionConfigRequest {
-  const ApiCreateQuestionConfigRequest({
-    required this.tenantId,
-    required this.createQuestionConfigBody,
-  });
-  final String tenantId;
-  final CreateQuestionConfigBody createQuestionConfigBody;
-}
-
-/// Request parameters for [DefaultApi.createQuestionResult].
-class ApiCreateQuestionResultRequest {
-  const ApiCreateQuestionResultRequest({
-    required this.tenantId,
-    required this.createQuestionResultBody,
-  });
-  final String tenantId;
-  final CreateQuestionResultBody createQuestionResultBody;
-}
-
-/// Request parameters for [DefaultApi.createSubscription].
-class ApiCreateSubscriptionRequest {
-  const ApiCreateSubscriptionRequest({
-    required this.tenantId,
-    required this.createAPIUserSubscriptionData,
-  });
-  final String tenantId;
-  final CreateAPIUserSubscriptionData createAPIUserSubscriptionData;
-}
-
-/// Request parameters for [DefaultApi.createTenant].
-class ApiCreateTenantRequest {
-  const ApiCreateTenantRequest({
-    required this.tenantId,
-    required this.createTenantBody,
-  });
-  final String tenantId;
-  final CreateTenantBody createTenantBody;
-}
-
-/// Request parameters for [DefaultApi.createTenantPackage].
-class ApiCreateTenantPackageRequest {
-  const ApiCreateTenantPackageRequest({
-    required this.tenantId,
-    required this.createTenantPackageBody,
-  });
-  final String tenantId;
-  final CreateTenantPackageBody createTenantPackageBody;
-}
-
-/// Request parameters for [DefaultApi.createTenantUser].
-class ApiCreateTenantUserRequest {
-  const ApiCreateTenantUserRequest({
-    required this.tenantId,
-    required this.createTenantUserBody,
-  });
-  final String tenantId;
-  final CreateTenantUserBody createTenantUserBody;
-}
-
-/// Request parameters for [DefaultApi.createTicket].
-class ApiCreateTicketRequest {
-  const ApiCreateTicketRequest({
-    required this.tenantId,
-    required this.userId,
-    required this.createTicketBody,
-  });
-  final String tenantId;
-  final String userId;
-  final CreateTicketBody createTicketBody;
-}
-
-/// Request parameters for [DefaultApi.createUserBadge].
-class ApiCreateUserBadgeRequest {
-  const ApiCreateUserBadgeRequest({
-    required this.tenantId,
-    required this.createUserBadgeParams,
-  });
-  final String tenantId;
-  final CreateUserBadgeParams createUserBadgeParams;
-}
-
-/// Request parameters for [DefaultApi.createVote].
-class ApiCreateVoteRequest {
-  const ApiCreateVoteRequest({
-    required this.tenantId,
-    required this.commentId,
-    required this.direction,
+/// Optional parameters for [DefaultApi.createVote].
+class ApiCreateVoteOptions {
+  const ApiCreateVoteOptions({
     this.userId,
     this.anonUserId,
   });
-  final String tenantId;
-  final String commentId;
-  final String direction;
   final String? userId;
   final String? anonUserId;
 }
 
-/// Request parameters for [DefaultApi.deleteComment].
-class ApiDeleteCommentRequest {
-  const ApiDeleteCommentRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.deleteComment].
+class ApiDeleteCommentOptions {
+  const ApiDeleteCommentOptions({
     this.contextUserId,
     this.isLive,
   });
-  final String tenantId;
-  final String id;
   final String? contextUserId;
   final bool? isLive;
 }
 
-/// Request parameters for [DefaultApi.deleteDomainConfig].
-class ApiDeleteDomainConfigRequest {
-  const ApiDeleteDomainConfigRequest({
-    required this.tenantId,
-    required this.domain,
-  });
-  final String tenantId;
-  final String domain;
-}
-
-/// Request parameters for [DefaultApi.deleteEmailTemplate].
-class ApiDeleteEmailTemplateRequest {
-  const ApiDeleteEmailTemplateRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deleteEmailTemplateRenderError].
-class ApiDeleteEmailTemplateRenderErrorRequest {
-  const ApiDeleteEmailTemplateRenderErrorRequest({
-    required this.tenantId,
-    required this.id,
-    required this.errorId,
-  });
-  final String tenantId;
-  final String id;
-  final String errorId;
-}
-
-/// Request parameters for [DefaultApi.deleteHashTag].
-class ApiDeleteHashTagRequest {
-  const ApiDeleteHashTagRequest({
-    required this.tag,
+/// Optional parameters for [DefaultApi.deleteHashTag].
+class ApiDeleteHashTagOptions {
+  const ApiDeleteHashTagOptions({
     this.tenantId,
-    this.deleteHashTagRequestBody,
   });
-  final String tag;
   final String? tenantId;
-  final DeleteHashTagRequestBody? deleteHashTagRequestBody;
 }
 
-/// Request parameters for [DefaultApi.deleteModerator].
-class ApiDeleteModeratorRequest {
-  const ApiDeleteModeratorRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.deleteModerator].
+class ApiDeleteModeratorOptions {
+  const ApiDeleteModeratorOptions({
     this.sendEmail,
   });
-  final String tenantId;
-  final String id;
   final String? sendEmail;
 }
 
-/// Request parameters for [DefaultApi.deleteNotificationCount].
-class ApiDeleteNotificationCountRequest {
-  const ApiDeleteNotificationCountRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deletePage].
-class ApiDeletePageRequest {
-  const ApiDeletePageRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deletePendingWebhookEvent].
-class ApiDeletePendingWebhookEventRequest {
-  const ApiDeletePendingWebhookEventRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deleteQuestionConfig].
-class ApiDeleteQuestionConfigRequest {
-  const ApiDeleteQuestionConfigRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deleteQuestionResult].
-class ApiDeleteQuestionResultRequest {
-  const ApiDeleteQuestionResultRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deleteSSOUser].
-class ApiDeleteSSOUserRequest {
-  const ApiDeleteSSOUserRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.deleteSSOUser].
+class ApiDeleteSSOUserOptions {
+  const ApiDeleteSSOUserOptions({
     this.deleteComments,
     this.commentDeleteMode,
   });
-  final String tenantId;
-  final String id;
   final bool? deleteComments;
   final String? commentDeleteMode;
 }
 
-/// Request parameters for [DefaultApi.deleteSubscription].
-class ApiDeleteSubscriptionRequest {
-  const ApiDeleteSubscriptionRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.deleteSubscription].
+class ApiDeleteSubscriptionOptions {
+  const ApiDeleteSubscriptionOptions({
     this.userId,
   });
-  final String tenantId;
-  final String id;
   final String? userId;
 }
 
-/// Request parameters for [DefaultApi.deleteTenant].
-class ApiDeleteTenantRequest {
-  const ApiDeleteTenantRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.deleteTenant].
+class ApiDeleteTenantOptions {
+  const ApiDeleteTenantOptions({
     this.sure,
   });
-  final String tenantId;
-  final String id;
   final String? sure;
 }
 
-/// Request parameters for [DefaultApi.deleteTenantPackage].
-class ApiDeleteTenantPackageRequest {
-  const ApiDeleteTenantPackageRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deleteTenantUser].
-class ApiDeleteTenantUserRequest {
-  const ApiDeleteTenantUserRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.deleteTenantUser].
+class ApiDeleteTenantUserOptions {
+  const ApiDeleteTenantUserOptions({
     this.deleteComments,
     this.commentDeleteMode,
   });
-  final String tenantId;
-  final String id;
   final String? deleteComments;
   final String? commentDeleteMode;
 }
 
-/// Request parameters for [DefaultApi.deleteUserBadge].
-class ApiDeleteUserBadgeRequest {
-  const ApiDeleteUserBadgeRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.deleteVote].
-class ApiDeleteVoteRequest {
-  const ApiDeleteVoteRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.deleteVote].
+class ApiDeleteVoteOptions {
+  const ApiDeleteVoteOptions({
     this.editKey,
   });
-  final String tenantId;
-  final String id;
   final String? editKey;
 }
 
-/// Request parameters for [DefaultApi.flagComment].
-class ApiFlagCommentRequest {
-  const ApiFlagCommentRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.flagComment].
+class ApiFlagCommentOptions {
+  const ApiFlagCommentOptions({
     this.userId,
     this.anonUserId,
   });
-  final String tenantId;
-  final String id;
   final String? userId;
   final String? anonUserId;
 }
 
-/// Request parameters for [DefaultApi.getAuditLogs].
-class ApiGetAuditLogsRequest {
-  const ApiGetAuditLogsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getAuditLogs].
+class ApiGetAuditLogsOptions {
+  const ApiGetAuditLogsOptions({
     this.limit,
     this.skip,
     this.order,
     this.after,
     this.before,
   });
-  final String tenantId;
   final double? limit;
   final double? skip;
   final SORTDIR? order;
@@ -8077,30 +7532,9 @@ class ApiGetAuditLogsRequest {
   final double? before;
 }
 
-/// Request parameters for [DefaultApi.getCachedNotificationCount].
-class ApiGetCachedNotificationCountRequest {
-  const ApiGetCachedNotificationCountRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getComment].
-class ApiGetCommentRequest {
-  const ApiGetCommentRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getComments].
-class ApiGetCommentsRequest {
-  const ApiGetCommentsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getComments].
+class ApiGetCommentsOptions {
+  const ApiGetCommentsOptions({
     this.page,
     this.limit,
     this.skip,
@@ -8118,7 +7552,6 @@ class ApiGetCommentsRequest {
     this.fromDate,
     this.toDate,
   });
-  final String tenantId;
   final int? page;
   final int? limit;
   final int? skip;
@@ -8137,119 +7570,59 @@ class ApiGetCommentsRequest {
   final int? toDate;
 }
 
-/// Request parameters for [DefaultApi.getDomainConfig].
-class ApiGetDomainConfigRequest {
-  const ApiGetDomainConfigRequest({
-    required this.tenantId,
-    required this.domain,
-  });
-  final String tenantId;
-  final String domain;
-}
-
-/// Request parameters for [DefaultApi.getDomainConfigs].
-class ApiGetDomainConfigsRequest {
-  const ApiGetDomainConfigsRequest({
-    required this.tenantId,
-  });
-  final String tenantId;
-}
-
-/// Request parameters for [DefaultApi.getEmailTemplate].
-class ApiGetEmailTemplateRequest {
-  const ApiGetEmailTemplateRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getEmailTemplateDefinitions].
-class ApiGetEmailTemplateDefinitionsRequest {
-  const ApiGetEmailTemplateDefinitionsRequest({
-    required this.tenantId,
-  });
-  final String tenantId;
-}
-
-/// Request parameters for [DefaultApi.getEmailTemplateRenderErrors].
-class ApiGetEmailTemplateRenderErrorsRequest {
-  const ApiGetEmailTemplateRenderErrorsRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.getEmailTemplateRenderErrors].
+class ApiGetEmailTemplateRenderErrorsOptions {
+  const ApiGetEmailTemplateRenderErrorsOptions({
     this.skip,
   });
-  final String tenantId;
-  final String id;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getEmailTemplates].
-class ApiGetEmailTemplatesRequest {
-  const ApiGetEmailTemplatesRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getEmailTemplates].
+class ApiGetEmailTemplatesOptions {
+  const ApiGetEmailTemplatesOptions({
     this.skip,
   });
-  final String tenantId;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getFeedPosts].
-class ApiGetFeedPostsRequest {
-  const ApiGetFeedPostsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getFeedPosts].
+class ApiGetFeedPostsOptions {
+  const ApiGetFeedPostsOptions({
     this.afterId,
     this.limit,
     this.tags,
   });
-  final String tenantId;
   final String? afterId;
   final int? limit;
   final List<String>? tags;
 }
 
-/// Request parameters for [DefaultApi.getHashTags].
-class ApiGetHashTagsRequest {
-  const ApiGetHashTagsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getHashTags].
+class ApiGetHashTagsOptions {
+  const ApiGetHashTagsOptions({
     this.page,
   });
-  final String tenantId;
   final double? page;
 }
 
-/// Request parameters for [DefaultApi.getModerator].
-class ApiGetModeratorRequest {
-  const ApiGetModeratorRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getModerators].
-class ApiGetModeratorsRequest {
-  const ApiGetModeratorsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getModerators].
+class ApiGetModeratorsOptions {
+  const ApiGetModeratorsOptions({
     this.skip,
   });
-  final String tenantId;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getNotificationCount].
-class ApiGetNotificationCountRequest {
-  const ApiGetNotificationCountRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getNotificationCount].
+class ApiGetNotificationCountOptions {
+  const ApiGetNotificationCountOptions({
     this.userId,
     this.urlId,
     this.fromCommentId,
     this.viewed,
     this.type,
   });
-  final String tenantId;
   final String? userId;
   final String? urlId;
   final String? fromCommentId;
@@ -8257,10 +7630,9 @@ class ApiGetNotificationCountRequest {
   final String? type;
 }
 
-/// Request parameters for [DefaultApi.getNotifications].
-class ApiGetNotificationsRequest {
-  const ApiGetNotificationsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getNotifications].
+class ApiGetNotificationsOptions {
+  const ApiGetNotificationsOptions({
     this.userId,
     this.urlId,
     this.fromCommentId,
@@ -8268,7 +7640,6 @@ class ApiGetNotificationsRequest {
     this.type,
     this.skip,
   });
-  final String tenantId;
   final String? userId;
   final String? urlId;
   final String? fromCommentId;
@@ -8277,28 +7648,9 @@ class ApiGetNotificationsRequest {
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getPageByURLId].
-class ApiGetPageByURLIdRequest {
-  const ApiGetPageByURLIdRequest({
-    required this.tenantId,
-    required this.urlId,
-  });
-  final String tenantId;
-  final String urlId;
-}
-
-/// Request parameters for [DefaultApi.getPages].
-class ApiGetPagesRequest {
-  const ApiGetPagesRequest({
-    required this.tenantId,
-  });
-  final String tenantId;
-}
-
-/// Request parameters for [DefaultApi.getPendingWebhookEventCount].
-class ApiGetPendingWebhookEventCountRequest {
-  const ApiGetPendingWebhookEventCountRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getPendingWebhookEventCount].
+class ApiGetPendingWebhookEventCountOptions {
+  const ApiGetPendingWebhookEventCountOptions({
     this.commentId,
     this.externalId,
     this.eventType,
@@ -8306,7 +7658,6 @@ class ApiGetPendingWebhookEventCountRequest {
     this.domain,
     this.attemptCountGT,
   });
-  final String tenantId;
   final String? commentId;
   final String? externalId;
   final String? eventType;
@@ -8315,10 +7666,9 @@ class ApiGetPendingWebhookEventCountRequest {
   final double? attemptCountGT;
 }
 
-/// Request parameters for [DefaultApi.getPendingWebhookEvents].
-class ApiGetPendingWebhookEventsRequest {
-  const ApiGetPendingWebhookEventsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getPendingWebhookEvents].
+class ApiGetPendingWebhookEventsOptions {
+  const ApiGetPendingWebhookEventsOptions({
     this.commentId,
     this.externalId,
     this.eventType,
@@ -8327,7 +7677,6 @@ class ApiGetPendingWebhookEventsRequest {
     this.attemptCountGT,
     this.skip,
   });
-  final String tenantId;
   final String? commentId;
   final String? externalId;
   final String? eventType;
@@ -8337,40 +7686,17 @@ class ApiGetPendingWebhookEventsRequest {
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getQuestionConfig].
-class ApiGetQuestionConfigRequest {
-  const ApiGetQuestionConfigRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getQuestionConfigs].
-class ApiGetQuestionConfigsRequest {
-  const ApiGetQuestionConfigsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getQuestionConfigs].
+class ApiGetQuestionConfigsOptions {
+  const ApiGetQuestionConfigsOptions({
     this.skip,
   });
-  final String tenantId;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getQuestionResult].
-class ApiGetQuestionResultRequest {
-  const ApiGetQuestionResultRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getQuestionResults].
-class ApiGetQuestionResultsRequest {
-  const ApiGetQuestionResultsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getQuestionResults].
+class ApiGetQuestionResultsOptions {
+  const ApiGetQuestionResultsOptions({
     this.urlId,
     this.userId,
     this.startDate,
@@ -8378,7 +7704,6 @@ class ApiGetQuestionResultsRequest {
     this.questionIds,
     this.skip,
   });
-  final String tenantId;
   final String? urlId;
   final String? userId;
   final String? startDate;
@@ -8387,210 +7712,99 @@ class ApiGetQuestionResultsRequest {
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getSSOUserByEmail].
-class ApiGetSSOUserByEmailRequest {
-  const ApiGetSSOUserByEmailRequest({
-    required this.tenantId,
-    required this.email,
-  });
-  final String tenantId;
-  final String email;
-}
-
-/// Request parameters for [DefaultApi.getSSOUserById].
-class ApiGetSSOUserByIdRequest {
-  const ApiGetSSOUserByIdRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getSSOUsers].
-class ApiGetSSOUsersRequest {
-  const ApiGetSSOUsersRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getSSOUsers].
+class ApiGetSSOUsersOptions {
+  const ApiGetSSOUsersOptions({
     this.skip,
   });
-  final String tenantId;
   final int? skip;
 }
 
-/// Request parameters for [DefaultApi.getSubscriptions].
-class ApiGetSubscriptionsRequest {
-  const ApiGetSubscriptionsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getSubscriptions].
+class ApiGetSubscriptionsOptions {
+  const ApiGetSubscriptionsOptions({
     this.userId,
   });
-  final String tenantId;
   final String? userId;
 }
 
-/// Request parameters for [DefaultApi.getTenant].
-class ApiGetTenantRequest {
-  const ApiGetTenantRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getTenantDailyUsages].
-class ApiGetTenantDailyUsagesRequest {
-  const ApiGetTenantDailyUsagesRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getTenantDailyUsages].
+class ApiGetTenantDailyUsagesOptions {
+  const ApiGetTenantDailyUsagesOptions({
     this.yearNumber,
     this.monthNumber,
     this.dayNumber,
     this.skip,
   });
-  final String tenantId;
   final double? yearNumber;
   final double? monthNumber;
   final double? dayNumber;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getTenantPackage].
-class ApiGetTenantPackageRequest {
-  const ApiGetTenantPackageRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getTenantPackages].
-class ApiGetTenantPackagesRequest {
-  const ApiGetTenantPackagesRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getTenantPackages].
+class ApiGetTenantPackagesOptions {
+  const ApiGetTenantPackagesOptions({
     this.skip,
   });
-  final String tenantId;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getTenantUser].
-class ApiGetTenantUserRequest {
-  const ApiGetTenantUserRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getTenantUsers].
-class ApiGetTenantUsersRequest {
-  const ApiGetTenantUsersRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getTenantUsers].
+class ApiGetTenantUsersOptions {
+  const ApiGetTenantUsersOptions({
     this.skip,
   });
-  final String tenantId;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getTenants].
-class ApiGetTenantsRequest {
-  const ApiGetTenantsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getTenants].
+class ApiGetTenantsOptions {
+  const ApiGetTenantsOptions({
     this.meta,
     this.skip,
   });
-  final String tenantId;
   final String? meta;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getTicket].
-class ApiGetTicketRequest {
-  const ApiGetTicketRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.getTicket].
+class ApiGetTicketOptions {
+  const ApiGetTicketOptions({
     this.userId,
   });
-  final String tenantId;
-  final String id;
   final String? userId;
 }
 
-/// Request parameters for [DefaultApi.getTickets].
-class ApiGetTicketsRequest {
-  const ApiGetTicketsRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getTickets].
+class ApiGetTicketsOptions {
+  const ApiGetTicketsOptions({
     this.userId,
     this.state,
     this.skip,
     this.limit,
   });
-  final String tenantId;
   final String? userId;
   final double? state;
   final double? skip;
   final double? limit;
 }
 
-/// Request parameters for [DefaultApi.getUser].
-class ApiGetUserRequest {
-  const ApiGetUserRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getUserBadge].
-class ApiGetUserBadgeRequest {
-  const ApiGetUserBadgeRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getUserBadgeProgressById].
-class ApiGetUserBadgeProgressByIdRequest {
-  const ApiGetUserBadgeProgressByIdRequest({
-    required this.tenantId,
-    required this.id,
-  });
-  final String tenantId;
-  final String id;
-}
-
-/// Request parameters for [DefaultApi.getUserBadgeProgressByUserId].
-class ApiGetUserBadgeProgressByUserIdRequest {
-  const ApiGetUserBadgeProgressByUserIdRequest({
-    required this.tenantId,
-    required this.userId,
-  });
-  final String tenantId;
-  final String userId;
-}
-
-/// Request parameters for [DefaultApi.getUserBadgeProgressList].
-class ApiGetUserBadgeProgressListRequest {
-  const ApiGetUserBadgeProgressListRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getUserBadgeProgressList].
+class ApiGetUserBadgeProgressListOptions {
+  const ApiGetUserBadgeProgressListOptions({
     this.userId,
     this.limit,
     this.skip,
   });
-  final String tenantId;
   final String? userId;
   final double? limit;
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getUserBadges].
-class ApiGetUserBadgesRequest {
-  const ApiGetUserBadgesRequest({
-    required this.tenantId,
+/// Optional parameters for [DefaultApi.getUserBadges].
+class ApiGetUserBadgesOptions {
+  const ApiGetUserBadgesOptions({
     this.userId,
     this.badgeId,
     this.type,
@@ -8598,7 +7812,6 @@ class ApiGetUserBadgesRequest {
     this.limit,
     this.skip,
   });
-  final String tenantId;
   final String? userId;
   final String? badgeId;
   final double? type;
@@ -8607,386 +7820,144 @@ class ApiGetUserBadgesRequest {
   final double? skip;
 }
 
-/// Request parameters for [DefaultApi.getVotes].
-class ApiGetVotesRequest {
-  const ApiGetVotesRequest({
-    required this.tenantId,
-    required this.urlId,
-  });
-  final String tenantId;
-  final String urlId;
-}
-
-/// Request parameters for [DefaultApi.getVotesForUser].
-class ApiGetVotesForUserRequest {
-  const ApiGetVotesForUserRequest({
-    required this.tenantId,
-    required this.urlId,
+/// Optional parameters for [DefaultApi.getVotesForUser].
+class ApiGetVotesForUserOptions {
+  const ApiGetVotesForUserOptions({
     this.userId,
     this.anonUserId,
   });
-  final String tenantId;
-  final String urlId;
   final String? userId;
   final String? anonUserId;
 }
 
-/// Request parameters for [DefaultApi.patchDomainConfig].
-class ApiPatchDomainConfigRequest {
-  const ApiPatchDomainConfigRequest({
-    required this.tenantId,
-    required this.domainToUpdate,
-    required this.patchDomainConfigParams,
-  });
-  final String tenantId;
-  final String domainToUpdate;
-  final PatchDomainConfigParams patchDomainConfigParams;
-}
-
-/// Request parameters for [DefaultApi.patchHashTag].
-class ApiPatchHashTagRequest {
-  const ApiPatchHashTagRequest({
-    required this.tag,
+/// Optional parameters for [DefaultApi.patchHashTag].
+class ApiPatchHashTagOptions {
+  const ApiPatchHashTagOptions({
     this.tenantId,
-    this.updateHashTagBody,
   });
-  final String tag;
   final String? tenantId;
-  final UpdateHashTagBody? updateHashTagBody;
 }
 
-/// Request parameters for [DefaultApi.patchPage].
-class ApiPatchPageRequest {
-  const ApiPatchPageRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateAPIPageData,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateAPIPageData updateAPIPageData;
-}
-
-/// Request parameters for [DefaultApi.patchSSOUser].
-class ApiPatchSSOUserRequest {
-  const ApiPatchSSOUserRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateAPISSOUserData,
+/// Optional parameters for [DefaultApi.patchSSOUser].
+class ApiPatchSSOUserOptions {
+  const ApiPatchSSOUserOptions({
     this.updateComments,
   });
-  final String tenantId;
-  final String id;
-  final UpdateAPISSOUserData updateAPISSOUserData;
   final bool? updateComments;
 }
 
-/// Request parameters for [DefaultApi.putDomainConfig].
-class ApiPutDomainConfigRequest {
-  const ApiPutDomainConfigRequest({
-    required this.tenantId,
-    required this.domainToUpdate,
-    required this.updateDomainConfigParams,
-  });
-  final String tenantId;
-  final String domainToUpdate;
-  final UpdateDomainConfigParams updateDomainConfigParams;
-}
-
-/// Request parameters for [DefaultApi.putSSOUser].
-class ApiPutSSOUserRequest {
-  const ApiPutSSOUserRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateAPISSOUserData,
+/// Optional parameters for [DefaultApi.putSSOUser].
+class ApiPutSSOUserOptions {
+  const ApiPutSSOUserOptions({
     this.updateComments,
   });
-  final String tenantId;
-  final String id;
-  final UpdateAPISSOUserData updateAPISSOUserData;
   final bool? updateComments;
 }
 
-/// Request parameters for [DefaultApi.renderEmailTemplate].
-class ApiRenderEmailTemplateRequest {
-  const ApiRenderEmailTemplateRequest({
-    required this.tenantId,
-    required this.renderEmailTemplateBody,
+/// Optional parameters for [DefaultApi.renderEmailTemplate].
+class ApiRenderEmailTemplateOptions {
+  const ApiRenderEmailTemplateOptions({
     this.locale,
   });
-  final String tenantId;
-  final RenderEmailTemplateBody renderEmailTemplateBody;
   final String? locale;
 }
 
-/// Request parameters for [DefaultApi.replaceTenantPackage].
-class ApiReplaceTenantPackageRequest {
-  const ApiReplaceTenantPackageRequest({
-    required this.tenantId,
-    required this.id,
-    required this.replaceTenantPackageBody,
-  });
-  final String tenantId;
-  final String id;
-  final ReplaceTenantPackageBody replaceTenantPackageBody;
-}
-
-/// Request parameters for [DefaultApi.replaceTenantUser].
-class ApiReplaceTenantUserRequest {
-  const ApiReplaceTenantUserRequest({
-    required this.tenantId,
-    required this.id,
-    required this.replaceTenantUserBody,
+/// Optional parameters for [DefaultApi.replaceTenantUser].
+class ApiReplaceTenantUserOptions {
+  const ApiReplaceTenantUserOptions({
     this.updateComments,
   });
-  final String tenantId;
-  final String id;
-  final ReplaceTenantUserBody replaceTenantUserBody;
   final String? updateComments;
 }
 
-/// Request parameters for [DefaultApi.saveComment].
-class ApiSaveCommentRequest {
-  const ApiSaveCommentRequest({
-    required this.tenantId,
-    required this.createCommentParams,
+/// Optional parameters for [DefaultApi.saveComment].
+class ApiSaveCommentOptions {
+  const ApiSaveCommentOptions({
     this.isLive,
     this.doSpamCheck,
     this.sendEmails,
     this.populateNotifications,
   });
-  final String tenantId;
-  final CreateCommentParams createCommentParams;
   final bool? isLive;
   final bool? doSpamCheck;
   final bool? sendEmails;
   final bool? populateNotifications;
 }
 
-/// Request parameters for [DefaultApi.saveCommentsBulk].
-class ApiSaveCommentsBulkRequest {
-  const ApiSaveCommentsBulkRequest({
-    required this.tenantId,
-    required this.createCommentParams,
+/// Optional parameters for [DefaultApi.saveCommentsBulk].
+class ApiSaveCommentsBulkOptions {
+  const ApiSaveCommentsBulkOptions({
     this.isLive,
     this.doSpamCheck,
     this.sendEmails,
     this.populateNotifications,
   });
-  final String tenantId;
-  final List<CreateCommentParams> createCommentParams;
   final bool? isLive;
   final bool? doSpamCheck;
   final bool? sendEmails;
   final bool? populateNotifications;
 }
 
-/// Request parameters for [DefaultApi.sendInvite].
-class ApiSendInviteRequest {
-  const ApiSendInviteRequest({
-    required this.tenantId,
-    required this.id,
-    required this.fromName,
-  });
-  final String tenantId;
-  final String id;
-  final String fromName;
-}
-
-/// Request parameters for [DefaultApi.sendLoginLink].
-class ApiSendLoginLinkRequest {
-  const ApiSendLoginLinkRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.sendLoginLink].
+class ApiSendLoginLinkOptions {
+  const ApiSendLoginLinkOptions({
     this.redirectURL,
   });
-  final String tenantId;
-  final String id;
   final String? redirectURL;
 }
 
-/// Request parameters for [DefaultApi.unBlockUserFromComment].
-class ApiUnBlockUserFromCommentRequest {
-  const ApiUnBlockUserFromCommentRequest({
-    required this.tenantId,
-    required this.id,
-    required this.unBlockFromCommentParams,
+/// Optional parameters for [DefaultApi.unBlockUserFromComment].
+class ApiUnBlockUserFromCommentOptions {
+  const ApiUnBlockUserFromCommentOptions({
     this.userId,
     this.anonUserId,
   });
-  final String tenantId;
-  final String id;
-  final UnBlockFromCommentParams unBlockFromCommentParams;
   final String? userId;
   final String? anonUserId;
 }
 
-/// Request parameters for [DefaultApi.unFlagComment].
-class ApiUnFlagCommentRequest {
-  const ApiUnFlagCommentRequest({
-    required this.tenantId,
-    required this.id,
+/// Optional parameters for [DefaultApi.unFlagComment].
+class ApiUnFlagCommentOptions {
+  const ApiUnFlagCommentOptions({
     this.userId,
     this.anonUserId,
   });
-  final String tenantId;
-  final String id;
   final String? userId;
   final String? anonUserId;
 }
 
-/// Request parameters for [DefaultApi.updateComment].
-class ApiUpdateCommentRequest {
-  const ApiUpdateCommentRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updatableCommentParams,
+/// Optional parameters for [DefaultApi.updateComment].
+class ApiUpdateCommentOptions {
+  const ApiUpdateCommentOptions({
     this.contextUserId,
     this.doSpamCheck,
     this.isLive,
   });
-  final String tenantId;
-  final String id;
-  final UpdatableCommentParams updatableCommentParams;
   final String? contextUserId;
   final bool? doSpamCheck;
   final bool? isLive;
 }
 
-/// Request parameters for [DefaultApi.updateEmailTemplate].
-class ApiUpdateEmailTemplateRequest {
-  const ApiUpdateEmailTemplateRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateEmailTemplateBody,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateEmailTemplateBody updateEmailTemplateBody;
-}
-
-/// Request parameters for [DefaultApi.updateFeedPost].
-class ApiUpdateFeedPostRequest {
-  const ApiUpdateFeedPostRequest({
-    required this.tenantId,
-    required this.id,
-    required this.feedPost,
-  });
-  final String tenantId;
-  final String id;
-  final FeedPost feedPost;
-}
-
-/// Request parameters for [DefaultApi.updateModerator].
-class ApiUpdateModeratorRequest {
-  const ApiUpdateModeratorRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateModeratorBody,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateModeratorBody updateModeratorBody;
-}
-
-/// Request parameters for [DefaultApi.updateNotification].
-class ApiUpdateNotificationRequest {
-  const ApiUpdateNotificationRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateNotificationBody,
+/// Optional parameters for [DefaultApi.updateNotification].
+class ApiUpdateNotificationOptions {
+  const ApiUpdateNotificationOptions({
     this.userId,
   });
-  final String tenantId;
-  final String id;
-  final UpdateNotificationBody updateNotificationBody;
   final String? userId;
 }
 
-/// Request parameters for [DefaultApi.updateQuestionConfig].
-class ApiUpdateQuestionConfigRequest {
-  const ApiUpdateQuestionConfigRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateQuestionConfigBody,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateQuestionConfigBody updateQuestionConfigBody;
-}
-
-/// Request parameters for [DefaultApi.updateQuestionResult].
-class ApiUpdateQuestionResultRequest {
-  const ApiUpdateQuestionResultRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateQuestionResultBody,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateQuestionResultBody updateQuestionResultBody;
-}
-
-/// Request parameters for [DefaultApi.updateSubscription].
-class ApiUpdateSubscriptionRequest {
-  const ApiUpdateSubscriptionRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateAPIUserSubscriptionData,
+/// Optional parameters for [DefaultApi.updateSubscription].
+class ApiUpdateSubscriptionOptions {
+  const ApiUpdateSubscriptionOptions({
     this.userId,
   });
-  final String tenantId;
-  final String id;
-  final UpdateAPIUserSubscriptionData updateAPIUserSubscriptionData;
   final String? userId;
 }
 
-/// Request parameters for [DefaultApi.updateTenant].
-class ApiUpdateTenantRequest {
-  const ApiUpdateTenantRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateTenantBody,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateTenantBody updateTenantBody;
-}
-
-/// Request parameters for [DefaultApi.updateTenantPackage].
-class ApiUpdateTenantPackageRequest {
-  const ApiUpdateTenantPackageRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateTenantPackageBody,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateTenantPackageBody updateTenantPackageBody;
-}
-
-/// Request parameters for [DefaultApi.updateTenantUser].
-class ApiUpdateTenantUserRequest {
-  const ApiUpdateTenantUserRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateTenantUserBody,
+/// Optional parameters for [DefaultApi.updateTenantUser].
+class ApiUpdateTenantUserOptions {
+  const ApiUpdateTenantUserOptions({
     this.updateComments,
   });
-  final String tenantId;
-  final String id;
-  final UpdateTenantUserBody updateTenantUserBody;
   final String? updateComments;
-}
-
-/// Request parameters for [DefaultApi.updateUserBadge].
-class ApiUpdateUserBadgeRequest {
-  const ApiUpdateUserBadgeRequest({
-    required this.tenantId,
-    required this.id,
-    required this.updateUserBadgeParams,
-  });
-  final String tenantId;
-  final String id;
-  final UpdateUserBadgeParams updateUserBadgeParams;
 }
