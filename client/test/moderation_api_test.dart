@@ -17,7 +17,7 @@ void main() {
   // final instance = ModerationApi();
 
   group('tests for ModerationApi', () {
-    //Future<VoteDeleteResponse> deleteModerationVote(String commentId, String voteId, { String broadcastId, String tenantId, String sso }) async
+    //Future<VoteDeleteResponse> deleteModerationVote(String commentId, String voteId, { String tenantId, String broadcastId, String sso }) async
     test('test deleteModerationVote', () async {
       // TODO
     });
@@ -132,7 +132,7 @@ void main() {
       // TODO
     });
 
-    //Future<AdjustVotesResponse> postAdjustCommentVotes(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, { String broadcastId, String tenantId, String sso }) async
+    //Future<AdjustVotesResponse> postAdjustCommentVotes(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, { String tenantId, String broadcastId, String sso }) async
     test('test postAdjustCommentVotes', () async {
       // TODO
     });
@@ -162,52 +162,52 @@ void main() {
       // TODO
     });
 
-    //Future<APIEmptyResponse> postFlagComment(String commentId, { String broadcastId, String tenantId, String sso }) async
+    //Future<APIEmptyResponse> postFlagComment(String commentId, { String tenantId, String broadcastId, String sso }) async
     test('test postFlagComment', () async {
       // TODO
     });
 
-    //Future<PostRemoveCommentResponse> postRemoveComment(String commentId, { String broadcastId, String tenantId, String sso }) async
+    //Future<PostRemoveCommentResponse> postRemoveComment(String commentId, { String tenantId, String broadcastId, String sso }) async
     test('test postRemoveComment', () async {
       // TODO
     });
 
-    //Future<APIEmptyResponse> postRestoreDeletedComment(String commentId, { String broadcastId, String tenantId, String sso }) async
+    //Future<APIEmptyResponse> postRestoreDeletedComment(String commentId, { String tenantId, String broadcastId, String sso }) async
     test('test postRestoreDeletedComment', () async {
       // TODO
     });
 
-    //Future<SetCommentApprovedResponse> postSetCommentApprovalStatus(String commentId, { bool approved, String broadcastId, String tenantId, String sso }) async
+    //Future<SetCommentApprovedResponse> postSetCommentApprovalStatus(String commentId, { bool approved, String tenantId, String broadcastId, String sso }) async
     test('test postSetCommentApprovalStatus', () async {
       // TODO
     });
 
-    //Future<APIEmptyResponse> postSetCommentReviewStatus(String commentId, { bool reviewed, String broadcastId, String tenantId, String sso }) async
+    //Future<APIEmptyResponse> postSetCommentReviewStatus(String commentId, { bool reviewed, String tenantId, String broadcastId, String sso }) async
     test('test postSetCommentReviewStatus', () async {
       // TODO
     });
 
-    //Future<APIEmptyResponse> postSetCommentSpamStatus(String commentId, { bool spam, bool permNotSpam, String broadcastId, String tenantId, String sso }) async
+    //Future<APIEmptyResponse> postSetCommentSpamStatus(String commentId, { bool spam, bool permNotSpam, String tenantId, String broadcastId, String sso }) async
     test('test postSetCommentSpamStatus', () async {
       // TODO
     });
 
-    //Future<SetCommentTextResponse> postSetCommentText(String commentId, SetCommentTextParams setCommentTextParams, { String broadcastId, String tenantId, String sso }) async
+    //Future<SetCommentTextResponse> postSetCommentText(String commentId, SetCommentTextParams setCommentTextParams, { String tenantId, String broadcastId, String sso }) async
     test('test postSetCommentText', () async {
       // TODO
     });
 
-    //Future<APIEmptyResponse> postUnFlagComment(String commentId, { String broadcastId, String tenantId, String sso }) async
+    //Future<APIEmptyResponse> postUnFlagComment(String commentId, { String tenantId, String broadcastId, String sso }) async
     test('test postUnFlagComment', () async {
       // TODO
     });
 
-    //Future<VoteResponse> postVote(String commentId, { String direction, String broadcastId, String tenantId, String sso }) async
+    //Future<VoteResponse> postVote(String commentId, { String direction, String tenantId, String broadcastId, String sso }) async
     test('test postVote', () async {
       // TODO
     });
 
-    //Future<AwardUserBadgeResponse> putAwardBadge(String badgeId, { String userId, String commentId, String broadcastId, String tenantId, String sso }) async
+    //Future<AwardUserBadgeResponse> putAwardBadge(String badgeId, { String userId, String commentId, String tenantId, String broadcastId, String sso }) async
     test('test putAwardBadge', () async {
       // TODO
     });
@@ -217,7 +217,7 @@ void main() {
       // TODO
     });
 
-    //Future<RemoveUserBadgeResponse> putRemoveBadge(String badgeId, { String userId, String commentId, String broadcastId, String tenantId, String sso }) async
+    //Future<RemoveUserBadgeResponse> putRemoveBadge(String badgeId, { String userId, String commentId, String tenantId, String broadcastId, String sso }) async
     test('test putRemoveBadge', () async {
       // TODO
     });

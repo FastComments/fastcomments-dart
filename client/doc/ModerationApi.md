@@ -55,7 +55,7 @@ Method | HTTP request | Description
 
 
 # **deleteModerationVote**
-> VoteDeleteResponse deleteModerationVote(commentId, voteId, broadcastId, tenantId, sso)
+> VoteDeleteResponse deleteModerationVote(commentId, voteId, tenantId, broadcastId, sso)
 
 
 
@@ -66,12 +66,12 @@ import 'package:fastcomments_dart/api.dart';
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
 final voteId = voteId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.deleteModerationVote(commentId, voteId, broadcastId, tenantId, sso);
+    final result = api_instance.deleteModerationVote(commentId, voteId, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->deleteModerationVote: $e\n');
@@ -84,8 +84,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
  **voteId** | **String**|  | 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1136,7 +1136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postAdjustCommentVotes**
-> AdjustVotesResponse postAdjustCommentVotes(commentId, adjustCommentVotesParams, broadcastId, tenantId, sso)
+> AdjustVotesResponse postAdjustCommentVotes(commentId, adjustCommentVotesParams, tenantId, broadcastId, sso)
 
 
 
@@ -1147,12 +1147,12 @@ import 'package:fastcomments_dart/api.dart';
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
 final adjustCommentVotesParams = AdjustCommentVotesParams(); // AdjustCommentVotesParams | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postAdjustCommentVotes(commentId, adjustCommentVotesParams, broadcastId, tenantId, sso);
+    final result = api_instance.postAdjustCommentVotes(commentId, adjustCommentVotesParams, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postAdjustCommentVotes: $e\n');
@@ -1165,8 +1165,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
  **adjustCommentVotesParams** | [**AdjustCommentVotesParams**](AdjustCommentVotesParams.md)|  | 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1440,7 +1440,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postFlagComment**
-> APIEmptyResponse postFlagComment(commentId, broadcastId, tenantId, sso)
+> APIEmptyResponse postFlagComment(commentId, tenantId, broadcastId, sso)
 
 
 
@@ -1450,12 +1450,12 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postFlagComment(commentId, broadcastId, tenantId, sso);
+    final result = api_instance.postFlagComment(commentId, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postFlagComment: $e\n');
@@ -1467,8 +1467,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1487,7 +1487,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRemoveComment**
-> PostRemoveCommentResponse postRemoveComment(commentId, broadcastId, tenantId, sso)
+> PostRemoveCommentResponse postRemoveComment(commentId, tenantId, broadcastId, sso)
 
 
 
@@ -1497,12 +1497,12 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postRemoveComment(commentId, broadcastId, tenantId, sso);
+    final result = api_instance.postRemoveComment(commentId, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postRemoveComment: $e\n');
@@ -1514,8 +1514,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1534,7 +1534,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRestoreDeletedComment**
-> APIEmptyResponse postRestoreDeletedComment(commentId, broadcastId, tenantId, sso)
+> APIEmptyResponse postRestoreDeletedComment(commentId, tenantId, broadcastId, sso)
 
 
 
@@ -1544,12 +1544,12 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postRestoreDeletedComment(commentId, broadcastId, tenantId, sso);
+    final result = api_instance.postRestoreDeletedComment(commentId, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postRestoreDeletedComment: $e\n');
@@ -1561,8 +1561,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1581,7 +1581,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentApprovalStatus**
-> SetCommentApprovedResponse postSetCommentApprovalStatus(commentId, approved, broadcastId, tenantId, sso)
+> SetCommentApprovedResponse postSetCommentApprovalStatus(commentId, approved, tenantId, broadcastId, sso)
 
 
 
@@ -1592,12 +1592,12 @@ import 'package:fastcomments_dart/api.dart';
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
 final approved = true; // bool | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentApprovalStatus(commentId, approved, broadcastId, tenantId, sso);
+    final result = api_instance.postSetCommentApprovalStatus(commentId, approved, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentApprovalStatus: $e\n');
@@ -1610,8 +1610,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
  **approved** | **bool**|  | [optional] 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1630,7 +1630,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentReviewStatus**
-> APIEmptyResponse postSetCommentReviewStatus(commentId, reviewed, broadcastId, tenantId, sso)
+> APIEmptyResponse postSetCommentReviewStatus(commentId, reviewed, tenantId, broadcastId, sso)
 
 
 
@@ -1641,12 +1641,12 @@ import 'package:fastcomments_dart/api.dart';
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
 final reviewed = true; // bool | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentReviewStatus(commentId, reviewed, broadcastId, tenantId, sso);
+    final result = api_instance.postSetCommentReviewStatus(commentId, reviewed, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentReviewStatus: $e\n');
@@ -1659,8 +1659,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
  **reviewed** | **bool**|  | [optional] 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1679,7 +1679,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentSpamStatus**
-> APIEmptyResponse postSetCommentSpamStatus(commentId, spam, permNotSpam, broadcastId, tenantId, sso)
+> APIEmptyResponse postSetCommentSpamStatus(commentId, spam, permNotSpam, tenantId, broadcastId, sso)
 
 
 
@@ -1691,12 +1691,12 @@ final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
 final spam = true; // bool | 
 final permNotSpam = true; // bool | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentSpamStatus(commentId, spam, permNotSpam, broadcastId, tenantId, sso);
+    final result = api_instance.postSetCommentSpamStatus(commentId, spam, permNotSpam, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentSpamStatus: $e\n');
@@ -1710,8 +1710,8 @@ Name | Type | Description  | Notes
  **commentId** | **String**|  | 
  **spam** | **bool**|  | [optional] 
  **permNotSpam** | **bool**|  | [optional] 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1730,7 +1730,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentText**
-> SetCommentTextResponse postSetCommentText(commentId, setCommentTextParams, broadcastId, tenantId, sso)
+> SetCommentTextResponse postSetCommentText(commentId, setCommentTextParams, tenantId, broadcastId, sso)
 
 
 
@@ -1741,12 +1741,12 @@ import 'package:fastcomments_dart/api.dart';
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
 final setCommentTextParams = SetCommentTextParams(); // SetCommentTextParams | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentText(commentId, setCommentTextParams, broadcastId, tenantId, sso);
+    final result = api_instance.postSetCommentText(commentId, setCommentTextParams, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentText: $e\n');
@@ -1759,8 +1759,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
  **setCommentTextParams** | [**SetCommentTextParams**](SetCommentTextParams.md)|  | 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1779,7 +1779,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postUnFlagComment**
-> APIEmptyResponse postUnFlagComment(commentId, broadcastId, tenantId, sso)
+> APIEmptyResponse postUnFlagComment(commentId, tenantId, broadcastId, sso)
 
 
 
@@ -1789,12 +1789,12 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postUnFlagComment(commentId, broadcastId, tenantId, sso);
+    final result = api_instance.postUnFlagComment(commentId, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postUnFlagComment: $e\n');
@@ -1806,8 +1806,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1826,7 +1826,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postVote**
-> VoteResponse postVote(commentId, direction, broadcastId, tenantId, sso)
+> VoteResponse postVote(commentId, direction, tenantId, broadcastId, sso)
 
 
 
@@ -1837,12 +1837,12 @@ import 'package:fastcomments_dart/api.dart';
 final api_instance = ModerationApi();
 final commentId = commentId_example; // String | 
 final direction = direction_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postVote(commentId, direction, broadcastId, tenantId, sso);
+    final result = api_instance.postVote(commentId, direction, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postVote: $e\n');
@@ -1855,8 +1855,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **commentId** | **String**|  | 
  **direction** | **String**|  | [optional] 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1875,7 +1875,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putAwardBadge**
-> AwardUserBadgeResponse putAwardBadge(badgeId, userId, commentId, broadcastId, tenantId, sso)
+> AwardUserBadgeResponse putAwardBadge(badgeId, userId, commentId, tenantId, broadcastId, sso)
 
 
 
@@ -1887,12 +1887,12 @@ final api_instance = ModerationApi();
 final badgeId = badgeId_example; // String | 
 final userId = userId_example; // String | 
 final commentId = commentId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putAwardBadge(badgeId, userId, commentId, broadcastId, tenantId, sso);
+    final result = api_instance.putAwardBadge(badgeId, userId, commentId, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putAwardBadge: $e\n');
@@ -1906,8 +1906,8 @@ Name | Type | Description  | Notes
  **badgeId** | **String**|  | 
  **userId** | **String**|  | [optional] 
  **commentId** | **String**|  | [optional] 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1971,7 +1971,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putRemoveBadge**
-> RemoveUserBadgeResponse putRemoveBadge(badgeId, userId, commentId, broadcastId, tenantId, sso)
+> RemoveUserBadgeResponse putRemoveBadge(badgeId, userId, commentId, tenantId, broadcastId, sso)
 
 
 
@@ -1983,12 +1983,12 @@ final api_instance = ModerationApi();
 final badgeId = badgeId_example; // String | 
 final userId = userId_example; // String | 
 final commentId = commentId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putRemoveBadge(badgeId, userId, commentId, broadcastId, tenantId, sso);
+    final result = api_instance.putRemoveBadge(badgeId, userId, commentId, tenantId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putRemoveBadge: $e\n');
@@ -2002,8 +2002,8 @@ Name | Type | Description  | Notes
  **badgeId** | **String**|  | 
  **userId** | **String**|  | [optional] 
  **commentId** | **String**|  | [optional] 
- **broadcastId** | **String**|  | [optional] 
  **tenantId** | **String**|  | [optional] 
+ **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type

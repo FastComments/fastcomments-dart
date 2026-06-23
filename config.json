@@ -7,5 +7,6 @@
   "pubHomepage": "https://fastcomments.com",
   "pubRepository": "https://github.com/fastcomments/fastcomments-dart",
   "hideGenerationTimestamp": true,
-  "useEnumExtension": true
+  "useEnumExtension": true,
+  "useSingleRequestParameter": true
 }

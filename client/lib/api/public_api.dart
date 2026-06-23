@@ -26,7 +26,11 @@ class PublicApi {
   /// * [PublicBlockFromCommentParams] publicBlockFromCommentParams (required):
   ///
   /// * [String] sso:
-  Future<Response> blockFromCommentPublicWithHttpInfo(String tenantId, String commentId, PublicBlockFromCommentParams publicBlockFromCommentParams, { String? sso, }) async {
+  Future<Response> blockFromCommentPublicWithHttpInfo(ApiBlockFromCommentPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final publicBlockFromCommentParams = request.publicBlockFromCommentParams;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/block-from-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -66,8 +70,8 @@ class PublicApi {
   /// * [PublicBlockFromCommentParams] publicBlockFromCommentParams (required):
   ///
   /// * [String] sso:
-  Future<BlockSuccess?> blockFromCommentPublic(String tenantId, String commentId, PublicBlockFromCommentParams publicBlockFromCommentParams, { String? sso, }) async {
-    final response = await blockFromCommentPublicWithHttpInfo(tenantId, commentId, publicBlockFromCommentParams,  sso: sso, );
+  Future<BlockSuccess?> blockFromCommentPublic(ApiBlockFromCommentPublicRequest request,) async {
+    final response = await blockFromCommentPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -90,7 +94,10 @@ class PublicApi {
   ///   A comma separated list of comment ids.
   ///
   /// * [String] sso:
-  Future<Response> checkedCommentsForBlockedWithHttpInfo(String tenantId, String commentIds, { String? sso, }) async {
+  Future<Response> checkedCommentsForBlockedWithHttpInfo(ApiCheckedCommentsForBlockedRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentIds = request.commentIds;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/check-blocked-comments';
 
@@ -129,8 +136,8 @@ class PublicApi {
   ///   A comma separated list of comment ids.
   ///
   /// * [String] sso:
-  Future<CheckBlockedCommentsResponse?> checkedCommentsForBlocked(String tenantId, String commentIds, { String? sso, }) async {
-    final response = await checkedCommentsForBlockedWithHttpInfo(tenantId, commentIds,  sso: sso, );
+  Future<CheckBlockedCommentsResponse?> checkedCommentsForBlocked(ApiCheckedCommentsForBlockedRequest request,) async {
+    final response = await checkedCommentsForBlockedWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -158,7 +165,13 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<Response> createCommentPublicWithHttpInfo(String tenantId, String urlId, String broadcastId, CommentData commentData, { String? sessionId, String? sso, }) async {
+  Future<Response> createCommentPublicWithHttpInfo(ApiCreateCommentPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final broadcastId = request.broadcastId;
+    final commentData = request.commentData;
+    final sessionId = request.sessionId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -206,8 +219,8 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<SaveCommentsResponseWithPresence?> createCommentPublic(String tenantId, String urlId, String broadcastId, CommentData commentData, { String? sessionId, String? sso, }) async {
-    final response = await createCommentPublicWithHttpInfo(tenantId, urlId, broadcastId, commentData,  sessionId: sessionId, sso: sso, );
+  Future<SaveCommentsResponseWithPresence?> createCommentPublic(ApiCreateCommentPublicRequest request,) async {
+    final response = await createCommentPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -231,7 +244,11 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> createFeedPostPublicWithHttpInfo(String tenantId, CreateFeedPostParams createFeedPostParams, { String? broadcastId, String? sso, }) async {
+  Future<Response> createFeedPostPublicWithHttpInfo(ApiCreateFeedPostPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final createFeedPostParams = request.createFeedPostParams;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/feed-posts/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -273,8 +290,8 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<CreateFeedPostResponse?> createFeedPostPublic(String tenantId, CreateFeedPostParams createFeedPostParams, { String? broadcastId, String? sso, }) async {
-    final response = await createFeedPostPublicWithHttpInfo(tenantId, createFeedPostParams,  broadcastId: broadcastId, sso: sso, );
+  Future<CreateFeedPostResponse?> createFeedPostPublic(ApiCreateFeedPostPublicRequest request,) async {
+    final response = await createFeedPostPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -296,7 +313,10 @@ class PublicApi {
   /// * [String] urlId (required):
   ///
   /// * [String] title:
-  Future<Response> createV1PageReactWithHttpInfo(String tenantId, String urlId, { String? title, }) async {
+  Future<Response> createV1PageReactWithHttpInfo(ApiCreateV1PageReactRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final title = request.title;
     // ignore: prefer_const_declarations
     final path = r'/page-reacts/v1/likes/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -334,8 +354,8 @@ class PublicApi {
   /// * [String] urlId (required):
   ///
   /// * [String] title:
-  Future<CreateV1PageReact?> createV1PageReact(String tenantId, String urlId, { String? title, }) async {
-    final response = await createV1PageReactWithHttpInfo(tenantId, urlId,  title: title, );
+  Future<CreateV1PageReact?> createV1PageReact(ApiCreateV1PageReactRequest request,) async {
+    final response = await createV1PageReactWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -359,7 +379,11 @@ class PublicApi {
   /// * [String] id (required):
   ///
   /// * [String] title:
-  Future<Response> createV2PageReactWithHttpInfo(String tenantId, String urlId, String id, { String? title, }) async {
+  Future<Response> createV2PageReactWithHttpInfo(ApiCreateV2PageReactRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final id = request.id;
+    final title = request.title;
     // ignore: prefer_const_declarations
     final path = r'/page-reacts/v2/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -400,8 +424,8 @@ class PublicApi {
   /// * [String] id (required):
   ///
   /// * [String] title:
-  Future<CreateV1PageReact?> createV2PageReact(String tenantId, String urlId, String id, { String? title, }) async {
-    final response = await createV2PageReactWithHttpInfo(tenantId, urlId, id,  title: title, );
+  Future<CreateV1PageReact?> createV2PageReact(ApiCreateV2PageReactRequest request,) async {
+    final response = await createV2PageReactWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -427,7 +451,12 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> deleteCommentPublicWithHttpInfo(String tenantId, String commentId, String broadcastId, { String? editKey, String? sso, }) async {
+  Future<Response> deleteCommentPublicWithHttpInfo(ApiDeleteCommentPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final broadcastId = request.broadcastId;
+    final editKey = request.editKey;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}'
       .replaceAll('{tenantId}', tenantId)
@@ -473,8 +502,8 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<PublicAPIDeleteCommentResponse?> deleteCommentPublic(String tenantId, String commentId, String broadcastId, { String? editKey, String? sso, }) async {
-    final response = await deleteCommentPublicWithHttpInfo(tenantId, commentId, broadcastId,  editKey: editKey, sso: sso, );
+  Future<PublicAPIDeleteCommentResponse?> deleteCommentPublic(ApiDeleteCommentPublicRequest request,) async {
+    final response = await deleteCommentPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -504,7 +533,14 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> deleteCommentVoteWithHttpInfo(String tenantId, String commentId, String voteId, String urlId, String broadcastId, { String? editKey, String? sso, }) async {
+  Future<Response> deleteCommentVoteWithHttpInfo(ApiDeleteCommentVoteRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final voteId = request.voteId;
+    final urlId = request.urlId;
+    final broadcastId = request.broadcastId;
+    final editKey = request.editKey;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/vote/{voteId}'
       .replaceAll('{tenantId}', tenantId)
@@ -556,8 +592,8 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<VoteDeleteResponse?> deleteCommentVote(String tenantId, String commentId, String voteId, String urlId, String broadcastId, { String? editKey, String? sso, }) async {
-    final response = await deleteCommentVoteWithHttpInfo(tenantId, commentId, voteId, urlId, broadcastId,  editKey: editKey, sso: sso, );
+  Future<VoteDeleteResponse?> deleteCommentVote(ApiDeleteCommentVoteRequest request,) async {
+    final response = await deleteCommentVoteWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -581,7 +617,11 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> deleteFeedPostPublicWithHttpInfo(String tenantId, String postId, { String? broadcastId, String? sso, }) async {
+  Future<Response> deleteFeedPostPublicWithHttpInfo(ApiDeleteFeedPostPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final postId = request.postId;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/feed-posts/{tenantId}/{postId}'
       .replaceAll('{tenantId}', tenantId)
@@ -624,8 +664,8 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<DeleteFeedPostPublicResponse?> deleteFeedPostPublic(String tenantId, String postId, { String? broadcastId, String? sso, }) async {
-    final response = await deleteFeedPostPublicWithHttpInfo(tenantId, postId,  broadcastId: broadcastId, sso: sso, );
+  Future<DeleteFeedPostPublicResponse?> deleteFeedPostPublic(ApiDeleteFeedPostPublicRequest request,) async {
+    final response = await deleteFeedPostPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -645,7 +685,9 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<Response> deleteV1PageReactWithHttpInfo(String tenantId, String urlId,) async {
+  Future<Response> deleteV1PageReactWithHttpInfo(ApiDeleteV1PageReactRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
     // ignore: prefer_const_declarations
     final path = r'/page-reacts/v1/likes/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -678,8 +720,8 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<CreateV1PageReact?> deleteV1PageReact(String tenantId, String urlId,) async {
-    final response = await deleteV1PageReactWithHttpInfo(tenantId, urlId,);
+  Future<CreateV1PageReact?> deleteV1PageReact(ApiDeleteV1PageReactRequest request,) async {
+    final response = await deleteV1PageReactWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -701,7 +743,10 @@ class PublicApi {
   /// * [String] urlId (required):
   ///
   /// * [String] id (required):
-  Future<Response> deleteV2PageReactWithHttpInfo(String tenantId, String urlId, String id,) async {
+  Future<Response> deleteV2PageReactWithHttpInfo(ApiDeleteV2PageReactRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final id = request.id;
     // ignore: prefer_const_declarations
     final path = r'/page-reacts/v2/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -737,8 +782,8 @@ class PublicApi {
   /// * [String] urlId (required):
   ///
   /// * [String] id (required):
-  Future<CreateV1PageReact?> deleteV2PageReact(String tenantId, String urlId, String id,) async {
-    final response = await deleteV2PageReactWithHttpInfo(tenantId, urlId, id,);
+  Future<CreateV1PageReact?> deleteV2PageReact(ApiDeleteV2PageReactRequest request,) async {
+    final response = await deleteV2PageReactWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -762,7 +807,11 @@ class PublicApi {
   /// * [bool] isFlagged (required):
   ///
   /// * [String] sso:
-  Future<Response> flagCommentPublicWithHttpInfo(String tenantId, String commentId, bool isFlagged, { String? sso, }) async {
+  Future<Response> flagCommentPublicWithHttpInfo(ApiFlagCommentPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final isFlagged = request.isFlagged;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/flag-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -803,8 +852,8 @@ class PublicApi {
   /// * [bool] isFlagged (required):
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> flagCommentPublic(String tenantId, String commentId, bool isFlagged, { String? sso, }) async {
-    final response = await flagCommentPublicWithHttpInfo(tenantId, commentId, isFlagged,  sso: sso, );
+  Future<APIEmptyResponse?> flagCommentPublic(ApiFlagCommentPublicRequest request,) async {
+    final response = await flagCommentPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -828,7 +877,11 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> getCommentTextWithHttpInfo(String tenantId, String commentId, { String? editKey, String? sso, }) async {
+  Future<Response> getCommentTextWithHttpInfo(ApiGetCommentTextRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final editKey = request.editKey;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/text'
       .replaceAll('{tenantId}', tenantId)
@@ -871,8 +924,8 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<PublicAPIGetCommentTextResponse?> getCommentText(String tenantId, String commentId, { String? editKey, String? sso, }) async {
-    final response = await getCommentTextWithHttpInfo(tenantId, commentId,  editKey: editKey, sso: sso, );
+  Future<PublicAPIGetCommentTextResponse?> getCommentText(ApiGetCommentTextRequest request,) async {
+    final response = await getCommentTextWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -896,7 +949,11 @@ class PublicApi {
   /// * [int] dir (required):
   ///
   /// * [String] sso:
-  Future<Response> getCommentVoteUserNamesWithHttpInfo(String tenantId, String commentId, int dir, { String? sso, }) async {
+  Future<Response> getCommentVoteUserNamesWithHttpInfo(ApiGetCommentVoteUserNamesRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final dir = request.dir;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/votes'
       .replaceAll('{tenantId}', tenantId)
@@ -937,8 +994,8 @@ class PublicApi {
   /// * [int] dir (required):
   ///
   /// * [String] sso:
-  Future<GetCommentVoteUserNamesSuccessResponse?> getCommentVoteUserNames(String tenantId, String commentId, int dir, { String? sso, }) async {
-    final response = await getCommentVoteUserNamesWithHttpInfo(tenantId, commentId, dir,  sso: sso, );
+  Future<GetCommentVoteUserNamesSuccessResponse?> getCommentVoteUserNames(ApiGetCommentVoteUserNamesRequest request,) async {
+    final response = await getCommentVoteUserNamesWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -968,7 +1025,14 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] isCrawler:
-  Future<Response> getCommentsForUserWithHttpInfo({ String? userId, SortDirections? direction, String? repliesToUserId, double? page, bool? includei10n, String? locale, bool? isCrawler, }) async {
+  Future<Response> getCommentsForUserWithHttpInfo(ApiGetCommentsForUserRequest request,) async {
+    final userId = request.userId;
+    final direction = request.direction;
+    final repliesToUserId = request.repliesToUserId;
+    final page = request.page;
+    final includei10n = request.includei10n;
+    final locale = request.locale;
+    final isCrawler = request.isCrawler;
     // ignore: prefer_const_declarations
     final path = r'/comments-for-user';
 
@@ -1030,8 +1094,8 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] isCrawler:
-  Future<GetCommentsForUserResponse?> getCommentsForUser({ String? userId, SortDirections? direction, String? repliesToUserId, double? page, bool? includei10n, String? locale, bool? isCrawler, }) async {
-    final response = await getCommentsForUserWithHttpInfo( userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler, );
+  Future<GetCommentsForUserResponse?> getCommentsForUser(ApiGetCommentsForUserRequest request,) async {
+    final response = await getCommentsForUserWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1106,7 +1170,35 @@ class PublicApi {
   /// * [String] afterCommentId:
   ///
   /// * [String] beforeCommentId:
-  Future<Response> getCommentsPublicWithHttpInfo(String tenantId, String urlId, { int? page, SortDirections? direction, String? sso, int? skip, int? skipChildren, int? limit, int? limitChildren, bool? countChildren, String? fetchPageForCommentId, bool? includeConfig, bool? countAll, bool? includei10n, String? locale, String? modules, bool? isCrawler, bool? includeNotificationCount, bool? asTree, int? maxTreeDepth, bool? useFullTranslationIds, String? parentId, String? searchText, List<String>? hashTags, String? userId, String? customConfigStr, String? afterCommentId, String? beforeCommentId, }) async {
+  Future<Response> getCommentsPublicWithHttpInfo(ApiGetCommentsPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final page = request.page;
+    final direction = request.direction;
+    final sso = request.sso;
+    final skip = request.skip;
+    final skipChildren = request.skipChildren;
+    final limit = request.limit;
+    final limitChildren = request.limitChildren;
+    final countChildren = request.countChildren;
+    final fetchPageForCommentId = request.fetchPageForCommentId;
+    final includeConfig = request.includeConfig;
+    final countAll = request.countAll;
+    final includei10n = request.includei10n;
+    final locale = request.locale;
+    final modules = request.modules;
+    final isCrawler = request.isCrawler;
+    final includeNotificationCount = request.includeNotificationCount;
+    final asTree = request.asTree;
+    final maxTreeDepth = request.maxTreeDepth;
+    final useFullTranslationIds = request.useFullTranslationIds;
+    final parentId = request.parentId;
+    final searchText = request.searchText;
+    final hashTags = request.hashTags;
+    final userId = request.userId;
+    final customConfigStr = request.customConfigStr;
+    final afterCommentId = request.afterCommentId;
+    final beforeCommentId = request.beforeCommentId;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -1271,8 +1363,8 @@ class PublicApi {
   /// * [String] afterCommentId:
   ///
   /// * [String] beforeCommentId:
-  Future<GetCommentsResponseWithPresencePublicComment?> getCommentsPublic(String tenantId, String urlId, { int? page, SortDirections? direction, String? sso, int? skip, int? skipChildren, int? limit, int? limitChildren, bool? countChildren, String? fetchPageForCommentId, bool? includeConfig, bool? countAll, bool? includei10n, String? locale, String? modules, bool? isCrawler, bool? includeNotificationCount, bool? asTree, int? maxTreeDepth, bool? useFullTranslationIds, String? parentId, String? searchText, List<String>? hashTags, String? userId, String? customConfigStr, String? afterCommentId, String? beforeCommentId, }) async {
-    final response = await getCommentsPublicWithHttpInfo(tenantId, urlId,  page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId, );
+  Future<GetCommentsResponseWithPresencePublicComment?> getCommentsPublic(ApiGetCommentsPublicRequest request,) async {
+    final response = await getCommentsPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1301,7 +1393,12 @@ class PublicApi {
   /// * [int] startTime (required):
   ///
   /// * [int] endTime:
-  Future<Response> getEventLogWithHttpInfo(String tenantId, String urlId, String userIdWS, int startTime, { int? endTime, }) async {
+  Future<Response> getEventLogWithHttpInfo(ApiGetEventLogRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final userIdWS = request.userIdWS;
+    final startTime = request.startTime;
+    final endTime = request.endTime;
     // ignore: prefer_const_declarations
     final path = r'/event-log/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -1347,8 +1444,8 @@ class PublicApi {
   /// * [int] startTime (required):
   ///
   /// * [int] endTime:
-  Future<GetEventLogResponse?> getEventLog(String tenantId, String urlId, String userIdWS, int startTime, { int? endTime, }) async {
-    final response = await getEventLogWithHttpInfo(tenantId, urlId, userIdWS, startTime,  endTime: endTime, );
+  Future<GetEventLogResponse?> getEventLog(ApiGetEventLogRequest request,) async {
+    final response = await getEventLogWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1381,7 +1478,14 @@ class PublicApi {
   /// * [bool] isCrawler:
   ///
   /// * [bool] includeUserInfo:
-  Future<Response> getFeedPostsPublicWithHttpInfo(String tenantId, { String? afterId, int? limit, List<String>? tags, String? sso, bool? isCrawler, bool? includeUserInfo, }) async {
+  Future<Response> getFeedPostsPublicWithHttpInfo(ApiGetFeedPostsPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final afterId = request.afterId;
+    final limit = request.limit;
+    final tags = request.tags;
+    final sso = request.sso;
+    final isCrawler = request.isCrawler;
+    final includeUserInfo = request.includeUserInfo;
     // ignore: prefer_const_declarations
     final path = r'/feed-posts/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -1443,8 +1547,8 @@ class PublicApi {
   /// * [bool] isCrawler:
   ///
   /// * [bool] includeUserInfo:
-  Future<PublicFeedPostsResponse?> getFeedPostsPublic(String tenantId, { String? afterId, int? limit, List<String>? tags, String? sso, bool? isCrawler, bool? includeUserInfo, }) async {
-    final response = await getFeedPostsPublicWithHttpInfo(tenantId,  afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo, );
+  Future<PublicFeedPostsResponse?> getFeedPostsPublic(ApiGetFeedPostsPublicRequest request,) async {
+    final response = await getFeedPostsPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1466,7 +1570,10 @@ class PublicApi {
   /// * [List<String>] postIds (required):
   ///
   /// * [String] sso:
-  Future<Response> getFeedPostsStatsWithHttpInfo(String tenantId, List<String> postIds, { String? sso, }) async {
+  Future<Response> getFeedPostsStatsWithHttpInfo(ApiGetFeedPostsStatsRequest request,) async {
+    final tenantId = request.tenantId;
+    final postIds = request.postIds;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/feed-posts/{tenantId}/stats'
       .replaceAll('{tenantId}', tenantId);
@@ -1504,8 +1611,8 @@ class PublicApi {
   /// * [List<String>] postIds (required):
   ///
   /// * [String] sso:
-  Future<FeedPostsStatsResponse?> getFeedPostsStats(String tenantId, List<String> postIds, { String? sso, }) async {
-    final response = await getFeedPostsStatsWithHttpInfo(tenantId, postIds,  sso: sso, );
+  Future<FeedPostsStatsResponse?> getFeedPostsStats(ApiGetFeedPostsStatsRequest request,) async {
+    final response = await getFeedPostsStatsWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1525,7 +1632,9 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] largeInternalURLSanitized (required):
-  Future<Response> getGifLargeWithHttpInfo(String tenantId, String largeInternalURLSanitized,) async {
+  Future<Response> getGifLargeWithHttpInfo(ApiGetGifLargeRequest request,) async {
+    final tenantId = request.tenantId;
+    final largeInternalURLSanitized = request.largeInternalURLSanitized;
     // ignore: prefer_const_declarations
     final path = r'/gifs/get-large/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -1558,8 +1667,8 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] largeInternalURLSanitized (required):
-  Future<GifGetLargeResponse?> getGifLarge(String tenantId, String largeInternalURLSanitized,) async {
-    final response = await getGifLargeWithHttpInfo(tenantId, largeInternalURLSanitized,);
+  Future<GifGetLargeResponse?> getGifLarge(ApiGetGifLargeRequest request,) async {
+    final response = await getGifLargeWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1585,7 +1694,12 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<Response> getGifsSearchWithHttpInfo(String tenantId, String search, { String? locale, String? rating, double? page, }) async {
+  Future<Response> getGifsSearchWithHttpInfo(ApiGetGifsSearchRequest request,) async {
+    final tenantId = request.tenantId;
+    final search = request.search;
+    final locale = request.locale;
+    final rating = request.rating;
+    final page = request.page;
     // ignore: prefer_const_declarations
     final path = r'/gifs/search/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -1633,8 +1747,8 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<GetGifsSearchResponse?> getGifsSearch(String tenantId, String search, { String? locale, String? rating, double? page, }) async {
-    final response = await getGifsSearchWithHttpInfo(tenantId, search,  locale: locale, rating: rating, page: page, );
+  Future<GetGifsSearchResponse?> getGifsSearch(ApiGetGifsSearchRequest request,) async {
+    final response = await getGifsSearchWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1658,7 +1772,11 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<Response> getGifsTrendingWithHttpInfo(String tenantId, { String? locale, String? rating, double? page, }) async {
+  Future<Response> getGifsTrendingWithHttpInfo(ApiGetGifsTrendingRequest request,) async {
+    final tenantId = request.tenantId;
+    final locale = request.locale;
+    final rating = request.rating;
+    final page = request.page;
     // ignore: prefer_const_declarations
     final path = r'/gifs/trending/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -1703,8 +1821,8 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<GetGifsTrendingResponse?> getGifsTrending(String tenantId, { String? locale, String? rating, double? page, }) async {
-    final response = await getGifsTrendingWithHttpInfo(tenantId,  locale: locale, rating: rating, page: page, );
+  Future<GetGifsTrendingResponse?> getGifsTrending(ApiGetGifsTrendingRequest request,) async {
+    final response = await getGifsTrendingWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1733,7 +1851,12 @@ class PublicApi {
   /// * [int] startTime (required):
   ///
   /// * [int] endTime:
-  Future<Response> getGlobalEventLogWithHttpInfo(String tenantId, String urlId, String userIdWS, int startTime, { int? endTime, }) async {
+  Future<Response> getGlobalEventLogWithHttpInfo(ApiGetGlobalEventLogRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final userIdWS = request.userIdWS;
+    final startTime = request.startTime;
+    final endTime = request.endTime;
     // ignore: prefer_const_declarations
     final path = r'/event-log/global/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -1779,8 +1902,8 @@ class PublicApi {
   /// * [int] startTime (required):
   ///
   /// * [int] endTime:
-  Future<GetEventLogResponse?> getGlobalEventLog(String tenantId, String urlId, String userIdWS, int startTime, { int? endTime, }) async {
-    final response = await getGlobalEventLogWithHttpInfo(tenantId, urlId, userIdWS, startTime,  endTime: endTime, );
+  Future<GetEventLogResponse?> getGlobalEventLog(ApiGetGlobalEventLogRequest request,) async {
+    final response = await getGlobalEventLogWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1810,7 +1933,11 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<Response> getOfflineUsersWithHttpInfo(String tenantId, String urlId, { String? afterName, String? afterUserId, }) async {
+  Future<Response> getOfflineUsersWithHttpInfo(ApiGetOfflineUsersRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final afterName = request.afterName;
+    final afterUserId = request.afterUserId;
     // ignore: prefer_const_declarations
     final path = r'/pages/{tenantId}/users/offline'
       .replaceAll('{tenantId}', tenantId);
@@ -1858,8 +1985,8 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<PageUsersOfflineResponse?> getOfflineUsers(String tenantId, String urlId, { String? afterName, String? afterUserId, }) async {
-    final response = await getOfflineUsersWithHttpInfo(tenantId, urlId,  afterName: afterName, afterUserId: afterUserId, );
+  Future<PageUsersOfflineResponse?> getOfflineUsers(ApiGetOfflineUsersRequest request,) async {
+    final response = await getOfflineUsersWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1889,7 +2016,11 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<Response> getOnlineUsersWithHttpInfo(String tenantId, String urlId, { String? afterName, String? afterUserId, }) async {
+  Future<Response> getOnlineUsersWithHttpInfo(ApiGetOnlineUsersRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final afterName = request.afterName;
+    final afterUserId = request.afterUserId;
     // ignore: prefer_const_declarations
     final path = r'/pages/{tenantId}/users/online'
       .replaceAll('{tenantId}', tenantId);
@@ -1937,8 +2068,8 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<PageUsersOnlineResponse?> getOnlineUsers(String tenantId, String urlId, { String? afterName, String? afterUserId, }) async {
-    final response = await getOnlineUsersWithHttpInfo(tenantId, urlId,  afterName: afterName, afterUserId: afterUserId, );
+  Future<PageUsersOnlineResponse?> getOnlineUsers(ApiGetOnlineUsersRequest request,) async {
+    final response = await getOnlineUsersWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1974,7 +2105,13 @@ class PublicApi {
   ///
   /// * [bool] hasComments:
   ///   If true, only return pages with at least one comment.
-  Future<Response> getPagesPublicWithHttpInfo(String tenantId, { String? cursor, int? limit, String? q, PagesSortBy? sortBy, bool? hasComments, }) async {
+  Future<Response> getPagesPublicWithHttpInfo(ApiGetPagesPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final cursor = request.cursor;
+    final limit = request.limit;
+    final q = request.q;
+    final sortBy = request.sortBy;
+    final hasComments = request.hasComments;
     // ignore: prefer_const_declarations
     final path = r'/pages/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -2036,8 +2173,8 @@ class PublicApi {
   ///
   /// * [bool] hasComments:
   ///   If true, only return pages with at least one comment.
-  Future<GetPublicPagesResponse?> getPagesPublic(String tenantId, { String? cursor, int? limit, String? q, PagesSortBy? sortBy, bool? hasComments, }) async {
-    final response = await getPagesPublicWithHttpInfo(tenantId,  cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments, );
+  Future<GetPublicPagesResponse?> getPagesPublic(ApiGetPagesPublicRequest request,) async {
+    final response = await getPagesPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2061,7 +2198,11 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] useFullTranslationIds:
-  Future<Response> getTranslationsWithHttpInfo(String namespace, String component, { String? locale, bool? useFullTranslationIds, }) async {
+  Future<Response> getTranslationsWithHttpInfo(ApiGetTranslationsRequest request,) async {
+    final namespace = request.namespace;
+    final component = request.component;
+    final locale = request.locale;
+    final useFullTranslationIds = request.useFullTranslationIds;
     // ignore: prefer_const_declarations
     final path = r'/translations/{namespace}/{component}'
       .replaceAll('{namespace}', namespace)
@@ -2104,8 +2245,8 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] useFullTranslationIds:
-  Future<GetTranslationsResponse?> getTranslations(String namespace, String component, { String? locale, bool? useFullTranslationIds, }) async {
-    final response = await getTranslationsWithHttpInfo(namespace, component,  locale: locale, useFullTranslationIds: useFullTranslationIds, );
+  Future<GetTranslationsResponse?> getTranslations(ApiGetTranslationsRequest request,) async {
+    final response = await getTranslationsWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2125,7 +2266,9 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] sso:
-  Future<Response> getUserNotificationCountWithHttpInfo(String tenantId, { String? sso, }) async {
+  Future<Response> getUserNotificationCountWithHttpInfo(ApiGetUserNotificationCountRequest request,) async {
+    final tenantId = request.tenantId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/user-notifications/get-count';
 
@@ -2160,8 +2303,8 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] sso:
-  Future<GetUserNotificationCountResponse?> getUserNotificationCount(String tenantId, { String? sso, }) async {
-    final response = await getUserNotificationCountWithHttpInfo(tenantId,  sso: sso, );
+  Future<GetUserNotificationCountResponse?> getUserNotificationCount(ApiGetUserNotificationCountRequest request,) async {
+    final response = await getUserNotificationCountWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2202,7 +2345,19 @@ class PublicApi {
   /// * [bool] includeTenantNotifications:
   ///
   /// * [String] sso:
-  Future<Response> getUserNotificationsWithHttpInfo(String tenantId, { String? urlId, int? pageSize, String? afterId, bool? includeContext, int? afterCreatedAt, bool? unreadOnly, bool? dmOnly, bool? noDm, bool? includeTranslations, bool? includeTenantNotifications, String? sso, }) async {
+  Future<Response> getUserNotificationsWithHttpInfo(ApiGetUserNotificationsRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final pageSize = request.pageSize;
+    final afterId = request.afterId;
+    final includeContext = request.includeContext;
+    final afterCreatedAt = request.afterCreatedAt;
+    final unreadOnly = request.unreadOnly;
+    final dmOnly = request.dmOnly;
+    final noDm = request.noDm;
+    final includeTranslations = request.includeTranslations;
+    final includeTenantNotifications = request.includeTenantNotifications;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/user-notifications';
 
@@ -2288,8 +2443,8 @@ class PublicApi {
   /// * [bool] includeTenantNotifications:
   ///
   /// * [String] sso:
-  Future<GetMyNotificationsResponse?> getUserNotifications(String tenantId, { String? urlId, int? pageSize, String? afterId, bool? includeContext, int? afterCreatedAt, bool? unreadOnly, bool? dmOnly, bool? noDm, bool? includeTranslations, bool? includeTenantNotifications, String? sso, }) async {
-    final response = await getUserNotificationsWithHttpInfo(tenantId,  urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso, );
+  Future<GetMyNotificationsResponse?> getUserNotifications(ApiGetUserNotificationsRequest request,) async {
+    final response = await getUserNotificationsWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2311,7 +2466,10 @@ class PublicApi {
   /// * [String] urlIdWS (required):
   ///
   /// * [String] userIds (required):
-  Future<Response> getUserPresenceStatusesWithHttpInfo(String tenantId, String urlIdWS, String userIds,) async {
+  Future<Response> getUserPresenceStatusesWithHttpInfo(ApiGetUserPresenceStatusesRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlIdWS = request.urlIdWS;
+    final userIds = request.userIds;
     // ignore: prefer_const_declarations
     final path = r'/user-presence-status';
 
@@ -2347,8 +2505,8 @@ class PublicApi {
   /// * [String] urlIdWS (required):
   ///
   /// * [String] userIds (required):
-  Future<GetUserPresenceStatusesResponse?> getUserPresenceStatuses(String tenantId, String urlIdWS, String userIds,) async {
-    final response = await getUserPresenceStatusesWithHttpInfo(tenantId, urlIdWS, userIds,);
+  Future<GetUserPresenceStatusesResponse?> getUserPresenceStatuses(ApiGetUserPresenceStatusesRequest request,) async {
+    final response = await getUserPresenceStatusesWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2370,7 +2528,10 @@ class PublicApi {
   /// * [List<String>] postIds:
   ///
   /// * [String] sso:
-  Future<Response> getUserReactsPublicWithHttpInfo(String tenantId, { List<String>? postIds, String? sso, }) async {
+  Future<Response> getUserReactsPublicWithHttpInfo(ApiGetUserReactsPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final postIds = request.postIds;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/feed-posts/{tenantId}/user-reacts'
       .replaceAll('{tenantId}', tenantId);
@@ -2410,8 +2571,8 @@ class PublicApi {
   /// * [List<String>] postIds:
   ///
   /// * [String] sso:
-  Future<UserReactsResponse?> getUserReactsPublic(String tenantId, { List<String>? postIds, String? sso, }) async {
-    final response = await getUserReactsPublicWithHttpInfo(tenantId,  postIds: postIds, sso: sso, );
+  Future<UserReactsResponse?> getUserReactsPublic(ApiGetUserReactsPublicRequest request,) async {
+    final response = await getUserReactsPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2435,7 +2596,9 @@ class PublicApi {
   ///
   /// * [String] ids (required):
   ///   Comma-delimited userIds.
-  Future<Response> getUsersInfoWithHttpInfo(String tenantId, String ids,) async {
+  Future<Response> getUsersInfoWithHttpInfo(ApiGetUsersInfoRequest request,) async {
+    final tenantId = request.tenantId;
+    final ids = request.ids;
     // ignore: prefer_const_declarations
     final path = r'/pages/{tenantId}/users/info'
       .replaceAll('{tenantId}', tenantId);
@@ -2471,8 +2634,8 @@ class PublicApi {
   ///
   /// * [String] ids (required):
   ///   Comma-delimited userIds.
-  Future<PageUsersInfoResponse?> getUsersInfo(String tenantId, String ids,) async {
-    final response = await getUsersInfoWithHttpInfo(tenantId, ids,);
+  Future<PageUsersInfoResponse?> getUsersInfo(ApiGetUsersInfoRequest request,) async {
+    final response = await getUsersInfoWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2492,7 +2655,9 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<Response> getV1PageLikesWithHttpInfo(String tenantId, String urlId,) async {
+  Future<Response> getV1PageLikesWithHttpInfo(ApiGetV1PageLikesRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
     // ignore: prefer_const_declarations
     final path = r'/page-reacts/v1/likes/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -2525,8 +2690,8 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<GetV1PageLikes?> getV1PageLikes(String tenantId, String urlId,) async {
-    final response = await getV1PageLikesWithHttpInfo(tenantId, urlId,);
+  Future<GetV1PageLikes?> getV1PageLikes(ApiGetV1PageLikesRequest request,) async {
+    final response = await getV1PageLikesWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2548,7 +2713,10 @@ class PublicApi {
   /// * [String] urlId (required):
   ///
   /// * [String] id (required):
-  Future<Response> getV2PageReactUsersWithHttpInfo(String tenantId, String urlId, String id,) async {
+  Future<Response> getV2PageReactUsersWithHttpInfo(ApiGetV2PageReactUsersRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final id = request.id;
     // ignore: prefer_const_declarations
     final path = r'/page-reacts/v2/{tenantId}/list'
       .replaceAll('{tenantId}', tenantId);
@@ -2584,8 +2752,8 @@ class PublicApi {
   /// * [String] urlId (required):
   ///
   /// * [String] id (required):
-  Future<GetV2PageReactUsersResponse?> getV2PageReactUsers(String tenantId, String urlId, String id,) async {
-    final response = await getV2PageReactUsersWithHttpInfo(tenantId, urlId, id,);
+  Future<GetV2PageReactUsersResponse?> getV2PageReactUsers(ApiGetV2PageReactUsersRequest request,) async {
+    final response = await getV2PageReactUsersWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2605,7 +2773,9 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<Response> getV2PageReactsWithHttpInfo(String tenantId, String urlId,) async {
+  Future<Response> getV2PageReactsWithHttpInfo(ApiGetV2PageReactsRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
     // ignore: prefer_const_declarations
     final path = r'/page-reacts/v2/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -2638,8 +2808,8 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] urlId (required):
-  Future<GetV2PageReacts?> getV2PageReacts(String tenantId, String urlId,) async {
-    final response = await getV2PageReactsWithHttpInfo(tenantId, urlId,);
+  Future<GetV2PageReacts?> getV2PageReacts(ApiGetV2PageReactsRequest request,) async {
+    final response = await getV2PageReactsWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2663,7 +2833,11 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<Response> lockCommentWithHttpInfo(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
+  Future<Response> lockCommentWithHttpInfo(ApiLockCommentRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/lock'
       .replaceAll('{tenantId}', tenantId)
@@ -2704,8 +2878,8 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> lockComment(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
-    final response = await lockCommentWithHttpInfo(tenantId, commentId, broadcastId,  sso: sso, );
+  Future<APIEmptyResponse?> lockComment(ApiLockCommentRequest request,) async {
+    final response = await lockCommentWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2720,7 +2894,7 @@ class PublicApi {
   }
 
   /// Performs an HTTP 'PUT /auth/logout' operation and returns the [Response].
-  Future<Response> logoutPublicWithHttpInfo() async {
+  Future<Response> logoutPublicWithHttpInfo(ApiLogoutPublicRequest request,) async {
     // ignore: prefer_const_declarations
     final path = r'/auth/logout';
 
@@ -2745,8 +2919,8 @@ class PublicApi {
     );
   }
 
-  Future<APIEmptyResponse?> logoutPublic() async {
-    final response = await logoutPublicWithHttpInfo();
+  Future<APIEmptyResponse?> logoutPublic(ApiLogoutPublicRequest request,) async {
+    final response = await logoutPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2770,7 +2944,11 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<Response> pinCommentWithHttpInfo(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
+  Future<Response> pinCommentWithHttpInfo(ApiPinCommentRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/pin'
       .replaceAll('{tenantId}', tenantId)
@@ -2811,8 +2989,8 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<ChangeCommentPinStatusResponse?> pinComment(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
-    final response = await pinCommentWithHttpInfo(tenantId, commentId, broadcastId,  sso: sso, );
+  Future<ChangeCommentPinStatusResponse?> pinComment(ApiPinCommentRequest request,) async {
+    final response = await pinCommentWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2840,7 +3018,13 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> reactFeedPostPublicWithHttpInfo(String tenantId, String postId, ReactBodyParams reactBodyParams, { bool? isUndo, String? broadcastId, String? sso, }) async {
+  Future<Response> reactFeedPostPublicWithHttpInfo(ApiReactFeedPostPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final postId = request.postId;
+    final reactBodyParams = request.reactBodyParams;
+    final isUndo = request.isUndo;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/feed-posts/{tenantId}/react/{postId}'
       .replaceAll('{tenantId}', tenantId)
@@ -2890,8 +3074,8 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<ReactFeedPostResponse?> reactFeedPostPublic(String tenantId, String postId, ReactBodyParams reactBodyParams, { bool? isUndo, String? broadcastId, String? sso, }) async {
-    final response = await reactFeedPostPublicWithHttpInfo(tenantId, postId, reactBodyParams,  isUndo: isUndo, broadcastId: broadcastId, sso: sso, );
+  Future<ReactFeedPostResponse?> reactFeedPostPublic(ApiReactFeedPostPublicRequest request,) async {
+    final response = await reactFeedPostPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2911,7 +3095,9 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] sso:
-  Future<Response> resetUserNotificationCountWithHttpInfo(String tenantId, { String? sso, }) async {
+  Future<Response> resetUserNotificationCountWithHttpInfo(ApiResetUserNotificationCountRequest request,) async {
+    final tenantId = request.tenantId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/user-notifications/reset-count';
 
@@ -2946,8 +3132,8 @@ class PublicApi {
   /// * [String] tenantId (required):
   ///
   /// * [String] sso:
-  Future<ResetUserNotificationsResponse?> resetUserNotificationCount(String tenantId, { String? sso, }) async {
-    final response = await resetUserNotificationCountWithHttpInfo(tenantId,  sso: sso, );
+  Future<ResetUserNotificationsResponse?> resetUserNotificationCount(ApiResetUserNotificationCountRequest request,) async {
+    final response = await resetUserNotificationCountWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2977,7 +3163,14 @@ class PublicApi {
   /// * [bool] noDm:
   ///
   /// * [String] sso:
-  Future<Response> resetUserNotificationsWithHttpInfo(String tenantId, { String? afterId, int? afterCreatedAt, bool? unreadOnly, bool? dmOnly, bool? noDm, String? sso, }) async {
+  Future<Response> resetUserNotificationsWithHttpInfo(ApiResetUserNotificationsRequest request,) async {
+    final tenantId = request.tenantId;
+    final afterId = request.afterId;
+    final afterCreatedAt = request.afterCreatedAt;
+    final unreadOnly = request.unreadOnly;
+    final dmOnly = request.dmOnly;
+    final noDm = request.noDm;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/user-notifications/reset';
 
@@ -3037,8 +3230,8 @@ class PublicApi {
   /// * [bool] noDm:
   ///
   /// * [String] sso:
-  Future<ResetUserNotificationsResponse?> resetUserNotifications(String tenantId, { String? afterId, int? afterCreatedAt, bool? unreadOnly, bool? dmOnly, bool? noDm, String? sso, }) async {
-    final response = await resetUserNotificationsWithHttpInfo(tenantId,  afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso, );
+  Future<ResetUserNotificationsResponse?> resetUserNotifications(ApiResetUserNotificationsRequest request,) async {
+    final response = await resetUserNotificationsWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3066,7 +3259,13 @@ class PublicApi {
   /// * [String] sso:
   ///
   /// * [String] searchSection:
-  Future<Response> searchUsersWithHttpInfo(String tenantId, String urlId, { String? usernameStartsWith, List<String>? mentionGroupIds, String? sso, String? searchSection, }) async {
+  Future<Response> searchUsersWithHttpInfo(ApiSearchUsersRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final usernameStartsWith = request.usernameStartsWith;
+    final mentionGroupIds = request.mentionGroupIds;
+    final sso = request.sso;
+    final searchSection = request.searchSection;
     // ignore: prefer_const_declarations
     final path = r'/user-search/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -3119,8 +3318,8 @@ class PublicApi {
   /// * [String] sso:
   ///
   /// * [String] searchSection:
-  Future<SearchUsersResult?> searchUsers(String tenantId, String urlId, { String? usernameStartsWith, List<String>? mentionGroupIds, String? sso, String? searchSection, }) async {
-    final response = await searchUsersWithHttpInfo(tenantId, urlId,  usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection, );
+  Future<SearchUsersResult?> searchUsers(ApiSearchUsersRequest request,) async {
+    final response = await searchUsersWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3148,7 +3347,13 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> setCommentTextWithHttpInfo(String tenantId, String commentId, String broadcastId, CommentTextUpdateRequest commentTextUpdateRequest, { String? editKey, String? sso, }) async {
+  Future<Response> setCommentTextWithHttpInfo(ApiSetCommentTextRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final broadcastId = request.broadcastId;
+    final commentTextUpdateRequest = request.commentTextUpdateRequest;
+    final editKey = request.editKey;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/update-text'
       .replaceAll('{tenantId}', tenantId)
@@ -3196,8 +3401,8 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<PublicAPISetCommentTextResponse?> setCommentText(String tenantId, String commentId, String broadcastId, CommentTextUpdateRequest commentTextUpdateRequest, { String? editKey, String? sso, }) async {
-    final response = await setCommentTextWithHttpInfo(tenantId, commentId, broadcastId, commentTextUpdateRequest,  editKey: editKey, sso: sso, );
+  Future<PublicAPISetCommentTextResponse?> setCommentText(ApiSetCommentTextRequest request,) async {
+    final response = await setCommentTextWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3221,7 +3426,11 @@ class PublicApi {
   /// * [PublicBlockFromCommentParams] publicBlockFromCommentParams (required):
   ///
   /// * [String] sso:
-  Future<Response> unBlockCommentPublicWithHttpInfo(String tenantId, String commentId, PublicBlockFromCommentParams publicBlockFromCommentParams, { String? sso, }) async {
+  Future<Response> unBlockCommentPublicWithHttpInfo(ApiUnBlockCommentPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final publicBlockFromCommentParams = request.publicBlockFromCommentParams;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/block-from-comment/{commentId}'
       .replaceAll('{commentId}', commentId);
@@ -3261,8 +3470,8 @@ class PublicApi {
   /// * [PublicBlockFromCommentParams] publicBlockFromCommentParams (required):
   ///
   /// * [String] sso:
-  Future<UnblockSuccess?> unBlockCommentPublic(String tenantId, String commentId, PublicBlockFromCommentParams publicBlockFromCommentParams, { String? sso, }) async {
-    final response = await unBlockCommentPublicWithHttpInfo(tenantId, commentId, publicBlockFromCommentParams,  sso: sso, );
+  Future<UnblockSuccess?> unBlockCommentPublic(ApiUnBlockCommentPublicRequest request,) async {
+    final response = await unBlockCommentPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3286,7 +3495,11 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<Response> unLockCommentWithHttpInfo(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
+  Future<Response> unLockCommentWithHttpInfo(ApiUnLockCommentRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/unlock'
       .replaceAll('{tenantId}', tenantId)
@@ -3327,8 +3540,8 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> unLockComment(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
-    final response = await unLockCommentWithHttpInfo(tenantId, commentId, broadcastId,  sso: sso, );
+  Future<APIEmptyResponse?> unLockComment(ApiUnLockCommentRequest request,) async {
+    final response = await unLockCommentWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3352,7 +3565,11 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<Response> unPinCommentWithHttpInfo(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
+  Future<Response> unPinCommentWithHttpInfo(ApiUnPinCommentRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/unpin'
       .replaceAll('{tenantId}', tenantId)
@@ -3393,8 +3610,8 @@ class PublicApi {
   /// * [String] broadcastId (required):
   ///
   /// * [String] sso:
-  Future<ChangeCommentPinStatusResponse?> unPinComment(String tenantId, String commentId, String broadcastId, { String? sso, }) async {
-    final response = await unPinCommentWithHttpInfo(tenantId, commentId, broadcastId,  sso: sso, );
+  Future<ChangeCommentPinStatusResponse?> unPinComment(ApiUnPinCommentRequest request,) async {
+    final response = await unPinCommentWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3420,7 +3637,12 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> updateFeedPostPublicWithHttpInfo(String tenantId, String postId, UpdateFeedPostParams updateFeedPostParams, { String? broadcastId, String? sso, }) async {
+  Future<Response> updateFeedPostPublicWithHttpInfo(ApiUpdateFeedPostPublicRequest request,) async {
+    final tenantId = request.tenantId;
+    final postId = request.postId;
+    final updateFeedPostParams = request.updateFeedPostParams;
+    final broadcastId = request.broadcastId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/feed-posts/{tenantId}/{postId}'
       .replaceAll('{tenantId}', tenantId)
@@ -3465,8 +3687,8 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<CreateFeedPostResponse?> updateFeedPostPublic(String tenantId, String postId, UpdateFeedPostParams updateFeedPostParams, { String? broadcastId, String? sso, }) async {
-    final response = await updateFeedPostPublicWithHttpInfo(tenantId, postId, updateFeedPostParams,  broadcastId: broadcastId, sso: sso, );
+  Future<CreateFeedPostResponse?> updateFeedPostPublic(ApiUpdateFeedPostPublicRequest request,) async {
+    final response = await updateFeedPostPublicWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3495,7 +3717,12 @@ class PublicApi {
   /// * [String] commentId (required):
   ///
   /// * [String] sso:
-  Future<Response> updateUserNotificationCommentSubscriptionStatusWithHttpInfo(String tenantId, String notificationId, String optedInOrOut, String commentId, { String? sso, }) async {
+  Future<Response> updateUserNotificationCommentSubscriptionStatusWithHttpInfo(ApiUpdateUserNotificationCommentSubscriptionStatusRequest request,) async {
+    final tenantId = request.tenantId;
+    final notificationId = request.notificationId;
+    final optedInOrOut = request.optedInOrOut;
+    final commentId = request.commentId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/user-notifications/{notificationId}/mark-opted/{optedInOrOut}'
       .replaceAll('{notificationId}', notificationId)
@@ -3541,8 +3768,8 @@ class PublicApi {
   /// * [String] commentId (required):
   ///
   /// * [String] sso:
-  Future<UpdateUserNotificationCommentSubscriptionStatusResponse?> updateUserNotificationCommentSubscriptionStatus(String tenantId, String notificationId, String optedInOrOut, String commentId, { String? sso, }) async {
-    final response = await updateUserNotificationCommentSubscriptionStatusWithHttpInfo(tenantId, notificationId, optedInOrOut, commentId,  sso: sso, );
+  Future<UpdateUserNotificationCommentSubscriptionStatusResponse?> updateUserNotificationCommentSubscriptionStatus(ApiUpdateUserNotificationCommentSubscriptionStatusRequest request,) async {
+    final response = await updateUserNotificationCommentSubscriptionStatusWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3573,7 +3800,13 @@ class PublicApi {
   /// * [String] subscribedOrUnsubscribed (required):
   ///
   /// * [String] sso:
-  Future<Response> updateUserNotificationPageSubscriptionStatusWithHttpInfo(String tenantId, String urlId, String url, String pageTitle, String subscribedOrUnsubscribed, { String? sso, }) async {
+  Future<Response> updateUserNotificationPageSubscriptionStatusWithHttpInfo(ApiUpdateUserNotificationPageSubscriptionStatusRequest request,) async {
+    final tenantId = request.tenantId;
+    final urlId = request.urlId;
+    final url = request.url;
+    final pageTitle = request.pageTitle;
+    final subscribedOrUnsubscribed = request.subscribedOrUnsubscribed;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/user-notifications/set-subscription-state/{subscribedOrUnsubscribed}'
       .replaceAll('{subscribedOrUnsubscribed}', subscribedOrUnsubscribed);
@@ -3622,8 +3855,8 @@ class PublicApi {
   /// * [String] subscribedOrUnsubscribed (required):
   ///
   /// * [String] sso:
-  Future<UpdateUserNotificationPageSubscriptionStatusResponse?> updateUserNotificationPageSubscriptionStatus(String tenantId, String urlId, String url, String pageTitle, String subscribedOrUnsubscribed, { String? sso, }) async {
-    final response = await updateUserNotificationPageSubscriptionStatusWithHttpInfo(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed,  sso: sso, );
+  Future<UpdateUserNotificationPageSubscriptionStatusResponse?> updateUserNotificationPageSubscriptionStatus(ApiUpdateUserNotificationPageSubscriptionStatusRequest request,) async {
+    final response = await updateUserNotificationPageSubscriptionStatusWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3647,7 +3880,11 @@ class PublicApi {
   /// * [String] newStatus (required):
   ///
   /// * [String] sso:
-  Future<Response> updateUserNotificationStatusWithHttpInfo(String tenantId, String notificationId, String newStatus, { String? sso, }) async {
+  Future<Response> updateUserNotificationStatusWithHttpInfo(ApiUpdateUserNotificationStatusRequest request,) async {
+    final tenantId = request.tenantId;
+    final notificationId = request.notificationId;
+    final newStatus = request.newStatus;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/user-notifications/{notificationId}/mark/{newStatus}'
       .replaceAll('{notificationId}', notificationId)
@@ -3688,8 +3925,8 @@ class PublicApi {
   /// * [String] newStatus (required):
   ///
   /// * [String] sso:
-  Future<UpdateUserNotificationStatusResponse?> updateUserNotificationStatus(String tenantId, String notificationId, String newStatus, { String? sso, }) async {
-    final response = await updateUserNotificationStatusWithHttpInfo(tenantId, notificationId, newStatus,  sso: sso, );
+  Future<UpdateUserNotificationStatusResponse?> updateUserNotificationStatus(ApiUpdateUserNotificationStatusRequest request,) async {
+    final response = await updateUserNotificationStatusWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3718,7 +3955,11 @@ class PublicApi {
   ///
   /// * [String] urlId:
   ///   Page id that upload is happening from, to configure
-  Future<Response> uploadImageWithHttpInfo(String tenantId, MultipartFile file, { SizePreset? sizePreset, String? urlId, }) async {
+  Future<Response> uploadImageWithHttpInfo(ApiUploadImageRequest request,) async {
+    final tenantId = request.tenantId;
+    final file = request.file;
+    final sizePreset = request.sizePreset;
+    final urlId = request.urlId;
     // ignore: prefer_const_declarations
     final path = r'/upload-image/{tenantId}'
       .replaceAll('{tenantId}', tenantId);
@@ -3774,8 +4015,8 @@ class PublicApi {
   ///
   /// * [String] urlId:
   ///   Page id that upload is happening from, to configure
-  Future<UploadImageResponse?> uploadImage(String tenantId, MultipartFile file, { SizePreset? sizePreset, String? urlId, }) async {
-    final response = await uploadImageWithHttpInfo(tenantId, file,  sizePreset: sizePreset, urlId: urlId, );
+  Future<UploadImageResponse?> uploadImage(ApiUploadImageRequest request,) async {
+    final response = await uploadImageWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3805,7 +4046,14 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<Response> voteCommentWithHttpInfo(String tenantId, String commentId, String urlId, String broadcastId, VoteBodyParams voteBodyParams, { String? sessionId, String? sso, }) async {
+  Future<Response> voteCommentWithHttpInfo(ApiVoteCommentRequest request,) async {
+    final tenantId = request.tenantId;
+    final commentId = request.commentId;
+    final urlId = request.urlId;
+    final broadcastId = request.broadcastId;
+    final voteBodyParams = request.voteBodyParams;
+    final sessionId = request.sessionId;
+    final sso = request.sso;
     // ignore: prefer_const_declarations
     final path = r'/comments/{tenantId}/{commentId}/vote'
       .replaceAll('{tenantId}', tenantId)
@@ -3856,8 +4104,8 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<VoteResponse?> voteComment(String tenantId, String commentId, String urlId, String broadcastId, VoteBodyParams voteBodyParams, { String? sessionId, String? sso, }) async {
-    final response = await voteCommentWithHttpInfo(tenantId, commentId, urlId, broadcastId, voteBodyParams,  sessionId: sessionId, sso: sso, );
+  Future<VoteResponse?> voteComment(ApiVoteCommentRequest request,) async {
+    final response = await voteCommentWithHttpInfo(request,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3870,4 +4118,811 @@ class PublicApi {
     }
     return null;
   }
+}
+
+/// Request parameters for [PublicApi.blockFromCommentPublic].
+class ApiBlockFromCommentPublicRequest {
+  const ApiBlockFromCommentPublicRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.publicBlockFromCommentParams,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final PublicBlockFromCommentParams publicBlockFromCommentParams;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.checkedCommentsForBlocked].
+class ApiCheckedCommentsForBlockedRequest {
+  const ApiCheckedCommentsForBlockedRequest({
+    required this.tenantId,
+    required this.commentIds,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentIds;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.createCommentPublic].
+class ApiCreateCommentPublicRequest {
+  const ApiCreateCommentPublicRequest({
+    required this.tenantId,
+    required this.urlId,
+    required this.broadcastId,
+    required this.commentData,
+    this.sessionId,
+    this.sso,
+  });
+  final String tenantId;
+  final String urlId;
+  final String broadcastId;
+  final CommentData commentData;
+  final String? sessionId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.createFeedPostPublic].
+class ApiCreateFeedPostPublicRequest {
+  const ApiCreateFeedPostPublicRequest({
+    required this.tenantId,
+    required this.createFeedPostParams,
+    this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final CreateFeedPostParams createFeedPostParams;
+  final String? broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.createV1PageReact].
+class ApiCreateV1PageReactRequest {
+  const ApiCreateV1PageReactRequest({
+    required this.tenantId,
+    required this.urlId,
+    this.title,
+  });
+  final String tenantId;
+  final String urlId;
+  final String? title;
+}
+
+/// Request parameters for [PublicApi.createV2PageReact].
+class ApiCreateV2PageReactRequest {
+  const ApiCreateV2PageReactRequest({
+    required this.tenantId,
+    required this.urlId,
+    required this.id,
+    this.title,
+  });
+  final String tenantId;
+  final String urlId;
+  final String id;
+  final String? title;
+}
+
+/// Request parameters for [PublicApi.deleteCommentPublic].
+class ApiDeleteCommentPublicRequest {
+  const ApiDeleteCommentPublicRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.broadcastId,
+    this.editKey,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String broadcastId;
+  final String? editKey;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.deleteCommentVote].
+class ApiDeleteCommentVoteRequest {
+  const ApiDeleteCommentVoteRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.voteId,
+    required this.urlId,
+    required this.broadcastId,
+    this.editKey,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String voteId;
+  final String urlId;
+  final String broadcastId;
+  final String? editKey;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.deleteFeedPostPublic].
+class ApiDeleteFeedPostPublicRequest {
+  const ApiDeleteFeedPostPublicRequest({
+    required this.tenantId,
+    required this.postId,
+    this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final String postId;
+  final String? broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.deleteV1PageReact].
+class ApiDeleteV1PageReactRequest {
+  const ApiDeleteV1PageReactRequest({
+    required this.tenantId,
+    required this.urlId,
+  });
+  final String tenantId;
+  final String urlId;
+}
+
+/// Request parameters for [PublicApi.deleteV2PageReact].
+class ApiDeleteV2PageReactRequest {
+  const ApiDeleteV2PageReactRequest({
+    required this.tenantId,
+    required this.urlId,
+    required this.id,
+  });
+  final String tenantId;
+  final String urlId;
+  final String id;
+}
+
+/// Request parameters for [PublicApi.flagCommentPublic].
+class ApiFlagCommentPublicRequest {
+  const ApiFlagCommentPublicRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.isFlagged,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final bool isFlagged;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.getCommentText].
+class ApiGetCommentTextRequest {
+  const ApiGetCommentTextRequest({
+    required this.tenantId,
+    required this.commentId,
+    this.editKey,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String? editKey;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.getCommentVoteUserNames].
+class ApiGetCommentVoteUserNamesRequest {
+  const ApiGetCommentVoteUserNamesRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.dir,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final int dir;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.getCommentsForUser].
+class ApiGetCommentsForUserRequest {
+  const ApiGetCommentsForUserRequest({
+    this.userId,
+    this.direction,
+    this.repliesToUserId,
+    this.page,
+    this.includei10n,
+    this.locale,
+    this.isCrawler,
+  });
+  final String? userId;
+  final SortDirections? direction;
+  final String? repliesToUserId;
+  final double? page;
+  final bool? includei10n;
+  final String? locale;
+  final bool? isCrawler;
+}
+
+/// Request parameters for [PublicApi.getCommentsPublic].
+class ApiGetCommentsPublicRequest {
+  const ApiGetCommentsPublicRequest({
+    required this.tenantId,
+    required this.urlId,
+    this.page,
+    this.direction,
+    this.sso,
+    this.skip,
+    this.skipChildren,
+    this.limit,
+    this.limitChildren,
+    this.countChildren,
+    this.fetchPageForCommentId,
+    this.includeConfig,
+    this.countAll,
+    this.includei10n,
+    this.locale,
+    this.modules,
+    this.isCrawler,
+    this.includeNotificationCount,
+    this.asTree,
+    this.maxTreeDepth,
+    this.useFullTranslationIds,
+    this.parentId,
+    this.searchText,
+    this.hashTags,
+    this.userId,
+    this.customConfigStr,
+    this.afterCommentId,
+    this.beforeCommentId,
+  });
+  final String tenantId;
+  final String urlId;
+  final int? page;
+  final SortDirections? direction;
+  final String? sso;
+  final int? skip;
+  final int? skipChildren;
+  final int? limit;
+  final int? limitChildren;
+  final bool? countChildren;
+  final String? fetchPageForCommentId;
+  final bool? includeConfig;
+  final bool? countAll;
+  final bool? includei10n;
+  final String? locale;
+  final String? modules;
+  final bool? isCrawler;
+  final bool? includeNotificationCount;
+  final bool? asTree;
+  final int? maxTreeDepth;
+  final bool? useFullTranslationIds;
+  final String? parentId;
+  final String? searchText;
+  final List<String>? hashTags;
+  final String? userId;
+  final String? customConfigStr;
+  final String? afterCommentId;
+  final String? beforeCommentId;
+}
+
+/// Request parameters for [PublicApi.getEventLog].
+class ApiGetEventLogRequest {
+  const ApiGetEventLogRequest({
+    required this.tenantId,
+    required this.urlId,
+    required this.userIdWS,
+    required this.startTime,
+    this.endTime,
+  });
+  final String tenantId;
+  final String urlId;
+  final String userIdWS;
+  final int startTime;
+  final int? endTime;
+}
+
+/// Request parameters for [PublicApi.getFeedPostsPublic].
+class ApiGetFeedPostsPublicRequest {
+  const ApiGetFeedPostsPublicRequest({
+    required this.tenantId,
+    this.afterId,
+    this.limit,
+    this.tags,
+    this.sso,
+    this.isCrawler,
+    this.includeUserInfo,
+  });
+  final String tenantId;
+  final String? afterId;
+  final int? limit;
+  final List<String>? tags;
+  final String? sso;
+  final bool? isCrawler;
+  final bool? includeUserInfo;
+}
+
+/// Request parameters for [PublicApi.getFeedPostsStats].
+class ApiGetFeedPostsStatsRequest {
+  const ApiGetFeedPostsStatsRequest({
+    required this.tenantId,
+    required this.postIds,
+    this.sso,
+  });
+  final String tenantId;
+  final List<String> postIds;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.getGifLarge].
+class ApiGetGifLargeRequest {
+  const ApiGetGifLargeRequest({
+    required this.tenantId,
+    required this.largeInternalURLSanitized,
+  });
+  final String tenantId;
+  final String largeInternalURLSanitized;
+}
+
+/// Request parameters for [PublicApi.getGifsSearch].
+class ApiGetGifsSearchRequest {
+  const ApiGetGifsSearchRequest({
+    required this.tenantId,
+    required this.search,
+    this.locale,
+    this.rating,
+    this.page,
+  });
+  final String tenantId;
+  final String search;
+  final String? locale;
+  final String? rating;
+  final double? page;
+}
+
+/// Request parameters for [PublicApi.getGifsTrending].
+class ApiGetGifsTrendingRequest {
+  const ApiGetGifsTrendingRequest({
+    required this.tenantId,
+    this.locale,
+    this.rating,
+    this.page,
+  });
+  final String tenantId;
+  final String? locale;
+  final String? rating;
+  final double? page;
+}
+
+/// Request parameters for [PublicApi.getGlobalEventLog].
+class ApiGetGlobalEventLogRequest {
+  const ApiGetGlobalEventLogRequest({
+    required this.tenantId,
+    required this.urlId,
+    required this.userIdWS,
+    required this.startTime,
+    this.endTime,
+  });
+  final String tenantId;
+  final String urlId;
+  final String userIdWS;
+  final int startTime;
+  final int? endTime;
+}
+
+/// Request parameters for [PublicApi.getOfflineUsers].
+class ApiGetOfflineUsersRequest {
+  const ApiGetOfflineUsersRequest({
+    required this.tenantId,
+    required this.urlId,
+    this.afterName,
+    this.afterUserId,
+  });
+  final String tenantId;
+  final String urlId;
+  final String? afterName;
+  final String? afterUserId;
+}
+
+/// Request parameters for [PublicApi.getOnlineUsers].
+class ApiGetOnlineUsersRequest {
+  const ApiGetOnlineUsersRequest({
+    required this.tenantId,
+    required this.urlId,
+    this.afterName,
+    this.afterUserId,
+  });
+  final String tenantId;
+  final String urlId;
+  final String? afterName;
+  final String? afterUserId;
+}
+
+/// Request parameters for [PublicApi.getPagesPublic].
+class ApiGetPagesPublicRequest {
+  const ApiGetPagesPublicRequest({
+    required this.tenantId,
+    this.cursor,
+    this.limit,
+    this.q,
+    this.sortBy,
+    this.hasComments,
+  });
+  final String tenantId;
+  final String? cursor;
+  final int? limit;
+  final String? q;
+  final PagesSortBy? sortBy;
+  final bool? hasComments;
+}
+
+/// Request parameters for [PublicApi.getTranslations].
+class ApiGetTranslationsRequest {
+  const ApiGetTranslationsRequest({
+    required this.namespace,
+    required this.component,
+    this.locale,
+    this.useFullTranslationIds,
+  });
+  final String namespace;
+  final String component;
+  final String? locale;
+  final bool? useFullTranslationIds;
+}
+
+/// Request parameters for [PublicApi.getUserNotificationCount].
+class ApiGetUserNotificationCountRequest {
+  const ApiGetUserNotificationCountRequest({
+    required this.tenantId,
+    this.sso,
+  });
+  final String tenantId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.getUserNotifications].
+class ApiGetUserNotificationsRequest {
+  const ApiGetUserNotificationsRequest({
+    required this.tenantId,
+    this.urlId,
+    this.pageSize,
+    this.afterId,
+    this.includeContext,
+    this.afterCreatedAt,
+    this.unreadOnly,
+    this.dmOnly,
+    this.noDm,
+    this.includeTranslations,
+    this.includeTenantNotifications,
+    this.sso,
+  });
+  final String tenantId;
+  final String? urlId;
+  final int? pageSize;
+  final String? afterId;
+  final bool? includeContext;
+  final int? afterCreatedAt;
+  final bool? unreadOnly;
+  final bool? dmOnly;
+  final bool? noDm;
+  final bool? includeTranslations;
+  final bool? includeTenantNotifications;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.getUserPresenceStatuses].
+class ApiGetUserPresenceStatusesRequest {
+  const ApiGetUserPresenceStatusesRequest({
+    required this.tenantId,
+    required this.urlIdWS,
+    required this.userIds,
+  });
+  final String tenantId;
+  final String urlIdWS;
+  final String userIds;
+}
+
+/// Request parameters for [PublicApi.getUserReactsPublic].
+class ApiGetUserReactsPublicRequest {
+  const ApiGetUserReactsPublicRequest({
+    required this.tenantId,
+    this.postIds,
+    this.sso,
+  });
+  final String tenantId;
+  final List<String>? postIds;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.getUsersInfo].
+class ApiGetUsersInfoRequest {
+  const ApiGetUsersInfoRequest({
+    required this.tenantId,
+    required this.ids,
+  });
+  final String tenantId;
+  final String ids;
+}
+
+/// Request parameters for [PublicApi.getV1PageLikes].
+class ApiGetV1PageLikesRequest {
+  const ApiGetV1PageLikesRequest({
+    required this.tenantId,
+    required this.urlId,
+  });
+  final String tenantId;
+  final String urlId;
+}
+
+/// Request parameters for [PublicApi.getV2PageReactUsers].
+class ApiGetV2PageReactUsersRequest {
+  const ApiGetV2PageReactUsersRequest({
+    required this.tenantId,
+    required this.urlId,
+    required this.id,
+  });
+  final String tenantId;
+  final String urlId;
+  final String id;
+}
+
+/// Request parameters for [PublicApi.getV2PageReacts].
+class ApiGetV2PageReactsRequest {
+  const ApiGetV2PageReactsRequest({
+    required this.tenantId,
+    required this.urlId,
+  });
+  final String tenantId;
+  final String urlId;
+}
+
+/// Request parameters for [PublicApi.lockComment].
+class ApiLockCommentRequest {
+  const ApiLockCommentRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.logoutPublic].
+class ApiLogoutPublicRequest {
+  const ApiLogoutPublicRequest();
+}
+
+/// Request parameters for [PublicApi.pinComment].
+class ApiPinCommentRequest {
+  const ApiPinCommentRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.reactFeedPostPublic].
+class ApiReactFeedPostPublicRequest {
+  const ApiReactFeedPostPublicRequest({
+    required this.tenantId,
+    required this.postId,
+    required this.reactBodyParams,
+    this.isUndo,
+    this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final String postId;
+  final ReactBodyParams reactBodyParams;
+  final bool? isUndo;
+  final String? broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.resetUserNotificationCount].
+class ApiResetUserNotificationCountRequest {
+  const ApiResetUserNotificationCountRequest({
+    required this.tenantId,
+    this.sso,
+  });
+  final String tenantId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.resetUserNotifications].
+class ApiResetUserNotificationsRequest {
+  const ApiResetUserNotificationsRequest({
+    required this.tenantId,
+    this.afterId,
+    this.afterCreatedAt,
+    this.unreadOnly,
+    this.dmOnly,
+    this.noDm,
+    this.sso,
+  });
+  final String tenantId;
+  final String? afterId;
+  final int? afterCreatedAt;
+  final bool? unreadOnly;
+  final bool? dmOnly;
+  final bool? noDm;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.searchUsers].
+class ApiSearchUsersRequest {
+  const ApiSearchUsersRequest({
+    required this.tenantId,
+    required this.urlId,
+    this.usernameStartsWith,
+    this.mentionGroupIds,
+    this.sso,
+    this.searchSection,
+  });
+  final String tenantId;
+  final String urlId;
+  final String? usernameStartsWith;
+  final List<String>? mentionGroupIds;
+  final String? sso;
+  final String? searchSection;
+}
+
+/// Request parameters for [PublicApi.setCommentText].
+class ApiSetCommentTextRequest {
+  const ApiSetCommentTextRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.broadcastId,
+    required this.commentTextUpdateRequest,
+    this.editKey,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String broadcastId;
+  final CommentTextUpdateRequest commentTextUpdateRequest;
+  final String? editKey;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.unBlockCommentPublic].
+class ApiUnBlockCommentPublicRequest {
+  const ApiUnBlockCommentPublicRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.publicBlockFromCommentParams,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final PublicBlockFromCommentParams publicBlockFromCommentParams;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.unLockComment].
+class ApiUnLockCommentRequest {
+  const ApiUnLockCommentRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.unPinComment].
+class ApiUnPinCommentRequest {
+  const ApiUnPinCommentRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.updateFeedPostPublic].
+class ApiUpdateFeedPostPublicRequest {
+  const ApiUpdateFeedPostPublicRequest({
+    required this.tenantId,
+    required this.postId,
+    required this.updateFeedPostParams,
+    this.broadcastId,
+    this.sso,
+  });
+  final String tenantId;
+  final String postId;
+  final UpdateFeedPostParams updateFeedPostParams;
+  final String? broadcastId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.updateUserNotificationCommentSubscriptionStatus].
+class ApiUpdateUserNotificationCommentSubscriptionStatusRequest {
+  const ApiUpdateUserNotificationCommentSubscriptionStatusRequest({
+    required this.tenantId,
+    required this.notificationId,
+    required this.optedInOrOut,
+    required this.commentId,
+    this.sso,
+  });
+  final String tenantId;
+  final String notificationId;
+  final String optedInOrOut;
+  final String commentId;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.updateUserNotificationPageSubscriptionStatus].
+class ApiUpdateUserNotificationPageSubscriptionStatusRequest {
+  const ApiUpdateUserNotificationPageSubscriptionStatusRequest({
+    required this.tenantId,
+    required this.urlId,
+    required this.url,
+    required this.pageTitle,
+    required this.subscribedOrUnsubscribed,
+    this.sso,
+  });
+  final String tenantId;
+  final String urlId;
+  final String url;
+  final String pageTitle;
+  final String subscribedOrUnsubscribed;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.updateUserNotificationStatus].
+class ApiUpdateUserNotificationStatusRequest {
+  const ApiUpdateUserNotificationStatusRequest({
+    required this.tenantId,
+    required this.notificationId,
+    required this.newStatus,
+    this.sso,
+  });
+  final String tenantId;
+  final String notificationId;
+  final String newStatus;
+  final String? sso;
+}
+
+/// Request parameters for [PublicApi.uploadImage].
+class ApiUploadImageRequest {
+  const ApiUploadImageRequest({
+    required this.tenantId,
+    required this.file,
+    this.sizePreset,
+    this.urlId,
+  });
+  final String tenantId;
+  final MultipartFile file;
+  final SizePreset? sizePreset;
+  final String? urlId;
+}
+
+/// Request parameters for [PublicApi.voteComment].
+class ApiVoteCommentRequest {
+  const ApiVoteCommentRequest({
+    required this.tenantId,
+    required this.commentId,
+    required this.urlId,
+    required this.broadcastId,
+    required this.voteBodyParams,
+    this.sessionId,
+    this.sso,
+  });
+  final String tenantId;
+  final String commentId;
+  final String urlId;
+  final String broadcastId;
+  final VoteBodyParams voteBodyParams;
+  final String? sessionId;
+  final String? sso;
 }

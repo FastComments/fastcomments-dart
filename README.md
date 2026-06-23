@@ -56,25 +56,29 @@ The client exposes three API classes:
 ```dart
 import 'package:fastcomments_dart/api.dart';
 
-final api = DefaultApi(ApiClient(basePath: 'https://fastcomments.com'));
-final comments = await api.getCommentsPublic(
-  'YOUR_TENANT_ID',
+final api = PublicApi(ApiClient(basePath: 'https://fastcomments.com'));
+final comments = await api.getCommentsPublic(ApiGetCommentsPublicRequest(
+  tenantId: 'YOUR_TENANT_ID',
   urlId: 'YOUR_URL_ID',
-);
+));
 ```
 
 ```dart
 import 'package:fastcomments_dart/api.dart';
 
 final publicApi = PublicApi(ApiClient(basePath: 'https://fastcomments.com'));
-final feedPosts = await publicApi.getFeedPostsPublic('YOUR_TENANT_ID');
+final feedPosts = await publicApi.getFeedPostsPublic(
+  ApiGetFeedPostsPublicRequest(tenantId: 'YOUR_TENANT_ID'),
+);
 ```
 
 ```dart
 import 'package:fastcomments_dart/api.dart';
 
 final moderation = ModerationApi(ApiClient(basePath: 'https://fastcomments.com'));
-final result = await moderation.getApiComments(sso: 'SSO_TOKEN');
+final result = await moderation.getApiComments(
+  ApiGetApiCommentsRequest(sso: 'SSO_TOKEN'),
+);
 ```
 
 ## SSO
