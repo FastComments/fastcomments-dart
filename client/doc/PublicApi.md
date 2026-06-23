@@ -64,7 +64,7 @@ Method | HTTP request | Description
 
 
 # **blockFromCommentPublic**
-> BlockSuccess blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, ApiBlockFromCommentPublicOptions options)
+> BlockSuccess blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
 
 
 
@@ -79,7 +79,7 @@ final publicBlockFromCommentParams = PublicBlockFromCommentParams(); // PublicBl
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, ApiBlockFromCommentPublicOptions(sso: sso));
+    final result = api_instance.blockFromCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->blockFromCommentPublic: $e\n');
@@ -111,7 +111,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **checkedCommentsForBlocked**
-> CheckBlockedCommentsResponse checkedCommentsForBlocked(tenantId, commentIds, ApiCheckedCommentsForBlockedOptions options)
+> CheckBlockedCommentsResponse checkedCommentsForBlocked(tenantId, commentIds, sso)
 
 
 
@@ -125,7 +125,7 @@ final commentIds = commentIds_example; // String | A comma separated list of com
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.checkedCommentsForBlocked(tenantId, commentIds, ApiCheckedCommentsForBlockedOptions(sso: sso));
+    final result = api_instance.checkedCommentsForBlocked(tenantId, commentIds, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->checkedCommentsForBlocked: $e\n');
@@ -254,7 +254,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createV1PageReact**
-> CreateV1PageReact createV1PageReact(tenantId, urlId, ApiCreateV1PageReactOptions options)
+> CreateV1PageReact createV1PageReact(tenantId, urlId, title)
 
 
 
@@ -268,7 +268,7 @@ final urlId = urlId_example; // String |
 final title = title_example; // String | 
 
 try {
-    final result = api_instance.createV1PageReact(tenantId, urlId, ApiCreateV1PageReactOptions(title: title));
+    final result = api_instance.createV1PageReact(tenantId, urlId, title);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->createV1PageReact: $e\n');
@@ -299,7 +299,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createV2PageReact**
-> CreateV1PageReact createV2PageReact(tenantId, urlId, id, ApiCreateV2PageReactOptions options)
+> CreateV1PageReact createV2PageReact(tenantId, urlId, id, title)
 
 
 
@@ -314,7 +314,7 @@ final id = id_example; // String |
 final title = title_example; // String | 
 
 try {
-    final result = api_instance.createV2PageReact(tenantId, urlId, id, ApiCreateV2PageReactOptions(title: title));
+    final result = api_instance.createV2PageReact(tenantId, urlId, id, title);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->createV2PageReact: $e\n');
@@ -583,7 +583,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **flagCommentPublic**
-> APIEmptyResponse flagCommentPublic(tenantId, commentId, isFlagged, ApiFlagCommentPublicOptions options)
+> APIEmptyResponse flagCommentPublic(tenantId, commentId, isFlagged, sso)
 
 
 
@@ -598,7 +598,7 @@ final isFlagged = true; // bool |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.flagCommentPublic(tenantId, commentId, isFlagged, ApiFlagCommentPublicOptions(sso: sso));
+    final result = api_instance.flagCommentPublic(tenantId, commentId, isFlagged, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->flagCommentPublic: $e\n');
@@ -677,7 +677,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentVoteUserNames**
-> GetCommentVoteUserNamesSuccessResponse getCommentVoteUserNames(tenantId, commentId, dir, ApiGetCommentVoteUserNamesOptions options)
+> GetCommentVoteUserNamesSuccessResponse getCommentVoteUserNames(tenantId, commentId, dir, sso)
 
 
 
@@ -692,7 +692,7 @@ final dir = 56; // int |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCommentVoteUserNames(tenantId, commentId, dir, ApiGetCommentVoteUserNamesOptions(sso: sso));
+    final result = api_instance.getCommentVoteUserNames(tenantId, commentId, dir, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getCommentVoteUserNames: $e\n');
@@ -874,7 +874,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEventLog**
-> GetEventLogResponse getEventLog(tenantId, urlId, userIdWS, startTime, ApiGetEventLogOptions options)
+> GetEventLogResponse getEventLog(tenantId, urlId, userIdWS, startTime, endTime)
 
 
 
@@ -892,7 +892,7 @@ final startTime = 789; // int |
 final endTime = 789; // int | 
 
 try {
-    final result = api_instance.getEventLog(tenantId, urlId, userIdWS, startTime, ApiGetEventLogOptions(endTime: endTime));
+    final result = api_instance.getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getEventLog: $e\n');
@@ -980,7 +980,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeedPostsStats**
-> FeedPostsStatsResponse getFeedPostsStats(tenantId, postIds, ApiGetFeedPostsStatsOptions options)
+> FeedPostsStatsResponse getFeedPostsStats(tenantId, postIds, sso)
 
 
 
@@ -994,7 +994,7 @@ final postIds = []; // List<String> |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getFeedPostsStats(tenantId, postIds, ApiGetFeedPostsStatsOptions(sso: sso));
+    final result = api_instance.getFeedPostsStats(tenantId, postIds, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getFeedPostsStats: $e\n');
@@ -1164,7 +1164,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGlobalEventLog**
-> GetEventLogResponse getGlobalEventLog(tenantId, urlId, userIdWS, startTime, ApiGetGlobalEventLogOptions options)
+> GetEventLogResponse getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime)
 
 
 
@@ -1182,7 +1182,7 @@ final startTime = 789; // int |
 final endTime = 789; // int | 
 
 try {
-    final result = api_instance.getGlobalEventLog(tenantId, urlId, userIdWS, startTime, ApiGetGlobalEventLogOptions(endTime: endTime));
+    final result = api_instance.getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getGlobalEventLog: $e\n');
@@ -1413,7 +1413,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserNotificationCount**
-> GetUserNotificationCountResponse getUserNotificationCount(tenantId, ApiGetUserNotificationCountOptions options)
+> GetUserNotificationCountResponse getUserNotificationCount(tenantId, sso)
 
 
 
@@ -1426,7 +1426,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserNotificationCount(tenantId, ApiGetUserNotificationCountOptions(sso: sso));
+    final result = api_instance.getUserNotificationCount(tenantId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getUserNotificationCount: $e\n');
@@ -1785,7 +1785,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lockComment**
-> APIEmptyResponse lockComment(tenantId, commentId, broadcastId, ApiLockCommentOptions options)
+> APIEmptyResponse lockComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -1800,7 +1800,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.lockComment(tenantId, commentId, broadcastId, ApiLockCommentOptions(sso: sso));
+    final result = api_instance.lockComment(tenantId, commentId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->lockComment: $e\n');
@@ -1869,7 +1869,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pinComment**
-> ChangeCommentPinStatusResponse pinComment(tenantId, commentId, broadcastId, ApiPinCommentOptions options)
+> ChangeCommentPinStatusResponse pinComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -1884,7 +1884,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.pinComment(tenantId, commentId, broadcastId, ApiPinCommentOptions(sso: sso));
+    final result = api_instance.pinComment(tenantId, commentId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->pinComment: $e\n');
@@ -1967,7 +1967,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resetUserNotificationCount**
-> ResetUserNotificationsResponse resetUserNotificationCount(tenantId, ApiResetUserNotificationCountOptions options)
+> ResetUserNotificationsResponse resetUserNotificationCount(tenantId, sso)
 
 
 
@@ -1980,7 +1980,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.resetUserNotificationCount(tenantId, ApiResetUserNotificationCountOptions(sso: sso));
+    final result = api_instance.resetUserNotificationCount(tenantId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->resetUserNotificationCount: $e\n');
@@ -2165,7 +2165,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unBlockCommentPublic**
-> UnblockSuccess unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, ApiUnBlockCommentPublicOptions options)
+> UnblockSuccess unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso)
 
 
 
@@ -2180,7 +2180,7 @@ final publicBlockFromCommentParams = PublicBlockFromCommentParams(); // PublicBl
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, ApiUnBlockCommentPublicOptions(sso: sso));
+    final result = api_instance.unBlockCommentPublic(tenantId, commentId, publicBlockFromCommentParams, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->unBlockCommentPublic: $e\n');
@@ -2212,7 +2212,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unLockComment**
-> APIEmptyResponse unLockComment(tenantId, commentId, broadcastId, ApiUnLockCommentOptions options)
+> APIEmptyResponse unLockComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -2227,7 +2227,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.unLockComment(tenantId, commentId, broadcastId, ApiUnLockCommentOptions(sso: sso));
+    final result = api_instance.unLockComment(tenantId, commentId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->unLockComment: $e\n');
@@ -2259,7 +2259,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unPinComment**
-> ChangeCommentPinStatusResponse unPinComment(tenantId, commentId, broadcastId, ApiUnPinCommentOptions options)
+> ChangeCommentPinStatusResponse unPinComment(tenantId, commentId, broadcastId, sso)
 
 
 
@@ -2274,7 +2274,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.unPinComment(tenantId, commentId, broadcastId, ApiUnPinCommentOptions(sso: sso));
+    final result = api_instance.unPinComment(tenantId, commentId, broadcastId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->unPinComment: $e\n');
@@ -2355,7 +2355,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserNotificationCommentSubscriptionStatus**
-> UpdateUserNotificationCommentSubscriptionStatusResponse updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, ApiUpdateUserNotificationCommentSubscriptionStatusOptions options)
+> UpdateUserNotificationCommentSubscriptionStatusResponse updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso)
 
 
 
@@ -2373,7 +2373,7 @@ final commentId = commentId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, ApiUpdateUserNotificationCommentSubscriptionStatusOptions(sso: sso));
+    final result = api_instance.updateUserNotificationCommentSubscriptionStatus(tenantId, notificationId, optedInOrOut, commentId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->updateUserNotificationCommentSubscriptionStatus: $e\n');
@@ -2406,7 +2406,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserNotificationPageSubscriptionStatus**
-> UpdateUserNotificationPageSubscriptionStatusResponse updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, ApiUpdateUserNotificationPageSubscriptionStatusOptions options)
+> UpdateUserNotificationPageSubscriptionStatusResponse updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso)
 
 
 
@@ -2425,7 +2425,7 @@ final subscribedOrUnsubscribed = subscribedOrUnsubscribed_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, ApiUpdateUserNotificationPageSubscriptionStatusOptions(sso: sso));
+    final result = api_instance.updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscribedOrUnsubscribed, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->updateUserNotificationPageSubscriptionStatus: $e\n');
@@ -2459,7 +2459,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUserNotificationStatus**
-> UpdateUserNotificationStatusResponse updateUserNotificationStatus(tenantId, notificationId, newStatus, ApiUpdateUserNotificationStatusOptions options)
+> UpdateUserNotificationStatusResponse updateUserNotificationStatus(tenantId, notificationId, newStatus, sso)
 
 
 
@@ -2474,7 +2474,7 @@ final newStatus = newStatus_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.updateUserNotificationStatus(tenantId, notificationId, newStatus, ApiUpdateUserNotificationStatusOptions(sso: sso));
+    final result = api_instance.updateUserNotificationStatus(tenantId, notificationId, newStatus, sso);
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->updateUserNotificationStatus: $e\n');

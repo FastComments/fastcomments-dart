@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **addHashTag**
-> CreateHashTagResponse addHashTag(createHashTagBody, ApiAddHashTagOptions options)
+> CreateHashTagResponse addHashTag(createHashTagBody, tenantId)
 
 
 
@@ -190,7 +190,7 @@ final tenantId = tenantId_example; // String |
 final createHashTagBody = CreateHashTagBody(); // CreateHashTagBody | 
 
 try {
-    final result = api_instance.addHashTag(createHashTagBody, ApiAddHashTagOptions(tenantId: tenantId));
+    final result = api_instance.addHashTag(createHashTagBody, tenantId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->addHashTag: $e\n');
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **addHashTagsBulk**
-> BulkCreateHashTagsResponse addHashTagsBulk(bulkCreateHashTagsBody, ApiAddHashTagsBulkOptions options)
+> BulkCreateHashTagsResponse addHashTagsBulk(bulkCreateHashTagsBody, tenantId)
 
 
 
@@ -237,7 +237,7 @@ final tenantId = tenantId_example; // String |
 final bulkCreateHashTagsBody = BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
 
 try {
-    final result = api_instance.addHashTagsBulk(bulkCreateHashTagsBody, ApiAddHashTagsBulkOptions(tenantId: tenantId));
+    final result = api_instance.addHashTagsBulk(bulkCreateHashTagsBody, tenantId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->addHashTagsBulk: $e\n');
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulkAggregateQuestionResults**
-> BulkAggregateQuestionResultsResponse bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, ApiBulkAggregateQuestionResultsOptions options)
+> BulkAggregateQuestionResultsResponse bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate)
 
 
 
@@ -542,7 +542,7 @@ final bulkAggregateQuestionResultsRequest = BulkAggregateQuestionResultsRequest(
 final forceRecalculate = true; // bool | 
 
 try {
-    final result = api_instance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, ApiBulkAggregateQuestionResultsOptions(forceRecalculate: forceRecalculate));
+    final result = api_instance.bulkAggregateQuestionResults(tenantId, bulkAggregateQuestionResultsRequest, forceRecalculate);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->bulkAggregateQuestionResults: $e\n');
@@ -1459,7 +1459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteHashTag**
-> APIEmptyResponse deleteHashTag(tag, deleteHashTagRequestBody, ApiDeleteHashTagOptions options)
+> APIEmptyResponse deleteHashTag(tag, deleteHashTagRequestBody, tenantId)
 
 
 
@@ -1477,7 +1477,7 @@ final tenantId = tenantId_example; // String |
 final deleteHashTagRequestBody = DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
 
 try {
-    final result = api_instance.deleteHashTag(tag, deleteHashTagRequestBody, ApiDeleteHashTagOptions(tenantId: tenantId));
+    final result = api_instance.deleteHashTag(tag, deleteHashTagRequestBody, tenantId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteHashTag: $e\n');
@@ -1508,7 +1508,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteModerator**
-> APIEmptyResponse deleteModerator(tenantId, id, ApiDeleteModeratorOptions options)
+> APIEmptyResponse deleteModerator(tenantId, id, sendEmail)
 
 
 
@@ -1526,7 +1526,7 @@ final id = id_example; // String |
 final sendEmail = sendEmail_example; // String | 
 
 try {
-    final result = api_instance.deleteModerator(tenantId, id, ApiDeleteModeratorOptions(sendEmail: sendEmail));
+    final result = api_instance.deleteModerator(tenantId, id, sendEmail);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteModerator: $e\n');
@@ -1843,7 +1843,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteSubscription**
-> DeleteSubscriptionAPIResponse deleteSubscription(tenantId, id, ApiDeleteSubscriptionOptions options)
+> DeleteSubscriptionAPIResponse deleteSubscription(tenantId, id, userId)
 
 
 
@@ -1861,7 +1861,7 @@ final id = id_example; // String |
 final userId = userId_example; // String | 
 
 try {
-    final result = api_instance.deleteSubscription(tenantId, id, ApiDeleteSubscriptionOptions(userId: userId));
+    final result = api_instance.deleteSubscription(tenantId, id, userId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteSubscription: $e\n');
@@ -1892,7 +1892,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteTenant**
-> APIEmptyResponse deleteTenant(tenantId, id, ApiDeleteTenantOptions options)
+> APIEmptyResponse deleteTenant(tenantId, id, sure)
 
 
 
@@ -1910,7 +1910,7 @@ final id = id_example; // String |
 final sure = sure_example; // String | 
 
 try {
-    final result = api_instance.deleteTenant(tenantId, id, ApiDeleteTenantOptions(sure: sure));
+    final result = api_instance.deleteTenant(tenantId, id, sure);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteTenant: $e\n');
@@ -2086,7 +2086,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteVote**
-> VoteDeleteResponse deleteVote(tenantId, id, ApiDeleteVoteOptions options)
+> VoteDeleteResponse deleteVote(tenantId, id, editKey)
 
 
 
@@ -2104,7 +2104,7 @@ final id = id_example; // String |
 final editKey = editKey_example; // String | 
 
 try {
-    final result = api_instance.deleteVote(tenantId, id, ApiDeleteVoteOptions(editKey: editKey));
+    final result = api_instance.deleteVote(tenantId, id, editKey);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteVote: $e\n');
@@ -2596,7 +2596,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEmailTemplateRenderErrors**
-> GetEmailTemplateRenderErrorsResponse getEmailTemplateRenderErrors(tenantId, id, ApiGetEmailTemplateRenderErrorsOptions options)
+> GetEmailTemplateRenderErrorsResponse getEmailTemplateRenderErrors(tenantId, id, skip)
 
 
 
@@ -2614,7 +2614,7 @@ final id = id_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getEmailTemplateRenderErrors(tenantId, id, ApiGetEmailTemplateRenderErrorsOptions(skip: skip));
+    final result = api_instance.getEmailTemplateRenderErrors(tenantId, id, skip);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getEmailTemplateRenderErrors: $e\n');
@@ -2645,7 +2645,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getEmailTemplates**
-> GetEmailTemplatesResponse getEmailTemplates(tenantId, ApiGetEmailTemplatesOptions options)
+> GetEmailTemplatesResponse getEmailTemplates(tenantId, skip)
 
 
 
@@ -2662,7 +2662,7 @@ final tenantId = tenantId_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getEmailTemplates(tenantId, ApiGetEmailTemplatesOptions(skip: skip));
+    final result = api_instance.getEmailTemplates(tenantId, skip);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getEmailTemplates: $e\n');
@@ -2745,7 +2745,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getHashTags**
-> GetHashTagsResponse getHashTags(tenantId, ApiGetHashTagsOptions options)
+> GetHashTagsResponse getHashTags(tenantId, page)
 
 
 
@@ -2762,7 +2762,7 @@ final tenantId = tenantId_example; // String |
 final page = 1.2; // double | 
 
 try {
-    final result = api_instance.getHashTags(tenantId, ApiGetHashTagsOptions(page: page));
+    final result = api_instance.getHashTags(tenantId, page);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getHashTags: $e\n');
@@ -2839,7 +2839,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getModerators**
-> GetModeratorsResponse getModerators(tenantId, ApiGetModeratorsOptions options)
+> GetModeratorsResponse getModerators(tenantId, skip)
 
 
 
@@ -2856,7 +2856,7 @@ final tenantId = tenantId_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getModerators(tenantId, ApiGetModeratorsOptions(skip: skip));
+    final result = api_instance.getModerators(tenantId, skip);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getModerators: $e\n');
@@ -3253,7 +3253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getQuestionConfigs**
-> GetQuestionConfigsResponse getQuestionConfigs(tenantId, ApiGetQuestionConfigsOptions options)
+> GetQuestionConfigsResponse getQuestionConfigs(tenantId, skip)
 
 
 
@@ -3270,7 +3270,7 @@ final tenantId = tenantId_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getQuestionConfigs(tenantId, ApiGetQuestionConfigsOptions(skip: skip));
+    final result = api_instance.getQuestionConfigs(tenantId, skip);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getQuestionConfigs: $e\n');
@@ -3498,7 +3498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSSOUsers**
-> GetSSOUsersResponse getSSOUsers(tenantId, ApiGetSSOUsersOptions options)
+> GetSSOUsersResponse getSSOUsers(tenantId, skip)
 
 
 
@@ -3515,7 +3515,7 @@ final tenantId = tenantId_example; // String |
 final skip = 56; // int | 
 
 try {
-    final result = api_instance.getSSOUsers(tenantId, ApiGetSSOUsersOptions(skip: skip));
+    final result = api_instance.getSSOUsers(tenantId, skip);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getSSOUsers: $e\n');
@@ -3545,7 +3545,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSubscriptions**
-> GetSubscriptionsAPIResponse getSubscriptions(tenantId, ApiGetSubscriptionsOptions options)
+> GetSubscriptionsAPIResponse getSubscriptions(tenantId, userId)
 
 
 
@@ -3562,7 +3562,7 @@ final tenantId = tenantId_example; // String |
 final userId = userId_example; // String | 
 
 try {
-    final result = api_instance.getSubscriptions(tenantId, ApiGetSubscriptionsOptions(userId: userId));
+    final result = api_instance.getSubscriptions(tenantId, userId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getSubscriptions: $e\n');
@@ -3739,7 +3739,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantPackages**
-> GetTenantPackagesResponse getTenantPackages(tenantId, ApiGetTenantPackagesOptions options)
+> GetTenantPackagesResponse getTenantPackages(tenantId, skip)
 
 
 
@@ -3756,7 +3756,7 @@ final tenantId = tenantId_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getTenantPackages(tenantId, ApiGetTenantPackagesOptions(skip: skip));
+    final result = api_instance.getTenantPackages(tenantId, skip);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getTenantPackages: $e\n');
@@ -3833,7 +3833,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantUsers**
-> GetTenantUsersResponse getTenantUsers(tenantId, ApiGetTenantUsersOptions options)
+> GetTenantUsersResponse getTenantUsers(tenantId, skip)
 
 
 
@@ -3850,7 +3850,7 @@ final tenantId = tenantId_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getTenantUsers(tenantId, ApiGetTenantUsersOptions(skip: skip));
+    final result = api_instance.getTenantUsers(tenantId, skip);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getTenantUsers: $e\n');
@@ -3929,7 +3929,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTicket**
-> GetTicketResponse getTicket(tenantId, id, ApiGetTicketOptions options)
+> GetTicketResponse getTicket(tenantId, id, userId)
 
 
 
@@ -3947,7 +3947,7 @@ final id = id_example; // String |
 final userId = userId_example; // String | 
 
 try {
-    final result = api_instance.getTicket(tenantId, id, ApiGetTicketOptions(userId: userId));
+    final result = api_instance.getTicket(tenantId, id, userId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getTicket: $e\n');
@@ -4474,7 +4474,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchHashTag**
-> UpdateHashTagResponse patchHashTag(tag, updateHashTagBody, ApiPatchHashTagOptions options)
+> UpdateHashTagResponse patchHashTag(tag, updateHashTagBody, tenantId)
 
 
 
@@ -4492,7 +4492,7 @@ final tenantId = tenantId_example; // String |
 final updateHashTagBody = UpdateHashTagBody(); // UpdateHashTagBody | 
 
 try {
-    final result = api_instance.patchHashTag(tag, updateHashTagBody, ApiPatchHashTagOptions(tenantId: tenantId));
+    final result = api_instance.patchHashTag(tag, updateHashTagBody, tenantId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->patchHashTag: $e\n');
@@ -4572,7 +4572,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchSSOUser**
-> PatchSSOUserAPIResponse patchSSOUser(tenantId, id, updateAPISSOUserData, ApiPatchSSOUserOptions options)
+> PatchSSOUserAPIResponse patchSSOUser(tenantId, id, updateAPISSOUserData, updateComments)
 
 
 
@@ -4591,7 +4591,7 @@ final updateAPISSOUserData = UpdateAPISSOUserData(); // UpdateAPISSOUserData |
 final updateComments = true; // bool | 
 
 try {
-    final result = api_instance.patchSSOUser(tenantId, id, updateAPISSOUserData, ApiPatchSSOUserOptions(updateComments: updateComments));
+    final result = api_instance.patchSSOUser(tenantId, id, updateAPISSOUserData, updateComments);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->patchSSOUser: $e\n');
@@ -4672,7 +4672,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putSSOUser**
-> PutSSOUserAPIResponse putSSOUser(tenantId, id, updateAPISSOUserData, ApiPutSSOUserOptions options)
+> PutSSOUserAPIResponse putSSOUser(tenantId, id, updateAPISSOUserData, updateComments)
 
 
 
@@ -4691,7 +4691,7 @@ final updateAPISSOUserData = UpdateAPISSOUserData(); // UpdateAPISSOUserData |
 final updateComments = true; // bool | 
 
 try {
-    final result = api_instance.putSSOUser(tenantId, id, updateAPISSOUserData, ApiPutSSOUserOptions(updateComments: updateComments));
+    final result = api_instance.putSSOUser(tenantId, id, updateAPISSOUserData, updateComments);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->putSSOUser: $e\n');
@@ -4723,7 +4723,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **renderEmailTemplate**
-> RenderEmailTemplateResponse renderEmailTemplate(tenantId, renderEmailTemplateBody, ApiRenderEmailTemplateOptions options)
+> RenderEmailTemplateResponse renderEmailTemplate(tenantId, renderEmailTemplateBody, locale)
 
 
 
@@ -4741,7 +4741,7 @@ final renderEmailTemplateBody = RenderEmailTemplateBody(); // RenderEmailTemplat
 final locale = locale_example; // String | 
 
 try {
-    final result = api_instance.renderEmailTemplate(tenantId, renderEmailTemplateBody, ApiRenderEmailTemplateOptions(locale: locale));
+    final result = api_instance.renderEmailTemplate(tenantId, renderEmailTemplateBody, locale);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->renderEmailTemplate: $e\n');
@@ -4821,7 +4821,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replaceTenantUser**
-> APIEmptyResponse replaceTenantUser(tenantId, id, replaceTenantUserBody, ApiReplaceTenantUserOptions options)
+> APIEmptyResponse replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments)
 
 
 
@@ -4840,7 +4840,7 @@ final replaceTenantUserBody = ReplaceTenantUserBody(); // ReplaceTenantUserBody 
 final updateComments = updateComments_example; // String | 
 
 try {
-    final result = api_instance.replaceTenantUser(tenantId, id, replaceTenantUserBody, ApiReplaceTenantUserOptions(updateComments: updateComments));
+    final result = api_instance.replaceTenantUser(tenantId, id, replaceTenantUserBody, updateComments);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->replaceTenantUser: $e\n');
@@ -5031,7 +5031,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sendLoginLink**
-> APIEmptyResponse sendLoginLink(tenantId, id, ApiSendLoginLinkOptions options)
+> APIEmptyResponse sendLoginLink(tenantId, id, redirectURL)
 
 
 
@@ -5049,7 +5049,7 @@ final id = id_example; // String |
 final redirectURL = redirectURL_example; // String | 
 
 try {
-    final result = api_instance.sendLoginLink(tenantId, id, ApiSendLoginLinkOptions(redirectURL: redirectURL));
+    final result = api_instance.sendLoginLink(tenantId, id, redirectURL);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->sendLoginLink: $e\n');
@@ -5386,7 +5386,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateNotification**
-> APIEmptyResponse updateNotification(tenantId, id, updateNotificationBody, ApiUpdateNotificationOptions options)
+> APIEmptyResponse updateNotification(tenantId, id, updateNotificationBody, userId)
 
 
 
@@ -5405,7 +5405,7 @@ final updateNotificationBody = UpdateNotificationBody(); // UpdateNotificationBo
 final userId = userId_example; // String | 
 
 try {
-    final result = api_instance.updateNotification(tenantId, id, updateNotificationBody, ApiUpdateNotificationOptions(userId: userId));
+    final result = api_instance.updateNotification(tenantId, id, updateNotificationBody, userId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->updateNotification: $e\n');
@@ -5535,7 +5535,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateSubscription**
-> UpdateSubscriptionAPIResponse updateSubscription(tenantId, id, updateAPIUserSubscriptionData, ApiUpdateSubscriptionOptions options)
+> UpdateSubscriptionAPIResponse updateSubscription(tenantId, id, updateAPIUserSubscriptionData, userId)
 
 
 
@@ -5554,7 +5554,7 @@ final updateAPIUserSubscriptionData = UpdateAPIUserSubscriptionData(); // Update
 final userId = userId_example; // String | 
 
 try {
-    final result = api_instance.updateSubscription(tenantId, id, updateAPIUserSubscriptionData, ApiUpdateSubscriptionOptions(userId: userId));
+    final result = api_instance.updateSubscription(tenantId, id, updateAPIUserSubscriptionData, userId);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->updateSubscription: $e\n');
@@ -5684,7 +5684,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateTenantUser**
-> APIEmptyResponse updateTenantUser(tenantId, id, updateTenantUserBody, ApiUpdateTenantUserOptions options)
+> APIEmptyResponse updateTenantUser(tenantId, id, updateTenantUserBody, updateComments)
 
 
 
@@ -5703,7 +5703,7 @@ final updateTenantUserBody = UpdateTenantUserBody(); // UpdateTenantUserBody |
 final updateComments = updateComments_example; // String | 
 
 try {
-    final result = api_instance.updateTenantUser(tenantId, id, updateTenantUserBody, ApiUpdateTenantUserOptions(updateComments: updateComments));
+    final result = api_instance.updateTenantUser(tenantId, id, updateTenantUserBody, updateComments);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->updateTenantUser: $e\n');
