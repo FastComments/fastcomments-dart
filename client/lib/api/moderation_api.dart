@@ -28,7 +28,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> deleteModerationVoteWithHttpInfo(String commentId, String voteId, [ ApiDeleteModerationVoteOptions? options, ]) async {
+  Future<Response> deleteModerationVoteWithHttpInfo(String commentId, String voteId, [ ApiDeleteModerationVoteOptions? options ]) async {
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -79,8 +79,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<VoteDeleteResponse?> deleteModerationVote(String commentId, String voteId, [ ApiDeleteModerationVoteOptions? options, ]) async {
-    final response = await deleteModerationVoteWithHttpInfo(commentId, voteId, options,);
+  Future<VoteDeleteResponse?> deleteModerationVote(String commentId, String voteId, [ ApiDeleteModerationVoteOptions? options ]) async {
+    final response = await deleteModerationVoteWithHttpInfo(commentId, voteId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -116,7 +116,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getApiCommentsWithHttpInfo([ ApiGetApiCommentsOptions? options, ]) async {
+  Future<Response> getApiCommentsWithHttpInfo([ ApiGetApiCommentsOptions? options ]) async {
     final page = options?.page;
     final count = options?.count;
     final textSearch = options?.textSearch;
@@ -203,8 +203,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationAPIGetCommentsResponse?> getApiComments([ ApiGetApiCommentsOptions? options, ]) async {
-    final response = await getApiCommentsWithHttpInfo(options,);
+  Future<ModerationAPIGetCommentsResponse?> getApiComments([ ApiGetApiCommentsOptions? options ]) async {
+    final response = await getApiCommentsWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -226,7 +226,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getApiExportStatusWithHttpInfo([ ApiGetApiExportStatusOptions? options, ]) async {
+  Future<Response> getApiExportStatusWithHttpInfo([ ApiGetApiExportStatusOptions? options ]) async {
     final batchJobId = options?.batchJobId;
     final tenantId = options?.tenantId;
     final sso = options?.sso;
@@ -271,8 +271,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationExportStatusResponse?> getApiExportStatus([ ApiGetApiExportStatusOptions? options, ]) async {
-    final response = await getApiExportStatusWithHttpInfo(options,);
+  Future<ModerationExportStatusResponse?> getApiExportStatus([ ApiGetApiExportStatusOptions? options ]) async {
+    final response = await getApiExportStatusWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -304,7 +304,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getApiIdsWithHttpInfo([ ApiGetApiIdsOptions? options, ]) async {
+  Future<Response> getApiIdsWithHttpInfo([ ApiGetApiIdsOptions? options ]) async {
     final textSearch = options?.textSearch;
     final byIPFromComment = options?.byIPFromComment;
     final filters = options?.filters;
@@ -379,8 +379,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationAPIGetCommentIdsResponse?> getApiIds([ ApiGetApiIdsOptions? options, ]) async {
-    final response = await getApiIdsWithHttpInfo(options,);
+  Future<ModerationAPIGetCommentIdsResponse?> getApiIds([ ApiGetApiIdsOptions? options ]) async {
+    final response = await getApiIdsWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -402,7 +402,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getBanUsersFromCommentWithHttpInfo(String commentId, [ ApiGetBanUsersFromCommentOptions? options, ]) async {
+  Future<Response> getBanUsersFromCommentWithHttpInfo(String commentId, [ ApiGetBanUsersFromCommentOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -444,8 +444,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetBannedUsersFromCommentResponse?> getBanUsersFromComment(String commentId, [ ApiGetBanUsersFromCommentOptions? options, ]) async {
-    final response = await getBanUsersFromCommentWithHttpInfo(commentId, options,);
+  Future<GetBannedUsersFromCommentResponse?> getBanUsersFromComment(String commentId, [ ApiGetBanUsersFromCommentOptions? options ]) async {
+    final response = await getBanUsersFromCommentWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -467,7 +467,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getCommentBanStatusWithHttpInfo(String commentId, [ ApiGetCommentBanStatusOptions? options, ]) async {
+  Future<Response> getCommentBanStatusWithHttpInfo(String commentId, [ ApiGetCommentBanStatusOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -509,8 +509,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetCommentBanStatusResponse?> getCommentBanStatus(String commentId, [ ApiGetCommentBanStatusOptions? options, ]) async {
-    final response = await getCommentBanStatusWithHttpInfo(commentId, options,);
+  Future<GetCommentBanStatusResponse?> getCommentBanStatus(String commentId, [ ApiGetCommentBanStatusOptions? options ]) async {
+    final response = await getCommentBanStatusWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -532,7 +532,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getCommentChildrenWithHttpInfo(String commentId, [ ApiGetCommentChildrenOptions? options, ]) async {
+  Future<Response> getCommentChildrenWithHttpInfo(String commentId, [ ApiGetCommentChildrenOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -574,8 +574,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationAPIChildCommentsResponse?> getCommentChildren(String commentId, [ ApiGetCommentChildrenOptions? options, ]) async {
-    final response = await getCommentChildrenWithHttpInfo(commentId, options,);
+  Future<ModerationAPIChildCommentsResponse?> getCommentChildren(String commentId, [ ApiGetCommentChildrenOptions? options ]) async {
+    final response = await getCommentChildrenWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -605,7 +605,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getCountWithHttpInfo([ ApiGetCountOptions? options, ]) async {
+  Future<Response> getCountWithHttpInfo([ ApiGetCountOptions? options ]) async {
     final textSearch = options?.textSearch;
     final byIPFromComment = options?.byIPFromComment;
     final filter = options?.filter;
@@ -674,8 +674,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationAPICountCommentsResponse?> getCount([ ApiGetCountOptions? options, ]) async {
-    final response = await getCountWithHttpInfo(options,);
+  Future<ModerationAPICountCommentsResponse?> getCount([ ApiGetCountOptions? options ]) async {
+    final response = await getCountWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -695,7 +695,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getCountsWithHttpInfo([ ApiGetCountsOptions? options, ]) async {
+  Future<Response> getCountsWithHttpInfo([ ApiGetCountsOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -734,8 +734,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetBannedUsersCountResponse?> getCounts([ ApiGetCountsOptions? options, ]) async {
-    final response = await getCountsWithHttpInfo(options,);
+  Future<GetBannedUsersCountResponse?> getCounts([ ApiGetCountsOptions? options ]) async {
+    final response = await getCountsWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -757,7 +757,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getLogsWithHttpInfo(String commentId, [ ApiGetLogsOptions? options, ]) async {
+  Future<Response> getLogsWithHttpInfo(String commentId, [ ApiGetLogsOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -799,8 +799,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationAPIGetLogsResponse?> getLogs(String commentId, [ ApiGetLogsOptions? options, ]) async {
-    final response = await getLogsWithHttpInfo(commentId, options,);
+  Future<ModerationAPIGetLogsResponse?> getLogs(String commentId, [ ApiGetLogsOptions? options ]) async {
+    final response = await getLogsWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -820,7 +820,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getManualBadgesWithHttpInfo([ ApiGetManualBadgesOptions? options, ]) async {
+  Future<Response> getManualBadgesWithHttpInfo([ ApiGetManualBadgesOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -859,8 +859,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetTenantManualBadgesResponse?> getManualBadges([ ApiGetManualBadgesOptions? options, ]) async {
-    final response = await getManualBadgesWithHttpInfo(options,);
+  Future<GetTenantManualBadgesResponse?> getManualBadges([ ApiGetManualBadgesOptions? options ]) async {
+    final response = await getManualBadgesWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -884,7 +884,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getManualBadgesForUserWithHttpInfo([ ApiGetManualBadgesForUserOptions? options, ]) async {
+  Future<Response> getManualBadgesForUserWithHttpInfo([ ApiGetManualBadgesForUserOptions? options ]) async {
     final badgesUserId = options?.badgesUserId;
     final commentId = options?.commentId;
     final tenantId = options?.tenantId;
@@ -935,8 +935,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetUserManualBadgesResponse?> getManualBadgesForUser([ ApiGetManualBadgesForUserOptions? options, ]) async {
-    final response = await getManualBadgesForUserWithHttpInfo(options,);
+  Future<GetUserManualBadgesResponse?> getManualBadgesForUser([ ApiGetManualBadgesForUserOptions? options ]) async {
+    final response = await getManualBadgesForUserWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -962,7 +962,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getModerationCommentWithHttpInfo(String commentId, [ ApiGetModerationCommentOptions? options, ]) async {
+  Future<Response> getModerationCommentWithHttpInfo(String commentId, [ ApiGetModerationCommentOptions? options ]) async {
     final includeEmail = options?.includeEmail;
     final includeIP = options?.includeIP;
     final tenantId = options?.tenantId;
@@ -1016,8 +1016,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationAPICommentResponse?> getModerationComment(String commentId, [ ApiGetModerationCommentOptions? options, ]) async {
-    final response = await getModerationCommentWithHttpInfo(commentId, options,);
+  Future<ModerationAPICommentResponse?> getModerationComment(String commentId, [ ApiGetModerationCommentOptions? options ]) async {
+    final response = await getModerationCommentWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1039,7 +1039,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getModerationCommentTextWithHttpInfo(String commentId, [ ApiGetModerationCommentTextOptions? options, ]) async {
+  Future<Response> getModerationCommentTextWithHttpInfo(String commentId, [ ApiGetModerationCommentTextOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -1081,8 +1081,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetCommentTextResponse?> getModerationCommentText(String commentId, [ ApiGetModerationCommentTextOptions? options, ]) async {
-    final response = await getModerationCommentTextWithHttpInfo(commentId, options,);
+  Future<GetCommentTextResponse?> getModerationCommentText(String commentId, [ ApiGetModerationCommentTextOptions? options ]) async {
+    final response = await getModerationCommentTextWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1110,7 +1110,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getPreBanSummaryWithHttpInfo(String commentId, [ ApiGetPreBanSummaryOptions? options, ]) async {
+  Future<Response> getPreBanSummaryWithHttpInfo(String commentId, [ ApiGetPreBanSummaryOptions? options ]) async {
     final includeByUserIdAndEmail = options?.includeByUserIdAndEmail;
     final includeByIP = options?.includeByIP;
     final includeByEmailDomain = options?.includeByEmailDomain;
@@ -1170,8 +1170,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<PreBanSummary?> getPreBanSummary(String commentId, [ ApiGetPreBanSummaryOptions? options, ]) async {
-    final response = await getPreBanSummaryWithHttpInfo(commentId, options,);
+  Future<PreBanSummary?> getPreBanSummary(String commentId, [ ApiGetPreBanSummaryOptions? options ]) async {
+    final response = await getPreBanSummaryWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1197,7 +1197,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getSearchCommentsSummaryWithHttpInfo([ ApiGetSearchCommentsSummaryOptions? options, ]) async {
+  Future<Response> getSearchCommentsSummaryWithHttpInfo([ ApiGetSearchCommentsSummaryOptions? options ]) async {
     final value = options?.value;
     final filters = options?.filters;
     final searchFilters = options?.searchFilters;
@@ -1254,8 +1254,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationCommentSearchResponse?> getSearchCommentsSummary([ ApiGetSearchCommentsSummaryOptions? options, ]) async {
-    final response = await getSearchCommentsSummaryWithHttpInfo(options,);
+  Future<ModerationCommentSearchResponse?> getSearchCommentsSummary([ ApiGetSearchCommentsSummaryOptions? options ]) async {
+    final response = await getSearchCommentsSummaryWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1277,7 +1277,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getSearchPagesWithHttpInfo([ ApiGetSearchPagesOptions? options, ]) async {
+  Future<Response> getSearchPagesWithHttpInfo([ ApiGetSearchPagesOptions? options ]) async {
     final value = options?.value;
     final tenantId = options?.tenantId;
     final sso = options?.sso;
@@ -1322,8 +1322,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationPageSearchResponse?> getSearchPages([ ApiGetSearchPagesOptions? options, ]) async {
-    final response = await getSearchPagesWithHttpInfo(options,);
+  Future<ModerationPageSearchResponse?> getSearchPages([ ApiGetSearchPagesOptions? options ]) async {
+    final response = await getSearchPagesWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1345,7 +1345,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getSearchSitesWithHttpInfo([ ApiGetSearchSitesOptions? options, ]) async {
+  Future<Response> getSearchSitesWithHttpInfo([ ApiGetSearchSitesOptions? options ]) async {
     final value = options?.value;
     final tenantId = options?.tenantId;
     final sso = options?.sso;
@@ -1390,8 +1390,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationSiteSearchResponse?> getSearchSites([ ApiGetSearchSitesOptions? options, ]) async {
-    final response = await getSearchSitesWithHttpInfo(options,);
+  Future<ModerationSiteSearchResponse?> getSearchSites([ ApiGetSearchSitesOptions? options ]) async {
+    final response = await getSearchSitesWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1413,7 +1413,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getSearchSuggestWithHttpInfo([ ApiGetSearchSuggestOptions? options, ]) async {
+  Future<Response> getSearchSuggestWithHttpInfo([ ApiGetSearchSuggestOptions? options ]) async {
     final textSearch = options?.textSearch;
     final tenantId = options?.tenantId;
     final sso = options?.sso;
@@ -1458,8 +1458,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationSuggestResponse?> getSearchSuggest([ ApiGetSearchSuggestOptions? options, ]) async {
-    final response = await getSearchSuggestWithHttpInfo(options,);
+  Future<ModerationSuggestResponse?> getSearchSuggest([ ApiGetSearchSuggestOptions? options ]) async {
+    final response = await getSearchSuggestWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1481,7 +1481,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getSearchUsersWithHttpInfo([ ApiGetSearchUsersOptions? options, ]) async {
+  Future<Response> getSearchUsersWithHttpInfo([ ApiGetSearchUsersOptions? options ]) async {
     final value = options?.value;
     final tenantId = options?.tenantId;
     final sso = options?.sso;
@@ -1526,8 +1526,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationUserSearchResponse?> getSearchUsers([ ApiGetSearchUsersOptions? options, ]) async {
-    final response = await getSearchUsersWithHttpInfo(options,);
+  Future<ModerationUserSearchResponse?> getSearchUsers([ ApiGetSearchUsersOptions? options ]) async {
+    final response = await getSearchUsersWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1549,7 +1549,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getTrustFactorWithHttpInfo([ ApiGetTrustFactorOptions? options, ]) async {
+  Future<Response> getTrustFactorWithHttpInfo([ ApiGetTrustFactorOptions? options ]) async {
     final userId = options?.userId;
     final tenantId = options?.tenantId;
     final sso = options?.sso;
@@ -1594,8 +1594,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetUserTrustFactorResponse?> getTrustFactor([ ApiGetTrustFactorOptions? options, ]) async {
-    final response = await getTrustFactorWithHttpInfo(options,);
+  Future<GetUserTrustFactorResponse?> getTrustFactor([ ApiGetTrustFactorOptions? options ]) async {
+    final response = await getTrustFactorWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1615,7 +1615,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getUserBanPreferenceWithHttpInfo([ ApiGetUserBanPreferenceOptions? options, ]) async {
+  Future<Response> getUserBanPreferenceWithHttpInfo([ ApiGetUserBanPreferenceOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -1654,8 +1654,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<APIModerateGetUserBanPreferencesResponse?> getUserBanPreference([ ApiGetUserBanPreferenceOptions? options, ]) async {
-    final response = await getUserBanPreferenceWithHttpInfo(options,);
+  Future<APIModerateGetUserBanPreferencesResponse?> getUserBanPreference([ ApiGetUserBanPreferenceOptions? options ]) async {
+    final response = await getUserBanPreferenceWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1677,7 +1677,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> getUserInternalProfileWithHttpInfo([ ApiGetUserInternalProfileOptions? options, ]) async {
+  Future<Response> getUserInternalProfileWithHttpInfo([ ApiGetUserInternalProfileOptions? options ]) async {
     final commentId = options?.commentId;
     final tenantId = options?.tenantId;
     final sso = options?.sso;
@@ -1722,8 +1722,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<GetUserInternalProfileResponse?> getUserInternalProfile([ ApiGetUserInternalProfileOptions? options, ]) async {
-    final response = await getUserInternalProfileWithHttpInfo(options,);
+  Future<GetUserInternalProfileResponse?> getUserInternalProfile([ ApiGetUserInternalProfileOptions? options ]) async {
+    final response = await getUserInternalProfileWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1749,7 +1749,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postAdjustCommentVotesWithHttpInfo(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, [ ApiPostAdjustCommentVotesOptions? options, ]) async {
+  Future<Response> postAdjustCommentVotesWithHttpInfo(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, [ ApiPostAdjustCommentVotesOptions? options ]) async {
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -1799,8 +1799,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<AdjustVotesResponse?> postAdjustCommentVotes(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, [ ApiPostAdjustCommentVotesOptions? options, ]) async {
-    final response = await postAdjustCommentVotesWithHttpInfo(commentId, adjustCommentVotesParams, options,);
+  Future<AdjustVotesResponse?> postAdjustCommentVotes(String commentId, AdjustCommentVotesParams adjustCommentVotesParams, [ ApiPostAdjustCommentVotesOptions? options ]) async {
+    final response = await postAdjustCommentVotesWithHttpInfo(commentId, adjustCommentVotesParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1830,7 +1830,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> postApiExportWithHttpInfo([ ApiPostApiExportOptions? options, ]) async {
+  Future<Response> postApiExportWithHttpInfo([ ApiPostApiExportOptions? options ]) async {
     final textSearch = options?.textSearch;
     final byIPFromComment = options?.byIPFromComment;
     final filters = options?.filters;
@@ -1899,8 +1899,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationExportResponse?> postApiExport([ ApiPostApiExportOptions? options, ]) async {
-    final response = await postApiExportWithHttpInfo(options,);
+  Future<ModerationExportResponse?> postApiExport([ ApiPostApiExportOptions? options ]) async {
+    final response = await postApiExportWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -1938,7 +1938,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> postBanUserFromCommentWithHttpInfo(String commentId, [ ApiPostBanUserFromCommentOptions? options, ]) async {
+  Future<Response> postBanUserFromCommentWithHttpInfo(String commentId, [ ApiPostBanUserFromCommentOptions? options ]) async {
     final banEmail = options?.banEmail;
     final banEmailDomain = options?.banEmailDomain;
     final banIP = options?.banIP;
@@ -2028,8 +2028,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<BanUserFromCommentResult?> postBanUserFromComment(String commentId, [ ApiPostBanUserFromCommentOptions? options, ]) async {
-    final response = await postBanUserFromCommentWithHttpInfo(commentId, options,);
+  Future<BanUserFromCommentResult?> postBanUserFromComment(String commentId, [ ApiPostBanUserFromCommentOptions? options ]) async {
+    final response = await postBanUserFromCommentWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2051,7 +2051,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> postBanUserUndoWithHttpInfo(BanUserUndoParams banUserUndoParams, [ ApiPostBanUserUndoOptions? options, ]) async {
+  Future<Response> postBanUserUndoWithHttpInfo(BanUserUndoParams banUserUndoParams, [ ApiPostBanUserUndoOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -2092,8 +2092,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postBanUserUndo(BanUserUndoParams banUserUndoParams, [ ApiPostBanUserUndoOptions? options, ]) async {
-    final response = await postBanUserUndoWithHttpInfo(banUserUndoParams, options,);
+  Future<APIEmptyResponse?> postBanUserUndo(BanUserUndoParams banUserUndoParams, [ ApiPostBanUserUndoOptions? options ]) async {
+    final response = await postBanUserUndoWithHttpInfo(banUserUndoParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2121,7 +2121,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> postBulkPreBanSummaryWithHttpInfo(BulkPreBanParams bulkPreBanParams, [ ApiPostBulkPreBanSummaryOptions? options, ]) async {
+  Future<Response> postBulkPreBanSummaryWithHttpInfo(BulkPreBanParams bulkPreBanParams, [ ApiPostBulkPreBanSummaryOptions? options ]) async {
     final includeByUserIdAndEmail = options?.includeByUserIdAndEmail;
     final includeByIP = options?.includeByIP;
     final includeByEmailDomain = options?.includeByEmailDomain;
@@ -2180,8 +2180,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<BulkPreBanSummary?> postBulkPreBanSummary(BulkPreBanParams bulkPreBanParams, [ ApiPostBulkPreBanSummaryOptions? options, ]) async {
-    final response = await postBulkPreBanSummaryWithHttpInfo(bulkPreBanParams, options,);
+  Future<BulkPreBanSummary?> postBulkPreBanSummary(BulkPreBanParams bulkPreBanParams, [ ApiPostBulkPreBanSummaryOptions? options ]) async {
+    final response = await postBulkPreBanSummaryWithHttpInfo(bulkPreBanParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2203,7 +2203,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> postCommentsByIdsWithHttpInfo(CommentsByIdsParams commentsByIdsParams, [ ApiPostCommentsByIdsOptions? options, ]) async {
+  Future<Response> postCommentsByIdsWithHttpInfo(CommentsByIdsParams commentsByIdsParams, [ ApiPostCommentsByIdsOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -2244,8 +2244,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<ModerationAPIChildCommentsResponse?> postCommentsByIds(CommentsByIdsParams commentsByIdsParams, [ ApiPostCommentsByIdsOptions? options, ]) async {
-    final response = await postCommentsByIdsWithHttpInfo(commentsByIdsParams, options,);
+  Future<ModerationAPIChildCommentsResponse?> postCommentsByIds(CommentsByIdsParams commentsByIdsParams, [ ApiPostCommentsByIdsOptions? options ]) async {
+    final response = await postCommentsByIdsWithHttpInfo(commentsByIdsParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2269,7 +2269,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postFlagCommentWithHttpInfo(String commentId, [ ApiPostFlagCommentOptions? options, ]) async {
+  Future<Response> postFlagCommentWithHttpInfo(String commentId, [ ApiPostFlagCommentOptions? options ]) async {
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -2317,8 +2317,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postFlagComment(String commentId, [ ApiPostFlagCommentOptions? options, ]) async {
-    final response = await postFlagCommentWithHttpInfo(commentId, options,);
+  Future<APIEmptyResponse?> postFlagComment(String commentId, [ ApiPostFlagCommentOptions? options ]) async {
+    final response = await postFlagCommentWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2342,7 +2342,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postRemoveCommentWithHttpInfo(String commentId, [ ApiPostRemoveCommentOptions? options, ]) async {
+  Future<Response> postRemoveCommentWithHttpInfo(String commentId, [ ApiPostRemoveCommentOptions? options ]) async {
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -2390,8 +2390,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<PostRemoveCommentResponse?> postRemoveComment(String commentId, [ ApiPostRemoveCommentOptions? options, ]) async {
-    final response = await postRemoveCommentWithHttpInfo(commentId, options,);
+  Future<PostRemoveCommentResponse?> postRemoveComment(String commentId, [ ApiPostRemoveCommentOptions? options ]) async {
+    final response = await postRemoveCommentWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2415,7 +2415,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postRestoreDeletedCommentWithHttpInfo(String commentId, [ ApiPostRestoreDeletedCommentOptions? options, ]) async {
+  Future<Response> postRestoreDeletedCommentWithHttpInfo(String commentId, [ ApiPostRestoreDeletedCommentOptions? options ]) async {
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -2463,8 +2463,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postRestoreDeletedComment(String commentId, [ ApiPostRestoreDeletedCommentOptions? options, ]) async {
-    final response = await postRestoreDeletedCommentWithHttpInfo(commentId, options,);
+  Future<APIEmptyResponse?> postRestoreDeletedComment(String commentId, [ ApiPostRestoreDeletedCommentOptions? options ]) async {
+    final response = await postRestoreDeletedCommentWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2490,7 +2490,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postSetCommentApprovalStatusWithHttpInfo(String commentId, [ ApiPostSetCommentApprovalStatusOptions? options, ]) async {
+  Future<Response> postSetCommentApprovalStatusWithHttpInfo(String commentId, [ ApiPostSetCommentApprovalStatusOptions? options ]) async {
     final approved = options?.approved;
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
@@ -2544,8 +2544,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<SetCommentApprovedResponse?> postSetCommentApprovalStatus(String commentId, [ ApiPostSetCommentApprovalStatusOptions? options, ]) async {
-    final response = await postSetCommentApprovalStatusWithHttpInfo(commentId, options,);
+  Future<SetCommentApprovedResponse?> postSetCommentApprovalStatus(String commentId, [ ApiPostSetCommentApprovalStatusOptions? options ]) async {
+    final response = await postSetCommentApprovalStatusWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2571,7 +2571,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postSetCommentReviewStatusWithHttpInfo(String commentId, [ ApiPostSetCommentReviewStatusOptions? options, ]) async {
+  Future<Response> postSetCommentReviewStatusWithHttpInfo(String commentId, [ ApiPostSetCommentReviewStatusOptions? options ]) async {
     final reviewed = options?.reviewed;
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
@@ -2625,8 +2625,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postSetCommentReviewStatus(String commentId, [ ApiPostSetCommentReviewStatusOptions? options, ]) async {
-    final response = await postSetCommentReviewStatusWithHttpInfo(commentId, options,);
+  Future<APIEmptyResponse?> postSetCommentReviewStatus(String commentId, [ ApiPostSetCommentReviewStatusOptions? options ]) async {
+    final response = await postSetCommentReviewStatusWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2654,7 +2654,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postSetCommentSpamStatusWithHttpInfo(String commentId, [ ApiPostSetCommentSpamStatusOptions? options, ]) async {
+  Future<Response> postSetCommentSpamStatusWithHttpInfo(String commentId, [ ApiPostSetCommentSpamStatusOptions? options ]) async {
     final spam = options?.spam;
     final permNotSpam = options?.permNotSpam;
     final tenantId = options?.tenantId;
@@ -2714,8 +2714,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postSetCommentSpamStatus(String commentId, [ ApiPostSetCommentSpamStatusOptions? options, ]) async {
-    final response = await postSetCommentSpamStatusWithHttpInfo(commentId, options,);
+  Future<APIEmptyResponse?> postSetCommentSpamStatus(String commentId, [ ApiPostSetCommentSpamStatusOptions? options ]) async {
+    final response = await postSetCommentSpamStatusWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2741,7 +2741,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postSetCommentTextWithHttpInfo(String commentId, SetCommentTextParams setCommentTextParams, [ ApiPostSetCommentTextOptions? options, ]) async {
+  Future<Response> postSetCommentTextWithHttpInfo(String commentId, SetCommentTextParams setCommentTextParams, [ ApiPostSetCommentTextOptions? options ]) async {
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -2791,8 +2791,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<SetCommentTextResponse?> postSetCommentText(String commentId, SetCommentTextParams setCommentTextParams, [ ApiPostSetCommentTextOptions? options, ]) async {
-    final response = await postSetCommentTextWithHttpInfo(commentId, setCommentTextParams, options,);
+  Future<SetCommentTextResponse?> postSetCommentText(String commentId, SetCommentTextParams setCommentTextParams, [ ApiPostSetCommentTextOptions? options ]) async {
+    final response = await postSetCommentTextWithHttpInfo(commentId, setCommentTextParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2816,7 +2816,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postUnFlagCommentWithHttpInfo(String commentId, [ ApiPostUnFlagCommentOptions? options, ]) async {
+  Future<Response> postUnFlagCommentWithHttpInfo(String commentId, [ ApiPostUnFlagCommentOptions? options ]) async {
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -2864,8 +2864,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> postUnFlagComment(String commentId, [ ApiPostUnFlagCommentOptions? options, ]) async {
-    final response = await postUnFlagCommentWithHttpInfo(commentId, options,);
+  Future<APIEmptyResponse?> postUnFlagComment(String commentId, [ ApiPostUnFlagCommentOptions? options ]) async {
+    final response = await postUnFlagCommentWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2891,7 +2891,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> postVoteWithHttpInfo(String commentId, [ ApiPostVoteOptions? options, ]) async {
+  Future<Response> postVoteWithHttpInfo(String commentId, [ ApiPostVoteOptions? options ]) async {
     final direction = options?.direction;
     final tenantId = options?.tenantId;
     final broadcastId = options?.broadcastId;
@@ -2945,8 +2945,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<VoteResponse?> postVote(String commentId, [ ApiPostVoteOptions? options, ]) async {
-    final response = await postVoteWithHttpInfo(commentId, options,);
+  Future<VoteResponse?> postVote(String commentId, [ ApiPostVoteOptions? options ]) async {
+    final response = await postVoteWithHttpInfo(commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -2974,7 +2974,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> putAwardBadgeWithHttpInfo(String badgeId, [ ApiPutAwardBadgeOptions? options, ]) async {
+  Future<Response> putAwardBadgeWithHttpInfo(String badgeId, [ ApiPutAwardBadgeOptions? options ]) async {
     final userId = options?.userId;
     final commentId = options?.commentId;
     final tenantId = options?.tenantId;
@@ -3034,8 +3034,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<AwardUserBadgeResponse?> putAwardBadge(String badgeId, [ ApiPutAwardBadgeOptions? options, ]) async {
-    final response = await putAwardBadgeWithHttpInfo(badgeId, options,);
+  Future<AwardUserBadgeResponse?> putAwardBadge(String badgeId, [ ApiPutAwardBadgeOptions? options ]) async {
+    final response = await putAwardBadgeWithHttpInfo(badgeId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3057,7 +3057,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> putCloseThreadWithHttpInfo(String urlId, [ ApiPutCloseThreadOptions? options, ]) async {
+  Future<Response> putCloseThreadWithHttpInfo(String urlId, [ ApiPutCloseThreadOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -3099,8 +3099,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> putCloseThread(String urlId, [ ApiPutCloseThreadOptions? options, ]) async {
-    final response = await putCloseThreadWithHttpInfo(urlId, options,);
+  Future<APIEmptyResponse?> putCloseThread(String urlId, [ ApiPutCloseThreadOptions? options ]) async {
+    final response = await putCloseThreadWithHttpInfo(urlId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3128,7 +3128,7 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> putRemoveBadgeWithHttpInfo(String badgeId, [ ApiPutRemoveBadgeOptions? options, ]) async {
+  Future<Response> putRemoveBadgeWithHttpInfo(String badgeId, [ ApiPutRemoveBadgeOptions? options ]) async {
     final userId = options?.userId;
     final commentId = options?.commentId;
     final tenantId = options?.tenantId;
@@ -3188,8 +3188,8 @@ class ModerationApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<RemoveUserBadgeResponse?> putRemoveBadge(String badgeId, [ ApiPutRemoveBadgeOptions? options, ]) async {
-    final response = await putRemoveBadgeWithHttpInfo(badgeId, options,);
+  Future<RemoveUserBadgeResponse?> putRemoveBadge(String badgeId, [ ApiPutRemoveBadgeOptions? options ]) async {
+    final response = await putRemoveBadgeWithHttpInfo(badgeId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3211,7 +3211,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> putReopenThreadWithHttpInfo(String urlId, [ ApiPutReopenThreadOptions? options, ]) async {
+  Future<Response> putReopenThreadWithHttpInfo(String urlId, [ ApiPutReopenThreadOptions? options ]) async {
     final tenantId = options?.tenantId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -3253,8 +3253,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<APIEmptyResponse?> putReopenThread(String urlId, [ ApiPutReopenThreadOptions? options, ]) async {
-    final response = await putReopenThreadWithHttpInfo(urlId, options,);
+  Future<APIEmptyResponse?> putReopenThread(String urlId, [ ApiPutReopenThreadOptions? options ]) async {
+    final response = await putReopenThreadWithHttpInfo(urlId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -3278,7 +3278,7 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<Response> setTrustFactorWithHttpInfo([ ApiSetTrustFactorOptions? options, ]) async {
+  Future<Response> setTrustFactorWithHttpInfo([ ApiSetTrustFactorOptions? options ]) async {
     final userId = options?.userId;
     final trustFactor = options?.trustFactor;
     final tenantId = options?.tenantId;
@@ -3329,8 +3329,8 @@ class ModerationApi {
   /// * [String] tenantId:
   ///
   /// * [String] sso:
-  Future<SetUserTrustFactorResponse?> setTrustFactor([ ApiSetTrustFactorOptions? options, ]) async {
-    final response = await setTrustFactorWithHttpInfo(options,);
+  Future<SetUserTrustFactorResponse?> setTrustFactor([ ApiSetTrustFactorOptions? options ]) async {
+    final response = await setTrustFactorWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
