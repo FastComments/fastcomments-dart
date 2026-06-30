@@ -41,17 +41,10 @@ SSO helpers are included in the package (`package:fastcomments_dart/sso/...`).
 
 The client exposes three API classes:
 
-- `DefaultApi` — API-key-authenticated methods for server-side use.
-- `PublicApi` — public methods that need no API key, safe for browser and
+- `DefaultApi` - API-key-authenticated methods for server-side use.
+- `PublicApi` - public methods that need no API key, safe for browser and
   mobile clients.
-- `ModerationApi` — methods that back the moderator dashboard: comment
-  moderation (list, count, search, logs, export), moderation actions
-  (remove/restore, flag, set review/spam/approval status, votes, reopen/close
-  thread), bans (ban from comment, undo, pre-ban summaries, ban status and
-  preferences, banned-user counts), and badges & trust (award/remove badge,
-  manual badges, get/set trust factor, user internal profile). Every
-  `ModerationApi` method takes an `sso` parameter for SSO-authenticated
-  moderators.
+- `ModerationApi` - an extensive suite of live and fast moderation APIs. Every `ModerationApi` method takes an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
 
 ```dart
 import 'package:fastcomments_dart/api.dart';
