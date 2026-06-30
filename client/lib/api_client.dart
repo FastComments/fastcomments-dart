@@ -700,8 +700,8 @@ class ApiClient {
           return PatchSSOUserAPIResponse.fromJson(value);
         case 'PendingCommentToSyncOutbound':
           return PendingCommentToSyncOutbound.fromJson(value);
-        case 'PostRemoveCommentResponse':
-          return PostRemoveCommentResponse.fromJson(value);
+        case 'PostRemoveCommentApiResponse':
+          return PostRemoveCommentApiResponse.fromJson(value);
         case 'PreBanSummary':
           return PreBanSummary.fromJson(value);
         case 'PubSubComment':

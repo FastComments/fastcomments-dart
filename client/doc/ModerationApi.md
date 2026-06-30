@@ -9,53 +9,53 @@ All URIs are relative to *https://fastcomments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteModerationVote**](ModerationApi.md#deletemoderationvote) | **DELETE** /auth/my-account/moderate-comments/vote/{commentId}/{voteId} | 
-[**getApiComments**](ModerationApi.md#getapicomments) | **GET** /auth/my-account/moderate-comments/api/comments | 
-[**getApiExportStatus**](ModerationApi.md#getapiexportstatus) | **GET** /auth/my-account/moderate-comments/api/export/status | 
-[**getApiIds**](ModerationApi.md#getapiids) | **GET** /auth/my-account/moderate-comments/api/ids | 
-[**getBanUsersFromComment**](ModerationApi.md#getbanusersfromcomment) | **GET** /auth/my-account/moderate-comments/ban-users/from-comment/{commentId} | 
-[**getCommentBanStatus**](ModerationApi.md#getcommentbanstatus) | **GET** /auth/my-account/moderate-comments/get-comment-ban-status/{commentId} | 
-[**getCommentChildren**](ModerationApi.md#getcommentchildren) | **GET** /auth/my-account/moderate-comments/comment-children/{commentId} | 
-[**getCount**](ModerationApi.md#getcount) | **GET** /auth/my-account/moderate-comments/count | 
-[**getCounts**](ModerationApi.md#getcounts) | **GET** /auth/my-account/moderate-comments/banned-users/counts | 
-[**getLogs**](ModerationApi.md#getlogs) | **GET** /auth/my-account/moderate-comments/logs/{commentId} | 
-[**getManualBadges**](ModerationApi.md#getmanualbadges) | **GET** /auth/my-account/moderate-comments/get-manual-badges | 
-[**getManualBadgesForUser**](ModerationApi.md#getmanualbadgesforuser) | **GET** /auth/my-account/moderate-comments/get-manual-badges-for-user | 
-[**getModerationComment**](ModerationApi.md#getmoderationcomment) | **GET** /auth/my-account/moderate-comments/comment/{commentId} | 
-[**getModerationCommentText**](ModerationApi.md#getmoderationcommenttext) | **GET** /auth/my-account/moderate-comments/get-comment-text/{commentId} | 
-[**getPreBanSummary**](ModerationApi.md#getprebansummary) | **GET** /auth/my-account/moderate-comments/pre-ban-summary/{commentId} | 
-[**getSearchCommentsSummary**](ModerationApi.md#getsearchcommentssummary) | **GET** /auth/my-account/moderate-comments/search/comments/summary | 
-[**getSearchPages**](ModerationApi.md#getsearchpages) | **GET** /auth/my-account/moderate-comments/search/pages | 
-[**getSearchSites**](ModerationApi.md#getsearchsites) | **GET** /auth/my-account/moderate-comments/search/sites | 
-[**getSearchSuggest**](ModerationApi.md#getsearchsuggest) | **GET** /auth/my-account/moderate-comments/search/suggest | 
-[**getSearchUsers**](ModerationApi.md#getsearchusers) | **GET** /auth/my-account/moderate-comments/search/users | 
-[**getTrustFactor**](ModerationApi.md#gettrustfactor) | **GET** /auth/my-account/moderate-comments/get-trust-factor | 
-[**getUserBanPreference**](ModerationApi.md#getuserbanpreference) | **GET** /auth/my-account/moderate-comments/user-ban-preference | 
-[**getUserInternalProfile**](ModerationApi.md#getuserinternalprofile) | **GET** /auth/my-account/moderate-comments/get-user-internal-profile | 
-[**postAdjustCommentVotes**](ModerationApi.md#postadjustcommentvotes) | **POST** /auth/my-account/moderate-comments/adjust-comment-votes/{commentId} | 
-[**postApiExport**](ModerationApi.md#postapiexport) | **POST** /auth/my-account/moderate-comments/api/export | 
-[**postBanUserFromComment**](ModerationApi.md#postbanuserfromcomment) | **POST** /auth/my-account/moderate-comments/ban-user/from-comment/{commentId} | 
-[**postBanUserUndo**](ModerationApi.md#postbanuserundo) | **POST** /auth/my-account/moderate-comments/ban-user/undo | 
-[**postBulkPreBanSummary**](ModerationApi.md#postbulkprebansummary) | **POST** /auth/my-account/moderate-comments/bulk-pre-ban-summary | 
-[**postCommentsByIds**](ModerationApi.md#postcommentsbyids) | **POST** /auth/my-account/moderate-comments/comments-by-ids | 
-[**postFlagComment**](ModerationApi.md#postflagcomment) | **POST** /auth/my-account/moderate-comments/flag-comment/{commentId} | 
-[**postRemoveComment**](ModerationApi.md#postremovecomment) | **POST** /auth/my-account/moderate-comments/remove-comment/{commentId} | 
-[**postRestoreDeletedComment**](ModerationApi.md#postrestoredeletedcomment) | **POST** /auth/my-account/moderate-comments/restore-deleted-comment/{commentId} | 
-[**postSetCommentApprovalStatus**](ModerationApi.md#postsetcommentapprovalstatus) | **POST** /auth/my-account/moderate-comments/set-comment-approval-status/{commentId} | 
-[**postSetCommentReviewStatus**](ModerationApi.md#postsetcommentreviewstatus) | **POST** /auth/my-account/moderate-comments/set-comment-review-status/{commentId} | 
-[**postSetCommentSpamStatus**](ModerationApi.md#postsetcommentspamstatus) | **POST** /auth/my-account/moderate-comments/set-comment-spam-status/{commentId} | 
-[**postSetCommentText**](ModerationApi.md#postsetcommenttext) | **POST** /auth/my-account/moderate-comments/set-comment-text/{commentId} | 
-[**postUnFlagComment**](ModerationApi.md#postunflagcomment) | **POST** /auth/my-account/moderate-comments/un-flag-comment/{commentId} | 
-[**postVote**](ModerationApi.md#postvote) | **POST** /auth/my-account/moderate-comments/vote/{commentId} | 
-[**putAwardBadge**](ModerationApi.md#putawardbadge) | **PUT** /auth/my-account/moderate-comments/award-badge | 
-[**putCloseThread**](ModerationApi.md#putclosethread) | **PUT** /auth/my-account/moderate-comments/close-thread | 
-[**putRemoveBadge**](ModerationApi.md#putremovebadge) | **PUT** /auth/my-account/moderate-comments/remove-badge | 
-[**putReopenThread**](ModerationApi.md#putreopenthread) | **PUT** /auth/my-account/moderate-comments/reopen-thread | 
-[**setTrustFactor**](ModerationApi.md#settrustfactor) | **PUT** /auth/my-account/moderate-comments/set-trust-factor | 
+[**deleteModerationVote**](ModerationApi.md#deletemoderationvote) | **DELETE** /auth/my-account/moderate-comments/mod_api/vote/{commentId}/{voteId} | 
+[**getApiComments**](ModerationApi.md#getapicomments) | **GET** /auth/my-account/moderate-comments/mod_api/api/comments | 
+[**getApiExportStatus**](ModerationApi.md#getapiexportstatus) | **GET** /auth/my-account/moderate-comments/mod_api/api/export/status | 
+[**getApiIds**](ModerationApi.md#getapiids) | **GET** /auth/my-account/moderate-comments/mod_api/api/ids | 
+[**getBanUsersFromComment**](ModerationApi.md#getbanusersfromcomment) | **GET** /auth/my-account/moderate-comments/mod_api/ban-users/from-comment/{commentId} | 
+[**getCommentBanStatus**](ModerationApi.md#getcommentbanstatus) | **GET** /auth/my-account/moderate-comments/mod_api/get-comment-ban-status/{commentId} | 
+[**getCommentChildren**](ModerationApi.md#getcommentchildren) | **GET** /auth/my-account/moderate-comments/mod_api/comment-children/{commentId} | 
+[**getCount**](ModerationApi.md#getcount) | **GET** /auth/my-account/moderate-comments/mod_api/count | 
+[**getCounts**](ModerationApi.md#getcounts) | **GET** /auth/my-account/moderate-comments/banned-users/mod_api/counts | 
+[**getLogs**](ModerationApi.md#getlogs) | **GET** /auth/my-account/moderate-comments/mod_api/logs/{commentId} | 
+[**getManualBadges**](ModerationApi.md#getmanualbadges) | **GET** /auth/my-account/moderate-comments/mod_api/get-manual-badges | 
+[**getManualBadgesForUser**](ModerationApi.md#getmanualbadgesforuser) | **GET** /auth/my-account/moderate-comments/mod_api/get-manual-badges-for-user | 
+[**getModerationComment**](ModerationApi.md#getmoderationcomment) | **GET** /auth/my-account/moderate-comments/mod_api/comment/{commentId} | 
+[**getModerationCommentText**](ModerationApi.md#getmoderationcommenttext) | **GET** /auth/my-account/moderate-comments/mod_api/get-comment-text/{commentId} | 
+[**getPreBanSummary**](ModerationApi.md#getprebansummary) | **GET** /auth/my-account/moderate-comments/mod_api/pre-ban-summary/{commentId} | 
+[**getSearchCommentsSummary**](ModerationApi.md#getsearchcommentssummary) | **GET** /auth/my-account/moderate-comments/mod_api/search/comments/summary | 
+[**getSearchPages**](ModerationApi.md#getsearchpages) | **GET** /auth/my-account/moderate-comments/mod_api/search/pages | 
+[**getSearchSites**](ModerationApi.md#getsearchsites) | **GET** /auth/my-account/moderate-comments/mod_api/search/sites | 
+[**getSearchSuggest**](ModerationApi.md#getsearchsuggest) | **GET** /auth/my-account/moderate-comments/mod_api/search/suggest | 
+[**getSearchUsers**](ModerationApi.md#getsearchusers) | **GET** /auth/my-account/moderate-comments/mod_api/search/users | 
+[**getTrustFactor**](ModerationApi.md#gettrustfactor) | **GET** /auth/my-account/moderate-comments/mod_api/get-trust-factor | 
+[**getUserBanPreference**](ModerationApi.md#getuserbanpreference) | **GET** /auth/my-account/moderate-comments/mod_api/user-ban-preference | 
+[**getUserInternalProfile**](ModerationApi.md#getuserinternalprofile) | **GET** /auth/my-account/moderate-comments/mod_api/get-user-internal-profile | 
+[**postAdjustCommentVotes**](ModerationApi.md#postadjustcommentvotes) | **POST** /auth/my-account/moderate-comments/mod_api/adjust-comment-votes/{commentId} | 
+[**postApiExport**](ModerationApi.md#postapiexport) | **POST** /auth/my-account/moderate-comments/mod_api/api/export | 
+[**postBanUserFromComment**](ModerationApi.md#postbanuserfromcomment) | **POST** /auth/my-account/moderate-comments/mod_api/ban-user/from-comment/{commentId} | 
+[**postBanUserUndo**](ModerationApi.md#postbanuserundo) | **POST** /auth/my-account/moderate-comments/mod_api/ban-user/undo | 
+[**postBulkPreBanSummary**](ModerationApi.md#postbulkprebansummary) | **POST** /auth/my-account/moderate-comments/mod_api/bulk-pre-ban-summary | 
+[**postCommentsByIds**](ModerationApi.md#postcommentsbyids) | **POST** /auth/my-account/moderate-comments/mod_api/comments-by-ids | 
+[**postFlagComment**](ModerationApi.md#postflagcomment) | **POST** /auth/my-account/moderate-comments/mod_api/flag-comment/{commentId} | 
+[**postRemoveComment**](ModerationApi.md#postremovecomment) | **POST** /auth/my-account/moderate-comments/mod_api/remove-comment/{commentId} | 
+[**postRestoreDeletedComment**](ModerationApi.md#postrestoredeletedcomment) | **POST** /auth/my-account/moderate-comments/mod_api/restore-deleted-comment/{commentId} | 
+[**postSetCommentApprovalStatus**](ModerationApi.md#postsetcommentapprovalstatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-approval-status/{commentId} | 
+[**postSetCommentReviewStatus**](ModerationApi.md#postsetcommentreviewstatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-review-status/{commentId} | 
+[**postSetCommentSpamStatus**](ModerationApi.md#postsetcommentspamstatus) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-spam-status/{commentId} | 
+[**postSetCommentText**](ModerationApi.md#postsetcommenttext) | **POST** /auth/my-account/moderate-comments/mod_api/set-comment-text/{commentId} | 
+[**postUnFlagComment**](ModerationApi.md#postunflagcomment) | **POST** /auth/my-account/moderate-comments/mod_api/un-flag-comment/{commentId} | 
+[**postVote**](ModerationApi.md#postvote) | **POST** /auth/my-account/moderate-comments/mod_api/vote/{commentId} | 
+[**putAwardBadge**](ModerationApi.md#putawardbadge) | **PUT** /auth/my-account/moderate-comments/mod_api/award-badge | 
+[**putCloseThread**](ModerationApi.md#putclosethread) | **PUT** /auth/my-account/moderate-comments/mod_api/close-thread | 
+[**putRemoveBadge**](ModerationApi.md#putremovebadge) | **PUT** /auth/my-account/moderate-comments/mod_api/remove-badge | 
+[**putReopenThread**](ModerationApi.md#putreopenthread) | **PUT** /auth/my-account/moderate-comments/mod_api/reopen-thread | 
+[**setTrustFactor**](ModerationApi.md#settrustfactor) | **PUT** /auth/my-account/moderate-comments/mod_api/set-trust-factor | 
 
 
 # **deleteModerationVote**
-> VoteDeleteResponse deleteModerationVote(commentId, voteId, ApiDeleteModerationVoteOptions options)
+> VoteDeleteResponse deleteModerationVote(tenantId, commentId, voteId, DeleteModerationVoteOptions options)
 
 
 
@@ -64,14 +64,14 @@ Method | HTTP request | Description
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final voteId = voteId_example; // String | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.deleteModerationVote(commentId, voteId, ApiDeleteModerationVoteOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.deleteModerationVote(tenantId, commentId, voteId, DeleteModerationVoteOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->deleteModerationVote: $e\n');
@@ -82,9 +82,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **voteId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getApiComments**
-> ModerationAPIGetCommentsResponse getApiComments(ApiGetApiCommentsOptions options)
+> ModerationAPIGetCommentsResponse getApiComments(tenantId, GetApiCommentsOptions options)
 
 
 
@@ -113,6 +113,7 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final page = 1.2; // double | 
 final count = 1.2; // double | 
 final textSearch = textSearch_example; // String | 
@@ -121,11 +122,10 @@ final filters = filters_example; // String |
 final searchFilters = searchFilters_example; // String | 
 final sorts = sorts_example; // String | 
 final demo = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getApiComments(ApiGetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, tenantId: tenantId, sso: sso));
+    final result = api_instance.getApiComments(tenantId, GetApiCommentsOptions(page: page, count: count, textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, demo: demo, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getApiComments: $e\n');
@@ -136,6 +136,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **page** | **double**|  | [optional] 
  **count** | **double**|  | [optional] 
  **textSearch** | **String**|  | [optional] 
@@ -144,7 +145,6 @@ Name | Type | Description  | Notes
  **searchFilters** | **String**|  | [optional] 
  **sorts** | **String**|  | [optional] 
  **demo** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -163,7 +163,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getApiExportStatus**
-> ModerationExportStatusResponse getApiExportStatus(ApiGetApiExportStatusOptions options)
+> ModerationExportStatusResponse getApiExportStatus(tenantId, GetApiExportStatusOptions options)
 
 
 
@@ -172,12 +172,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final batchJobId = batchJobId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final batchJobId = batchJobId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getApiExportStatus(ApiGetApiExportStatusOptions(batchJobId: batchJobId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getApiExportStatus(tenantId, GetApiExportStatusOptions(batchJobId: batchJobId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getApiExportStatus: $e\n');
@@ -188,8 +188,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **batchJobId** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -208,7 +208,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getApiIds**
-> ModerationAPIGetCommentIdsResponse getApiIds(ApiGetApiIdsOptions options)
+> ModerationAPIGetCommentIdsResponse getApiIds(tenantId, GetApiIdsOptions options)
 
 
 
@@ -217,17 +217,17 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final textSearch = textSearch_example; // String | 
 final byIPFromComment = byIPFromComment_example; // String | 
 final filters = filters_example; // String | 
 final searchFilters = searchFilters_example; // String | 
 final afterId = afterId_example; // String | 
 final demo = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getApiIds(ApiGetApiIdsOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, tenantId: tenantId, sso: sso));
+    final result = api_instance.getApiIds(tenantId, GetApiIdsOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, afterId: afterId, demo: demo, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getApiIds: $e\n');
@@ -238,13 +238,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **textSearch** | **String**|  | [optional] 
  **byIPFromComment** | **String**|  | [optional] 
  **filters** | **String**|  | [optional] 
  **searchFilters** | **String**|  | [optional] 
  **afterId** | **String**|  | [optional] 
  **demo** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -263,7 +263,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBanUsersFromComment**
-> GetBannedUsersFromCommentResponse getBanUsersFromComment(commentId, ApiGetBanUsersFromCommentOptions options)
+> GetBannedUsersFromCommentResponse getBanUsersFromComment(tenantId, commentId, sso)
 
 
 
@@ -272,12 +272,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getBanUsersFromComment(commentId, ApiGetBanUsersFromCommentOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getBanUsersFromComment(tenantId, commentId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getBanUsersFromComment: $e\n');
@@ -288,8 +288,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -308,7 +308,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentBanStatus**
-> GetCommentBanStatusResponse getCommentBanStatus(commentId, ApiGetCommentBanStatusOptions options)
+> GetCommentBanStatusResponse getCommentBanStatus(tenantId, commentId, sso)
 
 
 
@@ -317,12 +317,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCommentBanStatus(commentId, ApiGetCommentBanStatusOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getCommentBanStatus(tenantId, commentId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCommentBanStatus: $e\n');
@@ -333,8 +333,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -353,7 +353,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentChildren**
-> ModerationAPIChildCommentsResponse getCommentChildren(commentId, ApiGetCommentChildrenOptions options)
+> ModerationAPIChildCommentsResponse getCommentChildren(tenantId, commentId, sso)
 
 
 
@@ -362,12 +362,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCommentChildren(commentId, ApiGetCommentChildrenOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getCommentChildren(tenantId, commentId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCommentChildren: $e\n');
@@ -378,8 +378,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -398,7 +398,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCount**
-> ModerationAPICountCommentsResponse getCount(ApiGetCountOptions options)
+> ModerationAPICountCommentsResponse getCount(tenantId, GetCountOptions options)
 
 
 
@@ -407,16 +407,16 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final textSearch = textSearch_example; // String | 
 final byIPFromComment = byIPFromComment_example; // String | 
 final filter = filter_example; // String | 
 final searchFilters = searchFilters_example; // String | 
 final demo = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCount(ApiGetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, tenantId: tenantId, sso: sso));
+    final result = api_instance.getCount(tenantId, GetCountOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filter: filter, searchFilters: searchFilters, demo: demo, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCount: $e\n');
@@ -427,12 +427,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **textSearch** | **String**|  | [optional] 
  **byIPFromComment** | **String**|  | [optional] 
  **filter** | **String**|  | [optional] 
  **searchFilters** | **String**|  | [optional] 
  **demo** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -451,7 +451,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCounts**
-> GetBannedUsersCountResponse getCounts(ApiGetCountsOptions options)
+> GetBannedUsersCountResponse getCounts(tenantId, sso)
 
 
 
@@ -464,7 +464,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCounts(ApiGetCountsOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getCounts(tenantId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getCounts: $e\n');
@@ -475,7 +475,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | **String**|  | [optional] 
+ **tenantId** | **String**|  | 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -494,7 +494,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getLogs**
-> ModerationAPIGetLogsResponse getLogs(commentId, ApiGetLogsOptions options)
+> ModerationAPIGetLogsResponse getLogs(tenantId, commentId, sso)
 
 
 
@@ -503,12 +503,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getLogs(commentId, ApiGetLogsOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getLogs(tenantId, commentId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getLogs: $e\n');
@@ -519,8 +519,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -539,7 +539,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getManualBadges**
-> GetTenantManualBadgesResponse getManualBadges(ApiGetManualBadgesOptions options)
+> GetTenantManualBadgesResponse getManualBadges(tenantId, sso)
 
 
 
@@ -552,7 +552,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getManualBadges(ApiGetManualBadgesOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getManualBadges(tenantId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getManualBadges: $e\n');
@@ -563,7 +563,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | **String**|  | [optional] 
+ **tenantId** | **String**|  | 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -582,7 +582,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getManualBadgesForUser**
-> GetUserManualBadgesResponse getManualBadgesForUser(ApiGetManualBadgesForUserOptions options)
+> GetUserManualBadgesResponse getManualBadgesForUser(tenantId, GetManualBadgesForUserOptions options)
 
 
 
@@ -591,13 +591,13 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final badgesUserId = badgesUserId_example; // String | 
 final commentId = commentId_example; // String | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getManualBadgesForUser(ApiGetManualBadgesForUserOptions(badgesUserId: badgesUserId, commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getManualBadgesForUser(tenantId, GetManualBadgesForUserOptions(badgesUserId: badgesUserId, commentId: commentId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getManualBadgesForUser: $e\n');
@@ -608,9 +608,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **badgesUserId** | **String**|  | [optional] 
  **commentId** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -629,7 +629,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getModerationComment**
-> ModerationAPICommentResponse getModerationComment(commentId, ApiGetModerationCommentOptions options)
+> ModerationAPICommentResponse getModerationComment(tenantId, commentId, GetModerationCommentOptions options)
 
 
 
@@ -638,14 +638,14 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final includeEmail = true; // bool | 
 final includeIP = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getModerationComment(commentId, ApiGetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, tenantId: tenantId, sso: sso));
+    final result = api_instance.getModerationComment(tenantId, commentId, GetModerationCommentOptions(includeEmail: includeEmail, includeIP: includeIP, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getModerationComment: $e\n');
@@ -656,10 +656,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **includeEmail** | **bool**|  | [optional] 
  **includeIP** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -678,7 +678,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getModerationCommentText**
-> GetCommentTextResponse getModerationCommentText(commentId, ApiGetModerationCommentTextOptions options)
+> GetCommentTextResponse getModerationCommentText(tenantId, commentId, sso)
 
 
 
@@ -687,12 +687,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getModerationCommentText(commentId, ApiGetModerationCommentTextOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getModerationCommentText(tenantId, commentId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getModerationCommentText: $e\n');
@@ -703,8 +703,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -723,7 +723,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPreBanSummary**
-> PreBanSummary getPreBanSummary(commentId, ApiGetPreBanSummaryOptions options)
+> PreBanSummary getPreBanSummary(tenantId, commentId, GetPreBanSummaryOptions options)
 
 
 
@@ -732,15 +732,15 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final includeByUserIdAndEmail = true; // bool | 
 final includeByIP = true; // bool | 
 final includeByEmailDomain = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getPreBanSummary(commentId, ApiGetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso));
+    final result = api_instance.getPreBanSummary(tenantId, commentId, GetPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getPreBanSummary: $e\n');
@@ -751,11 +751,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **includeByUserIdAndEmail** | **bool**|  | [optional] 
  **includeByIP** | **bool**|  | [optional] 
  **includeByEmailDomain** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -774,7 +774,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchCommentsSummary**
-> ModerationCommentSearchResponse getSearchCommentsSummary(ApiGetSearchCommentsSummaryOptions options)
+> ModerationCommentSearchResponse getSearchCommentsSummary(tenantId, GetSearchCommentsSummaryOptions options)
 
 
 
@@ -783,14 +783,14 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final value = value_example; // String | 
 final filters = filters_example; // String | 
 final searchFilters = searchFilters_example; // String | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchCommentsSummary(ApiGetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchCommentsSummary(tenantId, GetSearchCommentsSummaryOptions(value: value, filters: filters, searchFilters: searchFilters, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchCommentsSummary: $e\n');
@@ -801,10 +801,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **value** | **String**|  | [optional] 
  **filters** | **String**|  | [optional] 
  **searchFilters** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -823,7 +823,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchPages**
-> ModerationPageSearchResponse getSearchPages(ApiGetSearchPagesOptions options)
+> ModerationPageSearchResponse getSearchPages(tenantId, GetSearchPagesOptions options)
 
 
 
@@ -832,12 +832,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final value = value_example; // String | 
 final tenantId = tenantId_example; // String | 
+final value = value_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchPages(ApiGetSearchPagesOptions(value: value, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchPages(tenantId, GetSearchPagesOptions(value: value, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchPages: $e\n');
@@ -848,8 +848,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **value** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -868,7 +868,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchSites**
-> ModerationSiteSearchResponse getSearchSites(ApiGetSearchSitesOptions options)
+> ModerationSiteSearchResponse getSearchSites(tenantId, GetSearchSitesOptions options)
 
 
 
@@ -877,12 +877,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final value = value_example; // String | 
 final tenantId = tenantId_example; // String | 
+final value = value_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchSites(ApiGetSearchSitesOptions(value: value, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchSites(tenantId, GetSearchSitesOptions(value: value, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchSites: $e\n');
@@ -893,8 +893,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **value** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -913,7 +913,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchSuggest**
-> ModerationSuggestResponse getSearchSuggest(ApiGetSearchSuggestOptions options)
+> ModerationSuggestResponse getSearchSuggest(tenantId, GetSearchSuggestOptions options)
 
 
 
@@ -922,12 +922,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final textSearch = textSearch_example; // String | 
 final tenantId = tenantId_example; // String | 
+final textSearch = textSearch_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchSuggest(ApiGetSearchSuggestOptions(textSearch: textSearch, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchSuggest(tenantId, GetSearchSuggestOptions(textSearch: textSearch, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchSuggest: $e\n');
@@ -938,8 +938,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **textSearch** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -958,7 +958,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSearchUsers**
-> ModerationUserSearchResponse getSearchUsers(ApiGetSearchUsersOptions options)
+> ModerationUserSearchResponse getSearchUsers(tenantId, GetSearchUsersOptions options)
 
 
 
@@ -967,12 +967,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final value = value_example; // String | 
 final tenantId = tenantId_example; // String | 
+final value = value_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getSearchUsers(ApiGetSearchUsersOptions(value: value, tenantId: tenantId, sso: sso));
+    final result = api_instance.getSearchUsers(tenantId, GetSearchUsersOptions(value: value, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getSearchUsers: $e\n');
@@ -983,8 +983,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **value** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1003,7 +1003,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTrustFactor**
-> GetUserTrustFactorResponse getTrustFactor(ApiGetTrustFactorOptions options)
+> GetUserTrustFactorResponse getTrustFactor(tenantId, GetTrustFactorOptions options)
 
 
 
@@ -1012,12 +1012,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final userId = userId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final userId = userId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getTrustFactor(ApiGetTrustFactorOptions(userId: userId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getTrustFactor(tenantId, GetTrustFactorOptions(userId: userId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getTrustFactor: $e\n');
@@ -1028,8 +1028,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **userId** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1048,7 +1048,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBanPreference**
-> APIModerateGetUserBanPreferencesResponse getUserBanPreference(ApiGetUserBanPreferenceOptions options)
+> APIModerateGetUserBanPreferencesResponse getUserBanPreference(tenantId, sso)
 
 
 
@@ -1061,7 +1061,7 @@ final tenantId = tenantId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserBanPreference(ApiGetUserBanPreferenceOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.getUserBanPreference(tenantId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getUserBanPreference: $e\n');
@@ -1072,7 +1072,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | **String**|  | [optional] 
+ **tenantId** | **String**|  | 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1091,7 +1091,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserInternalProfile**
-> GetUserInternalProfileResponse getUserInternalProfile(ApiGetUserInternalProfileOptions options)
+> GetUserInternalProfileResponse getUserInternalProfile(tenantId, GetUserInternalProfileOptions options)
 
 
 
@@ -1100,12 +1100,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserInternalProfile(ApiGetUserInternalProfileOptions(commentId: commentId, tenantId: tenantId, sso: sso));
+    final result = api_instance.getUserInternalProfile(tenantId, GetUserInternalProfileOptions(commentId: commentId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->getUserInternalProfile: $e\n');
@@ -1116,8 +1116,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1136,7 +1136,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postAdjustCommentVotes**
-> AdjustVotesResponse postAdjustCommentVotes(commentId, adjustCommentVotesParams, ApiPostAdjustCommentVotesOptions options)
+> AdjustVotesResponse postAdjustCommentVotes(tenantId, commentId, adjustCommentVotesParams, PostAdjustCommentVotesOptions options)
 
 
 
@@ -1145,14 +1145,14 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final adjustCommentVotesParams = AdjustCommentVotesParams(); // AdjustCommentVotesParams | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postAdjustCommentVotes(commentId, adjustCommentVotesParams, ApiPostAdjustCommentVotesOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postAdjustCommentVotes(tenantId, commentId, adjustCommentVotesParams, PostAdjustCommentVotesOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postAdjustCommentVotes: $e\n');
@@ -1163,9 +1163,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **adjustCommentVotesParams** | [**AdjustCommentVotesParams**](AdjustCommentVotesParams.md)|  | 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1185,7 +1185,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postApiExport**
-> ModerationExportResponse postApiExport(ApiPostApiExportOptions options)
+> ModerationExportResponse postApiExport(tenantId, PostApiExportOptions options)
 
 
 
@@ -1194,16 +1194,16 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final textSearch = textSearch_example; // String | 
 final byIPFromComment = byIPFromComment_example; // String | 
 final filters = filters_example; // String | 
 final searchFilters = searchFilters_example; // String | 
 final sorts = sorts_example; // String | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postApiExport(ApiPostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, tenantId: tenantId, sso: sso));
+    final result = api_instance.postApiExport(tenantId, PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postApiExport: $e\n');
@@ -1214,12 +1214,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **textSearch** | **String**|  | [optional] 
  **byIPFromComment** | **String**|  | [optional] 
  **filters** | **String**|  | [optional] 
  **searchFilters** | **String**|  | [optional] 
  **sorts** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1238,7 +1238,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postBanUserFromComment**
-> BanUserFromCommentResult postBanUserFromComment(commentId, ApiPostBanUserFromCommentOptions options)
+> BanUserFromCommentResult postBanUserFromComment(tenantId, commentId, PostBanUserFromCommentOptions options)
 
 
 
@@ -1247,6 +1247,7 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final banEmail = true; // bool | 
 final banEmailDomain = true; // bool | 
@@ -1256,11 +1257,10 @@ final bannedUntil = bannedUntil_example; // String |
 final isShadowBan = true; // bool | 
 final updateId = updateId_example; // String | 
 final banReason = banReason_example; // String | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postBanUserFromComment(commentId, ApiPostBanUserFromCommentOptions(banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, tenantId: tenantId, sso: sso));
+    final result = api_instance.postBanUserFromComment(tenantId, commentId, PostBanUserFromCommentOptions(banEmail: banEmail, banEmailDomain: banEmailDomain, banIP: banIP, deleteAllUsersComments: deleteAllUsersComments, bannedUntil: bannedUntil, isShadowBan: isShadowBan, updateId: updateId, banReason: banReason, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postBanUserFromComment: $e\n');
@@ -1271,6 +1271,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **banEmail** | **bool**|  | [optional] 
  **banEmailDomain** | **bool**|  | [optional] 
@@ -1280,7 +1281,6 @@ Name | Type | Description  | Notes
  **isShadowBan** | **bool**|  | [optional] 
  **updateId** | **String**|  | [optional] 
  **banReason** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1299,7 +1299,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postBanUserUndo**
-> APIEmptyResponse postBanUserUndo(banUserUndoParams, ApiPostBanUserUndoOptions options)
+> APIEmptyResponse postBanUserUndo(tenantId, banUserUndoParams, sso)
 
 
 
@@ -1308,12 +1308,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final banUserUndoParams = BanUserUndoParams(); // BanUserUndoParams | 
 final tenantId = tenantId_example; // String | 
+final banUserUndoParams = BanUserUndoParams(); // BanUserUndoParams | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postBanUserUndo(banUserUndoParams, ApiPostBanUserUndoOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.postBanUserUndo(tenantId, banUserUndoParams, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postBanUserUndo: $e\n');
@@ -1324,8 +1324,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **banUserUndoParams** | [**BanUserUndoParams**](BanUserUndoParams.md)|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1344,7 +1344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postBulkPreBanSummary**
-> BulkPreBanSummary postBulkPreBanSummary(bulkPreBanParams, ApiPostBulkPreBanSummaryOptions options)
+> BulkPreBanSummary postBulkPreBanSummary(tenantId, bulkPreBanParams, PostBulkPreBanSummaryOptions options)
 
 
 
@@ -1353,15 +1353,15 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final bulkPreBanParams = BulkPreBanParams(); // BulkPreBanParams | 
 final includeByUserIdAndEmail = true; // bool | 
 final includeByIP = true; // bool | 
 final includeByEmailDomain = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postBulkPreBanSummary(bulkPreBanParams, ApiPostBulkPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, tenantId: tenantId, sso: sso));
+    final result = api_instance.postBulkPreBanSummary(tenantId, bulkPreBanParams, PostBulkPreBanSummaryOptions(includeByUserIdAndEmail: includeByUserIdAndEmail, includeByIP: includeByIP, includeByEmailDomain: includeByEmailDomain, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postBulkPreBanSummary: $e\n');
@@ -1372,11 +1372,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **bulkPreBanParams** | [**BulkPreBanParams**](BulkPreBanParams.md)|  | 
  **includeByUserIdAndEmail** | **bool**|  | [optional] 
  **includeByIP** | **bool**|  | [optional] 
  **includeByEmailDomain** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1395,7 +1395,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postCommentsByIds**
-> ModerationAPIChildCommentsResponse postCommentsByIds(commentsByIdsParams, ApiPostCommentsByIdsOptions options)
+> ModerationAPIChildCommentsResponse postCommentsByIds(tenantId, commentsByIdsParams, sso)
 
 
 
@@ -1404,12 +1404,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentsByIdsParams = CommentsByIdsParams(); // CommentsByIdsParams | 
 final tenantId = tenantId_example; // String | 
+final commentsByIdsParams = CommentsByIdsParams(); // CommentsByIdsParams | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postCommentsByIds(commentsByIdsParams, ApiPostCommentsByIdsOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.postCommentsByIds(tenantId, commentsByIdsParams, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postCommentsByIds: $e\n');
@@ -1420,8 +1420,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentsByIdsParams** | [**CommentsByIdsParams**](CommentsByIdsParams.md)|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1440,7 +1440,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postFlagComment**
-> APIEmptyResponse postFlagComment(commentId, ApiPostFlagCommentOptions options)
+> APIEmptyResponse postFlagComment(tenantId, commentId, PostFlagCommentOptions options)
 
 
 
@@ -1449,13 +1449,13 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postFlagComment(commentId, ApiPostFlagCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postFlagComment(tenantId, commentId, PostFlagCommentOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postFlagComment: $e\n');
@@ -1466,8 +1466,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1487,7 +1487,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRemoveComment**
-> PostRemoveCommentResponse postRemoveComment(commentId, ApiPostRemoveCommentOptions options)
+> PostRemoveCommentApiResponse postRemoveComment(tenantId, commentId, PostRemoveCommentOptions options)
 
 
 
@@ -1496,13 +1496,13 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postRemoveComment(commentId, ApiPostRemoveCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postRemoveComment(tenantId, commentId, PostRemoveCommentOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postRemoveComment: $e\n');
@@ -1513,14 +1513,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
 
-[**PostRemoveCommentResponse**](PostRemoveCommentResponse.md)
+[**PostRemoveCommentApiResponse**](PostRemoveCommentApiResponse.md)
 
 ### Authorization
 
@@ -1534,7 +1534,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postRestoreDeletedComment**
-> APIEmptyResponse postRestoreDeletedComment(commentId, ApiPostRestoreDeletedCommentOptions options)
+> APIEmptyResponse postRestoreDeletedComment(tenantId, commentId, PostRestoreDeletedCommentOptions options)
 
 
 
@@ -1543,13 +1543,13 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postRestoreDeletedComment(commentId, ApiPostRestoreDeletedCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postRestoreDeletedComment(tenantId, commentId, PostRestoreDeletedCommentOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postRestoreDeletedComment: $e\n');
@@ -1560,8 +1560,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1581,7 +1581,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentApprovalStatus**
-> SetCommentApprovedResponse postSetCommentApprovalStatus(commentId, ApiPostSetCommentApprovalStatusOptions options)
+> SetCommentApprovedResponse postSetCommentApprovalStatus(tenantId, commentId, PostSetCommentApprovalStatusOptions options)
 
 
 
@@ -1590,14 +1590,14 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final approved = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentApprovalStatus(commentId, ApiPostSetCommentApprovalStatusOptions(approved: approved, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentApprovalStatus(tenantId, commentId, PostSetCommentApprovalStatusOptions(approved: approved, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentApprovalStatus: $e\n');
@@ -1608,9 +1608,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **approved** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1630,7 +1630,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentReviewStatus**
-> APIEmptyResponse postSetCommentReviewStatus(commentId, ApiPostSetCommentReviewStatusOptions options)
+> APIEmptyResponse postSetCommentReviewStatus(tenantId, commentId, PostSetCommentReviewStatusOptions options)
 
 
 
@@ -1639,14 +1639,14 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final reviewed = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentReviewStatus(commentId, ApiPostSetCommentReviewStatusOptions(reviewed: reviewed, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentReviewStatus(tenantId, commentId, PostSetCommentReviewStatusOptions(reviewed: reviewed, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentReviewStatus: $e\n');
@@ -1657,9 +1657,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **reviewed** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1679,7 +1679,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentSpamStatus**
-> APIEmptyResponse postSetCommentSpamStatus(commentId, ApiPostSetCommentSpamStatusOptions options)
+> APIEmptyResponse postSetCommentSpamStatus(tenantId, commentId, PostSetCommentSpamStatusOptions options)
 
 
 
@@ -1688,15 +1688,15 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final spam = true; // bool | 
 final permNotSpam = true; // bool | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentSpamStatus(commentId, ApiPostSetCommentSpamStatusOptions(spam: spam, permNotSpam: permNotSpam, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentSpamStatus(tenantId, commentId, PostSetCommentSpamStatusOptions(spam: spam, permNotSpam: permNotSpam, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentSpamStatus: $e\n');
@@ -1707,10 +1707,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **spam** | **bool**|  | [optional] 
  **permNotSpam** | **bool**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1730,7 +1730,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postSetCommentText**
-> SetCommentTextResponse postSetCommentText(commentId, setCommentTextParams, ApiPostSetCommentTextOptions options)
+> SetCommentTextResponse postSetCommentText(tenantId, commentId, setCommentTextParams, PostSetCommentTextOptions options)
 
 
 
@@ -1739,14 +1739,14 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final setCommentTextParams = SetCommentTextParams(); // SetCommentTextParams | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postSetCommentText(commentId, setCommentTextParams, ApiPostSetCommentTextOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postSetCommentText(tenantId, commentId, setCommentTextParams, PostSetCommentTextOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postSetCommentText: $e\n');
@@ -1757,9 +1757,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **setCommentTextParams** | [**SetCommentTextParams**](SetCommentTextParams.md)|  | 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1779,7 +1779,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postUnFlagComment**
-> APIEmptyResponse postUnFlagComment(commentId, ApiPostUnFlagCommentOptions options)
+> APIEmptyResponse postUnFlagComment(tenantId, commentId, PostUnFlagCommentOptions options)
 
 
 
@@ -1788,13 +1788,13 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final commentId = commentId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final commentId = commentId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postUnFlagComment(commentId, ApiPostUnFlagCommentOptions(tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postUnFlagComment(tenantId, commentId, PostUnFlagCommentOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postUnFlagComment: $e\n');
@@ -1805,8 +1805,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1826,7 +1826,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **postVote**
-> VoteResponse postVote(commentId, ApiPostVoteOptions options)
+> VoteResponse postVote(tenantId, commentId, PostVoteOptions options)
 
 
 
@@ -1835,14 +1835,14 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final commentId = commentId_example; // String | 
 final direction = direction_example; // String | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.postVote(commentId, ApiPostVoteOptions(direction: direction, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.postVote(tenantId, commentId, PostVoteOptions(direction: direction, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->postVote: $e\n');
@@ -1853,9 +1853,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **commentId** | **String**|  | 
  **direction** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1875,7 +1875,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putAwardBadge**
-> AwardUserBadgeResponse putAwardBadge(badgeId, ApiPutAwardBadgeOptions options)
+> AwardUserBadgeResponse putAwardBadge(tenantId, badgeId, PutAwardBadgeOptions options)
 
 
 
@@ -1884,15 +1884,15 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final badgeId = badgeId_example; // String | 
 final userId = userId_example; // String | 
 final commentId = commentId_example; // String | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putAwardBadge(badgeId, ApiPutAwardBadgeOptions(userId: userId, commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.putAwardBadge(tenantId, badgeId, PutAwardBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putAwardBadge: $e\n');
@@ -1903,10 +1903,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **badgeId** | **String**|  | 
  **userId** | **String**|  | [optional] 
  **commentId** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -1926,7 +1926,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putCloseThread**
-> APIEmptyResponse putCloseThread(urlId, ApiPutCloseThreadOptions options)
+> APIEmptyResponse putCloseThread(tenantId, urlId, sso)
 
 
 
@@ -1935,12 +1935,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final urlId = urlId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putCloseThread(urlId, ApiPutCloseThreadOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.putCloseThread(tenantId, urlId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putCloseThread: $e\n');
@@ -1951,8 +1951,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **urlId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -1971,7 +1971,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putRemoveBadge**
-> RemoveUserBadgeResponse putRemoveBadge(badgeId, ApiPutRemoveBadgeOptions options)
+> RemoveUserBadgeResponse putRemoveBadge(tenantId, badgeId, PutRemoveBadgeOptions options)
 
 
 
@@ -1980,15 +1980,15 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final badgeId = badgeId_example; // String | 
 final userId = userId_example; // String | 
 final commentId = commentId_example; // String | 
-final tenantId = tenantId_example; // String | 
 final broadcastId = broadcastId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putRemoveBadge(badgeId, ApiPutRemoveBadgeOptions(userId: userId, commentId: commentId, tenantId: tenantId, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.putRemoveBadge(tenantId, badgeId, PutRemoveBadgeOptions(userId: userId, commentId: commentId, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putRemoveBadge: $e\n');
@@ -1999,10 +1999,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **badgeId** | **String**|  | 
  **userId** | **String**|  | [optional] 
  **commentId** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **broadcastId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
@@ -2022,7 +2022,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putReopenThread**
-> APIEmptyResponse putReopenThread(urlId, ApiPutReopenThreadOptions options)
+> APIEmptyResponse putReopenThread(tenantId, urlId, sso)
 
 
 
@@ -2031,12 +2031,12 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
-final urlId = urlId_example; // String | 
 final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.putReopenThread(urlId, ApiPutReopenThreadOptions(tenantId: tenantId, sso: sso));
+    final result = api_instance.putReopenThread(tenantId, urlId, sso);
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->putReopenThread: $e\n');
@@ -2047,8 +2047,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **urlId** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type
@@ -2067,7 +2067,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **setTrustFactor**
-> SetUserTrustFactorResponse setTrustFactor(ApiSetTrustFactorOptions options)
+> SetUserTrustFactorResponse setTrustFactor(tenantId, SetTrustFactorOptions options)
 
 
 
@@ -2076,13 +2076,13 @@ No authorization required
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = ModerationApi();
+final tenantId = tenantId_example; // String | 
 final userId = userId_example; // String | 
 final trustFactor = trustFactor_example; // String | 
-final tenantId = tenantId_example; // String | 
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.setTrustFactor(ApiSetTrustFactorOptions(userId: userId, trustFactor: trustFactor, tenantId: tenantId, sso: sso));
+    final result = api_instance.setTrustFactor(tenantId, SetTrustFactorOptions(userId: userId, trustFactor: trustFactor, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling ModerationApi->setTrustFactor: $e\n');
@@ -2093,9 +2093,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **userId** | **String**|  | [optional] 
  **trustFactor** | **String**|  | [optional] 
- **tenantId** | **String**|  | [optional] 
  **sso** | **String**|  | [optional] 
 
 ### Return type

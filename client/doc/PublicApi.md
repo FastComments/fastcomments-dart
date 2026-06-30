@@ -156,7 +156,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createCommentPublic**
-> SaveCommentsResponseWithPresence createCommentPublic(tenantId, urlId, broadcastId, commentData, ApiCreateCommentPublicOptions options)
+> SaveCommentsResponseWithPresence createCommentPublic(tenantId, urlId, broadcastId, commentData, CreateCommentPublicOptions options)
 
 
 
@@ -173,7 +173,7 @@ final sessionId = sessionId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.createCommentPublic(tenantId, urlId, broadcastId, commentData, ApiCreateCommentPublicOptions(sessionId: sessionId, sso: sso));
+    final result = api_instance.createCommentPublic(tenantId, urlId, broadcastId, commentData, CreateCommentPublicOptions(sessionId: sessionId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->createCommentPublic: $e\n');
@@ -207,7 +207,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createFeedPostPublic**
-> CreateFeedPostResponse createFeedPostPublic(tenantId, createFeedPostParams, ApiCreateFeedPostPublicOptions options)
+> CreateFeedPostResponse createFeedPostPublic(tenantId, createFeedPostParams, CreateFeedPostPublicOptions options)
 
 
 
@@ -222,7 +222,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.createFeedPostPublic(tenantId, createFeedPostParams, ApiCreateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso));
+    final result = api_instance.createFeedPostPublic(tenantId, createFeedPostParams, CreateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->createFeedPostPublic: $e\n');
@@ -346,7 +346,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteCommentPublic**
-> PublicAPIDeleteCommentResponse deleteCommentPublic(tenantId, commentId, broadcastId, ApiDeleteCommentPublicOptions options)
+> PublicAPIDeleteCommentResponse deleteCommentPublic(tenantId, commentId, broadcastId, DeleteCommentPublicOptions options)
 
 
 
@@ -362,7 +362,7 @@ final editKey = editKey_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.deleteCommentPublic(tenantId, commentId, broadcastId, ApiDeleteCommentPublicOptions(editKey: editKey, sso: sso));
+    final result = api_instance.deleteCommentPublic(tenantId, commentId, broadcastId, DeleteCommentPublicOptions(editKey: editKey, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->deleteCommentPublic: $e\n');
@@ -395,7 +395,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteCommentVote**
-> VoteDeleteResponse deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, ApiDeleteCommentVoteOptions options)
+> VoteDeleteResponse deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, DeleteCommentVoteOptions options)
 
 
 
@@ -413,7 +413,7 @@ final editKey = editKey_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, ApiDeleteCommentVoteOptions(editKey: editKey, sso: sso));
+    final result = api_instance.deleteCommentVote(tenantId, commentId, voteId, urlId, broadcastId, DeleteCommentVoteOptions(editKey: editKey, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->deleteCommentVote: $e\n');
@@ -448,7 +448,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteFeedPostPublic**
-> DeleteFeedPostPublicResponse deleteFeedPostPublic(tenantId, postId, ApiDeleteFeedPostPublicOptions options)
+> DeleteFeedPostPublicResponse deleteFeedPostPublic(tenantId, postId, DeleteFeedPostPublicOptions options)
 
 
 
@@ -463,7 +463,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.deleteFeedPostPublic(tenantId, postId, ApiDeleteFeedPostPublicOptions(broadcastId: broadcastId, sso: sso));
+    final result = api_instance.deleteFeedPostPublic(tenantId, postId, DeleteFeedPostPublicOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->deleteFeedPostPublic: $e\n');
@@ -630,7 +630,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentText**
-> PublicAPIGetCommentTextResponse getCommentText(tenantId, commentId, ApiGetCommentTextOptions options)
+> PublicAPIGetCommentTextResponse getCommentText(tenantId, commentId, GetCommentTextOptions options)
 
 
 
@@ -645,7 +645,7 @@ final editKey = editKey_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getCommentText(tenantId, commentId, ApiGetCommentTextOptions(editKey: editKey, sso: sso));
+    final result = api_instance.getCommentText(tenantId, commentId, GetCommentTextOptions(editKey: editKey, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getCommentText: $e\n');
@@ -724,7 +724,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentsForUser**
-> GetCommentsForUserResponse getCommentsForUser(ApiGetCommentsForUserOptions options)
+> GetCommentsForUserResponse getCommentsForUser(GetCommentsForUserOptions options)
 
 
 
@@ -742,7 +742,7 @@ final locale = locale_example; // String |
 final isCrawler = true; // bool | 
 
 try {
-    final result = api_instance.getCommentsForUser(ApiGetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler));
+    final result = api_instance.getCommentsForUser(GetCommentsForUserOptions(userId: userId, direction: direction, repliesToUserId: repliesToUserId, page: page, includei10n: includei10n, locale: locale, isCrawler: isCrawler));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getCommentsForUser: $e\n');
@@ -777,7 +777,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCommentsPublic**
-> GetCommentsResponseWithPresencePublicComment getCommentsPublic(tenantId, urlId, ApiGetCommentsPublicOptions options)
+> GetCommentsResponseWithPresencePublicComment getCommentsPublic(tenantId, urlId, GetCommentsPublicOptions options)
 
 
 
@@ -818,7 +818,7 @@ final afterCommentId = afterCommentId_example; // String |
 final beforeCommentId = beforeCommentId_example; // String | 
 
 try {
-    final result = api_instance.getCommentsPublic(tenantId, urlId, ApiGetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId));
+    final result = api_instance.getCommentsPublic(tenantId, urlId, GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getCommentsPublic: $e\n');
@@ -925,7 +925,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeedPostsPublic**
-> PublicFeedPostsResponse getFeedPostsPublic(tenantId, ApiGetFeedPostsPublicOptions options)
+> PublicFeedPostsResponse getFeedPostsPublic(tenantId, GetFeedPostsPublicOptions options)
 
 
 
@@ -945,7 +945,7 @@ final isCrawler = true; // bool |
 final includeUserInfo = true; // bool | 
 
 try {
-    final result = api_instance.getFeedPostsPublic(tenantId, ApiGetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo));
+    final result = api_instance.getFeedPostsPublic(tenantId, GetFeedPostsPublicOptions(afterId: afterId, limit: limit, tags: tags, sso: sso, isCrawler: isCrawler, includeUserInfo: includeUserInfo));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getFeedPostsPublic: $e\n');
@@ -1068,7 +1068,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGifsSearch**
-> GetGifsSearchResponse getGifsSearch(tenantId, search, ApiGetGifsSearchOptions options)
+> GetGifsSearchResponse getGifsSearch(tenantId, search, GetGifsSearchOptions options)
 
 
 
@@ -1084,7 +1084,7 @@ final rating = rating_example; // String |
 final page = 1.2; // double | 
 
 try {
-    final result = api_instance.getGifsSearch(tenantId, search, ApiGetGifsSearchOptions(locale: locale, rating: rating, page: page));
+    final result = api_instance.getGifsSearch(tenantId, search, GetGifsSearchOptions(locale: locale, rating: rating, page: page));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getGifsSearch: $e\n');
@@ -1117,7 +1117,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getGifsTrending**
-> GetGifsTrendingResponse getGifsTrending(tenantId, ApiGetGifsTrendingOptions options)
+> GetGifsTrendingResponse getGifsTrending(tenantId, GetGifsTrendingOptions options)
 
 
 
@@ -1132,7 +1132,7 @@ final rating = rating_example; // String |
 final page = 1.2; // double | 
 
 try {
-    final result = api_instance.getGifsTrending(tenantId, ApiGetGifsTrendingOptions(locale: locale, rating: rating, page: page));
+    final result = api_instance.getGifsTrending(tenantId, GetGifsTrendingOptions(locale: locale, rating: rating, page: page));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getGifsTrending: $e\n');
@@ -1215,7 +1215,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getOfflineUsers**
-> PageUsersOfflineResponse getOfflineUsers(tenantId, urlId, ApiGetOfflineUsersOptions options)
+> PageUsersOfflineResponse getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions options)
 
 
 
@@ -1232,7 +1232,7 @@ final afterName = afterName_example; // String | Cursor: pass nextAfterName from
 final afterUserId = afterUserId_example; // String | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
 
 try {
-    final result = api_instance.getOfflineUsers(tenantId, urlId, ApiGetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));
+    final result = api_instance.getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getOfflineUsers: $e\n');
@@ -1264,7 +1264,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getOnlineUsers**
-> PageUsersOnlineResponse getOnlineUsers(tenantId, urlId, ApiGetOnlineUsersOptions options)
+> PageUsersOnlineResponse getOnlineUsers(tenantId, urlId, GetOnlineUsersOptions options)
 
 
 
@@ -1281,7 +1281,7 @@ final afterName = afterName_example; // String | Cursor: pass nextAfterName from
 final afterUserId = afterUserId_example; // String | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
 
 try {
-    final result = api_instance.getOnlineUsers(tenantId, urlId, ApiGetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId));
+    final result = api_instance.getOnlineUsers(tenantId, urlId, GetOnlineUsersOptions(afterName: afterName, afterUserId: afterUserId));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getOnlineUsers: $e\n');
@@ -1313,7 +1313,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPagesPublic**
-> GetPublicPagesResponse getPagesPublic(tenantId, ApiGetPagesPublicOptions options)
+> GetPublicPagesResponse getPagesPublic(tenantId, GetPagesPublicOptions options)
 
 
 
@@ -1332,7 +1332,7 @@ final sortBy = ; // PagesSortBy | Sort order. `updatedAt` (default, newest first
 final hasComments = true; // bool | If true, only return pages with at least one comment.
 
 try {
-    final result = api_instance.getPagesPublic(tenantId, ApiGetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));
+    final result = api_instance.getPagesPublic(tenantId, GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getPagesPublic: $e\n');
@@ -1366,7 +1366,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTranslations**
-> GetTranslationsResponse getTranslations(namespace, component, ApiGetTranslationsOptions options)
+> GetTranslationsResponse getTranslations(namespace, component, GetTranslationsOptions options)
 
 
 
@@ -1381,7 +1381,7 @@ final locale = locale_example; // String |
 final useFullTranslationIds = true; // bool | 
 
 try {
-    final result = api_instance.getTranslations(namespace, component, ApiGetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds));
+    final result = api_instance.getTranslations(namespace, component, GetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getTranslations: $e\n');
@@ -1456,7 +1456,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserNotifications**
-> GetMyNotificationsResponse getUserNotifications(tenantId, ApiGetUserNotificationsOptions options)
+> GetMyNotificationsResponse getUserNotifications(tenantId, GetUserNotificationsOptions options)
 
 
 
@@ -1479,7 +1479,7 @@ final includeTenantNotifications = true; // bool |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserNotifications(tenantId, ApiGetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso));
+    final result = api_instance.getUserNotifications(tenantId, GetUserNotificationsOptions(urlId: urlId, pageSize: pageSize, afterId: afterId, includeContext: includeContext, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, includeTranslations: includeTranslations, includeTenantNotifications: includeTenantNotifications, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getUserNotifications: $e\n');
@@ -1564,7 +1564,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserReactsPublic**
-> UserReactsResponse getUserReactsPublic(tenantId, ApiGetUserReactsPublicOptions options)
+> UserReactsResponse getUserReactsPublic(tenantId, GetUserReactsPublicOptions options)
 
 
 
@@ -1578,7 +1578,7 @@ final postIds = []; // List<String> |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.getUserReactsPublic(tenantId, ApiGetUserReactsPublicOptions(postIds: postIds, sso: sso));
+    final result = api_instance.getUserReactsPublic(tenantId, GetUserReactsPublicOptions(postIds: postIds, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->getUserReactsPublic: $e\n');
@@ -1916,7 +1916,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reactFeedPostPublic**
-> ReactFeedPostResponse reactFeedPostPublic(tenantId, postId, reactBodyParams, ApiReactFeedPostPublicOptions options)
+> ReactFeedPostResponse reactFeedPostPublic(tenantId, postId, reactBodyParams, ReactFeedPostPublicOptions options)
 
 
 
@@ -1933,7 +1933,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.reactFeedPostPublic(tenantId, postId, reactBodyParams, ApiReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso));
+    final result = api_instance.reactFeedPostPublic(tenantId, postId, reactBodyParams, ReactFeedPostPublicOptions(isUndo: isUndo, broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->reactFeedPostPublic: $e\n');
@@ -2010,7 +2010,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resetUserNotifications**
-> ResetUserNotificationsResponse resetUserNotifications(tenantId, ApiResetUserNotificationsOptions options)
+> ResetUserNotificationsResponse resetUserNotifications(tenantId, ResetUserNotificationsOptions options)
 
 
 
@@ -2028,7 +2028,7 @@ final noDm = true; // bool |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.resetUserNotifications(tenantId, ApiResetUserNotificationsOptions(afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso));
+    final result = api_instance.resetUserNotifications(tenantId, ResetUserNotificationsOptions(afterId: afterId, afterCreatedAt: afterCreatedAt, unreadOnly: unreadOnly, dmOnly: dmOnly, noDm: noDm, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->resetUserNotifications: $e\n');
@@ -2063,7 +2063,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **searchUsers**
-> SearchUsersResult searchUsers(tenantId, urlId, ApiSearchUsersOptions options)
+> SearchUsersResult searchUsers(tenantId, urlId, SearchUsersOptions options)
 
 
 
@@ -2080,7 +2080,7 @@ final sso = sso_example; // String |
 final searchSection = searchSection_example; // String | 
 
 try {
-    final result = api_instance.searchUsers(tenantId, urlId, ApiSearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection));
+    final result = api_instance.searchUsers(tenantId, urlId, SearchUsersOptions(usernameStartsWith: usernameStartsWith, mentionGroupIds: mentionGroupIds, sso: sso, searchSection: searchSection));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->searchUsers: $e\n');
@@ -2114,7 +2114,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **setCommentText**
-> PublicAPISetCommentTextResponse setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, ApiSetCommentTextOptions options)
+> PublicAPISetCommentTextResponse setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, SetCommentTextOptions options)
 
 
 
@@ -2131,7 +2131,7 @@ final editKey = editKey_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, ApiSetCommentTextOptions(editKey: editKey, sso: sso));
+    final result = api_instance.setCommentText(tenantId, commentId, broadcastId, commentTextUpdateRequest, SetCommentTextOptions(editKey: editKey, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->setCommentText: $e\n');
@@ -2306,7 +2306,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateFeedPostPublic**
-> CreateFeedPostResponse updateFeedPostPublic(tenantId, postId, updateFeedPostParams, ApiUpdateFeedPostPublicOptions options)
+> CreateFeedPostResponse updateFeedPostPublic(tenantId, postId, updateFeedPostParams, UpdateFeedPostPublicOptions options)
 
 
 
@@ -2322,7 +2322,7 @@ final broadcastId = broadcastId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.updateFeedPostPublic(tenantId, postId, updateFeedPostParams, ApiUpdateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso));
+    final result = api_instance.updateFeedPostPublic(tenantId, postId, updateFeedPostParams, UpdateFeedPostPublicOptions(broadcastId: broadcastId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->updateFeedPostPublic: $e\n');
@@ -2506,7 +2506,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **uploadImage**
-> UploadImageResponse uploadImage(tenantId, file, ApiUploadImageOptions options)
+> UploadImageResponse uploadImage(tenantId, file, UploadImageOptions options)
 
 
 
@@ -2523,7 +2523,7 @@ final sizePreset = ; // SizePreset | Size preset: \"Default\" (1000x1000px) or \
 final urlId = urlId_example; // String | Page id that upload is happening from, to configure
 
 try {
-    final result = api_instance.uploadImage(tenantId, file, ApiUploadImageOptions(sizePreset: sizePreset, urlId: urlId));
+    final result = api_instance.uploadImage(tenantId, file, UploadImageOptions(sizePreset: sizePreset, urlId: urlId));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->uploadImage: $e\n');
@@ -2555,7 +2555,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **voteComment**
-> VoteResponse voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, ApiVoteCommentOptions options)
+> VoteResponse voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, VoteCommentOptions options)
 
 
 
@@ -2573,7 +2573,7 @@ final sessionId = sessionId_example; // String |
 final sso = sso_example; // String | 
 
 try {
-    final result = api_instance.voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, ApiVoteCommentOptions(sessionId: sessionId, sso: sso));
+    final result = api_instance.voteComment(tenantId, commentId, urlId, broadcastId, voteBodyParams, VoteCommentOptions(sessionId: sessionId, sso: sso));
     print(result);
 } catch (e) {
     print('Exception when calling PublicApi->voteComment: $e\n');

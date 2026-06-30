@@ -72,7 +72,7 @@ import 'package:fastcomments_dart/api.dart';
 
 final moderation = ModerationApi(ApiClient(basePath: 'https://fastcomments.com'));
 final result = await moderation.getApiComments(
-  ApiGetApiCommentsOptions(sso: 'SSO_TOKEN'),
+  GetApiCommentsOptions(sso: 'SSO_TOKEN'),
 );
 ```
 

@@ -43,7 +43,7 @@ void main() {
       urlId,
       'dart-test-$timestamp',
       commentData,
-      ApiCreateCommentPublicOptions(sso: token),
+      CreateCommentPublicOptions(sso: token),
     );
     expect(createResponse, isNotNull);
     expect(createResponse!.status, APIStatus.success);
@@ -53,7 +53,7 @@ void main() {
     final getResponse = await api.getCommentsPublic(
       tenantId,
       urlId,
-      ApiGetCommentsPublicOptions(sso: token),
+      GetCommentsPublicOptions(sso: token),
     );
     expect(getResponse, isNotNull);
     expect(getResponse!.status, 'success');

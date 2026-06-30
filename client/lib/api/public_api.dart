@@ -158,7 +158,7 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<Response> createCommentPublicWithHttpInfo(String tenantId, String urlId, String broadcastId, CommentData commentData, [ ApiCreateCommentPublicOptions? options ]) async {
+  Future<Response> createCommentPublicWithHttpInfo(String tenantId, String urlId, String broadcastId, CommentData commentData, [ CreateCommentPublicOptions? options ]) async {
     final sessionId = options?.sessionId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -208,7 +208,7 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<SaveCommentsResponseWithPresence?> createCommentPublic(String tenantId, String urlId, String broadcastId, CommentData commentData, [ ApiCreateCommentPublicOptions? options ]) async {
+  Future<SaveCommentsResponseWithPresence?> createCommentPublic(String tenantId, String urlId, String broadcastId, CommentData commentData, [ CreateCommentPublicOptions? options ]) async {
     final response = await createCommentPublicWithHttpInfo(tenantId, urlId, broadcastId, commentData, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -233,7 +233,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> createFeedPostPublicWithHttpInfo(String tenantId, CreateFeedPostParams createFeedPostParams, [ ApiCreateFeedPostPublicOptions? options ]) async {
+  Future<Response> createFeedPostPublicWithHttpInfo(String tenantId, CreateFeedPostParams createFeedPostParams, [ CreateFeedPostPublicOptions? options ]) async {
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -277,7 +277,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<CreateFeedPostResponse?> createFeedPostPublic(String tenantId, CreateFeedPostParams createFeedPostParams, [ ApiCreateFeedPostPublicOptions? options ]) async {
+  Future<CreateFeedPostResponse?> createFeedPostPublic(String tenantId, CreateFeedPostParams createFeedPostParams, [ CreateFeedPostPublicOptions? options ]) async {
     final response = await createFeedPostPublicWithHttpInfo(tenantId, createFeedPostParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -431,7 +431,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> deleteCommentPublicWithHttpInfo(String tenantId, String commentId, String broadcastId, [ ApiDeleteCommentPublicOptions? options ]) async {
+  Future<Response> deleteCommentPublicWithHttpInfo(String tenantId, String commentId, String broadcastId, [ DeleteCommentPublicOptions? options ]) async {
     final editKey = options?.editKey;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -479,7 +479,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<PublicAPIDeleteCommentResponse?> deleteCommentPublic(String tenantId, String commentId, String broadcastId, [ ApiDeleteCommentPublicOptions? options ]) async {
+  Future<PublicAPIDeleteCommentResponse?> deleteCommentPublic(String tenantId, String commentId, String broadcastId, [ DeleteCommentPublicOptions? options ]) async {
     final response = await deleteCommentPublicWithHttpInfo(tenantId, commentId, broadcastId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -510,7 +510,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> deleteCommentVoteWithHttpInfo(String tenantId, String commentId, String voteId, String urlId, String broadcastId, [ ApiDeleteCommentVoteOptions? options ]) async {
+  Future<Response> deleteCommentVoteWithHttpInfo(String tenantId, String commentId, String voteId, String urlId, String broadcastId, [ DeleteCommentVoteOptions? options ]) async {
     final editKey = options?.editKey;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -564,7 +564,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<VoteDeleteResponse?> deleteCommentVote(String tenantId, String commentId, String voteId, String urlId, String broadcastId, [ ApiDeleteCommentVoteOptions? options ]) async {
+  Future<VoteDeleteResponse?> deleteCommentVote(String tenantId, String commentId, String voteId, String urlId, String broadcastId, [ DeleteCommentVoteOptions? options ]) async {
     final response = await deleteCommentVoteWithHttpInfo(tenantId, commentId, voteId, urlId, broadcastId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -589,7 +589,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> deleteFeedPostPublicWithHttpInfo(String tenantId, String postId, [ ApiDeleteFeedPostPublicOptions? options ]) async {
+  Future<Response> deleteFeedPostPublicWithHttpInfo(String tenantId, String postId, [ DeleteFeedPostPublicOptions? options ]) async {
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -634,7 +634,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<DeleteFeedPostPublicResponse?> deleteFeedPostPublic(String tenantId, String postId, [ ApiDeleteFeedPostPublicOptions? options ]) async {
+  Future<DeleteFeedPostPublicResponse?> deleteFeedPostPublic(String tenantId, String postId, [ DeleteFeedPostPublicOptions? options ]) async {
     final response = await deleteFeedPostPublicWithHttpInfo(tenantId, postId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -838,7 +838,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> getCommentTextWithHttpInfo(String tenantId, String commentId, [ ApiGetCommentTextOptions? options ]) async {
+  Future<Response> getCommentTextWithHttpInfo(String tenantId, String commentId, [ GetCommentTextOptions? options ]) async {
     final editKey = options?.editKey;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -883,7 +883,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<PublicAPIGetCommentTextResponse?> getCommentText(String tenantId, String commentId, [ ApiGetCommentTextOptions? options ]) async {
+  Future<PublicAPIGetCommentTextResponse?> getCommentText(String tenantId, String commentId, [ GetCommentTextOptions? options ]) async {
     final response = await getCommentTextWithHttpInfo(tenantId, commentId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -980,7 +980,7 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] isCrawler:
-  Future<Response> getCommentsForUserWithHttpInfo([ ApiGetCommentsForUserOptions? options ]) async {
+  Future<Response> getCommentsForUserWithHttpInfo([ GetCommentsForUserOptions? options ]) async {
     final userId = options?.userId;
     final direction = options?.direction;
     final repliesToUserId = options?.repliesToUserId;
@@ -1049,7 +1049,7 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] isCrawler:
-  Future<GetCommentsForUserResponse?> getCommentsForUser([ ApiGetCommentsForUserOptions? options ]) async {
+  Future<GetCommentsForUserResponse?> getCommentsForUser([ GetCommentsForUserOptions? options ]) async {
     final response = await getCommentsForUserWithHttpInfo(options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1125,7 +1125,7 @@ class PublicApi {
   /// * [String] afterCommentId:
   ///
   /// * [String] beforeCommentId:
-  Future<Response> getCommentsPublicWithHttpInfo(String tenantId, String urlId, [ ApiGetCommentsPublicOptions? options ]) async {
+  Future<Response> getCommentsPublicWithHttpInfo(String tenantId, String urlId, [ GetCommentsPublicOptions? options ]) async {
     final page = options?.page;
     final direction = options?.direction;
     final sso = options?.sso;
@@ -1316,7 +1316,7 @@ class PublicApi {
   /// * [String] afterCommentId:
   ///
   /// * [String] beforeCommentId:
-  Future<GetCommentsResponseWithPresencePublicComment?> getCommentsPublic(String tenantId, String urlId, [ ApiGetCommentsPublicOptions? options ]) async {
+  Future<GetCommentsResponseWithPresencePublicComment?> getCommentsPublic(String tenantId, String urlId, [ GetCommentsPublicOptions? options ]) async {
     final response = await getCommentsPublicWithHttpInfo(tenantId, urlId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1426,7 +1426,7 @@ class PublicApi {
   /// * [bool] isCrawler:
   ///
   /// * [bool] includeUserInfo:
-  Future<Response> getFeedPostsPublicWithHttpInfo(String tenantId, [ ApiGetFeedPostsPublicOptions? options ]) async {
+  Future<Response> getFeedPostsPublicWithHttpInfo(String tenantId, [ GetFeedPostsPublicOptions? options ]) async {
     final afterId = options?.afterId;
     final limit = options?.limit;
     final tags = options?.tags;
@@ -1494,7 +1494,7 @@ class PublicApi {
   /// * [bool] isCrawler:
   ///
   /// * [bool] includeUserInfo:
-  Future<PublicFeedPostsResponse?> getFeedPostsPublic(String tenantId, [ ApiGetFeedPostsPublicOptions? options ]) async {
+  Future<PublicFeedPostsResponse?> getFeedPostsPublic(String tenantId, [ GetFeedPostsPublicOptions? options ]) async {
     final response = await getFeedPostsPublicWithHttpInfo(tenantId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1636,7 +1636,7 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<Response> getGifsSearchWithHttpInfo(String tenantId, String search, [ ApiGetGifsSearchOptions? options ]) async {
+  Future<Response> getGifsSearchWithHttpInfo(String tenantId, String search, [ GetGifsSearchOptions? options ]) async {
     final locale = options?.locale;
     final rating = options?.rating;
     final page = options?.page;
@@ -1687,7 +1687,7 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<GetGifsSearchResponse?> getGifsSearch(String tenantId, String search, [ ApiGetGifsSearchOptions? options ]) async {
+  Future<GetGifsSearchResponse?> getGifsSearch(String tenantId, String search, [ GetGifsSearchOptions? options ]) async {
     final response = await getGifsSearchWithHttpInfo(tenantId, search, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1712,7 +1712,7 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<Response> getGifsTrendingWithHttpInfo(String tenantId, [ ApiGetGifsTrendingOptions? options ]) async {
+  Future<Response> getGifsTrendingWithHttpInfo(String tenantId, [ GetGifsTrendingOptions? options ]) async {
     final locale = options?.locale;
     final rating = options?.rating;
     final page = options?.page;
@@ -1760,7 +1760,7 @@ class PublicApi {
   /// * [String] rating:
   ///
   /// * [double] page:
-  Future<GetGifsTrendingResponse?> getGifsTrending(String tenantId, [ ApiGetGifsTrendingOptions? options ]) async {
+  Future<GetGifsTrendingResponse?> getGifsTrending(String tenantId, [ GetGifsTrendingOptions? options ]) async {
     final response = await getGifsTrendingWithHttpInfo(tenantId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1867,7 +1867,7 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<Response> getOfflineUsersWithHttpInfo(String tenantId, String urlId, [ ApiGetOfflineUsersOptions? options ]) async {
+  Future<Response> getOfflineUsersWithHttpInfo(String tenantId, String urlId, [ GetOfflineUsersOptions? options ]) async {
     final afterName = options?.afterName;
     final afterUserId = options?.afterUserId;
     // ignore: prefer_const_declarations
@@ -1917,7 +1917,7 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<PageUsersOfflineResponse?> getOfflineUsers(String tenantId, String urlId, [ ApiGetOfflineUsersOptions? options ]) async {
+  Future<PageUsersOfflineResponse?> getOfflineUsers(String tenantId, String urlId, [ GetOfflineUsersOptions? options ]) async {
     final response = await getOfflineUsersWithHttpInfo(tenantId, urlId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -1948,7 +1948,7 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<Response> getOnlineUsersWithHttpInfo(String tenantId, String urlId, [ ApiGetOnlineUsersOptions? options ]) async {
+  Future<Response> getOnlineUsersWithHttpInfo(String tenantId, String urlId, [ GetOnlineUsersOptions? options ]) async {
     final afterName = options?.afterName;
     final afterUserId = options?.afterUserId;
     // ignore: prefer_const_declarations
@@ -1998,7 +1998,7 @@ class PublicApi {
   ///
   /// * [String] afterUserId:
   ///   Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
-  Future<PageUsersOnlineResponse?> getOnlineUsers(String tenantId, String urlId, [ ApiGetOnlineUsersOptions? options ]) async {
+  Future<PageUsersOnlineResponse?> getOnlineUsers(String tenantId, String urlId, [ GetOnlineUsersOptions? options ]) async {
     final response = await getOnlineUsersWithHttpInfo(tenantId, urlId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -2035,7 +2035,7 @@ class PublicApi {
   ///
   /// * [bool] hasComments:
   ///   If true, only return pages with at least one comment.
-  Future<Response> getPagesPublicWithHttpInfo(String tenantId, [ ApiGetPagesPublicOptions? options ]) async {
+  Future<Response> getPagesPublicWithHttpInfo(String tenantId, [ GetPagesPublicOptions? options ]) async {
     final cursor = options?.cursor;
     final limit = options?.limit;
     final q = options?.q;
@@ -2102,7 +2102,7 @@ class PublicApi {
   ///
   /// * [bool] hasComments:
   ///   If true, only return pages with at least one comment.
-  Future<GetPublicPagesResponse?> getPagesPublic(String tenantId, [ ApiGetPagesPublicOptions? options ]) async {
+  Future<GetPublicPagesResponse?> getPagesPublic(String tenantId, [ GetPagesPublicOptions? options ]) async {
     final response = await getPagesPublicWithHttpInfo(tenantId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -2127,7 +2127,7 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] useFullTranslationIds:
-  Future<Response> getTranslationsWithHttpInfo(String namespace, String component, [ ApiGetTranslationsOptions? options ]) async {
+  Future<Response> getTranslationsWithHttpInfo(String namespace, String component, [ GetTranslationsOptions? options ]) async {
     final locale = options?.locale;
     final useFullTranslationIds = options?.useFullTranslationIds;
     // ignore: prefer_const_declarations
@@ -2172,7 +2172,7 @@ class PublicApi {
   /// * [String] locale:
   ///
   /// * [bool] useFullTranslationIds:
-  Future<GetTranslationsResponse?> getTranslations(String namespace, String component, [ ApiGetTranslationsOptions? options ]) async {
+  Future<GetTranslationsResponse?> getTranslations(String namespace, String component, [ GetTranslationsOptions? options ]) async {
     final response = await getTranslationsWithHttpInfo(namespace, component, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -2270,7 +2270,7 @@ class PublicApi {
   /// * [bool] includeTenantNotifications:
   ///
   /// * [String] sso:
-  Future<Response> getUserNotificationsWithHttpInfo(String tenantId, [ ApiGetUserNotificationsOptions? options ]) async {
+  Future<Response> getUserNotificationsWithHttpInfo(String tenantId, [ GetUserNotificationsOptions? options ]) async {
     final urlId = options?.urlId;
     final pageSize = options?.pageSize;
     final afterId = options?.afterId;
@@ -2367,7 +2367,7 @@ class PublicApi {
   /// * [bool] includeTenantNotifications:
   ///
   /// * [String] sso:
-  Future<GetMyNotificationsResponse?> getUserNotifications(String tenantId, [ ApiGetUserNotificationsOptions? options ]) async {
+  Future<GetMyNotificationsResponse?> getUserNotifications(String tenantId, [ GetUserNotificationsOptions? options ]) async {
     final response = await getUserNotificationsWithHttpInfo(tenantId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -2449,7 +2449,7 @@ class PublicApi {
   /// * [List<String>] postIds:
   ///
   /// * [String] sso:
-  Future<Response> getUserReactsPublicWithHttpInfo(String tenantId, [ ApiGetUserReactsPublicOptions? options ]) async {
+  Future<Response> getUserReactsPublicWithHttpInfo(String tenantId, [ GetUserReactsPublicOptions? options ]) async {
     final postIds = options?.postIds;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -2491,7 +2491,7 @@ class PublicApi {
   /// * [List<String>] postIds:
   ///
   /// * [String] sso:
-  Future<UserReactsResponse?> getUserReactsPublic(String tenantId, [ ApiGetUserReactsPublicOptions? options ]) async {
+  Future<UserReactsResponse?> getUserReactsPublic(String tenantId, [ GetUserReactsPublicOptions? options ]) async {
     final response = await getUserReactsPublicWithHttpInfo(tenantId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -2921,7 +2921,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> reactFeedPostPublicWithHttpInfo(String tenantId, String postId, ReactBodyParams reactBodyParams, [ ApiReactFeedPostPublicOptions? options ]) async {
+  Future<Response> reactFeedPostPublicWithHttpInfo(String tenantId, String postId, ReactBodyParams reactBodyParams, [ ReactFeedPostPublicOptions? options ]) async {
     final isUndo = options?.isUndo;
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
@@ -2974,7 +2974,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<ReactFeedPostResponse?> reactFeedPostPublic(String tenantId, String postId, ReactBodyParams reactBodyParams, [ ApiReactFeedPostPublicOptions? options ]) async {
+  Future<ReactFeedPostResponse?> reactFeedPostPublic(String tenantId, String postId, ReactBodyParams reactBodyParams, [ ReactFeedPostPublicOptions? options ]) async {
     final response = await reactFeedPostPublicWithHttpInfo(tenantId, postId, reactBodyParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -3061,7 +3061,7 @@ class PublicApi {
   /// * [bool] noDm:
   ///
   /// * [String] sso:
-  Future<Response> resetUserNotificationsWithHttpInfo(String tenantId, [ ApiResetUserNotificationsOptions? options ]) async {
+  Future<Response> resetUserNotificationsWithHttpInfo(String tenantId, [ ResetUserNotificationsOptions? options ]) async {
     final afterId = options?.afterId;
     final afterCreatedAt = options?.afterCreatedAt;
     final unreadOnly = options?.unreadOnly;
@@ -3127,7 +3127,7 @@ class PublicApi {
   /// * [bool] noDm:
   ///
   /// * [String] sso:
-  Future<ResetUserNotificationsResponse?> resetUserNotifications(String tenantId, [ ApiResetUserNotificationsOptions? options ]) async {
+  Future<ResetUserNotificationsResponse?> resetUserNotifications(String tenantId, [ ResetUserNotificationsOptions? options ]) async {
     final response = await resetUserNotificationsWithHttpInfo(tenantId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -3156,7 +3156,7 @@ class PublicApi {
   /// * [String] sso:
   ///
   /// * [String] searchSection:
-  Future<Response> searchUsersWithHttpInfo(String tenantId, String urlId, [ ApiSearchUsersOptions? options ]) async {
+  Future<Response> searchUsersWithHttpInfo(String tenantId, String urlId, [ SearchUsersOptions? options ]) async {
     final usernameStartsWith = options?.usernameStartsWith;
     final mentionGroupIds = options?.mentionGroupIds;
     final sso = options?.sso;
@@ -3213,7 +3213,7 @@ class PublicApi {
   /// * [String] sso:
   ///
   /// * [String] searchSection:
-  Future<SearchUsersResult?> searchUsers(String tenantId, String urlId, [ ApiSearchUsersOptions? options ]) async {
+  Future<SearchUsersResult?> searchUsers(String tenantId, String urlId, [ SearchUsersOptions? options ]) async {
     final response = await searchUsersWithHttpInfo(tenantId, urlId, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -3242,7 +3242,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<Response> setCommentTextWithHttpInfo(String tenantId, String commentId, String broadcastId, CommentTextUpdateRequest commentTextUpdateRequest, [ ApiSetCommentTextOptions? options ]) async {
+  Future<Response> setCommentTextWithHttpInfo(String tenantId, String commentId, String broadcastId, CommentTextUpdateRequest commentTextUpdateRequest, [ SetCommentTextOptions? options ]) async {
     final editKey = options?.editKey;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -3292,7 +3292,7 @@ class PublicApi {
   /// * [String] editKey:
   ///
   /// * [String] sso:
-  Future<PublicAPISetCommentTextResponse?> setCommentText(String tenantId, String commentId, String broadcastId, CommentTextUpdateRequest commentTextUpdateRequest, [ ApiSetCommentTextOptions? options ]) async {
+  Future<PublicAPISetCommentTextResponse?> setCommentText(String tenantId, String commentId, String broadcastId, CommentTextUpdateRequest commentTextUpdateRequest, [ SetCommentTextOptions? options ]) async {
     final response = await setCommentTextWithHttpInfo(tenantId, commentId, broadcastId, commentTextUpdateRequest, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -3516,7 +3516,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<Response> updateFeedPostPublicWithHttpInfo(String tenantId, String postId, UpdateFeedPostParams updateFeedPostParams, [ ApiUpdateFeedPostPublicOptions? options ]) async {
+  Future<Response> updateFeedPostPublicWithHttpInfo(String tenantId, String postId, UpdateFeedPostParams updateFeedPostParams, [ UpdateFeedPostPublicOptions? options ]) async {
     final broadcastId = options?.broadcastId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -3563,7 +3563,7 @@ class PublicApi {
   /// * [String] broadcastId:
   ///
   /// * [String] sso:
-  Future<CreateFeedPostResponse?> updateFeedPostPublic(String tenantId, String postId, UpdateFeedPostParams updateFeedPostParams, [ ApiUpdateFeedPostPublicOptions? options ]) async {
+  Future<CreateFeedPostResponse?> updateFeedPostPublic(String tenantId, String postId, UpdateFeedPostParams updateFeedPostParams, [ UpdateFeedPostPublicOptions? options ]) async {
     final response = await updateFeedPostPublicWithHttpInfo(tenantId, postId, updateFeedPostParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -3816,7 +3816,7 @@ class PublicApi {
   ///
   /// * [String] urlId:
   ///   Page id that upload is happening from, to configure
-  Future<Response> uploadImageWithHttpInfo(String tenantId, MultipartFile file, [ ApiUploadImageOptions? options ]) async {
+  Future<Response> uploadImageWithHttpInfo(String tenantId, MultipartFile file, [ UploadImageOptions? options ]) async {
     final sizePreset = options?.sizePreset;
     final urlId = options?.urlId;
     // ignore: prefer_const_declarations
@@ -3874,7 +3874,7 @@ class PublicApi {
   ///
   /// * [String] urlId:
   ///   Page id that upload is happening from, to configure
-  Future<UploadImageResponse?> uploadImage(String tenantId, MultipartFile file, [ ApiUploadImageOptions? options ]) async {
+  Future<UploadImageResponse?> uploadImage(String tenantId, MultipartFile file, [ UploadImageOptions? options ]) async {
     final response = await uploadImageWithHttpInfo(tenantId, file, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -3905,7 +3905,7 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<Response> voteCommentWithHttpInfo(String tenantId, String commentId, String urlId, String broadcastId, VoteBodyParams voteBodyParams, [ ApiVoteCommentOptions? options ]) async {
+  Future<Response> voteCommentWithHttpInfo(String tenantId, String commentId, String urlId, String broadcastId, VoteBodyParams voteBodyParams, [ VoteCommentOptions? options ]) async {
     final sessionId = options?.sessionId;
     final sso = options?.sso;
     // ignore: prefer_const_declarations
@@ -3958,7 +3958,7 @@ class PublicApi {
   /// * [String] sessionId:
   ///
   /// * [String] sso:
-  Future<VoteResponse?> voteComment(String tenantId, String commentId, String urlId, String broadcastId, VoteBodyParams voteBodyParams, [ ApiVoteCommentOptions? options ]) async {
+  Future<VoteResponse?> voteComment(String tenantId, String commentId, String urlId, String broadcastId, VoteBodyParams voteBodyParams, [ VoteCommentOptions? options ]) async {
     final response = await voteCommentWithHttpInfo(tenantId, commentId, urlId, broadcastId, voteBodyParams, options);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -3975,8 +3975,8 @@ class PublicApi {
 }
 
 /// Optional parameters for [PublicApi.createCommentPublic].
-class ApiCreateCommentPublicOptions {
-  const ApiCreateCommentPublicOptions({
+class CreateCommentPublicOptions {
+  const CreateCommentPublicOptions({
     this.sessionId,
     this.sso,
   });
@@ -3985,8 +3985,8 @@ class ApiCreateCommentPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.createFeedPostPublic].
-class ApiCreateFeedPostPublicOptions {
-  const ApiCreateFeedPostPublicOptions({
+class CreateFeedPostPublicOptions {
+  const CreateFeedPostPublicOptions({
     this.broadcastId,
     this.sso,
   });
@@ -3995,8 +3995,8 @@ class ApiCreateFeedPostPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.deleteCommentPublic].
-class ApiDeleteCommentPublicOptions {
-  const ApiDeleteCommentPublicOptions({
+class DeleteCommentPublicOptions {
+  const DeleteCommentPublicOptions({
     this.editKey,
     this.sso,
   });
@@ -4005,8 +4005,8 @@ class ApiDeleteCommentPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.deleteCommentVote].
-class ApiDeleteCommentVoteOptions {
-  const ApiDeleteCommentVoteOptions({
+class DeleteCommentVoteOptions {
+  const DeleteCommentVoteOptions({
     this.editKey,
     this.sso,
   });
@@ -4015,8 +4015,8 @@ class ApiDeleteCommentVoteOptions {
 }
 
 /// Optional parameters for [PublicApi.deleteFeedPostPublic].
-class ApiDeleteFeedPostPublicOptions {
-  const ApiDeleteFeedPostPublicOptions({
+class DeleteFeedPostPublicOptions {
+  const DeleteFeedPostPublicOptions({
     this.broadcastId,
     this.sso,
   });
@@ -4025,8 +4025,8 @@ class ApiDeleteFeedPostPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.getCommentText].
-class ApiGetCommentTextOptions {
-  const ApiGetCommentTextOptions({
+class GetCommentTextOptions {
+  const GetCommentTextOptions({
     this.editKey,
     this.sso,
   });
@@ -4035,8 +4035,8 @@ class ApiGetCommentTextOptions {
 }
 
 /// Optional parameters for [PublicApi.getCommentsForUser].
-class ApiGetCommentsForUserOptions {
-  const ApiGetCommentsForUserOptions({
+class GetCommentsForUserOptions {
+  const GetCommentsForUserOptions({
     this.userId,
     this.direction,
     this.repliesToUserId,
@@ -4055,8 +4055,8 @@ class ApiGetCommentsForUserOptions {
 }
 
 /// Optional parameters for [PublicApi.getCommentsPublic].
-class ApiGetCommentsPublicOptions {
-  const ApiGetCommentsPublicOptions({
+class GetCommentsPublicOptions {
+  const GetCommentsPublicOptions({
     this.page,
     this.direction,
     this.sso,
@@ -4113,8 +4113,8 @@ class ApiGetCommentsPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.getFeedPostsPublic].
-class ApiGetFeedPostsPublicOptions {
-  const ApiGetFeedPostsPublicOptions({
+class GetFeedPostsPublicOptions {
+  const GetFeedPostsPublicOptions({
     this.afterId,
     this.limit,
     this.tags,
@@ -4131,8 +4131,8 @@ class ApiGetFeedPostsPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.getGifsSearch].
-class ApiGetGifsSearchOptions {
-  const ApiGetGifsSearchOptions({
+class GetGifsSearchOptions {
+  const GetGifsSearchOptions({
     this.locale,
     this.rating,
     this.page,
@@ -4143,8 +4143,8 @@ class ApiGetGifsSearchOptions {
 }
 
 /// Optional parameters for [PublicApi.getGifsTrending].
-class ApiGetGifsTrendingOptions {
-  const ApiGetGifsTrendingOptions({
+class GetGifsTrendingOptions {
+  const GetGifsTrendingOptions({
     this.locale,
     this.rating,
     this.page,
@@ -4155,8 +4155,8 @@ class ApiGetGifsTrendingOptions {
 }
 
 /// Optional parameters for [PublicApi.getOfflineUsers].
-class ApiGetOfflineUsersOptions {
-  const ApiGetOfflineUsersOptions({
+class GetOfflineUsersOptions {
+  const GetOfflineUsersOptions({
     this.afterName,
     this.afterUserId,
   });
@@ -4165,8 +4165,8 @@ class ApiGetOfflineUsersOptions {
 }
 
 /// Optional parameters for [PublicApi.getOnlineUsers].
-class ApiGetOnlineUsersOptions {
-  const ApiGetOnlineUsersOptions({
+class GetOnlineUsersOptions {
+  const GetOnlineUsersOptions({
     this.afterName,
     this.afterUserId,
   });
@@ -4175,8 +4175,8 @@ class ApiGetOnlineUsersOptions {
 }
 
 /// Optional parameters for [PublicApi.getPagesPublic].
-class ApiGetPagesPublicOptions {
-  const ApiGetPagesPublicOptions({
+class GetPagesPublicOptions {
+  const GetPagesPublicOptions({
     this.cursor,
     this.limit,
     this.q,
@@ -4191,8 +4191,8 @@ class ApiGetPagesPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.getTranslations].
-class ApiGetTranslationsOptions {
-  const ApiGetTranslationsOptions({
+class GetTranslationsOptions {
+  const GetTranslationsOptions({
     this.locale,
     this.useFullTranslationIds,
   });
@@ -4201,8 +4201,8 @@ class ApiGetTranslationsOptions {
 }
 
 /// Optional parameters for [PublicApi.getUserNotifications].
-class ApiGetUserNotificationsOptions {
-  const ApiGetUserNotificationsOptions({
+class GetUserNotificationsOptions {
+  const GetUserNotificationsOptions({
     this.urlId,
     this.pageSize,
     this.afterId,
@@ -4229,8 +4229,8 @@ class ApiGetUserNotificationsOptions {
 }
 
 /// Optional parameters for [PublicApi.getUserReactsPublic].
-class ApiGetUserReactsPublicOptions {
-  const ApiGetUserReactsPublicOptions({
+class GetUserReactsPublicOptions {
+  const GetUserReactsPublicOptions({
     this.postIds,
     this.sso,
   });
@@ -4239,8 +4239,8 @@ class ApiGetUserReactsPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.reactFeedPostPublic].
-class ApiReactFeedPostPublicOptions {
-  const ApiReactFeedPostPublicOptions({
+class ReactFeedPostPublicOptions {
+  const ReactFeedPostPublicOptions({
     this.isUndo,
     this.broadcastId,
     this.sso,
@@ -4251,8 +4251,8 @@ class ApiReactFeedPostPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.resetUserNotifications].
-class ApiResetUserNotificationsOptions {
-  const ApiResetUserNotificationsOptions({
+class ResetUserNotificationsOptions {
+  const ResetUserNotificationsOptions({
     this.afterId,
     this.afterCreatedAt,
     this.unreadOnly,
@@ -4269,8 +4269,8 @@ class ApiResetUserNotificationsOptions {
 }
 
 /// Optional parameters for [PublicApi.searchUsers].
-class ApiSearchUsersOptions {
-  const ApiSearchUsersOptions({
+class SearchUsersOptions {
+  const SearchUsersOptions({
     this.usernameStartsWith,
     this.mentionGroupIds,
     this.sso,
@@ -4283,8 +4283,8 @@ class ApiSearchUsersOptions {
 }
 
 /// Optional parameters for [PublicApi.setCommentText].
-class ApiSetCommentTextOptions {
-  const ApiSetCommentTextOptions({
+class SetCommentTextOptions {
+  const SetCommentTextOptions({
     this.editKey,
     this.sso,
   });
@@ -4293,8 +4293,8 @@ class ApiSetCommentTextOptions {
 }
 
 /// Optional parameters for [PublicApi.updateFeedPostPublic].
-class ApiUpdateFeedPostPublicOptions {
-  const ApiUpdateFeedPostPublicOptions({
+class UpdateFeedPostPublicOptions {
+  const UpdateFeedPostPublicOptions({
     this.broadcastId,
     this.sso,
   });
@@ -4303,8 +4303,8 @@ class ApiUpdateFeedPostPublicOptions {
 }
 
 /// Optional parameters for [PublicApi.uploadImage].
-class ApiUploadImageOptions {
-  const ApiUploadImageOptions({
+class UploadImageOptions {
+  const UploadImageOptions({
     this.sizePreset,
     this.urlId,
   });
@@ -4313,8 +4313,8 @@ class ApiUploadImageOptions {
 }
 
 /// Optional parameters for [PublicApi.voteComment].
-class ApiVoteCommentOptions {
-  const ApiVoteCommentOptions({
+class VoteCommentOptions {
+  const VoteCommentOptions({
     this.sessionId,
     this.sso,
   });

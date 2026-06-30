@@ -1,4 +1,4 @@
-# fastcomments_dart.model.PostRemoveCommentResponse
+# fastcomments_dart.model.PostRemoveCommentApiResponse
 
 ## Load the model package
 ```dart

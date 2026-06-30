@@ -291,7 +291,7 @@ part 'model/patch_domain_config_response.dart';
 part 'model/patch_page_api_response.dart';
 part 'model/patch_sso_user_api_response.dart';
 part 'model/pending_comment_to_sync_outbound.dart';
-part 'model/post_remove_comment_response.dart';
+part 'model/post_remove_comment_api_response.dart';
 part 'model/pre_ban_summary.dart';
 part 'model/pub_sub_comment.dart';
 part 'model/pub_sub_comment_base.dart';

@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **addHashTag**
-> CreateHashTagResponse addHashTag(createHashTagBody, tenantId)
+> CreateHashTagResponse addHashTag(tenantId, createHashTagBody)
 
 
 
@@ -190,7 +190,7 @@ final tenantId = tenantId_example; // String |
 final createHashTagBody = CreateHashTagBody(); // CreateHashTagBody | 
 
 try {
-    final result = api_instance.addHashTag(createHashTagBody, tenantId);
+    final result = api_instance.addHashTag(tenantId, createHashTagBody);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->addHashTag: $e\n');
@@ -201,7 +201,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | **String**|  | [optional] 
+ **tenantId** | **String**|  | 
  **createHashTagBody** | [**CreateHashTagBody**](CreateHashTagBody.md)|  | [optional] 
 
 ### Return type
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **addHashTagsBulk**
-> BulkCreateHashTagsResponse addHashTagsBulk(bulkCreateHashTagsBody, tenantId)
+> BulkCreateHashTagsResponse addHashTagsBulk(tenantId, bulkCreateHashTagsBody)
 
 
 
@@ -237,7 +237,7 @@ final tenantId = tenantId_example; // String |
 final bulkCreateHashTagsBody = BulkCreateHashTagsBody(); // BulkCreateHashTagsBody | 
 
 try {
-    final result = api_instance.addHashTagsBulk(bulkCreateHashTagsBody, tenantId);
+    final result = api_instance.addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->addHashTagsBulk: $e\n');
@@ -248,7 +248,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantId** | **String**|  | [optional] 
+ **tenantId** | **String**|  | 
  **bulkCreateHashTagsBody** | [**BulkCreateHashTagsBody**](BulkCreateHashTagsBody.md)|  | [optional] 
 
 ### Return type
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aggregate**
-> AggregateResponse aggregate(tenantId, aggregationRequest, ApiAggregateOptions options)
+> AggregateResponse aggregate(tenantId, aggregationRequest, AggregateOptions options)
 
 
 
@@ -382,7 +382,7 @@ final parentTenantId = parentTenantId_example; // String |
 final includeStats = true; // bool | 
 
 try {
-    final result = api_instance.aggregate(tenantId, aggregationRequest, ApiAggregateOptions(parentTenantId: parentTenantId, includeStats: includeStats));
+    final result = api_instance.aggregate(tenantId, aggregationRequest, AggregateOptions(parentTenantId: parentTenantId, includeStats: includeStats));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->aggregate: $e\n');
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aggregateQuestionResults**
-> AggregateQuestionResultsResponse aggregateQuestionResults(tenantId, ApiAggregateQuestionResultsOptions options)
+> AggregateQuestionResultsResponse aggregateQuestionResults(tenantId, AggregateQuestionResultsOptions options)
 
 
 
@@ -436,7 +436,7 @@ final startDate = 2013-10-20T19:20:30+01:00; // DateTime |
 final forceRecalculate = true; // bool | 
 
 try {
-    final result = api_instance.aggregateQuestionResults(tenantId, ApiAggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate));
+    final result = api_instance.aggregateQuestionResults(tenantId, AggregateQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, timeBucket: timeBucket, startDate: startDate, forceRecalculate: forceRecalculate));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->aggregateQuestionResults: $e\n');
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **blockUserFromComment**
-> BlockSuccess blockUserFromComment(tenantId, id, blockFromCommentParams, ApiBlockUserFromCommentOptions options)
+> BlockSuccess blockUserFromComment(tenantId, id, blockFromCommentParams, BlockUserFromCommentOptions options)
 
 
 
@@ -491,7 +491,7 @@ final userId = userId_example; // String |
 final anonUserId = anonUserId_example; // String | 
 
 try {
-    final result = api_instance.blockUserFromComment(tenantId, id, blockFromCommentParams, ApiBlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId));
+    final result = api_instance.blockUserFromComment(tenantId, id, blockFromCommentParams, BlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->blockUserFromComment: $e\n');
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **combineCommentsWithQuestionResults**
-> CombineQuestionResultsWithCommentsResponse combineCommentsWithQuestionResults(tenantId, ApiCombineCommentsWithQuestionResultsOptions options)
+> CombineQuestionResultsWithCommentsResponse combineCommentsWithQuestionResults(tenantId, CombineCommentsWithQuestionResultsOptions options)
 
 
 
@@ -648,7 +648,7 @@ final maxValue = 1.2; // double |
 final limit = 1.2; // double | 
 
 try {
-    final result = api_instance.combineCommentsWithQuestionResults(tenantId, ApiCombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit));
+    final result = api_instance.combineCommentsWithQuestionResults(tenantId, CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->combineCommentsWithQuestionResults: $e\n');
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createFeedPost**
-> CreateFeedPostsResponse createFeedPost(tenantId, createFeedPostParams, ApiCreateFeedPostOptions options)
+> CreateFeedPostsResponse createFeedPost(tenantId, createFeedPostParams, CreateFeedPostOptions options)
 
 
 
@@ -753,7 +753,7 @@ final doSpamCheck = true; // bool |
 final skipDupCheck = true; // bool | 
 
 try {
-    final result = api_instance.createFeedPost(tenantId, createFeedPostParams, ApiCreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck));
+    final result = api_instance.createFeedPost(tenantId, createFeedPostParams, CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->createFeedPost: $e\n');
@@ -1212,7 +1212,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createVote**
-> VoteResponse createVote(tenantId, commentId, direction, ApiCreateVoteOptions options)
+> VoteResponse createVote(tenantId, commentId, direction, CreateVoteOptions options)
 
 
 
@@ -1232,7 +1232,7 @@ final userId = userId_example; // String |
 final anonUserId = anonUserId_example; // String | 
 
 try {
-    final result = api_instance.createVote(tenantId, commentId, direction, ApiCreateVoteOptions(userId: userId, anonUserId: anonUserId));
+    final result = api_instance.createVote(tenantId, commentId, direction, CreateVoteOptions(userId: userId, anonUserId: anonUserId));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->createVote: $e\n');
@@ -1265,7 +1265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteComment**
-> DeleteCommentResult deleteComment(tenantId, id, ApiDeleteCommentOptions options)
+> DeleteCommentResult deleteComment(tenantId, id, DeleteCommentOptions options)
 
 
 
@@ -1284,7 +1284,7 @@ final contextUserId = contextUserId_example; // String |
 final isLive = true; // bool | 
 
 try {
-    final result = api_instance.deleteComment(tenantId, id, ApiDeleteCommentOptions(contextUserId: contextUserId, isLive: isLive));
+    final result = api_instance.deleteComment(tenantId, id, DeleteCommentOptions(contextUserId: contextUserId, isLive: isLive));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteComment: $e\n');
@@ -1459,7 +1459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteHashTag**
-> APIEmptyResponse deleteHashTag(tag, deleteHashTagRequestBody, tenantId)
+> APIEmptyResponse deleteHashTag(tenantId, tag, deleteHashTagRequestBody)
 
 
 
@@ -1472,12 +1472,12 @@ import 'package:fastcomments_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
-final tag = tag_example; // String | 
 final tenantId = tenantId_example; // String | 
+final tag = tag_example; // String | 
 final deleteHashTagRequestBody = DeleteHashTagRequestBody(); // DeleteHashTagRequestBody | 
 
 try {
-    final result = api_instance.deleteHashTag(tag, deleteHashTagRequestBody, tenantId);
+    final result = api_instance.deleteHashTag(tenantId, tag, deleteHashTagRequestBody);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteHashTag: $e\n');
@@ -1488,8 +1488,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **tag** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **deleteHashTagRequestBody** | [**DeleteHashTagRequestBody**](DeleteHashTagRequestBody.md)|  | [optional] 
 
 ### Return type
@@ -1792,7 +1792,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteSSOUser**
-> DeleteSSOUserAPIResponse deleteSSOUser(tenantId, id, ApiDeleteSSOUserOptions options)
+> DeleteSSOUserAPIResponse deleteSSOUser(tenantId, id, DeleteSSOUserOptions options)
 
 
 
@@ -1811,7 +1811,7 @@ final deleteComments = true; // bool |
 final commentDeleteMode = commentDeleteMode_example; // String | 
 
 try {
-    final result = api_instance.deleteSSOUser(tenantId, id, ApiDeleteSSOUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode));
+    final result = api_instance.deleteSSOUser(tenantId, id, DeleteSSOUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteSSOUser: $e\n');
@@ -1988,7 +1988,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteTenantUser**
-> APIEmptyResponse deleteTenantUser(tenantId, id, ApiDeleteTenantUserOptions options)
+> APIEmptyResponse deleteTenantUser(tenantId, id, DeleteTenantUserOptions options)
 
 
 
@@ -2007,7 +2007,7 @@ final deleteComments = deleteComments_example; // String |
 final commentDeleteMode = commentDeleteMode_example; // String | 
 
 try {
-    final result = api_instance.deleteTenantUser(tenantId, id, ApiDeleteTenantUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode));
+    final result = api_instance.deleteTenantUser(tenantId, id, DeleteTenantUserOptions(deleteComments: deleteComments, commentDeleteMode: commentDeleteMode));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->deleteTenantUser: $e\n');
@@ -2135,7 +2135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **flagComment**
-> FlagCommentResponse flagComment(tenantId, id, ApiFlagCommentOptions options)
+> FlagCommentResponse flagComment(tenantId, id, FlagCommentOptions options)
 
 
 
@@ -2154,7 +2154,7 @@ final userId = userId_example; // String |
 final anonUserId = anonUserId_example; // String | 
 
 try {
-    final result = api_instance.flagComment(tenantId, id, ApiFlagCommentOptions(userId: userId, anonUserId: anonUserId));
+    final result = api_instance.flagComment(tenantId, id, FlagCommentOptions(userId: userId, anonUserId: anonUserId));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->flagComment: $e\n');
@@ -2186,7 +2186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAuditLogs**
-> GetAuditLogsResponse getAuditLogs(tenantId, ApiGetAuditLogsOptions options)
+> GetAuditLogsResponse getAuditLogs(tenantId, GetAuditLogsOptions options)
 
 
 
@@ -2207,7 +2207,7 @@ final after = 1.2; // double |
 final before = 1.2; // double | 
 
 try {
-    final result = api_instance.getAuditLogs(tenantId, ApiGetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before));
+    final result = api_instance.getAuditLogs(tenantId, GetAuditLogsOptions(limit: limit, skip: skip, order: order, after: after, before: before));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getAuditLogs: $e\n');
@@ -2335,7 +2335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getComments**
-> APIGetCommentsResponse getComments(tenantId, ApiGetCommentsOptions options)
+> APIGetCommentsResponse getComments(tenantId, GetCommentsOptions options)
 
 
 
@@ -2367,7 +2367,7 @@ final fromDate = 789; // int |
 final toDate = 789; // int | 
 
 try {
-    final result = api_instance.getComments(tenantId, ApiGetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate));
+    final result = api_instance.getComments(tenantId, GetCommentsOptions(page: page, limit: limit, skip: skip, asTree: asTree, skipChildren: skipChildren, limitChildren: limitChildren, maxTreeDepth: maxTreeDepth, urlId: urlId, userId: userId, anonUserId: anonUserId, contextUserId: contextUserId, hashTag: hashTag, parentId: parentId, direction: direction, fromDate: fromDate, toDate: toDate));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getComments: $e\n');
@@ -2692,7 +2692,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeedPosts**
-> GetFeedPostsResponse getFeedPosts(tenantId, ApiGetFeedPostsOptions options)
+> GetFeedPostsResponse getFeedPosts(tenantId, GetFeedPostsOptions options)
 
 
 
@@ -2713,7 +2713,7 @@ final limit = 56; // int |
 final tags = []; // List<String> | 
 
 try {
-    final result = api_instance.getFeedPosts(tenantId, ApiGetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags));
+    final result = api_instance.getFeedPosts(tenantId, GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getFeedPosts: $e\n');
@@ -2886,7 +2886,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotificationCount**
-> GetNotificationCountResponse getNotificationCount(tenantId, ApiGetNotificationCountOptions options)
+> GetNotificationCountResponse getNotificationCount(tenantId, GetNotificationCountOptions options)
 
 
 
@@ -2907,7 +2907,7 @@ final viewed = true; // bool |
 final type = type_example; // String | 
 
 try {
-    final result = api_instance.getNotificationCount(tenantId, ApiGetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type));
+    final result = api_instance.getNotificationCount(tenantId, GetNotificationCountOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getNotificationCount: $e\n');
@@ -2941,7 +2941,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getNotifications**
-> GetNotificationsResponse getNotifications(tenantId, ApiGetNotificationsOptions options)
+> GetNotificationsResponse getNotifications(tenantId, GetNotificationsOptions options)
 
 
 
@@ -2963,7 +2963,7 @@ final type = type_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getNotifications(tenantId, ApiGetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip));
+    final result = api_instance.getNotifications(tenantId, GetNotificationsOptions(userId: userId, urlId: urlId, fromCommentId: fromCommentId, viewed: viewed, type: type, skip: skip));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getNotifications: $e\n');
@@ -3090,7 +3090,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPendingWebhookEventCount**
-> GetPendingWebhookEventCountResponse getPendingWebhookEventCount(tenantId, ApiGetPendingWebhookEventCountOptions options)
+> GetPendingWebhookEventCountResponse getPendingWebhookEventCount(tenantId, GetPendingWebhookEventCountOptions options)
 
 
 
@@ -3112,7 +3112,7 @@ final domain = domain_example; // String |
 final attemptCountGT = 1.2; // double | 
 
 try {
-    final result = api_instance.getPendingWebhookEventCount(tenantId, ApiGetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT));
+    final result = api_instance.getPendingWebhookEventCount(tenantId, GetPendingWebhookEventCountOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getPendingWebhookEventCount: $e\n');
@@ -3147,7 +3147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPendingWebhookEvents**
-> GetPendingWebhookEventsResponse getPendingWebhookEvents(tenantId, ApiGetPendingWebhookEventsOptions options)
+> GetPendingWebhookEventsResponse getPendingWebhookEvents(tenantId, GetPendingWebhookEventsOptions options)
 
 
 
@@ -3170,7 +3170,7 @@ final attemptCountGT = 1.2; // double |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getPendingWebhookEvents(tenantId, ApiGetPendingWebhookEventsOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip));
+    final result = api_instance.getPendingWebhookEvents(tenantId, GetPendingWebhookEventsOptions(commentId: commentId, externalId: externalId, eventType: eventType, type: type, domain: domain, attemptCountGT: attemptCountGT, skip: skip));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getPendingWebhookEvents: $e\n');
@@ -3347,7 +3347,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getQuestionResults**
-> GetQuestionResultsResponse getQuestionResults(tenantId, ApiGetQuestionResultsOptions options)
+> GetQuestionResultsResponse getQuestionResults(tenantId, GetQuestionResultsOptions options)
 
 
 
@@ -3369,7 +3369,7 @@ final questionIds = questionIds_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getQuestionResults(tenantId, ApiGetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip));
+    final result = api_instance.getQuestionResults(tenantId, GetQuestionResultsOptions(urlId: urlId, userId: userId, startDate: startDate, questionId: questionId, questionIds: questionIds, skip: skip));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getQuestionResults: $e\n');
@@ -3639,7 +3639,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenantDailyUsages**
-> GetTenantDailyUsagesResponse getTenantDailyUsages(tenantId, ApiGetTenantDailyUsagesOptions options)
+> GetTenantDailyUsagesResponse getTenantDailyUsages(tenantId, GetTenantDailyUsagesOptions options)
 
 
 
@@ -3659,7 +3659,7 @@ final dayNumber = 1.2; // double |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getTenantDailyUsages(tenantId, ApiGetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip));
+    final result = api_instance.getTenantDailyUsages(tenantId, GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getTenantDailyUsages: $e\n');
@@ -3880,7 +3880,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTenants**
-> GetTenantsResponse getTenants(tenantId, ApiGetTenantsOptions options)
+> GetTenantsResponse getTenants(tenantId, GetTenantsOptions options)
 
 
 
@@ -3898,7 +3898,7 @@ final meta = meta_example; // String |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getTenants(tenantId, ApiGetTenantsOptions(meta: meta, skip: skip));
+    final result = api_instance.getTenants(tenantId, GetTenantsOptions(meta: meta, skip: skip));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getTenants: $e\n');
@@ -3978,7 +3978,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTickets**
-> GetTicketsResponse getTickets(tenantId, ApiGetTicketsOptions options)
+> GetTicketsResponse getTickets(tenantId, GetTicketsOptions options)
 
 
 
@@ -3998,7 +3998,7 @@ final skip = 1.2; // double |
 final limit = 1.2; // double | 
 
 try {
-    final result = api_instance.getTickets(tenantId, ApiGetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit));
+    final result = api_instance.getTickets(tenantId, GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getTickets: $e\n');
@@ -4219,7 +4219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBadgeProgressList**
-> APIGetUserBadgeProgressListResponse getUserBadgeProgressList(tenantId, ApiGetUserBadgeProgressListOptions options)
+> APIGetUserBadgeProgressListResponse getUserBadgeProgressList(tenantId, GetUserBadgeProgressListOptions options)
 
 
 
@@ -4238,7 +4238,7 @@ final limit = 1.2; // double |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getUserBadgeProgressList(tenantId, ApiGetUserBadgeProgressListOptions(userId: userId, limit: limit, skip: skip));
+    final result = api_instance.getUserBadgeProgressList(tenantId, GetUserBadgeProgressListOptions(userId: userId, limit: limit, skip: skip));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getUserBadgeProgressList: $e\n');
@@ -4270,7 +4270,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getUserBadges**
-> APIGetUserBadgesResponse getUserBadges(tenantId, ApiGetUserBadgesOptions options)
+> APIGetUserBadgesResponse getUserBadges(tenantId, GetUserBadgesOptions options)
 
 
 
@@ -4292,7 +4292,7 @@ final limit = 1.2; // double |
 final skip = 1.2; // double | 
 
 try {
-    final result = api_instance.getUserBadges(tenantId, ApiGetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip));
+    final result = api_instance.getUserBadges(tenantId, GetUserBadgesOptions(userId: userId, badgeId: badgeId, type: type, displayedOnComments: displayedOnComments, limit: limit, skip: skip));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getUserBadges: $e\n');
@@ -4374,7 +4374,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getVotesForUser**
-> GetVotesForUserResponse getVotesForUser(tenantId, urlId, ApiGetVotesForUserOptions options)
+> GetVotesForUserResponse getVotesForUser(tenantId, urlId, GetVotesForUserOptions options)
 
 
 
@@ -4393,7 +4393,7 @@ final userId = userId_example; // String |
 final anonUserId = anonUserId_example; // String | 
 
 try {
-    final result = api_instance.getVotesForUser(tenantId, urlId, ApiGetVotesForUserOptions(userId: userId, anonUserId: anonUserId));
+    final result = api_instance.getVotesForUser(tenantId, urlId, GetVotesForUserOptions(userId: userId, anonUserId: anonUserId));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->getVotesForUser: $e\n');
@@ -4474,7 +4474,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patchHashTag**
-> UpdateHashTagResponse patchHashTag(tag, updateHashTagBody, tenantId)
+> UpdateHashTagResponse patchHashTag(tenantId, tag, updateHashTagBody)
 
 
 
@@ -4487,12 +4487,12 @@ import 'package:fastcomments_dart/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
-final tag = tag_example; // String | 
 final tenantId = tenantId_example; // String | 
+final tag = tag_example; // String | 
 final updateHashTagBody = UpdateHashTagBody(); // UpdateHashTagBody | 
 
 try {
-    final result = api_instance.patchHashTag(tag, updateHashTagBody, tenantId);
+    final result = api_instance.patchHashTag(tenantId, tag, updateHashTagBody);
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->patchHashTag: $e\n');
@@ -4503,8 +4503,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **tenantId** | **String**|  | 
  **tag** | **String**|  | 
- **tenantId** | **String**|  | [optional] 
  **updateHashTagBody** | [**UpdateHashTagBody**](UpdateHashTagBody.md)|  | [optional] 
 
 ### Return type
@@ -4872,7 +4872,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **saveComment**
-> APISaveCommentResponse saveComment(tenantId, createCommentParams, ApiSaveCommentOptions options)
+> APISaveCommentResponse saveComment(tenantId, createCommentParams, SaveCommentOptions options)
 
 
 
@@ -4893,7 +4893,7 @@ final sendEmails = true; // bool |
 final populateNotifications = true; // bool | 
 
 try {
-    final result = api_instance.saveComment(tenantId, createCommentParams, ApiSaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications));
+    final result = api_instance.saveComment(tenantId, createCommentParams, SaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->saveComment: $e\n');
@@ -4927,7 +4927,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **saveCommentsBulk**
-> List<SaveCommentsBulkResponse> saveCommentsBulk(tenantId, createCommentParams, ApiSaveCommentsBulkOptions options)
+> List<SaveCommentsBulkResponse> saveCommentsBulk(tenantId, createCommentParams, SaveCommentsBulkOptions options)
 
 
 
@@ -4948,7 +4948,7 @@ final sendEmails = true; // bool |
 final populateNotifications = true; // bool | 
 
 try {
-    final result = api_instance.saveCommentsBulk(tenantId, createCommentParams, ApiSaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications));
+    final result = api_instance.saveCommentsBulk(tenantId, createCommentParams, SaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->saveCommentsBulk: $e\n');
@@ -5080,7 +5080,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unBlockUserFromComment**
-> UnblockSuccess unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, ApiUnBlockUserFromCommentOptions options)
+> UnblockSuccess unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, UnBlockUserFromCommentOptions options)
 
 
 
@@ -5100,7 +5100,7 @@ final userId = userId_example; // String |
 final anonUserId = anonUserId_example; // String | 
 
 try {
-    final result = api_instance.unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, ApiUnBlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId));
+    final result = api_instance.unBlockUserFromComment(tenantId, id, unBlockFromCommentParams, UnBlockUserFromCommentOptions(userId: userId, anonUserId: anonUserId));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->unBlockUserFromComment: $e\n');
@@ -5133,7 +5133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unFlagComment**
-> FlagCommentResponse unFlagComment(tenantId, id, ApiUnFlagCommentOptions options)
+> FlagCommentResponse unFlagComment(tenantId, id, UnFlagCommentOptions options)
 
 
 
@@ -5152,7 +5152,7 @@ final userId = userId_example; // String |
 final anonUserId = anonUserId_example; // String | 
 
 try {
-    final result = api_instance.unFlagComment(tenantId, id, ApiUnFlagCommentOptions(userId: userId, anonUserId: anonUserId));
+    final result = api_instance.unFlagComment(tenantId, id, UnFlagCommentOptions(userId: userId, anonUserId: anonUserId));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->unFlagComment: $e\n');
@@ -5184,7 +5184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateComment**
-> APIEmptyResponse updateComment(tenantId, id, updatableCommentParams, ApiUpdateCommentOptions options)
+> APIEmptyResponse updateComment(tenantId, id, updatableCommentParams, UpdateCommentOptions options)
 
 
 
@@ -5205,7 +5205,7 @@ final doSpamCheck = true; // bool |
 final isLive = true; // bool | 
 
 try {
-    final result = api_instance.updateComment(tenantId, id, updatableCommentParams, ApiUpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive));
+    final result = api_instance.updateComment(tenantId, id, updatableCommentParams, UpdateCommentOptions(contextUserId: contextUserId, doSpamCheck: doSpamCheck, isLive: isLive));
     print(result);
 } catch (e) {
     print('Exception when calling DefaultApi->updateComment: $e\n');
