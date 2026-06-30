@@ -3,7 +3,7 @@
 #
 
 name: 'fastcomments_dart'
-version: '2.1.0'
+version: '3.0.0'
 description: 'Official Dart client for the FastComments REST API.'
 homepage: 'https://fastcomments.com'
 repository: https://github.com/fastcomments/fastcomments-dart
