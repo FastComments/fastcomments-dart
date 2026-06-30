@@ -21,7 +21,7 @@ SPEC_URL = "http://localhost:3001/js/swagger.json"
 
 # FastComments openapi-generator build (fixes dart anyOf/nested-map codegen the
 # released generator gets wrong). Just a jar; downloaded on demand.
-JAR_URL = "https://github.com/winrid/openapi-generator/releases/download/fastcomments-build-20260619/openapi-generator-cli.jar"
+JAR_URL = "https://github.com/winrid/openapi-generator/releases/download/fastcomments-build-20260630/openapi-generator-cli.jar"
 JAR_FILE = ROOT / "openapi-generator-cli.jar"
 
 

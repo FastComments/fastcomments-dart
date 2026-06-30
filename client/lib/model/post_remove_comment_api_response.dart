@@ -10,9 +10,9 @@
 
 part of openapi.api;
 
-class PostRemoveCommentResponse {
-  /// Returns a new [PostRemoveCommentResponse] instance.
-  PostRemoveCommentResponse({
+class PostRemoveCommentApiResponse {
+  /// Returns a new [PostRemoveCommentApiResponse] instance.
+  PostRemoveCommentApiResponse({
     required this.action,
     required this.status,
   });
@@ -22,7 +22,7 @@ class PostRemoveCommentResponse {
   String status;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is PostRemoveCommentResponse &&
+  bool operator ==(Object other) => identical(this, other) || other is PostRemoveCommentApiResponse &&
     other.action == action &&
       other.status == status;
   
@@ -35,7 +35,7 @@ class PostRemoveCommentResponse {
   
 
   @override
-  String toString() => 'PostRemoveCommentResponse[action=$action, status=$status]';
+  String toString() => 'PostRemoveCommentApiResponse[action=$action, status=$status]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -44,10 +44,10 @@ class PostRemoveCommentResponse {
     return json;
   }
 
-  /// Returns a new [PostRemoveCommentResponse] instance and imports its values from
+  /// Returns a new [PostRemoveCommentApiResponse] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static PostRemoveCommentResponse? fromJson(dynamic value) {
+  static PostRemoveCommentApiResponse? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -55,14 +55,14 @@ class PostRemoveCommentResponse {
       // Note 1: the values aren't checked for validity beyond being non-null.
       // Note 2: this code is stripped in release mode!
       assert(() {
-        assert(json.containsKey(r'action'), 'Required key "PostRemoveCommentResponse[action]" is missing from JSON.');
-        assert(json[r'action'] != null, 'Required key "PostRemoveCommentResponse[action]" has a null value in JSON.');
-        assert(json.containsKey(r'status'), 'Required key "PostRemoveCommentResponse[status]" is missing from JSON.');
-        assert(json[r'status'] != null, 'Required key "PostRemoveCommentResponse[status]" has a null value in JSON.');
+        assert(json.containsKey(r'action'), 'Required key "PostRemoveCommentApiResponse[action]" is missing from JSON.');
+        assert(json[r'action'] != null, 'Required key "PostRemoveCommentApiResponse[action]" has a null value in JSON.');
+        assert(json.containsKey(r'status'), 'Required key "PostRemoveCommentApiResponse[status]" is missing from JSON.');
+        assert(json[r'status'] != null, 'Required key "PostRemoveCommentApiResponse[status]" has a null value in JSON.');
         return true;
       }());
 
-      return PostRemoveCommentResponse(
+      return PostRemoveCommentApiResponse(
         action: mapValueOfType<String>(json, r'action')!,
         status: mapValueOfType<String>(json, r'status')!,
       );
@@ -70,11 +70,11 @@ class PostRemoveCommentResponse {
     return null;
   }
 
-  static List<PostRemoveCommentResponse> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <PostRemoveCommentResponse>[];
+  static List<PostRemoveCommentApiResponse> listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <PostRemoveCommentApiResponse>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = PostRemoveCommentResponse.fromJson(row);
+        final value = PostRemoveCommentApiResponse.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -83,12 +83,12 @@ class PostRemoveCommentResponse {
     return result.toList(growable: growable);
   }
 
-  static Map<String, PostRemoveCommentResponse> mapFromJson(dynamic json) {
-    final map = <String, PostRemoveCommentResponse>{};
+  static Map<String, PostRemoveCommentApiResponse> mapFromJson(dynamic json) {
+    final map = <String, PostRemoveCommentApiResponse>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = PostRemoveCommentResponse.fromJson(entry.value);
+        final value = PostRemoveCommentApiResponse.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -97,14 +97,14 @@ class PostRemoveCommentResponse {
     return map;
   }
 
-  // maps a json object with a list of PostRemoveCommentResponse-objects as value to a dart map
-  static Map<String, List<PostRemoveCommentResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<PostRemoveCommentResponse>>{};
+  // maps a json object with a list of PostRemoveCommentApiResponse-objects as value to a dart map
+  static Map<String, List<PostRemoveCommentApiResponse>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<PostRemoveCommentApiResponse>>{};
     if (json is Map && json.isNotEmpty) {
       // ignore: parameter_assignments
       json = json.cast<String, dynamic>();
       for (final entry in json.entries) {
-        map[entry.key] = PostRemoveCommentResponse.listFromJson(entry.value, growable: growable,);
+        map[entry.key] = PostRemoveCommentApiResponse.listFromJson(entry.value, growable: growable,);
       }
     }
     return map;

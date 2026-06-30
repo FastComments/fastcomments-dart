@@ -11,11 +11,11 @@
 import 'package:fastcomments_dart/api.dart';
 import 'package:test/test.dart';
 
-// tests for PostRemoveCommentResponse
+// tests for PostRemoveCommentApiResponse
 void main() {
-  // final instance = PostRemoveCommentResponse();
+  // final instance = PostRemoveCommentApiResponse();
 
-  group('test PostRemoveCommentResponse', () {
+  group('test PostRemoveCommentApiResponse', () {
     // String action
     test('to test the property `action`', () async {
       // TODO

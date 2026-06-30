@@ -264,7 +264,7 @@ doc/PatchDomainConfigResponse.md
 doc/PatchPageAPIResponse.md
 doc/PatchSSOUserAPIResponse.md
 doc/PendingCommentToSyncOutbound.md
-doc/PostRemoveCommentResponse.md
+doc/PostRemoveCommentApiResponse.md
 doc/PreBanSummary.md
 doc/PubSubComment.md
 doc/PubSubCommentBase.md
@@ -638,7 +638,7 @@ lib/model/patch_domain_config_response.dart
 lib/model/patch_page_api_response.dart
 lib/model/patch_sso_user_api_response.dart
 lib/model/pending_comment_to_sync_outbound.dart
-lib/model/post_remove_comment_response.dart
+lib/model/post_remove_comment_api_response.dart
 lib/model/pre_ban_summary.dart
 lib/model/pub_sub_comment.dart
 lib/model/pub_sub_comment_base.dart
@@ -1001,7 +1001,7 @@ test/patch_domain_config_response_test.dart
 test/patch_page_api_response_test.dart
 test/patch_sso_user_api_response_test.dart
 test/pending_comment_to_sync_outbound_test.dart
-test/post_remove_comment_response_test.dart
+test/post_remove_comment_api_response_test.dart
 test/pre_ban_summary_test.dart
 test/pub_sub_comment_base_test.dart
 test/pub_sub_comment_test.dart

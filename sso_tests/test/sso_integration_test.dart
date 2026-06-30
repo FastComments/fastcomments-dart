@@ -38,14 +38,23 @@ void main() {
       urlId: urlId,
     );
 
-    final createResponse =
-        await api.createCommentPublic(tenantId!, urlId, 'dart-test-$timestamp', commentData, sso: token);
+    final createResponse = await api.createCommentPublic(
+      tenantId!,
+      urlId,
+      'dart-test-$timestamp',
+      commentData,
+      CreateCommentPublicOptions(sso: token),
+    );
     expect(createResponse, isNotNull);
     expect(createResponse!.status, APIStatus.success);
     expect(createResponse.comment.commenterName, user.username);
     expect(createResponse.comment.commentHTML, contains(commentText));
 
-    final getResponse = await api.getCommentsPublic(tenantId, urlId, sso: token);
+    final getResponse = await api.getCommentsPublic(
+      tenantId,
+      urlId,
+      GetCommentsPublicOptions(sso: token),
+    );
     expect(getResponse, isNotNull);
     expect(getResponse!.status, 'success');
     expect(getResponse.comments, isNotEmpty);

@@ -22,12 +22,12 @@ void main() {
       // TODO
     });
 
-    //Future<CreateHashTagResponse> addHashTag({ String tenantId, CreateHashTagBody createHashTagBody }) async
+    //Future<CreateHashTagResponse> addHashTag(String tenantId, { CreateHashTagBody createHashTagBody }) async
     test('test addHashTag', () async {
       // TODO
     });
 
-    //Future<BulkCreateHashTagsResponse> addHashTagsBulk({ String tenantId, BulkCreateHashTagsBody bulkCreateHashTagsBody }) async
+    //Future<BulkCreateHashTagsResponse> addHashTagsBulk(String tenantId, { BulkCreateHashTagsBody bulkCreateHashTagsBody }) async
     test('test addHashTagsBulk', () async {
       // TODO
     });
@@ -154,7 +154,7 @@ void main() {
       // TODO
     });
 
-    //Future<APIEmptyResponse> deleteHashTag(String tag, { String tenantId, DeleteHashTagRequestBody deleteHashTagRequestBody }) async
+    //Future<APIEmptyResponse> deleteHashTag(String tenantId, String tag, { DeleteHashTagRequestBody deleteHashTagRequestBody }) async
     test('test deleteHashTag', () async {
       // TODO
     });
@@ -461,7 +461,7 @@ void main() {
       // TODO
     });
 
-    //Future<UpdateHashTagResponse> patchHashTag(String tag, { String tenantId, UpdateHashTagBody updateHashTagBody }) async
+    //Future<UpdateHashTagResponse> patchHashTag(String tenantId, String tag, { UpdateHashTagBody updateHashTagBody }) async
     test('test patchHashTag', () async {
       // TODO
     });
