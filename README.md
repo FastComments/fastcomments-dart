@@ -34,7 +34,7 @@ Requires `node`/`npx` (for `@openapitools/openapi-generator-cli`) and Java.
 
 ```yaml
 dependencies:
-  fastcomments_dart: ^2.0.1
+  fastcomments_dart: ^3.0.0
 ```
 
 SSO helpers are included in the package (`package:fastcomments_dart/sso/...`).
